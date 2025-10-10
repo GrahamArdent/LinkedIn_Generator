@@ -1,0 +1,47 @@
+{
+  "quote": {
+    "topic": "identity",
+    "quote": "\"Identity is the new perimeter.\"",
+    "author": "General maxim",
+    "source": "Industry discourse",
+    "year": "2024"
+  },
+  "stat": {
+    "metric": "malware_free_intrusions_share",
+    "value": ">70",
+    "unit": "percent",
+    "source": "CrowdStrike Global Threat Report",
+    "date": "2025-03-01"
+  },
+  "hashtags": [
+    "#CyberSecurity",
+    "#PenetrationTesting",
+    "#IncidentResponse",
+    "#Compliance",
+    "#SecurityTraining"
+  ],
+  "image_brief": {
+    "format": "1080x1080",
+    "palette": "Ardent navy/gold/cyan",
+    "persona": "ardent_sales",
+    "topic": "identity",
+    "slides": [
+      {
+        "title": "Hook",
+        "guidance": "12\u201315 words; bold, high contrast; no cropped text."
+      },
+      {
+        "title": "Pain Beneath Pain",
+        "guidance": "1\u20132 short sentences translating risk to business impact."
+      },
+      {
+        "title": "Do Now / Next / Never",
+        "guidance": "3 concise bullets; readable at a glance."
+      },
+      {
+        "title": "Quote + CTA",
+        "guidance": "Short, credible quote + safe CTA aligned to persona."
+      }
+    ]
+  }
+}

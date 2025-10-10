@@ -1,0 +1,13 @@
+# Posting schedule for LinkedIn_Generator
+# Graham: Monday, Wednesday, Friday
+# Ardent: Tuesday, Thursday
+timezone: America/New_York   # change if needed
+time_of_day_local: "09:15"   # local time to post/save output
+days:
+  Monday: graham
+  Tuesday: ardent
+  Wednesday: graham
+  Thursday: ardent
+  Friday: graham
+skip_dates: []        # e.g., ["2025-12-25","2025-12-26"]
+pause: false

@@ -1,0 +1,48 @@
+min_per_post: 3
+max_per_post: 5
+
+# Always-good cores (kept lightweight to avoid “hashtag stuffing” penalties)
+core:
+  - "#CyberSecurity"
+  - "#InfoSec"
+
+# Optional brand tag (used when persona == "ardent")
+brand:
+  - "#ArdentSecurity"
+
+# Low-value / spammy / generic tags to avoid
+banlist:
+  - "#Security"       # too broad
+  - "#Hacking"        # noisy
+  - "#AI"             # too generic
+
+# Map common keywords/phrases to preferred tags
+keyword_map:
+  identity: "#IdentitySecurity"
+  iam: "#IdentitySecurity"
+  sso: "#IdentitySecurity"
+  phishing: "#PhishingDefense"
+  vishing: "#PhishingDefense"
+  pentest: "#PenetrationTesting"
+  "pen testing": "#PenetrationTesting"
+  breach: "#IncidentResponse"
+  ransomware: "#IncidentResponse"
+  zerotrust: "#ZeroTrust"
+  zero-trust: "#ZeroTrust"
+  compliance: "#Compliance"
+  tabletop: "#TabletopExercises"
+  mfa: "#MFA"
+  passkeys: "#Passkeys"
+  edr: "#EDR"
+  xdr: "#XDR"
+  soc2: "#SOC2"
+  hipaa: "#HIPAA"
+  nist: "#NIST"
+  owasp: "#OWASP"
+  ciso: "#CISO"
+
+# Optional “what’s hot this month” (you can refresh manually)
+trending_priority:
+  - "#ZeroTrust"
+  - "#IdentitySecurity"
+  - "#PenetrationTesting"

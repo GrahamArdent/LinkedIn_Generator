@@ -1,0 +1,2 @@
+streamlit>=1.32
+pyperclip>=1.8

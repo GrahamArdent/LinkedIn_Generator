@@ -1,0 +1,15 @@
+safe_ctas:
+  graham:
+    - "DM ‘BRIEFING’ for the board one-pager."
+    - "Comment ‘CHECKLIST’ for the implementation steps."
+    - "Want the teardown? Reply ‘TEARDOWN’ and I’ll DM it."
+  ardent:
+    - "See how Ardent can help."
+    - "Download the remediation checklist."
+    - "Talk to an expert."
+forbidden_phrases:
+  - "what security flaws"
+  - "how exposed are you"
+  - "share your vulnerabilities"
+  - "post your gaps"
+  - "are you vulnerable"

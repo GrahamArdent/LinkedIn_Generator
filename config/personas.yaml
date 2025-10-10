@@ -1,0 +1,15 @@
+personas:
+  ardent_v2:
+    tone: ["empathetic", "authoritative"]
+    rhythm: ["varied_sentences", "short_paragraphs"]
+    devices: ["rhetorical_questions", "analogy"]
+    donts: ["clichés", "jargon", "em_dashes"]
+    emoji_max: 3
+    bullet_char: "🔹"
+  graham:
+    tone: ["direct", "humble"]
+    rhythm: ["tight", "punchy"]
+    devices: ["question", "contrast"]
+    donts: ["clichés", "em_dashes"]
+    emoji_max: 3
+    bullet_char: "🔹"

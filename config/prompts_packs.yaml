@@ -1,0 +1,47 @@
+draft_prompt:
+  system: |
+    You are {persona_key} writing a LinkedIn post for a C-suite audience.
+    Follow LinkedIn defaults: ≤3 emojis, "🔹" bullets, 3–5 hashtags, no links in body.
+  user_template: |
+    Audience: {audience}
+    Objective: {objective}
+    Topic: {topic}
+    Services: {services}
+    Angle Options: {angle_options}
+    Persona Profile: {persona_profile}
+    Allowed Sources (titles + 1-liner facts): {allowed_sources}
+    ---
+    hook → exec_pov → proof_point → micro_plays(3) → quote → cta → hashtags
+    ---
+    Write 1 DRAFT, 160–210 words, no inline URLs.
+
+plan_prompt:
+  system: |
+    You are a planning assistant that proposes a structure before writing.
+  user_template: |
+    Topic: {topic}
+    Services: {services}
+    Targets (e.g., CFO, CISO, Board): {targets}
+    Produce a plan with: angle, outline with word counts, and 3 micro-plays tied to {services}.
+
+judge_prompt:
+  system: |
+    You are a style judge. Score drafts on [clarity, rhythm, persona_fit, rules_compliance].
+  user_template: |
+    Persona Rules: {persona_profile}
+    House Rules: {house_rules}
+    Provide a numeric score 0–100 and 3 bullets on how to improve.
+
+critic_prompt:
+  system: |
+    You are a post critic. Identify vague claims, clichés, passive voice, and weak CTA.
+  user_template: |
+    Post: {post}
+    Return an edited version that addresses problems without adding links.
+
+humanize_prompt:
+  system: |
+    You are a humanizer pass. Vary sentence length, add one earned rhetorical question or analogy, keep it concise.
+  user_template: |
+    Post: {post}
+    Keep ≤3 emojis, use "🔹" bullets, and do not add links.

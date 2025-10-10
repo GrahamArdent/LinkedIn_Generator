@@ -1,0 +1,15 @@
+# Optional column normalization rules.
+# You can add per-file overrides below. Case-insensitive matching.
+global_synonyms:
+  topic: ["hook theme", "hook"]
+  audience: ["industry focus", "industry"]
+files:
+  ardent_linkedin_20week_schedule.csv:
+    column_aliases:
+      "Ardent Service Tie-In": service
+      "Content Pillar": pillar
+      "Industry Focus": audience
+  Graham_120Day_Final.csv:
+    column_aliases:
+      "Topic": topic
+      "Date": date

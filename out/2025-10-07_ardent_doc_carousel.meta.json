@@ -1,0 +1,47 @@
+{
+  "persona": "ardent",
+  "post_type": "doc_carousel",
+  "citations": [
+    {
+      "topic": "identity",
+      "title": "CISA: Identity Security Guidance",
+      "url": "https://www.cisa.gov/",
+      "publisher": "CISA",
+      "pub_date": "2025-01-15",
+      "note": "Placeholder - replace with specific page"
+    },
+    {
+      "topic": "identity",
+      "title": "Microsoft Identity Security Best Practices",
+      "url": "https://www.microsoft.com/",
+      "publisher": "Microsoft",
+      "pub_date": "2025-02-01",
+      "note": "Placeholder - replace with specific page"
+    }
+  ],
+  "first_comment": "Which control is most brittle in practice: identity, endpoints, or SaaS trust?\nWant the checklist? Say 'checklist' and I’ll DM it.\n\nLinks:\nhttps://www.cisa.gov/\nhttps://www.microsoft.com/",
+  "image_brief": {
+    "tone": "practical, action-forward",
+    "color": "neutral with brand accent",
+    "layout": "document carousel: bold hook slide + 3 action slides + CTA slide",
+    "avoid": [
+      "clip art",
+      "tiny text",
+      "jargon"
+    ],
+    "keywords": [
+      "identity",
+      "continuity",
+      "SaaS trust",
+      "controls",
+      "roadmap"
+    ]
+  },
+  "hashtags": [
+    "#CyberSecurity",
+    "#PenetrationTesting",
+    "#IncidentResponse",
+    "#Compliance",
+    "#SecurityTraining"
+  ]
+}

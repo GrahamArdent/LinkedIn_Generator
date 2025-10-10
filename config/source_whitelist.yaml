@@ -1,0 +1,45 @@
+domains:
+  - blackhat.com
+  - bleepingcomputer.com
+  - blog.malwarebytes.com
+  - cert.org
+  - cisa.gov
+  - cisecurity.org
+  - crowdstrike.com
+  - csoonline.com
+  - cyber.gc.ca
+  - darkreading.com
+  - defcon.org
+  - enisa.europa.eu
+  - fireeye.com
+  - github.com
+  - iacr.org
+  - ibm.com
+  - infosecurity-magazine.com
+  - isc.sans.edu
+  - krebsonsecurity.com
+  - mandiant.com
+  - microsoft.com
+  - ncsc.gov.uk
+  - owasp.org
+  - paloaltonetworks.com
+  - purplesec.us
+  - rapid7.com
+  - redcanary.com
+  - schneier.com
+  - securityweek.com
+  - snyk.io
+  - talosintelligence.com
+  - tenable.com
+  - thehackernews.com
+  - threatpost.com
+  - usenix.org
+  - virusbulletin.com
+  - wired.com
+mailing_lists_notes:
+  - "full-disclosure (e.g., archives on seclists or similar)"
+  - "bugtraq (historical archives)"
+  - "dailydave"
+rules:
+  prefer_recent_days: 365
+  max_citations_per_post: 2

@@ -1,0 +1,47 @@
+{
+  "quote": {
+    "topic": "vendor_risk",
+    "quote": "\"Trust is a control to be verified, not assumed.\"",
+    "author": "Security leader",
+    "source": "Ardent notes",
+    "year": "2025"
+  },
+  "stat": {
+    "metric": "avg_breach_cost",
+    "value": "4.4",
+    "unit": "USD_M",
+    "source": "IBM Cost of a Data Breach",
+    "date": "2025-07-01"
+  },
+  "hashtags": [
+    "#CyberSecurity",
+    "#PenetrationTesting",
+    "#IncidentResponse",
+    "#Compliance",
+    "#SecurityTraining"
+  ],
+  "image_brief": {
+    "format": "1080x1080",
+    "palette": "Ardent navy/gold/cyan",
+    "persona": "ardent",
+    "topic": "identity",
+    "slides": [
+      {
+        "title": "Hook",
+        "guidance": "12\u201315 words; bold, high contrast; no cropped text."
+      },
+      {
+        "title": "Pain Beneath Pain",
+        "guidance": "1\u20132 short sentences translating risk to business impact."
+      },
+      {
+        "title": "Do Now / Next / Never",
+        "guidance": "3 concise bullets; readable at a glance."
+      },
+      {
+        "title": "Quote + CTA",
+        "guidance": "Short, credible quote + safe CTA aligned to persona."
+      }
+    ]
+  }
+}

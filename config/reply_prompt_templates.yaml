@@ -1,0 +1,10 @@
+templates:
+  invite:
+    - "Great point, {name}. Curious—have you seen {micro_play} change outcomes?"
+    - "Appreciate the perspective, {name}. If you had to pick one control to harden first, which is it?"
+  probe:
+    - "Agree on direction—what tripped up your last rollout: identity, endpoints, or SaaS trust?"
+    - "Interesting—what did you measure to show progress to the board?"
+  handoff:
+    - "If useful, I can DM the 1-pager we give exec teams. Want it?"
+    - "We built a short checklist for this—happy to share via DM."

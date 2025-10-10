@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mnt/data/linkedinae_dual_persona/src/app/cli.py", line 69, in <module>
+    main()
+  File "/mnt/data/linkedinae_dual_persona/src/app/cli.py", line 55, in main
+    validate_post(payload)
+  File "/mnt/data/linkedinae_dual_persona/src/app/validators.py", line 13, in validate_post
+    raise ValueError("Forbidden character detected (em dash).")
+ValueError: Forbidden character detected (em dash).

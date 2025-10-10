@@ -1,0 +1,7 @@
+emoji_max: 3
+bullet_char: "🔹"
+hashtag_min: 3
+hashtag_max: 5
+strip_links_in_body: true
+append_sources_block: true
+allow_em_dash: false

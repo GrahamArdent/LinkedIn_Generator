@@ -1,0 +1,16 @@
+pillars:
+  - id: exec_pov_explainer
+    persona: graham_thought_leadership
+    service_map: []
+  - id: field_story_lesson
+    persona: graham_thought_leadership
+    service_map: []
+  - id: trend_decode
+    persona: graham_thought_leadership
+    service_map: ["adversarial_simulation", "vulnerability_assessment"]
+  - id: checklist_drop
+    persona: ardent_sales
+    service_map: ["training", "compliance"]
+  - id: vendor_risk_teardown
+    persona: ardent_sales
+    service_map: ["penetration_testing", "vulnerability_assessment", "compliance"]

@@ -1,0 +1,28 @@
+skeleton:
+  sections:
+    - hook
+    - exec_pov
+    - proof_point
+    - micro_plays
+    - quote
+    - cta
+    - hashtags
+
+qa_checklist:
+  - "Clarity: Is the post goal explicit (educate, provoke, invite)?"
+  - "Context: Does it translate tech risk to business impact?"
+  - "Structure: Hook → POV → Proof → Plays → Quote → CTA."
+  - "Constraints: 140–220 words, no em dashes, 3–5 hashtags."
+  - "Credibility: Proof-point cites a reputable source."
+  - "Safety: No client identifiers, no guarantees."
+  - "Humanization: Vary sentence length; avoid clichés."
+  - "CTA Safety: No self-incriminating asks."
+
+section_templates:
+  hook: "Write a 12–20 word contrarian or stat-led opener that tees up executive risk."
+  exec_pov: "In 2–3 sentences, surface the business pain beneath the technical issue for CEO/CFO/COO/CISO/Legal."
+  proof_point: "Insert one recent data point (short sentence) with citation label."
+  micro_plays: "Provide three bullets: Do now / Do next / Never."
+  quote: "Add one short, verifiable quote with attribution (name, org)."
+  cta: "Choose a persona-allowed CTA that offers value without revealing flaws."
+  hashtags: "Add 3–5 hashtags from the persona’s hashtag set."

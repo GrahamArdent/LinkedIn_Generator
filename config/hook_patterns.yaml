@@ -1,0 +1,11 @@
+patterns:
+  - type: executive_reframe
+    template: "The risk isn’t {common_focus}; it’s the downstream {exec_consequence}."
+  - type: credible_stat
+    template: "{stat_value} {stat_metric}. Source: {stat_source}."
+  - type: micro_story
+    template: "Last week a {role} asked a quiet question. The answer changed our roadmap."
+  - type: bad_to_better
+    template: "If you still {old_habit}, switch to {new_habit} this quarter."
+  - type: question_tension
+    template: "What breaks first: identity, endpoints, or SaaS trust?"

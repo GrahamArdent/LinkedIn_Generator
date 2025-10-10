@@ -1,0 +1,2 @@
+allow: ["#Cybersecurity","#AdversarialSimulation","#BoardRisk","#CISO","#Identity"]
+deny: ["#AIguru","#ClickHere"]
