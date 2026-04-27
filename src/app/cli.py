@@ -1,29 +1,32 @@
 from __future__ import annotations
-from datetime import date
-from pathlib import Path
+
 import argparse
 import os
+from datetime import date
+from pathlib import Path
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
-from .scheduler import load_schedule, resolve_persona_for_date
-from .prompt_builder import build_prompt_blocks
-from .research import pick_quote, pick_stat
-from .composer import compose_post, build_carousel_from_text
-from .validators import validate_post, enforce_no_links_in_body
-from .renderer import render_to_files
-from .citations import load_citations, pick_citations, load_whitelist, filter_to_whitelist
-from .topics_loader import load_topics, select_topic_for
-from .persona_logic import enrich_with_persona_rules
-from .image_brief import make_carousel_brief
-from .generation import generate_post_via_llm, to_text
 from . import logger
+from .citations import filter_to_whitelist, load_citations, load_whitelist, pick_citations
+from .composer import build_carousel_from_text, compose_post
+from .generation import generate_post_via_llm, to_text
+from .image_brief import make_carousel_brief
+from .persona_logic import enrich_with_persona_rules
+from .prompt_builder import build_prompt_blocks
+from .renderer import render_to_files
+from .research import pick_quote, pick_stat
+from .scheduler import load_schedule, resolve_persona_for_date
+from .topics_loader import load_topics, select_topic_for
+from .validators import enforce_no_links_in_body
 
 BASE = Path(__file__).resolve().parents[2]
 CONFIG = BASE / "config"
 DATA = BASE / "data"
 OUT = BASE / "out"
+
 
 def _load_topics_local_then_env() -> tuple[list[dict], list[dict]]:
     g1 = DATA / "Graham_120Day_Final.csv"
@@ -38,6 +41,7 @@ def _load_topics_local_then_env() -> tuple[list[dict], list[dict]]:
         topics_ardent = load_topics(Path(a_env))
     return topics_graham, topics_ardent
 
+
 def _allowed_source_titles(cites: list[dict]) -> list[str]:
     titles = []
     for c in cites:
@@ -45,6 +49,7 @@ def _allowed_source_titles(cites: list[dict]) -> list[str]:
         if t:
             titles.append(t)
     return titles[:5]
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Dual-persona LinkedIn post generator")
@@ -89,7 +94,9 @@ def main() -> None:
         ctx = {
             "persona_key": persona_key,
             "objective": "Educate (Graham) or convert (Ardent) depending on persona.",
-            "topic": payload["metadata"].get("selected_topic", payload["metadata"].get("topic_key", "identity")),
+            "topic": payload["metadata"].get(
+                "selected_topic", payload["metadata"].get("topic_key", "identity")
+            ),
             "pillar": payload["metadata"].get("inferred_pillar", "trend_decode"),
             "services": payload["metadata"].get("service_map", []),
             "cta_allow": blocks["personas"][persona_key].get("cta_patterns", []),
@@ -149,6 +156,7 @@ def main() -> None:
         }
         log_path = logger.append_log(OUT, info)
         print(f"Saved: {paths['md']}\nMeta: {paths['meta']}\nLogged: {log_path}")
+
 
 if __name__ == "__main__":
     main()

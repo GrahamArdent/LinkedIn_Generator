@@ -1,8 +1,10 @@
 from __future__ import annotations
-from pathlib import Path
-from typing import List, Dict, Any, Optional
+
 import csv
 import datetime as dt
+from pathlib import Path
+from typing import Any
+
 
 # -------- Robust CSV loader --------
 def _open_csv(path: Path) -> csv.DictReader:
@@ -19,13 +21,12 @@ def _open_csv(path: Path) -> csv.DictReader:
         dialect = csv.excel
     return csv.DictReader(data.splitlines(), dialect=dialect)
 
-def _normalize_headers(row: Dict[str, Any]) -> Dict[str, str]:
-    return {
-        (k or "").strip().lower().replace(" ", "_"): (v or "").strip()
-        for k, v in row.items()
-    }
 
-def _extract_topic(norm: Dict[str, str]) -> Optional[str]:
+def _normalize_headers(row: dict[str, Any]) -> dict[str, str]:
+    return {(k or "").strip().lower().replace(" ", "_"): (v or "").strip() for k, v in row.items()}
+
+
+def _extract_topic(norm: dict[str, str]) -> str | None:
     # Accept several common header names
     for key in ("topic", "title", "post_topic", "theme", "subject", "hook"):
         val = norm.get(key)
@@ -33,7 +34,8 @@ def _extract_topic(norm: Dict[str, str]) -> Optional[str]:
             return val
     return None
 
-def load_topics(path: Optional[Path]) -> List[Dict[str, Any]]:
+
+def load_topics(path: Path | None) -> list[dict[str, Any]]:
     """
     Returns a list of rows like:
       {"topic": "<string>", "raw": {all_normalized_columns}}
@@ -42,7 +44,7 @@ def load_topics(path: Optional[Path]) -> List[Dict[str, Any]]:
     if not path or not Path(path).exists():
         return []
 
-    items: List[Dict[str, Any]] = []
+    items: list[dict[str, Any]] = []
     try:
         reader = _open_csv(Path(path))
         for row in reader:
@@ -55,8 +57,9 @@ def load_topics(path: Optional[Path]) -> List[Dict[str, Any]]:
         return []
     return items
 
+
 # -------- Selection helper used by API --------
-def _parse_date(s: str) -> Optional[dt.date]:
+def _parse_date(s: str) -> dt.date | None:
     s = (s or "").strip()
     if not s:
         return None
@@ -67,12 +70,13 @@ def _parse_date(s: str) -> Optional[dt.date]:
             pass
     return None
 
+
 def select_topic_for(
     target_date: dt.date,
     persona: str,
-    topics_graham: List[Dict[str, Any]],
-    topics_ardent: List[Dict[str, Any]],
-) -> Optional[Dict[str, Any]]:
+    topics_graham: list[dict[str, Any]],
+    topics_ardent: list[dict[str, Any]],
+) -> dict[str, Any] | None:
     """
     Pick a topic either from Graham or Ardent lists by date if available,
     otherwise just return the first available topic for that persona.
@@ -81,7 +85,7 @@ def select_topic_for(
     if not pool:
         return None
 
-    best: Optional[Dict[str, Any]] = None
+    best: dict[str, Any] | None = None
     for item in pool:
         raw = item.get("raw", {})
         # Accept several possible date headers

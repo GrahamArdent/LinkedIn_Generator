@@ -1,15 +1,16 @@
 from __future__ import annotations
+
 from pydantic import BaseModel, Field, validator
-from typing import List
+
 
 class PostJSON(BaseModel):
     hook: str
     exec_pov: str = Field(alias="pov")
     proof_point: str
-    micro_plays: List[str]
+    micro_plays: list[str]
     quote: str
     cta: str
-    hashtags: List[str]
+    hashtags: list[str]
 
     @validator("micro_plays")
     def three_items(cls, v):

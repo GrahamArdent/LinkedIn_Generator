@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 from __future__ import annotations
+
+import argparse
 import sys
 from pathlib import Path
-import argparse
-import pandas as pd
 
 # Bootstrap sys.path so 'ui' imports work regardless of CWD
 BASE = Path(__file__).resolve().parents[1]
@@ -11,6 +11,7 @@ if str(BASE) not in sys.path:
     sys.path.insert(0, str(BASE))
 
 from ui.utils import _read_csv_robust, normalize_calendar  # noqa: E402
+
 
 def resolve_input_path(arg: str) -> Path:
     p = Path(arg)
@@ -31,10 +32,17 @@ def resolve_input_path(arg: str) -> Path:
         return p
     raise FileNotFoundError(f"Could not find input file: {arg}. Tried: {p_csv}, {candidate}")
 
+
 def main():
-    ap = argparse.ArgumentParser(description="Normalize a calendar CSV into canonical columns (date, topic, service, pillar, audience).")
+    ap = argparse.ArgumentParser(
+        description="Normalize a calendar CSV into canonical columns (date, topic, service, pillar, audience)."
+    )
     ap.add_argument("input", help="Path or filename of input CSV (extension optional).")
-    ap.add_argument("-o", "--output", help="Path to write normalized CSV (default: alongside input with prefix 'normalized_')")
+    ap.add_argument(
+        "-o",
+        "--output",
+        help="Path to write normalized CSV (default: alongside input with prefix 'normalized_')",
+    )
     args = ap.parse_args()
 
     inp = resolve_input_path(args.input)
@@ -42,10 +50,13 @@ def main():
     df = _read_csv_robust(inp)
     norm = normalize_calendar(df, inp.name)
     # Ensure stable column order
-    cols = [c for c in ["date","topic","service","pillar","audience"] if c in norm.columns] + [c for c in norm.columns if c not in ["date","topic","service","pillar","audience"]]
+    cols = [c for c in ["date", "topic", "service", "pillar", "audience"] if c in norm.columns] + [
+        c for c in norm.columns if c not in ["date", "topic", "service", "pillar", "audience"]
+    ]
     norm = norm[cols]
     norm.to_csv(out, index=False, encoding="utf-8")
     print(f"Saved: {out}")
+
 
 if __name__ == "__main__":
     main()

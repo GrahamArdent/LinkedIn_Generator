@@ -1,8 +1,11 @@
 from __future__ import annotations
-import streamlit as st
-from typing import List
 
-def sidebar_controls(personas: List[str], schedules: List[str], display_names: dict, invalid: dict | None = None):
+import streamlit as st
+
+
+def sidebar_controls(
+    personas: list[str], schedules: list[str], display_names: dict, invalid: dict | None = None
+):
     st.sidebar.header("Controls")
     persona = st.sidebar.selectbox("Persona", personas, index=0)
 
@@ -14,7 +17,7 @@ def sidebar_controls(personas: List[str], schedules: List[str], display_names: d
         "Schedule",
         range(len(schedules)),
         format_func=lambda i: _fmt(schedules[i]) if i < len(schedules) else "",
-        index=0
+        index=0,
     )
     regenerate = st.sidebar.checkbox("Regenerate variants", value=False)
     run_btn = st.sidebar.button("Generate Post")
@@ -26,4 +29,9 @@ def sidebar_controls(personas: List[str], schedules: List[str], display_names: d
             st.write("Ignored (not calendar-like or missing topic):")
             for fn in invalid.keys():
                 st.write("•", fn)
-    return {"persona": persona, "schedule": schedules[idx] if schedules else "", "regenerate": regenerate, "run": run_btn}
+    return {
+        "persona": persona,
+        "schedule": schedules[idx] if schedules else "",
+        "regenerate": regenerate,
+        "run": run_btn,
+    }

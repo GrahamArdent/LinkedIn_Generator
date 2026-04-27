@@ -1,28 +1,38 @@
-
 from __future__ import annotations
-from typing import Dict, Any, Optional
+
+from typing import Any
 
 DEFAULT_MAPPING = {
-    "identity": {"pillar":"trend_decode","services":["adversarial_simulation","vulnerability_assessment"]},
-    "third_party": {"pillar":"vendor_risk_teardown","services":["penetration_testing","compliance"]},
-    "training": {"pillar":"checklist_drop","services":["training","compliance"]},
+    "identity": {
+        "pillar": "trend_decode",
+        "services": ["adversarial_simulation", "vulnerability_assessment"],
+    },
+    "third_party": {
+        "pillar": "vendor_risk_teardown",
+        "services": ["penetration_testing", "compliance"],
+    },
+    "training": {"pillar": "checklist_drop", "services": ["training", "compliance"]},
 }
+
 
 def infer_topic_key(topic: str) -> str:
     t = (topic or "").lower()
-    if any(k in t for k in ["identity","oauth","okta","sso","mfa"]):
+    if any(k in t for k in ["identity", "oauth", "okta", "sso", "mfa"]):
         return "identity"
-    if any(k in t for k in ["vendor","third party","supply chain","saas"]):
+    if any(k in t for k in ["vendor", "third party", "supply chain", "saas"]):
         return "third_party"
-    if any(k in t for k in ["training","awareness","phish","vishing","deepfake"]):
+    if any(k in t for k in ["training", "awareness", "phish", "vishing", "deepfake"]):
         return "training"
     return "identity"
 
-def enrich_with_persona_rules(payload: Dict[str, Any], persona_key: str, topic: str) -> Dict[str, Any]:
+
+def enrich_with_persona_rules(
+    payload: dict[str, Any], persona_key: str, topic: str
+) -> dict[str, Any]:
     key = infer_topic_key(topic)
     mapping = DEFAULT_MAPPING.get(key, DEFAULT_MAPPING["identity"])
     # attach lightweight metadata to steer design/CTA down the line
-    payload.setdefault("metadata",{})
+    payload.setdefault("metadata", {})
     payload["metadata"]["inferred_pillar"] = mapping["pillar"]
     payload["metadata"]["service_map"] = mapping["services"]
     payload["metadata"]["topic_key"] = key

@@ -1,7 +1,8 @@
-
 from __future__ import annotations
+
 from pathlib import Path
-from typing import Dict, Any
+from typing import Any
+
 import yaml
 
 DEFAULT_SECTIONS = [
@@ -14,6 +15,7 @@ DEFAULT_SECTIONS = [
     "hashtags",
 ]
 
+
 def _load_yaml(path: Path) -> dict:
     if not path.exists():
         return {}
@@ -23,7 +25,8 @@ def _load_yaml(path: Path) -> dict:
         raise ValueError(f"{path.name} must contain a YAML mapping/object.")
     return data
 
-def build_prompt_blocks(config_dir: Path) -> Dict[str, Any]:
+
+def build_prompt_blocks(config_dir: Path) -> dict[str, Any]:
     """
     Returns a dict shaped like:
     {
@@ -46,14 +49,18 @@ def build_prompt_blocks(config_dir: Path) -> Dict[str, Any]:
 
     # Basic validation
     if not personas:
-        raise KeyError("No personas found. Expected config/personas.yaml with keys under 'personas'.")
+        raise KeyError(
+            "No personas found. Expected config/personas.yaml with keys under 'personas'."
+        )
     for key, p in personas.items():
         if "hashtag_set" not in p:
             raise KeyError(f"Persona '{key}' missing 'hashtag_set'.")
         if p["hashtag_set"] not in hashtags:
-            raise KeyError(f"Persona '{key}' references unknown hashtag_set '{p['hashtag_set']}'. Add it to config/hashtags.yaml.")
+            raise KeyError(
+                f"Persona '{key}' references unknown hashtag_set '{p['hashtag_set']}'. Add it to config/hashtags.yaml."
+            )
 
-    blocks: Dict[str, Any] = {
+    blocks: dict[str, Any] = {
         "personas": personas,
         "hashtags": hashtags,
         "prompts": {

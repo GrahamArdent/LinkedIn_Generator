@@ -1,9 +1,10 @@
 # Streamlit UI — Topic picker, carousel editor, clipboard/download
 from __future__ import annotations
+
+import datetime as dt
 import os
 import sys
 from pathlib import Path
-import datetime as dt
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
@@ -12,6 +13,7 @@ sys.path.append(str(SRC))
 # Load .env so OPENAI_API_KEY (and friends) are available to the LLM path
 try:
     from dotenv import load_dotenv  # pip install python-dotenv (already in your venv)
+
     load_dotenv(dotenv_path=ROOT / ".env")
 except Exception:
     # Non-fatal; the non-LLM path still works if .env is missing
@@ -19,10 +21,11 @@ except Exception:
 
 import streamlit as st
 from streamlit.components.v1 import html
-from app.api import generate_post
-from app.scheduler import load_schedule, resolve_persona_for_date
-from app.renderer import render_to_files
+
 from app import logger
+from app.api import generate_post
+from app.renderer import render_to_files
+from app.scheduler import load_schedule, resolve_persona_for_date
 from app.topics_loader import load_topics
 
 st.set_page_config(page_title="LinkedIn Generator", layout="wide")
@@ -88,7 +91,9 @@ date_val = st.date_input("Date", value=today)
 # Persona auto-resolves from schedule, but allow override
 sched = load_schedule(ROOT / "config" / "schedule.yaml")
 auto_persona = resolve_persona_for_date(sched, date_val) or "graham"
-persona = st.selectbox("Persona", options=["graham", "ardent"], index=0 if auto_persona == "graham" else 1)
+persona = st.selectbox(
+    "Persona", options=["graham", "ardent"], index=0 if auto_persona == "graham" else 1
+)
 
 ptype = st.radio("Post type", options=["text", "doc_carousel"], horizontal=True)
 use_llm = st.checkbox("Use LLM rewrite", value=False, help="Requires OPENAI_API_KEY in .env")
@@ -153,7 +158,9 @@ if "payload" in st.session_state:
 
         st.subheader("Citations")
         for c in payload["citations"]:
-            st.write(f"- {c.get('title')} ({c.get('publisher')}, {c.get('pub_date')}) — {c.get('url')}")
+            st.write(
+                f"- {c.get('title')} ({c.get('publisher')}, {c.get('pub_date')}) — {c.get('url')}"
+            )
 
     with col2:
         st.subheader("Meta")

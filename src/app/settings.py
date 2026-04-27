@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 from pydantic import BaseSettings, Field
+
 
 class Settings(BaseSettings):
     openai_api_key: str | None = Field(default=None, env="OPENAI_API_KEY")
@@ -10,5 +12,6 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+
 
 settings = Settings()

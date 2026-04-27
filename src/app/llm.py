@@ -1,14 +1,17 @@
 from __future__ import annotations
-from typing import Any, Dict, Optional
-import json, os
+
+import json
+import os
+from typing import Any
+
 
 class LLMClient:
-    def __init__(self, model:str|None=None, temperature:float=0.5, seed:int|None=None):
+    def __init__(self, model: str | None = None, temperature: float = 0.5, seed: int | None = None):
         self.model = model or os.getenv("MODEL_NAME", "gpt-4.1-mini")
         self.temperature = temperature
         self.seed = seed
 
-    def call(self, system:str, user:str, response_json:bool=True) -> Dict[str, Any] | str:
+    def call(self, system: str, user: str, response_json: bool = True) -> dict[str, Any] | str:
         # Wire your provider here; stub JSON for offline tests.
         content = json.dumps({"text": "LLM output would go here."})
         if response_json:

@@ -1,7 +1,9 @@
 from __future__ import annotations
-from typing import Dict, Any
 
-def make_carousel_brief(payload: Dict[str, Any]) -> Dict[str, Any]:
+from typing import Any
+
+
+def make_carousel_brief(payload: dict[str, Any]) -> dict[str, Any]:
     persona = payload.get("persona")
     tone = "executive, calm, precise" if persona == "graham" else "practical, action-forward"
     return {

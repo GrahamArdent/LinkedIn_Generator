@@ -1,15 +1,17 @@
 from __future__ import annotations
-from pathlib import Path
-from typing import Dict, Any
-import json
 
-def render_to_files(payload: Dict[str, Any], out_dir: Path, basename: str) -> Dict[str, Path]:
+import json
+from pathlib import Path
+from typing import Any
+
+
+def render_to_files(payload: dict[str, Any], out_dir: Path, basename: str) -> dict[str, Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
     md_path = out_dir / f"{basename}.md"
     meta_path = out_dir / f"{basename}.meta.json"
 
-    body = payload.get("body","")
-    first_comment = payload.get("first_comment","")
+    body = payload.get("body", "")
+    first_comment = payload.get("first_comment", "")
     reply_prompts = payload.get("reply_prompts", {})
 
     md = []

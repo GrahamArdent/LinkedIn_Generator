@@ -1,9 +1,11 @@
 from __future__ import annotations
-import pandas as pd
-from pathlib import Path
-from typing import List, Dict, Any, Tuple
+
 import json
 import re
+from pathlib import Path
+from typing import Any
+
+import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 CONFIG_DIR = Path(__file__).resolve().parents[1] / "config"
@@ -11,22 +13,43 @@ REGISTRY = CONFIG_DIR / "calendar_registry.json"
 RULES_YAML = CONFIG_DIR / "normalization_rules.yaml"
 
 REQUIRED_ALWAYS = {"topic"}
-CALENDAR_HINTS = {"service","pillar","audience","date"}
+CALENDAR_HINTS = {"service", "pillar", "audience", "date"}
 FORCE_INCLUDE_FILE_HINTS = ["schedule", "calendar", "linkedin", "ardent", "20week", "graham"]
 
 SYNONYMS = {
-    "topic": ["topic","topics","title","subject","post","theme","headline","hook theme","hook","content theme"],
-    "service": [
-        "service","services","offering","offerings","product","practice",
-        "service tie-in","service tie in","service tie","service mapping",
-        "ardent service tie-in","ardent service tie in"
+    "topic": [
+        "topic",
+        "topics",
+        "title",
+        "subject",
+        "post",
+        "theme",
+        "headline",
+        "hook theme",
+        "hook",
+        "content theme",
     ],
-    "pillar": ["pillar","content pillar","content_pillar"],
-    "audience": ["audience","target","persona","buyer","industry focus","industry"],
-    "date": ["date","day","publish date","post date"]
+    "service": [
+        "service",
+        "services",
+        "offering",
+        "offerings",
+        "product",
+        "practice",
+        "service tie-in",
+        "service tie in",
+        "service tie",
+        "service mapping",
+        "ardent service tie-in",
+        "ardent service tie in",
+    ],
+    "pillar": ["pillar", "content pillar", "content_pillar"],
+    "audience": ["audience", "target", "persona", "buyer", "industry focus", "industry"],
+    "date": ["date", "day", "publish date", "post date"],
 }
 
-CANON_ORDER = ["date","topic","service","pillar","audience"]
+CANON_ORDER = ["date", "topic", "service", "pillar", "audience"]
+
 
 def _read_csv_robust(path: Path, nrows: int | None = None) -> pd.DataFrame:
     for enc in ("utf-8", "utf-8-sig", "latin-1"):
@@ -37,31 +60,38 @@ def _read_csv_robust(path: Path, nrows: int | None = None) -> pd.DataFrame:
                 continue
     return pd.read_csv(path, nrows=nrows)
 
-def _load_yaml(path: Path) -> Dict[str, Any]:
+
+def _load_yaml(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
     try:
         import yaml  # type: ignore
+
         return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     except Exception:
         return {}
 
-def _dump_yaml(path: Path, data: Dict[str, Any]) -> None:
+
+def _dump_yaml(path: Path, data: dict[str, Any]) -> None:
     try:
         import yaml  # type: ignore
+
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(yaml.safe_dump(data, sort_keys=False), encoding="utf-8")
     except Exception:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(data, indent=2), encoding="utf-8")
 
-def load_normalization_rules() -> Dict[str, Any]:
+
+def load_normalization_rules() -> dict[str, Any]:
     return _load_yaml(RULES_YAML)
 
-def save_normalization_rules(rules: Dict[str, Any]) -> None:
+
+def save_normalization_rules(rules: dict[str, Any]) -> None:
     _dump_yaml(RULES_YAML, rules)
 
-def _canonical_name(name: str, extra_synonyms: Dict[str, List[str]] | None = None) -> str:
+
+def _canonical_name(name: str, extra_synonyms: dict[str, list[str]] | None = None) -> str:
     low = name.lower().strip()
     low = re.sub(r"\s+", " ", low)
     syn = dict(SYNONYMS)
@@ -77,7 +107,8 @@ def _canonical_name(name: str, extra_synonyms: Dict[str, List[str]] | None = Non
                 return canon
     return low
 
-def _coalesce(df: pd.DataFrame, cols: List[str], new_name: str) -> pd.DataFrame:
+
+def _coalesce(df: pd.DataFrame, cols: list[str], new_name: str) -> pd.DataFrame:
     if not cols:
         return df
     series = None
@@ -91,12 +122,15 @@ def _coalesce(df: pd.DataFrame, cols: List[str], new_name: str) -> pd.DataFrame:
     df[new_name] = series
     return df
 
-def _normalize_columns(df: pd.DataFrame, file_name: str, rules: Dict[str, Any]) -> Tuple[pd.DataFrame, Dict[str,str]]:
+
+def _normalize_columns(
+    df: pd.DataFrame, file_name: str, rules: dict[str, Any]
+) -> tuple[pd.DataFrame, dict[str, str]]:
     extra_synonyms = rules.get("global_synonyms", {})
     file_overrides = rules.get("files", {}).get(file_name, {})
     col_aliases = file_overrides.get("column_aliases", {})  # exact column -> canonical name
 
-    mapping: Dict[str,str] = {}
+    mapping: dict[str, str] = {}
     for c in df.columns:
         canon = _canonical_name(str(c), extra_synonyms)
         mapping[c] = canon
@@ -107,17 +141,18 @@ def _normalize_columns(df: pd.DataFrame, file_name: str, rules: Dict[str, Any]) 
             if str(real).strip().lower() == str(orig).strip().lower():
                 mapping[real] = target.strip().lower()
 
-    expose: Dict[str, str] = {}
+    expose: dict[str, str] = {}
     for c, canon in mapping.items():
-        if canon in {"date","topic","pillar","service","audience"}:
+        if canon in {"date", "topic", "pillar", "service", "audience"}:
             expose[c] = canon
 
     # Backup loose prefix
-    for want in ["date","pillar","audience"]:
+    for want in ["date", "pillar", "audience"]:
         if want not in expose.values():
             for c in df.columns:
                 if str(c).strip().lower().startswith(want):
-                    expose[c] = want; break
+                    expose[c] = want
+                    break
 
     df2 = df.rename(columns=expose)
 
@@ -136,19 +171,24 @@ def _normalize_columns(df: pd.DataFrame, file_name: str, rules: Dict[str, Any]) 
     if "service" not in df2.columns:
         for c in df.columns:
             lc = str(c).lower()
-            if "service" in lc and ("tie" in lc or "offering" in lc or "practice" in lc or "product" in lc):
+            if "service" in lc and (
+                "tie" in lc or "offering" in lc or "practice" in lc or "product" in lc
+            ):
                 df2["service"] = df[c]
                 break
 
     return df2, expose
 
+
 def _best_topic(raw: pd.DataFrame, normalized: pd.DataFrame) -> pd.Series | None:
     candidates = []
+
     def score(s: pd.Series) -> int:
         try:
             return int((s.astype(str).str.strip() != "").sum())
         except Exception:
             return 0
+
     # normalized
     if "topic" in normalized.columns:
         candidates.append(("normalized.topic", normalized["topic"], score(normalized["topic"])))
@@ -168,6 +208,7 @@ def _best_topic(raw: pd.DataFrame, normalized: pd.DataFrame) -> pd.Series | None
     except Exception:
         pass
     return s
+
 
 def normalize_calendar(df: pd.DataFrame, file_name: str) -> pd.DataFrame:
     rules = load_normalization_rules()
@@ -209,7 +250,7 @@ def normalize_calendar(df: pd.DataFrame, file_name: str) -> pd.DataFrame:
     # Dedup
     try:
         if "date" in df2.columns:
-            df2 = df2.drop_duplicates(subset=["date","topic"], keep="first")
+            df2 = df2.drop_duplicates(subset=["date", "topic"], keep="first")
         else:
             df2 = df2.drop_duplicates(subset=["topic"], keep="first")
     except Exception:
@@ -217,7 +258,8 @@ def normalize_calendar(df: pd.DataFrame, file_name: str) -> pd.DataFrame:
 
     return df2.reset_index(drop=True)
 
-def _read_registry() -> Dict[str,str]:
+
+def _read_registry() -> dict[str, str]:
     if REGISTRY.exists():
         try:
             return json.loads(REGISTRY.read_text(encoding="utf-8"))
@@ -225,29 +267,35 @@ def _read_registry() -> Dict[str,str]:
             return {}
     return {}
 
-def _write_registry(m: Dict[str,str]) -> None:
+
+def _write_registry(m: dict[str, str]) -> None:
     REGISTRY.parent.mkdir(parents=True, exist_ok=True)
     REGISTRY.write_text(json.dumps(m, indent=2), encoding="utf-8")
 
-def get_registry() -> Dict[str,str]:
+
+def get_registry() -> dict[str, str]:
     return _read_registry()
+
 
 def upsert_registry(file_name: str, display_name: str) -> None:
     reg = _read_registry()
     reg[file_name] = display_name
     _write_registry(reg)
 
+
 def display_name_for(file_name: str) -> str:
     reg = _read_registry()
     return reg.get(file_name, file_name)
 
-def list_personas(personas_yaml: Dict[str, Any]) -> List[str]:
+
+def list_personas(personas_yaml: dict[str, Any]) -> list[str]:
     personas = personas_yaml.get("personas", {}) if isinstance(personas_yaml, dict) else {}
     return list(personas.keys()) or ["ardent_v2"]
 
-def discover_with_reasons() -> Tuple[List[str], Dict[str,str]]:
-    valid: List[str] = []
-    invalid: Dict[str,str] = {}
+
+def discover_with_reasons() -> tuple[list[str], dict[str, str]]:
+    valid: list[str] = []
+    invalid: dict[str, str] = {}
     for p in DATA_DIR.glob("*.csv"):
         try:
             raw = _read_csv_robust(p, nrows=None)
@@ -266,19 +314,25 @@ def discover_with_reasons() -> Tuple[List[str], Dict[str,str]]:
             invalid[p.name] = f"Error reading/normalizing: {e}"
     return sorted(sorted(set(valid))), invalid
 
-def discover_calendars() -> List[str]:
+
+def discover_calendars() -> list[str]:
     valid, _ = discover_with_reasons()
     return valid
 
-def df_to_markdown_row(row: Dict[str, Any]) -> str:
-    date = str(row.get('date','')).split(' ')[0] if row.get('date') else ''
-    weekday = ''
+
+def df_to_markdown_row(row: dict[str, Any]) -> str:
+    date = str(row.get("date", "")).split(" ")[0] if row.get("date") else ""
+    weekday = ""
     try:
         if date:
-            weekday = pd.to_datetime(date, errors='coerce').day_name()
+            weekday = pd.to_datetime(date, errors="coerce").day_name()
     except Exception:
-        weekday = ''
+        weekday = ""
     date_disp = f"{date} ({weekday})" if date and weekday else date
-    line1 = f"**{date_disp} — {row.get('topic','')}**" if date_disp else f"**{row.get('topic','')}**"
-    meta = " • ".join([x for x in [row.get('pillar',''), row.get('service',''), row.get('audience','')] if x])
+    line1 = (
+        f"**{date_disp} — {row.get('topic','')}**" if date_disp else f"**{row.get('topic','')}**"
+    )
+    meta = " • ".join(
+        [x for x in [row.get("pillar", ""), row.get("service", ""), row.get("audience", "")] if x]
+    )
     return f"{line1}\n{meta}"

@@ -1,9 +1,10 @@
 from __future__ import annotations
-from pathlib import Path
-from typing import Dict, List, Optional
+
 import re
-import yaml
 from collections import Counter
+from pathlib import Path
+
+import yaml
 
 WORD_RE = re.compile(r"[A-Za-z][A-Za-z0-9\-]+")
 
@@ -18,10 +19,49 @@ DEFAULT_POLICY = {
 }
 
 STOPWORDS = {
-    "the","a","an","and","or","but","of","for","with","on","in","to","from","by",
-    "is","are","was","were","be","been","it","this","that","as","at","into","about",
-    "we","you","our","their","they","i","me","my","your","yours","us","them","he","she",
+    "the",
+    "a",
+    "an",
+    "and",
+    "or",
+    "but",
+    "of",
+    "for",
+    "with",
+    "on",
+    "in",
+    "to",
+    "from",
+    "by",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "been",
+    "it",
+    "this",
+    "that",
+    "as",
+    "at",
+    "into",
+    "about",
+    "we",
+    "you",
+    "our",
+    "their",
+    "they",
+    "i",
+    "me",
+    "my",
+    "your",
+    "yours",
+    "us",
+    "them",
+    "he",
+    "she",
 }
+
 
 def _load_yaml(path: Path) -> dict:
     if not path or not path.exists():
@@ -31,16 +71,18 @@ def _load_yaml(path: Path) -> dict:
     except Exception:
         return {}
 
-def load_policy(config_dir: Path) -> Dict:
+
+def load_policy(config_dir: Path) -> dict:
     policy_path = config_dir / "hashtag_policy.yaml"
     policy = DEFAULT_POLICY.copy()
     policy.update(_load_yaml(policy_path))
     # normalize lists
-    for k in ("core","brand","banlist","trending_priority"):
+    for k in ("core", "brand", "banlist", "trending_priority"):
         policy[k] = list(dict.fromkeys(policy.get(k, [])))  # de-dup preserve order
     return policy
 
-def _camel_hashtag(tokens: List[str]) -> str:
+
+def _camel_hashtag(tokens: list[str]) -> str:
     # join tokens into CamelCase hashtag
     parts = []
     for t in tokens:
@@ -52,26 +94,30 @@ def _camel_hashtag(tokens: List[str]) -> str:
         return ""
     return "#" + "".join(parts)
 
-def _extract_keywords(text: str, top_k: int = 12) -> List[str]:
+
+def _extract_keywords(text: str, top_k: int = 12) -> list[str]:
     words = [w.lower() for w in WORD_RE.findall(text)]
     words = [w for w in words if w not in STOPWORDS and len(w) > 2]
     counts = Counter(words)
     return [w for w, _ in counts.most_common(top_k)]
 
-def _unique_keep_order(items: List[str]) -> List[str]:
+
+def _unique_keep_order(items: list[str]) -> list[str]:
     seen = set()
     out = []
     for x in items:
         if x not in seen:
-            out.append(x); seen.add(x)
+            out.append(x)
+            seen.add(x)
     return out
+
 
 def generate_hashtags(
     body_text: str,
     persona: str,
-    topic: Optional[str],
+    topic: str | None,
     config_dir: Path,
-) -> List[str]:
+) -> list[str]:
     """
     Heuristic, post-aware hashtag generator tuned for LinkedIn:
       - 3–5 tags
@@ -85,19 +131,19 @@ def generate_hashtags(
     max_n = int(policy.get("max_per_post", 5))
     core = list(policy.get("core") or [])
     brand = list(policy.get("brand") or [])
-    ban = set((policy.get("banlist") or []))
+    ban = set(policy.get("banlist") or [])
     kmap = {str(k).lower(): v for k, v in (policy.get("keyword_map") or {}).items()}
     trending = list(policy.get("trending_priority") or [])
 
     # keywords from body + topic
     kw = _extract_keywords((topic or "") + " " + (body_text or ""))
-    topical: List[str] = []
+    topical: list[str] = []
     for w in kw:
         if w in kmap:
             topical.append(kmap[w])
         else:
             # build a neat tag from single word (fallback), skip very generic
-            if w in ("security","cybersecurity","technology","company","people"):
+            if w in ("security", "cybersecurity", "technology", "company", "people"):
                 continue
             tag = _camel_hashtag([w])
             if len(tag) > 2:
@@ -109,7 +155,7 @@ def generate_hashtags(
     topical = _unique_keep_order([t for t in trending if t in topical] + topical)
 
     # seed list
-    chosen: List[str] = []
+    chosen: list[str] = []
     if core:
         chosen.append(core[0])  # keep one core anchor
     if persona == "ardent" and brand:
@@ -128,7 +174,7 @@ def generate_hashtags(
     # enforce bounds
     if len(chosen) < min_n:
         # backfill from remaining cores/trending
-        pool = _unique_keep_order((core + trending + topical))
+        pool = _unique_keep_order(core + trending + topical)
         for t in pool:
             if len(chosen) >= min_n:
                 break
@@ -137,7 +183,8 @@ def generate_hashtags(
 
     return chosen[:max_n]
 
-def ensure_hashtags_in_body(body: str, tags: List[str]) -> str:
+
+def ensure_hashtags_in_body(body: str, tags: list[str]) -> str:
     """
     Remove any trailing hashtag block and append our fresh set as the final line.
     """

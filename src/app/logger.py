@@ -1,19 +1,29 @@
 from __future__ import annotations
-from typing import Dict, Any, List
-from pathlib import Path
+
 import csv
+from pathlib import Path
+from typing import Any
 from urllib.parse import urlparse
 
 LOG_HEADERS = [
-    "date","persona","post_type","words","hashtags","source_domains",
-    "md_path","meta_path"
+    "date",
+    "persona",
+    "post_type",
+    "words",
+    "hashtags",
+    "source_domains",
+    "md_path",
+    "meta_path",
 ]
+
 
 def _word_count(text: str) -> int:
     import re
+
     return len(re.findall(r"\b\w+\b", text))
 
-def _domains(citations: List[Dict[str, str]]) -> str:
+
+def _domains(citations: list[dict[str, str]]) -> str:
     doms = []
     for c in citations or []:
         u = (c.get("url") or "").strip()
@@ -33,7 +43,8 @@ def _domains(citations: List[Dict[str, str]]) -> str:
             out.append(d)
     return ";".join(out)
 
-def append_log(out_dir: Path, info: Dict[str, Any]) -> Path:
+
+def append_log(out_dir: Path, info: dict[str, Any]) -> Path:
     """
     info needs: date, persona, post_type, body, hashtags(list), citations(list), paths(dict)
     """
@@ -46,8 +57,8 @@ def append_log(out_dir: Path, info: Dict[str, Any]) -> Path:
         "words": _word_count(info.get("body") or ""),
         "hashtags": len(info.get("hashtags") or []),
         "source_domains": _domains(info.get("citations") or []),
-        "md_path": str(info.get("paths",{}).get("md","")),
-        "meta_path": str(info.get("paths",{}).get("meta","")),
+        "md_path": str(info.get("paths", {}).get("md", "")),
+        "meta_path": str(info.get("paths", {}).get("meta", "")),
     }
     write_header = not log_path.exists()
     with log_path.open("a", encoding="utf-8", newline="") as f:
