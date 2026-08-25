@@ -81,8 +81,8 @@ def run_generation(
     }
     drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
-    crit = pipe.critic(prompts.get("critic_prompt", {}), best)
-    hum = pipe.humanize(prompts.get("humanize_prompt", {}), crit)
+    crit = pipe.critic(prompts.get("critic_prompt", {}), best, persona_profile)
+    hum = pipe.humanize(prompts.get("humanize_prompt", {}), crit, persona_profile)
 
     citations = [
         str(item.get("url", ""))
