@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from src.app.contracts import LinkedInContentRequest, SourceEvidence
+from src.app.contracts import LinkedInContentRequest, SourceEvidence, VoiceExample
 from src.app.integration import generate_content
 
 
@@ -39,6 +39,13 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
                 url="https://example.com/evidence",
             )
         ],
+        voice_examples=[
+            VoiceExample(
+                example_id="published-1",
+                provenance="published",
+                text="The useful part is rarely the flashy part.\n\nReliability is what people remember.",
+            )
+        ],
         hashtags=["#AI"],
     )
 
@@ -56,6 +63,14 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
                 "title": "Buyer conversation note",
                 "fact": "The buyer cared more about workflow reliability than model novelty.",
                 "url": "https://example.com/evidence",
+            }
+        ],
+        "voice_examples": [
+            {
+                "example_id": "published-1",
+                "provenance": "published",
+                "text": "The useful part is rarely the flashy part.\n\nReliability is what people remember.",
+                "source_ref": None,
             }
         ],
         "hashtags": ["#AI"],
@@ -79,6 +94,7 @@ def test_dedication_request_does_not_inherit_legacy_security_hashtags():
     )
 
     assert captured["hashtags"] == []
+    assert captured["voice_examples"] == []
     assert "schedule" not in LinkedInContentRequest.model_fields
     assert "scheduled_at" not in LinkedInContentRequest.model_fields
     assert "priority" not in LinkedInContentRequest.model_fields
