@@ -1,43 +1,47 @@
 # LinkedIn_Generator
 
-Minimal Streamlit app + utilities to generate LinkedIn posts from calendar CSVs.  
-This repo includes:
-- Robust CSV **normalization** (maps different headers to `date, topic, service, pillar, audience`)
-- A minimal **Streamlit UI**
-- A CLI **converter** to normalize any CSV
-- GitHub **CI** (ruff, black, pytest) and optional **CodeQL**
-- Pre-commit hooks and Copilot guide
+LinkedIn content-generation engine under active rebuild.
 
-## Quick start
+The target product is **not a Streamlit application**. The repository still contains historical Streamlit prototype files under `ui/` and legacy UI dependency/run artifacts; treat those as migration evidence until they are explicitly retired or a specific behavior is salvaged.
 
-```bash
-# 1) Create and activate a venv (Windows PowerShell)
-python -m venv .venv
-.venv\Scripts\Activate.ps1
+## Product role
 
-# 2) Install
-pip install -r requirements.txt
-pip install -r requirements-dev.txt  # optional (dev tools)
+LinkedIn Generator owns LinkedIn-specific content intelligence, including the evolving generation pipeline, persona/voice behavior, evidence/citation handling, hooks/structure, CTA and hashtag policy, validation, and content outputs.
 
-# 3) Run the app
-streamlit run ui/app.py
-```
+The rebuilt engine is intended to be usable independently for development/testing **and** callable by the Dedication ecosystem.
 
-Drop your calendar CSVs in `data/`. Use the **Manual Column Mapper** in the sidebar if a file is ignored.
+### Dedication boundary
 
-## CLI converter
+Dedication owns generic orchestration concerns such as:
 
-```bash
-python scripts/convert_calendar.py data/your_calendar.csv
-# -> normalized_your_calendar.csv
-```
+- Action selection and prioritization;
+- scheduling and Day orchestration;
+- canonical user/day state;
+- shared permissions and external integration policy;
+- notifications/interventions.
+
+LinkedIn Generator must not create competing versions of those mechanisms. It should accept a bounded LinkedIn content request and return a structured LinkedIn result.
+
+## Current repository evidence
+
+The existing implementation under `src/app/` contains useful but prototype-era behavior for:
+
+- persona-aware generation;
+- planning/drafting/judging passes;
+- research/citations;
+- topic selection and legacy scheduling;
+- CTA/hashtag/house-rule configuration;
+- text and carousel rendering;
+- output logging and validation.
+
+These assets are being assessed individually. Existing code is neither discarded merely because it is old nor preserved merely because it exists.
+
+## PROGRAMSTART / PROGRAMBUILD
+
+PROGRAMSTART is adopted in **Mode C** as methodology only. LinkedIn Generator remains the owner of its product implementation and project-specific authority.
 
 ## Tests
 
 ```bash
 pytest -q
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). For Copilot prompts and conventions see [docs/COPILOT_GUIDE.md](docs/COPILOT_GUIDE.md).

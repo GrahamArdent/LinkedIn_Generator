@@ -1,0 +1,84 @@
+from __future__ import annotations
+
+import pytest
+from pydantic import ValidationError
+
+from src.app.contracts import LinkedInContentRequest, SourceEvidence
+from src.app.integration import generate_content
+
+
+def test_request_requires_non_empty_topic():
+    with pytest.raises(ValidationError):
+        LinkedInContentRequest(topic="")
+
+
+def test_dedication_contract_forwards_linkedin_domain_context_only():
+    captured = {}
+
+    def fake_generator(**kwargs):
+        captured.update(kwargs)
+        return {
+            "body": "A useful post from real work.",
+            "hashtags": ["#AI"],
+            "sources": ["https://example.com/evidence"],
+            "telemetry": {"persona": kwargs["persona_key"]},
+        }
+
+    request = LinkedInContentRequest(
+        request_id="action-123",
+        topic="What a buyer conversation taught us about AI workflow adoption",
+        persona_key="graham",
+        audience="AI founders and operators",
+        objective="turn real professional activity into useful visibility",
+        services=["discovery"],
+        targets=["founders", "operators"],
+        evidence=[
+            SourceEvidence(
+                title="Buyer conversation note",
+                fact="The buyer cared more about workflow reliability than model novelty.",
+                url="https://example.com/evidence",
+            )
+        ],
+        hashtags=["#AI"],
+    )
+
+    result = generate_content(request, generator=fake_generator)
+
+    assert captured == {
+        "topic": request.topic,
+        "services": ["discovery"],
+        "persona_key": "graham",
+        "audience": "AI founders and operators",
+        "objective": "turn real professional activity into useful visibility",
+        "targets": ["founders", "operators"],
+        "allowed_sources": [
+            {
+                "title": "Buyer conversation note",
+                "fact": "The buyer cared more about workflow reliability than model novelty.",
+                "url": "https://example.com/evidence",
+            }
+        ],
+        "hashtags": ["#AI"],
+    }
+    assert result.request_id == "action-123"
+    assert result.origin == "dedication"
+    assert result.body == "A useful post from real work."
+    assert result.sources == ["https://example.com/evidence"]
+
+
+def test_dedication_request_does_not_inherit_legacy_security_hashtags():
+    captured = {}
+
+    def fake_generator(**kwargs):
+        captured.update(kwargs)
+        return {"body": "Draft", "hashtags": [], "sources": [], "telemetry": {}}
+
+    generate_content(
+        LinkedInContentRequest(topic="A lesson from today's professional work"),
+        generator=fake_generator,
+    )
+
+    assert captured["hashtags"] == []
+    assert "schedule" not in LinkedInContentRequest.model_fields
+    assert "scheduled_at" not in LinkedInContentRequest.model_fields
+    assert "priority" not in LinkedInContentRequest.model_fields
