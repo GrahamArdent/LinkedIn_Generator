@@ -1,0 +1,124 @@
+from __future__ import annotations
+
+import re
+from typing import Any
+
+LINK_RE = re.compile(r"https?://\S+")
+EMOJI_RE = re.compile(r"[\U0001F300-\U0001FAFF]")
+EM_DASH = "—"
+CONTRAST_RE = re.compile(
+    r"\b(?:but|instead|rather than|versus|vs\.?|not only|not .{0,40} but)\b",
+    re.IGNORECASE,
+)
+SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+|\n+")
+
+
+def _word_count(text: str) -> int:
+    return len(re.findall(r"\b\w+[\w'-]*\b", text))
+
+
+def _paragraphs(text: str) -> list[str]:
+    return [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+
+
+def _sentences(text: str) -> list[str]:
+    return [s.strip() for s in SENTENCE_SPLIT_RE.split(text) if s.strip()]
+
+
+def evaluate_quality(
+    text: str,
+    persona: dict[str, Any],
+    rules: dict[str, Any],
+) -> dict[str, Any]:
+    """Return an explainable deterministic quality assessment.
+
+    This evaluates observable structure and repository-defined persona/rule
+    signals. It does not claim to prove subjective traits such as whether a
+    draft sounds exactly like a specific person.
+    """
+
+    score = 100
+    issues: list[str] = []
+    signals: dict[str, Any] = {}
+
+    word_count = _word_count(text)
+    signals["word_count"] = word_count
+    if word_count < 40:
+        score -= 8
+        issues.append("Draft is too thin to develop a useful LinkedIn point.")
+    elif word_count > 320:
+        score -= 8
+        issues.append("Draft is longer than the current concise-post guardrail.")
+
+    if LINK_RE.search(text):
+        score -= 20
+        issues.append("Publishable body contains a URL.")
+
+    emoji_count = len(EMOJI_RE.findall(text))
+    emoji_max = int(rules.get("emoji_max", persona.get("emoji_max", 3)))
+    signals["emoji_count"] = emoji_count
+    if emoji_count > emoji_max:
+        penalty = min(15, 5 * (emoji_count - emoji_max))
+        score -= penalty
+        issues.append(f"Emoji count exceeds configured maximum of {emoji_max}.")
+
+    allow_em_dash = bool(rules.get("allow_em_dash", False))
+    if EM_DASH in text and not allow_em_dash:
+        score -= 10
+        issues.append("Draft contains an em dash even though the profile forbids it.")
+
+    paragraphs = _paragraphs(text)
+    sentences = _sentences(text)
+    paragraph_lengths = [_word_count(p) for p in paragraphs]
+    sentence_lengths = [_word_count(s) for s in sentences]
+    signals["paragraph_word_counts"] = paragraph_lengths
+    signals["sentence_word_counts"] = sentence_lengths
+
+    rhythm = {str(item) for item in persona.get("rhythm", [])}
+    wants_compact_rhythm = bool({"short_paragraphs", "tight", "punchy"} & rhythm)
+    if wants_compact_rhythm:
+        long_paragraphs = sum(1 for n in paragraph_lengths if n > 70)
+        if long_paragraphs:
+            score -= min(16, 8 * long_paragraphs)
+            issues.append("One or more paragraphs are too long for the configured compact rhythm.")
+
+        long_sentences = sum(1 for n in sentence_lengths if n > 35)
+        if long_sentences:
+            score -= min(12, 6 * long_sentences)
+            issues.append("One or more sentences are too long for the configured punchy rhythm.")
+
+    devices = {str(item) for item in persona.get("devices", [])}
+    has_question = "?" in text
+    has_contrast = bool(CONTRAST_RE.search(text))
+    signals["has_question"] = has_question
+    signals["has_contrast"] = has_contrast
+
+    if "question" in devices and not has_question:
+        score -= 3
+        issues.append("Configured question device is absent.")
+    if "contrast" in devices and not has_contrast:
+        score -= 3
+        issues.append("Configured contrast device is absent.")
+
+    forbidden_phrases = [
+        str(item).strip().lower()
+        for item in rules.get("forbidden_phrases", [])
+        if str(item).strip()
+    ]
+    matched_forbidden = [phrase for phrase in forbidden_phrases if phrase in text.lower()]
+    signals["matched_forbidden_phrases"] = matched_forbidden
+    if matched_forbidden:
+        score -= min(30, 15 * len(matched_forbidden))
+        issues.append("Draft contains a repository-defined forbidden CTA phrase.")
+
+    unscored_traits: list[str] = []
+    unscored_traits.extend(str(item) for item in persona.get("tone", []))
+    if "clichés" in {str(item) for item in persona.get("donts", [])}:
+        unscored_traits.append("clichés (no repository-native phrase lexicon)")
+    signals["unscored_traits"] = list(dict.fromkeys(unscored_traits))
+
+    return {
+        "score": max(0, min(100, score)),
+        "issues": issues,
+        "signals": signals,
+    }

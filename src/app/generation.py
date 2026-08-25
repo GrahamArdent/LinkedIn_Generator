@@ -7,7 +7,7 @@ from typing import Any
 
 from config.hashtags import ensure_hashtags_in_body, generate_hashtags
 
-from .judge import judge_score
+from .judge import judge_report
 from .llm import LLMClient
 from .models import PostJSON, Telemetry
 from .rag import retrieve
@@ -43,6 +43,7 @@ class Pipeline:
             temperature=float(os.getenv("TEMPERATURE", "0.5")), seed=int(os.getenv("SEED", "42"))
         )
         self.n_variants = int(os.getenv("N_VARIANTS", "4"))
+        self.last_judge_report: dict[str, Any] | None = None
 
     def plan(self, plan_prompt: dict[str, str], ctx: dict[str, Any]) -> dict[str, Any]:
         targets = [str(target) for target in (ctx.get("targets") or []) if str(target).strip()]
@@ -69,11 +70,13 @@ class Pipeline:
         self, judge_prompt: dict[str, str], persona_profile: dict[str, Any], drafts: list[str]
     ) -> str:
         rules = self.cfg["prompt_kit"]
-        best, best_s = None, -1
-        for d in drafts:
-            s = judge_score(d, persona_profile, rules)
-            if s > best_s:
-                best, best_s = d, s
+        best, best_s, best_report = None, -1, None
+        for draft in drafts:
+            report = judge_report(draft, persona_profile, rules)
+            score = int(report["score"])
+            if score > best_s:
+                best, best_s, best_report = draft, score, report
+        self.last_judge_report = best_report
         return best or ""
 
     def critic(self, critic_prompt: dict[str, str], text: str) -> str:
@@ -101,6 +104,14 @@ class Pipeline:
         hashtags = clamp_hashtags(
             hashtags, self.cfg["prompt_kit"]["hashtag_min"], self.cfg["prompt_kit"]["hashtag_max"]
         )
-        telemetry = Telemetry(emoji_count=0, bullet_char=bullet, persona=persona_key)
+        selected_score = None
+        if self.last_judge_report is not None:
+            selected_score = int(self.last_judge_report["score"])
+        telemetry = Telemetry(
+            emoji_count=0,
+            bullet_char=bullet,
+            persona=persona_key,
+            score=selected_score,
+        )
         payload = PostJSON(hashtags=hashtags, body=clean_body, sources=urls, telemetry=telemetry)
         return payload.model_dump()
