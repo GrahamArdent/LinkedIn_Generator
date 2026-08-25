@@ -1,33 +1,13 @@
 from __future__ import annotations
 
-import csv
 import re
 from pathlib import Path
 from typing import Any
 
+from .citations import filter_to_whitelist, load_citations, load_whitelist
+
 DATA_DIR = Path(__file__).resolve().parents[2] / "data"
-
-
-def read_whitelist() -> list[str]:
-    wl = DATA_DIR / "source_whitelist.txt"
-    if wl.exists():
-        return [
-            ln.strip().lower() for ln in wl.read_text(encoding="utf-8").splitlines() if ln.strip()
-        ]
-    return []
-
-
-def load_citations() -> list[dict[str, Any]]:
-    path = DATA_DIR / "citations.csv"
-    rows: list[dict[str, Any]] = []
-    if not path.exists():
-        return rows
-    with open(path, encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            row = {k: (v or "").strip() for k, v in row.items()}
-            row["whitelist"] = str(row.get("whitelist", "")).lower() in ("true", "1", "yes")
-            rows.append(row)
-    return rows
+CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
 
 def lexical_score(s: str, q: str) -> int:
@@ -40,16 +20,29 @@ def lexical_score(s: str, q: str) -> int:
 
 
 def retrieve(topic: str, angle: str, k: int = 3) -> list[dict[str, Any]]:
-    wl = read_whitelist()
-    items = load_citations()
-    scored = []
+    """Return positively relevant citations from approved source domains only.
+
+    Auto-retrieval is evidence assistance, not permission to fill a draft with
+    whatever happens to be available. If the source whitelist is absent, or no
+    approved citation has positive lexical relevance, return no evidence.
+    """
+
+    whitelist = load_whitelist(CONFIG_DIR)
+    if not whitelist:
+        return []
+
+    items = filter_to_whitelist(load_citations(DATA_DIR), whitelist)
     query = f"{topic} {angle}".strip()
-    for it in items:
-        base = f"{it.get('title','')} {it.get('one_liner','')} {it.get('tags','')} {it.get('domain','')}"
-        score = lexical_score(base, query)
-        dom = (it.get("domain", "") or "").lower()
-        if wl and dom and dom not in wl and not it.get("whitelist"):
-            score -= 2
-        scored.append((score, it))
-    scored.sort(key=lambda x: x[0], reverse=True)
-    return [it for sc, it in scored[: max(1, k)] if sc >= 0]
+    scored: list[tuple[int, dict[str, Any]]] = []
+
+    for item in items:
+        searchable = " ".join(
+            str(item.get(key, ""))
+            for key in ("title", "one_liner", "fact", "tags", "domain")
+        )
+        score = lexical_score(searchable, query)
+        if score > 0:
+            scored.append((score, item))
+
+    scored.sort(key=lambda pair: pair[0], reverse=True)
+    return [item for _, item in scored[: max(1, k)]]
