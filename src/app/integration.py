@@ -44,4 +44,6 @@ def generate_content(
         hashtags=list(payload.get("hashtags") or []),
         sources=list(payload.get("sources") or []),
         telemetry=dict(payload.get("telemetry") or {}),
+        quality_report=payload.get("quality_report"),
+        rewrite_reports=list(payload.get("rewrite_reports") or []),
     )
