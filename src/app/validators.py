@@ -20,7 +20,7 @@ def append_sources_block(body: str, urls: list[str]) -> str:
 
 
 def normalize_bullets(text: str, bullet: str = "🔹") -> str:
-    return re.sub(r"(?m)^\s*[-•]\s+", f"{bullet} ", text)
+    return re.sub(r"(?m)^[ \t]*[-•][ \t]+", f"{bullet} ", text)
 
 
 def cap_emojis(text: str, max_n: int = 3) -> str:
