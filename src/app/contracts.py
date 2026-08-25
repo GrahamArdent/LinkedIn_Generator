@@ -23,7 +23,7 @@ class VoiceExample(BaseModel):
 
     example_id: str | None = None
     provenance: Literal["published", "user_approved", "user_edited"]
-    text: str = Field(min_length=20, max_length=6000)
+    text: str = Field(min_length=20, max_length=3500)
     source_ref: str | None = None
 
 
@@ -47,7 +47,7 @@ class LinkedInContentRequest(BaseModel):
     services: list[str] = Field(default_factory=list)
     targets: list[str] = Field(default_factory=list)
     evidence: list[SourceEvidence] = Field(default_factory=list)
-    voice_examples: list[VoiceExample] = Field(default_factory=list, max_length=5)
+    voice_examples: list[VoiceExample] = Field(default_factory=list, max_length=3)
     hashtags: list[str] = Field(default_factory=list)
 
 
