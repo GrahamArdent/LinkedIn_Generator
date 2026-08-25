@@ -11,6 +11,7 @@ from .judge import judge_report
 from .llm import LLMClient
 from .models import PostJSON, Telemetry
 from .rag import retrieve
+from .rewrite_guard import evaluate_rewrite
 from .validators import (
     append_sources_block,
     apply_house_rules,
@@ -44,6 +45,7 @@ class Pipeline:
         )
         self.n_variants = int(os.getenv("N_VARIANTS", "4"))
         self.last_judge_report: dict[str, Any] | None = None
+        self.rewrite_reports: list[dict[str, Any]] = []
 
     def plan(self, plan_prompt: dict[str, str], ctx: dict[str, Any]) -> dict[str, Any]:
         targets = [str(target) for target in (ctx.get("targets") or []) if str(target).strip()]
@@ -79,11 +81,69 @@ class Pipeline:
         self.last_judge_report = best_report
         return best or ""
 
-    def critic(self, critic_prompt: dict[str, str], text: str) -> str:
+    def _rewrite(
+        self,
+        prompt: dict[str, str],
+        text: str,
+        persona_profile: dict[str, Any],
+        *,
+        stage: str,
+    ) -> str:
+        # Do not spend an additional model call when the deterministic gate has
+        # no concrete issue to repair. Subjective voice traits remain outside
+        # this gate until the repository has approved voice examples.
+        if self.last_judge_report is not None and not self.last_judge_report.get("issues"):
+            self.rewrite_reports.append(
+                {
+                    "stage": stage,
+                    "skipped": True,
+                    "accepted": False,
+                    "reasons": ["deterministic quality gate has no repairable issue"],
+                    "original_report": self.last_judge_report,
+                    "candidate_report": self.last_judge_report,
+                }
+            )
+            return text
+
+        system = build_prompt(
+            prompt.get("system", ""),
+            post=text,
+            persona_profile=persona_profile,
+        )
+        user = build_prompt(
+            prompt.get("user_template", "{post}"),
+            post=text,
+            persona_profile=persona_profile,
+        )
+        out = self.client.call(system, user, response_json=True)
+        candidate = str(out.get("text", "") if isinstance(out, dict) else out).strip()
+        report = evaluate_rewrite(
+            text,
+            candidate,
+            persona_profile,
+            self.cfg["prompt_kit"],
+        )
+        self.rewrite_reports.append({"stage": stage, "skipped": False, **report})
+        if report["accepted"]:
+            self.last_judge_report = report["candidate_report"]
+            return candidate
         return text
 
-    def humanize(self, humanize_prompt: dict[str, str], text: str) -> str:
-        return text
+    def critic(
+        self,
+        critic_prompt: dict[str, str],
+        text: str,
+        persona_profile: dict[str, Any],
+    ) -> str:
+        return self._rewrite(critic_prompt, text, persona_profile, stage="critic")
+
+    def humanize(
+        self,
+        humanize_prompt: dict[str, str],
+        text: str,
+        persona_profile: dict[str, Any],
+    ) -> str:
+        return self._rewrite(humanize_prompt, text, persona_profile, stage="humanize")
 
     def finalize(
         self, persona_key: str, text: str, citations: list[str], hashtags: list[str]

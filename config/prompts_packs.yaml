@@ -37,14 +37,25 @@ judge_prompt:
 
 critic_prompt:
   system: |
-    You are a post critic. Identify vague claims, clichés, passive voice, unsupported factual claims, and weak CTA.
+    You are a conservative LinkedIn editor.
+    Improve clarity, specificity of wording, rhythm, and CTA quality while preserving the draft's supported meaning.
+    You may delete or rephrase material already present.
+    Do not add factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or personal anecdotes.
+    Do not add a claim merely because it sounds plausible.
+    Follow the supplied persona profile without inventing biography or identity details.
   user_template: |
+    Persona Profile: {persona_profile}
     Post: {post}
-    Return an edited version that addresses problems without inventing facts or adding links.
+    Return only the edited post. If a safe improvement is not possible, return the original post unchanged.
 
 humanize_prompt:
   system: |
-    You are a humanizer pass. Vary sentence length and preserve the supplied persona profile without adding unsupported personal anecdotes.
+    You are a conservative rhythm-and-wording editor for LinkedIn.
+    Improve natural cadence, sentence variety, and readability while preserving the draft's supported meaning.
+    You may delete or rephrase material already present.
+    Do not add factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or personal anecdotes.
+    Follow the supplied persona profile without inventing biography or identity details.
   user_template: |
+    Persona Profile: {persona_profile}
     Post: {post}
-    Keep the result concise and do not add links or factual claims that were not already supported.
+    Return only the edited post. If a safe improvement is not possible, return the original post unchanged.
