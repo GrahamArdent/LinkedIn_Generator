@@ -29,6 +29,7 @@ def generate_content(
         objective=request.objective,
         targets=request.targets,
         allowed_sources=[item.model_dump() for item in request.evidence],
+        voice_examples=[item.model_dump() for item in request.voice_examples],
         # An empty list is intentional: Dedication-origin requests must not
         # inherit legacy cybersecurity hashtags merely because old defaults
         # exist in the prototype runtime.
