@@ -53,6 +53,25 @@ class LinkedInContentFeedback(BaseModel):
         return self
 
 
+class QualityReport(BaseModel):
+    """Explainable deterministic assessment suitable for human review."""
+
+    score: int = Field(ge=0, le=100)
+    issues: list[str] = Field(default_factory=list)
+    signals: dict[str, Any] = Field(default_factory=dict)
+
+
+class RewriteReport(BaseModel):
+    """Safe-edit audit for one optional critic/humanize stage."""
+
+    stage: Literal["critic", "humanize"]
+    skipped: bool = False
+    accepted: bool = False
+    reasons: list[str] = Field(default_factory=list)
+    original_report: QualityReport | None = None
+    candidate_report: QualityReport | None = None
+
+
 class LinkedInContentRequest(BaseModel):
     """Scheduler-independent request contract for LinkedIn content generation.
 
@@ -87,3 +106,5 @@ class LinkedInContentResult(BaseModel):
     hashtags: list[str] = Field(default_factory=list)
     sources: list[str] = Field(default_factory=list)
     telemetry: dict[str, Any] = Field(default_factory=dict)
+    quality_report: QualityReport | None = None
+    rewrite_reports: list[RewriteReport] = Field(default_factory=list)
