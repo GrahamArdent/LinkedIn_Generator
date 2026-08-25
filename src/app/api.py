@@ -18,6 +18,14 @@ def _source_for_prompt(item: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def _voice_for_prompt(item: dict[str, Any]) -> dict[str, str]:
+    return {
+        "example_id": str(item.get("example_id") or ""),
+        "provenance": str(item.get("provenance") or ""),
+        "text": str(item.get("text") or ""),
+    }
+
+
 def run_generation(
     topic: str,
     services: list[str],
@@ -27,6 +35,7 @@ def run_generation(
     objective: str = "Educate and convert attention to pipeline",
     targets: list[str] | None = None,
     allowed_sources: list[dict[str, Any]] | None = None,
+    voice_examples: list[dict[str, Any]] | None = None,
     hashtags: list[str] | None = None,
     llm_client: Any | None = None,
 ) -> dict[str, Any]:
@@ -34,7 +43,8 @@ def run_generation(
 
     Existing positional/default arguments remain for legacy callers. New
     orchestrators should supply audience, objective, targets, evidence and
-    hashtags explicitly. `llm_client` exists for deterministic offline
+    hashtags explicitly. Voice examples are human-authoritative style evidence,
+    never factual evidence. `llm_client` exists for deterministic offline
     acceptance testing; live callers normally use the configured provider.
     """
 
@@ -69,6 +79,8 @@ def run_generation(
     plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
 
     source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
+    voice_items = list(voice_examples or [])[:5]
+    prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
     draft_ctx = {
         "persona_key": persona_key,
         "audience": audience,
@@ -78,16 +90,39 @@ def run_generation(
         "angle_options": [plan["angle"]],
         "persona_profile": persona_profile,
         "allowed_sources": [_source_for_prompt(item) for item in source_items],
+        "approved_voice_examples": prompt_voice_examples,
     }
     drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
-    crit = pipe.critic(prompts.get("critic_prompt", {}), best, persona_profile)
-    hum = pipe.humanize(prompts.get("humanize_prompt", {}), crit, persona_profile)
+    crit = pipe.critic(
+        prompts.get("critic_prompt", {}),
+        best,
+        persona_profile,
+        voice_examples=prompt_voice_examples,
+    )
+    hum = pipe.humanize(
+        prompts.get("humanize_prompt", {}),
+        crit,
+        persona_profile,
+        voice_examples=prompt_voice_examples,
+    )
 
     citations = [
         str(item.get("url", ""))
         for item in source_items
         if str(item.get("url", "")).startswith("http")
     ]
+    voice_reference_ids = [
+        str(item.get("example_id"))
+        for item in voice_items
+        if item.get("example_id")
+    ]
     final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
-    return pipe.finalize(persona_key, hum, citations, final_hashtags)
+    return pipe.finalize(
+        persona_key,
+        hum,
+        citations,
+        final_hashtags,
+        voice_reference_count=len(voice_items),
+        voice_reference_ids=voice_reference_ids,
+    )
