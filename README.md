@@ -40,6 +40,21 @@ These assets are being assessed individually. Existing code is neither discarded
 
 PROGRAMSTART is adopted in **Mode C** as methodology only. LinkedIn Generator remains the owner of its product implementation and project-specific authority.
 
+## Live generation provider
+
+Live draft generation uses an injectable provider boundary. The default adapter uses the OpenAI Responses API; tests can inject a fake provider and never require network access.
+
+1. Install runtime requirements.
+2. Use `.env.example` as the reference for required/optional variables.
+3. Export `OPENAI_API_KEY` through the process environment or your runtime secret manager for live generation.
+4. Optionally set `LLM_MODEL` and `LLM_TIMEOUT_S`.
+
+The current settings loader reads process environment directly; it does not parse `.env` files itself.
+
+If no live provider credential is configured, a real generation call fails clearly instead of returning placeholder content. Provider responses are requested with API-side response storage disabled by the adapter.
+
+Never commit `.env` or API keys.
+
 ## Tests
 
 ```bash
