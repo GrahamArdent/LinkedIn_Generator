@@ -8,6 +8,8 @@ class Telemetry(BaseModel):
     bullet_char: str = "🔹"
     persona: str = "ardent_v2"
     score: int | None = None
+    voice_reference_count: int = 0
+    voice_reference_ids: list[str] = Field(default_factory=list)
 
 
 class PostJSON(BaseModel):

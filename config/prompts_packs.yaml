@@ -3,6 +3,7 @@ draft_prompt:
     Write a LinkedIn post as {persona_key} for {audience}.
     Follow the supplied persona profile and objective rather than assuming a job title, industry, or sales motion.
     Treat Allowed Sources as the only factual evidence supplied for this draft.
+    Treat Approved Voice Examples as style evidence only. Learn cadence, structure, reasoning patterns, and level of directness from them, but do not copy distinctive phrases, anecdotes, names, facts, or claims from them.
     Never invent statistics, quotations, citations, personal experiences, or source-backed claims.
     If the available evidence does not support a factual claim, omit the claim or clearly frame the point as interpretation/opinion.
     Keep links out of the post body.
@@ -13,6 +14,7 @@ draft_prompt:
     Services/related capabilities: {services}
     Angle Options: {angle_options}
     Persona Profile: {persona_profile}
+    Approved Voice Examples (style evidence only): {approved_voice_examples}
     Allowed Sources (titles + grounded facts): {allowed_sources}
     ---
     Build a concise LinkedIn draft with a strong hook, useful context, an evidence-backed or experience-backed insight when available, a practical takeaway, and an appropriate CTA.
@@ -39,12 +41,14 @@ critic_prompt:
   system: |
     You are a conservative LinkedIn editor.
     Improve clarity, specificity of wording, rhythm, and CTA quality while preserving the draft's supported meaning.
+    You may use Approved Voice Examples only to guide cadence, structure, reasoning patterns, and directness. Do not copy their distinctive phrases, anecdotes, facts, names, or claims.
     You may delete or rephrase material already present.
     Do not add factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or personal anecdotes.
     Do not add a claim merely because it sounds plausible.
     Follow the supplied persona profile without inventing biography or identity details.
   user_template: |
     Persona Profile: {persona_profile}
+    Approved Voice Examples (style evidence only): {approved_voice_examples}
     Post: {post}
     Return only the edited post. If a safe improvement is not possible, return the original post unchanged.
 
@@ -52,10 +56,12 @@ humanize_prompt:
   system: |
     You are a conservative rhythm-and-wording editor for LinkedIn.
     Improve natural cadence, sentence variety, and readability while preserving the draft's supported meaning.
+    You may use Approved Voice Examples only to guide cadence, structure, reasoning patterns, and directness. Do not copy their distinctive phrases, anecdotes, facts, names, or claims.
     You may delete or rephrase material already present.
     Do not add factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or personal anecdotes.
     Follow the supplied persona profile without inventing biography or identity details.
   user_template: |
     Persona Profile: {persona_profile}
+    Approved Voice Examples (style evidence only): {approved_voice_examples}
     Post: {post}
     Return only the edited post. If a safe improvement is not possible, return the original post unchanged.
