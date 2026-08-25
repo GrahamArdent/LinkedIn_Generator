@@ -7,9 +7,36 @@ from .generation import Pipeline
 from .utils import load_yaml
 
 
+LEGACY_TARGETS = ["CFO", "CISO", "Board"]
+LEGACY_HASHTAGS = ["#Cybersecurity", "#AdversarialSimulation", "#BoardRisk", "#CISO", "#Identity"]
+
+
+def _source_for_prompt(item: dict[str, Any]) -> dict[str, str]:
+    return {
+        "title": str(item.get("title", "")),
+        "fact": str(item.get("fact") or item.get("one_liner") or ""),
+    }
+
+
 def run_generation(
-    topic: str, services: list[str], persona_key: str = "ardent_v2"
+    topic: str,
+    services: list[str],
+    persona_key: str = "ardent_v2",
+    *,
+    audience: str = "C-suite leaders",
+    objective: str = "Educate and convert attention to pipeline",
+    targets: list[str] | None = None,
+    allowed_sources: list[dict[str, Any]] | None = None,
+    hashtags: list[str] | None = None,
 ) -> dict[str, Any]:
+    """Run the legacy generation pipeline with explicit caller context.
+
+    The positional/default arguments preserve compatibility with existing
+    callers. New orchestrators can override audience, objective, targets,
+    evidence, and hashtags instead of inheriting hidden cybersecurity/sales
+    assumptions from the prototype implementation.
+    """
+
     base = os.path.join(os.path.dirname(__file__), "../../")
     prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
     prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
@@ -31,27 +58,32 @@ def run_generation(
     pipe = Pipeline(cfg)
     persona_profile = personas.get("personas", {}).get(persona_key, {})
 
-    plan_ctx = {"topic": topic, "services": services, "targets": ["CFO", "CISO", "Board"]}
+    plan_ctx = {
+        "topic": topic,
+        "services": services,
+        "targets": list(targets) if targets is not None else list(LEGACY_TARGETS),
+    }
     plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
 
+    source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
     draft_ctx = {
-        "audience": "C-suite leaders",
-        "objective": "Educate and convert attention to pipeline",
+        "audience": audience,
+        "objective": objective,
         "topic": topic,
         "services": services,
         "angle_options": [plan["angle"]],
         "persona_profile": persona_profile,
-        "allowed_sources": [
-            {"title": it.get("title", ""), "fact": it.get("one_liner", "")}
-            for it in plan.get("citations", [])
-        ],
+        "allowed_sources": [_source_for_prompt(item) for item in source_items],
     }
     drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
     crit = pipe.critic(prompts.get("critic_prompt", {}), best)
     hum = pipe.humanize(prompts.get("humanize_prompt", {}), crit)
 
-    citations = [it.get("url", "") for it in plan.get("citations", []) if it.get("url")]
-    hashtags = ["#Cybersecurity", "#AdversarialSimulation", "#BoardRisk", "#CISO", "#Identity"]
-    payload = pipe.finalize(persona_key, hum, citations, hashtags)
-    return payload
+    citations = [
+        str(item.get("url", ""))
+        for item in source_items
+        if str(item.get("url", "")).startswith("http")
+    ]
+    final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
+    return pipe.finalize(persona_key, hum, citations, final_hashtags)
