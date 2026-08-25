@@ -88,10 +88,11 @@ class Pipeline:
         persona_profile: dict[str, Any],
         *,
         stage: str,
+        voice_examples: list[dict[str, str]] | None = None,
     ) -> str:
         # Do not spend an additional model call when the deterministic gate has
-        # no concrete issue to repair. Subjective voice traits remain outside
-        # this gate until the repository has approved voice examples.
+        # no concrete issue to repair. Approved voice examples already guide the
+        # draft pass; rewrite passes use them only when a repair is warranted.
         if self.last_judge_report is not None and not self.last_judge_report.get("issues"):
             self.rewrite_reports.append(
                 {
@@ -105,15 +106,18 @@ class Pipeline:
             )
             return text
 
+        prompt_voice_examples = list(voice_examples or [])
         system = build_prompt(
             prompt.get("system", ""),
             post=text,
             persona_profile=persona_profile,
+            approved_voice_examples=prompt_voice_examples,
         )
         user = build_prompt(
             prompt.get("user_template", "{post}"),
             post=text,
             persona_profile=persona_profile,
+            approved_voice_examples=prompt_voice_examples,
         )
         out = self.client.call(system, user, response_json=True)
         candidate = str(out.get("text", "") if isinstance(out, dict) else out).strip()
@@ -134,19 +138,42 @@ class Pipeline:
         critic_prompt: dict[str, str],
         text: str,
         persona_profile: dict[str, Any],
+        *,
+        voice_examples: list[dict[str, str]] | None = None,
     ) -> str:
-        return self._rewrite(critic_prompt, text, persona_profile, stage="critic")
+        return self._rewrite(
+            critic_prompt,
+            text,
+            persona_profile,
+            stage="critic",
+            voice_examples=voice_examples,
+        )
 
     def humanize(
         self,
         humanize_prompt: dict[str, str],
         text: str,
         persona_profile: dict[str, Any],
+        *,
+        voice_examples: list[dict[str, str]] | None = None,
     ) -> str:
-        return self._rewrite(humanize_prompt, text, persona_profile, stage="humanize")
+        return self._rewrite(
+            humanize_prompt,
+            text,
+            persona_profile,
+            stage="humanize",
+            voice_examples=voice_examples,
+        )
 
     def finalize(
-        self, persona_key: str, text: str, citations: list[str], hashtags: list[str]
+        self,
+        persona_key: str,
+        text: str,
+        citations: list[str],
+        hashtags: list[str],
+        *,
+        voice_reference_count: int = 0,
+        voice_reference_ids: list[str] | None = None,
     ) -> dict[str, Any]:
         body_no_links, urls = remove_links(text)
         urls.extend([c for c in citations if c.startswith("http")])
@@ -172,6 +199,8 @@ class Pipeline:
             bullet_char=bullet,
             persona=persona_key,
             score=selected_score,
+            voice_reference_count=voice_reference_count,
+            voice_reference_ids=list(voice_reference_ids or []),
         )
         payload = PostJSON(hashtags=hashtags, body=clean_body, sources=urls, telemetry=telemetry)
         return payload.model_dump()
