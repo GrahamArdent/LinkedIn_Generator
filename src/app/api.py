@@ -26,6 +26,19 @@ def _voice_for_prompt(item: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def _public_rewrite_report(report: dict[str, Any]) -> dict[str, Any]:
+    """Return only review-safe rewrite metadata for external consumers."""
+
+    return {
+        "stage": str(report.get("stage", "")),
+        "skipped": bool(report.get("skipped", False)),
+        "accepted": bool(report.get("accepted", False)),
+        "reasons": list(report.get("reasons") or []),
+        "original_report": report.get("original_report"),
+        "candidate_report": report.get("candidate_report"),
+    }
+
+
 def run_generation(
     topic: str,
     services: list[str],
@@ -79,7 +92,7 @@ def run_generation(
     plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
 
     source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
-    voice_items = list(voice_examples or [])[:5]
+    voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
     draft_ctx = {
         "persona_key": persona_key,
@@ -118,7 +131,7 @@ def run_generation(
         if item.get("example_id")
     ]
     final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
-    return pipe.finalize(
+    payload = pipe.finalize(
         persona_key,
         hum,
         citations,
@@ -126,3 +139,8 @@ def run_generation(
         voice_reference_count=len(voice_items),
         voice_reference_ids=voice_reference_ids,
     )
+    payload["quality_report"] = pipe.last_judge_report
+    payload["rewrite_reports"] = [
+        _public_rewrite_report(report) for report in pipe.rewrite_reports
+    ]
+    return payload
