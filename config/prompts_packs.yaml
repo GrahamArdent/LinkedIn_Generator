@@ -1,28 +1,31 @@
 draft_prompt:
   system: |
-    You are {persona_key} writing a LinkedIn post for a C-suite audience.
-    Follow LinkedIn defaults: ≤3 emojis, "🔹" bullets, 3–5 hashtags, no links in body.
+    Write a LinkedIn post as {persona_key} for {audience}.
+    Follow the supplied persona profile and objective rather than assuming a job title, industry, or sales motion.
+    Treat Allowed Sources as the only factual evidence supplied for this draft.
+    Never invent statistics, quotations, citations, personal experiences, or source-backed claims.
+    If the available evidence does not support a factual claim, omit the claim or clearly frame the point as interpretation/opinion.
+    Keep links out of the post body.
   user_template: |
     Audience: {audience}
     Objective: {objective}
     Topic: {topic}
-    Services: {services}
+    Services/related capabilities: {services}
     Angle Options: {angle_options}
     Persona Profile: {persona_profile}
-    Allowed Sources (titles + 1-liner facts): {allowed_sources}
+    Allowed Sources (titles + grounded facts): {allowed_sources}
     ---
-    hook → exec_pov → proof_point → micro_plays(3) → quote → cta → hashtags
-    ---
-    Write 1 DRAFT, 160–210 words, no inline URLs.
+    Build a concise LinkedIn draft with a strong hook, useful context, an evidence-backed or experience-backed insight when available, a practical takeaway, and an appropriate CTA.
+    Do not force a statistic, quotation, sales pitch, or rigid section when the supplied context does not justify it.
 
 plan_prompt:
   system: |
-    You are a planning assistant that proposes a structure before writing.
+    You are a planning assistant that proposes a useful LinkedIn angle before drafting.
   user_template: |
     Topic: {topic}
-    Services: {services}
-    Targets (e.g., CFO, CISO, Board): {targets}
-    Produce a plan with: angle, outline with word counts, and 3 micro-plays tied to {services}.
+    Services/related capabilities: {services}
+    Intended audience/targets: {targets}
+    Propose an angle that makes the topic useful to the intended audience without inventing evidence.
 
 judge_prompt:
   system: |
@@ -34,14 +37,14 @@ judge_prompt:
 
 critic_prompt:
   system: |
-    You are a post critic. Identify vague claims, clichés, passive voice, and weak CTA.
+    You are a post critic. Identify vague claims, clichés, passive voice, unsupported factual claims, and weak CTA.
   user_template: |
     Post: {post}
-    Return an edited version that addresses problems without adding links.
+    Return an edited version that addresses problems without inventing facts or adding links.
 
 humanize_prompt:
   system: |
-    You are a humanizer pass. Vary sentence length, add one earned rhetorical question or analogy, keep it concise.
+    You are a humanizer pass. Vary sentence length and preserve the supplied persona profile without adding unsupported personal anecdotes.
   user_template: |
     Post: {post}
-    Keep ≤3 emojis, use "🔹" bullets, and do not add links.
+    Keep the result concise and do not add links or factual claims that were not already supported.

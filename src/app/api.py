@@ -67,6 +67,7 @@ def run_generation(
 
     source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
     draft_ctx = {
+        "persona_key": persona_key,
         "audience": audience,
         "objective": objective,
         "topic": topic,
