@@ -13,6 +13,20 @@ class SourceEvidence(BaseModel):
     url: str | None = None
 
 
+class VoiceExample(BaseModel):
+    """Human-authoritative writing evidence used only as a voice reference.
+
+    Generated drafts are intentionally not an accepted provenance. A generated
+    draft may become voice evidence only after an explicit user approval/edit
+    or after the user chooses to publish it.
+    """
+
+    example_id: str | None = None
+    provenance: Literal["published", "user_approved", "user_edited"]
+    text: str = Field(min_length=20, max_length=6000)
+    source_ref: str | None = None
+
+
 class LinkedInContentRequest(BaseModel):
     """Scheduler-independent request contract for LinkedIn content generation.
 
@@ -33,6 +47,7 @@ class LinkedInContentRequest(BaseModel):
     services: list[str] = Field(default_factory=list)
     targets: list[str] = Field(default_factory=list)
     evidence: list[SourceEvidence] = Field(default_factory=list)
+    voice_examples: list[VoiceExample] = Field(default_factory=list, max_length=5)
     hashtags: list[str] = Field(default_factory=list)
 
 
