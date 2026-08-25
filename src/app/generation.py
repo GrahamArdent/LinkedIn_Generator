@@ -37,9 +37,9 @@ def build_prompt(template: str, **kwargs) -> str:
 
 
 class Pipeline:
-    def __init__(self, config: dict[str, Any]):
+    def __init__(self, config: dict[str, Any], *, client: Any | None = None):
         self.cfg = config
-        self.client = LLMClient(
+        self.client = client or LLMClient(
             temperature=float(os.getenv("TEMPERATURE", "0.5")), seed=int(os.getenv("SEED", "42"))
         )
         self.n_variants = int(os.getenv("N_VARIANTS", "4"))
@@ -62,7 +62,7 @@ class Pipeline:
         variants = []
         for _ in range(self.n_variants):
             out = self.client.call(system, user, response_json=True)
-            variants.append(out.get("text", "(placeholder draft)"))
+            variants.append(out.get("text", ""))
         return variants
 
     def judge_select(
@@ -74,7 +74,7 @@ class Pipeline:
             s = judge_score(d, persona_profile, rules)
             if s > best_s:
                 best, best_s = d, s
-        return best
+        return best or ""
 
     def critic(self, critic_prompt: dict[str, str], text: str) -> str:
         return text
@@ -87,6 +87,7 @@ class Pipeline:
     ) -> dict[str, Any]:
         body_no_links, urls = remove_links(text)
         urls.extend([c for c in citations if c.startswith("http")])
+        urls = list(dict.fromkeys(urls))
         bullet = self.cfg["prompt_kit"]["bullet_char"]
         emoji_max = self.cfg["prompt_kit"]["emoji_max"]
         allow_em_dash = self.cfg["prompt_kit"]["allow_em_dash"]

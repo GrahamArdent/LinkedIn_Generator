@@ -28,13 +28,14 @@ def run_generation(
     targets: list[str] | None = None,
     allowed_sources: list[dict[str, Any]] | None = None,
     hashtags: list[str] | None = None,
+    llm_client: Any | None = None,
 ) -> dict[str, Any]:
-    """Run the legacy generation pipeline with explicit caller context.
+    """Run the generation pipeline with explicit caller context.
 
-    The positional/default arguments preserve compatibility with existing
-    callers. New orchestrators can override audience, objective, targets,
-    evidence, and hashtags instead of inheriting hidden cybersecurity/sales
-    assumptions from the prototype implementation.
+    Existing positional/default arguments remain for legacy callers. New
+    orchestrators should supply audience, objective, targets, evidence and
+    hashtags explicitly. `llm_client` exists for deterministic offline
+    acceptance testing; live callers normally use the configured provider.
     """
 
     base = os.path.join(os.path.dirname(__file__), "../../")
@@ -50,12 +51,12 @@ def run_generation(
             "hashtag_max": int(prompt_kit.get("hashtag_max", 5)),
             "strip_links_in_body": prompt_kit.get("strip_links_in_body", "true")
             in ("true", "True", "1"),
-            "append_sources_block": prompt_kit.get("append_sources_block", "true")
+            "append_sources_block": prompt_kit.get("append_sources_block", "false")
             in ("true", "True", "1"),
             "allow_em_dash": prompt_kit.get("allow_em_dash", "false") in ("true", "True", "1"),
         }
     }
-    pipe = Pipeline(cfg)
+    pipe = Pipeline(cfg, client=llm_client)
     persona_profile = personas.get("personas", {}).get(persona_key, {})
 
     plan_ctx = {

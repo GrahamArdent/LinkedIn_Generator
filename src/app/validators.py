@@ -20,7 +20,7 @@ def append_sources_block(body: str, urls: list[str]) -> str:
 
 
 def normalize_bullets(text: str, bullet: str = "🔹") -> str:
-    return re.sub(r"(?m)^\s*[-•]\s+", f"{bullet} ", text)
+    return re.sub(r"(?m)^[ \t]*[-•][ \t]+", f"{bullet} ", text)
 
 
 def cap_emojis(text: str, max_n: int = 3) -> str:
@@ -33,7 +33,7 @@ def cap_emojis(text: str, max_n: int = 3) -> str:
 
 
 def replace_em_dashes(text: str) -> str:
-    return text.replace("—", ". ")
+    return text.replace("—", " - ")
 
 
 def clamp_hashtags(hashtags: list[str], min_n: int = 3, max_n: int = 5) -> list[str]:
@@ -55,11 +55,17 @@ def extract_hashtags(text: str) -> list[str]:
     return HASHTAG_RE.findall(text)
 
 
+def _normalize_spacing(text: str) -> str:
+    lines = [re.sub(r"[ \t]{2,}", " ", line).rstrip() for line in text.splitlines()]
+    normalized = "\n".join(lines)
+    normalized = re.sub(r"\n{3,}", "\n\n", normalized)
+    return normalized.strip()
+
+
 def apply_house_rules(body: str, *, bullet="🔹", emoji_max: int = 3, allow_em_dash: bool = False):
     issues: list[str] = []
     b1 = normalize_bullets(body, bullet=bullet)
     b2 = cap_emojis(b1, max_n=emoji_max)
     b3 = b2 if allow_em_dash else replace_em_dashes(b2)
-    b3 = re.sub(r"\s{2,}", " ", b3)
-    b3 = re.sub(r"[ \t]+$", "", b3, flags=re.MULTILINE)
-    return b3.strip(), issues
+    b3 = _normalize_spacing(b3)
+    return b3, issues
