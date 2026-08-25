@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 
 class SourceEvidence(BaseModel):
@@ -25,6 +25,32 @@ class VoiceExample(BaseModel):
     provenance: Literal["published", "user_approved", "user_edited"]
     text: str = Field(min_length=20, max_length=3500)
     source_ref: str | None = None
+
+
+class LinkedInContentFeedback(BaseModel):
+    """Explicit human review of one LinkedIn draft/result.
+
+    Feedback is a domain event, not persistence. Dedication or another caller
+    may store it, but only explicit approval-bearing decisions may be promoted
+    to positive voice evidence.
+    """
+
+    feedback_id: str | None = None
+    request_id: str | None = None
+    decision: Literal["keep", "edit", "reject", "publish"]
+    original_text: str = Field(min_length=1, max_length=3500)
+    edited_text: str | None = Field(default=None, max_length=3500)
+    source_ref: str | None = None
+    note: str | None = Field(default=None, max_length=1000)
+
+    @model_validator(mode="after")
+    def validate_decision_payload(self):
+        edited = (self.edited_text or "").strip()
+        if self.decision == "edit" and not edited:
+            raise ValueError("edited_text is required when decision='edit'")
+        if self.edited_text is not None and not edited:
+            raise ValueError("edited_text cannot be blank when supplied")
+        return self
 
 
 class LinkedInContentRequest(BaseModel):
