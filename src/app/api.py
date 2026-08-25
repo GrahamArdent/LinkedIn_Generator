@@ -42,6 +42,7 @@ def run_generation(
     prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
     prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
     personas = load_yaml(os.path.join(base, "config/personas.yaml"))
+    cta_policies = load_yaml(os.path.join(base, "config/cta_policies.yaml"))
 
     cfg = {
         "prompt_kit": {
@@ -54,6 +55,7 @@ def run_generation(
             "append_sources_block": prompt_kit.get("append_sources_block", "false")
             in ("true", "True", "1"),
             "allow_em_dash": prompt_kit.get("allow_em_dash", "false") in ("true", "True", "1"),
+            "forbidden_phrases": list(cta_policies.get("forbidden_phrases", []) or []),
         }
     }
     pipe = Pipeline(cfg, client=llm_client)
