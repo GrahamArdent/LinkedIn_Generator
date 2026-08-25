@@ -1,0 +1,278 @@
+{
+  "version": "2026-04-15",
+  "workspace": {
+    "name": "LinkedIn_Generator",
+    "description": "Existing LinkedIn Generator project adopted into PROGRAMSTART Mode C.",
+    "repo_role": "existing_project_repo",
+    "root_readme": "README.md",
+    "generated_outputs_root": "outputs",
+    "project_name": "LinkedIn_Generator",
+    "source_template_repo": "PROGRAMSTART",
+    "repo_boundary": "standalone_existing_project_repo",
+    "provisioning_scope": "programbuild_management_overlay_only",
+    "bootstrap_assets": [
+      "config/process-registry.json",
+      ".github/prompts/PROMPT_STANDARD.md",
+      ".github/prompts/product-jit-check.prompt.md",
+      ".github/prompts/programstart-cross-stage-validation.prompt.md",
+      ".github/prompts/programstart-stage-guide.prompt.md",
+      ".github/prompts/programstart-stage-transition.prompt.md",
+      ".github/prompts/programstart-what-next.prompt.md",
+      ".github/prompts/propagate-canonical-change.prompt.md",
+      ".github/prompts/shape-architecture.prompt.md",
+      ".github/prompts/shape-audit.prompt.md",
+      ".github/prompts/shape-feasibility.prompt.md",
+      ".github/prompts/shape-idea.prompt.md",
+      ".github/prompts/shape-post-launch-review.prompt.md",
+      ".github/prompts/shape-release-readiness.prompt.md",
+      ".github/prompts/shape-requirements.prompt.md",
+      ".github/prompts/shape-research.prompt.md",
+      ".github/prompts/shape-scaffold.prompt.md",
+      ".github/prompts/shape-test-strategy.prompt.md",
+      ".github/prompts/start-programstart-project.prompt.md"
+    ]
+  },
+  "validation": {
+    "enforce_engineering_ready_in_all": false
+  },
+  "repo_boundary_policy": {
+    "enabled": false
+  },
+  "integrity": {
+    "baselines": []
+  },
+  "metadata_rules": {
+    "required_prefixes": ["Purpose:", "Owner:", "Last updated:", "Depends on:", "Authority:"],
+    "owner_placeholder": "[ASSIGN]"
+  },
+  "planning_reference_rules": {
+    "docs": [],
+    "workspace_prefixes": [".github/", "PROGRAMBUILD/", "config/", "docs/", "tests/", "src/"],
+    "allowlist_manifest": ""
+  },
+  "systems": {
+    "programbuild": {
+      "root": "PROGRAMBUILD",
+      "packaging": "existing_project_overlay",
+      "control_files": [
+        "PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md",
+        "PROGRAMBUILD/PROGRAMBUILD_FILE_INDEX.md",
+        "PROGRAMBUILD/PROGRAMBUILD_ADR_TEMPLATE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_CHANGELOG.md",
+        "PROGRAMBUILD/PROGRAMBUILD_STATE.json",
+        "PROGRAMBUILD/PROGRAMBUILD_PLANNING_OPERATING_MODEL.md",
+        "PROGRAMBUILD/PROGRAMBUILD_WORK_PACKET.md",
+        "PROGRAMBUILD/PROGRAMBUILD.md",
+        "PROGRAMBUILD/PROGRAMBUILD_LITE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_PRODUCT.md",
+        "PROGRAMBUILD/PROGRAMBUILD_ENTERPRISE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md",
+        "PROGRAMBUILD/PROGRAMBUILD_SUBAGENTS.md",
+        "PROGRAMBUILD/PROGRAMBUILD_CHECKLIST.md",
+        "PROGRAMBUILD/PROGRAMBUILD_IDEA_INTAKE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_CHALLENGE_GATE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_GAMEPLAN.md"
+      ],
+      "output_files": [
+        "PROGRAMBUILD/FEASIBILITY.md",
+        "PROGRAMBUILD/DECISION_LOG.md",
+        "PROGRAMBUILD/RESEARCH_SUMMARY.md",
+        "PROGRAMBUILD/REQUIREMENTS.md",
+        "PROGRAMBUILD/USER_FLOWS.md",
+        "PROGRAMBUILD/ARCHITECTURE.md",
+        "PROGRAMBUILD/RISK_SPIKES.md",
+        "PROGRAMBUILD/TEST_STRATEGY.md",
+        "PROGRAMBUILD/RELEASE_READINESS.md",
+        "PROGRAMBUILD/AUDIT_REPORT.md",
+        "PROGRAMBUILD/POST_LAUNCH_REVIEW.md"
+      ],
+      "variants": ["PROGRAMBUILD/PROGRAMBUILD_LITE.md", "PROGRAMBUILD/PROGRAMBUILD_PRODUCT.md", "PROGRAMBUILD/PROGRAMBUILD_ENTERPRISE.md"],
+      "metadata_required": [
+        "PROGRAMBUILD/FEASIBILITY.md",
+        "PROGRAMBUILD/DECISION_LOG.md",
+        "PROGRAMBUILD/RESEARCH_SUMMARY.md",
+        "PROGRAMBUILD/REQUIREMENTS.md",
+        "PROGRAMBUILD/USER_FLOWS.md",
+        "PROGRAMBUILD/ARCHITECTURE.md",
+        "PROGRAMBUILD/RISK_SPIKES.md",
+        "PROGRAMBUILD/TEST_STRATEGY.md",
+        "PROGRAMBUILD/RELEASE_READINESS.md",
+        "PROGRAMBUILD/AUDIT_REPORT.md",
+        "PROGRAMBUILD/POST_LAUNCH_REVIEW.md"
+      ]
+    },
+    "userjourney": {
+      "root": "USERJOURNEY",
+      "packaging": "project_attachment",
+      "optional": true,
+      "bootstrap_supported": false,
+      "core_files": [],
+      "metadata_required": []
+    }
+  },
+  "workflow_state": {
+    "programbuild": {
+      "state_file": "PROGRAMBUILD/PROGRAMBUILD_STATE.json",
+      "active_key": "active_stage",
+      "initial_step": "inputs_and_mode_selection",
+      "step_order": [
+        "inputs_and_mode_selection",
+        "feasibility",
+        "research",
+        "requirements_and_ux",
+        "architecture_and_risk_spikes",
+        "scaffold_and_guardrails",
+        "test_strategy",
+        "implementation_loop",
+        "release_readiness",
+        "audit_and_drift_control",
+        "post_launch_review"
+      ],
+      "step_files": {
+        "inputs_and_mode_selection": ["PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/PROGRAMBUILD_CHECKLIST.md"],
+        "feasibility": ["PROGRAMBUILD/FEASIBILITY.md", "PROGRAMBUILD/DECISION_LOG.md"],
+        "research": ["PROGRAMBUILD/RESEARCH_SUMMARY.md", "PROGRAMBUILD/DECISION_LOG.md"],
+        "requirements_and_ux": ["PROGRAMBUILD/REQUIREMENTS.md", "PROGRAMBUILD/USER_FLOWS.md"],
+        "architecture_and_risk_spikes": ["PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/RISK_SPIKES.md"],
+        "scaffold_and_guardrails": ["PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/TEST_STRATEGY.md"],
+        "test_strategy": ["PROGRAMBUILD/TEST_STRATEGY.md"],
+        "implementation_loop": ["PROGRAMBUILD/DECISION_LOG.md", "PROGRAMBUILD/PROGRAMBUILD_CHECKLIST.md"],
+        "release_readiness": ["PROGRAMBUILD/RELEASE_READINESS.md"],
+        "audit_and_drift_control": ["PROGRAMBUILD/AUDIT_REPORT.md"],
+        "post_launch_review": ["PROGRAMBUILD/POST_LAUNCH_REVIEW.md"]
+      }
+    },
+    "userjourney": {
+      "state_file": "USERJOURNEY/USERJOURNEY_STATE.json",
+      "active_key": "active_phase",
+      "initial_step": "phase_0",
+      "step_order": []
+    }
+  },
+  "sync_rules": [
+    {
+      "name": "programbuild_control_inventory",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD_FILE_INDEX.md"],
+      "dependent_files": [
+        "PROGRAMBUILD/PROGRAMBUILD.md",
+        "PROGRAMBUILD/PROGRAMBUILD_LITE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_PRODUCT.md",
+        "PROGRAMBUILD/PROGRAMBUILD_ENTERPRISE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_ADR_TEMPLATE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md",
+        "PROGRAMBUILD/PROGRAMBUILD_SUBAGENTS.md",
+        "PROGRAMBUILD/PROGRAMBUILD_CHECKLIST.md",
+        "PROGRAMBUILD/PROGRAMBUILD_IDEA_INTAKE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_CHALLENGE_GATE.md",
+        "PROGRAMBUILD/PROGRAMBUILD_GAMEPLAN.md"
+      ],
+      "require_authority_when_dependents_change": true,
+      "require_dependents_when_authority_changes": true
+    },
+    {
+      "name": "programbuild_architecture_contracts",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/ARCHITECTURE.md"],
+      "dependent_files": ["PROGRAMBUILD/TEST_STRATEGY.md", "PROGRAMBUILD/RELEASE_READINESS.md", "PROGRAMBUILD/RISK_SPIKES.md"],
+      "require_authority_when_dependents_change": true,
+      "require_dependents_when_authority_changes": true
+    },
+    {
+      "name": "programbuild_requirements_scope",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/REQUIREMENTS.md"],
+      "dependent_files": ["PROGRAMBUILD/USER_FLOWS.md", "PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/TEST_STRATEGY.md"],
+      "require_authority_when_dependents_change": true,
+      "require_dependents_when_authority_changes": true
+    },
+    {
+      "name": "programbuild_feasibility_cascade",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/FEASIBILITY.md"],
+      "dependent_files": ["PROGRAMBUILD/RESEARCH_SUMMARY.md", "PROGRAMBUILD/REQUIREMENTS.md", "PROGRAMBUILD/RISK_SPIKES.md"],
+      "require_authority_when_dependents_change": true,
+      "require_dependents_when_authority_changes": true
+    },
+    {
+      "name": "programbuild_variant_alignment",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/PROGRAMBUILD.md"],
+      "dependent_files": ["PROGRAMBUILD/PROGRAMBUILD_LITE.md", "PROGRAMBUILD/PROGRAMBUILD_PRODUCT.md", "PROGRAMBUILD/PROGRAMBUILD_ENTERPRISE.md"],
+      "require_authority_when_dependents_change": true,
+      "require_dependents_when_authority_changes": true
+    },
+    {
+      "name": "architecture_decision_alignment",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/ARCHITECTURE.md"],
+      "dependent_files": ["PROGRAMBUILD/DECISION_LOG.md"],
+      "require_authority_when_dependents_change": false,
+      "require_dependents_when_authority_changes": true
+    },
+    {
+      "name": "requirements_test_alignment",
+      "system": "programbuild",
+      "authority_files": ["PROGRAMBUILD/REQUIREMENTS.md"],
+      "dependent_files": ["PROGRAMBUILD/TEST_STRATEGY.md"],
+      "require_authority_when_dependents_change": true,
+      "require_dependents_when_authority_changes": true
+    }
+  ],
+  "prompt_registry": {
+    "workflow_prompt_files": [
+      ".github/prompts/start-programstart-project.prompt.md",
+      ".github/prompts/shape-idea.prompt.md",
+      ".github/prompts/shape-feasibility.prompt.md",
+      ".github/prompts/shape-research.prompt.md",
+      ".github/prompts/shape-requirements.prompt.md",
+      ".github/prompts/shape-architecture.prompt.md",
+      ".github/prompts/shape-scaffold.prompt.md",
+      ".github/prompts/shape-test-strategy.prompt.md",
+      ".github/prompts/shape-release-readiness.prompt.md",
+      ".github/prompts/shape-audit.prompt.md",
+      ".github/prompts/shape-post-launch-review.prompt.md",
+      ".github/prompts/programstart-stage-guide.prompt.md",
+      ".github/prompts/programstart-stage-transition.prompt.md",
+      ".github/prompts/programstart-cross-stage-validation.prompt.md",
+      ".github/prompts/programstart-what-next.prompt.md",
+      ".github/prompts/product-jit-check.prompt.md",
+      ".github/prompts/propagate-canonical-change.prompt.md"
+    ],
+    "operator_prompt_files": [],
+    "internal_prompt_files": []
+  },
+  "prompt_authority": {
+    ".github/prompts/shape-architecture.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/REQUIREMENTS.md", "PROGRAMBUILD/USER_FLOWS.md", "PROGRAMBUILD/RISK_SPIKES.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"]},
+    ".github/prompts/shape-audit.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/FEASIBILITY.md", "PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/DECISION_LOG.md", "PROGRAMBUILD/RISK_SPIKES.md", "PROGRAMBUILD/RELEASE_READINESS.md", "PROGRAMBUILD/AUDIT_REPORT.md"]},
+    ".github/prompts/shape-feasibility.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/PROGRAMBUILD_IDEA_INTAKE.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md", "PROGRAMBUILD/FEASIBILITY.md"]},
+    ".github/prompts/shape-idea.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/PROGRAMBUILD_IDEA_INTAKE.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"]},
+    ".github/prompts/shape-post-launch-review.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md", "PROGRAMBUILD/RELEASE_READINESS.md", "PROGRAMBUILD/AUDIT_REPORT.md"]},
+    ".github/prompts/shape-release-readiness.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/TEST_STRATEGY.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"]},
+    ".github/prompts/shape-requirements.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/FEASIBILITY.md", "PROGRAMBUILD/RESEARCH_SUMMARY.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"]},
+    ".github/prompts/shape-research.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/FEASIBILITY.md", "PROGRAMBUILD/RISK_SPIKES.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"]},
+    ".github/prompts/shape-scaffold.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/USER_FLOWS.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"]},
+    ".github/prompts/shape-test-strategy.prompt.md": {"authority_files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD.md", "PROGRAMBUILD/REQUIREMENTS.md", "PROGRAMBUILD/USER_FLOWS.md", "PROGRAMBUILD/ARCHITECTURE.md"]}
+  },
+  "workflow_guidance": {
+    "kickoff": {
+      "description": "Kick off or adopt a project using durable authority instead of chat memory; preserve existing execution authority in Mode C.",
+      "files": ["PROGRAMBUILD/PROGRAMBUILD_CANONICAL.md", "PROGRAMBUILD/PROGRAMBUILD_FILE_INDEX.md", "PROGRAMBUILD/PROGRAMBUILD_PLANNING_OPERATING_MODEL.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"],
+      "prompts": [".github/prompts/start-programstart-project.prompt.md", ".github/prompts/programstart-stage-guide.prompt.md", ".github/prompts/programstart-stage-transition.prompt.md", ".github/prompts/programstart-cross-stage-validation.prompt.md"]
+    },
+    "programbuild": {
+      "inputs_and_mode_selection": {"description": "Select existing-project Mode C when applicable; preserve existing execution authority and derive deltas.", "files": ["PROGRAMBUILD/PROGRAMBUILD_PLANNING_OPERATING_MODEL.md", "PROGRAMBUILD/PROGRAMBUILD_IDEA_INTAKE.md", "PROGRAMBUILD/PROGRAMBUILD_KICKOFF_PACKET.md"], "prompts": [".github/prompts/shape-idea.prompt.md", ".github/prompts/programstart-stage-guide.prompt.md"]},
+      "feasibility": {"description": "Validate viability only where current project evidence leaves a relevant gap.", "files": ["PROGRAMBUILD/FEASIBILITY.md", "PROGRAMBUILD/DECISION_LOG.md"], "prompts": [".github/prompts/shape-feasibility.prompt.md"]},
+      "research": {"description": "Treat research as evidence and convert findings into deltas to current authority.", "files": ["PROGRAMBUILD/RESEARCH_SUMMARY.md", "PROGRAMBUILD/DECISION_LOG.md"], "prompts": [".github/prompts/shape-research.prompt.md"]},
+      "requirements_and_ux": {"description": "Define or update requirements and user flows without creating competing project authority.", "files": ["PROGRAMBUILD/REQUIREMENTS.md", "PROGRAMBUILD/USER_FLOWS.md"], "prompts": [".github/prompts/shape-requirements.prompt.md"]},
+      "architecture_and_risk_spikes": {"description": "Update architecture and resolve risky unknowns when the current slice requires it.", "files": ["PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/RISK_SPIKES.md"], "prompts": [".github/prompts/shape-architecture.prompt.md"]},
+      "scaffold_and_guardrails": {"description": "Preserve the existing project stack and add guardrails only when justified.", "files": ["PROGRAMBUILD/ARCHITECTURE.md", "PROGRAMBUILD/TEST_STRATEGY.md"], "prompts": [".github/prompts/shape-scaffold.prompt.md"]},
+      "test_strategy": {"description": "Use targeted verification proportional to changed and invalidated surfaces.", "files": ["PROGRAMBUILD/TEST_STRATEGY.md"], "prompts": [".github/prompts/shape-test-strategy.prompt.md"]},
+      "implementation_loop": {"description": "Build and verify bounded logical slices against the existing project's execution spine.", "files": ["PROGRAMBUILD/PROGRAMBUILD_PLANNING_OPERATING_MODEL.md", "PROGRAMBUILD/PROGRAMBUILD_WORK_PACKET.md", "PROGRAMBUILD/DECISION_LOG.md"], "prompts": [".github/prompts/programstart-stage-guide.prompt.md", ".github/prompts/product-jit-check.prompt.md"]},
+      "release_readiness": {"description": "Widen verification at a real release convergence boundary.", "files": ["PROGRAMBUILD/RELEASE_READINESS.md", "PROGRAMBUILD/TEST_STRATEGY.md"], "prompts": [".github/prompts/shape-release-readiness.prompt.md"]},
+      "audit_and_drift_control": {"description": "Use audit findings as subordinate evidence until adopted into canonical project authority.", "files": ["PROGRAMBUILD/AUDIT_REPORT.md", "PROGRAMBUILD/RELEASE_READINESS.md"], "prompts": [".github/prompts/shape-audit.prompt.md"]},
+      "post_launch_review": {"description": "Capture launch outcomes and lessons without creating a competing plan.", "files": ["PROGRAMBUILD/POST_LAUNCH_REVIEW.md", "PROGRAMBUILD/DECISION_LOG.md"], "prompts": [".github/prompts/shape-post-launch-review.prompt.md"]}
+    },
+    "operator": {}
+  }
+}
