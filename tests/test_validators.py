@@ -28,7 +28,9 @@ def test_bullets_and_emojis():
 
 
 def test_em_dash_replacement():
-    assert "—" not in replace_em_dashes("a—b")
+    replaced = replace_em_dashes("a—b")
+    assert "—" not in replaced
+    assert "a - b" == replaced
 
 
 def test_clamp_hashtags():
@@ -42,3 +44,18 @@ def test_apply_house_rules():
     )
     assert "—" not in clean
     assert "🔹 item" in clean
+
+
+def test_house_rules_preserve_linkedin_paragraph_breaks():
+    clean, _issues = apply_house_rules(
+        "Hook line.\n\nSecond paragraph with  extra spaces.\n\n- first point\n- second point",
+        bullet="🔹",
+        emoji_max=3,
+        allow_em_dash=False,
+    )
+
+    assert "Hook line.\n\nSecond paragraph" in clean
+    assert "extra spaces" in clean
+    assert "extra  spaces" not in clean
+    assert "\n\n🔹 first point" in clean
+    assert "\n🔹 second point" in clean
