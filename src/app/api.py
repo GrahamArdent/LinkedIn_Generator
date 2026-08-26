@@ -26,6 +26,21 @@ def _voice_for_prompt(item: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def _persona_profile(base: str, personas: dict[str, Any], persona_key: str) -> dict[str, Any]:
+    """Return persona configuration plus explicitly authorized durable voice authority."""
+
+    profile = dict(personas.get("personas", {}).get(persona_key, {}) or {})
+    if persona_key != "graham":
+        return profile
+
+    voice_authority = load_yaml(os.path.join(base, "config/graham_voice_profile.yaml"))
+    if voice_authority:
+        # Keep the source/provenance visible to the prompt and to future audits.
+        # The derived profile is style/reasoning authority only, never factual evidence.
+        profile["voice_authority"] = voice_authority
+    return profile
+
+
 def run_generation(
     topic: str,
     services: list[str],
@@ -43,9 +58,10 @@ def run_generation(
 
     Existing positional/default arguments remain for legacy callers. New
     orchestrators should supply audience, objective, targets, evidence and
-    hashtags explicitly. Voice examples are human-authoritative style evidence,
-    never factual evidence. `llm_client` exists for deterministic offline
-    acceptance testing; live callers normally use the configured provider.
+    hashtags explicitly. Voice authority and approved examples are style and
+    reasoning evidence, never factual evidence. `llm_client` exists for
+    deterministic offline acceptance testing; live callers normally use the
+    configured provider.
     """
 
     base = os.path.join(os.path.dirname(__file__), "../../")
@@ -69,7 +85,7 @@ def run_generation(
         }
     }
     pipe = Pipeline(cfg, client=llm_client)
-    persona_profile = personas.get("personas", {}).get(persona_key, {})
+    persona_profile = _persona_profile(base, personas, persona_key)
 
     plan_ctx = {
         "topic": topic,
@@ -79,7 +95,7 @@ def run_generation(
     plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
 
     source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
-    voice_items = list(voice_examples or [])[:5]
+    voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
     draft_ctx = {
         "persona_key": persona_key,

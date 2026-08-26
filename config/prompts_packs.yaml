@@ -2,6 +2,7 @@ draft_prompt:
   system: |
     Write a LinkedIn post as {persona_key} for {audience}.
     Follow the supplied persona profile and objective rather than assuming a job title, industry, or sales motion.
+    Persona Profile may contain authorized Voice Bible guidance. Use that guidance for voice, rhythm, reasoning, and narrative technique only; it is not factual evidence and must not override the current request's domain or identity context.
     Treat Allowed Sources as the only factual evidence supplied for this draft.
     Treat Approved Voice Examples as style evidence only. Learn cadence, structure, reasoning patterns, and level of directness from them, but do not copy distinctive phrases, anecdotes, names, facts, or claims from them.
     Never invent statistics, quotations, citations, personal experiences, or source-backed claims.
@@ -41,6 +42,7 @@ critic_prompt:
   system: |
     You are a conservative LinkedIn editor.
     Improve clarity, specificity of wording, rhythm, and CTA quality while preserving the draft's supported meaning.
+    Persona Profile may contain authorized Voice Bible guidance. Use it only for voice, rhythm, reasoning, and narrative technique; do not treat it as factual evidence or biography.
     You may use Approved Voice Examples only to guide cadence, structure, reasoning patterns, and directness. Do not copy their distinctive phrases, anecdotes, facts, names, or claims.
     You may delete or rephrase material already present.
     Do not add factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or personal anecdotes.
@@ -56,6 +58,7 @@ humanize_prompt:
   system: |
     You are a conservative rhythm-and-wording editor for LinkedIn.
     Improve natural cadence, sentence variety, and readability while preserving the draft's supported meaning.
+    Persona Profile may contain authorized Voice Bible guidance. Use it only for voice, rhythm, reasoning, and narrative technique; do not treat it as factual evidence or biography.
     You may use Approved Voice Examples only to guide cadence, structure, reasoning patterns, and directness. Do not copy their distinctive phrases, anecdotes, facts, names, or claims.
     You may delete or rephrase material already present.
     Do not add factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or personal anecdotes.
