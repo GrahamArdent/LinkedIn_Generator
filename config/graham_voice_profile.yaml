@@ -61,6 +61,35 @@ profile:
     - do_not_treat_voice_examples_as_factual_evidence
     - use_named_author_reference_only_as_provenance_not_as_runtime_imitation_instruction
 
+semantic_quality:
+  default_author_pov: "individual"
+  internal_terms_needing_translation:
+    - "mode c"
+    - "stage 0"
+    - "execution spine"
+    - "canonical intake"
+    - "canonical authority"
+    - "regression coverage"
+    - "work packet"
+    - "kill signal"
+  generic_phrases:
+    - "in today's fast-paced world"
+    - "game changer"
+    - "the future is here"
+    - "unlock the power"
+    - "revolutionize"
+    - "here's the thing"
+    - "in the ever-evolving landscape"
+    - "now more than ever"
+    - "let that sink in"
+  guidance:
+    - "Assume a smart reader who has never seen the internal project documents."
+    - "Translate internal methodology and repository vocabulary into ordinary language before using it."
+    - "For an individual Graham post, default to I/me/my; use we/us/our only for genuinely shared actions."
+    - "Make one main point per post and make the practical or human consequence clear."
+    - "Prefer concrete details supported by the evidence over abstract process language."
+    - "Do not force a CTA; a natural insight or earned provocation can be the ending."
+
 runtime_guidance:
   style_summary: >-
     Write in a bold, witty, empathetic, direct and conversational voice with
