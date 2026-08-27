@@ -23,6 +23,7 @@ FeedbackReason = Literal[
     "other",
 ]
 ContentGoal = Literal["auto", "reach", "conversation", "authority"]
+VisualAssetPreference = Literal["auto", "single_image", "carousel"]
 
 
 class SourceEvidence(BaseModel):
@@ -77,6 +78,62 @@ class LinkedInContentFeedback(BaseModel):
         return self
 
 
+class CarouselSlide(BaseModel):
+    slide_number: int = Field(ge=1, le=8)
+    role: Literal["cover", "context", "insight", "proof", "takeaway", "closer"]
+    headline: str = Field(min_length=1, max_length=120)
+    body: str = Field(default="", max_length=320)
+    visual_direction: str = Field(min_length=1, max_length=600)
+
+
+class SingleImageBrief(BaseModel):
+    concept: str = Field(min_length=1, max_length=1000)
+    overlay_text: str = Field(default="", max_length=160)
+    composition: str = Field(min_length=1, max_length=800)
+    style: str = Field(min_length=1, max_length=500)
+    generation_prompt: str = Field(min_length=1, max_length=1800)
+    negative_guidance: list[str] = Field(default_factory=list, max_length=12)
+    alt_text: str = Field(min_length=1, max_length=1000)
+
+
+class CarouselBrief(BaseModel):
+    cover_headline: str = Field(min_length=1, max_length=120)
+    design_system: str = Field(min_length=1, max_length=1000)
+    slides: list[CarouselSlide] = Field(min_length=4, max_length=8)
+    alt_text: str = Field(min_length=1, max_length=1200)
+
+
+class VisualAssetPlan(BaseModel):
+    """Provider-neutral visual companion for one publish-ready text candidate."""
+
+    status: Literal["planned", "deferred"]
+    source_candidate: Literal["original", "rewrite"] | None = None
+    asset_type: Literal["single_image", "carousel"] | None = None
+    rationale: str = Field(default="", max_length=800)
+    creative_goal: str = Field(default="", max_length=500)
+    aspect_ratio: str = "4:5"
+    single_image: SingleImageBrief | None = None
+    carousel: CarouselBrief | None = None
+    review_required: bool = True
+    warnings: list[str] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def validate_asset_shape(self):
+        if self.status == "deferred":
+            if self.asset_type is not None or self.single_image is not None or self.carousel is not None:
+                raise ValueError("deferred visual plans cannot contain a renderable asset")
+            return self
+        if self.source_candidate is None or self.asset_type is None:
+            raise ValueError("planned visual assets require source_candidate and asset_type")
+        if self.asset_type == "single_image":
+            if self.single_image is None or self.carousel is not None:
+                raise ValueError("single_image plan requires only single_image brief")
+        if self.asset_type == "carousel":
+            if self.carousel is None or self.single_image is not None:
+                raise ValueError("carousel plan requires only carousel brief")
+        return self
+
+
 class LinkedInContentRequest(BaseModel):
     """Scheduler-independent request contract for LinkedIn content generation.
 
@@ -99,6 +156,8 @@ class LinkedInContentRequest(BaseModel):
     opportunity_gate: bool = True
     publish_quality_gate: bool = True
     publish_quality_threshold: int = Field(default=90, ge=0, le=100)
+    visual_asset_plan: bool = True
+    visual_asset_preference: VisualAssetPreference = "auto"
     services: list[str] = Field(default_factory=list)
     targets: list[str] = Field(default_factory=list)
     evidence: list[SourceEvidence] = Field(default_factory=list)
@@ -118,3 +177,4 @@ class LinkedInContentResult(BaseModel):
     sources: list[str] = Field(default_factory=list)
     telemetry: dict[str, Any] = Field(default_factory=dict)
     review: dict[str, Any] = Field(default_factory=dict)
+    visual_asset: VisualAssetPlan | None = None
