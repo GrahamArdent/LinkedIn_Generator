@@ -161,13 +161,12 @@ def assess_opportunity(
     instead of drafting generic filler or inventing specificity.
     """
 
-    source_facts = [
-        {
-            "title": str(item.get("title", "")),
-            "fact": str(item.get("fact") or item.get("one_liner") or ""),
-        }
-        for item in evidence
-    ]
+    source_facts = []
+    for item in evidence:
+        fact = str(item.get("fact") or item.get("one_liner") or "").strip()
+        if fact:
+            source_facts.append({"title": str(item.get("title", "")).strip(), "fact": fact})
+
     system = (
         "You are a strict LinkedIn content-opportunity and evidence evaluator. Decide whether a real professional "
         "topic has enough value and grounded specificity to justify drafting a post. Do not write the post. Do not "
@@ -241,18 +240,35 @@ def assess_opportunity(
             missing_evidence_question=missing_question,
         )
     except Exception as exc:
-        # Availability beats a brittle classifier. A malformed preflight should
-        # be visible in telemetry but should not silently block a good post.
         goal = requested_goal if requested_goal in {"reach", "conversation", "authority"} else "authority"
         fallback = {key: 3 for key in _DIMENSION_KEYS}
+        warning = (f"preflight_unavailable:{type(exc).__name__}",)
+        if not source_facts:
+            return OpportunityAssessment(
+                score=_score(fallback),
+                decision="needs_more_evidence",
+                goal=goal,
+                earned_question=False,
+                reason="Opportunity preflight was unavailable and no grounded detail was supplied; request one concrete example before drafting.",
+                dimensions=fallback,
+                missing_evidence_question=_missing_question({}, topic),
+                warnings=warning,
+            )
+
+        # If grounded evidence exists, preserve the previous availability-first
+        # behavior. Use the first exact supplied fact as a conservative anchor so
+        # a classifier outage cannot turn into invented specificity.
+        first = source_facts[0]
         return OpportunityAssessment(
             score=_score(fallback),
             decision="draft",
             goal=goal,
             earned_question=False,
-            reason="Opportunity preflight was unavailable; drafting conservatively instead of blocking the request.",
+            reason="Opportunity preflight was unavailable; drafting conservatively from supplied evidence instead of blocking the request.",
             dimensions=fallback,
-            warnings=(f"preflight_unavailable:{type(exc).__name__}",),
+            strongest_evidence_title=first["title"],
+            strongest_evidence_fact=first["fact"],
+            warnings=warning,
         )
 
 
