@@ -6,10 +6,15 @@ from dataclasses import dataclass
 from typing import Any
 
 
+# Specificity is intentionally split into two distinct questions while
+# preserving the original 100-point weighting: do we have a real concrete
+# detail, and is it distinctive enough to make the post feel lived rather than
+# interchangeable with generic creator content?
 WEIGHTS: dict[str, int] = {
     "outsider_clarity": 15,
     "professional_relevance": 15,
-    "specificity": 15,
+    "concrete_evidence": 9,
+    "distinctiveness": 6,
     "novel_insight": 15,
     "practical_usefulness": 10,
     "emotional_tension": 10,
@@ -30,6 +35,9 @@ class OpportunityAssessment:
     earned_question: bool
     reason: str
     dimensions: dict[str, int]
+    strongest_evidence_title: str = ""
+    strongest_evidence_fact: str = ""
+    missing_evidence_question: str = ""
     warnings: tuple[str, ...] = ()
 
     def as_dict(self) -> dict[str, Any]:
@@ -40,6 +48,9 @@ class OpportunityAssessment:
             "earned_question": self.earned_question,
             "reason": self.reason,
             "dimensions": dict(self.dimensions),
+            "strongest_evidence_title": self.strongest_evidence_title,
+            "strongest_evidence_fact": self.strongest_evidence_fact,
+            "missing_evidence_question": self.missing_evidence_question,
             "warnings": list(self.warnings),
         }
 
@@ -62,7 +73,7 @@ def _score(dimensions: dict[str, int]) -> int:
 def _auto_goal(dimensions: dict[str, int]) -> str:
     if (
         dimensions["conversation_potential"] >= 4
-        and dimensions["specificity"] >= 3
+        and dimensions["concrete_evidence"] >= 3
         and dimensions["outsider_clarity"] >= 3
     ):
         return "conversation"
@@ -76,10 +87,22 @@ def _auto_goal(dimensions: dict[str, int]) -> str:
 
 
 def _decision(score: int, dimensions: dict[str, int], minimum_score: int) -> str:
-    # A post with almost no outsider clarity or professional relevance should not
-    # be drafted merely because other dimensions happen to score well.
+    # Almost no outsider relevance is a weak topic, not a request for more
+    # detail. Do not bother the user with follow-up questions for content that
+    # should not become a post in the first place.
     if dimensions["outsider_clarity"] <= 1 or dimensions["professional_relevance"] <= 1:
         return "skip"
+
+    evidence_is_thin = dimensions["concrete_evidence"] <= 2 or dimensions["distinctiveness"] <= 2
+    promising_subject = (
+        dimensions["outsider_clarity"] >= 3
+        and dimensions["professional_relevance"] >= 3
+        and dimensions["novel_insight"] >= 3
+        and dimensions["practical_usefulness"] >= 3
+    )
+    if evidence_is_thin:
+        return "needs_more_evidence" if promising_subject else "skip"
+
     return "draft" if score >= minimum_score else "skip"
 
 
@@ -94,6 +117,30 @@ def _parse_payload(text: str) -> dict[str, Any]:
     return payload
 
 
+def _selected_evidence(payload: dict[str, Any], evidence: list[dict[str, str]]) -> tuple[str, str]:
+    """Select an exact supplied evidence item; never accept invented detail text."""
+
+    if not evidence:
+        return "", ""
+    try:
+        index = int(payload.get("strongest_evidence_index", -1))
+    except (TypeError, ValueError):
+        index = -1
+    if index < 0 or index >= len(evidence):
+        return "", ""
+    item = evidence[index]
+    return item["title"], item["fact"]
+
+
+def _missing_question(payload: dict[str, Any], topic: str) -> str:
+    question = str(payload.get("missing_evidence_question") or "").strip()
+    if question:
+        if not question.endswith("?"):
+            question += "?"
+        return question[:500]
+    return f"What is the clearest concrete example from your actual experience that shows '{topic}'?"[:500]
+
+
 def assess_opportunity(
     *,
     topic: str,
@@ -104,11 +151,14 @@ def assess_opportunity(
     requested_goal: str = "auto",
     minimum_score: int = 60,
 ) -> OpportunityAssessment:
-    """Run a bounded preflight before spending on a full LinkedIn draft.
+    """Run a bounded evidence-first preflight before a full LinkedIn draft.
 
     This is a usefulness/relevance heuristic, not a virality predictor. The model
-    only scores nine named 0-5 dimensions. The weighted total, gate decision,
-    goal selection, and earned-question rule are deterministic in code.
+    scores named dimensions and identifies the strongest supplied evidence by
+    index. Weighted score, evidence selection, gate decision, goal selection,
+    and earned-question rules are deterministic in code. If a promising subject
+    lacks concrete/distinctive evidence, the system asks for one targeted detail
+    instead of drafting generic filler or inventing specificity.
     """
 
     source_facts = [
@@ -119,10 +169,12 @@ def assess_opportunity(
         for item in evidence
     ]
     system = (
-        "You are a strict LinkedIn content-opportunity evaluator. Decide whether a real professional "
-        "topic has enough value to justify drafting a post. Do not write the post. Do not predict "
-        "virality or invent evidence. Score each named dimension from 0 (absent) to 5 (exceptional) "
-        "using only the supplied topic, audience, objective, and evidence. Return JSON only."
+        "You are a strict LinkedIn content-opportunity and evidence evaluator. Decide whether a real professional "
+        "topic has enough value and grounded specificity to justify drafting a post. Do not write the post. Do not "
+        "predict virality or invent evidence. Score each named dimension from 0 (absent) to 5 (exceptional) using "
+        "only the supplied topic, audience, objective, and evidence. Identify the single strongest supplied evidence "
+        "item by zero-based index. If the topic is promising but evidence is too generic, return one concise question "
+        "that would elicit the missing concrete detail. Return JSON only."
     )
     user = json.dumps(
         {
@@ -133,7 +185,8 @@ def assess_opportunity(
             "dimensions": {
                 "outsider_clarity": "Can a smart stranger understand why this matters?",
                 "professional_relevance": "Is it professionally useful to the intended audience?",
-                "specificity": "Is there a concrete detail, observation, or evidence rather than a generic theme?",
+                "concrete_evidence": "Do the supplied facts include a specific event, observation, consequence, decision, quote, number, or other real detail that can anchor the post?",
+                "distinctiveness": "Does the evidence contain something that feels particular to this actual experience rather than interchangeable with thousands of generic AI/business posts?",
                 "novel_insight": "Is there a non-obvious lesson, tension, or reframing?",
                 "practical_usefulness": "Can the reader carry a useful idea into their own work?",
                 "emotional_tension": "Is there recognition, surprise, frustration, curiosity, relief, or another earned human stake?",
@@ -143,7 +196,9 @@ def assess_opportunity(
             },
             "required_output": {
                 **{key: "integer 0-5" for key in _DIMENSION_KEYS},
-                "reason": "one concise sentence explaining the strongest reason to draft or skip",
+                "strongest_evidence_index": "zero-based integer index into evidence, or -1 if no supplied item is concrete enough",
+                "missing_evidence_question": "one concise targeted question if concrete_evidence or distinctiveness is below 3; otherwise empty string",
+                "reason": "one concise sentence explaining the strongest reason to draft, request evidence, or skip",
             },
         },
         ensure_ascii=False,
@@ -157,12 +212,14 @@ def assess_opportunity(
         score = _score(dimensions)
         goal = requested_goal if requested_goal in {"reach", "conversation", "authority"} else _auto_goal(dimensions)
         decision = _decision(score, dimensions, minimum_score)
+        title, fact = _selected_evidence(payload, source_facts)
         earned_question = (
             decision == "draft"
             and goal == "conversation"
             and dimensions["conversation_potential"] >= 4
         )
         reason = str(payload.get("reason") or "Opportunity scored from the supplied topic and evidence.").strip()
+        missing_question = _missing_question(payload, topic) if decision == "needs_more_evidence" else ""
         return OpportunityAssessment(
             score=score,
             decision=decision,
@@ -170,6 +227,9 @@ def assess_opportunity(
             earned_question=earned_question,
             reason=reason[:500],
             dimensions=dimensions,
+            strongest_evidence_title=title,
+            strongest_evidence_fact=fact,
+            missing_evidence_question=missing_question,
         )
     except Exception as exc:
         # Availability beats a brittle classifier. A malformed preflight should
