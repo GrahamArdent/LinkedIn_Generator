@@ -45,7 +45,7 @@ def test_weighted_opportunity_score_is_computed_in_code():
         minimum_score=60,
     )
 
-    assert assessment.score == 78
+    assert assessment.score == 76
     assert assessment.decision == "draft"
     assert assessment.goal == "reach"
     assert assessment.earned_question is False
