@@ -43,7 +43,10 @@ class Pipeline:
         self.client = client or LLMClient(
             temperature=float(os.getenv("TEMPERATURE", "0.5")), seed=int(os.getenv("SEED", "42"))
         )
-        self.n_variants = int(os.getenv("N_VARIANTS", "4"))
+        # One full draft is the efficient default. The zero-cost planner supplies
+        # several angle options inside that one generation call. N_VARIANTS
+        # remains an explicit escape hatch for experiments.
+        self.n_variants = max(1, int(os.getenv("N_VARIANTS", "1")))
         self.last_judge_report: dict[str, Any] | None = None
         self.rewrite_reports: list[dict[str, Any]] = []
 
@@ -51,12 +54,24 @@ class Pipeline:
         targets = [str(target) for target in (ctx.get("targets") or []) if str(target).strip()]
         audience_lens = ", ".join(targets) if targets else "the intended professional audience"
         topic = str(ctx.get("topic", "")).strip()
-        angle = f"{topic} — practical relevance for {audience_lens}" if topic else audience_lens
+        subject = topic or "the topic"
+        angle_options = [
+            f"Plain-language lesson: explain why {subject} matters to {audience_lens}.",
+            (
+                "Second-order consequence: show what gets harder, slower, more expensive, "
+                f"or less trustworthy when the underlying problem in {subject} is ignored."
+            ),
+            (
+                "Contrarian angle: identify the reasonable-sounding assumption around "
+                f"{subject} that the supplied evidence complicates."
+            ),
+        ]
         return {
-            "angle": angle,
-            "sections": ["hook", "context", "evidence_or_experience", "takeaway", "cta"],
+            "angle": angle_options[0],
+            "angle_options": angle_options,
+            "sections": ["hook", "context", "insight", "takeaway", "closer"],
             "micro_plays": [],
-            "citations": retrieve(topic, angle, k=3),
+            "citations": retrieve(topic, angle_options[0], k=3),
         }
 
     def draft_variants(self, draft_prompt: dict[str, str], ctx: dict[str, Any]) -> list[str]:

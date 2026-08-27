@@ -70,6 +70,7 @@ class LinkedInContentRequest(BaseModel):
         default="turn real professional activity into useful LinkedIn visibility",
         min_length=1,
     )
+    author_pov: Literal["individual", "team", "company"] = "individual"
     services: list[str] = Field(default_factory=list)
     targets: list[str] = Field(default_factory=list)
     evidence: list[SourceEvidence] = Field(default_factory=list)

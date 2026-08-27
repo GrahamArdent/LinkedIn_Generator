@@ -30,6 +30,7 @@ def _pipeline():
                 "append_sources_block": False,
                 "hashtag_min": 0,
                 "hashtag_max": 5,
+                "forbidden_phrases": [],
             }
         }
     )
@@ -45,7 +46,7 @@ def test_plan_uses_request_topic_and_targets_not_cybersecurity_defaults(monkeypa
     plan = pipe.plan(
         {},
         {
-            "topic": "What a buyer conversation taught us about AI workflow adoption",
+            "topic": "What a buyer conversation taught me about AI workflow adoption",
             "services": ["discovery"],
             "targets": ["AI founders", "operators"],
         },
@@ -54,10 +55,11 @@ def test_plan_uses_request_topic_and_targets_not_cybersecurity_defaults(monkeypa
     assert "AI workflow adoption" in plan["angle"]
     assert "AI founders, operators" in plan["angle"]
     assert "CFO" not in plan["angle"]
+    assert len(plan["angle_options"]) == 3
     assert plan["micro_plays"] == []
 
 
-def test_draft_system_prompt_resolves_persona_and_audience():
+def test_draft_system_prompt_resolves_persona_audience_and_public_language_rules():
     prompts = yaml.safe_load((CONFIG / "prompts_packs.yaml").read_text(encoding="utf-8"))
     pipe = _pipeline()
 
@@ -67,10 +69,12 @@ def test_draft_system_prompt_resolves_persona_and_audience():
             "persona_key": "graham",
             "audience": "AI founders and operators",
             "objective": "turn real work into useful visibility",
+            "author_pov": "individual",
             "topic": "buyer workflow lesson",
             "services": ["discovery"],
-            "angle_options": ["practical lesson"],
-            "persona_profile": {"tone": ["direct", "humble"]},
+            "angle_options": ["practical lesson", "hidden consequence", "contrarian angle"],
+            "persona_profile": {"tone": ["direct", "humble"], "active_author_pov": "individual"},
+            "approved_voice_examples": [],
             "allowed_sources": [
                 {
                     "title": "Buyer note",
@@ -86,5 +90,8 @@ def test_draft_system_prompt_resolves_persona_and_audience():
     assert "AI founders and operators" in call["system"]
     assert "C-suite" not in call["system"]
     assert "{persona_key}" not in call["system"]
-    assert "Never invent statistics" in call["system"]
+    assert "Translate internal methodology" in call["system"]
+    assert "default to I/me/my" in call["system"]
+    assert "A CTA is optional" in call["system"]
+    assert "Author POV: individual" in call["user"]
     assert "Reliability mattered more than novelty" in call["user"]

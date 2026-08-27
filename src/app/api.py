@@ -26,10 +26,17 @@ def _voice_for_prompt(item: dict[str, Any]) -> dict[str, str]:
     }
 
 
-def _persona_profile(base: str, personas: dict[str, Any], persona_key: str) -> dict[str, Any]:
-    """Return persona configuration plus explicitly authorized durable voice authority."""
+def _persona_profile(
+    base: str,
+    personas: dict[str, Any],
+    persona_key: str,
+    *,
+    author_pov: str,
+) -> dict[str, Any]:
+    """Return persona configuration plus authorized voice and active POV context."""
 
     profile = dict(personas.get("personas", {}).get(persona_key, {}) or {})
+    profile["active_author_pov"] = author_pov
     if persona_key != "graham":
         return profile
 
@@ -48,6 +55,7 @@ def run_generation(
     *,
     audience: str = "C-suite leaders",
     objective: str = "Educate and convert attention to pipeline",
+    author_pov: str = "individual",
     targets: list[str] | None = None,
     allowed_sources: list[dict[str, Any]] | None = None,
     voice_examples: list[dict[str, Any]] | None = None,
@@ -57,10 +65,10 @@ def run_generation(
     """Run the generation pipeline with explicit caller context.
 
     Existing positional/default arguments remain for legacy callers. New
-    orchestrators should supply audience, objective, targets, evidence and
-    hashtags explicitly. Voice authority and approved examples are style and
-    reasoning evidence, never factual evidence. `llm_client` exists for
-    deterministic offline acceptance testing; live callers normally use the
+    orchestrators should supply audience, objective, author POV, targets,
+    evidence and hashtags explicitly. Voice authority and approved examples are
+    style and reasoning evidence, never factual evidence. `llm_client` exists
+    for deterministic offline acceptance testing; live callers normally use the
     configured provider.
     """
 
@@ -85,7 +93,7 @@ def run_generation(
         }
     }
     pipe = Pipeline(cfg, client=llm_client)
-    persona_profile = _persona_profile(base, personas, persona_key)
+    persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov)
 
     plan_ctx = {
         "topic": topic,
@@ -97,13 +105,15 @@ def run_generation(
     source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
     voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
+    angle_options = list(plan.get("angle_options") or [plan["angle"]])
     draft_ctx = {
         "persona_key": persona_key,
         "audience": audience,
         "objective": objective,
+        "author_pov": author_pov,
         "topic": topic,
         "services": services,
-        "angle_options": [plan["angle"]],
+        "angle_options": angle_options,
         "persona_profile": persona_profile,
         "allowed_sources": [_source_for_prompt(item) for item in source_items],
         "approved_voice_examples": prompt_voice_examples,

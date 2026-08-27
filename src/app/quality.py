@@ -10,6 +10,7 @@ CONTRAST_RE = re.compile(
     r"\b(?:but|instead|rather than|versus|vs\.?|not only|not .{0,40} but)\b",
     re.IGNORECASE,
 )
+COLLECTIVE_PRONOUN_RE = re.compile(r"\b(?:we|us|our|ours)\b", re.IGNORECASE)
 SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+|\n+")
 
 
@@ -25,6 +26,28 @@ def _sentences(text: str) -> list[str]:
     return [s.strip() for s in SENTENCE_SPLIT_RE.split(text) if s.strip()]
 
 
+def _semantic_rules(persona: dict[str, Any]) -> dict[str, Any]:
+    direct = persona.get("semantic_quality")
+    if isinstance(direct, dict):
+        return direct
+    authority = persona.get("voice_authority")
+    if isinstance(authority, dict):
+        nested = authority.get("semantic_quality")
+        if isinstance(nested, dict):
+            return nested
+    return {}
+
+
+def _matched_phrases(text: str, phrases: list[Any]) -> list[str]:
+    lower = text.lower()
+    matches: list[str] = []
+    for item in phrases:
+        phrase = str(item).strip().lower()
+        if phrase and phrase in lower:
+            matches.append(phrase)
+    return list(dict.fromkeys(matches))
+
+
 def evaluate_quality(
     text: str,
     persona: dict[str, Any],
@@ -32,9 +55,8 @@ def evaluate_quality(
 ) -> dict[str, Any]:
     """Return an explainable deterministic quality assessment.
 
-    This evaluates observable structure and repository-defined persona/rule
-    signals. It does not claim to prove subjective traits such as whether a
-    draft sounds exactly like a specific person.
+    This evaluates observable structure plus explicit public-language, POV and
+    generic-language rules. It does not claim to prove subjective voice traits.
     """
 
     score = 100
@@ -111,10 +133,32 @@ def evaluate_quality(
         score -= min(30, 15 * len(matched_forbidden))
         issues.append("Draft contains a repository-defined forbidden CTA phrase.")
 
+    semantic = _semantic_rules(persona)
+    internal_terms = _matched_phrases(text, list(semantic.get("internal_terms_needing_translation", []) or []))
+    generic_phrases = _matched_phrases(text, list(semantic.get("generic_phrases", []) or []))
+    signals["matched_internal_terms"] = internal_terms
+    signals["matched_generic_phrases"] = generic_phrases
+
+    if internal_terms:
+        score -= min(24, 6 * len(internal_terms))
+        issues.append("Draft uses internal project language that should be translated for a public reader.")
+
+    if generic_phrases:
+        score -= min(24, 8 * len(generic_phrases))
+        issues.append("Draft contains stock LinkedIn/AI phrasing that weakens specificity and voice.")
+
+    author_pov = str(persona.get("active_author_pov") or semantic.get("default_author_pov") or "").strip()
+    collective_pronouns = COLLECTIVE_PRONOUN_RE.findall(text)
+    signals["author_pov"] = author_pov or None
+    signals["collective_pronoun_count"] = len(collective_pronouns)
+    if author_pov == "individual" and collective_pronouns:
+        score -= min(18, 6 * len(collective_pronouns))
+        issues.append("Individual-author post uses collective we/us/our language without shared-action context.")
+
     unscored_traits: list[str] = []
     unscored_traits.extend(str(item) for item in persona.get("tone", []))
     if "clichés" in {str(item) for item in persona.get("donts", [])}:
-        unscored_traits.append("clichés (no repository-native phrase lexicon)")
+        unscored_traits.append("clichés beyond the explicit generic-phrase list")
     signals["unscored_traits"] = list(dict.fromkeys(unscored_traits))
 
     return {
