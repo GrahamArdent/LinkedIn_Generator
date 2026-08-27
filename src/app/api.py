@@ -6,6 +6,7 @@ from typing import Any
 from .generation import Pipeline
 from .llm import LLMClient
 from .opportunity import assess_opportunity, ending_guidance
+from .publish_quality import assess_publish_quality, rewrite_for_publish_quality
 from .utils import load_yaml
 
 
@@ -136,12 +137,15 @@ def run_generation(
     author_pov: str = "individual",
     content_goal: str = "auto",
     opportunity_gate: bool = False,
+    publish_quality_gate: bool = False,
+    publish_quality_threshold: int | None = None,
     targets: list[str] | None = None,
     allowed_sources: list[dict[str, Any]] | None = None,
     voice_examples: list[dict[str, Any]] | None = None,
     hashtags: list[str] | None = None,
     llm_client: Any | None = None,
     opportunity_client: Any | None = None,
+    publish_quality_client: Any | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
@@ -151,7 +155,9 @@ def run_generation(
     style and reasoning evidence, never factual evidence. Dedication-style
     requests may enable the opportunity preflight so weak subjects are skipped
     and promising-but-generic subjects request one concrete detail before a
-    full draft is generated.
+    full draft is generated. They may also enable the publish-quality gate: a
+    finished post below the configured threshold is preserved and receives one
+    bounded improvement candidate for human review.
     """
 
     base = os.path.join(os.path.dirname(__file__), "../../")
@@ -273,6 +279,92 @@ def run_generation(
         voice_examples=prompt_voice_examples,
     )
 
+    publish_review: dict[str, Any] = {}
+    if publish_quality_gate:
+        threshold = publish_quality_threshold
+        if threshold is None:
+            threshold = int(os.getenv("PUBLISH_QUALITY_MIN_SCORE", "90"))
+        threshold = max(0, min(100, int(threshold)))
+        quality_client = publish_quality_client or pipe.client
+        original_assessment = assess_publish_quality(
+            text=hum,
+            audience=audience,
+            content_goal=resolved_goal,
+            evidence=source_items,
+            persona_profile=persona_profile,
+            client=quality_client,
+        )
+        original_score = original_assessment.score
+        publish_review = {
+            "threshold": threshold,
+            "rewrite_triggered": False,
+            "publish_ready": original_score is not None and original_score >= threshold,
+            "recommendation": "original" if original_score is not None else "assessment_unavailable",
+            "original": {
+                "body": hum,
+                **original_assessment.as_dict(),
+            },
+            "rewrite": None,
+        }
+
+        if original_score is not None and original_score < threshold:
+            publish_review["rewrite_triggered"] = True
+            try:
+                rewrite, guard = rewrite_for_publish_quality(
+                    original=hum,
+                    assessment=original_assessment,
+                    prompt=prompts.get("publish_rewrite_prompt", {}),
+                    persona_profile=persona_profile,
+                    evidence=source_items,
+                    voice_examples=prompt_voice_examples,
+                    content_goal=resolved_goal,
+                    rules=cfg["prompt_kit"],
+                    client=quality_client,
+                )
+                rewrite_entry: dict[str, Any] = {
+                    "body": rewrite,
+                    "guard_accepted": bool(guard.get("accepted")),
+                    "guard_reasons": list(guard.get("reasons") or []),
+                    "score": None,
+                    "dimensions": {},
+                    "gaps": [],
+                    "rationale": "",
+                    "warnings": [],
+                }
+                if guard.get("accepted"):
+                    rewrite_assessment = assess_publish_quality(
+                        text=rewrite,
+                        audience=audience,
+                        content_goal=resolved_goal,
+                        evidence=source_items,
+                        persona_profile=persona_profile,
+                        client=quality_client,
+                    )
+                    rewrite_entry.update(rewrite_assessment.as_dict())
+                    rewrite_score = rewrite_assessment.score
+                    if rewrite_score is not None and rewrite_score >= threshold:
+                        publish_review["publish_ready"] = True
+                        publish_review["recommendation"] = "rewrite"
+                    elif rewrite_score is not None and rewrite_score > original_score:
+                        publish_review["recommendation"] = "rewrite_below_threshold"
+                    else:
+                        publish_review["recommendation"] = "original"
+                else:
+                    publish_review["recommendation"] = "original"
+                publish_review["rewrite"] = rewrite_entry
+            except Exception as exc:
+                publish_review["recommendation"] = "original"
+                publish_review["rewrite"] = {
+                    "body": "",
+                    "guard_accepted": False,
+                    "guard_reasons": ["publish-quality rewrite was unavailable"],
+                    "score": None,
+                    "dimensions": {},
+                    "gaps": [],
+                    "rationale": "",
+                    "warnings": [f"publish_rewrite_unavailable:{type(exc).__name__}"],
+                }
+
     voice_reference_ids = [
         str(item.get("example_id"))
         for item in voice_items
@@ -296,5 +388,23 @@ def run_generation(
             "missing_evidence_question": "",
         }
     )
+    if publish_review:
+        # The public body remains Draft A. Draft B is preserved as an explicit
+        # human-review alternative rather than silently replacing the original.
+        publish_review["original"]["body"] = payload.get("body", hum)
+        telemetry.update(
+            {
+                "publish_quality_score": publish_review["original"].get("score"),
+                "publish_quality_threshold": publish_review["threshold"],
+                "publish_rewrite_triggered": publish_review["rewrite_triggered"],
+                "publish_rewrite_score": (
+                    publish_review.get("rewrite", {}).get("score")
+                    if isinstance(publish_review.get("rewrite"), dict)
+                    else None
+                ),
+                "publish_ready": publish_review["publish_ready"],
+            }
+        )
+        payload["review"] = publish_review
     payload["status"] = "drafted"
     return payload
