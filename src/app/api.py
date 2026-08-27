@@ -44,9 +44,16 @@ def _persona_profile(
 
     voice_authority = load_yaml(os.path.join(base, "config/graham_voice_profile.yaml"))
     if voice_authority:
-        # Keep the source/provenance visible to the prompt and to future audits.
-        # The derived profile is style/reasoning authority only, never factual evidence.
+        # Voice Bible governs public rhetorical shape. It is style/reasoning
+        # authority only and never factual evidence.
         profile["voice_authority"] = voice_authority
+
+    spoken_voice = load_yaml(os.path.join(base, "config/graham_spoken_voice.yaml"))
+    if spoken_voice:
+        # Spoken Voice governs conversational wording, skepticism, reasoning
+        # cadence and first-person authenticity. It is also style/reasoning
+        # authority only and must never leak private-source biography.
+        profile["spoken_voice"] = spoken_voice
     return profile
 
 
