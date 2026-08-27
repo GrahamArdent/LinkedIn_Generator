@@ -28,6 +28,31 @@ def _voice_for_prompt(item: dict[str, Any]) -> dict[str, str]:
     }
 
 
+def _spoken_voice_for_prompt(authority: dict[str, Any]) -> dict[str, Any]:
+    """Project the auditable spoken-voice schema into a compact runtime prompt."""
+
+    source = authority.get("source", {}) if isinstance(authority.get("source"), dict) else {}
+    linkedin = (
+        authority.get("linkedin_translation", {})
+        if isinstance(authority.get("linkedin_translation"), dict)
+        else {}
+    )
+    signature = (
+        authority.get("signature_concepts", {})
+        if isinstance(authority.get("signature_concepts"), dict)
+        else {}
+    )
+    return {
+        "name": authority.get("name", "Graham Spoken Voice"),
+        "schema_version": authority.get("schema_version"),
+        "runtime_summary": authority.get("runtime_summary", ""),
+        "boundaries": list(source.get("boundaries", []) or []),
+        "composition_rules": list(linkedin.get("composition_rules", []) or []),
+        "anti_patterns": list(linkedin.get("anti_patterns", []) or []),
+        "signature_phrase_policy": signature.get("usage", ""),
+    }
+
+
 def _persona_profile(
     base: str,
     personas: dict[str, Any],
@@ -44,9 +69,17 @@ def _persona_profile(
 
     voice_authority = load_yaml(os.path.join(base, "config/graham_voice_profile.yaml"))
     if voice_authority:
-        # Keep the source/provenance visible to the prompt and to future audits.
-        # The derived profile is style/reasoning authority only, never factual evidence.
+        # Voice Bible governs public rhetorical shape. It is style/reasoning
+        # authority only and never factual evidence.
         profile["voice_authority"] = voice_authority
+
+    spoken_voice = load_yaml(os.path.join(base, "config/graham_spoken_voice.yaml"))
+    if spoken_voice:
+        # Keep the complete schema in config for auditability, but pass only the
+        # compact runtime projection so each generation does not pay for a
+        # 200-line voice document. It is style/reasoning authority only and must
+        # never leak private-source biography.
+        profile["spoken_voice"] = _spoken_voice_for_prompt(spoken_voice)
     return profile
 
 
