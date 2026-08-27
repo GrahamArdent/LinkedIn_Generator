@@ -47,19 +47,36 @@ def _pipeline(client):
     return pipe
 
 
-def test_graham_profile_loads_spoken_voice_as_separate_authority():
+def test_full_spoken_voice_schema_preserves_auditable_reasoning_model():
+    spoken = yaml.safe_load((ROOT / "config/graham_spoken_voice.yaml").read_text(encoding="utf-8"))
+
+    assert spoken["name"] == "Graham Spoken Voice"
+    assert spoken["schema_version"] == "1.0"
+    assert spoken["bridge_model"]["concept"] == "A -> B -> C"
+    assert spoken["register"]["primary"][:3] == ["plain_spoken", "conversational", "casual_professional"]
+    assert spoken["precedence"]["highest_to_lowest"][:2] == [
+        "current explicit user instruction",
+        "user-edited or published voice examples",
+    ]
+
+
+def test_graham_profile_loads_compact_spoken_voice_runtime_projection():
     personas = yaml.safe_load((ROOT / "config/personas.yaml").read_text(encoding="utf-8"))
     profile = _persona_profile(str(ROOT) + "/", personas, "graham", author_pov="individual")
 
     assert "voice_authority" in profile
     assert "spoken_voice" in profile
-    spoken = profile["spoken_voice"]
-    assert spoken["name"] == "Graham Spoken Voice"
-    assert spoken["schema_version"] == "1.0"
-    assert spoken["bridge_model"]["concept"] == "A -> B -> C"
-    assert spoken["register"]["primary"][:3] == ["plain_spoken", "conversational", "casual_professional"]
-    assert "current explicit user instruction" in spoken["precedence"]["highest_to_lowest"]
-    assert "user-edited or published voice examples" in spoken["precedence"]["highest_to_lowest"]
+    runtime = profile["spoken_voice"]
+    assert runtime["name"] == "Graham Spoken Voice"
+    assert runtime["schema_version"] == "1.0"
+    assert "curious before certain" in runtime["runtime_summary"]
+    assert runtime["composition_rules"]
+    assert runtime["anti_patterns"]
+    assert "not mandatory catchphrases" in runtime["signature_phrase_policy"]
+    # Expensive audit-only sections should not be injected into every model call.
+    assert "bridge_model" not in runtime
+    assert "reasoning_signature" not in runtime
+    assert "signature_concepts" not in runtime
 
 
 def test_non_graham_persona_does_not_inherit_spoken_voice():
