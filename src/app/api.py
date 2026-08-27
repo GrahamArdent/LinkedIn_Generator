@@ -175,6 +175,11 @@ def run_generation(
             "warnings": ["opportunity_gate_disabled"],
         }
 
+    # Keep the deterministic quality gate aligned with the chosen strategy.
+    # Questions are optional unless a conversation-goal opportunity explicitly earned one.
+    persona_profile["active_content_goal"] = resolved_goal
+    persona_profile["earned_question"] = bool(opportunity.get("earned_question", False))
+
     voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
     angle_options = list(plan.get("angle_options") or [plan["angle"]])
