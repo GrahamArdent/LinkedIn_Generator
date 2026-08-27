@@ -34,6 +34,7 @@ def test_graham_profile_carries_authorized_voice_bible_provenance():
     }
     assert authority["profile"]["persona"] == "The Relatable Provocateur"
     assert profile["active_author_pov"] == "individual"
+    assert "spoken_voice" in profile
     assert "Stephen King" not in yaml.safe_dump(authority, allow_unicode=True)
 
 
@@ -42,6 +43,7 @@ def test_non_graham_persona_does_not_inherit_graham_voice_authority():
     profile = _persona_profile(str(ROOT) + "/", personas, "ardent_v2", author_pov="company")
 
     assert "voice_authority" not in profile
+    assert "spoken_voice" not in profile
     assert profile["active_author_pov"] == "company"
 
 
@@ -73,6 +75,9 @@ def test_draft_prompt_receives_voice_bible_as_style_not_evidence():
             "audience": "AI builders and operators",
             "objective": "share a useful lesson from real work",
             "author_pov": "individual",
+            "content_goal": "authority",
+            "opportunity_assessment": {"decision": "draft", "score": 78},
+            "ending_guidance": "End with the strongest useful insight.",
             "topic": "planning should accelerate execution",
             "services": [],
             "angle_options": ["planning becomes harmful when ceremony outruns uncertainty reduction"],
@@ -84,9 +89,11 @@ def test_draft_prompt_receives_voice_bible_as_style_not_evidence():
 
     call = client.calls[0]
     assert "authorized Voice Bible guidance" in call["system"]
-    assert "it is not factual evidence" in call["system"]
+    assert "Graham Spoken Voice guidance" in call["system"]
+    assert "not factual evidence or biography" in call["system"]
     assert "Author POV is individual" in call["system"]
     assert "The Relatable Provocateur" in call["user"]
     assert "bold, witty, empathetic, direct and conversational" in call["user"]
     assert "do not assume cybersecurity" in call["user"]
+    assert "curious before certain" in call["user"]
     assert "brand-new project" in call["user"]
