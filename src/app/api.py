@@ -4,6 +4,8 @@ import os
 from typing import Any
 
 from .generation import Pipeline
+from .llm import LLMClient
+from .opportunity import assess_opportunity, ending_guidance
 from .utils import load_yaml
 
 
@@ -48,6 +50,20 @@ def _persona_profile(
     return profile
 
 
+def _goal_without_gate(content_goal: str) -> tuple[str, str]:
+    goal = content_goal if content_goal in {"reach", "conversation", "authority"} else "authority"
+    if goal == "conversation":
+        guidance = (
+            "A question may be used only if the supplied context contains a genuine tradeoff or experience "
+            "worth discussing. Never ask for generic thoughts, agreement, likes, or comments."
+        )
+    elif goal == "reach":
+        guidance = "End with a memorable stand-alone insight; do not force a question."
+    else:
+        guidance = "End with the strongest useful insight or earned provocation; a question is optional."
+    return goal, guidance
+
+
 def run_generation(
     topic: str,
     services: list[str],
@@ -56,20 +72,23 @@ def run_generation(
     audience: str = "C-suite leaders",
     objective: str = "Educate and convert attention to pipeline",
     author_pov: str = "individual",
+    content_goal: str = "auto",
+    opportunity_gate: bool = False,
     targets: list[str] | None = None,
     allowed_sources: list[dict[str, Any]] | None = None,
     voice_examples: list[dict[str, Any]] | None = None,
     hashtags: list[str] | None = None,
     llm_client: Any | None = None,
+    opportunity_client: Any | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
     Existing positional/default arguments remain for legacy callers. New
-    orchestrators should supply audience, objective, author POV, targets,
+    orchestrators should supply audience, objective, author POV, content goal,
     evidence and hashtags explicitly. Voice authority and approved examples are
-    style and reasoning evidence, never factual evidence. `llm_client` exists
-    for deterministic offline acceptance testing; live callers normally use the
-    configured provider.
+    style and reasoning evidence, never factual evidence. Dedication-style
+    requests may enable the opportunity preflight so weak subjects are skipped
+    before a full draft is generated.
     """
 
     base = os.path.join(os.path.dirname(__file__), "../../")
@@ -103,6 +122,59 @@ def run_generation(
     plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
 
     source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
+    citations = [
+        str(item.get("url", ""))
+        for item in source_items
+        if str(item.get("url", "")).startswith("http")
+    ]
+
+    if opportunity_gate:
+        gate_client = opportunity_client or llm_client
+        if gate_client is None:
+            gate_model = os.getenv("OPPORTUNITY_MODEL", "").strip() or None
+            gate_client = LLMClient(model=gate_model, temperature=0.1, seed=42)
+        minimum_score = max(0, min(100, int(os.getenv("OPPORTUNITY_MIN_SCORE", "60"))))
+        assessment = assess_opportunity(
+            topic=topic,
+            audience=audience,
+            objective=objective,
+            evidence=source_items,
+            client=gate_client,
+            requested_goal=content_goal,
+            minimum_score=minimum_score,
+        )
+        opportunity = assessment.as_dict()
+        resolved_goal = assessment.goal
+        ending = ending_guidance(assessment)
+        if assessment.decision == "skip":
+            return {
+                "status": "skipped",
+                "body": "",
+                "hashtags": [],
+                "sources": list(dict.fromkeys(citations)),
+                "telemetry": {
+                    "persona": persona_key,
+                    "opportunity_score": assessment.score,
+                    "opportunity_decision": assessment.decision,
+                    "opportunity_reason": assessment.reason,
+                    "opportunity_dimensions": assessment.dimensions,
+                    "opportunity_warnings": list(assessment.warnings),
+                    "content_goal": assessment.goal,
+                    "earned_question": assessment.earned_question,
+                },
+            }
+    else:
+        resolved_goal, ending = _goal_without_gate(content_goal)
+        opportunity = {
+            "score": None,
+            "decision": "draft",
+            "goal": resolved_goal,
+            "earned_question": False,
+            "reason": "Opportunity preflight disabled for this caller.",
+            "dimensions": {},
+            "warnings": ["opportunity_gate_disabled"],
+        }
+
     voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
     angle_options = list(plan.get("angle_options") or [plan["angle"]])
@@ -111,6 +183,9 @@ def run_generation(
         "audience": audience,
         "objective": objective,
         "author_pov": author_pov,
+        "content_goal": resolved_goal,
+        "opportunity_assessment": opportunity,
+        "ending_guidance": ending,
         "topic": topic,
         "services": services,
         "angle_options": angle_options,
@@ -133,22 +208,20 @@ def run_generation(
         voice_examples=prompt_voice_examples,
     )
 
-    citations = [
-        str(item.get("url", ""))
-        for item in source_items
-        if str(item.get("url", "")).startswith("http")
-    ]
     voice_reference_ids = [
         str(item.get("example_id"))
         for item in voice_items
         if item.get("example_id")
     ]
     final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
-    return pipe.finalize(
+    payload = pipe.finalize(
         persona_key,
         hum,
         citations,
         final_hashtags,
         voice_reference_count=len(voice_items),
         voice_reference_ids=voice_reference_ids,
+        opportunity=opportunity,
     )
+    payload["status"] = "drafted"
+    return payload
