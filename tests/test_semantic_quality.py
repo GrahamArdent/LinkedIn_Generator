@@ -3,8 +3,8 @@ from __future__ import annotations
 from src.app.quality import evaluate_quality
 
 
-def _persona(*, author_pov: str = "individual"):
-    return {
+def _persona(*, author_pov: str = "individual", content_goal: str | None = None, earned_question: bool = False):
+    persona = {
         "active_author_pov": author_pov,
         "voice_authority": {
             "semantic_quality": {
@@ -24,6 +24,10 @@ def _persona(*, author_pov: str = "individual"):
             }
         },
     }
+    if content_goal is not None:
+        persona["active_content_goal"] = content_goal
+    persona["earned_question"] = earned_question
+    return persona
 
 
 def _rules():
@@ -114,3 +118,33 @@ def test_plain_first_person_public_language_avoids_new_semantic_penalties():
     assert not any("internal project language" in issue for issue in report["issues"])
     assert not any("stock LinkedIn/AI phrasing" in issue for issue in report["issues"])
     assert not any("Individual-author post" in issue for issue in report["issues"])
+
+
+def test_authority_post_does_not_need_a_question_just_because_question_is_a_voice_device():
+    persona = _persona(content_goal="authority", earned_question=False)
+    persona["devices"] = ["question", "contrast"]
+    draft = (
+        "Good automation can look busy, but usefulness is a different test.\n\n"
+        "I care more about whether the system removes unnecessary work than whether it produces more activity. "
+        "That distinction keeps the technology focused on the person doing the job.\n\n"
+        "The best automation often knows what to leave alone."
+    )
+
+    report = evaluate_quality(draft, persona, _rules())
+
+    assert not any("question" in issue.lower() for issue in report["issues"])
+
+
+def test_conversation_post_is_penalized_when_an_earned_question_is_missing():
+    persona = _persona(content_goal="conversation", earned_question=True)
+    persona["devices"] = ["question", "contrast"]
+    draft = (
+        "More safeguards can feel safer, but they can also create unnecessary work.\n\n"
+        "I saw that happen when repeated checks reopened decisions that were already settled. "
+        "The useful tension is deciding when a safeguard still reduces risk and when it has become ceremony.\n\n"
+        "That line is worth examining before adding another layer."
+    )
+
+    report = evaluate_quality(draft, persona, _rules())
+
+    assert any("earned" in issue.lower() and "question" in issue.lower() for issue in report["issues"])
