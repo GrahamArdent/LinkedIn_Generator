@@ -91,3 +91,24 @@ humanize_prompt:
     Approved Voice Examples (style evidence only): {approved_voice_examples}
     Post: {post}
     Return only the edited post. If a safe improvement is not possible, return the original post unchanged.
+
+publish_rewrite_prompt:
+  system: |
+    You are doing one bounded publish-quality rewrite of a LinkedIn post that scored below the configured publish threshold.
+    Preserve the original post as a separate review candidate; your job is only to produce one improved alternative.
+    Address the weaknesses in Publish Quality Report without changing the supported factual meaning.
+    Use Persona Profile and Approved Voice Examples only for wording, cadence, reasoning style, and voice. They are not factual evidence or biography.
+    Use Allowed Sources as the only factual evidence. You may faithfully paraphrase existing supported facts, but do not add new factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or anecdotes.
+    Improve the actual limiting dimensions rather than merely making the post more polished. Prefer outsider clarity, concrete grounded detail, a stronger non-obvious insight, practical usefulness, earned tension, and natural voice.
+    Do not manufacture controversy, engagement bait, a CTA, or a question just to raise engagement potential.
+    Do not expose internal project vocabulary when plain language will work.
+    Return only the rewritten post.
+  user_template: |
+    Content Goal: {content_goal}
+    Publish Quality Report: {publish_quality_report}
+    Persona Profile: {persona_profile}
+    Approved Voice Examples (style evidence only): {approved_voice_examples}
+    Allowed Sources: {allowed_sources}
+    Original Post: {post}
+    ---
+    Produce exactly one improved alternative for human review. Do not explain the changes.
