@@ -4,7 +4,7 @@ import json
 from functools import partial
 
 from src.app.api import run_generation
-from src.app.contracts import LinkedInContentRequest, SourceEvidence
+from src.app.contracts import LinkedInContentRequest, SourceEvidence, VisualAssetPlan
 from src.app.integration import generate_content
 
 
@@ -69,6 +69,25 @@ class FixtureClient:
         }
 
 
+def fixture_visual_planner(**kwargs):
+    return VisualAssetPlan(
+        status="planned",
+        source_candidate=kwargs["source_candidate"],
+        asset_type="single_image",
+        rationale="One visual metaphor supports the post.",
+        creative_goal="Make reliability over novelty visible.",
+        single_image={
+            "concept": "A stable bridge carrying a workflow while flashy decorative elements sit unused nearby.",
+            "overlay_text": "Reliability beats novelty",
+            "composition": "One centered stable bridge with generous negative space.",
+            "style": "Clean editorial conceptual illustration.",
+            "generation_prompt": "Editorial illustration of a stable bridge representing a reliable workflow. No embedded text, lettering, logos, watermarks, fake interface labels, or pseudo-typography.",
+            "negative_guidance": ["robots", "neon dashboards"],
+            "alt_text": "A stable bridge symbolizes a reliable AI workflow.",
+        },
+    )
+
+
 def test_dedication_style_request_survives_end_to_end(monkeypatch):
     monkeypatch.setenv("N_VARIANTS", "1")
     client = FixtureClient()
@@ -94,6 +113,7 @@ def test_dedication_style_request_survives_end_to_end(monkeypatch):
     result = generate_content(
         request,
         generator=partial(run_generation, llm_client=client),
+        visual_planner=fixture_visual_planner,
     )
 
     assert result.request_id == "dedication-linkedin-1"
@@ -110,6 +130,10 @@ def test_dedication_style_request_survives_end_to_end(monkeypatch):
     assert result.review["threshold"] == 90
     assert result.review["original"]["score"] == 92
     assert result.review["rewrite_triggered"] is False
+    assert result.visual_asset is not None
+    assert result.visual_asset.status == "planned"
+    assert result.visual_asset.asset_type == "single_image"
+    assert result.visual_asset.source_candidate == "original"
 
     draft_call = next(call for call in client.calls if "Never invent statistics" in call["system"])
     assert "AI founders and operators" in draft_call["system"]
