@@ -89,11 +89,8 @@ def generate_content(
             )
         else:
             style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
-            resolved_goal = str(
-                (payload.get("telemetry") or {}).get("content_goal")
-                if isinstance(payload.get("telemetry"), dict)
-                else ""
-            ).strip() or request.content_goal
+            telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
+            resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
             planned = visual_planner(
                 post_text=candidate_body,
                 source_candidate=source_candidate,
