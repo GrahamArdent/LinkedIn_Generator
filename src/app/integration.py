@@ -27,6 +27,7 @@ def generate_content(
         persona_key=request.persona_key,
         audience=request.audience,
         objective=request.objective,
+        author_pov=request.author_pov,
         targets=request.targets,
         allowed_sources=[item.model_dump() for item in request.evidence],
         voice_examples=[item.model_dump() for item in request.voice_examples],
