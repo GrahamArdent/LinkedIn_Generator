@@ -70,16 +70,10 @@ def _persona_profile(
 
     voice_authority = load_yaml(os.path.join(base, "config/graham_voice_profile.yaml"))
     if voice_authority:
-        # Voice Bible governs public rhetorical shape. It is style/reasoning
-        # authority only and never factual evidence.
         profile["voice_authority"] = voice_authority
 
     spoken_voice = load_yaml(os.path.join(base, "config/graham_spoken_voice.yaml"))
     if spoken_voice:
-        # Keep the complete schema in config for auditability, but pass only the
-        # compact runtime projection so each generation does not pay for a
-        # 200-line voice document. It is style/reasoning authority only and must
-        # never leak private-source biography.
         profile["spoken_voice"] = _spoken_voice_for_prompt(spoken_voice)
     return profile
 
@@ -156,7 +150,7 @@ def run_generation(
     requests may enable the opportunity preflight so weak subjects are skipped
     and promising-but-generic subjects request one concrete detail before a
     full draft is generated. They may also enable the publish-quality gate: a
-    finished post below the configured threshold is preserved and receives one
+    finalized post below the configured threshold is preserved and receives one
     bounded improvement candidate for human review.
     """
 
@@ -236,8 +230,6 @@ def run_generation(
             "missing_evidence_question": "",
         }
 
-    # Keep the deterministic quality gate aligned with the chosen strategy.
-    # Questions are optional unless a conversation-goal opportunity explicitly earned one.
     persona_profile["active_content_goal"] = resolved_goal
     persona_profile["earned_question"] = bool(opportunity.get("earned_question", False))
 
@@ -279,7 +271,31 @@ def run_generation(
         voice_examples=prompt_voice_examples,
     )
 
-    publish_review: dict[str, Any] = {}
+    voice_reference_ids = [
+        str(item.get("example_id"))
+        for item in voice_items
+        if item.get("example_id")
+    ]
+    final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
+    payload = pipe.finalize(
+        persona_key,
+        hum,
+        citations,
+        final_hashtags,
+        voice_reference_count=len(voice_items),
+        voice_reference_ids=voice_reference_ids,
+        opportunity=opportunity,
+    )
+    primary_body = str(payload.get("body") or hum)
+    telemetry = payload.setdefault("telemetry", {})
+    telemetry.update(
+        {
+            "strongest_evidence_title": strongest_concrete_evidence["title"],
+            "strongest_evidence_fact": strongest_concrete_evidence["fact"],
+            "missing_evidence_question": "",
+        }
+    )
+
     if publish_quality_gate:
         threshold = publish_quality_threshold
         if threshold is None:
@@ -287,7 +303,7 @@ def run_generation(
         threshold = max(0, min(100, int(threshold)))
         quality_client = publish_quality_client or pipe.client
         original_assessment = assess_publish_quality(
-            text=hum,
+            text=primary_body,
             audience=audience,
             content_goal=resolved_goal,
             evidence=source_items,
@@ -295,13 +311,13 @@ def run_generation(
             client=quality_client,
         )
         original_score = original_assessment.score
-        publish_review = {
+        publish_review: dict[str, Any] = {
             "threshold": threshold,
             "rewrite_triggered": False,
             "publish_ready": original_score is not None and original_score >= threshold,
             "recommendation": "original" if original_score is not None else "assessment_unavailable",
             "original": {
-                "body": hum,
+                "body": primary_body,
                 **original_assessment.as_dict(),
             },
             "rewrite": None,
@@ -311,7 +327,7 @@ def run_generation(
             publish_review["rewrite_triggered"] = True
             try:
                 rewrite, guard = rewrite_for_publish_quality(
-                    original=hum,
+                    original=primary_body,
                     assessment=original_assessment,
                     prompt=prompts.get("publish_rewrite_prompt", {}),
                     persona_profile=persona_profile,
@@ -349,8 +365,6 @@ def run_generation(
                         publish_review["recommendation"] = "rewrite_below_threshold"
                     else:
                         publish_review["recommendation"] = "original"
-                else:
-                    publish_review["recommendation"] = "original"
                 publish_review["rewrite"] = rewrite_entry
             except Exception as exc:
                 publish_review["recommendation"] = "original"
@@ -365,33 +379,6 @@ def run_generation(
                     "warnings": [f"publish_rewrite_unavailable:{type(exc).__name__}"],
                 }
 
-    voice_reference_ids = [
-        str(item.get("example_id"))
-        for item in voice_items
-        if item.get("example_id")
-    ]
-    final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
-    payload = pipe.finalize(
-        persona_key,
-        hum,
-        citations,
-        final_hashtags,
-        voice_reference_count=len(voice_items),
-        voice_reference_ids=voice_reference_ids,
-        opportunity=opportunity,
-    )
-    telemetry = payload.setdefault("telemetry", {})
-    telemetry.update(
-        {
-            "strongest_evidence_title": strongest_concrete_evidence["title"],
-            "strongest_evidence_fact": strongest_concrete_evidence["fact"],
-            "missing_evidence_question": "",
-        }
-    )
-    if publish_review:
-        # The public body remains Draft A. Draft B is preserved as an explicit
-        # human-review alternative rather than silently replacing the original.
-        publish_review["original"]["body"] = payload.get("body", hum)
         telemetry.update(
             {
                 "publish_quality_score": publish_review["original"].get("score"),
@@ -406,5 +393,6 @@ def run_generation(
             }
         )
         payload["review"] = publish_review
+
     payload["status"] = "drafted"
     return payload
