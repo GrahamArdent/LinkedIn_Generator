@@ -22,6 +22,7 @@ FeedbackReason = Literal[
     "wrong_tone",
     "other",
 ]
+ContentGoal = Literal["auto", "reach", "conversation", "authority"]
 
 
 class SourceEvidence(BaseModel):
@@ -94,6 +95,8 @@ class LinkedInContentRequest(BaseModel):
         min_length=1,
     )
     author_pov: Literal["individual", "team", "company"] = "individual"
+    content_goal: ContentGoal = "auto"
+    opportunity_gate: bool = True
     services: list[str] = Field(default_factory=list)
     targets: list[str] = Field(default_factory=list)
     evidence: list[SourceEvidence] = Field(default_factory=list)
@@ -107,6 +110,7 @@ class LinkedInContentResult(BaseModel):
     request_id: str | None = None
     origin: Literal["dedication", "manual", "test"]
     persona_key: str
+    status: Literal["drafted", "skipped"] = "drafted"
     body: str
     hashtags: list[str] = Field(default_factory=list)
     sources: list[str] = Field(default_factory=list)

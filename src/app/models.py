@@ -10,6 +10,13 @@ class Telemetry(BaseModel):
     score: int | None = None
     voice_reference_count: int = 0
     voice_reference_ids: list[str] = Field(default_factory=list)
+    opportunity_score: int | None = None
+    opportunity_decision: str | None = None
+    opportunity_reason: str | None = None
+    opportunity_dimensions: dict[str, int] = Field(default_factory=dict)
+    opportunity_warnings: list[str] = Field(default_factory=list)
+    content_goal: str | None = None
+    earned_question: bool = False
 
 
 class PostJSON(BaseModel):

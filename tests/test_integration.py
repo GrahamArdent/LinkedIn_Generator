@@ -18,6 +18,7 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
     def fake_generator(**kwargs):
         captured.update(kwargs)
         return {
+            "status": "drafted",
             "body": "A useful post from real work.",
             "hashtags": ["#AI"],
             "sources": ["https://example.com/evidence"],
@@ -31,6 +32,8 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
         audience="AI founders and operators",
         objective="turn real professional activity into useful visibility",
         author_pov="individual",
+        content_goal="authority",
+        opportunity_gate=True,
         services=["discovery"],
         targets=["founders", "operators"],
         evidence=[
@@ -59,6 +62,8 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
         "audience": "AI founders and operators",
         "objective": "turn real professional activity into useful visibility",
         "author_pov": "individual",
+        "content_goal": "authority",
+        "opportunity_gate": True,
         "targets": ["founders", "operators"],
         "allowed_sources": [
             {
@@ -79,6 +84,7 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
     }
     assert result.request_id == "action-123"
     assert result.origin == "dedication"
+    assert result.status == "drafted"
     assert result.body == "A useful post from real work."
     assert result.sources == ["https://example.com/evidence"]
 
@@ -98,6 +104,8 @@ def test_dedication_request_does_not_inherit_legacy_security_hashtags():
     assert captured["hashtags"] == []
     assert captured["voice_examples"] == []
     assert captured["author_pov"] == "individual"
+    assert captured["content_goal"] == "auto"
+    assert captured["opportunity_gate"] is True
     assert "schedule" not in LinkedInContentRequest.model_fields
     assert "scheduled_at" not in LinkedInContentRequest.model_fields
     assert "priority" not in LinkedInContentRequest.model_fields

@@ -189,6 +189,7 @@ class Pipeline:
         *,
         voice_reference_count: int = 0,
         voice_reference_ids: list[str] | None = None,
+        opportunity: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         body_no_links, urls = remove_links(text)
         urls.extend([c for c in citations if c.startswith("http")])
@@ -209,6 +210,7 @@ class Pipeline:
         selected_score = None
         if self.last_judge_report is not None:
             selected_score = int(self.last_judge_report["score"])
+        opportunity = dict(opportunity or {})
         telemetry = Telemetry(
             emoji_count=0,
             bullet_char=bullet,
@@ -216,6 +218,13 @@ class Pipeline:
             score=selected_score,
             voice_reference_count=voice_reference_count,
             voice_reference_ids=list(voice_reference_ids or []),
+            opportunity_score=opportunity.get("score"),
+            opportunity_decision=opportunity.get("decision"),
+            opportunity_reason=opportunity.get("reason"),
+            opportunity_dimensions=dict(opportunity.get("dimensions") or {}),
+            opportunity_warnings=list(opportunity.get("warnings") or []),
+            content_goal=opportunity.get("goal"),
+            earned_question=bool(opportunity.get("earned_question", False)),
         )
         payload = PostJSON(hashtags=hashtags, body=clean_body, sources=urls, telemetry=telemetry)
         return payload.model_dump()

@@ -112,12 +112,19 @@ def evaluate_quality(
     devices = {str(item) for item in persona.get("devices", [])}
     has_question = "?" in text
     has_contrast = bool(CONTRAST_RE.search(text))
+    active_goal = str(persona.get("active_content_goal") or "").strip()
+    earned_question = bool(persona.get("earned_question", False))
     signals["has_question"] = has_question
     signals["has_contrast"] = has_contrast
+    signals["active_content_goal"] = active_goal or None
+    signals["earned_question"] = earned_question
 
-    if "question" in devices and not has_question:
-        score -= 3
-        issues.append("Configured question device is absent.")
+    # A question is a device, not a universal requirement. Research-backed
+    # conversation strategy only requires one when the opportunity preflight
+    # identifies enough genuine conversation potential to earn it.
+    if "question" in devices and active_goal == "conversation" and earned_question and not has_question:
+        score -= 5
+        issues.append("Conversation-goal draft is missing the specific question this opportunity earned.")
     if "contrast" in devices and not has_contrast:
         score -= 3
         issues.append("Configured contrast device is absent.")
