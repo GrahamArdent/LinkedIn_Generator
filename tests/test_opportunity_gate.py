@@ -241,7 +241,7 @@ def test_strong_opportunity_runs_one_preflight_and_one_clean_full_draft_with_exa
     assert "Ending Guidance:" in draft_client.calls[0]["user"]
 
 
-def test_malformed_preflight_fails_open_with_visible_warning():
+def test_malformed_preflight_without_any_facts_requests_evidence_instead_of_generic_draft():
     client = SequenceClient(["not json"])
     assessment = assess_opportunity(
         topic="A potentially useful professional lesson",
@@ -251,8 +251,27 @@ def test_malformed_preflight_fails_open_with_visible_warning():
         client=client,
     )
 
-    assert assessment.decision == "draft"
+    assert assessment.decision == "needs_more_evidence"
     assert assessment.goal == "authority"
     assert assessment.earned_question is False
+    assert assessment.missing_evidence_question
+    assert assessment.warnings
+    assert assessment.warnings[0].startswith("preflight_unavailable:")
+
+
+def test_malformed_preflight_with_grounded_fact_fails_open_from_exact_evidence():
+    client = SequenceClient(["not json"])
+    fact = "The system reopened a decision that had already been settled."
+    assessment = assess_opportunity(
+        topic="A potentially useful professional lesson",
+        audience="professional network",
+        objective="share useful insight",
+        evidence=[{"title": "Build note", "fact": fact}],
+        client=client,
+    )
+
+    assert assessment.decision == "draft"
+    assert assessment.goal == "authority"
+    assert assessment.strongest_evidence_fact == fact
     assert assessment.warnings
     assert assessment.warnings[0].startswith("preflight_unavailable:")
