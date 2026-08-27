@@ -23,6 +23,7 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
             "hashtags": ["#AI"],
             "sources": ["https://example.com/evidence"],
             "telemetry": {"persona": kwargs["persona_key"]},
+            "review": {"threshold": kwargs["publish_quality_threshold"]},
         }
 
     request = LinkedInContentRequest(
@@ -34,6 +35,8 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
         author_pov="individual",
         content_goal="authority",
         opportunity_gate=True,
+        publish_quality_gate=True,
+        publish_quality_threshold=90,
         services=["discovery"],
         targets=["founders", "operators"],
         evidence=[
@@ -64,6 +67,8 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
         "author_pov": "individual",
         "content_goal": "authority",
         "opportunity_gate": True,
+        "publish_quality_gate": True,
+        "publish_quality_threshold": 90,
         "targets": ["founders", "operators"],
         "allowed_sources": [
             {
@@ -87,6 +92,7 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
     assert result.status == "drafted"
     assert result.body == "A useful post from real work."
     assert result.sources == ["https://example.com/evidence"]
+    assert result.review["threshold"] == 90
 
 
 def test_needs_more_evidence_status_and_question_propagate_to_orchestrator():
@@ -112,6 +118,7 @@ def test_needs_more_evidence_status_and_question_propagate_to_orchestrator():
     assert result.status == "needs_more_evidence"
     assert result.body == ""
     assert result.telemetry["missing_evidence_question"] == question
+    assert result.review == {}
 
 
 def test_dedication_request_does_not_inherit_legacy_security_hashtags():
@@ -131,6 +138,8 @@ def test_dedication_request_does_not_inherit_legacy_security_hashtags():
     assert captured["author_pov"] == "individual"
     assert captured["content_goal"] == "auto"
     assert captured["opportunity_gate"] is True
+    assert captured["publish_quality_gate"] is True
+    assert captured["publish_quality_threshold"] == 90
     assert "schedule" not in LinkedInContentRequest.model_fields
     assert "scheduled_at" not in LinkedInContentRequest.model_fields
     assert "priority" not in LinkedInContentRequest.model_fields

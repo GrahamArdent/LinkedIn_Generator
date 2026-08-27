@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from functools import partial
 
 from src.app.api import run_generation
@@ -19,6 +20,44 @@ class FixtureClient:
                 "response_json": response_json,
             }
         )
+        if "strict LinkedIn content-opportunity and evidence evaluator" in system:
+            return {
+                "text": json.dumps(
+                    {
+                        "outsider_clarity": 5,
+                        "professional_relevance": 5,
+                        "concrete_evidence": 5,
+                        "distinctiveness": 4,
+                        "novel_insight": 4,
+                        "practical_usefulness": 4,
+                        "emotional_tension": 3,
+                        "conversation_potential": 3,
+                        "shareability": 4,
+                        "voice_fit": 4,
+                        "strongest_evidence_index": 0,
+                        "missing_evidence_question": "",
+                        "reason": "The supplied buyer detail supports a useful professional lesson.",
+                    }
+                )
+            }
+        if "strict LinkedIn publish-quality evaluator" in system:
+            return {
+                "text": json.dumps(
+                    {
+                        "outsider_clarity": 5,
+                        "professional_relevance": 5,
+                        "specificity": 5,
+                        "novel_insight": 5,
+                        "practical_usefulness": 4,
+                        "emotional_tension": 4,
+                        "conversation_potential": 4,
+                        "shareability": 4,
+                        "voice_authenticity": 4,
+                        "gaps": [],
+                        "rationale": "The post is grounded, clear, and useful.",
+                    }
+                )
+            }
         return {
             "text": (
                 "The model wasn't the interesting part.\n\n"
@@ -68,8 +107,11 @@ def test_dedication_style_request_survives_end_to_end(monkeypatch):
     assert "🔹 Measure the handoff." in result.body
     assert "—" not in result.body
     assert "http" not in result.body
+    assert result.review["threshold"] == 90
+    assert result.review["original"]["score"] == 92
+    assert result.review["rewrite_triggered"] is False
 
-    call = client.calls[0]
-    assert "AI founders and operators" in call["system"]
-    assert "Reliability mattered more than novelty." in call["user"]
-    assert "Never invent statistics" in call["system"]
+    draft_call = next(call for call in client.calls if "Never invent statistics" in call["system"])
+    assert "AI founders and operators" in draft_call["system"]
+    assert "Reliability mattered more than novelty." in draft_call["user"]
+    assert "Never invent statistics" in draft_call["system"]
