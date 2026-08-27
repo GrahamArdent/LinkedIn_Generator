@@ -30,6 +30,8 @@ def generate_content(
         author_pov=request.author_pov,
         content_goal=request.content_goal,
         opportunity_gate=request.opportunity_gate,
+        publish_quality_gate=request.publish_quality_gate,
+        publish_quality_threshold=request.publish_quality_threshold,
         targets=request.targets,
         allowed_sources=[item.model_dump() for item in request.evidence],
         voice_examples=[item.model_dump() for item in request.voice_examples],
@@ -48,4 +50,5 @@ def generate_content(
         hashtags=list(payload.get("hashtags") or []),
         sources=list(payload.get("sources") or []),
         telemetry=dict(payload.get("telemetry") or {}),
+        review=dict(payload.get("review") or {}),
     )
