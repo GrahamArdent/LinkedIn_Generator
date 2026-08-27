@@ -26,10 +26,11 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
 
     request = LinkedInContentRequest(
         request_id="action-123",
-        topic="What a buyer conversation taught us about AI workflow adoption",
+        topic="What a buyer conversation taught me about AI workflow adoption",
         persona_key="graham",
         audience="AI founders and operators",
         objective="turn real professional activity into useful visibility",
+        author_pov="individual",
         services=["discovery"],
         targets=["founders", "operators"],
         evidence=[
@@ -57,6 +58,7 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
         "persona_key": "graham",
         "audience": "AI founders and operators",
         "objective": "turn real professional activity into useful visibility",
+        "author_pov": "individual",
         "targets": ["founders", "operators"],
         "allowed_sources": [
             {
@@ -95,6 +97,7 @@ def test_dedication_request_does_not_inherit_legacy_security_hashtags():
 
     assert captured["hashtags"] == []
     assert captured["voice_examples"] == []
+    assert captured["author_pov"] == "individual"
     assert "schedule" not in LinkedInContentRequest.model_fields
     assert "scheduled_at" not in LinkedInContentRequest.model_fields
     assert "priority" not in LinkedInContentRequest.model_fields
