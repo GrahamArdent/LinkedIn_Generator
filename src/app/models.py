@@ -15,6 +15,9 @@ class Telemetry(BaseModel):
     opportunity_reason: str | None = None
     opportunity_dimensions: dict[str, int] = Field(default_factory=dict)
     opportunity_warnings: list[str] = Field(default_factory=list)
+    strongest_evidence_title: str = ""
+    strongest_evidence_fact: str = ""
+    missing_evidence_question: str = ""
     content_goal: str | None = None
     earned_question: bool = False
 

@@ -21,20 +21,23 @@ def payload(**overrides):
     base = {
         "outsider_clarity": 4,
         "professional_relevance": 4,
-        "specificity": 4,
+        "concrete_evidence": 4,
+        "distinctiveness": 4,
         "novel_insight": 4,
         "practical_usefulness": 4,
         "emotional_tension": 3,
         "conversation_potential": 3,
         "shareability": 4,
         "voice_fit": 4,
+        "strongest_evidence_index": 0,
+        "missing_evidence_question": "",
         "reason": "The topic contains a concrete lesson that travels beyond the source project.",
     }
     base.update(overrides)
     return json.dumps(base)
 
 
-def test_weighted_opportunity_score_is_computed_in_code():
+def test_weighted_opportunity_score_is_computed_in_code_and_selects_exact_evidence():
     client = SequenceClient([payload()])
     assessment = assess_opportunity(
         topic="A concrete lesson from AI workflow design",
@@ -49,6 +52,8 @@ def test_weighted_opportunity_score_is_computed_in_code():
     assert assessment.decision == "draft"
     assert assessment.goal == "reach"
     assert assessment.earned_question is False
+    assert assessment.strongest_evidence_title == "Build note"
+    assert assessment.strongest_evidence_fact == "A repeated planning step reopened settled decisions."
     assert len(client.calls) == 1
 
 
@@ -56,7 +61,7 @@ def test_auto_conversation_goal_only_earns_question_with_real_conversation_signa
     client = SequenceClient([
         payload(
             outsider_clarity=4,
-            specificity=4,
+            concrete_evidence=4,
             conversation_potential=5,
             emotional_tension=4,
             novel_insight=3,
@@ -95,7 +100,8 @@ def test_weak_opportunity_skips_before_full_draft_call():
         payload(
             outsider_clarity=1,
             professional_relevance=1,
-            specificity=1,
+            concrete_evidence=1,
+            distinctiveness=1,
             novel_insight=1,
             practical_usefulness=1,
             emotional_tension=1,
@@ -127,11 +133,76 @@ def test_weak_opportunity_skips_before_full_draft_call():
     assert result["status"] == "skipped"
     assert result["body"] == ""
     assert result["telemetry"]["opportunity_decision"] == "skip"
+    assert result["telemetry"]["missing_evidence_question"] == ""
     assert len(gate_client.calls) == 1
     assert len(draft_client.calls) == 0
 
 
-def test_strong_opportunity_runs_one_preflight_and_one_clean_full_draft():
+def test_promising_but_generic_subject_requests_one_detail_before_drafting():
+    gate_client = SequenceClient([
+        payload(
+            outsider_clarity=4,
+            professional_relevance=4,
+            concrete_evidence=2,
+            distinctiveness=2,
+            novel_insight=4,
+            practical_usefulness=4,
+            strongest_evidence_index=-1,
+            missing_evidence_question="What did the system actually make you redo that had already been decided?",
+            reason="The lesson is strong, but the supplied evidence is still generic.",
+        )
+    ])
+    draft_client = SequenceClient(["This must not be consumed."])
+
+    result = run_generation(
+        topic="Why too much AI verification can create rework",
+        services=[],
+        persona_key="graham",
+        audience="AI builders and operators",
+        objective="share a useful professional lesson",
+        author_pov="individual",
+        content_goal="authority",
+        opportunity_gate=True,
+        allowed_sources=[{"title": "General note", "fact": "Too many checks can create rework."}],
+        hashtags=[],
+        llm_client=draft_client,
+        opportunity_client=gate_client,
+    )
+
+    assert result["status"] == "needs_more_evidence"
+    assert result["body"] == ""
+    assert result["telemetry"]["opportunity_decision"] == "needs_more_evidence"
+    assert result["telemetry"]["missing_evidence_question"] == (
+        "What did the system actually make you redo that had already been decided?"
+    )
+    assert len(gate_client.calls) == 1
+    assert len(draft_client.calls) == 0
+
+
+def test_high_specificity_score_without_real_selected_evidence_is_downgraded():
+    client = SequenceClient([
+        payload(
+            concrete_evidence=5,
+            distinctiveness=5,
+            strongest_evidence_index=-1,
+            missing_evidence_question="What is the concrete event that proves this happened?",
+        )
+    ])
+    assessment = assess_opportunity(
+        topic="A promising AI workflow lesson",
+        audience="AI builders",
+        objective="share a useful lesson",
+        evidence=[{"title": "Generic note", "fact": "AI workflows should avoid unnecessary work."}],
+        client=client,
+    )
+
+    assert assessment.dimensions["concrete_evidence"] == 2
+    assert assessment.dimensions["distinctiveness"] == 2
+    assert assessment.decision == "needs_more_evidence"
+    assert assessment.missing_evidence_question == "What is the concrete event that proves this happened?"
+
+
+def test_strong_opportunity_runs_one_preflight_and_one_clean_full_draft_with_exact_anchor():
     gate_client = SequenceClient([payload()])
     clean_draft = (
         "AI can save time, but it can also automate unnecessary work.\n\n"
@@ -141,6 +212,7 @@ def test_strong_opportunity_runs_one_preflight_and_one_clean_full_draft():
         "It is about knowing which decisions still need attention and which ones should stay settled."
     )
     draft_client = SequenceClient([clean_draft])
+    fact = "A planning step reopened decisions that had already been settled."
 
     result = run_generation(
         topic="What unnecessary rework taught me about AI automation",
@@ -151,12 +223,7 @@ def test_strong_opportunity_runs_one_preflight_and_one_clean_full_draft():
         author_pov="individual",
         content_goal="authority",
         opportunity_gate=True,
-        allowed_sources=[
-            {
-                "title": "Build note",
-                "fact": "A planning step reopened decisions that had already been settled.",
-            }
-        ],
+        allowed_sources=[{"title": "Build note", "fact": fact}],
         hashtags=[],
         llm_client=draft_client,
         opportunity_client=gate_client,
@@ -165,13 +232,16 @@ def test_strong_opportunity_runs_one_preflight_and_one_clean_full_draft():
     assert result["status"] == "drafted"
     assert result["telemetry"]["opportunity_decision"] == "draft"
     assert result["telemetry"]["content_goal"] == "authority"
+    assert result["telemetry"]["strongest_evidence_fact"] == fact
     assert len(gate_client.calls) == 1
     assert len(draft_client.calls) == 1
     assert "Content Goal: authority" in draft_client.calls[0]["user"]
+    assert "Strongest Concrete Evidence:" in draft_client.calls[0]["user"]
+    assert fact in draft_client.calls[0]["user"]
     assert "Ending Guidance:" in draft_client.calls[0]["user"]
 
 
-def test_malformed_preflight_fails_open_with_visible_warning():
+def test_malformed_preflight_without_any_facts_requests_evidence_instead_of_generic_draft():
     client = SequenceClient(["not json"])
     assessment = assess_opportunity(
         topic="A potentially useful professional lesson",
@@ -181,8 +251,27 @@ def test_malformed_preflight_fails_open_with_visible_warning():
         client=client,
     )
 
-    assert assessment.decision == "draft"
+    assert assessment.decision == "needs_more_evidence"
     assert assessment.goal == "authority"
     assert assessment.earned_question is False
+    assert assessment.missing_evidence_question
+    assert assessment.warnings
+    assert assessment.warnings[0].startswith("preflight_unavailable:")
+
+
+def test_malformed_preflight_with_grounded_fact_fails_open_from_exact_evidence():
+    client = SequenceClient(["not json"])
+    fact = "The system reopened a decision that had already been settled."
+    assessment = assess_opportunity(
+        topic="A potentially useful professional lesson",
+        audience="professional network",
+        objective="share useful insight",
+        evidence=[{"title": "Build note", "fact": fact}],
+        client=client,
+    )
+
+    assert assessment.decision == "draft"
+    assert assessment.goal == "authority"
+    assert assessment.strongest_evidence_fact == fact
     assert assessment.warnings
     assert assessment.warnings[0].startswith("preflight_unavailable:")

@@ -89,6 +89,31 @@ def test_dedication_contract_forwards_linkedin_domain_context_only():
     assert result.sources == ["https://example.com/evidence"]
 
 
+def test_needs_more_evidence_status_and_question_propagate_to_orchestrator():
+    question = "What did the system actually make you redo that had already been decided?"
+
+    def fake_generator(**_kwargs):
+        return {
+            "status": "needs_more_evidence",
+            "body": "",
+            "hashtags": [],
+            "sources": [],
+            "telemetry": {
+                "opportunity_decision": "needs_more_evidence",
+                "missing_evidence_question": question,
+            },
+        }
+
+    result = generate_content(
+        LinkedInContentRequest(topic="Why too much AI verification can create rework"),
+        generator=fake_generator,
+    )
+
+    assert result.status == "needs_more_evidence"
+    assert result.body == ""
+    assert result.telemetry["missing_evidence_question"] == question
+
+
 def test_dedication_request_does_not_inherit_legacy_security_hashtags():
     captured = {}
 

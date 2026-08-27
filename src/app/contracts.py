@@ -110,7 +110,7 @@ class LinkedInContentResult(BaseModel):
     request_id: str | None = None
     origin: Literal["dedication", "manual", "test"]
     persona_key: str
-    status: Literal["drafted", "skipped"] = "drafted"
+    status: Literal["drafted", "skipped", "needs_more_evidence"] = "drafted"
     body: str
     hashtags: list[str] = Field(default_factory=list)
     sources: list[str] = Field(default_factory=list)

@@ -7,12 +7,13 @@ draft_prompt:
     Assume the reader is smart but has never seen the author's internal project documents. Translate internal methodology, repository, software-process, and project vocabulary into ordinary language before using it. If a project name matters, explain what it does in plain English on first mention.
     Respect Author POV. When Author POV is individual, default to I/me/my for the author's own actions and do not use we/us/our unless the supplied evidence clearly describes a genuinely shared action.
     Make one main point. Choose the strongest useful angle from Angle Options and build the post around that point rather than combining every angle.
+    When Strongest Concrete Evidence is non-empty, use that exact supplied fact as the factual anchor for the post. You may paraphrase it faithfully, but do not embellish it, add precision, invent timing, or manufacture a more dramatic example. Let the insight grow out of the evidence rather than starting from a generic lesson and decorating it afterward.
     Prefer concrete details and real consequences from Allowed Sources over abstract process language.
     Avoid stock LinkedIn/AI phrasing, empty inspiration, manufactured drama, and engagement bait.
     Follow the Content Goal rather than trying to maximize every outcome at once.
     For reach, prioritize outsider clarity, stand-alone professional usefulness, and a memorable insight that works beyond the author's existing network.
     For conversation, surface a real tradeoff or experience readers can substantively discuss; use a question only when Ending Guidance says it is earned.
-    For authority, prioritize specificity, causal depth, original interpretation, and a useful takeaway; a question is not required.
+    For authority, prioritize concrete evidence, distinctiveness, causal depth, original interpretation, and a useful takeaway; a question is not required.
     A CTA is optional. Do not force a question, comment request, DM offer, or sales motion when a natural insight or earned provocation is a stronger ending.
     Treat Allowed Sources as the only factual evidence supplied for this draft.
     Treat Approved Voice Examples as style evidence only. Learn cadence, structure, reasoning patterns, and level of directness from them, but do not copy distinctive phrases, anecdotes, names, facts, or claims from them.
@@ -25,6 +26,7 @@ draft_prompt:
     Author POV: {author_pov}
     Content Goal: {content_goal}
     Opportunity Assessment: {opportunity_assessment}
+    Strongest Concrete Evidence: {strongest_concrete_evidence}
     Ending Guidance: {ending_guidance}
     Topic: {topic}
     Services/related capabilities: {services}
@@ -34,7 +36,7 @@ draft_prompt:
     Allowed Sources (titles + grounded facts): {allowed_sources}
     ---
     Write one concise LinkedIn post around the strongest single takeaway.
-    Open with a clear hook, explain the idea in language an everyday professional can understand, connect it to a concrete practical or human consequence when the evidence supports one, and end naturally.
+    Open with a clear hook, ground the post in the strongest supplied concrete detail when available, explain the idea in language an everyday professional can understand, connect it to a practical or human consequence supported by the evidence, and end naturally.
     Do not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question, framework phrase, or rigid section when the supplied context does not justify it.
 
 plan_prompt:

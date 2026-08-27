@@ -97,6 +97,35 @@ def _goal_without_gate(content_goal: str) -> tuple[str, str]:
     return goal, guidance
 
 
+def _terminal_opportunity_payload(
+    *,
+    persona_key: str,
+    citations: list[str],
+    opportunity: dict[str, Any],
+) -> dict[str, Any]:
+    decision = str(opportunity.get("decision") or "skip")
+    status = "needs_more_evidence" if decision == "needs_more_evidence" else "skipped"
+    return {
+        "status": status,
+        "body": "",
+        "hashtags": [],
+        "sources": list(dict.fromkeys(citations)),
+        "telemetry": {
+            "persona": persona_key,
+            "opportunity_score": opportunity.get("score"),
+            "opportunity_decision": decision,
+            "opportunity_reason": opportunity.get("reason"),
+            "opportunity_dimensions": dict(opportunity.get("dimensions") or {}),
+            "opportunity_warnings": list(opportunity.get("warnings") or []),
+            "strongest_evidence_title": str(opportunity.get("strongest_evidence_title") or ""),
+            "strongest_evidence_fact": str(opportunity.get("strongest_evidence_fact") or ""),
+            "missing_evidence_question": str(opportunity.get("missing_evidence_question") or ""),
+            "content_goal": opportunity.get("goal"),
+            "earned_question": bool(opportunity.get("earned_question", False)),
+        },
+    }
+
+
 def run_generation(
     topic: str,
     services: list[str],
@@ -121,7 +150,8 @@ def run_generation(
     evidence and hashtags explicitly. Voice authority and approved examples are
     style and reasoning evidence, never factual evidence. Dedication-style
     requests may enable the opportunity preflight so weak subjects are skipped
-    before a full draft is generated.
+    and promising-but-generic subjects request one concrete detail before a
+    full draft is generated.
     """
 
     base = os.path.join(os.path.dirname(__file__), "../../")
@@ -179,23 +209,12 @@ def run_generation(
         opportunity = assessment.as_dict()
         resolved_goal = assessment.goal
         ending = ending_guidance(assessment)
-        if assessment.decision == "skip":
-            return {
-                "status": "skipped",
-                "body": "",
-                "hashtags": [],
-                "sources": list(dict.fromkeys(citations)),
-                "telemetry": {
-                    "persona": persona_key,
-                    "opportunity_score": assessment.score,
-                    "opportunity_decision": assessment.decision,
-                    "opportunity_reason": assessment.reason,
-                    "opportunity_dimensions": assessment.dimensions,
-                    "opportunity_warnings": list(assessment.warnings),
-                    "content_goal": assessment.goal,
-                    "earned_question": assessment.earned_question,
-                },
-            }
+        if assessment.decision != "draft":
+            return _terminal_opportunity_payload(
+                persona_key=persona_key,
+                citations=citations,
+                opportunity=opportunity,
+            )
     else:
         resolved_goal, ending = _goal_without_gate(content_goal)
         opportunity = {
@@ -206,6 +225,9 @@ def run_generation(
             "reason": "Opportunity preflight disabled for this caller.",
             "dimensions": {},
             "warnings": ["opportunity_gate_disabled"],
+            "strongest_evidence_title": "",
+            "strongest_evidence_fact": "",
+            "missing_evidence_question": "",
         }
 
     # Keep the deterministic quality gate aligned with the chosen strategy.
@@ -216,6 +238,10 @@ def run_generation(
     voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
     angle_options = list(plan.get("angle_options") or [plan["angle"]])
+    strongest_concrete_evidence = {
+        "title": str(opportunity.get("strongest_evidence_title") or ""),
+        "fact": str(opportunity.get("strongest_evidence_fact") or ""),
+    }
     draft_ctx = {
         "persona_key": persona_key,
         "audience": audience,
@@ -223,6 +249,7 @@ def run_generation(
         "author_pov": author_pov,
         "content_goal": resolved_goal,
         "opportunity_assessment": opportunity,
+        "strongest_concrete_evidence": strongest_concrete_evidence,
         "ending_guidance": ending,
         "topic": topic,
         "services": services,
@@ -260,6 +287,14 @@ def run_generation(
         voice_reference_count=len(voice_items),
         voice_reference_ids=voice_reference_ids,
         opportunity=opportunity,
+    )
+    telemetry = payload.setdefault("telemetry", {})
+    telemetry.update(
+        {
+            "strongest_evidence_title": strongest_concrete_evidence["title"],
+            "strongest_evidence_fact": strongest_concrete_evidence["fact"],
+            "missing_evidence_question": "",
+        }
     )
     payload["status"] = "drafted"
     return payload
