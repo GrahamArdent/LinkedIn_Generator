@@ -97,6 +97,8 @@ class LinkedInContentRequest(BaseModel):
     author_pov: Literal["individual", "team", "company"] = "individual"
     content_goal: ContentGoal = "auto"
     opportunity_gate: bool = True
+    publish_quality_gate: bool = True
+    publish_quality_threshold: int = Field(default=90, ge=0, le=100)
     services: list[str] = Field(default_factory=list)
     targets: list[str] = Field(default_factory=list)
     evidence: list[SourceEvidence] = Field(default_factory=list)
@@ -115,3 +117,4 @@ class LinkedInContentResult(BaseModel):
     hashtags: list[str] = Field(default_factory=list)
     sources: list[str] = Field(default_factory=list)
     telemetry: dict[str, Any] = Field(default_factory=dict)
+    review: dict[str, Any] = Field(default_factory=dict)
