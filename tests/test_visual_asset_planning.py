@@ -190,3 +190,43 @@ def test_invalid_carousel_structure_defers_without_fabricating_missing_slides():
 
     assert plan.status == "deferred"
     assert any(item.startswith("visual_plan_invalid:") for item in plan.warnings)
+
+
+def test_single_image_overlay_over_12_words_is_rejected():
+    payload = single_payload()
+    payload["single_image"]["overlay_text"] = (
+        "This headline has far too many words for one clean LinkedIn image overlay to work well"
+    )
+    client = FixtureClient(payload)
+
+    plan = plan_visual_asset(
+        post_text=POST,
+        source_candidate="original",
+        audience="AI builders",
+        content_goal="authority",
+        evidence=[],
+        style_profile=STYLE,
+        client=client,
+    )
+
+    assert plan.status == "deferred"
+    assert any(item.startswith("visual_plan_invalid:") for item in plan.warnings)
+
+
+def test_missing_single_image_generation_prompt_is_rejected():
+    payload = single_payload()
+    payload["single_image"]["generation_prompt"] = ""
+    client = FixtureClient(payload)
+
+    plan = plan_visual_asset(
+        post_text=POST,
+        source_candidate="original",
+        audience="AI builders",
+        content_goal="authority",
+        evidence=[],
+        style_profile=STYLE,
+        client=client,
+    )
+
+    assert plan.status == "deferred"
+    assert any(item.startswith("visual_plan_invalid:") for item in plan.warnings)
