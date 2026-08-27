@@ -5,6 +5,25 @@ from typing import Any, Literal
 from pydantic import BaseModel, Field, model_validator
 
 
+FeedbackReason = Literal[
+    "too_internal",
+    "wrong_pov",
+    "too_generic",
+    "too_long",
+    "too_short",
+    "sounds_like_ai",
+    "not_my_voice",
+    "weak_hook",
+    "forced_cta",
+    "unclear_point",
+    "weak_specificity",
+    "too_salesy",
+    "unsupported_claim",
+    "wrong_tone",
+    "other",
+]
+
+
 class SourceEvidence(BaseModel):
     """Bounded source material that may ground a LinkedIn draft."""
 
@@ -32,7 +51,8 @@ class LinkedInContentFeedback(BaseModel):
 
     Feedback is a domain event, not persistence. Dedication or another caller
     may store it, but only explicit approval-bearing decisions may be promoted
-    to positive voice evidence.
+    to positive voice evidence. Reason codes preserve why the user changed or
+    rejected a draft without requiring a long free-text explanation.
     """
 
     feedback_id: str | None = None
@@ -41,6 +61,7 @@ class LinkedInContentFeedback(BaseModel):
     original_text: str = Field(min_length=1, max_length=3500)
     edited_text: str | None = Field(default=None, max_length=3500)
     source_ref: str | None = None
+    reason_codes: list[FeedbackReason] = Field(default_factory=list, max_length=5)
     note: str | None = Field(default=None, max_length=1000)
 
     @model_validator(mode="after")
@@ -50,6 +71,8 @@ class LinkedInContentFeedback(BaseModel):
             raise ValueError("edited_text is required when decision='edit'")
         if self.edited_text is not None and not edited:
             raise ValueError("edited_text cannot be blank when supplied")
+        if len(self.reason_codes) != len(set(self.reason_codes)):
+            raise ValueError("reason_codes must not contain duplicates")
         return self
 
 
