@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any
+
 from .contracts import LinkedInContentFeedback, VoiceExample
 
 
@@ -34,3 +36,19 @@ def voice_example_from_feedback(feedback: LinkedInContentFeedback) -> VoiceExamp
         text=text,
         source_ref=feedback.source_ref,
     )
+
+
+def correction_signals_from_feedback(feedback: LinkedInContentFeedback) -> dict[str, Any]:
+    """Return compact learning signals without persisting or inferring intent.
+
+    These signals let an orchestrator aggregate correction patterns such as
+    `too_internal` or `wrong_pov` separately from positive voice examples.
+    They deliberately preserve only explicit human input.
+    """
+
+    return {
+        "decision": feedback.decision,
+        "reason_codes": list(feedback.reason_codes),
+        "has_user_edit": bool((feedback.edited_text or "").strip()),
+        "promotes_voice_evidence": feedback.decision in _PROMOTABLE_PROVENANCE,
+    }
