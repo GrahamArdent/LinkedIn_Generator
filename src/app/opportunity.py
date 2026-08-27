@@ -209,10 +209,19 @@ def assess_opportunity(
         text = str(out.get("text", "") if isinstance(out, dict) else out)
         payload = _parse_payload(text)
         dimensions = {key: _clamp_dimension(payload.get(key)) for key in _DIMENSION_KEYS}
+        title, fact = _selected_evidence(payload, source_facts)
+
+        # The model cannot award itself strong concrete-evidence credit without
+        # pointing to an actual supplied item. This closes the path where an LLM
+        # could rate an abstract theme as specific and then draft invented detail.
+        if dimensions["concrete_evidence"] >= 3 and not fact:
+            dimensions["concrete_evidence"] = 2
+        if dimensions["distinctiveness"] >= 3 and not fact:
+            dimensions["distinctiveness"] = 2
+
         score = _score(dimensions)
         goal = requested_goal if requested_goal in {"reach", "conversation", "authority"} else _auto_goal(dimensions)
         decision = _decision(score, dimensions, minimum_score)
-        title, fact = _selected_evidence(payload, source_facts)
         earned_question = (
             decision == "draft"
             and goal == "conversation"
