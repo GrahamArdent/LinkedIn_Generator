@@ -95,6 +95,12 @@ class SingleImageBrief(BaseModel):
     negative_guidance: list[str] = Field(default_factory=list, max_length=12)
     alt_text: str = Field(min_length=1, max_length=1000)
 
+    @model_validator(mode="after")
+    def keep_overlay_text_short(self):
+        if self.overlay_text and len(self.overlay_text.split()) > 12:
+            raise ValueError("single-image overlay_text must be 12 words or fewer")
+        return self
+
 
 class CarouselBrief(BaseModel):
     cover_headline: str = Field(min_length=1, max_length=120)
