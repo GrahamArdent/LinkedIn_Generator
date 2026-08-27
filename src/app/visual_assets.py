@@ -35,13 +35,7 @@ def _normalized_matches(pattern: re.Pattern[str], text: str) -> set[str]:
 
 
 def _copy_guard(post_text: str, visual_copy: str) -> list[str]:
-    """Block obvious new factual tokens from visual copy.
-
-    Visuals may simplify or paraphrase the approved post, but they should not
-    introduce new URLs, numbers, or quoted claims. The image-generation prompt
-    is intentionally excluded from this check because it describes composition,
-    not publishable factual copy.
-    """
+    """Block obvious new factual tokens from visual copy."""
 
     reasons: list[str] = []
     new_urls = _normalized_matches(_URL_RE, visual_copy) - _normalized_matches(_URL_RE, post_text)
@@ -70,6 +64,8 @@ def _visual_copy(plan: VisualAssetPlan) -> str:
 def _single_image(payload: dict[str, Any]) -> SingleImageBrief:
     raw = payload.get("single_image") if isinstance(payload.get("single_image"), dict) else {}
     generation_prompt = str(raw.get("generation_prompt") or "").strip()
+    if not generation_prompt:
+        raise ValueError("single-image plan is missing generation_prompt")
     if _NO_TEXT_SUFFIX.strip().lower() not in generation_prompt.lower():
         generation_prompt = generation_prompt.rstrip(". ") + "." + _NO_TEXT_SUFFIX
     return SingleImageBrief(
@@ -209,12 +205,17 @@ def plan_visual_asset(
         if asset_type not in {"single_image", "carousel"}:
             return _deferred("Visual planner returned an unsupported asset type.", warning="visual_invalid_type")
 
+        rationale = str(payload.get("rationale") or "").strip()
+        creative_goal = str(payload.get("creative_goal") or "").strip()
+        if not rationale or not creative_goal:
+            raise ValueError("visual planner is missing rationale or creative_goal")
+
         plan = VisualAssetPlan(
             status="planned",
             source_candidate=source_candidate,
             asset_type=asset_type,
-            rationale=str(payload.get("rationale") or "").strip(),
-            creative_goal=str(payload.get("creative_goal") or "").strip(),
+            rationale=rationale,
+            creative_goal=creative_goal,
             aspect_ratio="4:5",
             single_image=_single_image(payload) if asset_type == "single_image" else None,
             carousel=_carousel(payload) if asset_type == "carousel" else None,
