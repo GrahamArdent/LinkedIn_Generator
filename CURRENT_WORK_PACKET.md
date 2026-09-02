@@ -1,159 +1,126 @@
 # CURRENT_WORK_PACKET.md
 
-PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-08-27
+PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Content + visual-package acceptance before rendering and publishing integration
-AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, and validated implementation state on `main`
-AUTHORITY_VERSION_OR_COMMIT: LinkedIn_Generator `03736f197f858426a65a60c18ac9098c31376684`; PROGRAMSTART methodology `59a9bf4f2028b328d38fae64b8e08a7cf4ae685e`
+CURRENT_STAGE_OR_MILESTONE: Multi-post content + visual-plan acceptance before paid rendering
+AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
+AUTHORITY_VERSION_OR_COMMIT: LinkedIn_Generator `c51eb4afc30977bbbb3dc2193d6f14f3ea84fcdd`; current PROGRAMSTART inspected at `4ece1af3bc6afff9834e551bc9f4e2d8e791b317`; downstream adopted methodology overlay is not yet fully reconciled to that PROGRAMSTART head
 BLOCKER_SCOPE: milestone
-SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual planning, evidence gathering, review, and reversible repo corrections can proceed
-BLOCKED_ACTION: Final repo-provider acceptance cannot be claimed until the real generation path is exercised in an environment with a valid `OPENAI_API_KEY`; rendering/publishing remain later slices
+SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, and reversible repo corrections can proceed
+BLOCKED_ACTION: Replicate/paid rendering, scheduling, and publishing remain gated until content + visual planning earn progression; final repo-provider acceptance still requires the actual generation path in a runtime with valid provider credentials
 
 ## PROGRAMSTART Routing Decision
 
 This is an in-flight project. Do not create a new Master Game Plan or restart from Stage 0.
 
-The current operator decision adds a real product requirement rather than invalidating the existing architecture:
+Current reevaluation on 2026-09-01 changed the immediate sequence:
 
-- Graham does not intend to publish LinkedIn posts without a visual companion in normal use.
-- The visual may be a single image or a carousel/document depending on what best serves the post.
-- Previous direct image generation produced poor results and excessive regeneration, so rendering must not begin from an unconstrained image prompt.
-- The next smallest responsible slice is therefore **Visual Asset Planning / Carousel Planning** before any rendering provider is integrated.
-- Dedication remains the owner of scheduling, approval workflow, canonical post state, and publishing orchestration.
-- LinkedIn Generator remains the owner of post intelligence, publish-quality assessment, visual-format recommendation, visual brief generation, carousel copy, and renderer-facing asset specifications.
-
-This change is reversible and does not require reopening settled voice, evidence, opportunity, or publish-quality work.
+1. Visual Asset Planning Slice A is **implemented** in PR #21 / `c51eb4af...`.
+2. Slice A is **not yet empirically accepted** across enough real posts to justify paid rendering.
+3. Trial #1 text was accepted after one bounded rewrite, and its first conceptual carousel plan is directionally useful, but one post is insufficient evidence for renderer architecture/quality investment.
+4. Before Replicate, run several additional genuine subjects through the complete current pipeline and require meaningful variation in visual-format decisions.
+5. Preserve worthwhile future ideas in `IDEA_LEDGER.md`; captured/shelved ideas do not become scope or priority.
+6. A separate PROGRAMSTART methodology-distribution defect is now under investigation because current PROGRAMSTART changes were not automatically reconciled into this already-adopted repository.
 
 ## Durable Product Decisions
 
 1. **90 remains the publish-ready text threshold.** A sub-90 Draft A is preserved and receives at most one automatic guarded Draft B for review.
-2. **A publishable post package includes a visual companion plan by default.** Text-only publishing is not the target product path, though the contract may still support disabling visual planning for tests or exceptional use.
-3. **Format is a content decision.** Use `single_image` for one strong visual idea; use `carousel` when sequence, comparison, steps, layers, or multiple distinct takeaways genuinely improve understanding.
-4. **Visual planning precedes rendering.** Do not send a generic post directly to an image model and hope the provider invents a good design.
-5. **Typography is separated from generative imagery.** Image prompts should request imagery without embedded text/logos/watermarks; overlay text and carousel slide copy remain structured fields for a later deterministic layout layer.
-6. **Replicate is the expected first rendering provider, not a permanent architecture dependency.** Add it later behind a provider interface so rendering can be replaced without changing content intelligence.
-7. **Human approval remains mandatory before publishing.** Neither a 90+ post score nor a visual plan is permission to publish.
-8. **Dedication owns schedule/publish orchestration.** Do not rebuild the legacy scheduler as a second scheduling system inside LinkedIn Generator.
+2. **A normal publishable post package includes a visual companion.** Text-only remains an exceptional/test path, not the target product flow.
+3. **Format is a content decision.** Use `single_image` for one sharp visual idea; use `carousel` when progression, comparison, layers, steps, or multiple distinct takeaways genuinely improve the post.
+4. **Visual planning precedes rendering.** Do not send a generic post directly to an image model and rely on the model to invent layout/strategy.
+5. **Typography is separate from generative imagery.** Overlay text and carousel copy remain deterministic structured fields.
+6. **Replicate is the expected first renderer adapter, not permanent architecture authority.** Renderer/provider substitution must remain possible.
+7. **Human approval remains mandatory before publishing.** Scores and generated visual plans never authorize posting by themselves.
+8. **Dedication owns schedule/publish orchestration.** Do not restore the legacy LinkedIn Generator scheduler as a second scheduling system.
+9. **Ideas are preserved separately from execution authority.** `IDEA_LEDGER.md` may retain accepted, candidate, and shelved ideas, but execution occurs only after promotion/reconciliation into the owning authority.
 
 ## Execution Sequence
 
-### Slice A — Visual Asset Planning / Carousel Planner — ACTIVE
+### Slice A — Visual Asset Planning / Carousel Planner — IMPLEMENTED; VALIDATION IN PROGRESS
 
-Objective: turn a publish-ready post candidate into one structured provider-neutral visual companion for review.
+Implemented in PR #21 / `c51eb4afc30977bbbb3dc2193d6f14f3ea84fcdd`.
 
-In scope:
+Implemented surface:
 
-- typed request/result contract for visual planning;
-- `auto | single_image | carousel` preference;
-- choose single image vs carousel based on the finished post;
-- single-image brief: concept, overlay text, composition, style, provider-neutral generation prompt, negative guidance, alt text;
-- carousel brief: cover headline, design system, 4–8 ordered slides, slide copy, visual direction, alt text;
-- explicit anti-cliché visual policy;
-- separate generated imagery from typography;
-- do not plan an asset until a 90+ publish-quality candidate exists;
-- fail closed when the planner returns malformed structure or adds unsupported numbers/URLs/quoted claims to visual copy;
-- return the visual plan through the Dedication-facing content result.
+- typed `single_image | carousel` visual-plan contracts;
+- `auto | single_image | carousel` request preference;
+- visual planning only for a 90+ publish-quality candidate;
+- preservation of whether the visual plan belongs to Draft A or Draft B;
+- single-image concept, overlay copy, composition, provider-neutral prompt, negative guidance, and alt text;
+- carousel cover/design system plus 4–8 ordered slide specs;
+- anti-cliché visual policy;
+- typography separated from generated imagery;
+- fail-closed handling for malformed plans, format mismatches, unsupported new numbers/URLs/quoted claims, and overlong single-image overlay text;
+- Dedication-facing result integration with no scheduling/publishing state.
 
-Out of scope for Slice A:
+Implementation acceptance evidence:
 
-- actual image generation;
-- Replicate API calls;
-- slide rendering or file creation;
-- image quality scoring from rendered pixels;
-- scheduling or LinkedIn publishing;
-- autonomous commenting or feed crawling.
+- [x] typed/validated single-image and carousel structures exist;
+- [x] carousel is bounded to 4–8 ordered slides;
+- [x] imagery prompt requires no embedded typography/logos/watermarks;
+- [x] visual copy guard blocks new URLs, numeric claims, and quoted claims absent from the approved text candidate;
+- [x] explicit format preference is honored or deferred;
+- [x] visual planning is not spent on a below-threshold text candidate;
+- [x] source candidate (`original` or `rewrite`) is preserved;
+- [x] planner remains provider-neutral and creates no scheduling/publishing state.
 
-Acceptance for Slice A:
+Remaining Slice A validation:
 
-- [ ] both `single_image` and `carousel` plans have typed/validated structures;
-- [ ] carousel contains 4–8 ordered slides and each slide advances the idea;
-- [ ] single-image generated-imagery prompt explicitly avoids embedded typography;
-- [ ] visual copy cannot introduce a new URL, numeric claim, or quoted claim absent from the approved text candidate;
-- [ ] explicit format preference is honored or the plan is deferred;
-- [ ] no visual-planning provider call is spent when the text candidate is below the 90 publish threshold;
-- [ ] result preserves which candidate (`original` or `rewrite`) the visual plan belongs to;
-- [ ] planning remains provider-neutral and creates no scheduling/publishing state.
+- [ ] validate at least one clear single-image case on a genuine subject;
+- [ ] validate at least one clear carousel case on a genuine subject;
+- [ ] validate one genuinely ambiguous format decision;
+- [ ] observe whether the planner becomes repetitive or defaults to generic metaphors;
+- [ ] confirm the visual brief itself is useful enough to deserve a paid renderer call.
 
-### Slice B — Renderer + Replicate Adapter — NEXT IF A PASSES
+### Slice B — Renderer + Replicate Adapter — GATED
 
-Objective: convert the approved visual specification into reviewable asset files without coupling product logic to one provider.
+Do not begin until the remaining Slice A validation is sufficient.
 
-Expected design:
+Expected design if promoted:
 
-- renderer interface owned by LinkedIn Generator;
+- provider-neutral renderer interface owned by LinkedIn Generator;
 - Replicate adapter as first implementation;
 - single-image imagery generation from provider-neutral prompt;
 - deterministic overlay typography after image generation;
 - deterministic carousel slide layout/rendering from structured slide copy;
-- one or a small bounded number of render candidates rather than open-ended regeneration;
+- bounded candidate/regeneration behavior driven by explicit visual-quality reasons;
 - rendered-asset quality checks before human review;
-- preserve prompt/model/version/provenance metadata.
-
-Do not begin this slice until the planner output itself is judged useful enough that rendering is worth paying for.
+- prompt/model/version/provenance metadata preserved.
 
 ### Slice C — Approval Package — AFTER RENDERER ACCEPTANCE
 
-Objective: present one coherent review unit containing:
-
-- selected text candidate and score;
-- visual asset(s);
-- format/brief metadata;
-- source/evidence references;
-- `approve | edit | reject` actions.
-
-Approval remains human-owned. Generated output never becomes published or positive voice evidence merely because it scored well.
+Present one coherent review unit containing selected text candidate + score, visual asset(s), visual metadata, source/evidence references, and explicit `approve | edit | reject` actions.
 
 ### Slice D — Dedication Scheduling + Approval-Gated LinkedIn Publishing
 
-Objective: after approval, hand the post package to Dedication for timing and official LinkedIn publishing.
-
-Dedication owns:
-
-- schedule / timing decisions;
-- approval state;
-- publish trigger;
-- canonical post state;
-- notifications and follow-up.
-
-LinkedIn publishing adapter owns:
-
-- OAuth/provider-specific API call;
-- posting the approved text + asset/document;
-- returning LinkedIn post ID/URN and provider outcome.
-
-Do not restore the legacy LinkedIn Generator scheduler as a competing orchestration system.
+After approval, Dedication owns schedule/timing, approval state, publish trigger, canonical post state, notifications, and follow-up. The LinkedIn publishing adapter owns OAuth/provider-specific API execution and returns the final LinkedIn post ID/URN and provider result.
 
 ### Later — Analytics + Comment Assistance
 
-After publishing is reliable:
+Preserved in `IDEA_LEDGER.md`; not current execution. Includes performance learning, human-approved reply assistance, selected external-post comment assistance, and broader API-triggered possibilities when official LinkedIn access changes.
 
-- collect legitimate post-performance signals;
-- surface comments on Graham's posts through supported access paths;
-- generate suggested replies for human approval;
-- evaluate selected external posts only when their content is legitimately supplied to the system;
-- do not crawl LinkedIn feeds or deploy autonomous engagement bots that violate platform rules.
+## Content + Visual Acceptance Track
 
-## Content Acceptance Track — CONTINUES IN PARALLEL
-
-Use 5–8 genuine professional subjects. Stop at 5 only if the result is already decisive; continue toward 8 when correction patterns remain ambiguous.
+Use 5–8 genuine professional subjects. Stop at 5 only if the result is already decisive; continue toward 8 when correction/format patterns remain ambiguous.
 
 For each trial:
 
-1. establish the real subject and factual evidence;
-2. run/replicate the opportunity decision without inventing specificity;
-3. if `needs_more_evidence`, ask one targeted factual question and resume;
+1. establish a real subject and factual evidence;
+2. run the opportunity/evidence decision without inventing specificity;
+3. if `needs_more_evidence`, ask one targeted factual question and resume the same opportunity;
 4. produce one full draft around the strongest grounded detail;
 5. apply deterministic compliance checks;
 6. score Draft A on the separate publish-quality model;
-7. if Draft A scores 90+, present it without a rewrite call;
-8. if Draft A scores below 90, preserve it and generate exactly one guarded Draft B;
-9. score a safe Draft B independently and never silently replace Draft A;
+7. if Draft A scores 90+, do not spend a rewrite call;
+8. if Draft A scores below 90, preserve A and generate exactly one guarded Draft B;
+9. score a safe Draft B independently and never silently replace A;
 10. once a 90+ candidate exists, create the visual companion plan;
-11. present the applicable candidate(s) and visual plan for human review;
+11. present applicable text candidate(s) and visual plan for human review;
 12. record `keep`, `edit`, or `reject` plus reason codes;
-13. do not promote generated text to positive voice evidence without explicit human authority.
+13. do not promote generated text to positive voice evidence without explicit human authority;
+14. record future/non-current opportunities in `IDEA_LEDGER.md` instead of expanding this packet.
 
 ## Trusted Evidence + Invalidation
 
@@ -161,24 +128,34 @@ For each trial:
 |---|---|---|
 | Graham Voice Bible provenance/runtime profile | explicitly authorized and merged | explicit operator reversal or newer approved voice authority |
 | Graham Spoken Voice schema | derived from authorized conversational evidence and directly confirmed as sounding like Graham | repeated trial feedback showing systematic voice mismatch |
-| Public-language + individual POV rules | defects were directly observed and corrected | repeated approved examples proving the rule too restrictive |
-| Opportunity/evidence gate | exact-evidence anchoring and `needs_more_evidence` state are merged | repeated trial failures in topic/evidence routing |
-| Publish-ready threshold | operator explicitly chose 90 and one bounded automatic rewrite | later explicit operator reversal or evidence of systematic bad behavior |
-| Visual companion requirement | operator explicitly stated normal LinkedIn posts should include an image/carousel | later explicit operator reversal or platform/product evidence showing a text-only path is needed |
-| LinkedIn content/API research | current 2026 research already completed | material platform/ranking/API changes |
+| Public-language + individual POV rules | defects directly observed and corrected | repeated approved examples proving rule too restrictive |
+| Opportunity/evidence gate | exact-evidence anchoring and `needs_more_evidence` state merged | repeated trial failures in topic/evidence routing |
+| 90 publish-ready threshold | explicit operator decision + bounded one-rewrite rule | later explicit reversal or systematic bad outcomes |
+| Visual companion requirement | explicit operator decision | later explicit reversal or evidence that text-only must be a first-class normal path |
+| Slice A implementation | merged PR #21 | later code change or validation showing structural defect |
+| LinkedIn content/API research | current 2026 research | material platform/ranking/API changes |
 
-## Assumptions / Unknowns
+## Methodology Distribution Dependency — ACTIVE INVESTIGATION
 
-| Item | Confidence | Action |
-|---|---|---|
-| Voice is now close to Graham | high after Trial #1 | validate across additional subjects |
-| 90-point rewrite rule reduces correction burden | medium-high | track Draft A/B outcomes during remaining trials |
-| Structured visual planning will reduce bad-image regeneration | medium-high | validate planner briefs before adding a renderer |
-| Carousel should outperform single images for some multi-part ideas | medium | choose by content structure, then measure later rather than forcing carousels |
-| Replicate remains a suitable renderer | medium | verify live models/cost/quality immediately before Slice B implementation |
-| Current prompt stack behaves similarly under real repo provider | medium | require at least two accepted subjects through actual repo provider before final publishing readiness |
+Observed on 2026-09-01:
 
-## Current Acceptance Criteria Before Publishing Integration
+- LinkedIn Generator's `.programstart-manifest.json` was created from PROGRAMSTART `f74d51f...` and contains only the attach-time managed file list.
+- Current PROGRAMSTART is `4ece1af3...` and includes later reusable methodology/control assets and newer idea-preservation/learning architecture semantics.
+- `programstart sync` currently reads the downstream manifest's existing `files` list; newly managed assets added after attachment are therefore not discoverable through that old manifest.
+- `programstart sync` is an explicitly invoked dry-run/`--confirm` mechanism, not an automatic fan-out service by itself.
+- PROGRAMSTART's current Idea Ledger template is deliberately **not** a mandatory generated-project artifact; this project's `IDEA_LEDGER.md` is an explicit project-specific adoption, not evidence that automatic template distribution should have created it.
+
+Required outcome:
+
+- diagnose/fix the reusable downstream sync/distribution semantics in PROGRAMSTART rather than patching only this repo;
+- distinguish managed reusable controls from optional/project-specific artifacts;
+- ensure existing attached repos can discover newly added managed assets without destructive re-attach;
+- ensure sync/reconciliation updates downstream provenance/manifest state so staleness is observable;
+- separately decide what runtime (Program Store/central controller/Watchtower/execution worker) is responsible for invoking safe downstream reconciliation automatically.
+
+Until corrected, do not claim this repo's adopted PROGRAMSTART overlay is fully current merely because selected files were manually synced earlier.
+
+## Current Acceptance Criteria Before Replicate/Publishing Progression
 
 - [ ] At least 5 genuine subjects reviewed; use up to 8 if evidence remains ambiguous.
 - [ ] Zero approved candidates contain invented factual specificity.
@@ -188,27 +165,29 @@ For each trial:
 - [ ] Publish-ready requires publish-quality >=90 plus existing factual/safety guardrails.
 - [ ] At least 4 of the first 6 drafted candidates receive `keep` or only a light edit rather than structural rejection.
 - [ ] Major correction categories do not recur after a focused fix.
-- [ ] Visual Asset Planning Slice A passes its acceptance criteria.
+- [x] Slice A implementation/contract acceptance is complete.
+- [ ] Slice A human visual-plan validation covers single-image, carousel, and ambiguous cases without showing a repetitive/generic planning failure.
 - [ ] At least two human-accepted subjects are exercised through the actual repository generation provider before declaring the content core ready for publishing integration.
-- [ ] Final focused Challenge Gate concludes `clear` or explicitly `conditional` for renderer/publishing progression.
+- [ ] Focused Challenge Gate concludes `clear` or explicitly `conditional` for renderer progression.
 
 ## Verification
 
 | Changed / at-risk surface | Check | Result |
 |---|---|---|
-| PROGRAMSTART managed overlay | synced files compared to PROGRAMSTART `59a9bf4f...` | completed in PR #19 |
-| Publish-quality threshold/rewrite | 90+ no rewrite; sub-90 preserves A and creates one B; unsafe B rejected | implemented in PR #20; full provider smoke still pending |
+| PROGRAMSTART managed overlay | prior selective sync to `59a9bf4f...` | superseded as currentness evidence; current PROGRAMSTART is newer and distribution defect is under investigation |
+| Publish-quality threshold/rewrite | 90+ no rewrite; sub-90 preserves A and creates one B; unsafe B rejected | implemented PR #20; provider smoke pending |
 | Voice/public-language quality | human decisions + reason codes | Trial #1 positive; more trials pending |
-| Visual planner contracts/guardrails | focused contract/planner/integration tests | active Slice A |
-| Provider-path equivalence | minimum two accepted subjects through actual repo provider | blocked until suitable runtime credential is available |
-| Rendering quality | real Replicate/render outputs | not started; Slice B |
-| Publishing readiness | focused Challenge Gate | pending |
+| Visual planner contracts/guardrails | focused contract/planner/integration review | implemented PR #21 |
+| Visual planner usefulness | varied genuine post trials | pending |
+| Provider-path equivalence | minimum two accepted subjects through actual repo provider | blocked until suitable runtime credential available |
+| Rendering quality | real Replicate/render outputs | gated; not started |
+| Methodology downstream distribution | PROGRAMSTART root-cause/fix + existing-repo retest | active parallel learning case |
 
 ## Trial Evidence
 
-| # | Subject | Gate outcome | Draft A score | Draft B score | Human decision | Reason codes / correction | Notes |
+| # | Subject | Gate outcome | Draft A score | Draft B score | Human decision | Visual outcome | Notes |
 |---:|---|---|---:|---:|---|---|---|
-| 1 | AI planning system creating rework by forgetting settled decisions | draft | manual ~87 | manual ~93–95 | keep Draft B | none after rewrite | Voice confirmed as sounding like Graham; Draft B explicitly liked. Scores are manual review estimates, not repository-provider telemetry. |
+| 1 | AI planning system creating rework by forgetting settled decisions | draft | manual ~87 | manual ~93–95 | keep Draft B | conceptual carousel direction accepted as useful enough for further validation, not renderer acceptance | Voice confirmed as sounding like Graham; scores are manual estimates, not repo-provider telemetry. |
 | 2 | | | | | | | |
 | 3 | | | | | | | |
 | 4 | | | | | | | |
@@ -219,18 +198,19 @@ For each trial:
 
 ## Stop / Escalation Conditions
 
-- Do not recursively rewrite text until it reaches a score; one automatic review rewrite is the cost/quality boundary.
-- Do not move to paid image rendering if structured visual plans themselves are weak or repetitive.
-- Do not let an image model typeset finished LinkedIn graphics directly when deterministic typography/layout can do it more reliably.
+- Do not recursively rewrite text until a score is reached; one automatic review rewrite is the cost/quality boundary.
+- Do not move to paid image rendering if structured visual plans are weak, repetitive, padded, or generic.
+- Do not let an image model typeset finished LinkedIn graphics when deterministic typography/layout can do it more reliably.
 - Do not begin LinkedIn OAuth/publishing before content + visual package acceptance is clear or explicitly conditional with a narrow known blocker.
-- Do not let missing repo-provider credentials block human content/visual-plan validation that can safely proceed.
-- Escalate rather than invent facts, visuals, screenshots, metrics, or quotations.
+- Do not let missing provider credentials block human content/visual-plan validation that can safely proceed.
+- Do not let a methodology-distribution defect silently redefine project authority; fix the reusable owner and then reconcile downstream deliberately.
+- Escalate rather than invent facts, visuals, screenshots, metrics, quotations, or access permissions.
 
 ## Close-Out
 
 OUTCOME: pending
-VERIFICATION_SUMMARY: pending
-EVIDENCE_INVALIDATED_OR_REUSED: existing voice/content architecture reused; visual-companion requirement added by explicit operator decision
-AUTHORITY_RECONCILED: this packet remains the single current execution packet; no competing Master Game Plan created
-REMAINING_BLOCKERS: actual repo-provider acceptance requires a suitable runtime credential; rendered-asset quality is intentionally deferred until Slice B
-NEXT_RECOMMENDED_SLICE: complete Visual Asset Planning / Carousel Planner Slice A, validate on Trial #1, then decide whether Replicate renderer Slice B has earned implementation
+VERIFICATION_SUMMARY: Slice A code/contract complete; human validation and provider smoke remain open
+EVIDENCE_INVALIDATED_OR_REUSED: existing voice/content architecture reused; prior claim of current PROGRAMSTART overlay invalidated by newer live methodology and sync/distribution findings
+AUTHORITY_RECONCILED: project execution authority is current to LinkedIn Generator `c51eb4af...`; PROGRAMSTART downstream overlay reconciliation remains an active external dependency
+REMAINING_BLOCKERS: varied visual-plan validation, actual provider smoke, and PROGRAMSTART downstream-distribution correction before claiming methodology-currentness
+NEXT_RECOMMENDED_SLICE: continue Trials #2–#5 with varied visual-plan outcomes while PROGRAMSTART downstream-distribution defect is fixed in parallel; only then run focused Challenge for Replicate Slice B
