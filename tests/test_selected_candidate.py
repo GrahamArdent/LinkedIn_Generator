@@ -190,3 +190,20 @@ def test_wrong_source_visual_plan_is_deferred_without_retry(wrong):
     assert result.visual_asset.single_image is None
     assert result.visual_asset.carousel is None
     assert "selected_candidate_mismatch" in result.visual_asset.warnings
+
+@pytest.mark.parametrize("field,value", [
+    ("source_content_sha256", "incorrect-hash"),
+    ("source_content_sha256", ""),
+    ("source_content_sha256", 123),
+    ("source_candidate", "unknown"),
+])
+def test_malformed_planner_provenance_defers_instead_of_aborting(field, value):
+    def planner(**kwargs):
+        return {**fixture_visual_planner(**kwargs).model_dump(), field: value}
+    result, calls = run(ReviewClient(first_score=92), planner=planner)
+    assert result.selected_candidate.source == "original"
+    assert len(calls) == 1
+    assert result.visual_asset.status == "deferred"
+    assert result.visual_asset.single_image is None
+    assert result.visual_asset.carousel is None
+    assert "invalid_visual_plan" in result.visual_asset.warnings

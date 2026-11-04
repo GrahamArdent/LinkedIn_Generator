@@ -5,6 +5,8 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
+from pydantic import ValidationError
+
 from .api import run_generation
 from .contracts import LinkedInContentRequest, LinkedInContentResult, SelectedCandidate, VisualAssetPlan
 from .utils import load_yaml
@@ -112,7 +114,14 @@ def generate_content(
                 preference=request.visual_asset_preference,
                 style_profile=style_profile,
             )
-            visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+            try:
+                visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+            except ValidationError:
+                visual_asset = VisualAssetPlan(
+                    status="deferred",
+                    rationale="The visual planner returned an invalid plan.",
+                    warnings=["invalid_visual_plan"],
+                )
             if visual_asset.status == "planned":
                 if (
                     visual_asset.source_candidate != selected.source
