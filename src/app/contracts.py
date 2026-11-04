@@ -114,6 +114,7 @@ class VisualAssetPlan(BaseModel):
 
     status: Literal["planned", "deferred"]
     source_candidate: Literal["original", "rewrite"] | None = None
+    source_content_sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
     asset_type: Literal["single_image", "carousel"] | None = None
     rationale: str = Field(default="", max_length=800)
     creative_goal: str = Field(default="", max_length=500)
@@ -171,6 +172,16 @@ class LinkedInContentRequest(BaseModel):
     hashtags: list[str] = Field(default_factory=list)
 
 
+class SelectedCandidate(BaseModel):
+    """Exact text qualified for editorial review, never publication approval."""
+
+    candidate_id: str
+    source: Literal["original", "rewrite"]
+    body: str = Field(min_length=1)
+    score: int = Field(ge=0, le=100, strict=True)
+    content_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+
+
 class LinkedInContentResult(BaseModel):
     """Structured result returned to an orchestrator such as Dedication."""
 
@@ -183,4 +194,5 @@ class LinkedInContentResult(BaseModel):
     sources: list[str] = Field(default_factory=list)
     telemetry: dict[str, Any] = Field(default_factory=dict)
     review: dict[str, Any] = Field(default_factory=dict)
+    selected_candidate: SelectedCandidate | None = None
     visual_asset: VisualAssetPlan | None = None
