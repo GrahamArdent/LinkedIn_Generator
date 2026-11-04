@@ -54,3 +54,37 @@ def test_error_or_missing_selected_candidate_does_not_invent_a_pair(tmp_path):
                   engine=lambda *a,**kw:{"selected_candidate":None})
     assert p.calls==[]
     assert json.loads((tmp_path/"trial.json").read_text())["state"]=="failed"
+
+def test_comparison_completion_uses_retained_unqualified_engine_without_regeneration(tmp_path):
+    from src.app.codex_trial import complete_comparison
+    p=Provider()
+    def unqualified(request,*,client,visual_planner):
+        client.call("system","facts")
+        return {"body":"Retained engine draft.","selected_candidate":None,
+                "review":{"original":{"score":73}}}
+    with pytest.raises(ValueError,match="NO_QUALIFIED_CANDIDATE"):
+        run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=unqualified)
+    assert len(p.calls)==1
+    result=complete_comparison(INPUT,tmp_path,p,model="gpt-6-astra")
+    assert len(p.calls)==2
+    assert result["engine"]["selected_candidate"] is None
+    assert result["engine_gate"]=="HOLD_NO_QUALIFIED_CANDIDATE"
+    assert (tmp_path/"engine-gate-failure.json").exists()
+    assert complete_comparison(INPUT,tmp_path,p,model="gpt-6-astra")==result
+    assert len(p.calls)==2
+
+def test_comparison_completion_cannot_relaunch_an_unknown_attempt(tmp_path):
+    from src.app.codex_trial import complete_comparison
+    (tmp_path/"trial.json").write_text(json.dumps({"state":"unknown","input":INPUT,
+        "model":"gpt-6-astra","error_code":"CODEX_COMPLETION_UNKNOWN"}))
+    p=Provider()
+    with pytest.raises(ValueError,match="RECONCILIATION_REQUIRED"):
+        complete_comparison(INPUT,tmp_path,p,model="gpt-6-astra")
+    assert p.calls==[]
+
+def test_baseline_receives_every_explicit_engine_constraint(tmp_path):
+    p=Provider()
+    data={**INPUT,"services":["discovery"],"targets":["operators"],"hashtags":["#AI"]}
+    r=run_trial(data,tmp_path,p,model="gpt-6-astra",engine=engine)
+    for key in ("services","targets","hashtags"):
+        assert r["baseline"]["user"][key]==data[key]

@@ -30,25 +30,36 @@ def voice_context(request):
     return _persona_profile(str(ROOT),load_yaml(str(ROOT/"config/personas.yaml")),
                             request.persona_key,author_pov=request.author_pov)
 
-def run_trial(data,directory,provider,*,model,engine=None):
+def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=False):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     with (directory/".trial.lock").open("a+") as lock:
         try: fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError: raise ValueError("TRIAL_BUSY")
         path=directory/"trial.json"
+        retained=None
         if path.exists():
             old=show_trial(directory)
-            if old["state"]!="completed": raise ValueError("RECONCILIATION_REQUIRED")
-            if old["input"]!=data or old["model"]!=model: raise ValueError("REQUEST_CONFLICT")
-            return old
+            if old["input"]!=data or old.get("model",model)!=model: raise ValueError("REQUEST_CONFLICT")
+            if old["state"]=="completed": return old
+            if (resume_comparison and old["state"]=="failed"
+                    and old.get("error_code")=="NO_QUALIFIED_CANDIDATE"
+                    and old.get("engine",{}).get("body")):
+                retained=old["engine"]
+                if not (directory/"engine-gate-failure.json").exists():
+                    save(directory/"engine-gate-failure.json",old)
+            else:
+                raise ValueError("RECONCILIATION_REQUIRED")
         request=LinkedInContentRequest.model_validate(data)
         record={"schema_version":"1","state":"running","input":data,"model":model,
                 "mode":provider.mode,"started_at_utc":now(),"api_spend":0,
                 "human_decision":None}
+        if retained is not None: record["engine_origin"]="engine-gate-failure.json"
         save(path,record)
         client=LLMClient(model=model,provider=provider)
         try:
-            if engine is None:
+            if retained is not None:
+                result=retained
+            elif engine is None:
                 result=generate_content(request,
                     generator=partial(run_generation,llm_client=client,opportunity_client=client,publish_quality_client=client),
                     visual_planner=partial(plan_visual_asset,client=client))
@@ -58,11 +69,18 @@ def run_trial(data,directory,provider,*,model,engine=None):
             record["engine"]=result
             if provider.error: raise provider.error
             selected=result.get("selected_candidate")
-            if not selected: raise ValueError("NO_QUALIFIED_CANDIDATE")
+            if not selected:
+                if retained is None: raise ValueError("NO_QUALIFIED_CANDIDATE")
+                # Comparison material only. Never promote it to selected/ready.
+                selected={"body":retained["body"]}
+                record["engine_gate"]="HOLD_NO_QUALIFIED_CANDIDATE"
+            else:
+                record["engine_gate"]="QUALIFIED_FOR_HUMAN_REVIEW"
             baseline_system=("Write one useful LinkedIn post in the supplied author's voice. Use only supplied facts; "
                              "never invent experience, quotes, statistics or biography. Return only the finished post.")
             baseline_data={"topic":request.topic,"audience":request.audience,"objective":request.objective,
                            "author_pov":request.author_pov,"content_goal":request.content_goal,
+                           "services":request.services,"targets":request.targets,"hashtags":request.hashtags,
                            "evidence":[x.model_dump() for x in request.evidence],
                            "voice":voice_context(request),
                            "approved_voice_examples":[x.model_dump() for x in request.voice_examples],
@@ -92,3 +110,7 @@ def run_trial(data,directory,provider,*,model,engine=None):
             record.update(finished_at_utc=now(),provider_receipts=provider.receipts)
             save(path,record)
         return record
+
+def complete_comparison(data,directory,provider,*,model):
+    """Finish only the baseline after a known retained quality rejection."""
+    return run_trial(data,directory,provider,model=model,resume_comparison=True)

@@ -43,12 +43,14 @@ class CodexProvider:
             completed = self.runner(argv,input=json.dumps(payload),text=True,capture_output=True,
                                     timeout=920,env=env)
             result = json.loads(completed.stdout)
+            if not isinstance(result,dict) or type(result.get("ok")) is not bool:
+                raise CodexError("CODEX_COMPLETION_UNKNOWN")
             self.receipts.append(result)
-            if not result.get("ok"):
+            if not result["ok"]:
                 raise CodexError(result.get("code","CODEX_BRIDGE_FAILED"),result.get("attempt_id"))
             data=result["data"]
             if completed.returncode or not isinstance(data,dict) or not isinstance(data.get("text"),str) or not data["text"].strip():
-                raise CodexError("CODEX_BRIDGE_OUTPUT_INVALID")
+                raise CodexError("CODEX_COMPLETION_UNKNOWN")
             return data["text"]
         except subprocess.TimeoutExpired:
             self.error=CodexError("CODEX_COMPLETION_UNKNOWN")
@@ -57,7 +59,7 @@ class CodexProvider:
             self.error=exc
             raise
         except (ValueError,KeyError,TypeError):
-            self.error=CodexError("CODEX_BRIDGE_OUTPUT_INVALID")
+            self.error=CodexError("CODEX_COMPLETION_UNKNOWN")
             raise self.error from None
 
 def bridge(payload):

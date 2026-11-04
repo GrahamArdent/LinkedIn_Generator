@@ -39,7 +39,7 @@ def test_failure_is_retained_and_next_call_never_relaunches(tmp_path,code):
 def test_bad_bridge_output_is_not_content(tmp_path,text):
     p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",
         runner=lambda argv,**kw:CompletedProcess(argv,0,text,""))
-    with pytest.raises(module.CodexError,match="CODEX_BRIDGE_OUTPUT_INVALID"):
+    with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
         p.generate(model="gpt-6-astra",system="s",user="u",temperature=.5)
 
 def test_api_model_cannot_silently_select_another_model(tmp_path):
@@ -47,3 +47,15 @@ def test_api_model_cannot_silently_select_another_model(tmp_path):
         runner=lambda *a,**kw:pytest.fail("must not launch"))
     with pytest.raises(module.CodexError,match="CODEX_MODEL_MISMATCH"):
         p.generate(model="gpt-4.1-mini",system="s",user="u",temperature=.5)
+
+@pytest.mark.parametrize("raw",["","not-json","[]","null","{}"])
+def test_lost_terminal_receipt_is_unknown_and_blocks_second_launch(tmp_path,raw):
+    calls=[]
+    def run(argv,**kw):
+        calls.append(argv)
+        return CompletedProcess(argv,1,raw,"")
+    p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",runner=run)
+    for _ in range(2):
+        with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
+            p.generate(model="gpt-6-astra",system="s",user="u",temperature=.5)
+    assert len(calls)==1
