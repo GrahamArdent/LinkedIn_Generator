@@ -20,10 +20,10 @@ Use the preserved v4 objectives and blank scorecard under docs/implementation/v4
 
 For the same six eligible subject inputs, independently generate the simple one-prompt comparator with identical underlying facts, audience, goal, model and factual constraints. Save exact inputs and voice treatment; distinguish product advantage from voice advantage. Randomize blinded A/B display, keep the mapping out of the reviewer-facing bundle, retain original outputs, and do not cherry-pick retries. Human preferences, voice/insight/usefulness ratings and edit effort remain blank until actual review. Ties are not wins; engine >=4/6 preferences is a pilot HOLD gate, not population-performance proof. Review corpus repetition across domains before E2E-11 PASS.
 
-## Provider gate
+## Codex-first provider direction
 
-Observed in this VPS process: OPENAI_API_KEY configured=false; configured model gpt-4.1-mini, timeout=60 seconds. This is a local configuration observation, not ecosystem-wide provider absence. No credential was read or exposed and no live provider was called.
+Follow [the short Codex-first trial plan](../../docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md). It replaces the previous proposed US$5/70-call API envelope: paid API spending is zero, with no API fallback. Reuse the Resume Creator subscription client through the existing LinkedIn provider boundary; no alternate engine.
 
-Proposed envelope for explicit owner approval: maximum US$5, maximum 70 total model dispatches, maximum 15 minutes cumulative provider time; up to 8 genuine subject opportunities and 6 baseline drafts. These are proposed limits, not approved spending. Before starting, verify model availability/current price, implement or reuse metering that can enforce the monetary ceiling, count SDK retries as dispatches or disable them, and confirm the existing admitted runtime credential route. No blind retry after ambiguous dispatch. Unknown usage stays UNKNOWN and cannot bypass a cap.
+First proposed live batch: one genuine subject, at most12 model executions and15 minutes cumulative execution, including the paired baseline. Preserve original attempts and reconcile unknown execution; do not retry blindly. Subscription usage is still consumed. Adapter implementation, runtime qualification and actual trial execution remain NOT_RUN.
 
-Human content review may proceed without paid execution, but chat-assisted or fixture text must not be mislabeled repository-live acceptance. P3 production work waits for P2 GO; no separately admitted fixture-only P3 slice exists in this turn.
+Human review and all26 AT/11 E2E targets remain. Native Codex engine execution must be recorded as that actual provider, not a fixture or proof of the old API configuration. P3 production work still waits for P2 GO.
