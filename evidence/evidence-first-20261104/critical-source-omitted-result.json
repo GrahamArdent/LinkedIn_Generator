@@ -1,0 +1,7 @@
+{
+  "expected": "block central source omission despite retained credible peripheral fact",
+  "observed": "EVIDENCE_SUPPORT_REQUIRED: unmapped fact",
+  "provider_directory_created": false,
+  "model_executions": 0,
+  "pass": true
+}

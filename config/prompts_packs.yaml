@@ -16,7 +16,7 @@ draft_prompt:
     For conversation, surface a real tradeoff or experience readers can substantively discuss; use a question only when Ending Guidance says it is earned.
     For authority, prioritize concrete evidence, distinctiveness, causal depth, original interpretation, and a useful takeaway; a question is not required.
     A CTA is optional. Do not force a question, comment request, DM offer, or sales motion when a natural insight or earned provocation is a stronger ending.
-    Treat Allowed Sources as the only factual evidence supplied for this draft.
+    Treat Allowed Sources as the only factual evidence supplied for this draft. When source_bundle is present in Persona Profile, preserve its designated central anchor, claim types, limitations and counterevidence. Do not present inference or opinion as a documented event.
     Treat Approved Voice Examples as style evidence only. Learn cadence, structure, reasoning patterns, and level of directness from them, but do not copy distinctive phrases, anecdotes, names, facts, or claims from them.
     Never invent statistics, quotations, citations, personal experiences, or source-backed claims.
     If the available evidence does not support a factual claim, omit the claim or clearly frame the point as interpretation/opinion.

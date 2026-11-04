@@ -95,11 +95,7 @@ def assess_publish_quality(
     spoken = persona_profile.get("spoken_voice") if isinstance(persona_profile.get("spoken_voice"), dict) else {}
     voice = persona_profile.get("voice_authority") if isinstance(persona_profile.get("voice_authority"), dict) else {}
     brief = dict(persona_profile.get("editorial_context") or {})
-    voice_context = {
-        "voice_authority": voice,
-        "spoken_voice": spoken,
-        "author_pov": persona_profile.get("active_author_pov"),
-    }
+    voice_context = dict(persona_profile)
 
     system = (
         "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 "
@@ -158,6 +154,10 @@ def assess_publish_quality(
             raise ValueError("missing_or_invalid_publish_quality_dimension")
         dimensions = {key: payload[key] for key in _DIMENSION_KEYS}
         gaps_raw = payload.get("gaps")
+        if (not isinstance(gaps_raw, list) or len(gaps_raw) > 3
+                or any(not isinstance(g, str) or not g.strip() for g in gaps_raw)
+                or not isinstance(payload.get("rationale"), str) or not payload["rationale"].strip()):
+            raise ValueError("missing_or_invalid_publish_quality_judgment")
         gaps = tuple(
             str(item).strip()[:300]
             for item in (gaps_raw if isinstance(gaps_raw, list) else [])

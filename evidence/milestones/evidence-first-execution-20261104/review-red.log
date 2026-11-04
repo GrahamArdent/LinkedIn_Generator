@@ -1,0 +1,155 @@
+..............FFF.FFFFFF                                                 [100%]
+=================================== FAILURES ===================================
+_______ test_all_request_facts_require_coverage_not_just_declared_claims _______
+
+    def test_all_request_facts_require_coverage_not_just_declared_claims():
+        data,bundle=fixture()
+        data["evidence"].append({"title":"S2","fact":"A second factual assertion."})
+        bundle["request_sha256"]=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+>       with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"): validate_trial_evidence(data,bundle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_evidence_first.py:120: Failed
+___________ test_source_records_and_unique_ids_required[no_passage] ____________
+
+mutation = 'no_passage'
+
+    @pytest.mark.parametrize("mutation",["no_passage","duplicate_source","blank_claim"])
+    def test_source_records_and_unique_ids_required(mutation):
+        data,bundle=fixture()
+        if mutation=="no_passage":bundle["sources"][0].pop("passages",None)
+        if mutation=="duplicate_source":bundle["sources"].append(copy.deepcopy(bundle["sources"][0]))
+        if mutation=="blank_claim":bundle["claims"][0]["claim_id"]=""
+>       with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"):validate_trial_evidence(data,bundle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_evidence_first.py:128: Failed
+________ test_source_records_and_unique_ids_required[duplicate_source] _________
+
+mutation = 'duplicate_source'
+
+    @pytest.mark.parametrize("mutation",["no_passage","duplicate_source","blank_claim"])
+    def test_source_records_and_unique_ids_required(mutation):
+        data,bundle=fixture()
+        if mutation=="no_passage":bundle["sources"][0].pop("passages",None)
+        if mutation=="duplicate_source":bundle["sources"].append(copy.deepcopy(bundle["sources"][0]))
+        if mutation=="blank_claim":bundle["claims"][0]["claim_id"]=""
+>       with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"):validate_trial_evidence(data,bundle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_evidence_first.py:128: Failed
+_______ test_bound_central_anchor_limits_and_labels_reach_both_consumers _______
+
+    def test_bound_central_anchor_limits_and_labels_reach_both_consumers():
+        import inspect
+>       assert "editorial_brief" in inspect.signature(run_generation).parameters, "bound semantics are discarded"
+E       AssertionError: bound semantics are discarded
+E       assert 'editorial_brief' in mappingproxy(OrderedDict({'topic': <Parameter "topic: 'str'">, 'services': <Parameter "services: 'list[str]'">, 'perso...y_client: 'Any | None' = None">, 'publish_quality_client': <Parameter "publish_quality_client: 'Any | None' = None">}))
+E        +  where mappingproxy(OrderedDict({'topic': <Parameter "topic: 'str'">, 'services': <Parameter "services: 'list[str]'">, 'perso...y_client: 'Any | None' = None">, 'publish_quality_client': <Parameter "publish_quality_client: 'Any | None' = None">})) = <Signature (topic: 'str', services: 'list[str]', persona_key: 'str' = 'ardent_v2', *, audience: 'str' = 'C-suite leade...one' = None, opportunity_client: 'Any | None' = None, publish_quality_client: 'Any | None' = None) -> 'dict[str, Any]'>.parameters
+E        +    where <Signature (topic: 'str', services: 'list[str]', persona_key: 'str' = 'ardent_v2', *, audience: 'str' = 'C-suite leade...one' = None, opportunity_client: 'Any | None' = None, publish_quality_client: 'Any | None' = None) -> 'dict[str, Any]'> = <function signature at 0x7b48f8d2e400>(run_generation)
+E        +      where <function signature at 0x7b48f8d2e400> = <module 'inspect' from '/usr/lib/python3.14/inspect.py'>.signature
+
+tests/test_evidence_first.py:132: AssertionError
+_____ test_malformed_judgment_metadata_cannot_qualify_a_post[no_rationale] _____
+
+mutation = 'no_rationale'
+
+    @pytest.mark.parametrize("mutation",["no_rationale","empty_rationale","no_gaps","invalid_gap"])
+    def test_malformed_judgment_metadata_cannot_qualify_a_post(mutation):
+        dims={**{k:5 for k in QUALITY_WEIGHTS},"gaps":[],"rationale":"Strong fixture."}
+        if mutation=="no_rationale":dims.pop("rationale")
+        if mutation=="empty_rationale":dims["rationale"]=""
+        if mutation=="no_gaps":dims.pop("gaps")
+        if mutation=="invalid_gap":dims["gaps"]=[{"invented":"not a gap string"}]
+        class Bad:
+            def call(self,*a,**kw):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Bad())
+>       assert result.score is None
+E       AssertionError: assert 100 is None
+E        +  where 100 = PublishQualityAssessment(score=100, dimensions={'outsider_clarity': 5, 'professional_relevance': 5, 'specificity': 5, ...bility': 5, 'voice_authenticity': 5}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:161: AssertionError
+___ test_malformed_judgment_metadata_cannot_qualify_a_post[empty_rationale] ____
+
+mutation = 'empty_rationale'
+
+    @pytest.mark.parametrize("mutation",["no_rationale","empty_rationale","no_gaps","invalid_gap"])
+    def test_malformed_judgment_metadata_cannot_qualify_a_post(mutation):
+        dims={**{k:5 for k in QUALITY_WEIGHTS},"gaps":[],"rationale":"Strong fixture."}
+        if mutation=="no_rationale":dims.pop("rationale")
+        if mutation=="empty_rationale":dims["rationale"]=""
+        if mutation=="no_gaps":dims.pop("gaps")
+        if mutation=="invalid_gap":dims["gaps"]=[{"invented":"not a gap string"}]
+        class Bad:
+            def call(self,*a,**kw):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Bad())
+>       assert result.score is None
+E       AssertionError: assert 100 is None
+E        +  where 100 = PublishQualityAssessment(score=100, dimensions={'outsider_clarity': 5, 'professional_relevance': 5, 'specificity': 5, ...bility': 5, 'voice_authenticity': 5}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:161: AssertionError
+_______ test_malformed_judgment_metadata_cannot_qualify_a_post[no_gaps] ________
+
+mutation = 'no_gaps'
+
+    @pytest.mark.parametrize("mutation",["no_rationale","empty_rationale","no_gaps","invalid_gap"])
+    def test_malformed_judgment_metadata_cannot_qualify_a_post(mutation):
+        dims={**{k:5 for k in QUALITY_WEIGHTS},"gaps":[],"rationale":"Strong fixture."}
+        if mutation=="no_rationale":dims.pop("rationale")
+        if mutation=="empty_rationale":dims["rationale"]=""
+        if mutation=="no_gaps":dims.pop("gaps")
+        if mutation=="invalid_gap":dims["gaps"]=[{"invented":"not a gap string"}]
+        class Bad:
+            def call(self,*a,**kw):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Bad())
+>       assert result.score is None
+E       AssertionError: assert 100 is None
+E        +  where 100 = PublishQualityAssessment(score=100, dimensions={'outsider_clarity': 5, 'professional_relevance': 5, 'specificity': 5, ...ersation_potential': 5, 'shareability': 5, 'voice_authenticity': 5}, gaps=(), rationale='Strong fixture.', warnings=()).score
+
+tests/test_evidence_first.py:161: AssertionError
+_____ test_malformed_judgment_metadata_cannot_qualify_a_post[invalid_gap] ______
+
+mutation = 'invalid_gap'
+
+    @pytest.mark.parametrize("mutation",["no_rationale","empty_rationale","no_gaps","invalid_gap"])
+    def test_malformed_judgment_metadata_cannot_qualify_a_post(mutation):
+        dims={**{k:5 for k in QUALITY_WEIGHTS},"gaps":[],"rationale":"Strong fixture."}
+        if mutation=="no_rationale":dims.pop("rationale")
+        if mutation=="empty_rationale":dims["rationale"]=""
+        if mutation=="no_gaps":dims.pop("gaps")
+        if mutation=="invalid_gap":dims["gaps"]=[{"invented":"not a gap string"}]
+        class Bad:
+            def call(self,*a,**kw):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Bad())
+>       assert result.score is None
+E       assert 100 is None
+E        +  where 100 = PublishQualityAssessment(score=100, dimensions={'outsider_clarity': 5, 'professional_relevance': 5, 'specificity': 5, ...ty': 5, 'voice_authenticity': 5}, gaps=("{'invented': 'not a gap string'}",), rationale='Strong fixture.', warnings=()).score
+
+tests/test_evidence_first.py:161: AssertionError
+__________ test_base_persona_reaches_evaluator_for_non_graham_author ___________
+
+    def test_base_persona_reaches_evaluator_for_non_graham_author():
+        client=QualityCapture()
+        assess_publish_quality(text="A post",audience="IT",content_goal="authority",evidence=[],
+            persona_profile={"tone":["direct"],"rhythm":"varied","donts":["no cliches"]},client=client)
+        voice=json.loads(client.calls[0]["user"])["voice_context"]
+>       assert voice.get("tone")==["direct"]
+E       AssertionError: assert None == ['direct']
+E        +  where None = <built-in method get of dict object at 0x7b48f6728f80>('tone')
+E        +    where <built-in method get of dict object at 0x7b48f6728f80> = {'voice_authority': {}, 'spoken_voice': {}, 'author_pov': None}.get
+
+tests/test_evidence_first.py:168: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evidence_first.py::test_all_request_facts_require_coverage_not_just_declared_claims
+FAILED tests/test_evidence_first.py::test_source_records_and_unique_ids_required[no_passage]
+FAILED tests/test_evidence_first.py::test_source_records_and_unique_ids_required[duplicate_source]
+FAILED tests/test_evidence_first.py::test_bound_central_anchor_limits_and_labels_reach_both_consumers
+FAILED tests/test_evidence_first.py::test_malformed_judgment_metadata_cannot_qualify_a_post[no_rationale]
+FAILED tests/test_evidence_first.py::test_malformed_judgment_metadata_cannot_qualify_a_post[empty_rationale]
+FAILED tests/test_evidence_first.py::test_malformed_judgment_metadata_cannot_qualify_a_post[no_gaps]
+FAILED tests/test_evidence_first.py::test_malformed_judgment_metadata_cannot_qualify_a_post[invalid_gap]
+FAILED tests/test_evidence_first.py::test_base_persona_reaches_evaluator_for_non_graham_author
+9 failed, 15 passed in 0.25s

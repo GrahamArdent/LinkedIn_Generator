@@ -309,3 +309,7 @@ Two actual writer consumer regressions RED→GREEN; full150 PASS after updating 
 ## Phase3 execution checkpoint — 2026-11-04
 
 Seven scorer/comparison regressions RED→GREEN; full157 PASS. Writer and evaluator share factual brief, full relevant voice and approved examples; concrete0–5 anchors added. Missing/noninteger/out-of-range ratings become unavailable, never silently fabricated. Baseline can receive the identical evaluator context and rubric; reopen remains zero-call. Weights/90 unchanged, one targeted guarded rewrite. No exact-text human calibration corpus established; calibration remains explicitly missing. Source/main/PR/runtime observations: evidence/milestones/evidence-first-execution-20261104/phase3.json. Candidate-only, no merge/install promotion.
+
+### Fresh review correction before Phase4
+
+Review held c51d737 for source reverse coverage/context propagation, study identity, partial assessment recovery and malformed judgments. All Important findings reproduced and fixed; base persona/goal parity included because same-context comparison is required. Full171 PASS; review-fix.json and REVIEW.md retain findings, RED/GREEN and rulings. Native all-evidence-omitted preflight correctly returned needs_more_evidence (1 model execution). Stronger actual CLI negative retained peripheral Canadian recommendation but omitted central reset facts; admission blocked before provider creation (0 model executions). No post generated yet. Aggregate subject budget remains <=12 executions/900 seconds including the earlier negative.

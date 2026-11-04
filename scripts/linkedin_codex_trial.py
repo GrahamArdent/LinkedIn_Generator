@@ -20,10 +20,11 @@ def main():
         cfg=json.loads(args.config.read_text())
         config=CodexConfig(**{**cfg,"resume_root":Path(cfg["resume_root"]),"python":Path(cfg["python"])})
         data=json.loads(args.request.read_text())
-        if args.evidence_bundle: validate_trial_evidence(data,json.loads(args.evidence_bundle.read_text()))
+        bundle=json.loads(args.evidence_bundle.read_text()) if args.evidence_bundle else None
+        if bundle is not None: validate_trial_evidence(data,bundle)
         provider=CodexProvider(config,args.out/"codex-attempts",data["request_id"])
         action=complete_comparison if args.action=="complete-comparison" else run_trial
-        result=action(data,args.out,provider,model=config.model,score_baseline=args.score_baseline)
+        result=action(data,args.out,provider,model=config.model,score_baseline=args.score_baseline,evidence_bundle=bundle)
     print(json.dumps({"state":result["state"],"engine_gate":result.get("engine_gate"),"mode":result["mode"],"review":str(args.out/"review.md")}))
 if __name__=="__main__":
     try: main()

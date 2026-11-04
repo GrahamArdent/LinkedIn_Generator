@@ -140,6 +140,7 @@ def run_generation(
     llm_client: Any | None = None,
     opportunity_client: Any | None = None,
     publish_quality_client: Any | None = None,
+    editorial_brief: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
@@ -239,6 +240,10 @@ def run_generation(
         "title": str(opportunity.get("strongest_evidence_title") or ""),
         "fact": str(opportunity.get("strongest_evidence_fact") or ""),
     }
+    if editorial_brief is not None:
+        central = next(c for c in editorial_brief["claims"] if c["claim_id"] == editorial_brief["central_claim_id"])
+        item = next(item for item in source_items if (item.get("fact") or item.get("one_liner")) == central["text"])
+        strongest_concrete_evidence = _source_for_prompt(item)
     plan = pipe.plan(prompts.get("plan_prompt", {}), {
         **plan_ctx, "audience": audience, "objective": objective,
         "evidence": source_items, "strongest_concrete_evidence": strongest_concrete_evidence,
@@ -264,6 +269,7 @@ def run_generation(
     persona_profile["editorial_context"] = {
         "objective": objective, "topic": topic, "plan": plan["editorial_plan"],
         "approved_voice_examples": prompt_voice_examples,
+        "source_bundle": editorial_brief,
     }
     drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)

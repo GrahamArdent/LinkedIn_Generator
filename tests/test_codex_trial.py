@@ -114,3 +114,58 @@ def test_opt_in_baseline_score_uses_engine_context_and_reopen_launches_nothing(t
     assert len(p.calls)==2
     assert run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=qualified,score_baseline=True)==result
     assert len(p.calls)==2
+
+def test_study_options_are_part_of_identity_and_conflicts_launch_nothing(tmp_path):
+    p=Provider()
+    run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=engine)
+    with pytest.raises(ValueError,match="REQUEST_CONFLICT"):
+        run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=engine,score_baseline=True)
+    assert len(p.calls)==2
+
+def test_missing_scoring_context_is_detected_before_baseline_model_call(tmp_path):
+    p=Provider()
+    with pytest.raises(ValueError,match="BASELINE_EVALUATION_CONTEXT_MISSING"):
+        run_trial(INPUT,tmp_path,p,model="gpt-6-astra",score_baseline=True,
+            engine=lambda *a,**kw:{"selected_candidate":{"body":"Engine text."}})
+    assert p.calls==[]
+
+def test_unknown_optional_assessment_preserves_pair_for_zero_call_review(tmp_path):
+    from src.app.codex_provider import CodexError
+    class FailingAssessment(Provider):
+        def generate(self,**kw):
+            self.calls.append(kw)
+            if "strict LinkedIn publish-quality evaluator" in kw["system"]:
+                self.error=CodexError("CODEX_COMPLETION_UNKNOWN")
+                raise self.error
+            return "Known completed baseline."
+    p=FailingAssessment()
+    with pytest.raises(CodexError):
+        run_trial(INPUT,tmp_path,p,model="gpt-6-astra",score_baseline=True,
+          engine=lambda *a,**kw:{"selected_candidate":{"body":"Engine text."},
+            "review":{"evaluation_context":{}},"telemetry":{"content_goal":"authority"}})
+    record=show_trial(tmp_path)
+    assert record["state"]=="unknown"
+    assert record["baseline"]["body"]=="Known completed baseline."
+    assert (tmp_path/"review.md").exists()
+    assert sorted(record["review"]["candidates"])==["A","B"]
+    assert len(p.calls)==2
+
+def test_bound_bundle_is_passed_to_actual_engine_and_baseline_and_bound_on_reopen(tmp_path):
+    import inspect,hashlib
+    assert "evidence_bundle" in inspect.signature(run_trial).parameters
+    bundle={"sources":[{"source_id":"S1","status":"usable","checked_at":"2026-11-04","limitations":"No broader claims.",
+          "title":"Build record","publisher":"Owner","record":"fixture-only",
+          "passages":[{"locator":"record","excerpt":INPUT["evidence"][0]["fact"]}]}],
+        "claims":[{"claim_id":"C1","kind":"observation","text":INPUT["evidence"][0]["fact"],"source_ids":["S1"]}],
+        "central_claim_id":"C1","request_sha256":hashlib.sha256(json.dumps(INPUT,sort_keys=True,ensure_ascii=False).encode()).hexdigest()}
+    p=Provider()
+    def bound_engine(request,**kwargs):
+        assert kwargs["editorial_brief"]==bundle
+        return {"selected_candidate":{"body":"Engine text."},"telemetry":{"content_goal":"authority"}}
+    result=run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=bound_engine,evidence_bundle=bundle)
+    assert result["baseline"]["user"]["source_bundle"]==bundle
+    assert result["baseline"]["user"]["content_goal"]=="authority"
+    assert run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=bound_engine,evidence_bundle=bundle)==result
+    with pytest.raises(ValueError,match="REQUEST_CONFLICT"):
+        run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=bound_engine)
+    assert len(p.calls)==1
