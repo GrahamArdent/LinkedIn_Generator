@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: v4 P0/P1 locally verified; P2 multi-subject acceptance HOLD for provider budget/credential and human review
+CURRENT_STAGE_OR_MILESTONE: v4 P0/P1 locally verified; Codex-first P2 adapter/trial plan prepared; implementation and human review NOT_RUN
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: LinkedIn_Generator `c51eb4afc30977bbbb3dc2193d6f14f3ea84fcdd`; PROGRAMSTART current methodology consulted at `4ece1af3bc6afff9834e551bc9f4e2d8e791b317`
 BLOCKER_SCOPE: milestone
@@ -252,3 +252,13 @@ Current execution environment: isolated VPS feature checkout; no deployment. All
 P0/P1 disposition: GO for completed local contract milestone, subject to the recorded review fix and final committed-source receipt; this is not hosted-CI, merge or product acceptance.
 P2 disposition: HOLD. Three grounded source-backed candidate ideas prepared, none counted as a drafted or accepted subject; no forced sixth subject. Trial #1 remains owner-recorded, not current live-provider evidence.
 Next eligible action: secure an admitted provider runtime and explicit spending envelope, approve genuine varied subjects, then run the paired P2 pilot and obtain actual human reviews. Do not bypass P2 with infrastructure work.
+
+## Codex-first continuation — 2026-11-04
+
+The operator requested a quick, economical plan covering the eight Codex-first steps. Controlling slice: [Codex-first trial game plan](docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md).
+
+This supersedes the proposed US$5/70-call API trial envelope. Paid API budget is zero; no API fallback. Reuse Resume Creator's subscription execution client through one thin adapter, retaining the existing LinkedIn engine and records. First proposed batch: one subject, at most12 model executions and15 minutes cumulative execution; no hidden retries. Subscription allowance is consumed.
+
+Planning is complete; adapter implementation, runtime qualification, new native trials and human verdicts remain NOT_RUN. Planning alone is not model-execution authorization. Preserve all26 AT objectives and11 E2E scenarios. Native engine-integrated Codex receipts may establish that provider's real execution; they do not qualify the unchanged API configuration. P2's factual, human, comparison and corpus gates remain intact.
+
+Next eligible implementation step: follow the short plan through adapter/offline qualification and one bounded comparison pair, subject to actual runtime admission and execution authorization. No new resume W7 invocation, CI, merge, deployment, rendering or publishing is admitted by this planning update.
