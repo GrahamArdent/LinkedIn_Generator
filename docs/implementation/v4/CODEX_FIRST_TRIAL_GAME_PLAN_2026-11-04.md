@@ -24,11 +24,11 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 ## Phase 1 — prepare evidence before changing the writer
 
-- [ ] Choose one substantive audience question from existing Graham/Ardent subject material. Avoid another post about our testing process. Define the reader, main point and supported consequence.
-- [ ] Assemble a small source bundle: source ID, title/URL or record, author/publisher, publication/event date where relevant, checked_at, exact supporting passage/record and limitations. Read the source itself; a URL or search snippet is not support.
-- [ ] Map each checkable claim to support and mark fact / personal observation / inference / opinion. Include material counterevidence, stale information and contradictions. Real user-confirmed experience is a primary source; external research is not mandatory for every opinion.
-- [ ] For this trial prefer at least one independent primary source or a concrete verified professional observation that supports the central factual anchor. A stronger claim needs stronger evidence; do not impose arbitrary citation counts.
-- [ ] Freeze request + source bundle before drafting. Keep extra provenance beside the existing SourceEvidence request initially; extend contracts only if consumer tests require it.
+- [x] Choose one substantive audience question from existing Graham/Ardent subject material. Avoid another post about our testing process. Define the reader, main point and supported consequence.
+- [x] Assemble a small source bundle: source ID, title/URL or record, author/publisher, publication/event date where relevant, checked_at, exact supporting passage/record and limitations. Read the source itself; a URL or search snippet is not support.
+- [x] Map each checkable claim to support and mark fact / personal observation / inference / opinion. Include material counterevidence, stale information and contradictions. Real user-confirmed experience is a primary source; external research is not mandatory for every opinion.
+- [x] For this trial prefer at least one independent primary source or a concrete verified professional observation that supports the central factual anchor. A stronger claim needs stronger evidence; do not impose arbitrary citation counts.
+- [x] Freeze request + source bundle before drafting. Keep extra provenance beside the existing SourceEvidence request initially; extend contracts only if consumer tests require it.
 
 **Tests:** sufficient support permits the intended claim; missing central support requests one targeted detail or defers; stale/contradictory sources cannot be silently presented as settled fact; opinion is not rejected merely for lacking a statistic.
 **Pass:** one usable evidence brief plus negative fixtures. No invented specificity to satisfy the scorer.
@@ -80,4 +80,4 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
 
-**Next:** Phase0 checkpoint verified; Phase1 evidence brief. This planning update does not itself implement the repairs or launch more posts.
+**Next:** Phase1 evidence brief qualified; execute Phase2 writer repair. Current execution is authorized by the operator; see latest packet/receipts.

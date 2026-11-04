@@ -238,3 +238,7 @@ Decision: next phases prepare a real source bundle/claim map, improve the existi
 Currentness control: one milestone receipt covers candidate/main/PR, local CI, actual runtime/launcher, source/config hashes, expected/observed outcomes and next action. The packet links the latest receipt. Read status before acting; an unmerged but explicitly identified trial candidate can continue authorized source work without pretending it is installed from main. Merge/installation promotion retain their gates.
 
 This amendment changes documentation only. No new post, writer/scorer implementation, threshold change, hosted CI, merge, install promotion, render or publication is claimed. Local CI/current runtime inspection for this documentation milestone is recorded under evidence/milestones/evidence-first-plan-20261104/.
+
+### Evidence-first Phase1 execution
+
+Five source-admission cases failed before implementation, then passed; full suite147 PASS. The optional sidecar binds exact request hash and claim/source qualifications, blocking missing/stale/contradictory support before provider construction. It does not establish that a source entails a claim. Primary ASD/Canadian Cyber Centre sources and factual/inference/opinion mapping are retained in evidence/evidence-first-20261104/source-bundle.json. No generated content or human acceptance inferred. Latest checkpoint: evidence/milestones/evidence-first-execution-20261104/phase1.json.

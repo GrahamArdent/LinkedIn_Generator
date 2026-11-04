@@ -30,6 +30,32 @@ def voice_context(request):
     return _persona_profile(str(ROOT),load_yaml(str(ROOT/"config/personas.yaml")),
                             request.persona_key,author_pov=request.author_pov)
 
+def validate_trial_evidence(data, bundle):
+    """Qualify a frozen trial brief before constructing a provider.
+
+    This checks recorded support, not source truth. Human/research review owns
+    whether a passage actually entails the claim. Legacy requests stay valid.
+    """
+    frozen = digest(json.dumps(data, sort_keys=True, ensure_ascii=False))
+    if bundle.get("request_sha256") != frozen:
+        raise ValueError("EVIDENCE_REQUEST_MISMATCH")
+    sources = {s["source_id"]: s for s in bundle.get("sources", [])}
+    claims = bundle.get("claims", [])
+    central = next((c for c in claims if c.get("claim_id") == bundle.get("central_claim_id")), None)
+    if not central or central.get("kind") not in {"fact", "observation"}:
+        raise ValueError("EVIDENCE_SUPPORT_REQUIRED: central factual anchor")
+    facts = {s.get("fact") for s in data.get("evidence", [])}
+    for claim in claims:
+        if claim.get("kind") not in {"fact", "observation", "inference", "opinion"}:
+            raise ValueError("EVIDENCE_SUPPORT_REQUIRED: unknown claim kind")
+        refs = claim.get("source_ids", [])
+        if claim.get("kind") in {"fact", "observation"} and (not refs or claim.get("text") not in facts):
+            raise ValueError("EVIDENCE_SUPPORT_REQUIRED: unmapped fact")
+        for ref in refs:
+            source = sources.get(ref, {})
+            if source.get("status") != "usable" or not source.get("checked_at") or not source.get("limitations"):
+                raise ValueError("EVIDENCE_SUPPORT_REQUIRED: missing, stale or contradictory source")
+
 def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=False):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     with (directory/".trial.lock").open("a+") as lock:

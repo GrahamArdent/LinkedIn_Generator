@@ -16,3 +16,5 @@ At every meaningful phase: run relevant tests and full local pytest at code conv
 Use the existing subscription-only Codex bridge; zero API spending/fallback, no resume W7 rerun, no new architecture. Before each live batch declare <=12 model executions/900 cumulative CLI seconds; unknown effects require original-receipt reconciliation, not blind retry. No hosted CI, merge, installation promotion, rendering or publishing without existing owner admission. Read-only status checks grant none of these.
 
 Continue through machine-solvable prerequisites, preserving all26 acceptance objectives/11 E2E scenarios, until the authorized phase is complete or a precise human gate remains. Report GO/HOLD/FAIL with expected versus observed, local CI, candidate/main/PR/runtime revisions, blocker and next eligible action. Never replace an unperformed human verdict, missing evidence or uncertain installation with a model score.
+
+Current checkpoint: Phase1 evidence brief qualified; resume Phase2. Reuse the frozen evidence/evidence-first-20261104 request and source bundle. Status belongs to CURRENT_WORK_PACKET and latest receipt.

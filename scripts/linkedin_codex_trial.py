@@ -3,7 +3,7 @@ import argparse,json,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from src.app.codex_provider import CodexConfig,CodexProvider
-from src.app.codex_trial import run_trial,show_trial,complete_comparison
+from src.app.codex_trial import run_trial,show_trial,complete_comparison,validate_trial_evidence
 
 def main():
     p=argparse.ArgumentParser(description="Subscription-only LinkedIn engine/baseline trial; no API fallback.")
@@ -11,6 +11,7 @@ def main():
     p.add_argument("--out",required=True,type=Path)
     p.add_argument("--request",type=Path)
     p.add_argument("--config",type=Path)
+    p.add_argument("--evidence-bundle",type=Path)
     args=p.parse_args()
     if args.action=="show": result=show_trial(args.out)
     else:
@@ -18,6 +19,7 @@ def main():
         cfg=json.loads(args.config.read_text())
         config=CodexConfig(**{**cfg,"resume_root":Path(cfg["resume_root"]),"python":Path(cfg["python"])})
         data=json.loads(args.request.read_text())
+        if args.evidence_bundle: validate_trial_evidence(data,json.loads(args.evidence_bundle.read_text()))
         provider=CodexProvider(config,args.out/"codex-attempts",data["request_id"])
         action=complete_comparison if args.action=="complete-comparison" else run_trial
         result=action(data,args.out,provider,model=config.model)

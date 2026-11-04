@@ -289,11 +289,15 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-plan-20261104/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: P2 / Phase1 evidence brief after the Phase0 checkpoint
+CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-execution-20261104/phase1.json
+NEXT_ELIGIBLE_PHASE: P2 / Phase2 writer repair
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
 This milestone changes planning/status documents only. Writer/scorer repairs and substantive new generation remain PLANNED. The milestone receipt records actual local CI, source, PR/main and launcher observations. Native Codex connection remains reusable; no API spend, model launch, hosted workflow, merge, installation promotion, deployment, rendering or publishing is admitted by this documentation update. P2 human/content acceptance remains HOLD.
 
 Phase0 observed:142 tests PASS; acceptance definitions unchanged; relative links valid; initial whitespace-only diff check failed and was repaired, then passed. PR24 remains draft/unmerged; launcher runs candidate checkout, not a merged-main release. See latest receipt.
+
+## Phase1 execution checkpoint — 2026-11-04
+
+Operator authorized execution of the updated prompt. Frozen substantive MFA recovery brief: evidence/evidence-first-20261104/request.json and source-bundle.json. Primary advisory tactics and recommendations are separated from inference/opinion; historical dates and limitations retained. Optional trial source bundle is checked before provider construction, without changing the existing request schema. Source truth still requires research/human review. Five admission fixtures RED→GREEN; full147 PASS; no generation. Source/PR/runtime checkpoint in phase1.json. Continue Phase2; unmerged candidate is not a release.
