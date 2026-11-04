@@ -1,0 +1,13 @@
+{
+  "candidates": {
+    "A": {
+      "body": "Before adding more AI steps, show me what improves.\n\nMy first question is whether something I already have can do the job. If it can, I’d rather start there and leave the extra layers until there’s a reason to add them.\n\nThat’s practical skepticism, but I need to apply it to my own judgments too.\n\nI can prefer one draft without knowing why it’s better, or whether the process behind it deserves any credit. A preference is a starting point. It doesn’t settle the question.\n\nWhat was it asked to do? What information did it have? What did each extra step actually change?\n\nThose questions matter when deciding how much AI to put into everyday work. Otherwise, it’s easy to add another review, another tool, another subscription, while still being unclear about what any of them contributes.\n\nI want a clear reason to keep each addition: a mistake caught, a clearer answer, a result that better meets the brief. Something I can inspect, rather than just a more elaborate description of the process.\n\nI’m open to more steps. I just want them to earn their place.\n\n#AI #PracticalAI #FutureOfWork",
+      "content_sha256": "6662249ab3eb740d80436bc8772b40d02bbe73f7ad0c8dfd8908a223bac32d7d"
+    },
+    "B": {
+      "body": "I liked the AI draft. That proved very little.\n\nI preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.\n\nI also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?\n\nThat distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.\n\nMy starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.\n\nI’m willing to add complexity. I want to see what it earns.",
+      "content_sha256": "1268f95c982ab66227e84dfc814ae07dcc3b1809cba83eceae795814913e7dde"
+    }
+  },
+  "human_decision": null
+}

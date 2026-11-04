@@ -195,8 +195,8 @@ Promotion rule: when one becomes a real candidate for action, evaluate it agains
 | # | Subject | Gate outcome | Draft A score | Draft B score | Human decision | Visual plan | Notes |
 |---:|---|---|---:|---:|---|---|---|
 | 1 | AI planning system creating rework by forgetting settled decisions | draft | manual ~87 | manual ~93–95 | keep Draft B | 5-slide carousel concept; human visual-plan validation not yet explicit | Voice confirmed as sounding like Graham; Draft B explicitly liked. Scores are manual review estimates, not repository-provider telemetry. |
-| 2 | | | | | | | |
-| 3 | | | | | | | |
+| 2 | Draft/visual revision ambiguity | drafted; unqualified | 73 | guard-rejected, not scored | limited preference for original (display B); no editorial approval | deferred | Native Codex connection canary; retain the weak outcome, do not count preference as a quality-gate pass. |
+| 3 | Before adding AI steps, show what they improve | drafted; unqualified | 78 | 77 | pending | deferred | Native Codex transparent diagnostic with exact prompts and changes; not a blinded pilot vote. |
 | 4 | | | | | | | |
 | 5 | | | | | | | |
 | 6 | | | | | | | |
@@ -275,3 +275,12 @@ Human review: evidence/codex-first-20261104/trial/review.md. Record exact-hash A
 First-six denominator remains unfulfilled; no AT04/05/19–26 or E2E06/10/11 PASS is claimed. AT03 controlled deferral is reused; later AT/E2E remain as previously gated. Rendering, CI, merge, deployment and publishing remain unadmitted.
 
 Next eligible action: Graham reviews the first pair; repair only a demonstrated defect or continue to further real subjects after that decision. Do not bypass the content gate with P3 infrastructure.
+
+## Limited feedback and transparent evaluation — 2026-11-04
+
+User explicitly requested recording the earlier display-B preference without overemphasis, then authorized a more transparent evaluation. Saved feedback: evidence/codex-first-20261104/trial/human-feedback.json, exact text SHA2564998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04. This is preference only: no keep/light verdict, ratings, editing-time result, voice-example promotion or publication approval inferred.
+
+New subject draws only on Graham's actual requests for economical Codex reuse and understanding model context/feedback use. Exact brief, sources, voice hashes, all6 actual model prompts/results, original-to-rewrite diff and raw baseline are in evidence/transparent-evaluation-20261104/EVALUATION.md.
+Native original78; one safe rewrite77; no selected candidate/visual. Baseline generated once from the same factual/voice context. All original weak outputs remain visible; neither this diagnostic nor the earlier limited preference may silently supply a blinded pilot win or an editorial keep.
+
+Transport and environment remain GO; P2 content acceptance HOLD. Human feedback now should identify factual alignment, a voice mismatch, a useful/unhelpful rewrite change or actual edit, rather than only pick a winner. No new production code, CI, merge, rendering, deployment or publishing occurred.

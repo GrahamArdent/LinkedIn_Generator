@@ -1,0 +1,21 @@
+{
+  "feedback_id": "lig-feedback-20261104-first-pair-B",
+  "recorded_at_utc": "2026-11-04T23:01:23.057757+00:00",
+  "reviewer": "Graham Hill",
+  "kind": "limited_pair_preference",
+  "preferred_label": "B",
+  "method": "engine",
+  "candidate_content_sha256": "4998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04",
+  "statement": "Personally I liked draft B; this was a basic test and its generation process and feedback use were unclear.",
+  "recording_authorization": "User explicitly requested recording B without putting too much emphasis on it.",
+  "editorial_decision": null,
+  "edit_scope": null,
+  "voice_rating": null,
+  "insight_rating": null,
+  "usefulness_rating": null,
+  "edit_minutes": null,
+  "publication_approved": false,
+  "acceptance_gate_pass": false,
+  "promote_to_voice_example": false,
+  "limitation": "One disclosed connectivity canary; not evidence of consistent writing quality or engine advantage. Do not silently add to the blinded pilot numerator."
+}
