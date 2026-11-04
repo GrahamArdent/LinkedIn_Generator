@@ -33,3 +33,47 @@ def test_missing_source_and_changed_frozen_request_block():
     with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"): validate_trial_evidence(data,bundle)
     data,bundle=fixture();data["evidence"][0]["fact"]="An invented financial loss."
     with pytest.raises(ValueError,match="EVIDENCE_REQUEST_MISMATCH"): validate_trial_evidence(data,bundle)
+
+from src.app.api import run_generation
+from src.app.generation import Pipeline
+from src.app.opportunity import assess_opportunity, WEIGHTS as OPPORTUNITY_WEIGHTS
+
+class WriterCapture:
+    def __init__(self): self.calls=[]
+    def call(self,system,user,response_json=True):
+        self.calls.append({"system":system,"user":user})
+        return {"text":"Account recovery is part of identity security.\n\nThe advisory describes help-desk resets. A review should include that path.\n\nTest the process before assuming the sign-in screen tells the whole story."}
+
+def test_actual_drafting_consumer_gets_source_specific_plan_and_voice():
+    client=WriterCapture()
+    run_generation("Account recovery",[],persona_key="graham",audience="IT leaders",
+        objective="Review how identity is re-established.",allowed_sources=[{"title":"S1","fact":"Help desks reset tokens."}],
+        opportunity_gate=False,publish_quality_gate=False,llm_client=client,hashtags=[])
+    call=client.calls[0]
+    line=next((x for x in call["user"].splitlines() if x.startswith("Editorial Plan: ")),None)
+    assert line is not None, "frozen evidence never reaches a source-specific editorial plan"
+    plan=json.loads(line.split(": ",1)[1])
+    assert plan["factual_anchor"]["fact"]=="Help desks reset tokens."
+    assert plan["reader"]=="IT leaders"
+    assert plan["takeaway"]=="Review how identity is re-established."
+    assert "trace_operational_friction" in call["user"]
+    assert "spoken_voice" in call["user"]
+
+def test_changing_source_changes_actual_plan_anchor_without_new_planning_call():
+    pipe=Pipeline({"prompt_kit":{}},client=WriterCapture())
+    ctx={"topic":"Account recovery","targets":["IT leaders"],"audience":"IT leaders","objective":"Review recovery."}
+    a=pipe.plan({},dict(ctx,evidence=[{"title":"S1","fact":"Help desks reset tokens."}]))
+    b=pipe.plan({},dict(ctx,evidence=[{"title":"S2","fact":"Provider recovery uses a separate verification path."}]))
+    assert a.get("editorial_plan",{}).get("factual_anchor") != b.get("editorial_plan",{}).get("factual_anchor")
+    assert pipe.client.calls==[]
+
+def test_real_preflight_cannot_authorize_omitted_anchor_even_with_high_model_rating():
+    class Overconfident:
+        def call(self,*args,**kwargs):
+            return {"text":json.dumps({**{k:5 for k in OPPORTUNITY_WEIGHTS},"strongest_evidence_index":0})}
+    kwargs=dict(topic="Recovery verification",audience="IT leaders",objective="Review recovery",client=Overconfident())
+    supported=assess_opportunity(evidence=[{"title":"S1","fact":"Help desks reset tokens."}],**kwargs)
+    omitted=assess_opportunity(evidence=[],**kwargs)
+    assert supported.decision=="draft"
+    assert omitted.decision=="needs_more_evidence"
+    assert omitted.strongest_evidence_fact==""

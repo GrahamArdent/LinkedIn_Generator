@@ -235,12 +235,17 @@ def run_generation(
 
     voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
-    angle_options = list(plan.get("angle_options") or [plan["angle"]])
     strongest_concrete_evidence = {
         "title": str(opportunity.get("strongest_evidence_title") or ""),
         "fact": str(opportunity.get("strongest_evidence_fact") or ""),
     }
+    plan = pipe.plan(prompts.get("plan_prompt", {}), {
+        **plan_ctx, "audience": audience, "objective": objective,
+        "evidence": source_items, "strongest_concrete_evidence": strongest_concrete_evidence,
+    })
+    angle_options = list(plan.get("angle_options") or [plan["angle"]])
     draft_ctx = {
+        "editorial_plan": plan["editorial_plan"],
         "persona_key": persona_key,
         "audience": audience,
         "objective": objective,

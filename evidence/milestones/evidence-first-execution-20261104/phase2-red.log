@@ -1,0 +1,39 @@
+.....FF.                                                                 [100%]
+=================================== FAILURES ===================================
+______ test_actual_drafting_consumer_gets_source_specific_plan_and_voice _______
+
+    def test_actual_drafting_consumer_gets_source_specific_plan_and_voice():
+        client=WriterCapture()
+        run_generation("Account recovery",[],persona_key="graham",audience="IT leaders",
+            objective="Review how identity is re-established.",allowed_sources=[{"title":"S1","fact":"Help desks reset tokens."}],
+            opportunity_gate=False,publish_quality_gate=False,llm_client=client,hashtags=[])
+        call=client.calls[0]
+        line=next((x for x in call["user"].splitlines() if x.startswith("Editorial Plan: ")),None)
+>       assert line is not None, "frozen evidence never reaches a source-specific editorial plan"
+E       AssertionError: frozen evidence never reaches a source-specific editorial plan
+E       assert None is not None
+
+tests/test_evidence_first.py:54: AssertionError
+__ test_changing_source_changes_actual_plan_anchor_without_new_planning_call ___
+
+    def test_changing_source_changes_actual_plan_anchor_without_new_planning_call():
+        pipe=Pipeline({"prompt_kit":{}},client=WriterCapture())
+        ctx={"topic":"Account recovery","targets":["IT leaders"],"audience":"IT leaders","objective":"Review recovery."}
+        a=pipe.plan({},dict(ctx,evidence=[{"title":"S1","fact":"Help desks reset tokens."}]))
+        b=pipe.plan({},dict(ctx,evidence=[{"title":"S2","fact":"Provider recovery uses a separate verification path."}]))
+>       assert a.get("editorial_plan",{}).get("factual_anchor") != b.get("editorial_plan",{}).get("factual_anchor")
+E       AssertionError: assert None != None
+E        +  where None = <built-in method get of dict object at 0x733a691d8a40>('factual_anchor')
+E        +    where <built-in method get of dict object at 0x733a691d8a40> = {}.get
+E        +      where {} = <built-in method get of dict object at 0x733a69239940>('editorial_plan', {})
+E        +        where <built-in method get of dict object at 0x733a69239940> = {'angle': 'Plain-language lesson: explain why Account recovery matters to IT leaders.', 'angle_options': ['Plain-langu...lied evidence complicates.'], 'sections': ['hook', 'context', 'insight', 'takeaway', 'closer'], 'micro_plays': [], ...}.get
+E        +  and   None = <built-in method get of dict object at 0x733a69126ec0>('factual_anchor')
+E        +    where <built-in method get of dict object at 0x733a69126ec0> = {}.get
+E        +      where {} = <built-in method get of dict object at 0x733a691b9e00>('editorial_plan', {})
+E        +        where <built-in method get of dict object at 0x733a691b9e00> = {'angle': 'Plain-language lesson: explain why Account recovery matters to IT leaders.', 'angle_options': ['Plain-langu...lied evidence complicates.'], 'sections': ['hook', 'context', 'insight', 'takeaway', 'closer'], 'micro_plays': [], ...}.get
+
+tests/test_evidence_first.py:67: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evidence_first.py::test_actual_drafting_consumer_gets_source_specific_plan_and_voice
+FAILED tests/test_evidence_first.py::test_changing_source_changes_actual_plan_anchor_without_new_planning_call
+2 failed, 6 passed in 0.16s

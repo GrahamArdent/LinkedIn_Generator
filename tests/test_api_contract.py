@@ -12,7 +12,7 @@ def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
 
         def plan(self, _prompt, ctx):
             captured["plan_ctx"] = ctx
-            return {"angle": "real-work lesson", "citations": []}
+            return {"angle": "real-work lesson", "citations": [], "editorial_plan": {}}
 
         def draft_variants(self, _prompt, ctx):
             captured["draft_ctx"] = ctx
@@ -82,6 +82,10 @@ def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
         "topic": "What real buyer work taught us",
         "services": ["discovery"],
         "targets": ["founders"],
+        "audience": "AI founders",
+        "objective": "useful visibility from real work",
+        "evidence": [{"title": "Buyer note", "fact": "Reliability mattered more than novelty.", "url": "https://example.com/note"}],
+        "strongest_concrete_evidence": {"title": "", "fact": ""},
     }
     assert captured["draft_ctx"]["audience"] == "AI founders"
     assert captured["draft_ctx"]["objective"] == "useful visibility from real work"

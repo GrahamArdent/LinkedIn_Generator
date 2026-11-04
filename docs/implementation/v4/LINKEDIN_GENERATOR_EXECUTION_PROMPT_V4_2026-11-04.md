@@ -17,4 +17,5 @@ Use the existing subscription-only Codex bridge; zero API spending/fallback, no 
 
 Continue through machine-solvable prerequisites, preserving all26 acceptance objectives/11 E2E scenarios, until the authorized phase is complete or a precise human gate remains. Report GO/HOLD/FAIL with expected versus observed, local CI, candidate/main/PR/runtime revisions, blocker and next eligible action. Never replace an unperformed human verdict, missing evidence or uncertain installation with a model score.
 
-Current checkpoint: Phase1 evidence brief qualified; resume Phase2. Reuse the frozen evidence/evidence-first-20261104 request and source bundle. Status belongs to CURRENT_WORK_PACKET and latest receipt.
+
+Current checkpoint: Phase2 machine GO. Two actual writer consumer regressions RED→GREEN; full150 PASS after updating the stale injected planner fixture to the expanded input/output contract while preserving original context assertions. Evidence-bound plan and full voice reach drafting. Missing anchor changes actual preflight readiness even with overconfident model ratings. No extra model planning call. Human writing quality remains unproved. Next: Phase3 scorer qualification. Status authority remains CURRENT_WORK_PACKET and actual receipts.

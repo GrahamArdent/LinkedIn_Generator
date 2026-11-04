@@ -36,11 +36,11 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 ## Phase 2 — make existing writing guidance operational
 
-- [ ] Build a compact, source-specific editorial plan: assumption/tension, exact factual anchor, mechanism, supported human/business consequence, takeaway and natural closer.
-- [ ] Reuse the Voice Bible's causal reasoning and Spoken Voice. Use only supported layers; never force every stakeholder, emotional beat, analogy or financial consequence.
-- [ ] Supply the same approved voice material to relevant stages. Reuse genuinely approved examples if their provenance is available; a limited preference is not an approved example.
-- [ ] Replace generic angle scaffolding only where tests demonstrate need. Keep existing engine/provider/contracts and at most one guarded quality rewrite.
-- [ ] A clean house-rule score must not be described as editorial success. The existing semantic quality assessment already runs: improve its use rather than enable named critic/humanizer stages merely to add calls.
+- [x] Build a compact, source-specific editorial plan: assumption/tension, exact factual anchor, mechanism, supported human/business consequence, takeaway and natural closer.
+- [x] Reuse the Voice Bible's causal reasoning and Spoken Voice. Use only supported layers; never force every stakeholder, emotional beat, analogy or financial consequence.
+- [x] Supply the same approved voice material to relevant stages. Reuse genuinely approved examples if their provenance is available; a limited preference is not an approved example.
+- [x] Replace generic angle scaffolding only where tests demonstrate need. Keep existing engine/provider/contracts and at most one guarded quality rewrite.
+- [x] A clean house-rule score must not be described as editorial success. The existing semantic quality assessment already runs: improve its use rather than enable named critic/humanizer stages merely to add calls.
 
 **Tests:** the actual drafting consumer receives the frozen anchor/plan/voice; changing or removing essential support changes the allowed claim/readiness; formatted-but-generic writing is not accepted by a formatting check alone; rewritten text retains support and candidate/visual identity.
 **Pass:** fixture-qualified source-specific planning and prompt flow, without extra rewrite loops.
@@ -80,4 +80,4 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
 
-**Next:** Phase1 evidence brief qualified; execute Phase2 writer repair. Current execution is authorized by the operator; see latest packet/receipts.
+**Next:** Phase3 scorer qualification. See latest packet and phase receipt.

@@ -6,6 +6,7 @@ draft_prompt:
     When Graham Spoken Voice is present, preserve the feel of thinking-in-motion without transcribing filler: let the reasoning move from observation, through a useful self-check or alternative interpretation when warranted, to consequence and a compact conclusion. Compress repeated reformulation and side paths. Do not force the A-to-B-to-C framework or signature phrases into the text; use those concepts invisibly unless naming one materially improves the post.
     Assume the reader is smart but has never seen the author's internal project documents. Translate internal methodology, repository, software-process, and project vocabulary into ordinary language before using it. If a project name matters, explain what it does in plain English on first mention.
     Respect Author POV. When Author POV is individual, default to I/me/my for the author's own actions and do not use we/us/our unless the supplied evidence clearly describes a genuinely shared action.
+    Use the Editorial Plan as a reasoning brief, not a fill-in-the-blanks template. Resolve its mechanism and consequence tasks only as the sources permit. Never turn a task into an unsupported factual assertion.
     Make one main point. Choose the strongest useful angle from Angle Options and build the post around that point rather than combining every angle.
     When Strongest Concrete Evidence is non-empty, use that exact supplied fact as the factual anchor for the post. You may paraphrase it faithfully, but do not embellish it, add precision, invent timing, or manufacture a more dramatic example. Let the insight grow out of the evidence rather than starting from a generic lesson and decorating it afterward.
     Prefer concrete details and real consequences from Allowed Sources over abstract process language.
@@ -30,6 +31,7 @@ draft_prompt:
     Ending Guidance: {ending_guidance}
     Topic: {topic}
     Services/related capabilities: {services}
+    Editorial Plan: {editorial_plan}
     Angle Options: {angle_options}
     Persona Profile: {persona_profile}
     Approved Voice Examples (style evidence only): {approved_voice_examples}

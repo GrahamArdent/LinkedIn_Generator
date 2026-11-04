@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Evidence-first phased continuation; Phase0 checkpoint GO; Phase1 evidence brief ready; P2 content acceptance HOLD
+CURRENT_STAGE_OR_MILESTONE: Phase2 machine checkpoint GO; Phase3 scorer qualification; content acceptance HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: default main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate code d715f078094032c10e778a8450f61329c1895fa8; latest milestone receipt records tested source and live integration/runtime observations
 BLOCKER_SCOPE: milestone
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-execution-20261104/phase1.json
-NEXT_ELIGIBLE_PHASE: P2 / Phase2 writer repair
+CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-execution-20261104/phase2.json
+NEXT_ELIGIBLE_PHASE: Phase3 scorer qualification
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -301,3 +301,7 @@ Phase0 observed:142 tests PASS; acceptance definitions unchanged; relative links
 ## Phase1 execution checkpoint — 2026-11-04
 
 Operator authorized execution of the updated prompt. Frozen substantive MFA recovery brief: evidence/evidence-first-20261104/request.json and source-bundle.json. Primary advisory tactics and recommendations are separated from inference/opinion; historical dates and limitations retained. Optional trial source bundle is checked before provider construction, without changing the existing request schema. Source truth still requires research/human review. Five admission fixtures RED→GREEN; full147 PASS; no generation. Source/PR/runtime checkpoint in phase1.json. Continue Phase2; unmerged candidate is not a release.
+
+## Phase2 execution checkpoint — 2026-11-04
+
+Two actual writer consumer regressions RED→GREEN; full150 PASS after updating the stale injected planner fixture to the expanded input/output contract while preserving original context assertions. Evidence-bound plan and full voice reach drafting. Missing anchor changes actual preflight readiness even with overconfident model ratings. No extra model planning call. Human writing quality remains unproved. Source/main/PR/runtime observations: evidence/milestones/evidence-first-execution-20261104/phase2.json. Candidate-only, no merge/install promotion.
