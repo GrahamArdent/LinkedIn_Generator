@@ -1,0 +1,54 @@
+{
+  "checked_at_utc": "2026-11-04T22:39:26.124429+00:00",
+  "source_sha": "af2d458f879e3e4a4520a70851d1af3b73e79e8b",
+  "checks": [
+    {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "show",
+        "--out",
+        "/home/graham/work/linkedin-codex-trial-20261104/evidence/codex-first-20261104/trial"
+      ],
+      "exit_code": 0,
+      "output": "{\"state\": \"completed\", \"engine_gate\": \"HOLD_NO_QUALIFIED_CANDIDATE\", \"mode\": \"native_codex\", \"review\": \"/home/graham/work/linkedin-codex-trial-20261104/evidence/codex-first-20261104/trial/review.md\"}"
+    },
+    {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "generate",
+        "--request",
+        "/home/graham/work/linkedin-codex-trial-20261104/evidence/codex-first-20261104/request.json",
+        "--out",
+        "/home/graham/work/linkedin-codex-trial-20261104/evidence/codex-first-20261104/trial"
+      ],
+      "exit_code": 0,
+      "output": "{\"state\": \"completed\", \"engine_gate\": \"HOLD_NO_QUALIFIED_CANDIDATE\", \"mode\": \"native_codex\", \"review\": \"/home/graham/work/linkedin-codex-trial-20261104/evidence/codex-first-20261104/trial/review.md\"}"
+    }
+  ],
+  "before": {
+    "active_seconds": 49.23177855927497,
+    "in_flight": null,
+    "launches": 15,
+    "model_execution_slots": 5,
+    "model_seconds": 47.39946443866938,
+    "schema_version": "2.0",
+    "started": 1793831639.0280404
+  },
+  "after": {
+    "active_seconds": 49.23177855927497,
+    "in_flight": null,
+    "launches": 15,
+    "model_execution_slots": 5,
+    "model_seconds": 47.39946443866938,
+    "schema_version": "2.0",
+    "started": 1793831639.0280404
+  },
+  "additional_model_executions": 0,
+  "original_attempt_ids": [
+    "attempt-a55f0a1742c54fdc9c0998d84526aa26",
+    "attempt-9b4ed71058b647c4a13c8a6cf193b27f",
+    "attempt-c7d686fa74a14feea90bd2fcd678ba10",
+    "attempt-f0fab61cebd24b208a43ac51f29f86e8",
+    "attempt-e6556b17ef364d7cb191b3e1092f9d19"
+  ]
+}

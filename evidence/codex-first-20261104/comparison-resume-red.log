@@ -1,0 +1,24 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_comparison_completion_uses_retained_unqualified_engine_without_regeneration _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-359/test_comparison_completion_use0')
+
+    def test_comparison_completion_uses_retained_unqualified_engine_without_regeneration(tmp_path):
+>       from src.app.codex_trial import complete_comparison
+E       ImportError: cannot import name 'complete_comparison' from 'src.app.codex_trial' (/home/graham/work/linkedin-codex-trial-20261104/src/app/codex_trial.py)
+
+tests/test_codex_trial.py:59: ImportError
+________ test_comparison_completion_cannot_relaunch_an_unknown_attempt _________
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-359/test_comparison_completion_can0')
+
+    def test_comparison_completion_cannot_relaunch_an_unknown_attempt(tmp_path):
+>       from src.app.codex_trial import complete_comparison
+E       ImportError: cannot import name 'complete_comparison' from 'src.app.codex_trial' (/home/graham/work/linkedin-codex-trial-20261104/src/app/codex_trial.py)
+
+tests/test_codex_trial.py:77: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_codex_trial.py::test_comparison_completion_uses_retained_unqualified_engine_without_regeneration
+FAILED tests/test_codex_trial.py::test_comparison_completion_cannot_relaunch_an_unknown_attempt
+2 failed, 4 deselected in 0.14s

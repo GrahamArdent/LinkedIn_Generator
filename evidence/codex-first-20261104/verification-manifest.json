@@ -1,0 +1,26 @@
+{
+  "recorded_at_utc": "2026-11-04T22:41:25.107394+00:00",
+  "source_sha": "af2d458f879e3e4a4520a70851d1af3b73e79e8b",
+  "source_sha256": {
+    "src/app/codex_provider.py": "83dc8254a679f2ef0f18de9a214e2e47101b2071160ece43a1d3cf8249ef38ae",
+    "src/app/codex_trial.py": "fecaf9257920f820cb561c51972b6aa1b543ed0899c7ca7d864150d9ef3175d6",
+    "scripts/linkedin_codex_trial.py": "8cc90361e09a3afc29a68aa71a39afe7fcbb92d9eb2012f9d17aa637808b4083",
+    "tests/test_codex_provider.py": "31c78269b7ae25326cd86fe7eb6eed3083c9bc441ee2a3a9b3f7e48ef782271f",
+    "tests/test_codex_trial.py": "68bac19e7db25b4384eba9c42118a64c4f14f1d4b3d2a5973fbd7264b07f03e7"
+  },
+  "log_sha256": {
+    "evidence/codex-first-20261104/comparison-resume-red.log": "868890e67702c9ca82cce118544a6e03a12d6669baa7ae662def384ef2885c52",
+    "evidence/codex-first-20261104/review-green.log": "4362a7e1ee5aea207005d3b7a71e2d657216acbe1f0aec081613404f9601c8a3",
+    "evidence/codex-first-20261104/final-full.log": "4362a7e1ee5aea207005d3b7a71e2d657216acbe1f0aec081613404f9601c8a3",
+    "evidence/codex-first-20261104/adapter-red.log": "81f6eb403100d6760590c0f8018f75ef04fb3b059ea4838c64053d12cef1a8a6",
+    "evidence/codex-first-20261104/native-trial.log": "5d0c3724e4108cd696c88bd93bb39b33a486855dbc3cb336573b78f222e29ffe",
+    "evidence/codex-first-20261104/comparison-resume-green.log": "60ecdffe50557672a47a18f7414a1236a8dbbcbdde1d2ea3bfe572d907f49981",
+    "evidence/codex-first-20261104/full-green.log": "f3ead89be69d9ae5fed7fd8ed5705177da09374635d1c49a95e4d936ce329f56",
+    "evidence/codex-first-20261104/review-red.log": "cac101384872ba2e69f06891c80ae5a013962cc78dbcfb2aa39fbc94d266c847",
+    "evidence/codex-first-20261104/install.log": "5d27312f049b173d6f324a4f61503a7f9eb7110a1abeccc855cef3b8252d27be",
+    "evidence/codex-first-20261104/comparison-completion.log": "542ea2b4c1153fa3f4957c15af9f9faadf169173fda1b4fda44cb4a3b8403972",
+    "evidence/codex-first-20261104/baseline.log": "81812331349b3a2aed898b9e0f72bca0994c6fcd9711fd4d4bb74b9a3a0a9db0",
+    "evidence/codex-first-20261104/reused-client-tests.log": "a2a3c4b68aa70416fb312e4aaae8e14c352c367fc692b27c4622eb9644d825cf",
+    "evidence/codex-first-20261104/targeted-green.log": "ac28a69596f8dcad6cbb3d4029051aba9d1853b105d84d1f94d4418889e3f4a0"
+  }
+}

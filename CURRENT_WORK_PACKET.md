@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: v4 P0/P1 locally verified; Codex-first P2 adapter/trial plan prepared; implementation and human review NOT_RUN
+CURRENT_STAGE_OR_MILESTONE: Codex connection and one comparison pair verified; P2 HOLD for human review and unqualified engine text
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: LinkedIn_Generator `c51eb4afc30977bbbb3dc2193d6f14f3ea84fcdd`; PROGRAMSTART current methodology consulted at `4ece1af3bc6afff9834e551bc9f4e2d8e791b317`
 BLOCKER_SCOPE: milestone
@@ -262,3 +262,16 @@ This supersedes the proposed US$5/70-call API trial envelope. Paid API budget is
 Planning is complete; adapter implementation, runtime qualification, new native trials and human verdicts remain NOT_RUN. Planning alone is not model-execution authorization. Preserve all26 AT objectives and11 E2E scenarios. Native engine-integrated Codex receipts may establish that provider's real execution; they do not qualify the unchanged API configuration. P2's factual, human, comparison and corpus gates remain intact.
 
 Next eligible implementation step: follow the short plan through adapter/offline qualification and one bounded comparison pair, subject to actual runtime admission and execution authorization. No new resume W7 invocation, CI, merge, deployment, rendering or publishing is admitted by this planning update.
+
+## Codex-first actual execution — 2026-11-04
+
+Current user explicitly authorized the short plan and all machine-solvable prerequisites. Steps1–6 have actual machine evidence; step7 human verdict and step8 expansion remain open. See evidence/codex-first-20261104/REPORT.md and docs/implementation/v4/LINKEDIN_CODEX_QUICKSTART.md.
+
+GO: local launcher/isolated LinkedIn venv on Execution Node, bridge to pinned Resume subscription client, full142 LinkedIn tests and30 reused-client tests, actual native engine/baseline execution and fresh-process replay with0 additional model launches.
+HOLD: native engine A scored73; exactly one B was guard-rejected; selected_candidate remains null and visual deferred. The comparison includes the retained unqualified original for diagnosis only. No new engine invocation was used to rescue the score.
+Actual budget:5 native model executions,15 physical starts,49.2318 cumulative CLI seconds, no unknown/in-flight effect. No API key/fallback or API spending; subscription usage cost in dollars is unknown.
+
+Human review: evidence/codex-first-20261104/trial/review.md. Record exact-hash A/B/tie preference, keep/light/structural/reject, voice/insight/usefulness, visual disposition and actual edit minutes. No human verdict is inferred.
+First-six denominator remains unfulfilled; no AT04/05/19–26 or E2E06/10/11 PASS is claimed. AT03 controlled deferral is reused; later AT/E2E remain as previously gated. Rendering, CI, merge, deployment and publishing remain unadmitted.
+
+Next eligible action: Graham reviews the first pair; repair only a demonstrated defect or continue to further real subjects after that decision. Do not bypass the content gate with P3 infrastructure.

@@ -1,0 +1,41 @@
+# LinkedIn + Codex: quick local connection
+
+Ready on **execution-node**, account graham. Uses ChatGPT subscription authentication; no API key or paid API fallback.
+
+- LinkedIn checkout: `/home/graham/work/linkedin-codex-trial-20261104`
+- LinkedIn Python: `/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python`
+- Reused Resume Python: `/home/graham/work/resume-v6-smoke-venv/bin/python`
+- Pinned Resume client snapshot: `/home/graham/work/linkedin-resume-client-20261104`, source `a609c6d344037152c24cb81baabdb0fd9a6e9b00`
+- Codex: `/usr/local/bin/codex`, qualified CLI0.158.0, ChatGPT login, model `gpt-6-astra`, reasoning `medium`
+- Local paths/config: `.codex-linkedin.local.json` in the LinkedIn checkout (git-ignored); example in `config/codex_runtime.example.json`. Credentials remain in Codex's own store.
+
+## Use it
+
+Read the retained first trial, with **zero generation**:
+
+```bash
+/home/graham/.local/bin/linkedin-codex show --out /home/graham/work/linkedin-codex-trial-20261104/evidence/codex-first-20261104/trial
+```
+
+For an explicitly admitted new subject/batch:
+
+```bash
+/home/graham/.local/bin/linkedin-codex generate --request /absolute/path/request.json --out /absolute/path/new-trial-directory
+```
+
+Run offline checks:
+
+```bash
+cd /home/graham/work/linkedin-codex-trial-20261104
+.venv/bin/python -m pytest -q
+```
+
+The launcher supplies the local runtime config. The Python script can also be called directly with `--config .codex-linkedin.local.json`. Use a new request ID/output directory only for a genuinely new admitted trial, never to bypass an exhausted or unknown attempt. No paid fallback exists.
+
+## Behavior
+
+The existing LinkedIn Python engine calls one thin provider bridge. The bridge imports the pinned Resume Codex client in its qualified interpreter; it does not copy that implementation or alter resume results. The model has tools disabled. Exact prompts and validated JSON results are retained by the existing client.
+
+One batch shares a36-physical-process/900-second cumulative budget: at most12 model executions, with version/auth starts counted separately. API temperature is not applied by Codex; model/reasoning are the actual comparable settings. An ambiguous/missing bridge receipt is unknown and blocks replay. Reads return saved results.
+
+First-trial pair is in `evidence/codex-first-20261104/trial/review.md`. Its engine gate remains **HOLD_NO_QUALIFIED_CANDIDATE**; comparison completion is not product acceptance. Human feedback is still required. No renderer, UI, external service, publishing, hosted CI, merge or deployment is installed by this local launcher.

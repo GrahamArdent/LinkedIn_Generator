@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-04T22:33:57.705546+00:00",
+  "ended_at_utc": "2026-11-04T22:34:39.777358+00:00",
+  "head_sha": "769950ad850340868e85f6d8222d21ff0f90ad20",
+  "command": [
+    ".venv/bin/python",
+    "scripts/linkedin_codex_trial.py",
+    "generate",
+    "--request",
+    "evidence/codex-first-20261104/request.json",
+    "--config",
+    ".codex-linkedin.local.json",
+    "--out",
+    "evidence/codex-first-20261104/trial"
+  ],
+  "mode": "native_codex",
+  "exit_code": 2,
+  "log_sha256": "5d0c3724e4108cd696c88bd93bb39b33a486855dbc3cb336573b78f222e29ffe"
+}
