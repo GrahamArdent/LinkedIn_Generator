@@ -48,11 +48,11 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 ## Phase 3 — align the scorer; do not chase90
 
-- [ ] Preserve separate factual/safety checks, house-rule compliance, model editorial ratings and human approval.
-- [ ] Give the evaluator the same relevant brief, goal, voice guidance and approved examples as the writer. Define concrete0–5 anchors; do not claim these ratings predict LinkedIn engagement.
-- [ ] Compare against a small existing human-approved/rejected reference set if available; otherwise record calibration as missing. Preferences alone cannot fabricate that set.
-- [ ] Make critiques identify the largest fixable defect. Missing evidence goes back to the brief; rewriting cannot create facts.
-- [ ] When numerical comparisons are presented, assess engine and simple baseline with the same rubric. Preserve weights/threshold90 until a separately recorded owner decision changes them.
+- [x] Preserve separate factual/safety checks, house-rule compliance, model editorial ratings and human approval.
+- [x] Give the evaluator the same relevant brief, goal, voice guidance and approved examples as the writer. Define concrete0–5 anchors; do not claim these ratings predict LinkedIn engagement.
+- [x] Compare against a small existing human-approved/rejected reference set if available; otherwise record calibration as missing. Preferences alone cannot fabricate that set.
+- [x] Make critiques identify the largest fixable defect. Missing evidence goes back to the brief; rewriting cannot create facts.
+- [x] When numerical comparisons are presented, assess engine and simple baseline with the same rubric. Preserve weights/threshold90 until a separately recorded owner decision changes them.
 
 **Tests:** consistent brief/voice reaches writer and judge; missing dimension or malformed judgment is explicit; supplied human labels remain immutable; uncertainty is reported; one targeted rewrite only; no artificial score inflation.
 **Pass:** transparent, test-qualified scoring contract. Model alignment with Graham remains unproved until actual reference judgments exist.
@@ -80,4 +80,4 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
 
-**Next:** Phase3 scorer qualification. See latest packet and phase receipt.
+**Next:** Phase4 one substantive bounded comparison. See latest packet and phase receipt.

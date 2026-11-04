@@ -261,6 +261,10 @@ def run_generation(
         "allowed_sources": [_source_for_prompt(item) for item in source_items],
         "approved_voice_examples": prompt_voice_examples,
     }
+    persona_profile["editorial_context"] = {
+        "objective": objective, "topic": topic, "plan": plan["editorial_plan"],
+        "approved_voice_examples": prompt_voice_examples,
+    }
     drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
     crit = pipe.critic(
@@ -318,6 +322,8 @@ def run_generation(
         original_score = original_assessment.score
         publish_review: dict[str, Any] = {
             "threshold": threshold,
+            "evaluation_context": persona_profile,
+            "calibration_status": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS",
             "rewrite_triggered": False,
             "publish_ready": original_score is not None and original_score >= threshold,
             "recommendation": "original" if original_score is not None else "assessment_unavailable",

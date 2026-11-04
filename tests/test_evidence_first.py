@@ -77,3 +77,38 @@ def test_real_preflight_cannot_authorize_omitted_anchor_even_with_high_model_rat
     assert supported.decision=="draft"
     assert omitted.decision=="needs_more_evidence"
     assert omitted.strongest_evidence_fact==""
+
+from src.app.publish_quality import assess_publish_quality, WEIGHTS as QUALITY_WEIGHTS
+
+class QualityCapture(WriterCapture):
+    def call(self,system,user,response_json=True):
+        self.calls.append({"system":system,"user":user})
+        if "strict LinkedIn publish-quality evaluator" in system:
+            return {"text":json.dumps({**{k:5 for k in QUALITY_WEIGHTS},"gaps":[],"rationale":"Fixture, not human evaluation."})}
+        return {"text":"Account recovery is part of identity security.\n\nThe advisory describes help-desk resets. A review should include that path.\n\nTest the process before assuming the sign-in screen tells the whole story."}
+
+def test_real_evaluator_receives_same_brief_full_voice_examples_and_rating_anchors():
+    client=QualityCapture()
+    example={"example_id":"reference-fixture","provenance":"user_approved","text":"A synthetic style fixture only; never real acceptance evidence."}
+    run_generation("Recovery",[],persona_key="graham",audience="IT leaders",objective="Review identity recovery.",
+        allowed_sources=[{"title":"S1","fact":"Help desks reset tokens."}],voice_examples=[example],
+        opportunity_gate=False,publish_quality_gate=True,llm_client=client,hashtags=[])
+    call=next(c for c in client.calls if "strict LinkedIn publish-quality evaluator" in c["system"])
+    data=json.loads(call["user"])
+    assert data.get("editorial_brief",{}).get("objective")=="Review identity recovery."
+    assert data["editorial_brief"]["plan"]["factual_anchor"]["fact"]=="Help desks reset tokens."
+    assert "trace_operational_friction" in json.dumps(data["voice_context"])
+    assert data.get("approved_voice_examples")==[example]
+    assert set(data.get("rating_anchors",{}))=={str(i) for i in range(6)}
+    assert data.get("calibration_status")=="NOT_CALIBRATED_TO_HUMAN_JUDGMENTS"
+
+@pytest.mark.parametrize("bad",["missing",True,8,2.5,"five"])
+def test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score(bad):
+    dims={k:4 for k in QUALITY_WEIGHTS}
+    if bad=="missing": dims.pop("voice_authenticity")
+    else: dims["voice_authenticity"]=bad
+    class Invalid:
+        def call(self,*args,**kwargs):return {"text":json.dumps(dims)}
+    result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Invalid())
+    assert result.score is None
+    assert result.warnings

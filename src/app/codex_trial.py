@@ -12,6 +12,7 @@ from .api import run_generation, _persona_profile
 from .contracts import LinkedInContentRequest
 from .integration import generate_content
 from .llm import LLMClient
+from .publish_quality import assess_publish_quality
 from .utils import load_yaml
 from .visual_assets import plan_visual_asset
 
@@ -56,7 +57,7 @@ def validate_trial_evidence(data, bundle):
             if source.get("status") != "usable" or not source.get("checked_at") or not source.get("limitations"):
                 raise ValueError("EVIDENCE_SUPPORT_REQUIRED: missing, stale or contradictory source")
 
-def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=False):
+def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=False,score_baseline=False):
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
     with (directory/".trial.lock").open("a+") as lock:
         try: fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -115,6 +116,18 @@ def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=Fals
             baseline=client.call(baseline_system,baseline_user)["text"]
             record["baseline"]={"body":baseline,"content_sha256":digest(baseline),
                                 "system":baseline_system,"user":baseline_data}
+            if score_baseline:
+                context = result.get("review", {}).get("evaluation_context")
+                if not isinstance(context, dict):
+                    raise ValueError("BASELINE_EVALUATION_CONTEXT_MISSING")
+                quality = assess_publish_quality(
+                    text=baseline, audience=request.audience,
+                    content_goal=result.get("telemetry", {}).get("content_goal") or request.content_goal,
+                    evidence=[x.model_dump() for x in request.evidence],
+                    persona_profile=context, client=client,
+                )
+                record["baseline"]["quality"] = quality.as_dict()
+                if provider.error: raise provider.error
             pairs=[("engine",selected["body"]),("baseline",baseline)]
             secrets.SystemRandom().shuffle(pairs)
             mapping={label:method for label,(method,body) in zip(("A","B"),pairs)}
@@ -137,6 +150,6 @@ def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=Fals
             save(path,record)
         return record
 
-def complete_comparison(data,directory,provider,*,model):
+def complete_comparison(data,directory,provider,*,model,score_baseline=False):
     """Finish only the baseline after a known retained quality rejection."""
-    return run_trial(data,directory,provider,model=model,resume_comparison=True)
+    return run_trial(data,directory,provider,model=model,resume_comparison=True,score_baseline=score_baseline)

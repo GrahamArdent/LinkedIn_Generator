@@ -12,6 +12,7 @@ def main():
     p.add_argument("--request",type=Path)
     p.add_argument("--config",type=Path)
     p.add_argument("--evidence-bundle",type=Path)
+    p.add_argument("--score-baseline",action="store_true")
     args=p.parse_args()
     if args.action=="show": result=show_trial(args.out)
     else:
@@ -22,7 +23,7 @@ def main():
         if args.evidence_bundle: validate_trial_evidence(data,json.loads(args.evidence_bundle.read_text()))
         provider=CodexProvider(config,args.out/"codex-attempts",data["request_id"])
         action=complete_comparison if args.action=="complete-comparison" else run_trial
-        result=action(data,args.out,provider,model=config.model)
+        result=action(data,args.out,provider,model=config.model,score_baseline=args.score_baseline)
     print(json.dumps({"state":result["state"],"engine_gate":result.get("engine_gate"),"mode":result["mode"],"review":str(args.out/"review.md")}))
 if __name__=="__main__":
     try: main()

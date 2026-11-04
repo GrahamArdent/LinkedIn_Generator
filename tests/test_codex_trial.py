@@ -88,3 +88,29 @@ def test_baseline_receives_every_explicit_engine_constraint(tmp_path):
     r=run_trial(data,tmp_path,p,model="gpt-6-astra",engine=engine)
     for key in ("services","targets","hashtags"):
         assert r["baseline"]["user"][key]==data[key]
+
+def test_opt_in_baseline_score_uses_engine_context_and_reopen_launches_nothing(tmp_path):
+    import inspect
+    from src.app.publish_quality import WEIGHTS
+    assert "score_baseline" in inspect.signature(run_trial).parameters, "same-rubric baseline assessment is missing"
+    class ScoringProvider(Provider):
+        def generate(self,**kw):
+            self.calls.append(kw)
+            if "strict LinkedIn publish-quality evaluator" in kw["system"]:
+                return json.dumps({**{k:4 for k in WEIGHTS},"gaps":["Ordinary insight."],"rationale":"Fixture."})
+            return "Supported baseline text."
+    context={"editorial_context":{"objective":"Review recovery.","approved_voice_examples":[]},
+             "voice_authority":{"runtime_guidance":{"causal_summary":"Use supported consequences only."}}}
+    def qualified(request,**kwargs):
+        return {"selected_candidate":{"body":"Engine text."},"telemetry":{"content_goal":"authority"},
+                "review":{"evaluation_context":context}}
+    p=ScoringProvider()
+    result=run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=qualified,score_baseline=True)
+    assert result["baseline"]["quality"]["score"]==80
+    judgment=json.loads(p.calls[-1]["user"])
+    assert judgment["editorial_brief"]["objective"]=="Review recovery."
+    assert judgment["voice_context"]["voice_authority"]==context["voice_authority"]
+    assert result["human_decision"] is None
+    assert len(p.calls)==2
+    assert run_trial(INPUT,tmp_path,p,model="gpt-6-astra",engine=qualified,score_baseline=True)==result
+    assert len(p.calls)==2
