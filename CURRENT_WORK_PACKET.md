@@ -4,12 +4,12 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Codex connection and one comparison pair verified; P2 HOLD for human review and unqualified engine text
+CURRENT_STAGE_OR_MILESTONE: Evidence-first phased continuation; Phase0 checkpoint GO; Phase1 evidence brief ready; P2 content acceptance HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
-AUTHORITY_VERSION_OR_COMMIT: LinkedIn_Generator `c51eb4afc30977bbbb3dc2193d6f14f3ea84fcdd`; PROGRAMSTART current methodology consulted at `4ece1af3bc6afff9834e551bc9f4e2d8e791b317`
+AUTHORITY_VERSION_OR_COMMIT: default main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate code d715f078094032c10e778a8450f61329c1895fa8; latest milestone receipt records tested source and live integration/runtime observations
 BLOCKER_SCOPE: milestone
 SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, review, and reversible repo corrections can proceed
-BLOCKED_ACTION: paid image rendering, Replicate/provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
+BLOCKED_ACTION: paid image rendering, Replicate/render-provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
 
 ## PROGRAMSTART Routing Decision
 
@@ -183,10 +183,10 @@ Promotion rule: when one becomes a real candidate for action, evaluate it agains
 |---|---|---|
 | Current authority reconciliation | compare live `main` and packet authority | prior reconciliation present on main at a714d1e; v4 continuation delta on feature branch |
 | Idea preservation | project ledger follows current PROGRAMSTART non-authoritative semantics | ledger present on main at a714d1e; no idea promoted by this continuation |
-| Publish-quality threshold/rewrite | 90+ no rewrite; sub-90 preserves A and creates one B; unsafe B rejected | implemented PR #20; live provider smoke pending |
+| Publish-quality threshold/rewrite | 90+ no rewrite; sub-90 preserves A and creates one B; unsafe B rejected | implemented PR #20; native Codex exercised one guarded rewrite; generated posts remain unqualified |
 | Voice/public-language quality | human decisions + reason codes | Trial #1 positive; more trials pending |
 | Visual planner contracts/guardrails | focused contract/planner/integration coverage | implemented PR #21; human validation pending |
-| Provider-path equivalence | minimum two accepted subjects through actual repo provider | pending suitable runtime credential |
+| Provider-path equivalence | minimum two accepted subjects through actual repo provider | native Codex runtime exercised; >=2 human-accepted subjects still pending; API configuration not qualified |
 | Rendering quality | real rendered outputs | intentionally not started |
 | Publishing readiness | focused Challenge Gate | pending |
 
@@ -284,3 +284,16 @@ New subject draws only on Graham's actual requests for economical Codex reuse an
 Native original78; one safe rewrite77; no selected candidate/visual. Baseline generated once from the same factual/voice context. All original weak outputs remain visible; neither this diagnostic nor the earlier limited preference may silently supply a blinded pilot win or an editorial keep.
 
 Transport and environment remain GO; P2 content acceptance HOLD. Human feedback now should identify factual alignment, a voice mismatch, a useful/unhelpful rewrite change or actual edit, rather than only pick a winner. No new production code, CI, merge, rendering, deployment or publishing occurred.
+
+## Evidence-first phased continuation — 2026-11-04
+
+Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
+
+CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-plan-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: P2 / Phase1 evidence brief after the Phase0 checkpoint
+
+Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
+
+This milestone changes planning/status documents only. Writer/scorer repairs and substantive new generation remain PLANNED. The milestone receipt records actual local CI, source, PR/main and launcher observations. Native Codex connection remains reusable; no API spend, model launch, hosted workflow, merge, installation promotion, deployment, rendering or publishing is admitted by this documentation update. P2 human/content acceptance remains HOLD.
+
+Phase0 observed:142 tests PASS; acceptance definitions unchanged; relative links valid; initial whitespace-only diff check failed and was repaired, then passed. PR24 remains draft/unmerged; launcher runs candidate checkout, not a merged-main release. See latest receipt.

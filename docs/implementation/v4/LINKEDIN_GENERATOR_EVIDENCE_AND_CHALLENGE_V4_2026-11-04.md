@@ -1,8 +1,9 @@
 # LinkedIn Generator — Test Evidence, Reuse Map, and Adversarial Challenge (v4)
 
-**Date checked:** 2026-11-04  
-**Mode:** READ-ONLY analysis of connected GitHub sources + the previously generated 2026-11-04 plan and v2 audit package; this turn also verified current Paths and primary owner contract files. No product code, GitHub state, CI, models, rendering, or publishing were changed or executed for this review.  
-**Evidence standard:** `OBSERVED-SOURCE` = file or PR content inspected; `OWNER-RECORDED` = an assertion in the current owner packet but **not independently re-executed**; `PROPOSAL` = unimplemented design; `UNKNOWN` = evidence still required.  
+**Date checked:** 2026-11-04
+**Current continuation:** Original review sections below are historical. The dated §9 addendum records the evidence-first change; CURRENT_WORK_PACKET.md and actual receipts determine execution status.
+**Mode:** READ-ONLY analysis of connected GitHub sources + the previously generated 2026-11-04 plan and v2 audit package; this turn also verified current Paths and primary owner contract files. No product code, GitHub state, CI, models, rendering, or publishing were changed or executed for this review.
+**Evidence standard:** `OBSERVED-SOURCE` = file or PR content inspected; `OWNER-RECORDED` = an assertion in the current owner packet but **not independently re-executed**; `PROPOSAL` = unimplemented design; `UNKNOWN` = evidence still required.
 **Companion documents:** [Revised Game Plan](LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md) · [Durable Acceptance Objectives](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md) · [Execution Prompt](LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md) · [Start Here](LINKEDIN_GENERATOR_PACKAGE_README_V4_2026-11-04.md). This file explains *why* the plan changed and what the current tests can/cannot prove. It does not supersede live project authority.
 
 ## 1. Executive assessment: what survives the challenge
@@ -139,7 +140,7 @@ These are **retrieval-time snapshots**, not promises that a new execution chat w
 
 ## 6. Cross-document and owner-boundary consistency audit
 
-The three deliverables intentionally divide responsibility as follows. **Game Plan §5 alone specifies AT-01..26 and E2E-01..11**; this evidence file records why those gates exist and observed proof gaps.
+The three deliverables intentionally divide responsibility as follows. **The Test Objectives and Success Criteria companion alone defines AT-01..26 and E2E-01..11; Game Plan §5 maps implementation and gates**; this evidence file records why those gates exist and observed proof gaps.
 
 | Question | Authoritative location inside this package | Where referenced |
 |---|---|---|
@@ -147,7 +148,7 @@ The three deliverables intentionally divide responsibility as follows. **Game Pl
 | **Why** reuse or change it? | This file EV-01..EV-22 and CH-01..CH-24 | Game Plan decision IDs and milestone evidence |
 | **How** to start a new execution chat? | [Execution Prompt](LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md) | Game Plan §7; this file header |
 | **What presently controls the repository?** | Live `LinkedIn_Generator` README/packet and relevant owner contracts, **outside this package** | All three; this package is subordinate |
-| **What tests and pass outcomes?** | [Game Plan §5](LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md) (AT-01..26; E2E-01..11; QB-00/IT-01) | Prompt first-chat scope; this file source-to-claim table |
+| **What tests and pass outcomes?** | [Acceptance definitions](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md), mapped in Game Plan §5 (QB-00/IT-01 retained) | Prompt first-chat scope; this file source-to-claim table |
 | **What is finished?** | Actual code/test/human/provider receipts and owner packet updates | Never inferred from checkboxes, historical test code or this audit |
 
 ### Formal consistency checks to perform on the proposed wording
@@ -221,3 +222,19 @@ A **human** result must identify subject, evidence/claims, selected text and `ke
 **Document-only consistency check:** use the package `MANIFEST.sha256` and cross-link/ID validation before declaring the v4 bundle complete. The acceptance file contains one detailed definition each for **26 AT and 11 E2E**; this evidence file retains **24 EV and 32 CH** definitions. The checks are document integrity only, never product PASS.
 
 **Next action:** use the [Execution Prompt](LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md) and [Acceptance Objectives](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md) to undertake **Game Plan P0/QB-00 → P1/IT-01** after owner admission, then deliver the current **P2** trial evidence before expanding into new persistence or UI infrastructure. Keep this file as the source/risk index; refresh individual entries only when the relevant source changes.
+## 9. Evidence-first continuation and state freshness — 2026-11-04
+
+Accepted operator direction: improve substantive evidence, then writer/scorer alignment in separate phases; perform local CI and inspect merge/installation at meaningful milestones; keep continuation artifacts current. Current P2 execution detail is CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md; the P0–P7 roadmap and26 AT/11 E2E definitions remain.
+
+Observed basis:
+- The real trials consumed conversation summaries and source/fixture findings, not zero evidence. They establish what was requested/observed in that narrow setting, not customer outcomes or measured professional benefit.
+- Voice Bible-derived profile, Spoken Voice and draft prompts exist. generation.py supplies generic angle scaffolding; its named plan prompt does not invoke source-specific model planning. Critic/humanizer model stages were absent in the saved call traces because deterministic checks found no issues; semantic publish-quality assessment and the single rewrite still ran. Activating more named stages is not automatically an improvement.
+- publish_quality.py defines project-specific weights and model0–5 ratings, not a LinkedIn engagement metric. All4/5 yields80. Calibration against Graham's editorial labels is unproved in these trials. The evaluator sees a shortened voice context; actual runs supplied0 approved examples. Original78/rewrite77 and original73 are retained, not relabeled as product success.
+- The simple baseline preferred in the last discussion was not rated under the same model rubric. Preference alone is not keep/light approval, a voice example or a calibrated score.
+- Code safety/house-rule checks, factual support, editorial ratings and publication approval are distinct. Opinion is legitimate; external statistics are not compulsory. Assertions still need appropriate support, and inference must not be presented as observed fact.
+
+Decision: next phases prepare a real source bundle/claim map, improve the existing source-specific editorial brief, align/calibrate the scorer without score inflation, then run one substantive trial. No mandatory extra review layers or architecture. Factual-omission tests must demonstrate behavior at the actual consumer; prompt inclusion alone is insufficient causal proof.
+
+Currentness control: one milestone receipt covers candidate/main/PR, local CI, actual runtime/launcher, source/config hashes, expected/observed outcomes and next action. The packet links the latest receipt. Read status before acting; an unmerged but explicitly identified trial candidate can continue authorized source work without pretending it is installed from main. Merge/installation promotion retain their gates.
+
+This amendment changes documentation only. No new post, writer/scorer implementation, threshold change, hosted CI, merge, install promotion, render or publication is claimed. Local CI/current runtime inspection for this documentation milestone is recorded under evidence/milestones/evidence-first-plan-20261104/.

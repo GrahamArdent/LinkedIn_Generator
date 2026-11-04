@@ -1,64 +1,83 @@
-# Codex-First LinkedIn Trial Game Plan
+# LinkedIn Codex Trial Game Plan — evidence-first continuation
 
-**Goal:** Use the existing LinkedIn engine with the Resume Creator Codex subscription route. Prove one useful post before expanding.
-**Status:** Steps1–6 machine work executed; connection GO, engine quality HOLD. First-pair human review and expansion remain open. Evidence: evidence/codex-first-20261104/REPORT.md.
-**Approach:** One thin adapter, one trial script, existing engine and Codex attempt records. Implement inline with test-first corrections; no platform rebuild.
-**Authority:** CURRENT_WORK_PACKET.md remains active. This is its bounded P2 slice; retain all26 AT objectives and11 E2E scenarios from the v4 acceptance file.
+**Goal:** Produce useful, grounded LinkedIn writing with the existing Python engine and Codex subscription, then prove whether its extra steps help.
+**Status:** Connection qualified; writing acceptance HOLD. The evidence/writer/scorer repairs below are PLANNED, not implemented.
+**Authority:** CURRENT_WORK_PACKET.md is the active pointer. This is a P2 subplan within the existing P0–P7 roadmap, not a competing master plan. Preserve all26 AT objectives and11 E2E scenarios.
+**Execution:** Inline, one phase at a time; test-first code corrections. Reuse existing code/results. Every meaningful phase ends with the checkpoint below.
 
-## Keep it small
+## What is settled
 
-Zero API spending or API fallback. Preserve approved voices, score90 threshold, at most one guarded rewrite, A/B history and selected-text/visual hashes. No UI, new database, renderer, publisher, shared-package extraction, hosted CI, merge or deployment. Do not rerun resume W7 or alter its results.
+Codex bridge/launcher and selected-text/visual identity work locally. Prior qualification:142 LinkedIn tests and30 reused-client tests passed. Two real subjects produced unqualified engine drafts; original73, then78/rewrite77. Historical weak results and limited preferences remain visible, not promoted to approvals or voice examples. Exact source/receipts: evidence/codex-first-20261104 and evidence/transparent-evaluation-20261104.
 
-First batch: **one subject, maximum12 model executions and15 minutes cumulative execution**. Count CLI preflight processes separately within the reused client's physical-process budget. No hidden retries or budget resets. Subscription limits still apply.
+We used narrow conversation/code evidence, not zero evidence. That supported what happened in our test, but not broader customer outcomes or measured benefits. Opinion is legitimate; factual assertions inside it still need support. More citations alone do not create a better argument.
 
-## The eight steps
+**Limits:** No paid API/fallback; use the existing qualified Codex route. Preserve score90 and one guarded publish-quality rewrite unless the owner explicitly changes them after calibration. No mandatory extra critic/humanizer calls, database, UI, renderer or new architecture. No resume W7 rerun. Hosted CI, merge, installation promotion and publication require their existing admissions; checking their status does not authorize them.
 
-1. **Prepare one real subject.**
-   - [x] Choose a grounded subject from P2_PREPARATION.md; skip if thin.
-   - [x] Save facts/source IDs, audience, POV, voice/config hashes and the exact input. Keep human scorecard fields blank.
-   **Pass:** engine and baseline have the same frozen facts. No invented personal event.
+## Phase 0 — establish one reliable checkpoint
 
-2. **Reuse the working Codex route.**
-   - [x] Inspect Resume Creator's current `CodexClient.execute_structured`, qualified Python environment, CLI version and subscription login.
-   - [x] Record its source revision and explicitly choose a supported qualified Codex model.
-   **Pass:** a small bridge can call the existing client. Login alone is not inference proof.
+- [x] Refresh Paths, packet, candidate/main heads, PR24 and the actual launcher/config/client binding. Reuse completed connection/P0/P1 work.
+- [x] Run local CI at this documentation milestone; retain source/config hashes and exact outcomes. During subsequent implementation, reuse the existing receipt patterns rather than add a status service.
+- [x] At every phase boundary record the five states below and update packet + plan + evidence in the same logical change.
 
-3. **Add one provider adapter.**
-   - [x] Create `src/app/codex_provider.py`, implementing the existing `TextGenerationProvider.generate(model, system, user, temperature) -> str`.
-   - [x] Through the bridge, pass existing prompts to the Resume client with a simple JSON object containing `text`; unwrap that field. Reuse its attempt/recovery records rather than copying the resume app.
-   - [x] Create `scripts/linkedin_codex_trial.py`; inject the adapter into drafting, opportunity, quality and visual planning. Select the same Codex model throughout; do not inherit the API model accidentally.
-   **Pass:** the Python engine makes every generation decision; Codex supplies model responses.
+**Pass:** cold continuation can identify the next phase and distinguish tested candidate, merged main and actual runtime. A green test is not proof of merge or installation.
+**Verification:** local pytest, diff/integrity checks, GitHub readback and launcher/module-path inspection. All observation must avoid model generation.
 
-4. **Check it offline first.**
-   - [x] Add `tests/test_codex_provider.py` and `tests/test_codex_trial.py`. Observe relevant failures before fixing them.
-   - [x] Cover wrong auth, malformed output, timeout/unknown state, identical-request reuse, changed-input conflict and exhausted budget. Reopening results launches nothing; API construction must fail the test.
-   - [x] Run those tests plus `tests/test_selected_candidate.py`, then `python -m pytest -q`.
-   **Pass:** actual targeted/full-suite receipts; fixtures clearly labeled.
+## Phase 1 — prepare evidence before changing the writer
 
-5. **Run one real engine canary.**
-   - [x] Use the trial script under the first-batch limits. Save A/B, selected hash, score, claims/sources, visual plan or deferral, run/stage/attempt refs, actual launches and elapsed time.
-   - [x] Stop/reconcile unknown execution; never fall back to the API.
-   **Pass:** one reconstructable native Codex-backed engine result. The old API configuration remains unqualified.
+- [ ] Choose one substantive audience question from existing Graham/Ardent subject material. Avoid another post about our testing process. Define the reader, main point and supported consequence.
+- [ ] Assemble a small source bundle: source ID, title/URL or record, author/publisher, publication/event date where relevant, checked_at, exact supporting passage/record and limitations. Read the source itself; a URL or search snippet is not support.
+- [ ] Map each checkable claim to support and mark fact / personal observation / inference / opinion. Include material counterevidence, stale information and contradictions. Real user-confirmed experience is a primary source; external research is not mandatory for every opinion.
+- [ ] For this trial prefer at least one independent primary source or a concrete verified professional observation that supports the central factual anchor. A stronger claim needs stronger evidence; do not impose arbitrary citation counts.
+- [ ] Freeze request + source bundle before drafting. Keep extra provenance beside the existing SourceEvidence request initially; extend contracts only if consumer tests require it.
 
-6. **Generate one fair baseline.**
-   - [x] Use one plain prompt with the same facts, audience, factual constraints, approved voice material and Codex model/settings.
-   - [x] Retain exact prompts/results; no cherry-picked retries. Randomize display labels and keep the method mapping outside the reviewer bundle.
-   **Pass:** one comparable blinded pair.
+**Tests:** sufficient support permits the intended claim; missing central support requests one targeted detail or defers; stale/contradictory sources cannot be silently presented as settled fact; opinion is not rejected merely for lacking a statistic.
+**Pass:** one usable evidence brief plus negative fixtures. No invented specificity to satisfy the scorer.
+**Maps to:** AT03/14/21/26.
 
-7. **Get Graham's review.**
-   - [ ] Present both drafts, source/claim checks and the engine visual plan.
-   - [ ] Record keep/light/structural/reject, preferred draft, voice/insight/usefulness ratings, visual value and actual edit minutes, against exact hashes.
-   **Pass:** real human feedback. Model scores cannot fill these fields.
+## Phase 2 — make existing writing guidance operational
 
-8. **Expand only if useful.**
-   - [ ] Continue in small, separately bounded batches toward six eligible distinct subjects, at most eight trials, across varied domains/formats.
-   - [ ] Preserve >=4/6 keep/light; >=2 human-accepted native-provider subjects; supported claims; useful visual plans; voice/originality review; blinded >=4/6 engine preference; measured edit effort. Ties are not wins.
-   - [ ] Record Codex as the integrated live provider, not an API-equivalence pass. Insufficient genuine subjects means NOT_YET_EVALUABLE.
-   **Pass:** update packet/scorecard with P2 GO/HOLD/FAIL and evidence. One canary does not close P2.
+- [ ] Build a compact, source-specific editorial plan: assumption/tension, exact factual anchor, mechanism, supported human/business consequence, takeaway and natural closer.
+- [ ] Reuse the Voice Bible's causal reasoning and Spoken Voice. Use only supported layers; never force every stakeholder, emotional beat, analogy or financial consequence.
+- [ ] Supply the same approved voice material to relevant stages. Reuse genuinely approved examples if their provenance is available; a limited preference is not an approved example.
+- [ ] Replace generic angle scaffolding only where tests demonstrate need. Keep existing engine/provider/contracts and at most one guarded quality rewrite.
+- [ ] A clean house-rule score must not be described as editorial success. The existing semantic quality assessment already runs: improve its use rather than enable named critic/humanizer stages merely to add calls.
 
-## Finish line
+**Tests:** the actual drafting consumer receives the frozen anchor/plan/voice; changing or removing essential support changes the allowed claim/readiness; formatted-but-generic writing is not accepted by a formatting check alone; rewritten text retains support and candidate/visual identity.
+**Pass:** fixture-qualified source-specific planning and prompt flow, without extra rewrite loops.
+**Maps to:** AT01/02/03/18/19/20/21.
 
-**First milestone:** adapter tests green → one real engine/baseline pair → Graham's verdict.
-**Later:** six-subject P2 disposition before production P3 or paid rendering.
+## Phase 3 — align the scorer; do not chase90
 
-Self-check: all eight steps covered; existing architecture reused; no paid-provider dependency or relaxed acceptance. Layers can follow demonstrated need.
+- [ ] Preserve separate factual/safety checks, house-rule compliance, model editorial ratings and human approval.
+- [ ] Give the evaluator the same relevant brief, goal, voice guidance and approved examples as the writer. Define concrete0–5 anchors; do not claim these ratings predict LinkedIn engagement.
+- [ ] Compare against a small existing human-approved/rejected reference set if available; otherwise record calibration as missing. Preferences alone cannot fabricate that set.
+- [ ] Make critiques identify the largest fixable defect. Missing evidence goes back to the brief; rewriting cannot create facts.
+- [ ] When numerical comparisons are presented, assess engine and simple baseline with the same rubric. Preserve weights/threshold90 until a separately recorded owner decision changes them.
+
+**Tests:** consistent brief/voice reaches writer and judge; missing dimension or malformed judgment is explicit; supplied human labels remain immutable; uncertainty is reported; one targeted rewrite only; no artificial score inflation.
+**Pass:** transparent, test-qualified scoring contract. Model alignment with Graham remains unproved until actual reference judgments exist.
+**Maps to:** AT02/16/19/20/23/24.
+
+## Phase 4 — one substantive trial, then controlled expansion
+
+- [ ] Freeze the Phase1 evidence brief and Phase2/3 prompt/config hashes. Declare one-subject budget before launch: <=12 model executions, <=900 cumulative CLI seconds, no API fallback or automatic retries.
+- [ ] Generate one engine result and one same-model/simple-prompt comparison with equal facts, audience, constraints and voice. Score both if showing numerical comparison.
+- [ ] Retain exact source-to-request-to-prompt-to-claim links, actual stage changes, A/B, selected hash, critiques, costs/usage where observable, and visual plan/deferral.
+- [ ] Test an omitted critical source through the actual preflight consumer; it must block/qualify the unsupported claim without launching an unauthorized replacement. Prompt inclusion alone is not causal influence proof.
+- [ ] Present readable outputs and get exact-hash human feedback: factual accuracy, voice, insight/usefulness, keep/light/structural/reject, actual edit effort and comparison preference. Clearly distinguish transparent diagnosis from a blinded pilot.
+- [ ] After the first substantive human disposition, expand in small admitted batches toward six eligible distinct subjects, maximum8 subject trials. Preserve earlier weak results and denominators; do not cherry-pick them away.
+
+**Pass:** actual phase-specific AT/E2E evidence supports P2 disposition. Keep existing >=4/6 keep/light, >=2 native-provider human-accepted subjects, source/voice/visual/originality requirements and blinded >=4/6 preference gate. Ties are not wins; insufficient subjects means NOT_YET_EVALUABLE.
+**Maps to:** AT04/05/14/19–26 and E2E06/10/11. P3 production and rendering remain gated.
+
+## Required checkpoint after every meaningful phase
+
+1. **Source:** candidate HEAD, base/main SHA, dirty changes, source/config hashes and reviewed diff.
+2. **Local CI:** targeted tests + one full `python -m pytest -q` at code convergence, `git diff --check`, exact interpreter/UTC/command/exit/log refs. Fix machine-solvable failures; never weaken assertions. Documentation milestones check links/objective IDs/status integrity; this update also runs full local CI as requested.
+3. **Integration:** PR state/head, required reviews/checks and whether that exact candidate is actually merged. Read status; do not auto-enable hosted workflows or infer merge from a push.
+4. **Runtime:** resolved launcher/interpreter/module path, running source/config/client revision, and whether it is a candidate trial checkout or released installation. Inspect/show only; no hidden generation. After an authorized install, verify exact readback plus no-call reopen. Otherwise report NOT_INSTALLED, STALE or CANDIDATE_ONLY truthfully.
+5. **Continuation:** reconcile CURRENT_WORK_PACKET, this plan, prompt and evidence. Record GO/HOLD/FAIL, expected versus observed, remaining debt and next eligible action. A later docs-only commit may reuse tests only after proving tested code/config unchanged; report both revisions.
+
+Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
+
+**Next:** Phase0 checkpoint verified; Phase1 evidence brief. This planning update does not itself implement the repairs or launch more posts.
