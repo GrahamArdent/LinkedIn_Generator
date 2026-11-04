@@ -33,3 +33,5 @@ data/*.csv
 # OS
 .DS_Store
 Thumbs.db
+
+.codex-linkedin.local.json

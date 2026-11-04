@@ -1,0 +1,26 @@
+{
+  "base_sha": "5bc99fb70bb1c3963f09bbaa4fa1c2a231c587d7",
+  "source_sha256": {
+    "config/personas.yaml": "4a4100b142b6a005422ac081c1f3d5b160925eb209695683a83d5289ad8f0e5e",
+    "config/skeleton.yaml": "57aa88efb220b56ed0a9a90a3fe7fe20c323f9e82f0841b8e10faf2fc3f2675d",
+    "config/hashtags.yaml": "3870108ffdf6b2ee46b7f29f02ce0c607099f1cd2090b091259c1352272645e8",
+    "config/forbidden_cta.yaml": "b42af991c961710d68ca81953aa6dbf778fee58fca14f1a0106ec94f9ede986c",
+    "config/prompts.yaml": "8ecab21d8287807cdd397fbad75d54aa0f53651b2f425e53e6cd04156cdc7c54",
+    "config/prompts_packs.yaml": "2b40219b8979b74f26b981a1d25578ea4403602bef20ce66bfcfabacb9ff7bfe",
+    "config/reply_prompt_templates.yaml": "6c9fc485ef6304f42e746242dac6202fc453d981eb1d4e52bfa250a136a7e6cd",
+    "config/prompt_kit.config.yaml": "1b624a2fd1506b4168f53701ae58422d8e11933997070a09ce97c4de1a371dd2",
+    "config/graham_spoken_voice.yaml": "b739ede12cffd08337a121089437cd5bfc6b72d1a3e4eb956d408951b4e69ca6",
+    "config/hashtag_policy.yaml": "52c2e9e654d39b39a72ddc378e0d4ef2b59f95534e743d183040d9f0adc31c60",
+    "config/schedule.yaml": "0755b124be93050d8e13742ed451f84b99f853db3d5ec2949dacba96660ff7b5",
+    "config/hook_patterns.yaml": "3f8cfed1c38ebb5f5aaad8ebb042fb0c77cab644174fa36c21dc6a30af13fcf2",
+    "config/cta_policies.yaml": "02fa5112e8bdbdae1ea0c190d3b85fc6b6d021041727429ff1133acd16642810",
+    "config/source_whitelist.yaml": "fece5d0aff905ca87b22afd96de0cb16a27c37314d44d351ba8dabf618ff6fda",
+    "config/visual_style.yaml": "a10bc19ca1f0380589f56b975bdc992f885bde386a61d48277504201b7d4525b",
+    "config/pillars.yaml": "96e99f47c3e1fc67885bbfce03f2cdbf567c847bb743793e6dbee4ff35ba97b2",
+    "config/normalization_rules.yaml": "1fe603ce6861b7c91ba1817f3c71f86d182bd49b7ba4c0bcc3322b18815bea8d",
+    "config/graham_voice_profile.yaml": "7ab76579049b4fc935e05ffd4296fff13c79bbc27b74e5369997b7db6f4084e2",
+    "src/app/codex_provider.py": "6a603f3b7a63c8af2f119566761c439823c2fd4809717f6cbad3fae213b68915",
+    "src/app/codex_trial.py": "6f8af1cfa66217a35a2d86fd925d6d369186c59a6386e0b575e4d0ea4e8296ff",
+    "scripts/linkedin_codex_trial.py": "8ce30272e1af5bdce0d0f177514bb5101804fed7b5ef5e2311cdc3a85bda767a"
+  }
+}
