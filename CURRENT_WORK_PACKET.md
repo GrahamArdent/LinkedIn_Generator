@@ -6,7 +6,7 @@ PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
 CURRENT_STAGE_OR_MILESTONE: Evidence-first machine phases GO; Phase4 substantive trial complete; human/content acceptance HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
-AUTHORITY_VERSION_OR_COMMIT: default main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate code d715f078094032c10e778a8450f61329c1895fa8; latest milestone receipt records tested source and live integration/runtime observations
+AUTHORITY_VERSION_OR_COMMIT: default main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate production code f89e3d3 (full hash in git/freeze receipt); latest milestone receipt records tested source and live integration/runtime observations
 BLOCKER_SCOPE: milestone
 SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, review, and reversible repo corrections can proceed
 BLOCKED_ACTION: paid image rendering, Replicate/render-provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
@@ -319,3 +319,5 @@ Review held c51d737 for source reverse coverage/context propagation, study ident
 Evidence/evidence-first-20261104/EVALUATION.md retains source-backed MFA recovery subject, exact prompts, original/rewrite/baseline, claim mapping, freeze and negative/reopen evidence. Original73, safe guarded quality rewrite75, simple baseline75 under the same rubric/context. Selected candidate remains null, visual deferred. The known engine HOLD was retained; complete-comparison generated only the baseline and its assessment, never regenerated the engine. Aggregate10 native executions/30 physical starts/73.838 CLI seconds/API0; subscription dollar cost unknown.
 
 GO: local machine repairs and source-consumption/recovery checks. HOLD: factual/voice/insight/usefulness human verdict, measured editing effort, calibrated reference corpus, first-six/blinded pilot/corpus/visual gates. No new keep, approved voice example, engagement claim or publication permission inferred. Existing weak trials remain visible. Human review must examine actual retained text; no score-chasing regeneration. Candidate remains unmerged and runtime candidate-only; local tests do not establish a release. Latest phase4 receipt owns exact source/CI/main/PR/runtime observations.
+
+Post-push integration readback: GitHub PR24 head16df725128a7ef8f91befa5cfc0556e246abf1f5, open/draft/unmerged; maina714d1ef355ade9ca47a52b301ea477bd0c14f34. Later documentation/evidence commits reuse full171 only while production/config/tests remain unchanged from f89e3d3.

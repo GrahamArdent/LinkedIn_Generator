@@ -102,5 +102,15 @@
     "critical_source_omission": "blocked before provider creation"
   },
   "acceptance_definitions_unchanged": true,
-  "next_eligible_action": "Human exact-text disposition; no further generation, expansion, rendering or publishing before existing gates clear."
+  "next_eligible_action": "Human exact-text disposition; no further generation, expansion, rendering or publishing before existing gates clear.",
+  "post_push_readback": {
+    "checked_at": "2026-11-04T23:55:44.360411+00:00",
+    "source": "connected GitHub PR24 metadata + evidence readback",
+    "head": "16df725128a7ef8f91befa5cfc0556e246abf1f5",
+    "main": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+    "draft": true,
+    "merged": false,
+    "production_source_commit": "f89e3d3bc75f4acc42351d3b041cb54f23250393",
+    "later_commit_policy": "This readback predates the final documentation receipt commit; production/config/tests must remain unchanged."
+  }
 }
