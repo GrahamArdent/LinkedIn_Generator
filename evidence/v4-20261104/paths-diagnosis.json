@@ -1,0 +1,51 @@
+{
+  "authorizes_effect": false,
+  "automatic_chat_tool_interception": false,
+  "entrypoint": "chatgpt_paths_diagnose",
+  "executes_effect": false,
+  "gate": {
+    "access_blocker_proven": false,
+    "actor_ref": "actor:chatgpt-connected-github",
+    "authority": "none",
+    "authorization_inferred": false,
+    "direct_actor_admission_state": "missing",
+    "direct_candidate_refs": [],
+    "direct_classification": "GENUINELY_NEW_PATH_REQUIRED",
+    "direct_constituent_refs": [],
+    "direct_evidence_refs": [],
+    "direct_owner_refs": [],
+    "direct_reason_code": "NO_REGISTERED_EFFECT_TARGET_EDGE",
+    "disposition": "DIAGNOSE_LOOKUP_FAILURE",
+    "effect_ref": "effect:github-contents",
+    "escalation_allowed": false,
+    "failure_kind": "lookup",
+    "jit_owner_currentness_collision_required": false,
+    "lookup_preflight_obligations": [
+      "exact_registered_capability_and_owner_contract",
+      "actor_admission_and_installed_release_currentness",
+      "requested_effect_vs_fixed_action_scope",
+      "live_original_id_result_when_authorized",
+      "equivalent_eligible_paths_before_access_blocker"
+    ],
+    "operator_retry_required": false,
+    "reason_code": "CALLER_FAILURE_IS_NOT_ACCESS_BLOCKER_PROOF",
+    "recovery_matches": [],
+    "recovery_scope": "same_authorized_read_only_operation",
+    "registered_capability_ids": [
+      "github_contents"
+    ],
+    "registered_route_lookup_required": true,
+    "related_diagnostic_capability_ids": [],
+    "related_diagnostic_is_effect_equivalent": false,
+    "required_observations": [
+      "failed_tool_or_path",
+      "bounded_operation",
+      "concrete_error_class",
+      "evidence_ref",
+      "equivalent_read_paths_and_attempt_results"
+    ],
+    "schema_version": "1.0.0",
+    "target_ref": "GrahamArdent/LinkedIn_Generator"
+  },
+  "mode": "read_only_diagnostic"
+}

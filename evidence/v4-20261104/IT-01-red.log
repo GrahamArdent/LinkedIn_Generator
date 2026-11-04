@@ -1,0 +1,1053 @@
+FFFFFFFFFFFFFFFFFF                                                       [100%]
+=================================== FAILURES ===================================
+________ test_rewrite_selected_once_preserves_a_and_b_and_visual_bytes _________
+
+    def test_rewrite_selected_once_preserves_a_and_b_and_visual_bytes():
+        client = ReviewClient(first_score=87, second_score=93)
+        result, calls = run(client)
+>       selected = result.selected_candidate
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...s'], alt_text='A stable bridge symbolizes a reliable AI workflow.'), carousel=None, review_required=True, warnings=[]))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+____ test_original_selected_without_rewrite_even_when_visual_disabled[True] ____
+
+visual = True
+
+    @pytest.mark.parametrize("visual", [True, False])
+    def test_original_selected_without_rewrite_even_when_visual_disabled(visual):
+        client = ReviewClient(first_score=92)
+        result, calls = run(client, visual=visual)
+>       assert result.selected_candidate.source == "original"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...s'], alt_text='A stable bridge symbolizes a reliable AI workflow.'), carousel=None, review_required=True, warnings=[]))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+___ test_original_selected_without_rewrite_even_when_visual_disabled[False] ____
+
+visual = False
+
+    @pytest.mark.parametrize("visual", [True, False])
+    def test_original_selected_without_rewrite_even_when_visual_disabled(visual):
+        client = ReviewClient(first_score=92)
+        result, calls = run(client, visual=visual)
+>       assert result.selected_candidate.source == "original"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...'Make the consequence more immediate.'], 'rationale': 'Fixture.', 'warnings': []}, 'rewrite': None}, visual_asset=None)
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+____________ test_low_or_unsafe_b_never_selected_or_planned[False] _____________
+
+unsafe = False
+
+    @pytest.mark.parametrize("unsafe", [False, True])
+    def test_low_or_unsafe_b_never_selected_or_planned(unsafe):
+        client = ReviewClient(
+            first_score=87, second_score=None if unsafe else 87,
+            rewrite=REWRITE + (" It improves results by 42%." if unsafe else ""),
+        )
+        result, calls = run(client)
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required']))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+_____________ test_low_or_unsafe_b_never_selected_or_planned[True] _____________
+
+unsafe = True
+
+    @pytest.mark.parametrize("unsafe", [False, True])
+    def test_low_or_unsafe_b_never_selected_or_planned(unsafe):
+        client = ReviewClient(
+            first_score=87, second_score=None if unsafe else 87,
+            rewrite=REWRITE + (" It improves results by 42%." if unsafe else ""),
+        )
+        result, calls = run(client)
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required']))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+_________ test_unavailable_quality_does_not_trigger_rewrite_or_visual __________
+
+    def test_unavailable_quality_does_not_trigger_rewrite_or_visual():
+        class UnavailableQuality(ReviewClient):
+            def call(self, system, user, response_json=True):
+                if "strict LinkedIn publish-quality evaluator" in system:
+                    self.quality_calls += 1
+                    return {"text": "not json"}
+                return super().call(system, user, response_json)
+        client = UnavailableQuality(first_score=92)
+        result, calls = run(client)
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required']))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+________ test_terminal_preflight_never_drafts_selects_or_plans[skipped] ________
+
+decision = 'skipped'
+
+    @pytest.mark.parametrize("decision", ["skipped", "needs_more_evidence"])
+    def test_terminal_preflight_never_drafts_selects_or_plans(decision):
+        dims = dict(concrete_evidence=2, distinctiveness=2, strongest_evidence_index=-1,
+                    missing_evidence_question="What did the system make you redo?")
+        if decision == "skipped":
+            dims = {k: 1 for k in ("outsider_clarity", "professional_relevance", "concrete_evidence",
+                     "distinctiveness", "novel_insight", "practical_usefulness", "emotional_tension",
+                     "conversation_potential", "shareability", "voice_fit")}
+        gate = SequenceClient([opportunity_payload(**dims)])
+        client = SequenceClient([])
+        calls = []
+        result = generate_content(
+            LinkedInContentRequest(topic="A potential lesson", evidence=[], origin="test"),
+            generator=partial(run_generation, llm_client=client, opportunity_client=gate),
+            visual_planner=lambda **kw: calls.append(kw),
+        )
+        assert result.status == decision
+        assert result.body == ""
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='skipped', body='', hashtags=[], so... 'missing_evidence_question': '', 'content_goal': 'authority', 'earned_question': False}, review={}, visual_asset=None)
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+__ test_terminal_preflight_never_drafts_selects_or_plans[needs_more_evidence] __
+
+decision = 'needs_more_evidence'
+
+    @pytest.mark.parametrize("decision", ["skipped", "needs_more_evidence"])
+    def test_terminal_preflight_never_drafts_selects_or_plans(decision):
+        dims = dict(concrete_evidence=2, distinctiveness=2, strongest_evidence_index=-1,
+                    missing_evidence_question="What did the system make you redo?")
+        if decision == "skipped":
+            dims = {k: 1 for k in ("outsider_clarity", "professional_relevance", "concrete_evidence",
+                     "distinctiveness", "novel_insight", "practical_usefulness", "emotional_tension",
+                     "conversation_potential", "shareability", "voice_fit")}
+        gate = SequenceClient([opportunity_payload(**dims)])
+        client = SequenceClient([])
+        calls = []
+        result = generate_content(
+            LinkedInContentRequest(topic="A potential lesson", evidence=[], origin="test"),
+            generator=partial(run_generation, llm_client=client, opportunity_client=gate),
+            visual_planner=lambda **kw: calls.append(kw),
+        )
+        assert result.status == decision
+        assert result.body == ""
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='needs_more_evidence', body='', has...'What did the system make you redo?', 'content_goal': 'reach', 'earned_question': False}, review={}, visual_asset=None)
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+_____ test_malformed_quality_is_not_ready_and_does_not_call_planner[None] ______
+
+score = None
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+        result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='  Exact café draft...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required']))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+______ test_malformed_quality_is_not_ready_and_does_not_call_planner[bad] ______
+
+score = 'bad'
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+>       result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+
+tests/test_selected_candidate.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/integration.py:79: in generate_content
+    source_candidate, candidate_body = _publish_candidate(payload)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'status': 'drafted', 'body': '  Exact café draft.\n\n', 'review': {'publish_ready': True, 'threshold': 90, 'recommendation': 'original', 'original': {'body': '  Exact café draft.\n\n', 'score': 'bad'}}}
+
+    def _publish_candidate(payload: dict[str, Any]) -> tuple[str | None, str | None]:
+        """Return the 90+ candidate selected by publish-quality review, if any."""
+    
+        review = payload.get("review") if isinstance(payload.get("review"), dict) else {}
+        if not review or not bool(review.get("publish_ready")):
+            return None, None
+    
+        recommendation = str(review.get("recommendation") or "")
+        if recommendation == "rewrite":
+            rewrite = review.get("rewrite") if isinstance(review.get("rewrite"), dict) else {}
+            body = str(rewrite.get("body") or "").strip()
+            score = rewrite.get("score")
+            threshold = int(review.get("threshold") or 90)
+            if body and score is not None and int(score) >= threshold and bool(rewrite.get("guard_accepted")):
+                return "rewrite", body
+    
+        original = review.get("original") if isinstance(review.get("original"), dict) else {}
+        body = str(original.get("body") or payload.get("body") or "").strip()
+        score = original.get("score")
+        threshold = int(review.get("threshold") or 90)
+>       if body and score is not None and int(score) >= threshold:
+                                          ^^^^^^^^^^
+E       ValueError: invalid literal for int() with base 10: 'bad'
+
+src/app/integration.py:37: ValueError
+______ test_malformed_quality_is_not_ready_and_does_not_call_planner[93] _______
+
+score = '93'
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+>       result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+
+tests/test_selected_candidate.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+request = LinkedInContentRequest(request_id=None, origin='test', topic='When AI planning creates repeated work', persona_key='gr...e(title='Build note', fact='One planning step reopened settled decisions.', url=None)], voice_examples=[], hashtags=[])
+generator = <function test_malformed_quality_is_not_ready_and_does_not_call_planner.<locals>.<lambda> at 0x71e3ed21e090>
+visual_planner = <function test_malformed_quality_is_not_ready_and_does_not_call_planner.<locals>.<lambda> at 0x71e3ed21e4b0>
+
+    def generate_content(
+        request: LinkedInContentRequest,
+        *,
+        generator: Generator = run_generation,
+        visual_planner: VisualPlanner = plan_visual_asset,
+    ) -> LinkedInContentResult:
+        """Generate a LinkedIn post package without taking orchestration ownership.
+    
+        LinkedIn Generator owns post intelligence and the provider-neutral visual
+        companion brief. Dedication or another caller remains the owner of approval,
+        scheduling, publishing, notifications, and canonical post state.
+        """
+    
+        evidence = [item.model_dump() for item in request.evidence]
+        payload = generator(
+            topic=request.topic,
+            services=request.services,
+            persona_key=request.persona_key,
+            audience=request.audience,
+            objective=request.objective,
+            author_pov=request.author_pov,
+            content_goal=request.content_goal,
+            opportunity_gate=request.opportunity_gate,
+            publish_quality_gate=request.publish_quality_gate,
+            publish_quality_threshold=request.publish_quality_threshold,
+            targets=request.targets,
+            allowed_sources=evidence,
+            voice_examples=[item.model_dump() for item in request.voice_examples],
+            # An empty list is intentional: Dedication-origin requests must not
+            # inherit legacy cybersecurity hashtags merely because old defaults
+            # exist in the prototype runtime.
+            hashtags=request.hashtags,
+        )
+    
+        visual_asset: VisualAssetPlan | None = None
+        status = str(payload.get("status") or "drafted")
+        if request.visual_asset_plan and status == "drafted":
+            source_candidate, candidate_body = _publish_candidate(payload)
+            if source_candidate is None or candidate_body is None:
+                visual_asset = VisualAssetPlan(
+                    status="deferred",
+                    rationale=(
+                        "Visual planning waits until the post has a publish-quality score at or above the configured "
+                        "threshold, so image/carousel work is not spent on a text candidate that still needs revision."
+                    ),
+                    review_required=True,
+                    warnings=["publish_ready_candidate_required"],
+                )
+            else:
+                style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
+                telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
+                resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
+                planned = visual_planner(
+                    post_text=candidate_body,
+                    source_candidate=source_candidate,
+                    audience=request.audience,
+                    content_goal=resolved_goal,
+                    evidence=evidence,
+                    preference=request.visual_asset_preference,
+                    style_profile=style_profile,
+                )
+>               visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               pydantic_core._pydantic_core.ValidationError: 1 validation error for VisualAssetPlan
+E                 Input should be a valid dictionary or instance of VisualAssetPlan [type=model_type, input_value=None, input_type=NoneType]
+E                   For further information visit https://errors.pydantic.dev/2.14/v/model_type
+
+src/app/integration.py:103: ValidationError
+_____ test_malformed_quality_is_not_ready_and_does_not_call_planner[True] ______
+
+score = True
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+        result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+>       assert result.selected_candidate is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='  Exact café draft...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required']))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+_____ test_malformed_quality_is_not_ready_and_does_not_call_planner[93.9] ______
+
+score = 93.9
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+>       result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+
+tests/test_selected_candidate.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+request = LinkedInContentRequest(request_id=None, origin='test', topic='When AI planning creates repeated work', persona_key='gr...e(title='Build note', fact='One planning step reopened settled decisions.', url=None)], voice_examples=[], hashtags=[])
+generator = <function test_malformed_quality_is_not_ready_and_does_not_call_planner.<locals>.<lambda> at 0x71e3ed21e610>
+visual_planner = <function test_malformed_quality_is_not_ready_and_does_not_call_planner.<locals>.<lambda> at 0x71e3ed21df30>
+
+    def generate_content(
+        request: LinkedInContentRequest,
+        *,
+        generator: Generator = run_generation,
+        visual_planner: VisualPlanner = plan_visual_asset,
+    ) -> LinkedInContentResult:
+        """Generate a LinkedIn post package without taking orchestration ownership.
+    
+        LinkedIn Generator owns post intelligence and the provider-neutral visual
+        companion brief. Dedication or another caller remains the owner of approval,
+        scheduling, publishing, notifications, and canonical post state.
+        """
+    
+        evidence = [item.model_dump() for item in request.evidence]
+        payload = generator(
+            topic=request.topic,
+            services=request.services,
+            persona_key=request.persona_key,
+            audience=request.audience,
+            objective=request.objective,
+            author_pov=request.author_pov,
+            content_goal=request.content_goal,
+            opportunity_gate=request.opportunity_gate,
+            publish_quality_gate=request.publish_quality_gate,
+            publish_quality_threshold=request.publish_quality_threshold,
+            targets=request.targets,
+            allowed_sources=evidence,
+            voice_examples=[item.model_dump() for item in request.voice_examples],
+            # An empty list is intentional: Dedication-origin requests must not
+            # inherit legacy cybersecurity hashtags merely because old defaults
+            # exist in the prototype runtime.
+            hashtags=request.hashtags,
+        )
+    
+        visual_asset: VisualAssetPlan | None = None
+        status = str(payload.get("status") or "drafted")
+        if request.visual_asset_plan and status == "drafted":
+            source_candidate, candidate_body = _publish_candidate(payload)
+            if source_candidate is None or candidate_body is None:
+                visual_asset = VisualAssetPlan(
+                    status="deferred",
+                    rationale=(
+                        "Visual planning waits until the post has a publish-quality score at or above the configured "
+                        "threshold, so image/carousel work is not spent on a text candidate that still needs revision."
+                    ),
+                    review_required=True,
+                    warnings=["publish_ready_candidate_required"],
+                )
+            else:
+                style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
+                telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
+                resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
+                planned = visual_planner(
+                    post_text=candidate_body,
+                    source_candidate=source_candidate,
+                    audience=request.audience,
+                    content_goal=resolved_goal,
+                    evidence=evidence,
+                    preference=request.visual_asset_preference,
+                    style_profile=style_profile,
+                )
+>               visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               pydantic_core._pydantic_core.ValidationError: 1 validation error for VisualAssetPlan
+E                 Input should be a valid dictionary or instance of VisualAssetPlan [type=model_type, input_value=None, input_type=NoneType]
+E                   For further information visit https://errors.pydantic.dev/2.14/v/model_type
+
+src/app/integration.py:103: ValidationError
+______ test_malformed_quality_is_not_ready_and_does_not_call_planner[101] ______
+
+score = 101
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+>       result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+
+tests/test_selected_candidate.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+request = LinkedInContentRequest(request_id=None, origin='test', topic='When AI planning creates repeated work', persona_key='gr...e(title='Build note', fact='One planning step reopened settled decisions.', url=None)], voice_examples=[], hashtags=[])
+generator = <function test_malformed_quality_is_not_ready_and_does_not_call_planner.<locals>.<lambda> at 0x71e3ed21e2a0>
+visual_planner = <function test_malformed_quality_is_not_ready_and_does_not_call_planner.<locals>.<lambda> at 0x71e3ed3d3950>
+
+    def generate_content(
+        request: LinkedInContentRequest,
+        *,
+        generator: Generator = run_generation,
+        visual_planner: VisualPlanner = plan_visual_asset,
+    ) -> LinkedInContentResult:
+        """Generate a LinkedIn post package without taking orchestration ownership.
+    
+        LinkedIn Generator owns post intelligence and the provider-neutral visual
+        companion brief. Dedication or another caller remains the owner of approval,
+        scheduling, publishing, notifications, and canonical post state.
+        """
+    
+        evidence = [item.model_dump() for item in request.evidence]
+        payload = generator(
+            topic=request.topic,
+            services=request.services,
+            persona_key=request.persona_key,
+            audience=request.audience,
+            objective=request.objective,
+            author_pov=request.author_pov,
+            content_goal=request.content_goal,
+            opportunity_gate=request.opportunity_gate,
+            publish_quality_gate=request.publish_quality_gate,
+            publish_quality_threshold=request.publish_quality_threshold,
+            targets=request.targets,
+            allowed_sources=evidence,
+            voice_examples=[item.model_dump() for item in request.voice_examples],
+            # An empty list is intentional: Dedication-origin requests must not
+            # inherit legacy cybersecurity hashtags merely because old defaults
+            # exist in the prototype runtime.
+            hashtags=request.hashtags,
+        )
+    
+        visual_asset: VisualAssetPlan | None = None
+        status = str(payload.get("status") or "drafted")
+        if request.visual_asset_plan and status == "drafted":
+            source_candidate, candidate_body = _publish_candidate(payload)
+            if source_candidate is None or candidate_body is None:
+                visual_asset = VisualAssetPlan(
+                    status="deferred",
+                    rationale=(
+                        "Visual planning waits until the post has a publish-quality score at or above the configured "
+                        "threshold, so image/carousel work is not spent on a text candidate that still needs revision."
+                    ),
+                    review_required=True,
+                    warnings=["publish_ready_candidate_required"],
+                )
+            else:
+                style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
+                telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
+                resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
+                planned = visual_planner(
+                    post_text=candidate_body,
+                    source_candidate=source_candidate,
+                    audience=request.audience,
+                    content_goal=resolved_goal,
+                    evidence=evidence,
+                    preference=request.visual_asset_preference,
+                    style_profile=style_profile,
+                )
+>               visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               pydantic_core._pydantic_core.ValidationError: 1 validation error for VisualAssetPlan
+E                 Input should be a valid dictionary or instance of VisualAssetPlan [type=model_type, input_value=None, input_type=NoneType]
+E                   For further information visit https://errors.pydantic.dev/2.14/v/model_type
+
+src/app/integration.py:103: ValidationError
+____ test_malformed_quality_is_not_ready_and_does_not_call_planner[score6] _____
+
+score = {}
+
+    @pytest.mark.parametrize("score", [None, "bad", "93", True, 93.9, 101, {}])
+    def test_malformed_quality_is_not_ready_and_does_not_call_planner(score):
+        payload = ready_payload()
+        payload["review"]["original"]["score"] = score
+        calls = []
+>       result = generate_content(request(), generator=lambda **kw: payload,
+                                  visual_planner=lambda **kw: calls.append(kw))
+
+tests/test_selected_candidate.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/integration.py:79: in generate_content
+    source_candidate, candidate_body = _publish_candidate(payload)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'status': 'drafted', 'body': '  Exact café draft.\n\n', 'review': {'publish_ready': True, 'threshold': 90, 'recommendation': 'original', 'original': {'body': '  Exact café draft.\n\n', 'score': {}}}}
+
+    def _publish_candidate(payload: dict[str, Any]) -> tuple[str | None, str | None]:
+        """Return the 90+ candidate selected by publish-quality review, if any."""
+    
+        review = payload.get("review") if isinstance(payload.get("review"), dict) else {}
+        if not review or not bool(review.get("publish_ready")):
+            return None, None
+    
+        recommendation = str(review.get("recommendation") or "")
+        if recommendation == "rewrite":
+            rewrite = review.get("rewrite") if isinstance(review.get("rewrite"), dict) else {}
+            body = str(rewrite.get("body") or "").strip()
+            score = rewrite.get("score")
+            threshold = int(review.get("threshold") or 90)
+            if body and score is not None and int(score) >= threshold and bool(rewrite.get("guard_accepted")):
+                return "rewrite", body
+    
+        original = review.get("original") if isinstance(review.get("original"), dict) else {}
+        body = str(original.get("body") or payload.get("body") or "").strip()
+        score = original.get("score")
+        threshold = int(review.get("threshold") or 90)
+>       if body and score is not None and int(score) >= threshold:
+                                          ^^^^^^^^^^
+E       TypeError: int() argument must be a string, a bytes-like object or a real number, not 'dict'
+
+src/app/integration.py:37: TypeError
+_____________ test_selection_hashes_exact_utf8_bytes_and_is_stable _____________
+
+    def test_selection_hashes_exact_utf8_bytes_and_is_stable():
+        payload = ready_payload()
+        a = generate_content(request(visual_asset_plan=False), generator=lambda **kw: payload)
+        b = generate_content(request(visual_asset_plan=False), generator=lambda **kw: payload)
+>       assert a.selected_candidate.body == payload["body"]
+               ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='  Exact café draft...d': 90, 'recommendation': 'original', 'original': {'body': '  Exact café draft.\n\n', 'score': 92}}, visual_asset=None)
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+_______ test_wrong_source_visual_plan_is_deferred_without_retry[source] ________
+
+wrong = 'source'
+
+    @pytest.mark.parametrize("wrong", ["source", "hash"])
+    def test_wrong_source_visual_plan_is_deferred_without_retry(wrong):
+        def planner(**kwargs):
+            plan = fixture_visual_planner(**kwargs)
+            if wrong == "source":
+                plan.source_candidate = "original"
+            else:
+                # model_validate also exercises dict-returning adapters.
+                return {**plan.model_dump(), "source_content_sha256": "0" * 64}
+            return plan
+        client = ReviewClient(first_score=87, second_score=93)
+        result, calls = run(client, planner=planner)
+>       assert result.selected_candidate.source == "rewrite"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...s'], alt_text='A stable bridge symbolizes a reliable AI workflow.'), carousel=None, review_required=True, warnings=[]))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+________ test_wrong_source_visual_plan_is_deferred_without_retry[hash] _________
+
+wrong = 'hash'
+
+    @pytest.mark.parametrize("wrong", ["source", "hash"])
+    def test_wrong_source_visual_plan_is_deferred_without_retry(wrong):
+        def planner(**kwargs):
+            plan = fixture_visual_planner(**kwargs)
+            if wrong == "source":
+                plan.source_candidate = "original"
+            else:
+                # model_validate also exercises dict-returning adapters.
+                return {**plan.model_dump(), "source_content_sha256": "0" * 64}
+            return plan
+        client = ReviewClient(first_score=87, second_score=93)
+        result, calls = run(client, planner=planner)
+>       assert result.selected_candidate.source == "rewrite"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_selected_candidate.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...s'], alt_text='A stable bridge symbolizes a reliable AI workflow.'), carousel=None, review_required=True, warnings=[]))
+item = 'selected_candidate'
+
+    def __getattr__(self, item: str) -> Any:
+        private_attributes = object.__getattribute__(self, '__private_attributes__')
+        if item in private_attributes:
+            attribute = private_attributes[item]
+            if hasattr(attribute, '__get__'):
+                return attribute.__get__(self, type(self))  # type: ignore
+    
+            try:
+                # Note: self.__pydantic_private__ cannot be None if self.__private_attributes__ has items
+                return self.__pydantic_private__[item]  # type: ignore
+            except KeyError as exc:
+                raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}') from exc
+        else:
+            # `__pydantic_extra__` can fail to be set if the model is not yet fully initialized.
+            # See `BaseModel.__repr_args__` for more details
+            try:
+                pydantic_extra = object.__getattribute__(self, '__pydantic_extra__')
+            except AttributeError:
+                pydantic_extra = None
+    
+            if pydantic_extra and item in pydantic_extra:
+                return pydantic_extra[item]
+            else:
+                if hasattr(self.__class__, item):
+                    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+                else:
+                    # this is the current error
+>                   raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+E                   AttributeError: 'LinkedInContentResult' object has no attribute 'selected_candidate'
+
+.venv/lib/python3.14/site-packages/pydantic/main.py:1110: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_selected_candidate.py::test_rewrite_selected_once_preserves_a_and_b_and_visual_bytes
+FAILED tests/test_selected_candidate.py::test_original_selected_without_rewrite_even_when_visual_disabled[True]
+FAILED tests/test_selected_candidate.py::test_original_selected_without_rewrite_even_when_visual_disabled[False]
+FAILED tests/test_selected_candidate.py::test_low_or_unsafe_b_never_selected_or_planned[False]
+FAILED tests/test_selected_candidate.py::test_low_or_unsafe_b_never_selected_or_planned[True]
+FAILED tests/test_selected_candidate.py::test_unavailable_quality_does_not_trigger_rewrite_or_visual
+FAILED tests/test_selected_candidate.py::test_terminal_preflight_never_drafts_selects_or_plans[skipped]
+FAILED tests/test_selected_candidate.py::test_terminal_preflight_never_drafts_selects_or_plans[needs_more_evidence]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[None]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[bad]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[93]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[True]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[93.9]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[101]
+FAILED tests/test_selected_candidate.py::test_malformed_quality_is_not_ready_and_does_not_call_planner[score6]
+FAILED tests/test_selected_candidate.py::test_selection_hashes_exact_utf8_bytes_and_is_stable
+FAILED tests/test_selected_candidate.py::test_wrong_source_visual_plan_is_deferred_without_retry[source]
+FAILED tests/test_selected_candidate.py::test_wrong_source_visual_plan_is_deferred_without_retry[hash]
+18 failed in 1.10s

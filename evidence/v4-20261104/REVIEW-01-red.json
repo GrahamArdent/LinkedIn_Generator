@@ -1,0 +1,20 @@
+{
+  "test_id": "REVIEW-01-red",
+  "checked_at_utc": "2026-11-04T21:54:51.568348+00:00",
+  "ended_at_utc": "2026-11-04T21:54:52.503511+00:00",
+  "head_sha": "e856859c044213458bbc1a0cb68df0e3ec87a55d",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_selected_candidate.py",
+    "-k",
+    "malformed_planner"
+  ],
+  "mode": "fixture",
+  "exit_code": 1,
+  "log": "evidence/v4-20261104/REVIEW-01-red.log",
+  "log_sha256": "c89b195e927f5ec87dd3c3b153ae0e979557abe08aa9ea8d0ea57273970bdcb8",
+  "diff_sha256": "41283f580ef900f26a3508f51877a11510c581111da100c350ebeada3d42ffe1"
+}

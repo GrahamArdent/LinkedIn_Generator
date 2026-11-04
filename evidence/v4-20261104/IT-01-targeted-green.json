@@ -1,0 +1,22 @@
+{
+  "test_id": "IT-01-targeted-green",
+  "checked_at_utc": "2026-11-04T21:52:01.363704+00:00",
+  "ended_at_utc": "2026-11-04T21:52:02.822141+00:00",
+  "head_sha": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_selected_candidate.py",
+    "tests/test_end_to_end_generation.py",
+    "tests/test_publish_quality_review.py",
+    "tests/test_visual_asset_planning.py",
+    "tests/test_opportunity_gate.py"
+  ],
+  "mode": "fixture",
+  "exit_code": 0,
+  "log": "evidence/v4-20261104/IT-01-targeted-green.log",
+  "log_sha256": "5f7f63fa9e4746ac839c84b1db40b2a8cd49ce54d79595933f8dce8cf35895f3",
+  "diff_sha256": "3eba0c016d95e3a91c4335dda9049a0704f94b2ed72cc6613476cff529af9afb"
+}

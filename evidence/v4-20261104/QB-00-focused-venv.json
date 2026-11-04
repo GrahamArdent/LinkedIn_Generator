@@ -1,0 +1,23 @@
+{
+  "test_id": "QB-00-focused-venv",
+  "checked_at_utc": "2026-11-04T21:49:12.953437+00:00",
+  "ended_at_utc": "2026-11-04T21:49:14.220115+00:00",
+  "head_sha": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_end_to_end_generation.py",
+    "tests/test_publish_quality_review.py",
+    "tests/test_spoken_voice_authority.py",
+    "tests/test_voice_bible_authority.py",
+    "tests/test_visual_asset_planning.py",
+    "tests/test_opportunity_gate.py"
+  ],
+  "mode": "fixture",
+  "exit_code": 0,
+  "log": "evidence/v4-20261104/QB-00-focused-venv.log",
+  "log_sha256": "b4d99550d907524e8775f9992d9b4f8a477b12d169dbfbf5a49dfd116fd34229",
+  "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

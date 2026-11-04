@@ -1,0 +1,17 @@
+{
+  "test_id": "QB-00-full-fixture-green",
+  "checked_at_utc": "2026-11-04T21:50:26.476966+00:00",
+  "ended_at_utc": "2026-11-04T21:50:28.415301+00:00",
+  "head_sha": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "mode": "fixture",
+  "exit_code": 0,
+  "log": "evidence/v4-20261104/QB-00-full-fixture-green.log",
+  "log_sha256": "40189a95eabe10dd72179b85205a5d5f5bca109281f36800b9930d1ab1efdcc8",
+  "diff_sha256": "9a2f06b3acd4db5f322453eba9aff5a21c7fde7855010c2e704b425e1032024d"
+}

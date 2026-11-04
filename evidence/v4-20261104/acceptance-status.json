@@ -1,0 +1,206 @@
+{
+  "objectives": [
+    {
+      "id": "AT-01",
+      "status": "PASS",
+      "evidence": [
+        "P1-final-full.json",
+        "P1-candidate-observations.json"
+      ],
+      "mode": "fixture"
+    },
+    {
+      "id": "AT-02",
+      "status": "PASS",
+      "evidence": [
+        "P1-final-full.json",
+        "P1-candidate-observations.json"
+      ],
+      "mode": "fixture"
+    },
+    {
+      "id": "AT-03",
+      "status": "HOLD",
+      "evidence": [
+        "P1-final-full.json"
+      ],
+      "fixture_status": "PASS",
+      "human_status": "NOT_RUN",
+      "reason": "P1 preflight control verified; genuine-subject human evidence remains P2"
+    },
+    {
+      "id": "AT-04",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-05",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-06",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-07",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-08",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-09",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-10",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-11",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-12",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-13",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-14",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-15",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-16",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "baseline_portion": "PASS",
+      "reason": "QB-00 receipts exist; durable product run/error records are P3 and NOT_RUN"
+    },
+    {
+      "id": "AT-17",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-18",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-19",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-20",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-21",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-22",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-23",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-24",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-25",
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "id": "AT-26",
+      "status": "NOT_RUN",
+      "evidence": []
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "E2E-01",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-02",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-03",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-04",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-05",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-06",
+      "status": "HOLD",
+      "reason": "P2 provider/human admission pending"
+    },
+    {
+      "id": "E2E-07",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-08",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-09",
+      "status": "NOT_RUN",
+      "reason": "Later phase prerequisites not met"
+    },
+    {
+      "id": "E2E-10",
+      "status": "HOLD",
+      "reason": "P2 provider/human admission pending"
+    },
+    {
+      "id": "E2E-11",
+      "status": "HOLD",
+      "reason": "P2 provider/human admission pending"
+    }
+  ]
+}

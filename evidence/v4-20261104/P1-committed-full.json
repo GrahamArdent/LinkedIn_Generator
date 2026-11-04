@@ -1,0 +1,17 @@
+{
+  "test_id": "P1-committed-full",
+  "checked_at_utc": "2026-11-04T21:53:20.725831+00:00",
+  "ended_at_utc": "2026-11-04T21:53:23.010733+00:00",
+  "head_sha": "e856859c044213458bbc1a0cb68df0e3ec87a55d",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "mode": "fixture",
+  "exit_code": 0,
+  "log": "evidence/v4-20261104/P1-committed-full.log",
+  "log_sha256": "fef8c39adb6e5c3d982f2428dabf8cddf561766d03352273f0274805f67175d2",
+  "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

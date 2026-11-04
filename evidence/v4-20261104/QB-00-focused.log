@@ -1,0 +1,103 @@
+
+==================================== ERRORS ====================================
+_____________ ERROR collecting tests/test_end_to_end_generation.py _____________
+ImportError while importing test module '/home/spine-admin/workspaces/lig-v4-20261104/tests/test_end_to_end_generation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_end_to_end_generation.py:6: in <module>
+    from src.app.api import run_generation
+src/app/api.py:6: in <module>
+    from .generation import Pipeline
+src/app/generation.py:12: in <module>
+    from .models import PostJSON, Telemetry
+src/app/models.py:3: in <module>
+    from pydantic import BaseModel, Field
+E   ModuleNotFoundError: No module named 'pydantic'
+____________ ERROR collecting tests/test_publish_quality_review.py _____________
+ImportError while importing test module '/home/spine-admin/workspaces/lig-v4-20261104/tests/test_publish_quality_review.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_publish_quality_review.py:5: in <module>
+    from src.app.api import run_generation
+src/app/api.py:6: in <module>
+    from .generation import Pipeline
+src/app/generation.py:12: in <module>
+    from .models import PostJSON, Telemetry
+src/app/models.py:3: in <module>
+    from pydantic import BaseModel, Field
+E   ModuleNotFoundError: No module named 'pydantic'
+____________ ERROR collecting tests/test_spoken_voice_authority.py _____________
+ImportError while importing test module '/home/spine-admin/workspaces/lig-v4-20261104/tests/test_spoken_voice_authority.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_spoken_voice_authority.py:7: in <module>
+    from src.app.api import _persona_profile
+src/app/api.py:6: in <module>
+    from .generation import Pipeline
+src/app/generation.py:12: in <module>
+    from .models import PostJSON, Telemetry
+src/app/models.py:3: in <module>
+    from pydantic import BaseModel, Field
+E   ModuleNotFoundError: No module named 'pydantic'
+_____________ ERROR collecting tests/test_voice_bible_authority.py _____________
+ImportError while importing test module '/home/spine-admin/workspaces/lig-v4-20261104/tests/test_voice_bible_authority.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_voice_bible_authority.py:7: in <module>
+    from src.app.api import _persona_profile
+src/app/api.py:6: in <module>
+    from .generation import Pipeline
+src/app/generation.py:12: in <module>
+    from .models import PostJSON, Telemetry
+src/app/models.py:3: in <module>
+    from pydantic import BaseModel, Field
+E   ModuleNotFoundError: No module named 'pydantic'
+_____________ ERROR collecting tests/test_visual_asset_planning.py _____________
+ImportError while importing test module '/home/spine-admin/workspaces/lig-v4-20261104/tests/test_visual_asset_planning.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_visual_asset_planning.py:5: in <module>
+    from src.app.visual_assets import plan_visual_asset
+src/app/visual_assets.py:8: in <module>
+    from pydantic import ValidationError
+E   ModuleNotFoundError: No module named 'pydantic'
+_______________ ERROR collecting tests/test_opportunity_gate.py ________________
+ImportError while importing test module '/home/spine-admin/workspaces/lig-v4-20261104/tests/test_opportunity_gate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_opportunity_gate.py:5: in <module>
+    from src.app.api import run_generation
+src/app/api.py:6: in <module>
+    from .generation import Pipeline
+src/app/generation.py:12: in <module>
+    from .models import PostJSON, Telemetry
+src/app/models.py:3: in <module>
+    from pydantic import BaseModel, Field
+E   ModuleNotFoundError: No module named 'pydantic'
+=========================== short test summary info ============================
+ERROR tests/test_end_to_end_generation.py
+ERROR tests/test_publish_quality_review.py
+ERROR tests/test_spoken_voice_authority.py
+ERROR tests/test_voice_bible_authority.py
+ERROR tests/test_visual_asset_planning.py
+ERROR tests/test_opportunity_gate.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 6 errors during collection !!!!!!!!!!!!!!!!!!!!
+6 errors in 0.46s

@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Multi-subject content + visual-plan acceptance before paid rendering and publishing integration
+CURRENT_STAGE_OR_MILESTONE: v4 P0/P1 locally verified; P2 multi-subject acceptance HOLD for provider budget/credential and human review
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: LinkedIn_Generator `c51eb4afc30977bbbb3dc2193d6f14f3ea84fcdd`; PROGRAMSTART current methodology consulted at `4ece1af3bc6afff9834e551bc9f4e2d8e791b317`
 BLOCKER_SCOPE: milestone
@@ -181,8 +181,8 @@ Promotion rule: when one becomes a real candidate for action, evaluate it agains
 
 | Changed / at-risk surface | Check | Result |
 |---|---|---|
-| Current authority reconciliation | compare live `main` and packet authority | reconciled on branch; PR pending |
-| Idea preservation | project ledger follows current PROGRAMSTART non-authoritative semantics | added on branch; PR pending |
+| Current authority reconciliation | compare live `main` and packet authority | prior reconciliation present on main at a714d1e; v4 continuation delta on feature branch |
+| Idea preservation | project ledger follows current PROGRAMSTART non-authoritative semantics | ledger present on main at a714d1e; no idea promoted by this continuation |
 | Publish-quality threshold/rewrite | 90+ no rewrite; sub-90 preserves A and creates one B; unsafe B rejected | implemented PR #20; live provider smoke pending |
 | Voice/public-language quality | human decisions + reason codes | Trial #1 positive; more trials pending |
 | Visual planner contracts/guardrails | focused contract/planner/integration coverage | implemented PR #21; human validation pending |
@@ -218,6 +218,37 @@ Promotion rule: when one becomes a real candidate for action, evaluate it agains
 OUTCOME: pending
 VERIFICATION_SUMMARY: Slice A implemented; multi-subject human validation now active
 EVIDENCE_INVALIDATED_OR_REUSED: existing voice/content/visual architecture reused; no settled decision reopened
-AUTHORITY_RECONCILED: pending merge of this packet update; no competing Master Game Plan created
+AUTHORITY_RECONCILED: prior packet update landed on main at a714d1e; v4 continuation delta is on a feature branch, not merged; no competing Master Game Plan
 REMAINING_BLOCKERS: multi-subject visual-plan evidence, real repo-provider acceptance, rendered-asset evidence, publishing integration
 NEXT_RECOMMENDED_SLICE: complete Trials #2–#5 and run a focused Challenge decision; promote Slice B only if the planner earns it
+
+## v4 continuation — 2026-11-04
+
+Authority: current operator instruction to execute the v4 handoff, begin P0 and the authorized selected-draft contract repair, preserve all 26 AT objectives and 11 E2E scenarios, and continue only through eligible gates.
+
+### Accepted bounded decisions
+
+- Continue the existing Python content engine in this owner. CLI/UI remain future adapters of the same service; no framework/database/cutover is admitted by P1. V2 PR #6 remains an open draft proposal, unchanged.
+- Preserve the approved voice sources, current 90 threshold and at most one guarded rewrite. Legacy top-level body remains Draft A; optional selected_candidate is the explicit qualified editorial candidate, with deterministic source:full-content-SHA256 identity and exact UTF-8 body.
+- A planned visual must match that candidate source and content hash. Legacy planners may omit the optional hash: the trusted caller binds it to the exact text passed. Declared mismatch or malformed plan defers without retry.
+- Adopt the v4 AT-01..AT-26 and E2E-01..E2E-11 as execution targets from docs/implementation/v4/LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md. Keep the existing owner gate; preserve six-subject first-six denominator, up-to-eight subject envelope, >=2 real-provider human-accepted subjects, claims review, human voice/insight/usefulness ratings, sequence originality, measured editing effort and blinded >=4/6 engine preference pilot. A failed pilot means HOLD and diagnosis, not statistical proof of business impact.
+- Editorial acceptance remains distinct from Dedication publication approval. P2 GO precedes production P3; rendering and publication retain separate gates. No fixture-only P3 exception has been admitted here.
+- All handoff documents under docs/implementation/v4 are preserved planning snapshots. This packet and actual evidence receipts own current execution status.
+
+### Expected versus observed
+
+| Check | Expected | Observed |
+|---|---|---|
+| QB-00 focused | Existing integration/voice/visual/opportunity tests run | 31 PASS in isolated venv; initial system dependency errors retained |
+| QB-00 full | Baseline accurately reported and diagnosed | 99 PASS/1 stale fixture FAIL; same assertions preserved after current signatures/configuration restored; 100 PASS |
+| IT-01 initial | New selected-candidate assertions fail before fix | 18 FAIL observed |
+| IT-01 repair | Safe B93 selected, A92 selected without rewrite, low/unsafe/missing quality no candidate, terminal preflight no draft/visual | All18 new cases PASS; targeted40/full118 PASS |
+| Independent review correction | Malformed declared provenance defers safely | 4 additional RED cases, then 22 candidate tests/full122 PASS |
+| P2 live and human | Real provider receipts and exact candidate-bound human verdicts | NOT_RUN; no local generation credential, approved spend envelope or new human verdicts |
+
+Evidence: evidence/v4-20261104/REPORT.md, PROGRESS.md, REVIEW.md, P1-candidate-observations.json, command/UTC/exit/log-hash JSON receipts, acceptance-status.json, and P2_PREPARATION.md.
+Current execution environment: isolated VPS feature checkout; no deployment. All enabled GitHub workflow files are absent (only .yml.disabled retained); none were enabled.
+
+P0/P1 disposition: GO for completed local contract milestone, subject to the recorded review fix and final committed-source receipt; this is not hosted-CI, merge or product acceptance.
+P2 disposition: HOLD. Three grounded source-backed candidate ideas prepared, none counted as a drafted or accepted subject; no forced sixth subject. Trial #1 remains owner-recorded, not current live-provider evidence.
+Next eligible action: secure an admitted provider runtime and explicit spending envelope, approve genuine varied subjects, then run the paired P2 pilot and obtain actual human reviews. Do not bypass P2 with infrastructure work.
