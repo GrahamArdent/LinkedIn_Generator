@@ -2,7 +2,7 @@
 
 > **For agentic workers:** Use a bounded test-driven implementation workflow, such as `superpowers:executing-plans` or `superpowers:subagent-driven-development`, task by task. Every unchecked item is **proposed work**, not completed work. No task here independently grants write, merge, deployment, provider-spend, or publishing authorization.
 
-**Status:** Owner-adopted direction; P0/P1 and Codex connection locally qualified; P2 evidence-first repair PLANNED; human writing acceptance HOLD.
+**Status:** Owner-adopted direction; P0/P1 and Codex connection locally qualified; P2 evidence-first repairs fixture-qualified; substantive native trial completed; human writing acceptance HOLD.
 **Prepared:** 2026-11-04
 **Primary code owner:** `GrahamArdent/LinkedIn_Generator` (`main` observed at `a714d1ef355ade9ca47a52b301ea477bd0c14f34`)
 **Present authoritative work packet:** `LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01`
@@ -10,7 +10,7 @@
 **Architecture:** Retain the existing Python generation implementation and its typed `LinkedInContentRequest` / `LinkedInContentResult` interface. Add the smallest shared application service for headless and UI use, then a durable local content-artifact store if needed. Do not create a second writing engine, scheduler, or publication authority.
 **Tech stack:** Existing Python/Pydantic/pytest/LLM provider boundary. Proposed: a small CLI, local durable records; **FastAPI with server-rendered templates and SQLite are candidate implementation choices at their milestones, not immediate dependencies or pre-approved architectural commitments**.
 **Spec/decision basis:** The user-approved *direction* from the current discussion, this plan's **§1 Product contract**, and the live [`README.md`](https://github.com/GrahamArdent/LinkedIn_Generator/blob/main/README.md) plus [`CURRENT_WORK_PACKET.md`](https://github.com/GrahamArdent/LinkedIn_Generator/blob/main/CURRENT_WORK_PACKET.md). The current Python/Codex continuation is reconciled in the owner packet; later stack or cutover choices require their own admission.
-**Test authority:** [Durable Test Objectives and Success Criteria](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md) is the sole detailed definition of **AT-01..AT-26 and E2E-01..E2E-11**. This plan owns **phase sequence, task implementation and gate mapping**. The evidence file owns sources, risks and adjudications; the prompt owns current bounded execution instructions. These supporting documents **do not outrank** the current repository work packet. Actual AT/E2E status is in the packet and execution receipts; this evidence-first planning amendment executes no new product acceptance.
+**Test authority:** [Durable Test Objectives and Success Criteria](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md) is the sole detailed definition of **AT-01..AT-26 and E2E-01..E2E-11**. This plan owns **phase sequence, task implementation and gate mapping**. The evidence file owns sources, risks and adjudications; the prompt owns current bounded execution instructions. These supporting documents **do not outrank** the current repository work packet. Actual AT/E2E status is in the packet and execution receipts; the evidence-first continuation preserves actual machine receipts without claiming human/product acceptance.
 **Related files:** [Evidence and Challenge](LINKEDIN_GENERATOR_EVIDENCE_AND_CHALLENGE_V4_2026-11-04.md) · [Durable Test Objectives](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md) · [Execution Prompt](LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md) · [Package Readme](LINKEDIN_GENERATOR_PACKAGE_README_V4_2026-11-04.md)
 
 ## 1. Product contract and deliberate non-goals
@@ -70,7 +70,7 @@ Manual subject, current evidence, voice choice
 
 ## 2. Critical-path sequence and acceptance dependency map
 
-**Current next work:** P0/P1 and the local Codex connection are completed as recorded in the packet; do not restart them. P2 now proceeds through Phase0 checkpoint → Phase1 evidence brief → Phase2 source-specific writing → Phase3 scorer alignment → Phase4 substantive trial in [the current Codex P2 subplan](CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md). These are subphases, not a second product roadmap. Retain the earlier weak trial outputs and all26 AT/11 E2E obligations.
+**Current next work:** P0/P1, the local Codex connection and evidence-first machine repairs have receipts; do not restart them. Phase4 substantive trial is retained and awaits exact-text human disposition. P2 now proceeds through Phase0 checkpoint → Phase1 evidence brief → Phase2 source-specific writing → Phase3 scorer alignment → Phase4 substantive trial in [the current Codex P2 subplan](CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md). These are subphases, not a second product roadmap. Retain the earlier weak trial outputs and all26 AT/11 E2E obligations.
 
 ```text
 P0 authority/baseline

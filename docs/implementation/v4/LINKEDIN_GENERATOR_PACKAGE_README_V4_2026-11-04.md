@@ -1,6 +1,6 @@
 # LinkedIn Generator — current continuation index
 
-**Current stage:** Codex connection GO; P2 content acceptance HOLD. Evidence-first repair is planned, not implemented.
+**Current stage:** Codex connection GO; P2 content acceptance HOLD. Evidence-first machine repairs and one substantive native trial completed; human acceptance/calibration remain open.
 **Active authority:** repository CURRENT_WORK_PACKET.md, including its latest dated milestone receipt. Older exported handoff ZIPs are historical snapshots unless regenerated from a named revision.
 
 ## Read these together
@@ -26,3 +26,5 @@ Actual weak posts remain in evidence/codex-first-20261104 and evidence/transpare
 Phase0 reconciles the milestone; Phase1 freezes substantive evidence/claim support; Phase2 uses the existing voice guidance in a source-specific plan; Phase3 aligns/calibrates the evaluator; Phase4 tests one substantive engine/baseline pair and then gathers genuine human feedback.
 
 Every meaningful milestone records source, local CI, merge state, installed/runtime binding and reconciled docs. The packet names the latest receipt and next eligible phase. No automatic hosted CI, merge, installation promotion, rendering or publishing is authorized by status checks. Zero API spending/fallback; preserve Codex budgets, score90 and one guarded quality rewrite until explicitly changed.
+
+Latest results: evidence/evidence-first-20261104/EVALUATION.md and evidence/milestones/evidence-first-execution-20261104/phase4.json. Local171 PASS; actual original73/rewrite75/baseline75, no selected text/visual. No-call reopen proved. Next: human disposition of these retained texts.

@@ -19,4 +19,5 @@ Continue through machine-solvable prerequisites, preserving all26 acceptance obj
 
 
 
-Current checkpoint: Phase3 machine GO. Seven scorer/comparison regressions RED→GREEN; full157 PASS. Writer and evaluator share factual brief, full relevant voice and approved examples; concrete0–5 anchors added. Missing/noninteger/out-of-range ratings become unavailable, never silently fabricated. Baseline can receive the identical evaluator context and rubric; reopen remains zero-call. Weights/90 unchanged, one targeted guarded rewrite. No exact-text human calibration corpus established; calibration remains explicitly missing. Next: Phase4 one substantive bounded comparison. Status authority remains CURRENT_WORK_PACKET and actual receipts.
+
+Current checkpoint: Phases1–3 machine GO after fresh-review corrections (171 tests PASS). Phase4 native trial completed: original73, one safe rewrite75, same-rubric baseline75; no selected candidate, visual deferred. Aggregate10 model executions/30 physical starts/73.838 CLI seconds, API0. Fresh show/duplicate generate add0 calls. Reuse exact evidence/evidence-first-20261104 outputs. Next is human factual/voice/usefulness/editorial/edit-effort review; do not regenerate or claim a pilot win. Packet points to current phase4 receipt.

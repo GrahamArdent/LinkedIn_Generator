@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Phase3 machine checkpoint GO; Phase4 one substantive bounded comparison; content acceptance HOLD
+CURRENT_STAGE_OR_MILESTONE: Evidence-first machine phases GO; Phase4 substantive trial complete; human/content acceptance HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: default main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate code d715f078094032c10e778a8450f61329c1895fa8; latest milestone receipt records tested source and live integration/runtime observations
 BLOCKER_SCOPE: milestone
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-execution-20261104/phase3.json
-NEXT_ELIGIBLE_PHASE: Phase4 one substantive bounded comparison
+CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-execution-20261104/phase4.json
+NEXT_ELIGIBLE_PHASE: Phase4 human exact-text disposition; no further generation before review
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -313,3 +313,9 @@ Seven scorer/comparison regressions RED→GREEN; full157 PASS. Writer and evalua
 ### Fresh review correction before Phase4
 
 Review held c51d737 for source reverse coverage/context propagation, study identity, partial assessment recovery and malformed judgments. All Important findings reproduced and fixed; base persona/goal parity included because same-context comparison is required. Full171 PASS; review-fix.json and REVIEW.md retain findings, RED/GREEN and rulings. Native all-evidence-omitted preflight correctly returned needs_more_evidence (1 model execution). Stronger actual CLI negative retained peripheral Canadian recommendation but omitted central reset facts; admission blocked before provider creation (0 model executions). No post generated yet. Aggregate subject budget remains <=12 executions/900 seconds including the earlier negative.
+
+## Phase4 actual substantive trial — 2026-11-04
+
+Evidence/evidence-first-20261104/EVALUATION.md retains source-backed MFA recovery subject, exact prompts, original/rewrite/baseline, claim mapping, freeze and negative/reopen evidence. Original73, safe guarded quality rewrite75, simple baseline75 under the same rubric/context. Selected candidate remains null, visual deferred. The known engine HOLD was retained; complete-comparison generated only the baseline and its assessment, never regenerated the engine. Aggregate10 native executions/30 physical starts/73.838 CLI seconds/API0; subscription dollar cost unknown.
+
+GO: local machine repairs and source-consumption/recovery checks. HOLD: factual/voice/insight/usefulness human verdict, measured editing effort, calibrated reference corpus, first-six/blinded pilot/corpus/visual gates. No new keep, approved voice example, engagement claim or publication permission inferred. Existing weak trials remain visible. Human review must examine actual retained text; no score-chasing regeneration. Candidate remains unmerged and runtime candidate-only; local tests do not establish a release. Latest phase4 receipt owns exact source/CI/main/PR/runtime observations.

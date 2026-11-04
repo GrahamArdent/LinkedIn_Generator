@@ -1,7 +1,7 @@
 # LinkedIn Codex Trial Game Plan — evidence-first continuation
 
 **Goal:** Produce useful, grounded LinkedIn writing with the existing Python engine and Codex subscription, then prove whether its extra steps help.
-**Status:** Connection qualified; writing acceptance HOLD. The evidence/writer/scorer repairs below are PLANNED, not implemented.
+**Status:** Connection qualified; writing acceptance HOLD. Phases1–3 are implemented and fixture-qualified; one substantive native trial completed. Phase4 human review and corpus expansion remain open; scorer/human calibration is missing.
 **Authority:** CURRENT_WORK_PACKET.md is the active pointer. This is a P2 subplan within the existing P0–P7 roadmap, not a competing master plan. Preserve all26 AT objectives and11 E2E scenarios.
 **Execution:** Inline, one phase at a time; test-first code corrections. Reuse existing code/results. Every meaningful phase ends with the checkpoint below.
 
@@ -60,15 +60,16 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 ## Phase 4 — one substantive trial, then controlled expansion
 
-- [ ] Freeze the Phase1 evidence brief and Phase2/3 prompt/config hashes. Declare one-subject budget before launch: <=12 model executions, <=900 cumulative CLI seconds, no API fallback or automatic retries.
-- [ ] Generate one engine result and one same-model/simple-prompt comparison with equal facts, audience, constraints and voice. Score both if showing numerical comparison.
-- [ ] Retain exact source-to-request-to-prompt-to-claim links, actual stage changes, A/B, selected hash, critiques, costs/usage where observable, and visual plan/deferral.
-- [ ] Test an omitted critical source through the actual preflight consumer; it must block/qualify the unsupported claim without launching an unauthorized replacement. Prompt inclusion alone is not causal influence proof.
+- [x] Freeze the Phase1 evidence brief and Phase2/3 prompt/config hashes. Declare one-subject budget before launch: <=12 model executions, <=900 cumulative CLI seconds, no API fallback or automatic retries.
+- [x] Generate one engine result and one same-model/simple-prompt comparison with equal facts, audience, constraints and voice. Score both if showing numerical comparison.
+- [x] Retain exact source-to-request-to-prompt-to-claim links, actual stage changes, A/B, selected hash, critiques, costs/usage where observable, and visual plan/deferral.
+- [x] Test an omitted critical source through the actual preflight consumer; it must block/qualify the unsupported claim without launching an unauthorized replacement. Prompt inclusion alone is not causal influence proof.
 - [ ] Present readable outputs and get exact-hash human feedback: factual accuracy, voice, insight/usefulness, keep/light/structural/reject, actual edit effort and comparison preference. Clearly distinguish transparent diagnosis from a blinded pilot.
 - [ ] After the first substantive human disposition, expand in small admitted batches toward six eligible distinct subjects, maximum8 subject trials. Preserve earlier weak results and denominators; do not cherry-pick them away.
 
 **Pass:** actual phase-specific AT/E2E evidence supports P2 disposition. Keep existing >=4/6 keep/light, >=2 native-provider human-accepted subjects, source/voice/visual/originality requirements and blinded >=4/6 preference gate. Ties are not wins; insufficient subjects means NOT_YET_EVALUABLE.
 **Maps to:** AT04/05/14/19–26 and E2E06/10/11. P3 production and rendering remain gated.
+
 
 ## Required checkpoint after every meaningful phase
 
@@ -80,4 +81,4 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
 
-**Next:** Phase4 one substantive bounded comparison. See latest packet and phase receipt.
+**Next:** Phase4 exact-text human disposition. No further generation to chase90. Resume eligible expansion only after that decision; P2 product acceptance remains HOLD.

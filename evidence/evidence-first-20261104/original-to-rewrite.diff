@@ -1,0 +1,19 @@
+--- original
++++ one-quality-rewrite
+@@ -1,13 +1,9 @@
+-MFA is enabled. How does account recovery work?
++MFA is enabled. Who can reset it?
+ 
+ The joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.
+ 
+-Recovery matters because it determines who gets access when the usual proof is unavailable.
++The distinction matters: convincing someone to reset access is different from defeating the technology protecting it. The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations.
+ 
+-The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.
++I’d include one question in an MFA review: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?
+ 
+-My takeaway: an MFA review should examine account recovery as carefully as normal sign-in.
+-
+-I’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?
+-
+-Enabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection.+That’s a decision about who gets trusted as the account owner. It deserves the same scrutiny as sign-in.

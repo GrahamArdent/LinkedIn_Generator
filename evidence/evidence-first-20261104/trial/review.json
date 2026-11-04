@@ -1,0 +1,107 @@
+{
+  "candidates": {
+    "A": {
+      "body": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nI’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection.",
+      "content_sha256": "a3454852cdbe14fc96e9370d5d94ff14df4f3e6aba1cf3f029978ed1b95c916e"
+    },
+    "B": {
+      "body": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe mechanism matters: attackers persuaded someone to change access through recovery. They did not need to break the cryptography.\n\nAnd the same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation still belongs in the conversation.\n\nMy takeaway: an MFA review should follow the account through recovery, too. Checking the sign-in screen alone can miss how someone gets trusted again when their normal proof is unavailable.\n\nFor IT and business leaders, I’d bring one question to the review:\n\nWho can authorize a recovery reset, what independent evidence must they require, and what happens when the person requesting it cannot provide the normal proof?\n\nThe answer tells you something an “MFA enabled” checkbox cannot.\n\n#Cybersecurity #IdentitySecurity #MFA",
+      "content_sha256": "4c34af21eb7063aa06dbbb9f51115cb2a2888c377d1db6b2279cedaa2c8fdb69"
+    }
+  },
+  "human_decision": null,
+  "evidence_bundle_sha256": "5766da7c142f068a063e9b558b385b3a1ab45b2244bdc3b85ae04d8ec765de3f",
+  "evidence_bundle": {
+    "schema_version": "1",
+    "request_sha256": "5b6321cdc48333cbbba580376a8f93e80397a2311a93f332afd8b81e44569966",
+    "checked_at": "2026-11-04",
+    "reader": "Canadian IT leaders and business leaders responsible for identity security",
+    "central_claim_id": "C1",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "Scattered Spider joint advisory",
+        "publisher": "FBI, CISA, RCMP, ASD ACSC, AFP, CCCS, NCSC-UK; co-author ASD official publication",
+        "url": "https://www.cyber.gov.au/advisory/scattered-spider",
+        "published": "2023-11-16",
+        "revised": "2025-07-29",
+        "checked_at": "2026-11-04",
+        "status": "usable",
+        "passages": [
+          {
+            "locator": "Recent Scattered Spider TTPs / initial access",
+            "excerpt": "reset passwords and/or transfer MFA tokens"
+          },
+          {
+            "locator": "Mitigations",
+            "excerpt": "Implement FIDO/WebAuthn authentication or Public Key Infrastructure (PKI)-based MFA."
+          }
+        ],
+        "limitations": "Historical documented tactics, not a 2026 prevalence estimate or an incident at Graham/Ardent/a client. Recovery compromise is distinct from breaking cryptography. No loss, frequency, guarantee or product claim is supported.",
+        "retrieval": "Opened official source through web research; passages and surrounding context read."
+      },
+      {
+        "source_id": "S2",
+        "title": "Joint cyber security advisory on Scattered Spider",
+        "publisher": "Canadian Centre for Cyber Security",
+        "url": "https://www.cyber.gc.ca/en/news-events/joint-cyber-security-advisory-scattered-spider",
+        "revised": "2025-07-29",
+        "checked_at": "2026-11-04",
+        "status": "usable",
+        "passages": [
+          {
+            "locator": "recommendations paragraph",
+            "excerpt": "regularly test their cyber security business processes"
+          }
+        ],
+        "limitations": "Co-author announcement of the same advisory, not an independent second incident or prevalence study. Recommendation scope is the addressed critical infrastructure/commercial facilities organizations.",
+        "retrieval": "Opened official source through web research."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "kind": "fact",
+        "text": "The July 29, 2025 joint Scattered Spider advisory describes attackers gathering password-reset information through calls, then persuading IT help-desk personnel to reset passwords and/or transfer MFA tokens, enabling account takeovers in SSO environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "kind": "fact",
+        "text": "The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. The recovery-reset tactic is not evidence that all MFA is useless.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "kind": "fact",
+        "text": "The Canadian Centre for Cyber Security urges organizations covered by the Scattered Spider advisory to regularly test their cyber security business processes, including those used by their service providers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim_id": "I1",
+        "kind": "inference",
+        "text": "A review limited to the normal sign-in screen can miss how identity is re-established during account recovery.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "claim_id": "O1",
+        "kind": "opinion",
+        "text": "Ask who can authorize a recovery reset, what independent evidence they require, and what happens when the normal proof is unavailable.",
+        "source_ids": []
+      }
+    ],
+    "counterevidence": "The same advisory recommends phishing-resistant MFA. Do not write MFA is pointless, all recovery processes fail, or a checklist guarantees safety.",
+    "calibration": "No exact-text approved/rejected corpus established. Existing preference votes are not such a corpus.",
+    "human_approval": null
+  },
+  "score_baseline": true
+}

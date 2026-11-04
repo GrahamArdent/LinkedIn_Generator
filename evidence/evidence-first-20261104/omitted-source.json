@@ -1,0 +1,53 @@
+{
+  "state": "completed",
+  "assessment": {
+    "score": 64,
+    "decision": "needs_more_evidence",
+    "goal": "authority",
+    "earned_question": false,
+    "reason": "The recovery-path framing is professionally useful, but the referenced advisory is missing, so evidence is needed before drafting.",
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 5,
+      "concrete_evidence": 0,
+      "distinctiveness": 1,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 2,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_fit": 4
+    },
+    "strongest_evidence_title": "",
+    "strongest_evidence_fact": "",
+    "missing_evidence_question": "Which advisory documents the help-desk recovery-reset tactic, and what specific passage describes it and recommends phishing-resistant MFA?",
+    "warnings": []
+  },
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":4,\"professional_relevance\":5,\"concrete_evidence\":0,\"distinctiveness\":1,\"novel_insight\":3,\"practical_usefulness\":4,\"emotional_tension\":2,\"conversation_potential\":4,\"shareability\":3,\"voice_fit\":4,\"strongest_evidence_index\":-1,\"missing_evidence_question\":\"Which advisory documents the help-desk recovery-reset tactic, and what specific passage describes it and recommends phishing-resistant MFA?\",\"reason\":\"The recovery-path framing is professionally useful, but the referenced advisory is missing, so evidence is needed before drafting.\"}"
+      },
+      "attempt_id": "attempt-b3b9b219a4bb4ce98ef844926a7804d2",
+      "result_sha256": "a0a1b709d95207b8da479dc1cc98156b82181e098778f1d2afbfd264c8e56511",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9568,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 140,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "expected": "needs_more_evidence or skip; no concrete anchor",
+  "observed_pass": true,
+  "new_draft_launches": 0
+}

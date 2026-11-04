@@ -1,0 +1,32 @@
+{
+  "before": 10,
+  "after": 10,
+  "new_model_executions": 0,
+  "checks": [
+    {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "show",
+        "--out",
+        "evidence/evidence-first-20261104/trial"
+      ],
+      "exit_code": 0,
+      "output": "{\"state\": \"completed\", \"engine_gate\": \"HOLD_NO_QUALIFIED_CANDIDATE\", \"mode\": \"native_codex\", \"review\": \"evidence/evidence-first-20261104/trial/review.md\"}\n"
+    },
+    {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "generate",
+        "--out",
+        "evidence/evidence-first-20261104/trial",
+        "--request",
+        "evidence/evidence-first-20261104/request.json",
+        "--evidence-bundle",
+        "evidence/evidence-first-20261104/source-bundle.json",
+        "--score-baseline"
+      ],
+      "exit_code": 0,
+      "output": "{\"state\": \"completed\", \"engine_gate\": \"HOLD_NO_QUALIFIED_CANDIDATE\", \"mode\": \"native_codex\", \"review\": \"evidence/evidence-first-20261104/trial/review.md\"}\n"
+    }
+  ]
+}
