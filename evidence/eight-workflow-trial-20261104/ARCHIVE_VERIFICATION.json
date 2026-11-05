@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "archive_commit": "12d3a54efe265d9b2c4a4fef443b1566cc6810bb",
+  "archive_sha256": "88d127b08caaca2a48a078e33bfb7f7fc6b3fa872d1e34f6faab4d8ed4f329c4",
+  "verifier": {
+    "status": "PASS",
+    "manifest_files": 597,
+    "native_attempts": 55,
+    "unique_threads": 55,
+    "stage_raw_receipts_verified": 55,
+    "routes": 8,
+    "model_calls_from_verifier": 0
+  },
+  "source_commit": "9001c2f855261f4dbeab70ce5018d8d930683d7a",
+  "local_suite": "209 passed; local-pytest.log",
+  "model_calls_during_archive_verification": 0,
+  "integration": "branch only; no merge, hosted CI, installation promotion, deployment or publication"
+}
