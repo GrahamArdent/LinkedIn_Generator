@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "archive_commit": "aba55c7f13b46b5d70e5dc00ff4ed54f43e0df96",
+  "archive_sha256": "aa276fcd3fe09689d7c94a937f104da96efa1a32319e55a45a118701e09b9271",
+  "verifier": {
+    "status": "PASS",
+    "native_attempts": 6,
+    "unique_threads": 6,
+    "exact_raw_receipts": 6,
+    "writer_non_narrative_context_equal": true,
+    "selected_narrative_preserved": true,
+    "initial_hold_retained": true,
+    "model_calls_from_verifier": 0
+  },
+  "tested_code_commit": "62654ffbc44ae60e08cfed7bfc09c535184e65ae",
+  "model_calls_during_verification": 0,
+  "local_suite": "221 PASS; full-pytest.log",
+  "scope": "clean git archive payload/native receipts/current tested code hashes; not semantic quality approval"
+}
