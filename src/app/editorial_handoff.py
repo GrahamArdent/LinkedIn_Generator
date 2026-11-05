@@ -84,7 +84,7 @@ def plan_writing(handoff, voice, sources, client):
     system = (
         "Plan delivery only. Return JSON with exactly beats and attribution. "
         "No post, title, hook sentences, body, editorial copy or finished paragraphs. "
-        "Use short planning fragments, not publishable prose. "
+        "Use short planning fragments, not publishable prose. Target 80-160 characters per delivery; 240 is a hard maximum. Do not retell source facts in delivery: reference their claim IDs and describe placement or reasoning instead. "
         "The supplied meaning and selected narrative are frozen; do not rewrite or return them. "
         "Annotate EVERY selected beat in its supplied order. Each beats entry has exactly "
         "index (one-based integer) and delivery (at most 240 characters). "
