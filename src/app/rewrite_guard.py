@@ -6,7 +6,7 @@ from typing import Any
 from .judge import judge_report
 
 URL_RE = re.compile(r"https?://\S+")
-NUMBER_RE = re.compile(r"(?<!\w)\d[\d,.]*%?(?!\w)")
+NUMBER_RE = re.compile(r"(?<!\w)\d(?:[\d,.]*\d)?%?(?!\w)")
 QUOTE_RE = re.compile(r"[\"“]([^\"”]{2,})[\"”]")
 
 

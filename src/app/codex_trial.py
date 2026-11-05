@@ -149,6 +149,11 @@ def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=Fals
                            "voice":baseline_voice,
                            "approved_voice_examples":[x.model_dump() for x in request.voice_examples],
                            "format_rules":load_yaml(str(ROOT/"config/prompt_kit.config.yaml"))}
+            if request.editorial_handoff is not None:
+                baseline_data["editorial_handoff"] = request.editorial_handoff
+                baseline_data.pop("objective", None)
+                baseline_system += (" Follow editorial_handoff.meaning and its selected narrative form, beats, symbol mapping and boundary. "
+                                    "Voice governs expression within that narrative, never replaces it. Imagery is illustration, not evidence.")
             baseline_user=json.dumps(baseline_data,ensure_ascii=False)
             baseline=client.call(baseline_system,baseline_user)["text"]
             record["baseline"]={"body":baseline,"content_sha256":digest(baseline),

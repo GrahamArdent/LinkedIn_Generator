@@ -162,6 +162,16 @@ class LinkedInContentRequest(BaseModel):
             return None
         from .writing_voice import resolve_writing_voice
         return resolve_writing_voice(value)["id"]
+    editorial_handoff: dict[str, Any] | None = None
+
+    @field_validator("editorial_handoff")
+    @classmethod
+    def validate_editorial_handoff(cls, value):
+        if value is None:
+            return None
+        from .editorial_handoff import validate_handoff
+        return validate_handoff(value)
+
     audience: str = Field(default="professional network", min_length=1)
     objective: str = Field(
         default="turn real professional activity into useful LinkedIn visibility",

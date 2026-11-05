@@ -68,6 +68,8 @@ def generate_content(
 
     evidence = [item.model_dump() for item in request.evidence]
     voice_selection = {"writing_voice_id": request.writing_voice_id} if request.writing_voice_id is not None else {}
+    if request.editorial_handoff is not None:
+        voice_selection["editorial_handoff"] = request.editorial_handoff
     payload = generator(
         **voice_selection,
         topic=request.topic,
