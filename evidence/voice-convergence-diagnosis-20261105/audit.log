@@ -1,0 +1,41 @@
+{
+  "audit": "offline; no model launch",
+  "unique_native_threads": 9,
+  "unique_native_request_hashes": 9,
+  "unique_body_hashes": 9,
+  "opening_prefix_shared_count": 9,
+  "exact_opening_counts": {
+    "An approval screen can look reassuring. Money needs evidence.": 1,
+    "An approval screen tells you less than you think.": 1,
+    "An approval screen can reassure without proving enough.": 1,
+    "An approval screen can answer the wrong question.": 1,
+    "An approval screen is no place to stop checking.": 1,
+    "An approval screen should earn confidence, not carry it alone.": 1,
+    "An approval screen is a starting point for verification.": 1,
+    "An approval screen is only part of the evidence.": 2
+  },
+  "exact_factual_paragraph_counts": {
+    "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks.": 7,
+    "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its earlier advisory describes stolen credentials enabling direct payment requests that bypass application checks.": 1,
+    "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its earlier advisory describes direct payment calls using stolen credentials to bypass application checks.": 1
+  },
+  "new_model_calls": 0
+}
+PROMPT METRICS {
+  "style": "relatable_provocateur",
+  "attempt_id": "attempt-aa79c1e74ef94cbb90eba59676943e2e",
+  "thread_id": "01a1a947-f4fc-7b51-85a9-ed64a3bfdf1d",
+  "native_request_sha256": "20fdcf4ae175da4368fb7a0130f965b878df0d2b0d904575a48f8b4081ba7572",
+  "body_sha256": "ae536cbbbeaaa50dfa3a76b2b2f92da75dd67a3c621e07f00cbadba0a63a9275",
+  "prompt_chars": 20636,
+  "selected_traits_chars": 545,
+  "inherited_default_style_chars": 5888,
+  "inherited_default_style_blocks": true,
+  "objective_semantic_copies": 4,
+  "approval_screen_mentions_in_user": 5,
+  "opening": "An approval screen can look reassuring. Money needs evidence.",
+  "factual_paragraph": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks.",
+  "cache_hit": false,
+  "boundary_checks": "PASS",
+  "mutation_controls": "PASS"
+}
