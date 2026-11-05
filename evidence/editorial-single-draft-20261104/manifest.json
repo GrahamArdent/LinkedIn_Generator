@@ -1,0 +1,164 @@
+{
+  "source_commit": "4b261aea8c56940d4ce005a46613a90804686bb1",
+  "created_at": "2026-11-05T01:58:58.486998+00:00",
+  "binding": {
+    "original_sha256": "b8a89caf7e0b048152a02cc644677ac07b14c07c68e009372daddc4eb4dd8a1e",
+    "request": {
+      "request_id": "lig-effective-voice-comparison-20261104",
+      "origin": "manual",
+      "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+      "persona_key": "graham",
+      "audience": "Business and IT leaders responsible for payment systems",
+      "objective": "An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.",
+      "author_pov": "individual",
+      "content_goal": "authority",
+      "opportunity_gate": false,
+      "publish_quality_gate": false,
+      "visual_asset_plan": false,
+      "services": [],
+      "targets": [
+        "Business leaders",
+        "IT leaders"
+      ],
+      "hashtags": [
+        "#AI",
+        "#PaymentSecurity",
+        "#CyberRisk"
+      ],
+      "voice_examples": [],
+      "evidence": [
+        {
+          "title": "S1 / C1: CERT-In update, November4,2026",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+          "fact": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces."
+        },
+        {
+          "title": "S2 / C2: CERT-In CIAD-2026-0046, October9,2026",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+          "fact": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records."
+        }
+      ],
+      "writing_voice_id": "technical_explainer"
+    },
+    "source_bundle": {
+      "schema_version": "1",
+      "central_claim_id": "C1",
+      "sources": [
+        {
+          "source_id": "S1",
+          "title": "Escalation of AI-Driven Attacks on BFSI Entities",
+          "publisher": "CERT-In / CSIRT-Fin, Government of India",
+          "published": "2026-11-04",
+          "checked_at": "2026-11-04",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+          "status": "usable",
+          "passages": [
+            {
+              "locator": "November4 current activity / overview",
+              "excerpt": "strikes by invoking the victim's own payment and disbursement APIs"
+            }
+          ],
+          "limitations": "Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses."
+        },
+        {
+          "source_id": "S2",
+          "title": "CIAD-2026-0046",
+          "publisher": "CERT-In / CSIRT-Fin",
+          "published": "2026-10-09",
+          "checked_at": "2026-11-04",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+          "status": "usable",
+          "passages": [
+            {
+              "locator": "Key TTPs Observed",
+              "excerpt": "Bypassing of application-level checks"
+            },
+            {
+              "locator": "Recommended Actions",
+              "excerpt": "Validate every payout against sanctioned/approved records"
+            }
+          ],
+          "limitations": "Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "C1",
+          "kind": "fact",
+          "text": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "claim_id": "C2",
+          "kind": "fact",
+          "text": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        {
+          "claim_id": "I1",
+          "kind": "inference",
+          "text": "An approval screen alone does not establish that authorization is enforced at the point of transfer.",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        {
+          "claim_id": "O1",
+          "kind": "opinion",
+          "text": "Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.",
+          "source_ids": []
+        }
+      ],
+      "human_approval": null,
+      "request_sha256": "818b01700fbfb4354b8d6ef7c3bcfa281b2fe49ddd7c0f7242f60c399130c55c"
+    },
+    "writing_voice": {
+      "id": "technical_explainer",
+      "version": 3,
+      "label": "Technical Explainer",
+      "style_traits": {
+        "tone": [
+          "precise",
+          "analytical",
+          "restrained"
+        ],
+        "avg_sentence_length": 22.0,
+        "rhythm": "Use developed causal sentences when needed, balanced with shorter clarifying statements. Each paragraph should add a distinct mechanism, condition or implication.",
+        "reasoning": "Explain how the supplied evidence supports the proposed explanation. Identify relevant dependencies and conditions, distinguish observation from inference, and define necessary technical terms in ordinary language.",
+        "imagery": "Prefer a clear account of the mechanism over metaphor, motivation or emotional emphasis.",
+        "preferred_structure": "Organize around the system dependency or technical question. Connect the supplied evidence to that mechanism, then state the verification implication and limits. Do not impose a hook-news-lesson sequence."
+      },
+      "content_sha256": "eb5bdf5dfd94b54acba5b5559c26710c062281b483c35dc086d545714097b008"
+    },
+    "system": "You are making one explicitly requested editorial diagnostic revision of a retained LinkedIn draft. No publish-quality score or human approval has been assigned.\nPreserve the original post as a separate review candidate; your job is only to produce one improved alternative.\nAddress the largest fixable weakness first, without changing supported factual meaning. If the defect is missing evidence, do not manufacture an example or consequence to repair it. Preserve useful qualifiers.\nApproved examples may supply compatible details only when a writing_voice is selected; they cannot override its tone, rhythm or structure.\nWhen Persona Profile contains writing_voice, the selected Writing Voice governs tone, rhythm and rhetorical structure over default persona/Voice Bible/Spoken Voice style traits. Use only its supplied craft traits; never imitate a named author or borrow identity, audience, biography or anecdotes. Keep factual, POV and safety boundaries. Treat structure and numeric rhythm targets as guidance, not rigid quotas.\nUse Persona Profile and Approved Voice Examples only for wording, cadence, reasoning style, and voice. They are not factual evidence or biography.\nUse Allowed Sources as the only factual evidence. You may faithfully paraphrase existing supported facts, but do not add new factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or anecdotes.\nImprove the actual limiting dimensions rather than merely making the post more polished. Prefer outsider clarity, concrete grounded detail, a stronger non-obvious insight, practical usefulness, earned tension, and natural voice.\nDo not manufacture controversy, engagement bait, a CTA, or a question just to raise engagement potential.\nDo not expose internal project vocabulary when plain language will work.\nReturn only the rewritten post.\n",
+    "user": "Content Goal: authority\nPrimary Fix: Remove redundant thesis restatements so each paragraph adds evidence, explanation, a concrete proposed verification task, or a necessary qualification. Preserve both factual anchors and the payment-control argument. Make the action specific: frame checking the approved recipient and amount, and what prevents a changed transfer, as a proposed verification question, never as an observed test or universal failure. Preserve Indian-campaign scope and source limitations; omit a defensive list of outcomes the post never claims. Do not invent an AI-specific mechanism, new event or outcome. Keep the existing140-180-word target without padding with the same thesis.\nPublish Quality Report: {\"score\": null, \"dimensions\": {}, \"gaps\": [\"Remove redundant thesis restatements so each paragraph adds evidence, explanation, a concrete proposed verification task, or a necessary qualification. Preserve both factual anchors and the payment-control argument. Make the action specific: frame checking the approved recipient and amount, and what prevents a changed transfer, as a proposed verification question, never as an observed test or universal failure. Preserve Indian-campaign scope and source limitations; omit a defensive list of outcomes the post never claims. Do not invent an AI-specific mechanism, new event or outcome. Keep the existing140-180-word target without padding with the same thesis.\"], \"rationale\": \"Assistant paragraph audit of the retained original; not a model score or owner verdict.\", \"warnings\": [\"EDITORIAL_DIAGNOSTIC_NOT_HUMAN_ACCEPTANCE\"]}\nPersona Profile: {\"donts\": [\"clichés\", \"em_dashes\"], \"emoji_max\": 3, \"bullet_char\": \"🔹\", \"active_author_pov\": \"individual\", \"writing_voice\": {\"id\": \"technical_explainer\", \"version\": 3, \"label\": \"Technical Explainer\", \"style_traits\": {\"tone\": [\"precise\", \"analytical\", \"restrained\"], \"avg_sentence_length\": 22.0, \"rhythm\": \"Use developed causal sentences when needed, balanced with shorter clarifying statements. Each paragraph should add a distinct mechanism, condition or implication.\", \"reasoning\": \"Explain how the supplied evidence supports the proposed explanation. Identify relevant dependencies and conditions, distinguish observation from inference, and define necessary technical terms in ordinary language.\", \"imagery\": \"Prefer a clear account of the mechanism over metaphor, motivation or emotional emphasis.\", \"preferred_structure\": \"Organize around the system dependency or technical question. Connect the supplied evidence to that mechanism, then state the verification implication and limits. Do not impose a hook-news-lesson sequence.\"}, \"content_sha256\": \"eb5bdf5dfd94b54acba5b5559c26710c062281b483c35dc086d545714097b008\"}, \"semantic_quality\": {\"default_author_pov\": \"individual\", \"internal_terms_needing_translation\": [\"mode c\", \"stage 0\", \"execution spine\", \"canonical intake\", \"canonical authority\", \"regression coverage\", \"work packet\", \"kill signal\"], \"generic_phrases\": [\"in today's fast-paced world\", \"game changer\", \"the future is here\", \"unlock the power\", \"revolutionize\", \"here's the thing\", \"in the ever-evolving landscape\", \"now more than ever\", \"let that sink in\"]}, \"active_content_goal\": \"authority\", \"earned_question\": false, \"editorial_context\": {\"objective\": \"An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.\", \"topic\": \"AI-assisted payment attacks: verify authorization where money actually moves\", \"plan\": {\"reader\": \"Business and IT leaders responsible for payment systems\", \"factual_anchor\": {\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}}, \"approved_voice_examples\": [], \"source_bundle\": {\"schema_version\": \"1\", \"central_claim_id\": \"C1\", \"sources\": [{\"source_id\": \"S1\", \"title\": \"Escalation of AI-Driven Attacks on BFSI Entities\", \"publisher\": \"CERT-In / CSIRT-Fin, Government of India\", \"published\": \"2026-11-04\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03\", \"status\": \"usable\", \"passages\": [{\"locator\": \"November4 current activity / overview\", \"excerpt\": \"strikes by invoking the victim's own payment and disbursement APIs\"}], \"limitations\": \"Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses.\"}, {\"source_id\": \"S2\", \"title\": \"CIAD-2026-0046\", \"publisher\": \"CERT-In / CSIRT-Fin\", \"published\": \"2026-10-09\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02\", \"status\": \"usable\", \"passages\": [{\"locator\": \"Key TTPs Observed\", \"excerpt\": \"Bypassing of application-level checks\"}, {\"locator\": \"Recommended Actions\", \"excerpt\": \"Validate every payout against sanctioned/approved records\"}], \"limitations\": \"Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness.\"}], \"claims\": [{\"claim_id\": \"C1\", \"kind\": \"fact\", \"text\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\", \"source_ids\": [\"S1\"]}, {\"claim_id\": \"C2\", \"kind\": \"fact\", \"text\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\", \"source_ids\": [\"S2\"]}, {\"claim_id\": \"I1\", \"kind\": \"inference\", \"text\": \"An approval screen alone does not establish that authorization is enforced at the point of transfer.\", \"source_ids\": [\"S1\", \"S2\"]}, {\"claim_id\": \"O1\", \"kind\": \"opinion\", \"text\": \"Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.\", \"source_ids\": []}], \"human_approval\": null}}}\nApproved Voice Examples (style evidence only): []\nAllowed Sources: [{\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}, {\"title\": \"S2 / C2: CERT-In CIAD-2026-0046, October9,2026\", \"fact\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\"}]\nOriginal Post: A payment approval record establishes what was authorized. Whether that authorization governs the final transfer depends on the checks enforced by the system that moves the money.\n\nCERT-In’s November 4, 2026 update reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its earlier advisory, CIAD-2026-0046, describes stolen credentials enabling direct payment calls that bypass application checks. It recommends binding transaction stages together and validating every payout against approved records.\n\nThe implication is that an approval screen alone cannot establish that authorization holds at execution. If a direct payment request can bypass the approval checks, a recorded decision may offer no constraint on that transfer.\n\nI would ask leaders to trace one approved payment through to execution: identify what permission the final transfer accepts, and verify how it checks the payment against the approved record.\n\nThis is a verification priority, not evidence that every payment system has this weakness. The reporting concerns Indian financial entities; it does not establish attack frequency, losses or universal AI autonomy.\n---\nProduce exactly one improved alternative for human review. Do not explain the changes.\n",
+    "assessment": {
+      "score": null,
+      "dimensions": {},
+      "gaps": [
+        "Remove redundant thesis restatements so each paragraph adds evidence, explanation, a concrete proposed verification task, or a necessary qualification. Preserve both factual anchors and the payment-control argument. Make the action specific: frame checking the approved recipient and amount, and what prevents a changed transfer, as a proposed verification question, never as an observed test or universal failure. Preserve Indian-campaign scope and source limitations; omit a defensive list of outcomes the post never claims. Do not invent an AI-specific mechanism, new event or outcome. Keep the existing140-180-word target without padding with the same thesis."
+      ],
+      "rationale": "Assistant paragraph audit of the retained original; not a model score or owner verdict.",
+      "warnings": [
+        "EDITORIAL_DIAGNOSTIC_NOT_HUMAN_ACCEPTANCE"
+      ]
+    },
+    "rules": {
+      "emoji_max": 3,
+      "allow_em_dash": false,
+      "forbidden_phrases": [
+        "what security flaws",
+        "how exposed are you",
+        "share your vulnerabilities",
+        "post your gaps",
+        "are you vulnerable"
+      ]
+    },
+    "scope": "explicit one-revision editorial diagnostic, not automatic score-triggered engine run"
+  }
+}

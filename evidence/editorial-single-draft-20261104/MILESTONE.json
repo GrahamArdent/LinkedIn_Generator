@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-11-05T02:00:28.041225+00:00",
+  "tested_source_commit": "4b261aea8c56940d4ce005a46613a90804686bb1",
+  "status": {
+    "topic_independent_style": "GO",
+    "local_tests": "GO",
+    "native_execution_and_guard": "GO",
+    "editorial_correction": "PARTIAL_HOLD",
+    "human_approval": "HOLD",
+    "nine_style_expansion": "HOLD",
+    "P2_acceptance": "HOLD"
+  },
+  "tests": {
+    "red": "2 unrelated-topic actual-consumer failures before fix",
+    "green": "209 passed in2.05s",
+    "exit": 0,
+    "config_change": "technical_explainer version2->3 reasoning only; other styles unchanged; version assertions intentionally advanced"
+  },
+  "expected_observed": {
+    "model_calls": 1,
+    "physical_starts": 3,
+    "cumulative_cli_seconds": 11.587320920079947,
+    "api_spend": 0,
+    "subscription_cost": "unknown",
+    "attempt_id": "attempt-5e6ea68b1b724b9baca1dbf11e553629",
+    "native_request_sha256": "f7139135da603fb90583eef371a775faf6449af29d6822b972e011515cf2ff00",
+    "guard_accepted": true,
+    "original_words_guard": 169,
+    "revision_words_guard": 164,
+    "max_revision_sentence_words": 46,
+    "source_summary_paragraph_words": 59,
+    "reopen_exit": 0,
+    "reopen_added_calls": 0,
+    "native_prompt_and_output_match": true,
+    "tested_hashes_unchanged": true
+  },
+  "human_decision": null,
+  "publish_quality_score": null,
+  "selected_candidate": null,
+  "acceptance_definitions_unchanged": true,
+  "integration": {
+    "PR24": "draft/open/unmerged",
+    "main": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+    "runtime": "candidate checkout, no install promotion",
+    "hosted_CI": "not run"
+  },
+  "next_eligible_action": "Review retained single revision/diagnosis; do not auto-rewrite, expand voices or claim a quality win. A fresh same-input simpler-LLM control is the recommended next bounded experiment, only with separately declared admission."
+}
