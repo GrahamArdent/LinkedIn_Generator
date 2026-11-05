@@ -1,0 +1,42 @@
+{
+  "scope": "Graham only; no Ardent persona/calendar/services in current work. Existing historical implementation is retained, not deleted.",
+  "author": "Graham Hill, individual author",
+  "topic_scope": "Varied genuine interests; no imposed industry niche or narrow list of approved topics. Technical subjects may be discussed from a broad perspective with supported claims.",
+  "voice": "Selected writing style is independent of author identity and subject; can change rhythm, structure, emphasis and manner of reacting while factual limits remain.",
+  "credential_boundary": "Do not invent technical expertise, professional authority, firsthand incidents, credentials, anecdotes or measured results. Use attribution and proportionate statements, without mechanically inserting credential disclaimers.",
+  "source_policy": "Research supports and bounds the idea; it does not force an incident report or technical lesson. Preserve counterevidence/qualifications.",
+  "historical_security_pair": {
+    "request_id": "installed-essential-security-20261105",
+    "owner_feedback": "the subject matter for this is horrible ... this is not a good example for what I would want to use for any LinkedIn posts",
+    "disposition": "Rejected as a suitable subject/example for Graham. No invented per-draft prose, factual, voice or editing-effort scores; historical first-six eligibility remains unresolved."
+  },
+  "chat_reference": {
+    "writing_block_id": "58319",
+    "file": "CHAT_REFERENCE.md",
+    "utf8_sha256": "dca7502b3007e1f7cd8f7be62243b537c9d5c5ec93249c33e38c4fef953dc4d8",
+    "authoring_mode": "assistant chat draft, not native installed generation",
+    "owner_feedback": "that sounds awesome ... I love what you did there",
+    "interpretation": "Explicit positive writing/voice reference; not publication approval or automatic admission to active voice examples."
+  },
+  "calendar": {
+    "source": "GRAHAM_CALENDAR_RECOVERY.json",
+    "rows": 48,
+    "interpretation": "Historical idea bank; expired dates; broadening permitted, no automatic schedule activation."
+  },
+  "comparison": {
+    "selected_styles": [
+      "concise_challenger",
+      "reflective_leader"
+    ],
+    "scope": "Two raw installed drafting-stage outputs with equal non-style context; no full-engine/baseline/human acceptance claim.",
+    "reason": "Contrast economical questioning with measured exploration without implying expertise."
+  },
+  "permissions": "Continued operational merging/install/testing authority retained; human editorial, rendered-visual and publishing gates remain.",
+  "acceptance": {
+    "AT": 26,
+    "E2E": 11,
+    "historical_results": "preserved, not overwritten or relabeled",
+    "six_subject_gate": "not complete"
+  },
+  "next": "Review the two exact native versions for authentic voice, useful differentiation, factual/credential restraint and edit effort. Broaden calendar ideas afterward using existing generation path, with any necessary implementation separately qualified."
+}

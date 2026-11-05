@@ -1,0 +1,203 @@
+{
+  "source_commit": "a87c113b7799037ccb5dfd631de5179bcf32496c",
+  "archive": "LIGEN2.zip",
+  "archive_sha256": "2909c322e15852e32266ad0ffb66af5aaed968da709d790f8fdcb5f4e39d3280",
+  "member": "data/Graham_120Day_Final.csv",
+  "member_sha256": "51d5f5fda3af33f80a4352158d35401b8b5a866922fc2c5428811a3af27ef364",
+  "rows": [
+    {
+      "Date": "2025-09-29",
+      "Topic": "AI governance failures"
+    },
+    {
+      "Date": "2025-10-01",
+      "Topic": "Quantum cybersecurity readiness"
+    },
+    {
+      "Date": "2025-10-03",
+      "Topic": "Cloud sprawl and resilience gaps"
+    },
+    {
+      "Date": "2025-10-06",
+      "Topic": "Identity fatigue undermining Zero Trust"
+    },
+    {
+      "Date": "2025-10-08",
+      "Topic": "Supply chain domino breaches"
+    },
+    {
+      "Date": "2025-10-10",
+      "Topic": "Psychology of insider threats"
+    },
+    {
+      "Date": "2025-10-13",
+      "Topic": "Future of ransomware as business disruption"
+    },
+    {
+      "Date": "2025-10-15",
+      "Topic": "Board accountability for AI misuse"
+    },
+    {
+      "Date": "2025-10-17",
+      "Topic": "Cross-border data sovereignty battles"
+    },
+    {
+      "Date": "2025-10-20",
+      "Topic": "Phishing fatigue and behavioral economics"
+    },
+    {
+      "Date": "2025-10-22",
+      "Topic": "OT/IoT attack vectors"
+    },
+    {
+      "Date": "2025-10-24",
+      "Topic": "AI-powered fraud and deepfakes"
+    },
+    {
+      "Date": "2025-10-27",
+      "Topic": "Third-party SaaS risk escalation"
+    },
+    {
+      "Date": "2025-10-29",
+      "Topic": "Regulators targeting cloud monopolies"
+    },
+    {
+      "Date": "2025-10-31",
+      "Topic": "Investor pressure on cyber governance"
+    },
+    {
+      "Date": "2025-11-03",
+      "Topic": "CFO pain: insurance exclusions"
+    },
+    {
+      "Date": "2025-11-05",
+      "Topic": "CIO pain: tool sprawl chaos"
+    },
+    {
+      "Date": "2025-11-07",
+      "Topic": "GC pain: litigation from breaches"
+    },
+    {
+      "Date": "2025-11-10",
+      "Topic": "Dark web markets evolution"
+    },
+    {
+      "Date": "2025-11-12",
+      "Topic": "Quantum-safe encryption timelines"
+    },
+    {
+      "Date": "2025-11-14",
+      "Topic": "National security meets corporate liability"
+    },
+    {
+      "Date": "2025-11-17",
+      "Topic": "Shadow IT & shadow AI"
+    },
+    {
+      "Date": "2025-11-19",
+      "Topic": "Ransomware cartels professionalizing"
+    },
+    {
+      "Date": "2025-11-21",
+      "Topic": "The myth of 'too small to target'"
+    },
+    {
+      "Date": "2025-11-24",
+      "Topic": "Investor trust collapse post-breach"
+    },
+    {
+      "Date": "2025-11-26",
+      "Topic": "Attack surface explosion from APIs"
+    },
+    {
+      "Date": "2025-11-28",
+      "Topic": "Boards misunderstanding Zero Trust"
+    },
+    {
+      "Date": "2025-12-01",
+      "Topic": "Generative AI data poisoning"
+    },
+    {
+      "Date": "2025-12-03",
+      "Topic": "Cloud misconfiguration dominoes"
+    },
+    {
+      "Date": "2025-12-05",
+      "Topic": "Crisis comms failures in breaches"
+    },
+    {
+      "Date": "2025-12-08",
+      "Topic": "Cyber insurance collapse scenarios"
+    },
+    {
+      "Date": "2025-12-10",
+      "Topic": "Red team vs blue team storytelling"
+    },
+    {
+      "Date": "2025-12-12",
+      "Topic": "Workforce burnout as cyber risk"
+    },
+    {
+      "Date": "2025-12-15",
+      "Topic": "Emerging nation-state tactics"
+    },
+    {
+      "Date": "2025-12-17",
+      "Topic": "Cybersecurity talent pipeline gaps"
+    },
+    {
+      "Date": "2025-12-19",
+      "Topic": "Quantum disruption scenarios"
+    },
+    {
+      "Date": "2025-12-22",
+      "Topic": "Supply chain attacks in critical infrastructure"
+    },
+    {
+      "Date": "2025-12-24",
+      "Topic": "Future of passwords after passkeys"
+    },
+    {
+      "Date": "2025-12-26",
+      "Topic": "Insider negligence vs insider malice"
+    },
+    {
+      "Date": "2025-12-29",
+      "Topic": "Cross-sector domino breaches"
+    },
+    {
+      "Date": "2025-12-31",
+      "Topic": "CISO liability expansion"
+    },
+    {
+      "Date": "2026-01-02",
+      "Topic": "AI hallucinations as attack vectors"
+    },
+    {
+      "Date": "2026-01-05",
+      "Topic": "Cloud sovereignty wars"
+    },
+    {
+      "Date": "2026-01-07",
+      "Topic": "OT ransomware case studies"
+    },
+    {
+      "Date": "2026-01-09",
+      "Topic": "Board complacency in cyber budgeting"
+    },
+    {
+      "Date": "2026-01-12",
+      "Topic": "Investor lawsuits after cyber failures"
+    },
+    {
+      "Date": "2026-01-14",
+      "Topic": "Auditor pressure on cyber metrics"
+    },
+    {
+      "Date": "2026-01-16",
+      "Topic": "The death of compliance checklists"
+    }
+  ],
+  "row_count": 48,
+  "status": "Historical idea bank only; dates expired; no schedule activation or topic restriction"
+}

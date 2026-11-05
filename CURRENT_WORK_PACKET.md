@@ -3,8 +3,11 @@
 PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
+CURRENT_SCOPE: Graham only; broad subject freedom; writing style independent of author/credentials
+CURRENT_EDITORIAL_DIRECTION: docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md
+CURRENT_EVIDENCE_POINTER: evidence/graham-black-box-voices-20261105/MILESTONE.json
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: M1 and M2 GO; installed M3 comparison complete; M4 HOLD for human text and visual-plan judgments
+CURRENT_STAGE_OR_MILESTONE: Graham-only direction settled; two installed AI black-box voice drafts complete; human voice/usefulness review pending
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: merged and installed revision2c2daf39398a993b698d1f225008a06217b14a7c; evidence/release-essential-20261105/INSTALLATION.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -459,3 +462,19 @@ Initial human disposition precedes further subject generation; first-six histori
 All26 AT/11 E2E and editorial/rendering/publishing gates retained. Hosted CI not run: no active workflow.
 Release receipt: evidence/release-essential-20261105/INSTALLATION.json.
 Trial receipt: evidence/installed-essential-trial-20261105/MILESTONE.json.
+
+
+## Current Graham-only editorial checkpoint — November 5, 2026
+Graham rejected the security subject as unsuitable, corrected the proposed narrow business-topic
+positioning, explicitly liked the chat black-box draft, and limited current work to Graham only.
+The historical M3 security pair remains technical evidence; no human quality acceptance is inferred.
+Canonical decisions: docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md.
+Two raw installed drafting-stage treatments of the same AI black-box idea are complete: concise
+challenger v2 and reflective leader v2, equal non-style context.2 model calls/6 CLI starts/32.254s/API0.
+Fresh-process reopen added0 calls. This is a style diagnostic, not a full-engine/control or six-subject pass.
+Review evidence/graham-black-box-voices-20261105/COMPARISON.md against CHAT_REFERENCE.md.
+Assistant observes both native versions are more formal than the liked chat example; human judgment pending.
+48 historical Graham calendar ideas recovered with archive/member hashes; expired dates are not active scheduling.
+All26 AT/11 E2E retained. No Ardent generation, source/config/test change, new install, rendering or publication.
+Existing broad operational authorization persists. Do not request it again; continue admitted work after
+specific human editorial disposition, preserving all historical records and their original scope.

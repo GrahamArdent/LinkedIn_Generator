@@ -8,10 +8,13 @@ failure diagnostics only when needed. Tool availability is not action authority.
 
 Read docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md and execute its M1–M5
 sequence from the first unmet milestone. It owns steps, budgets and exit conditions.
-Latest checkpoint: M1/M2 GO; installed M3 pair complete; M4 waits for human text/visual judgments.
-Read evidence/installed-essential-trial-20261105/MILESTONE.json and trial/review.md; do not regenerate
-the completed pair or expand subjects before initial human disposition. Continued merges/install/CI
-authority is recorded in evidence/release-essential-20261105/AUTHORIZATION.json.
+Latest checkpoint: Graham-only editorial direction settled; two installed AI black-box style drafts
+completed. Read GRAHAM_CONTENT_DIRECTION_2026-11-05.md and
+ evidence/graham-black-box-voices-20261105/MILESTONE.json; review its COMPARISON.md against
+CHAT_REFERENCE.md. Human voice/usefulness feedback is pending. Do not regenerate these completed
+outputs or require review of the rejected security subject. After feedback, preserve useful traits and
+return to suitable full-engine/control qualification in existing M3/M4 before expanding M5.
+Continued operational authority remains in evidence/release-essential-20261105/AUTHORIZATION.json.
 The acceptance document it references owns all26 AT/11 E2E criteria; consult the broader P0–P7
 roadmap only for the boundary being worked. Do not preload unrelated ecosystem material.
 

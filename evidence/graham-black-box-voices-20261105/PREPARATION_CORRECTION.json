@@ -1,0 +1,5 @@
+{
+  "failure": "Invalid content_goal awareness; schema rejected before constructing provider or any generation",
+  "correction": "Use supported auto content goal; no change to topic, facts, voice or perspective",
+  "model_calls_before_correction": 0
+}

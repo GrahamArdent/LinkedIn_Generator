@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/graham/work/linkedin-codex-trial-20261104/evidence/graham-black-box-voices-20261105/run_comparison.py", line 42, in <module>
+    try:invoke(data,capture)
+        ~~~~~~^^^^^^^^^^^^^^
+  File "/home/graham/work/linkedin-codex-trial-20261104/evidence/graham-black-box-voices-20261105/run_comparison.py", line 21, in invoke
+    request=LinkedInContentRequest.model_validate(data)
+  File "/home/graham/work/linkedin-generator-releases/2c2daf39398a993b698d1f225008a06217b14a7c/.venv/lib/python3.14/site-packages/pydantic/main.py", line 792, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj,
+        ^^^^
+    ...<5 lines>...
+        by_name=by_name,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for LinkedInContentRequest
+content_goal
+  Input should be 'auto', 'reach', 'conversation' or 'authority' [type=literal_error, input_value='awareness', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/literal_error
