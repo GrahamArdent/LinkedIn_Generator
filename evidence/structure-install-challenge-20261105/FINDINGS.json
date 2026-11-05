@@ -1,0 +1,70 @@
+{
+  "candidate0_revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+  "classification": "MATERIAL_CORRECTIVE_DELTA",
+  "findings": [
+    {
+      "id": "F01",
+      "finding": "Documented template is not an installed behavior",
+      "correction": "Q1 normal no-model prepare command and actual consumer proof; no evidence-script-only workaround",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F02",
+      "finding": "Template keyword checks can pass badly constructed prose",
+      "correction": "Q2 same four essentials plus real construction findings and Q5 human judgment",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F03",
+      "finding": "Positive chat rewrite can leak into copied native outputs",
+      "correction": "Exact refs retained separately; no automatic example injection/copying",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F04",
+      "finding": "Single-topic success can overstate reliable voice transfer",
+      "correction": "Q6 different concept after initial disposition; no subject-count reset",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F05",
+      "finding": "Installation/CI wording conflicts with recorded current authorization",
+      "correction": "Q3/Q4 inspect applicable workflows; no repeat permission; exact technical release with rollback",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F06",
+      "finding": "Changed template under reused ID can return stale results or duplicate calls",
+      "correction": "Template/source bindings in immutable bundle fingerprint; conflict/unknown/reopen checks",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F07",
+      "finding": "Historical security/symbolic target conflicts with current Graham guidance",
+      "correction": "M3 updated to Q5 current AI brief and concise voice; historical package retained",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F08",
+      "finding": "Prior plan had no operational retention inventory or adversarial negative",
+      "correction": "Q6 and prompt require enumerated source coverage, semantic pair review and missing/altered negative checks",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    },
+    {
+      "id": "F09",
+      "finding": "Optional prepare alone permits normal CLI to silently bypass structure",
+      "correction": "Mandatory prepared binding validation before new Graham model dispatch; no-call missing/stale/mismatch negatives; historical immutable completed reads exempt",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "review_provenance": "Independent existing reviewer, fresh complete-pair semantic review",
+      "proof": "FINAL_REVIEW.json and CANDIDATE.json exact complete-pair hashes"
+    }
+  ]
+}

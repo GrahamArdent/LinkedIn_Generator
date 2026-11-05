@@ -1,0 +1,161 @@
+{
+  "scope": "Enumerated known owner/proof/implementation sources plus operator request and methodology identities; not all possible repository information",
+  "baseline_revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+  "files": [
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "CURRENT_WORK_PACKET.md",
+      "bytes": 56377,
+      "sha256": "5f5320571127a0d35862e118f1be53aca191c3dd2cb74fc3c0908110b6e36d44"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+      "bytes": 14629,
+      "sha256": "4c3e331108efba57aa1c2189636ba0f6d58aee058e69831d7cef25fb44a21393"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+      "bytes": 2756,
+      "sha256": "3784b54faad3603e977f5aebca6072d734f494f17e1e14afda0cdb47b31ec1b3"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+      "bytes": 8747,
+      "sha256": "c7a2da8144f07296abc27c3ac6cf96a74624844434f7beb48e3a54fe70fd98b3"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "docs/implementation/v4/LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md",
+      "bytes": 21644,
+      "sha256": "a2197262d14f5c585c0117bedaf5e73902c09b617c05602c79f9c90fba1f2aeb"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json",
+      "bytes": 1836,
+      "sha256": "88f4a8fec65531c05df0655ad027ed121c1eed855248dae57a7f520dffa0f6f1"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/graham-black-box-voices-20261105/STRUCTURED_CHAT_REVISION.md",
+      "bytes": 1226,
+      "sha256": "407502d2a2160280ab81783235ef344dfd26ea5cd958bc379bd455afbefc9c02"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/graham-black-box-voices-20261105/CHAT_REFERENCE.md",
+      "bytes": 1475,
+      "sha256": "dca7502b3007e1f7cd8f7be62243b537c9d5c5ec93249c33e38c4fef953dc4d8"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/graham-black-box-voices-20261105/DECISIONS.json",
+      "bytes": 3000,
+      "sha256": "c70c0add18fd309181282aa487ed8aca2a8cc6c602a33d41bfb0335f1305def8"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/graham-black-box-voices-20261105/MILESTONE.json",
+      "bytes": 1636,
+      "sha256": "3e5a13e5538105767be6366991bea731383c223f885331360741bcf2772bdcab"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/graham-black-box-voices-20261105/GRAHAM_CALENDAR_RECOVERY.json",
+      "bytes": 4833,
+      "sha256": "c4cc0e4cfbc33bd3b396a012b7a3be7f0f4c371ecbc15eb62fd128505a9a976c"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/installed-essential-trial-20261105/MILESTONE.json",
+      "bytes": 1241,
+      "sha256": "25faf2ebac2c441a036c5adce11a661a789d4eadcbfc120e24c04bfd75a1af9f"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/release-essential-20261105/INSTALLATION.json",
+      "bytes": 2529,
+      "sha256": "3974ec1b2548c5374933c57c3502bce714eec61dc6172339e71734a4307b0981"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "evidence/release-essential-20261105/AUTHORIZATION.json",
+      "bytes": 487,
+      "sha256": "ac989f63db21bd86e3764760943ee88cdc69fbd6c30f4ed84faf7a1bc15f260d"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "src/app/editorial_handoff.py",
+      "bytes": 6242,
+      "sha256": "88d2fd9b5a069657a912e17e40b1ef656ef2271449c8e33e17fa186f86816be8"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "src/app/codex_trial.py",
+      "bytes": 12210,
+      "sha256": "0a66dc6ada6326a369122aa65440af8c30ce9382a2b1a8f3fe43ca09a4062c1c"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "src/app/publish_quality.py",
+      "bytes": 13309,
+      "sha256": "0b4a96cfbfeb45a7f8bb503b633066036df7105a55d159ef5f573e433e74dd3e"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "scripts/linkedin_codex_trial.py",
+      "bytes": 1928,
+      "sha256": "7d1360da57bdae080ff149dc7abac97286b39e073125b4d0d1e843e10a999bdf"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "tests/test_editorial_handoff.py",
+      "bytes": 8189,
+      "sha256": "e3906eb09ada8962943eefdc290b22df559bf1a783cb176acebafe6c33b2a52d"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "PROGRAMBUILD/FEASIBILITY.md",
+      "bytes": 211,
+      "sha256": "67c9089e95fc4c7e1939c33e77ae79430eac13d373c8490c037b9346501029b0"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "PROGRAMBUILD/DECISION_LOG.md",
+      "bytes": 267,
+      "sha256": "b93018640f14424c896dcccdae9f25c640ff4d8e3643a5c45e70a48afd816764"
+    },
+    {
+      "repository": "GrahamArdent/LinkedIn_Generator",
+      "revision": "365964983373611279f0c2e4f14ae7c6587fb135",
+      "path": "PROGRAMBUILD/REQUIREMENTS.md",
+      "bytes": 466,
+      "sha256": "b81a5d59c210aa85d0c1bca268938b78852429a0070d3b88ee4d253f57190843"
+    }
+  ],
+  "operator_request": "Run the program start cycle challenge and come up with a game plan with this documented guidance so we can apply it reliably and install generator"
+}

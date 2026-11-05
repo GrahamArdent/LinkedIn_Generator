@@ -1,0 +1,17 @@
+[
+  {
+    "repository": "GrahamArdent/PROGRAMSTART",
+    "path": "PROGRAMBUILD/PROGRAMBUILD_CHALLENGE_GATE.md",
+    "blob_sha": "053d528d0b9f81e41c29276c9c082123842eea11"
+  },
+  {
+    "repository": "GrahamArdent/PROGRAMSTART",
+    "path": "PROGRAMBUILD/PROGRAMBUILD_PLANNING_OPERATING_MODEL.md",
+    "blob_sha": "8baaa601008efde6c05342ba23e20c9d9abd3952"
+  },
+  {
+    "repository": "GrahamArdent/PROGRAMSTART",
+    "path": ".github/prompts/programstart-convergence-packet.prompt.md",
+    "blob_sha": "49249725a54f16832ff1ca80fde3bac4934e0813"
+  }
+]

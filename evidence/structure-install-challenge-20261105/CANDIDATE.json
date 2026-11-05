@@ -1,0 +1,16 @@
+{
+  "candidate": "corrected complete pair candidate2 after F09",
+  "baseline": "365964983373611279f0c2e4f14ae7c6587fb135",
+  "files": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": {
+      "bytes": 28293,
+      "sha256": "3e527e84b99b4f8d6ee1c91429bd1dd2c180cc78b8d407aa3a43ffda97da59ce"
+    },
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": {
+      "bytes": 3773,
+      "sha256": "a11e7acebdbf0f461ed3c6663f643be9d02bd3a8065e01768d30ee728f4204c1"
+    }
+  },
+  "implementation": "NOT_RUN",
+  "installation": "unchanged2c2daf39398a993b698d1f225008a06217b14a7c"
+}
