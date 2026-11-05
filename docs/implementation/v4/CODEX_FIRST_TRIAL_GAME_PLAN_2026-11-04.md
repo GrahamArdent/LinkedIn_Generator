@@ -1,5 +1,7 @@
 # LinkedIn Codex Trial Game Plan — evidence-first continuation
 
+> Current checkpoint — November5,2026: follow CURRENT_WORK_PACKET.md, evidence/narrative-handoff-repair-20261105/MILESTONE.json and evidence/narrative-handoff-repair-20261105/REPORT.md. Selected narrative is now retained in the existing engine via optional validated editorial_handoff. Planning outputs annotate immutable meaning/narrative and cannot return public-copy fields.221 tests PASS; two actual raw drafts and a blinded audit retained,6 Codex subscription calls/API0; replay adds0. Initial planning HOLD and explicit recovery remain visible. Narrative differentiation observed; strict output parity and human acceptance HOLD. Next review the exact pair, including unsupported screen-location wording and extra approved-record specificity. Do not rerun all eight or expand voices. Earlier checkpoint/next-action notes below are historical; this pointer supersedes them. All26 AT/11 E2E and owner gates remain.
+
 **Goal:** Produce useful, grounded LinkedIn writing with the existing Python engine and Codex subscription, then prove whether its extra steps help.
 **Status:** Connection qualified; writing acceptance HOLD. Phases1–3 are implemented and fixture-qualified; one substantive native trial completed. Phase4 human review and corpus expansion remain open; scorer/human calibration is missing.
 **Authority:** CURRENT_WORK_PACKET.md is the active pointer. This is a P2 subplan within the existing P0–P7 roadmap, not a competing master plan. Preserve all26 AT objectives and11 E2E scenarios.

@@ -1,5 +1,5 @@
 # Eight workflows for an independent LinkedIn argument
-November 4, 2026 · Design for the next comparison · No trial results yet
+November 4, 2026 design · November5 handoff correction: see CURRENT_WORK_PACKET.md and evidence/narrative-handoff-repair-20261105/REPORT.md. The original catalogue commit remains9001c2f.
 
 ## Set up the common research
 
@@ -61,9 +61,9 @@ Output: an interactive reasoning sequence that a reader could use with a colleag
 
 ## Common handoff and voice change
 
-**Freeze the meaning.** “From [route output] return one thesis, one reader consequence, up to two load-bearing facts with source IDs, the most important qualification and the sequence of narrative beats. Label inference. Preserve a complete evidence trail outside the short brief. HOLD if the conclusion outruns the sources.”
+**Freeze meaning and narrative separately.** Return planning data only: meaning contains one thesis, reader consequence, up to two supported facts with claim/source IDs, and qualification. Narrative independently contains the selected form, ordered beats, and any selected symbol with its mapping and boundary. Label inference in the evidence record. Do not return a title, post body or complete editorial draft. After admission, copy these data with the existing freeze_handoff function instead of asking another summarizer to reconstruct or replace the selected form. Preserve the full evidence trail outside this compact handoff. HOLD if the conclusion outruns the sources. The bounded implementation currently supports literal/symbolic only; do not coerce case, timeline or other routes to literal. Extending another form requires explicit validation before reuse.
 
-**Apply a voice.** “Given [frozen brief], [route outline] and [verified voice definition], create a writing plan specifying viewpoint, sentence rhythm, placement of evidence and the transition that lands the implication. Preserve factual meaning and the limits of any metaphor. Show which beat would sound different in this voice. Do not draft unless the run explicitly requests prose.”
+**Apply voice inside the selected narrative.** Use plan_writing with the validated handoff, verified voice and source ledger. Return only ordered beat delivery annotations and source-bound attribution. Target80–160 characters per fragment, hard maximum240; reference claim IDs rather than retell facts. No replacement meaning/narrative, hook copy, title, body or finished paragraphs. attach_writing_plan preserves the original selection. Malformed output is HOLD before drafting; retain it and reconcile an explicitly admitted correction rather than silently retry. The author, facts and qualification survive voice application. Prose begins only at the explicit writer call.
 
 **Attribute naturally.** “For each load-bearing claim, identify whose observation it is and how to name the source in ordinary language. Use the source's role in the argument: one report documented the event, another study establishes a boundary. Drop citations that add prestige alone. Store full URLs and passage locators in the source record. Flag any external link that would materially help a reader verify or use the information.”
 

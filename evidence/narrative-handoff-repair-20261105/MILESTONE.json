@@ -1,0 +1,54 @@
+{
+  "status": "GO source handoff correction / GO observed narrative difference / HOLD strict output parity and human writing acceptance",
+  "base_commit": "8b8fa62b4a86301ca198b87e2225b88c2ee9b294",
+  "initial_tested_commit": "d15bda2fca3f87386007652bb9ba11ce6d853f7c",
+  "tested_commit": "62654ffbc44ae60e08cfed7bfc09c535184e65ae",
+  "main_commit": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "branch": "fix/selected-candidate-v4-20261104",
+  "local_tests": {
+    "baseline": 209,
+    "final": 221,
+    "final_seconds": 2.3,
+    "log": "full-pytest.log"
+  },
+  "model_calls": 6,
+  "api_spend": 0,
+  "outcomes": {
+    "literal": "DRAFTED",
+    "initial_symbolic": "HOLD: annotations251/241 exceed240",
+    "recovered_symbolic": "DRAFTED",
+    "blinded_model_audit": "retained"
+  },
+  "private_drafts": 2,
+  "human_preference": null,
+  "winner": null,
+  "word_counts": {
+    "literal": 210,
+    "symbolic": 289
+  },
+  "acceptance_objectives_preserved": 26,
+  "e2e_scenarios_preserved": 11,
+  "acceptance_definition_sha256": "3a0daffb3eaff391989257d5e03f95e3dd5570043858a42609d0d3e41b7b7c10",
+  "existing_eight_route_evidence_unchanged": true,
+  "runtime": {
+    "kind": "CANDIDATE_ONLY",
+    "api_module": "/home/graham/work/linkedin-codex-trial-20261104/src/app/api.py",
+    "interpreter": "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python",
+    "resume_client_source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+    "installation_promotion": false
+  },
+  "integration": {
+    "pr": 24,
+    "draft": true,
+    "merged": false,
+    "hosted_ci": false,
+    "deployment": false,
+    "publishing": false
+  },
+  "remaining": [
+    "Human exact-text review",
+    "Literal output contains unsourced screen-enforcement assumption",
+    "Symbolic output longer and adds source-supported action specificity outside frozen takeaway wording"
+  ],
+  "next_action": "Review retained blind pair; do not expand voices/workflows or silently replace first drafts"
+}

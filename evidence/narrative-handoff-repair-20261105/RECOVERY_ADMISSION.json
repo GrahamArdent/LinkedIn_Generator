@@ -1,0 +1,18 @@
+{
+  "source_commit": "62654ffbc44ae60e08cfed7bfc09c535184e65ae",
+  "source_hashes": {
+    "src/app/editorial_handoff.py": "88d2fd9b5a069657a912e17e40b1ef656ef2271449c8e33e17fa186f86816be8",
+    "src/app/api.py": "7b224c81c1272b2af81c1c160dbd41152016b30130211df935c607f76ff7b2b2",
+    "src/app/generation.py": "6fe6495437aef583e7fa226394f083b0fc5e41269de615f5c2218aa5c1fbfc5f",
+    "config/prompts_packs.yaml": "b7d82d5fedc30de3045f133d815e67abd6b6d9e62a3e25f1600606b36507bcc0",
+    "tests/test_editorial_handoff.py": "89e6cb5111f7e5a0833da4bb8b1a0a599009893acd837a60afddfb0b3da13abb"
+  },
+  "run_id": "narrative-handoff-recovery-20261105",
+  "max_model_calls": 3,
+  "max_cumulative_cli_seconds": 900,
+  "api_spend": 0,
+  "auto_retry": false,
+  "original_outcome": "symbolic-outcome.json",
+  "reason": "Initial symbolic delivery annotations251/241 exceeded unchanged240-character guard. Refine planning instruction to target80-160 and reference claim IDs rather than restating facts. No prior draft exists to improve.",
+  "scope": "corrected symbolic plan, one original raw draft, blinded pair audit"
+}

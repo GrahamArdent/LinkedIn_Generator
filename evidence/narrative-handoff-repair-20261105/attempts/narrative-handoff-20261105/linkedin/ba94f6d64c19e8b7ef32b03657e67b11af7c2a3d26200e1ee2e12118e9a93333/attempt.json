@@ -1,0 +1,99 @@
+{
+  "attempt_id": "attempt-b53c284d65aa43418d995156aa77da51",
+  "auth": "chatgpt",
+  "cost": null,
+  "created_at": "2026-11-05T03:29:48.568870+00:00",
+  "elapsed_seconds": 17.77334417961538,
+  "events": [
+    {
+      "thread_id": "01a1a9c1-7098-7010-aadd-56cb2ff9853e",
+      "type": "thread.started"
+    },
+    {
+      "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+      "item_id": "item_0",
+      "item_type": "error",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "agent_message_sha256": "f96373d845e1052cf6211bd4f83b74c764d54043f1c794a30e006369dfd43e47",
+      "item_id": "item_1",
+      "item_type": "agent_message",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12881,
+        "output_tokens": 363,
+        "reasoning_output_tokens": 123
+      }
+    }
+  ],
+  "execution_kind": "native_cli",
+  "finished_at": "2026-11-05T03:30:06.722428+00:00",
+  "invocation_id": "linkedin",
+  "launch_requested": true,
+  "launched": true,
+  "launched_at": "2026-11-05T03:29:48.941603+00:00",
+  "limits": {
+    "max_input_bytes": 4194304,
+    "max_launches": 36,
+    "max_output_bytes": 2097152,
+    "max_seconds": 900,
+    "process_timeout": 300
+  },
+  "model": "gpt-6-astra",
+  "parent_attempt_id": null,
+  "processes": [
+    {
+      "finished_at": "2026-11-05T03:29:48.747929+00:00",
+      "operation": "version",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/narrative-handoff-repair-20261105/attempts/narrative-handoff-20261105/linkedin/ba94f6d64c19e8b7ef32b03657e67b11af7c2a3d26200e1ee2e12118e9a93333/preflight-255b36a217454c59b8ab3ff26c8357f9.json",
+      "pid": 461027,
+      "returncode": 0,
+      "sha256": "82f4a2f395d0dd45b3acfacb704060975e62661fd9a3a2c93c133aab94a86e8d",
+      "start_identity": "552963170",
+      "started_at": "2026-11-05T03:29:48.578736+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T03:29:48.936794+00:00",
+      "operation": "auth",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/narrative-handoff-repair-20261105/attempts/narrative-handoff-20261105/linkedin/ba94f6d64c19e8b7ef32b03657e67b11af7c2a3d26200e1ee2e12118e9a93333/preflight-451e87912e9f43a7b120cb2e170dc12f.json",
+      "pid": 461040,
+      "returncode": 0,
+      "sha256": "5fbb0591aa0d9a99771f8eac4db5983c33ec6a2f145ea9948a8fc2d572153fae",
+      "start_identity": "552963188",
+      "started_at": "2026-11-05T03:29:48.754828+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T03:30:06.710241+00:00",
+      "operation": "exec",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/narrative-handoff-repair-20261105/attempts/narrative-handoff-20261105/linkedin/ba94f6d64c19e8b7ef32b03657e67b11af7c2a3d26200e1ee2e12118e9a93333/process.json",
+      "pid": 461078,
+      "returncode": 0,
+      "sha256": "ab6bc5640211cebfeb084e61dd22d76072ae9aa8eec37e1a3dd0ce6aaabbfb93",
+      "start_identity": "552963207",
+      "started_at": "2026-11-05T03:29:48.946104+00:00"
+    }
+  ],
+  "producer_version": "codex-cli 0.158.0",
+  "reasoning": "medium",
+  "request_sha256": "ba94f6d64c19e8b7ef32b03657e67b11af7c2a3d26200e1ee2e12118e9a93333",
+  "result_sha256": "d6e4c59694e0041bb40566c0ea56b0ed8e07cf58843b7220bb3e70192e5b30dc",
+  "run_id": "narrative-handoff-20261105",
+  "schema_version": "1.0",
+  "state": "succeeded",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 7424,
+    "input_tokens": 12881,
+    "output_tokens": 363,
+    "reasoning_output_tokens": 123
+  }
+}
