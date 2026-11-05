@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Reviewed headless release merged and installed; P2 writing-quality evaluation continues
+CURRENT_STAGE_OR_MILESTONE: Same-subject six-building-block comparison and AI transfer retained; human review pending
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: product merge and installed revision0c099d70fc807044355af089d62d1bef049cbb95; receipt evidence/release-integration-20261105/MILESTONE.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -289,7 +289,7 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/release-integration-20261105/MILESTONE.json
+CURRENT_MILESTONE_RECEIPT: evidence/six-building-blocks-20261105/COMPLETED.json
 NEXT_ELIGIBLE_PHASE: Continue P2 human/content evaluation using the installed headless release; no equal-post-length requirement
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
