@@ -1,0 +1,64 @@
+{
+  "status": "GO_FOR_M1",
+  "product_changed": false,
+  "model_calls": 0,
+  "api_spend": 0,
+  "findings_resolved": [
+    {
+      "id": "PA-01",
+      "issue": "Duplicated operational task list in prompt",
+      "resolution": "Prompt routes; plan owns steps/budgets; acceptance definitions remain sole criteria."
+    },
+    {
+      "id": "PA-02",
+      "issue": "Stale current phase sequence in broader roadmap",
+      "resolution": "Marked historical; M1\u2013M5 remains current."
+    },
+    {
+      "id": "PA-03",
+      "issue": "Engine HOLD might prevent direct control",
+      "resolution": "Use existing comparison-only continuation within budget, keep engine unqualified and visual deferred."
+    },
+    {
+      "id": "PA-04",
+      "issue": "Calibration draft variants can leak between train/holdout",
+      "resolution": "Freeze held-out subjects before tuning."
+    },
+    {
+      "id": "PA-05",
+      "issue": "First-six history could restart after repair",
+      "resolution": "Reconcile ledger/order; preserve ambiguity, do not reset or cherry-pick."
+    },
+    {
+      "id": "PA-06",
+      "issue": "Stop-only-at-human wording ignores resource/external gates",
+      "resolution": "Explicit budget/unknown/provider failure HOLD plus continued independent work."
+    },
+    {
+      "id": "PA-07",
+      "issue": "Visual plan versus rendering ambiguity",
+      "resolution": "Provider-neutral plan included; rendering separate authorization."
+    },
+    {
+      "id": "PA-08",
+      "issue": "Recovery anchor could force stale branch/reinstall",
+      "resolution": "Verify current refs and resume first unmet milestone; no reset/regeneration."
+    }
+  ],
+  "autonomy_patterns": [
+    "single authority per concern",
+    "JIT scope and owner contracts",
+    "known-route fast path",
+    "exact-error diagnosis",
+    "bounded effects",
+    "unknown-result reconciliation",
+    "reuse proof by hashes",
+    "milestone evidence and explicit gates"
+  ],
+  "limitations": [
+    "No wholesale canonical autonomy-template conformance claimed. Applied relevant Paths/roadmap patterns without importing unrelated machinery.",
+    "GO covers M1 work; does not grant new release/CI/publishing authority.",
+    "No separate fresh-chat execution performed."
+  ],
+  "cross_checks": "PASS: ownership, M1\u2013M5 routing, references, failure/control path, resource stop, holdout, ledger and unchanged product hashes"
+}

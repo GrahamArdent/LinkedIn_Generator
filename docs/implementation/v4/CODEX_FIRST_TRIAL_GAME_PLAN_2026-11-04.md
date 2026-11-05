@@ -1,129 +1,153 @@
-# LinkedIn Codex Trial Game Plan — evidence-first continuation
+# LinkedIn Generator — completion game plan
+Updated November 5, 2026. Current authority pointer: CURRENT_WORK_PACKET.md (repository root).
+Execution entry: LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md.
+Broader P0–P7 roadmap: LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md.
+Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md.
 
-> Current release — November5,2026: PR24 merged and installed at0c099d70fc807044355af089d62d1bef049cbb95. Follow CURRENT_WORK_PACKET.md and evidence/release-integration-20261105/MILESTONE.json; REPORT.md holds the release findings.230 local and230 installed tests PASS. JSON narrative handoffs and baseline/evaluator propagation are integrated; numeric punctuation guard corrected. Fixed-revision launcher and rollback verified;0 new model calls/API0; no hosted CI or publishing. Different post lengths are not a failure. Earlier candidate-only/merge-install holds below are historical for this release. Continue P2 content/human evaluation through the installed engine; preserve all26 AT/11 E2E and publication gates.
+## Current truth
+- Verified candidate: branch fix/essential-review-gate-20261105, product commit d3ee2a36d037323c080edec67b53a521bcceb75c;
+  evidence follow-up5dccb89689222adae5c83efd0c5fd207a0c3370b.251 local and251 clean-archive tests passed.
+- Installed release remains0c099d70fc807044355af089d62d1bef049cbb95, using its historical90 gate.
+- The candidate's essential-checks-v1 replaces numeric admission with four independent verdicts and reasons:
+  factual integrity, reader relevance, practical value, argument/voice fidelity.
+  All must pass. Scores are advisory; passing means human review eligibility, never approval.
+  Missing evidence pauses; fixable failures allow at most one guarded targeted rewrite; unavailable evaluation fails closed.
+- Real evaluator smoke: retained security draft72/reviewable, deliberately unsupported negative69/needs_evidence.
+  Two subscription evaluations/38.311 active CLI seconds/API0. These are not human quality labels.
+- Evidence: evidence/essential-review-gate-20261105/{REPORT.md,MILESTONE.json,ACCEPTANCE_AUDIT.json}.
+- The complete product is not accepted. All26 AT objectives and11 E2E scenarios remain;
+  the audit distinguishes fixture checks, historical observations and missing human/live proof.
 
+## Current milestone status
+M1 GO: independent review and fresh251-test suite passed at reviewed head d6748d1; source/config/tests
+match prior clean-archive receipt. Evidence: evidence/m1-qualification-20261105/MILESTONE.json.
+M2 HOLD: exact-candidate merge and fixed-release installation await owner admission. Installed0c099d7
+was verified by launcher/imports and historical zero-call reopen. M3–M5 remain open. No generation
+or CI occurred. One non-blocking status-reporting issue is deferred in REVIEW.json.
 
+## Document ownership and just-in-time execution
+- CURRENT_WORK_PACKET.md owns the current checkpoint and evidence pointer.
+- This completion plan owns M1–M5 steps and milestone exit conditions.
+- The execution prompt routes the worker; it does not maintain another task list.
+- The acceptance document alone owns detailed AT/E2E criteria. The broader roadmap owns later dependencies.
+- Historical receipts prove only their recorded scope; later docs do not reinterpret them.
+Use known working routes directly. Load only the current milestone's sources/contracts; inspect
+later P3–P7 owner documents when their boundary is reached, not as a preload.
+Preserve exact failures and follow Paths recovery for actual route failures. Reconcile unknown effects
+through original receipts; never blindly retry. Continue independent admitted work while one item is held.
+Budget exhaustion or an unrecoverable provider/environment failure is a precise HOLD, not permission
+to exceed caps or repeatedly ask the user to perform machine work.
 
-**Goal:** Produce useful, grounded LinkedIn writing with the existing Python engine and Codex subscription, then prove whether its extra steps help.
-**Status:** Connection qualified; writing acceptance HOLD. Phases1–3 are implemented and fixture-qualified; one substantive native trial completed. Phase4 human review and corpus expansion remain open; scorer/human calibration is missing.
-**Authority:** CURRENT_WORK_PACKET.md is the active pointer. This is a P2 subplan within the existing P0–P7 roadmap, not a competing master plan. Preserve all26 AT objectives and11 E2E scenarios.
-**Execution:** Inline, one phase at a time; test-first code corrections. Reuse existing code/results. Every meaningful phase ends with the checkpoint below.
+## Ordered remaining work
+Use the existing engine, launcher, saved results and receipts. Do not rerun completed research,
+eight workflows or nine voices merely to restart this sequence.
 
-## What is settled
+### M1 — review and qualify the coherent release candidate
+1. Refresh Paths via connected GitHub, current packet, candidate/base/main, relevant PRs and installed launcher.
+   Resume from the first unmet milestone. If the candidate is already merged/promoted, verify its receipt
+   and advance; do not reset branches, reinstall or regenerate merely because this plan names an older checkpoint.
+2. Review the complete pending diff against current main, including earlier unmerged audit documentation.
+   Resolve concrete integration defects with reproducing regressions; do not weaken assertions.
+3. Reuse251-test/clean-archive receipts if source/config/tests hashes still match. If code changes,
+   run focused regressions and the full local suite; save exact command, exit, tested revision and hashes.
+   Ruff was unavailable in the previous venv: record actual lint availability/results, never claim lint passed.
+4. Verify strong80 can advance,90+ cannot compensate for failed essentials, missing support pauses,
+   malformed evaluation fails closed, at most one targeted rewrite, unsafe rewrite preserves A,
+   selected/visual bytes match, baseline context matches, and old results reopen without calls.
+5. Record GO/HOLD/FAIL for candidate readiness separately from merge and installation.
+Expected: one coherent reviewed and tested candidate, with preserved source and historical outputs.
+Proof: reviewed diff, regression/full-suite logs, clean archive, source/config/test hashes.
+Maps: AT01/02/03/06/07/08/14/15/16/18/26; only mode-specific coverage may be marked passed.
 
-Codex bridge/launcher and selected-text/visual identity work locally. Prior qualification:142 LinkedIn tests and30 reused-client tests passed. Two real subjects produced unqualified engine drafts; original73, then78/rewrite77. Historical weak results and limited preferences remain visible, not promoted to approvals or voice examples. Exact source/receipts: evidence/codex-first-20261104 and evidence/transparent-evaluation-20261104.
+### M2 — merge and promote through the existing release setup
+1. Resolve current owner admission for merge/promotion; earlier release authorization is not unlimited authority.
+   Inspect automatic workflow triggers before opening/updating a PR or merging. No hosted CI is authorized
+   by this plan. If release effects require new authorization, finish the reviewable candidate first and name
+   the exact remaining gate. Do not disable checks or quietly trigger hosted CI.
+2. When admitted, merge the exact verified candidate; record main/merge SHA and reviewed head.
+3. Install from the merged revision through the existing fixed-release launcher procedure.
+   Preserve the previous release and exact rollback command; do not edit the live installation in place.
+4. Verify launcher target, imported module paths, installed source/config hashes, subscription client/auth binding,
+   relevant smoke/full installed tests, and reopening a historical completed result with zero added calls.
+Expected: exact merged revision is actually running; rollback remains usable.
+Proof: merge receipt, installation/rollback receipt, import/hash/readiness/reopen logs.
+HOLD if unmerged, wrong installed bytes, uncertain effect or missing admission. Local tests alone cannot close M2.
 
-We used narrow conversation/code evidence, not zero evidence. That supported what happened in our test, but not broader customer outcomes or measured benefits. Opinion is legitimate; factual assertions inside it still need support. More citations alone do not create a better argument.
+### M3 — one complete installed acceptance package
+1. Reuse the retained evidence brief: Graham as author, business/IT leaders as audience,
+   Relatable Provocateur voice and selected symbolic narrative. Use at least two independent reputable origins.
+   Resolve the unsupported screen-location assumption in the new brief; preserve all historical drafts.
+2. Freeze six building blocks: reader, decision, concept/argument, evidence and limits,
+   narrative plus verified voice, review questions. Separate fact/observation/inference/opinion.
+   Recheck source currentness and material conflicts when needed; do not add unnecessary research.
+3. Declare one shared batch budget before launch: at most12 subscription Codex model executions and900
+   cumulative CLI seconds, including preflight, draft, evaluation, optional rewrite, visual plan and control.
+   Save actual tokens/attempts/launches/time; missing IDs are unavailable, never invented.
+4. Run normal installed evidence admission → drafting → four-essential evaluation → at most one guarded
+   defect-driven rewrite → exact candidate selection → visual companion planning only if qualified.
+   Missing evidence or failed qualification is a valid recorded HOLD; do not force a passing package.
+5. Produce the simpler direct-prompt control with identical evidence, author, audience, meaning, voice
+   and narrative. Use the same evaluator/context if reporting model assessments.
+   If the engine records NO_QUALIFIED_CANDIDATE, retain that HOLD and use its existing comparison-only
+   continuation when the budget permits. Never promote the retained unqualified engine text to a selected
+   candidate or spend its visual call. If the control cannot run, record NOT_RUN with the reason.
+6. Save exact prompts/raw outputs, stage order/handoffs, IDs, code/voice/source bindings and hashes.
+   Reopen the completed result in a new process: exact content and zero additional calls.
+   Keep result policy/version immutable. A new policy run uses a new run/attempt identity; do not overwrite old results.
+7. Shuffle the engine/control texts before human review; keep method mapping separate.
+Expected: traceable installed review package, or a precise truthful reason it cannot qualify one.
+Proof: installed invocation, saved package/control, visual plan or deferral, receipts and zero-call reopen.
+Different word counts do not count against either candidate.
+Maps: AT01/02/03/05/06/14/15/16/18/21/25/26 and applicable E2E01/06/10 components.
+A single pair does not complete six-subject acceptance.
 
-**Limits:** No paid API/fallback; use the existing qualified Codex route. Preserve score90 and one guarded publish-quality rewrite unless the owner explicitly changes them after calibration. No mandatory extra critic/humanizer calls, database, UI, renderer or new architecture. No resume W7 rerun. Hosted CI, merge, installation promotion and publication require their existing admissions; checking their status does not authorize them.
+### M4 — human judgment and calibration
+1. Present the shuffled pair with factual support and ask Graham for accuracy, audience usefulness,
+   recognizable voice, keep/light/structural/reject, preference/tie and actual editing effort.
+   Bind answers to exact candidate hashes. Do not turn general praise into approval or approved voice examples.
+2. Use8–12 retained exact-text examples for initial evaluator calibration when available, with a held-out subset.
+   Freeze the holdout before adjusting prompts/rubrics and separate it by subject, not draft variant,
+   to prevent the same underlying example leaking into both sets.
+   Draft variants are calibration examples, not additional independent subjects. Reuse labels already supplied;
+   do not require a new broad generation batch just to obtain calibration material.
+3. Record false accept/reject cases against human labels and inspect concrete causes. Keep scores advisory.
+   Do not introduce another numeric gate without evidence and explicit adoption.
+Expected: real labels and editing evidence; unresolved judgments remain pending.
+Proof: hash-bound reviewer records, edits/timing where observed, calibration findings and held-out result.
+Maps: AT04/05/19/20/21/23/24; no model verdict substitutes for these human requirements.
 
-## Phase 0 — establish one reliable checkpoint
+### M5 — finish P2 in small batches, then follow P3–P7
+1. After initial human disposition, expand only in admitted small batches toward six eligible distinct subjects
+   within the existing default envelope of at most8 subject trials. Reconcile the existing subject ledger
+   and owner-approved eligibility/order before adding subjects; do not reset first-six history after a repair.
+   If historical eligibility is ambiguous, retain it as unresolved rather than silently excluding or counting it.
+   Do not force thin subjects or cherry-pick failures.
+2. Preserve >=5 genuine subjects, >=4/6 keep/light, >=2 live-provider human-accepted subjects;
+   evaluate the first-six fraction only when six eligible subjects exist.
+3. Complete blinded six-pair engine/control pilot: >=4/6 engine preference, ties not wins; record factual errors
+   and actual editing effort. Fewer subjects means NOT_YET_EVALUABLE. This is not statistical proof of impact.
+4. Review six-post voice/originality, claim support and useful single-image/carousel/ambiguous visual choices.
+   Human visual-plan approval is distinct from approval of rendered assets.
+5. Test any proposed winning hybrid on a second concept before declaring a winner. Historical trials remain
+   exploratory; do not expand nine voices before useful small-comparison differentiation is established.
+6. Resume existing P3–P7 dependencies only as prerequisites and authorizations permit:
+   durable headless recovery/exports; human-authorized voice management; lightweight UI/parity/security;
+   actual image/carousel rendering and mobile inspection; Dedication-owned approval/publishing integration.
+   Keep all unproved AT/E2E entries open, including edit invalidation and external publishing verification.
+Expected: complete acceptance evidence, or an explicit bounded HOLD with the missing proof.
+Proof: subject ledger, blind reviews/effort, claims, voice/visual records and original AT/E2E receipts.
 
-- [x] Refresh Paths, packet, candidate/main heads, PR24 and the actual launcher/config/client binding. Reuse completed connection/P0/P1 work.
-- [x] Run local CI at this documentation milestone; retain source/config hashes and exact outcomes. During subsequent implementation, reuse the existing receipt patterns rather than add a status service.
-- [x] At every phase boundary record the five states below and update packet + plan + evidence in the same logical change.
+## Milestone closure and authority
+After each meaningful milestone record:
+- candidate/base/main/PR state; tested revision and hashes; commands/exits and observed outcomes;
+- actual installed revision/imports; rollback binding; no-call reopening where relevant;
+- declared/observed resource use, exact IDs or unavailable, human decisions still pending;
+- GO/HOLD/FAIL, remaining blockers and next eligible action.
 
-**Pass:** cold continuation can identify the next phase and distinguish tested candidate, merged main and actual runtime. A green test is not proof of merge or installation.
-**Verification:** local pytest, diff/integrity checks, GitHub readback and launcher/module-path inspection. All observation must avoid model generation.
-
-## Phase 1 — prepare evidence before changing the writer
-
-- [x] Choose one substantive audience question from existing Graham/Ardent subject material. Avoid another post about our testing process. Define the reader, main point and supported consequence.
-- [x] Assemble a small source bundle: source ID, title/URL or record, author/publisher, publication/event date where relevant, checked_at, exact supporting passage/record and limitations. Read the source itself; a URL or search snippet is not support.
-- [x] Map each checkable claim to support and mark fact / personal observation / inference / opinion. Include material counterevidence, stale information and contradictions. Real user-confirmed experience is a primary source; external research is not mandatory for every opinion.
-- [x] For this trial prefer at least one independent primary source or a concrete verified professional observation that supports the central factual anchor. A stronger claim needs stronger evidence; do not impose arbitrary citation counts.
-- [x] Freeze request + source bundle before drafting. Keep extra provenance beside the existing SourceEvidence request initially; extend contracts only if consumer tests require it.
-
-**Tests:** sufficient support permits the intended claim; missing central support requests one targeted detail or defers; stale/contradictory sources cannot be silently presented as settled fact; opinion is not rejected merely for lacking a statistic.
-**Pass:** one usable evidence brief plus negative fixtures. No invented specificity to satisfy the scorer.
-**Maps to:** AT03/14/21/26.
-
-## Phase 2 — make existing writing guidance operational
-
-- [x] Build a compact, source-specific editorial plan: assumption/tension, exact factual anchor, mechanism, supported human/business consequence, takeaway and natural closer.
-- [x] Reuse the Voice Bible's causal reasoning and Spoken Voice. Use only supported layers; never force every stakeholder, emotional beat, analogy or financial consequence.
-- [x] Supply the same approved voice material to relevant stages. Reuse genuinely approved examples if their provenance is available; a limited preference is not an approved example.
-- [x] Replace generic angle scaffolding only where tests demonstrate need. Keep existing engine/provider/contracts and at most one guarded quality rewrite.
-- [x] A clean house-rule score must not be described as editorial success. The existing semantic quality assessment already runs: improve its use rather than enable named critic/humanizer stages merely to add calls.
-
-**Tests:** the actual drafting consumer receives the frozen anchor/plan/voice; changing or removing essential support changes the allowed claim/readiness; formatted-but-generic writing is not accepted by a formatting check alone; rewritten text retains support and candidate/visual identity.
-**Pass:** fixture-qualified source-specific planning and prompt flow, without extra rewrite loops.
-**Maps to:** AT01/02/03/18/19/20/21.
-
-## Phase 3 — align the scorer; do not chase90
-
-- [x] Preserve separate factual/safety checks, house-rule compliance, model editorial ratings and human approval.
-- [x] Give the evaluator the same relevant brief, goal, voice guidance and approved examples as the writer. Define concrete0–5 anchors; do not claim these ratings predict LinkedIn engagement.
-- [x] Compare against a small existing human-approved/rejected reference set if available; otherwise record calibration as missing. Preferences alone cannot fabricate that set.
-- [x] Make critiques identify the largest fixable defect. Missing evidence goes back to the brief; rewriting cannot create facts.
-- [x] When numerical comparisons are presented, assess engine and simple baseline with the same rubric. Preserve weights/threshold90 until a separately recorded owner decision changes them.
-
-**Tests:** consistent brief/voice reaches writer and judge; missing dimension or malformed judgment is explicit; supplied human labels remain immutable; uncertainty is reported; one targeted rewrite only; no artificial score inflation.
-**Pass:** transparent, test-qualified scoring contract. Model alignment with Graham remains unproved until actual reference judgments exist.
-**Maps to:** AT02/16/19/20/23/24.
-
-## Phase 4 — one substantive trial, then controlled expansion
-
-- [x] Freeze the Phase1 evidence brief and Phase2/3 prompt/config hashes. Declare one-subject budget before launch: <=12 model executions, <=900 cumulative CLI seconds, no API fallback or automatic retries.
-- [x] Generate one engine result and one same-model/simple-prompt comparison with equal facts, audience, constraints and voice. Score both if showing numerical comparison.
-- [x] Retain exact source-to-request-to-prompt-to-claim links, actual stage changes, A/B, selected hash, critiques, costs/usage where observable, and visual plan/deferral.
-- [x] Test an omitted critical source through the actual preflight consumer; it must block/qualify the unsupported claim without launching an unauthorized replacement. Prompt inclusion alone is not causal influence proof.
-- [ ] Present readable outputs and get exact-hash human feedback: factual accuracy, voice, insight/usefulness, keep/light/structural/reject, actual edit effort and comparison preference. Clearly distinguish transparent diagnosis from a blinded pilot.
-- [ ] After the first substantive human disposition, expand in small admitted batches toward six eligible distinct subjects, maximum8 subject trials. Preserve earlier weak results and denominators; do not cherry-pick them away.
-
-**Pass:** actual phase-specific AT/E2E evidence supports P2 disposition. Keep existing >=4/6 keep/light, >=2 native-provider human-accepted subjects, source/voice/visual/originality requirements and blinded >=4/6 preference gate. Ties are not wins; insufficient subjects means NOT_YET_EVALUABLE.
-**Maps to:** AT04/05/14/19–26 and E2E06/10/11. P3 production and rendering remain gated.
-
-
-## Required checkpoint after every meaningful phase
-
-1. **Source:** candidate HEAD, base/main SHA, dirty changes, source/config hashes and reviewed diff.
-2. **Local CI:** targeted tests + one full `python -m pytest -q` at code convergence, `git diff --check`, exact interpreter/UTC/command/exit/log refs. Fix machine-solvable failures; never weaken assertions. Documentation milestones check links/objective IDs/status integrity; this update also runs full local CI as requested.
-3. **Integration:** PR state/head, required reviews/checks and whether that exact candidate is actually merged. Read status; do not auto-enable hosted workflows or infer merge from a push.
-4. **Runtime:** resolved launcher/interpreter/module path, running source/config/client revision, and whether it is a candidate trial checkout or released installation. Inspect/show only; no hidden generation. After an authorized install, verify exact readback plus no-call reopen. Otherwise report NOT_INSTALLED, STALE or CANDIDATE_ONLY truthfully.
-5. **Continuation:** reconcile CURRENT_WORK_PACKET, this plan, prompt and evidence. Record GO/HOLD/FAIL, expected versus observed, remaining debt and next eligible action. A later docs-only commit may reuse tests only after proving tested code/config unchanged; report both revisions.
-
-Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
-
-## Independent voice-selection correction
-The previous two-identity PDF did not test writing voices. The bounded selector correction is implemented and locally qualified in [the selector subplan](WRITING_VOICE_SELECTOR_2026-11-04.md). Reuse it; do not recreate the V2 architecture. Nine generic craft-only projections are independent of author identity. The source of truth is config/writing_voices.json; historical labels are provenance/aliases, not imitation instructions.
-
-**Next:** Controlled writing-voice comparison using explicit writing_voice_id, fixing author/story/facts/audience/central argument, model and constraints. Preserve existing source bundle admission and all weak prior outcomes. Compare actual style behavior with human review; do not substitute195 green implementation tests for that result. P2 product/first-six/pilot/calibration/visual gates remain HOLD.
-
-## Controlled writing-voice comparison — 2026-11-04
-
-Current receipt: evidence/controlled-voice-comparison-20261104/MILESTONE.json and REPORT.md. Nine actual unedited first drafts now hold Graham Hill, story, facts, audience, argument, model and constraints fixed; only the verified writing_voice changes. The existing drafting stage is isolated before critic/humanizer/scoring, so these are not full engine acceptance runs. Nine native model executions,27 physical starts,107.900 cumulative CLI seconds/API0; fresh-process reopen adds0 calls. Frozen product/config/tests and26 AT/11 E2E definitions remain unchanged. PDF:13 pages, linked contents, raw text verified and all pages visually reviewed.
-
-Fresh full local CI:195 PASS (1.96s); log retained. Machine result GO; human voice/quality acceptance HOLD. All9 hooks begin “An approval screen”; factual paragraphs and takeaways are similar. Preserve this weak differentiation finding and do not infer a winner or regenerate to manufacture contrast. Earlier identity/angle sampler remains historical. Next eligible action is human inspection of retained drafts and specific passage feedback; no scoring/keep/example promotion inferred. Candidate-only/unmerged; no hosted CI, installation promotion, deployment or publishing.
-
-## Voice convergence diagnostic — 2026-11-05
-
-Receipt: evidence/voice-convergence-diagnosis-20261105/MILESTONE.json; findings and bounded recommendation in REPORT.md. Offline audit confirms9 separate native requests/threads, no cache hits, exact native-to-retained text and selected-style delivery;18 substituted-input/output controls reject. No new model calls. All9 share opening prefix;7 share the exact factual paragraph. Confirmed prompt defects: objective repeated4 times,5 mentions of “approval screen”,5888 characters of inherited default style still present beside compact selected traits, common composition route and unqualified numeric preset controls. Leading hypothesis is prompt-driven convergence; no live causal ablation performed. Comparison usefulness FAIL; delivery integrity GO; human acceptance and precise causal contribution HOLD. The earlier195 PASS proves delivery/recovery assertions, not effective stylistic difference.
-
-Superseding next action: repair the existing effective prompt projection (one selected rhetorical style, deduplicated neutral proposition, retain all facts/POV/safety/default behavior and evaluator/baseline parity), verify offline, then qualify only3 distinct styles before expanding. Do not ask the owner to choose among near-duplicates as acceptance, ban the repeated phrase as a cosmetic fix, or silently regenerate this batch. Diagnostic-only change; all26 AT/11 E2E retained; no hosted CI/merge/install/deploy/publish.
-
-## Effective writing-style repair — 2026-11-04
-
-Operator authorized the focused repair and one bounded three-style comparison. Receipt: evidence/effective-voice-repair-20261104/MILESTONE.json. Explicit selection now projects one rhetorical style, retains identity/POV/house and public-language checks, supplies the semantic objective once to writer/evaluator, and removes the universal drafting sequence. Default omitted-selection templates remain unchanged. Concise/reflective/technical definitions areversion2 with operational craft guidance; original numeric profiles remain historical provenance. No other voice is newly qualified.
-
-Observed7 original RED cases and3 review-discovered public-language regressions corrected; full207 PASS. Existing195 obligations retained, three explicit version expectations advanced intentionally;26 AT/11 E2E definitions unchanged. Source candidate-only, PR24 draft/unmerged; no hosted CI, merge/install/deploy/publish. Next eligible action: declared three-style Codex drafting diagnostic; raw outputs and meaningful differentiation must be inspected before any expansion.
-
-## Three-style native comparison — 2026-11-04
-
-CURRENT RESULT: machine GO; useful differentiation modest/observable; human quality and nine-style expansion HOLD. Latest receipt: evidence/effective-voice-comparison-20261104/MILESTONE.json; raw drafts: COMPARISON.md and per-style JSON; expected/observed and limitations: REPORT.md in that directory. Exact tested implementation e11b384; full207 PASS and source/config/tests unchanged afterward.
-
-Actual Codex batch:3 first drafts,9 physical starts,35.997 cumulative CLI seconds/API0; distinct native requests/threads/results and exact output hashes. Fresh-process reopen exit0 with0 added calls. Within this batch all non-style input is identical; only3 version2 styles vary. Counts162/162/168 words; approximate sentence averages12.46/13.50/16.80. Concise compresses, reflective emphasizes qualified responsibility, technical develops a causal dependency and ends on scope limits. Shared early factual summary and similar overall reasoning remain. These are descriptive observations, not scores or human acceptance; combined repair is not single-factor causal proof. Shared central argument/recommendation is deliberately controlled.
-
-Superseding next action: owner exact-text feedback on these3 retained versions; no expansion or automatic rewrite/retuning. Preserve weak nine-style results, all26 AT/11 E2E, original simpler-LLM pilot requirements, measured editing-effort and visual gates. Drafting-stage diagnostic only; full engine/baseline paths verified offline, not natively accepted by this batch. Candidate-only/unmerged; no hosted CI, merge/install/deploy/render/publish.
-
-## Current continuation — November4,2026
-
-Follow CURRENT_WORK_PACKET.md current receipt/frontier. The single-draft editorial diagnosis and expected/observed results are maintained once in evidence/editorial-single-draft-20261104/REPORT.md, with MILESTONE.json and immutable original/revision records in that directory. Prior milestones above are historical. Editorial outcome PARTIAL/HOLD; no further automatic rewrite or voice expansion. A fresh equal-input simpler-LLM control is recommended, not yet admitted/executed. Preserve all26 AT/11 E2E and existing human/provider/CI/merge/install/deploy/publish gates.
-
-## Current continuation — November4,2026
-
-The equal-input control was explicitly authorized and completed. Follow CURRENT_WORK_PACKET.md current receipt/frontier; evidence/equal-input-engine-baseline-20261104/REPORT.md is the single narrative and MILESTONE.json records actual results. Engine writing advantage not demonstrated; human/P2/expansion HOLD. Next: read-only full-source versus compressed-brief audit before further authoring changes or generation. Earlier next-action statements are historical. Preserve all26 AT/11 E2E and human/provider/CI/merge/install/deploy/publish gates.
-
-## Current source-first experiment — November4,2026
-
-Current execution narrative and replication commands are evidence/source-first-planning-20261104/REPORT.md and WORKFLOW.md. MILESTONE.json owns observed results. Planner sources and all raw prompts/results/attempts are retained. Planning recovered the broad thesis independently and added concrete evidence. Same-new-brief comparison scored engine78/baseline81, with engine HOLD. Six calls/123.270 CLI seconds/API0, replay0 added calls,209 local tests PASS. Next repair the observed punctuation-sensitive number guard and focus the editorial brief before further generation. Human/P2/expansion and existing owner gates remain. Earlier next-step notes are historical.
+Update CURRENT_WORK_PACKET.md, this plan and the execution prompt together; keep detailed results in
+one reproducible evidence packet and link its receipt. The execution prompt routes work; this plan owns
+sequence; the acceptance document owns detailed criteria. Preserve historical outcomes instead of
+appending competing “current” instructions. Documentation-only changes may reuse matching code tests.
+Provider-neutral visual planning is included in M3; image generation/rendering is a separately gated effect.
+No paid API/fallback, hosted CI, merge/promotion beyond admitted scope, deployment, rendering or publishing
+is granted by this document. Dedication owns canonical approval, scheduling and publication.

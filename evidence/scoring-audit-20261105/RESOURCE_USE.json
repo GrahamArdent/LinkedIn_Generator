@@ -1,0 +1,326 @@
+{
+  "native_executions": 6,
+  "cached_read_receipts": 2,
+  "model_seconds": 57.15964182652533,
+  "api_spend": 0,
+  "physical_launches": 18,
+  "attempts": [
+    {
+      "attempt_id": "attempt-5525482bca7d46b59e684bae21b84953",
+      "run_id": "scoring-audit-20261105",
+      "elapsed_seconds": 8.950573583133519,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 11995,
+        "output_tokens": 171,
+        "reasoning_output_tokens": 0
+      },
+      "events": [
+        {
+          "thread_id": "01a1aa00-29c9-7d71-a646-8eb3658bf7c0",
+          "type": "thread.started"
+        },
+        {
+          "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+          "item_id": "item_0",
+          "item_type": "error",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "agent_message_sha256": "f500060b5ad6b8b86d7eda23b8345becb4b20100311487cc7f19885990a440cd",
+          "item_id": "item_1",
+          "item_type": "agent_message",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 7424,
+            "input_tokens": 11995,
+            "output_tokens": 171,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "91feb455b35cc5949e94e92d1c63effb4edc108f6c8a1ffcbab8dee4eaf93a06",
+      "result_sha256": "4cb35fed7c8c25c4d27cad2d761b340d2dbf45d24632fada89b01dba56b716a6",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-ff0803958d6d4699978160a82b6902e5",
+      "run_id": "scoring-audit-20261105",
+      "elapsed_seconds": 9.97593283187598,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12359,
+        "output_tokens": 192,
+        "reasoning_output_tokens": 0
+      },
+      "events": [
+        {
+          "thread_id": "01a1aa00-521b-7722-9b20-73469f39896b",
+          "type": "thread.started"
+        },
+        {
+          "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+          "item_id": "item_0",
+          "item_type": "error",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "agent_message_sha256": "277fcfdf0601d43755e304fe4ae37bfb683345466d25010a010a69dfedc8455a",
+          "item_id": "item_1",
+          "item_type": "agent_message",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 7424,
+            "input_tokens": 12359,
+            "output_tokens": 192,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "9e130abad451eb8074adb2dc8299335a858d45eab1485d4710d02cc5e8a8da0c",
+      "result_sha256": "0811a3943f425ce89a56e56e9331be23df8e0ec8000ba615639e5e9987762d0c",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-db9b4494450f4c85ad1cf3e7f27a6f2e",
+      "run_id": "scoring-audit-20261105",
+      "elapsed_seconds": 10.77553534321487,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 15993,
+        "output_tokens": 194,
+        "reasoning_output_tokens": 0
+      },
+      "events": [
+        {
+          "thread_id": "01a1a9ff-c9ef-7f83-ab75-527a88a929b7",
+          "type": "thread.started"
+        },
+        {
+          "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+          "item_id": "item_0",
+          "item_type": "error",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "agent_message_sha256": "2436439f181341af2a5ab59db5559557a9bf987676e1a7bb7996f5b2e7ece2d4",
+          "item_id": "item_1",
+          "item_type": "agent_message",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 7424,
+            "input_tokens": 15993,
+            "output_tokens": 194,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "d6a6a2c4cbb3aa2b0ffb62684759031a799910f862540c160bde46b54abb2033",
+      "result_sha256": "c9602a2b0762758524fbacbf8f110bb58cfa97a8dac44ace7c831b4bb76977b7",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-336310f503944590b86e941e4bb74af1",
+      "run_id": "scoring-audit-20261105",
+      "elapsed_seconds": 8.9956632014364,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12328,
+        "output_tokens": 176,
+        "reasoning_output_tokens": 0
+      },
+      "events": [
+        {
+          "thread_id": "01a1a9ff-fd67-7352-9156-bb26143ad5c3",
+          "type": "thread.started"
+        },
+        {
+          "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+          "item_id": "item_0",
+          "item_type": "error",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "agent_message_sha256": "7abaeb7c4d722508903e06035f1fdd2c98549a888f1dec8a7b5068ca0c2f93da",
+          "item_id": "item_1",
+          "item_type": "agent_message",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 7424,
+            "input_tokens": 12328,
+            "output_tokens": 176,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "dc3ef7ef102e369096af8071df84a9eeeae33cffbeacaba549b6d0c73ba52a69",
+      "result_sha256": "aa15b7baff8ccb24607b57e4d4f92514688204ccd45b6bf63f42d90a82294651",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-eea855a129734cd4ad2fe4e7bbf4344f",
+      "run_id": "scoring-independent-ai-20261105",
+      "elapsed_seconds": 9.178663717582822,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12328,
+        "output_tokens": 185,
+        "reasoning_output_tokens": 0
+      },
+      "events": [
+        {
+          "thread_id": "01a1aa03-13b0-79d0-b6f0-58bdd956cff0",
+          "type": "thread.started"
+        },
+        {
+          "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+          "item_id": "item_0",
+          "item_type": "error",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "agent_message_sha256": "9b6b8a99d211b9b3c68d2b32ef91ed75fd3c27e560eaea857c282024027c6729",
+          "item_id": "item_1",
+          "item_type": "agent_message",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 7424,
+            "input_tokens": 12328,
+            "output_tokens": 185,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "dc3ef7ef102e369096af8071df84a9eeeae33cffbeacaba549b6d0c73ba52a69",
+      "result_sha256": "b431e3bbe3cca57ffc70735f3a627ef170840c27dfa55abbfc12913e8e1bd965",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-fe23b2df171448358c1f5da75e813f94",
+      "run_id": "scoring-independent-security-20261105",
+      "elapsed_seconds": 9.308566335588694,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 15993,
+        "output_tokens": 180,
+        "reasoning_output_tokens": 0
+      },
+      "events": [
+        {
+          "thread_id": "01a1aa02-ea05-7742-b44a-8e400df303c1",
+          "type": "thread.started"
+        },
+        {
+          "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+          "item_id": "item_0",
+          "item_type": "error",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "agent_message_sha256": "fe9f0712925e799fb29cdfc8373f1eb091f9841fda3ed62882b284eae7e269af",
+          "item_id": "item_1",
+          "item_type": "agent_message",
+          "type": "item.completed"
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "cache_write_input_tokens": 0,
+            "cached_input_tokens": 0,
+            "input_tokens": 15993,
+            "output_tokens": 180,
+            "reasoning_output_tokens": 0
+          }
+        }
+      ],
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "d6a6a2c4cbb3aa2b0ffb62684759031a799910f862540c160bde46b54abb2033",
+      "result_sha256": "c84b3225419ceeca94168a77714dfca23096909ef9f7b00cc9df108b1d690170",
+      "provider_response_id": "unavailable"
+    }
+  ],
+  "budgets": [
+    {
+      "active_seconds": 9.515534449368715,
+      "in_flight": null,
+      "launches": 3,
+      "model_execution_slots": 1,
+      "model_seconds": 9.174356745555997,
+      "schema_version": "2.0",
+      "started": 1793853690.203093
+    },
+    {
+      "active_seconds": 40.097270131111145,
+      "in_flight": null,
+      "launches": 12,
+      "model_execution_slots": 4,
+      "model_seconds": 38.680946168489754,
+      "schema_version": "2.0",
+      "started": 1793853474.6886253
+    },
+    {
+      "active_seconds": 9.648809967562556,
+      "in_flight": null,
+      "launches": 3,
+      "model_execution_slots": 1,
+      "model_seconds": 9.30433891247958,
+      "schema_version": "2.0",
+      "started": 1793853679.5252082
+    }
+  ]
+}

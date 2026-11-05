@@ -1,0 +1,41 @@
+{
+  "status": "GO_SOURCE_HOLD_RELEASE_AND_HUMAN",
+  "policy_version": "essential-checks-v1",
+  "parent_commit": "0143ebe03aae7b00092f7ba7a8187d923c8e8074",
+  "branch": "fix/essential-review-gate-20261105",
+  "local_tests": {
+    "passed": 251,
+    "failed": 0,
+    "command": ".venv/bin/python -m pytest -q",
+    "log": "full-local.log"
+  },
+  "initial_red": 13,
+  "new_tests": 21,
+  "native_evaluations": 2,
+  "native_results": {
+    "retained_security": {
+      "score": 72,
+      "status": "reviewable"
+    },
+    "unsupported_negative": {
+      "score": 69,
+      "status": "needs_evidence"
+    }
+  },
+  "api_spend": 0,
+  "merged": false,
+  "installed": false,
+  "installed_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "human_review": "pending",
+  "all_acceptance_complete": false,
+  "at_count": 26,
+  "e2e_count": 11,
+  "lint": "NOT_RUN: ruff unavailable",
+  "hosted_ci": "NOT_RUN",
+  "publishing": "NOT_RUN",
+  "clean_archive": {
+    "commit": "d3ee2a36d037323c080edec67b53a521bcceb75c",
+    "verifier": "PASS",
+    "tests_passed": 251
+  }
+}

@@ -1,5 +1,8 @@
 # LinkedIn Generator — Test Evidence, Reuse Map, and Adversarial Challenge (v4)
 
+> Current owner-adopted correction — November 5, 2026: `essential-checks-v1` replaces numeric90 admission in the current source candidate. All four essentials must pass with reasons: factual integrity, reader relevance, practical value and argument/voice fidelity. Scores are advisory; missing evidence pauses; failed essentials allow at most one guarded targeted rewrite; unavailable evaluation fails closed. Passing means human-review eligibility only. Evidence: `evidence/essential-review-gate-20261105/REPORT.md` and `MILESTONE.json`. Installed release0c099d7 remains on its historical90 policy until separately promoted. This supersedes older90 instructions below for new source runs; historical receipts remain immutable. All26 AT/11 E2E and human/visual/baseline/publishing obligations remain.
+
+
 **Date checked:** 2026-11-04
 **Current continuation:** Original review sections below are historical. The dated §9 addendum records the evidence-first change; CURRENT_WORK_PACKET.md and actual receipts determine execution status.
 **Mode:** READ-ONLY analysis of connected GitHub sources + the previously generated 2026-11-04 plan and v2 audit package; this turn also verified current Paths and primary owner contract files. No product code, GitHub state, CI, models, rendering, or publishing were changed or executed for this review.

@@ -1,0 +1,32 @@
+{
+  "practical_usefulness": {
+    "synthetic_dimensions": {
+      "outsider_clarity": 5,
+      "professional_relevance": 5,
+      "specificity": 5,
+      "novel_insight": 5,
+      "practical_usefulness": 0,
+      "emotional_tension": 5,
+      "conversation_potential": 5,
+      "shareability": 5,
+      "voice_authenticity": 5
+    },
+    "score": 90,
+    "actual_candidate_gate_accepts": true
+  },
+  "voice_authenticity": {
+    "synthetic_dimensions": {
+      "outsider_clarity": 5,
+      "professional_relevance": 5,
+      "specificity": 5,
+      "novel_insight": 5,
+      "practical_usefulness": 5,
+      "emotional_tension": 5,
+      "conversation_potential": 5,
+      "shareability": 5,
+      "voice_authenticity": 0
+    },
+    "score": 95,
+    "actual_candidate_gate_accepts": true
+  }
+}

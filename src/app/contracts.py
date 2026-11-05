@@ -181,7 +181,7 @@ class LinkedInContentRequest(BaseModel):
     content_goal: ContentGoal = "auto"
     opportunity_gate: bool = True
     publish_quality_gate: bool = True
-    publish_quality_threshold: int = Field(default=90, ge=0, le=100)
+    publish_quality_threshold: int = Field(default=90, ge=0, le=100, description="Legacy metadata; essential-checks-v1 does not enforce a numeric cutoff.")
     visual_asset_plan: bool = True
     visual_asset_preference: VisualAssetPreference = "auto"
     services: list[str] = Field(default_factory=list)

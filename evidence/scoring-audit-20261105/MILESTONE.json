@@ -1,0 +1,28 @@
+{
+  "status": "GO audit / recommend replacing90 human-review admission policy / runtime unchanged",
+  "installed_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "native_executions": 6,
+  "api_spend": 0,
+  "historical_numeric_assessments": 19,
+  "arithmetic_errors": 0,
+  "independent_retests": {
+    "security": [
+      72,
+      72
+    ],
+    "ai": [
+      73,
+      74
+    ]
+  },
+  "negative_controls": {
+    "generic": 14,
+    "unsupported": 62
+  },
+  "human_calibration": "unavailable",
+  "recommendation": "POLICY_RECOMMENDATION.md",
+  "policy_implemented": false,
+  "human_publish_approval": null,
+  "acceptance_objectives_preserved": 26,
+  "e2e_scenarios_preserved": 11
+}

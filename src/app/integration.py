@@ -9,6 +9,7 @@ from pydantic import ValidationError
 
 from .api import run_generation
 from .contracts import LinkedInContentRequest, LinkedInContentResult, SelectedCandidate, VisualAssetPlan
+from .publish_quality import REVIEW_POLICY_VERSION, essential_review_status
 from .utils import load_yaml
 from .visual_assets import plan_visual_asset
 
@@ -27,7 +28,10 @@ def _publish_candidate(
     review = payload.get("review")
     if not isinstance(review, dict) or review.get("publish_ready") is not True:
         return None
-    if type(review.get("threshold")) is not int or review["threshold"] != threshold:
+    policy = review.get("policy_version")
+    if policy is not None and policy != REVIEW_POLICY_VERSION:
+        return None
+    if policy is None and (type(review.get("threshold")) is not int or review["threshold"] != threshold):
         return None
     source = review.get("recommendation")
     if source not in ("original", "rewrite"):
@@ -40,7 +44,15 @@ def _publish_candidate(
     body, score = candidate.get("body"), candidate.get("score")
     if not isinstance(body, str) or not body.strip():
         return None
-    if type(score) is not int or not threshold <= score <= 100:
+    if type(score) is not int or not 0 <= score <= 100:
+        return None
+    if policy == REVIEW_POLICY_VERSION:
+        if (review.get("review_eligible") is not True or review.get("review_status") != "reviewable"
+                or candidate.get("policy_version") != REVIEW_POLICY_VERSION
+                or candidate.get("review_status") != "reviewable"
+                or essential_review_status(candidate.get("essential_checks")) != "reviewable"):
+            return None
+    elif score < threshold:
         return None
     # Preserve the actual UTF-8 bytes: normalization would break provenance.
     digest = sha256(body.encode("utf-8")).hexdigest()
@@ -99,8 +111,8 @@ def generate_content(
             visual_asset = VisualAssetPlan(
                 status="deferred",
                 rationale=(
-                    "Visual planning waits until the post has a publish-quality score at or above the configured "
-                    "threshold, so image/carousel work is not spent on a text candidate that still needs revision."
+                    "Visual planning waits until selected text passes its review-admission policy. "
+                    "Missing evidence, failed essentials or an unavailable assessment must be resolved first."
                 ),
                 review_required=True,
                 warnings=["publish_ready_candidate_required"],

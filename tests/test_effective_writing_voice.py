@@ -21,7 +21,7 @@ class Capture:
     def call(self,system,user,response_json=True):
         self.calls.append({"system":system,"user":user})
         if "publish-quality evaluator" in system:
-            return {"text":json.dumps({**{k:5 for k in WEIGHTS},"gaps":[],"rationale":"Fixture only."})}
+            return {"text":json.dumps({**{k:5 for k in WEIGHTS},"essential_checks":{key:{"verdict":"pass","reason":"Meets the fixture brief."} for key in ("factual_integrity","reader_relevance","practical_value","argument_voice")},"gaps":[],"rationale":"Fixture only."})}
         return {"text":BODY}
 
 def run(style,brief=None):

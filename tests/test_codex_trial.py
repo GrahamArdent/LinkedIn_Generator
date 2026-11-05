@@ -97,7 +97,7 @@ def test_opt_in_baseline_score_uses_engine_context_and_reopen_launches_nothing(t
         def generate(self,**kw):
             self.calls.append(kw)
             if "strict LinkedIn publish-quality evaluator" in kw["system"]:
-                return json.dumps({**{k:4 for k in WEIGHTS},"gaps":["Ordinary insight."],"rationale":"Fixture."})
+                return json.dumps({**{k:4 for k in WEIGHTS},"essential_checks":{key:{"verdict":"pass","reason":"Meets the fixture brief."} for key in ("factual_integrity","reader_relevance","practical_value","argument_voice")},"gaps":["Ordinary insight."],"rationale":"Fixture."})
             return "Supported baseline text."
     context={"editorial_context":{"objective":"Review recovery.","approved_voice_examples":[]},
              "voice_authority":{"runtime_guidance":{"causal_summary":"Use supported consequences only."}}}

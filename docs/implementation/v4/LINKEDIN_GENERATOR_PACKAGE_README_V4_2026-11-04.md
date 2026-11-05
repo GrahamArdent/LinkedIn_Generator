@@ -1,5 +1,8 @@
 # LinkedIn Generator — current continuation index
 
+> Current owner-adopted correction — November 5, 2026: `essential-checks-v1` replaces numeric90 admission in the current source candidate. All four essentials must pass with reasons: factual integrity, reader relevance, practical value and argument/voice fidelity. Scores are advisory; missing evidence pauses; failed essentials allow at most one guarded targeted rewrite; unavailable evaluation fails closed. Passing means human-review eligibility only. Evidence: `evidence/essential-review-gate-20261105/REPORT.md` and `MILESTONE.json`. Installed release0c099d7 remains on its historical90 policy until separately promoted. This supersedes older90 instructions below for new source runs; historical receipts remain immutable. All26 AT/11 E2E and human/visual/baseline/publishing obligations remain.
+
+
 **Current stage:** Codex connection GO; P2 content acceptance HOLD. Evidence-first machine repairs and one substantive native trial completed; human acceptance/calibration remain open.
 **Active authority:** repository CURRENT_WORK_PACKET.md, including its latest dated milestone receipt. Older exported handoff ZIPs are historical snapshots unless regenerated from a named revision.
 

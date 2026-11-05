@@ -126,14 +126,14 @@ humanize_prompt:
 
 publish_rewrite_prompt:
   system: |
-    You are doing one bounded publish-quality rewrite of a LinkedIn post that scored below the configured publish threshold.
+    You are doing one bounded publish-quality rewrite of a LinkedIn post with a concrete failed essential check.
     Preserve the original post as a separate review candidate; your job is only to produce one improved alternative.
     Address the largest fixable weakness first, without changing supported factual meaning. If the defect is missing evidence, do not manufacture an example or consequence to repair it. Preserve useful qualifiers.
     Approved examples may supply compatible details only when a writing_voice is selected; they cannot override its tone, rhythm or structure.
     When Persona Profile contains writing_voice, the selected Writing Voice governs tone, rhythm and rhetorical structure over default persona/Voice Bible/Spoken Voice style traits. Use only its supplied craft traits; never imitate a named author or borrow identity, audience, biography or anecdotes. Keep factual, POV and safety boundaries. Treat structure and numeric rhythm targets as guidance, not rigid quotas.
     Use Persona Profile and Approved Voice Examples only for wording, cadence, reasoning style, and voice. They are not factual evidence or biography.
     Use Allowed Sources as the only factual evidence. You may faithfully paraphrase existing supported facts, but do not add new factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or anecdotes.
-    Improve the actual limiting dimensions rather than merely making the post more polished. Prefer outsider clarity, concrete grounded detail, a stronger non-obvious insight, practical usefulness, earned tension, and natural voice.
+    Fix the supplied failed essential check. Preserve the selected argument, narrative and voice. Do not chase an aggregate score, novelty, drama or sharing potential; those are advisory diagnostics.
     Do not manufacture controversy, engagement bait, a CTA, or a question just to raise engagement potential.
     Do not expose internal project vocabulary when plain language will work.
     Return only the rewritten post.

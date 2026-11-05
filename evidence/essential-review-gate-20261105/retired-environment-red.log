@@ -1,0 +1,256 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_retired_score_environment_cannot_break_new_admission ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74386b27f230>
+
+    def test_retired_score_environment_cannot_break_new_admission(monkeypatch):
+        monkeypatch.setenv("PUBLISH_QUALITY_MIN_SCORE", "retired-value")
+>       result = run_generation(topic="AI planning",services=[],persona_key="graham",
+            audience="Business leaders",opportunity_gate=False,publish_quality_gate=True,
+            publish_quality_threshold=None,allowed_sources=[{"title":"Build note","fact":"A step reopened decisions."}],
+            llm_client=Client(judgment()),hashtags=[])
+
+tests/test_essential_review_gate.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+topic = 'AI planning', services = [], persona_key = 'graham'
+audience = 'Business leaders'
+objective = 'Educate and convert attention to pipeline'
+author_pov = 'individual', content_goal = 'auto', opportunity_gate = False
+publish_quality_gate = True, publish_quality_threshold = None, targets = None
+allowed_sources = [{'title': 'Build note', 'fact': 'A step reopened decisions.'}]
+voice_examples = None, hashtags = []
+llm_client = <test_essential_review_gate.Client object at 0x74386b2f5160>
+opportunity_client = None, publish_quality_client = None, editorial_brief = None
+writing_voice_id = None, editorial_handoff = None
+
+    def run_generation(
+        topic: str,
+        services: list[str],
+        persona_key: str = "ardent_v2",
+        *,
+        audience: str = "C-suite leaders",
+        objective: str = "Educate and convert attention to pipeline",
+        author_pov: str = "individual",
+        content_goal: str = "auto",
+        opportunity_gate: bool = False,
+        publish_quality_gate: bool = False,
+        publish_quality_threshold: int | None = None,
+        targets: list[str] | None = None,
+        allowed_sources: list[dict[str, Any]] | None = None,
+        voice_examples: list[dict[str, Any]] | None = None,
+        hashtags: list[str] | None = None,
+        llm_client: Any | None = None,
+        opportunity_client: Any | None = None,
+        publish_quality_client: Any | None = None,
+        editorial_brief: dict[str, Any] | None = None,
+        writing_voice_id: str | None = None,
+        editorial_handoff: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Run the generation pipeline with explicit caller context.
+    
+        Existing positional/default arguments remain for legacy callers. New
+        orchestrators should supply audience, objective, author POV, content goal,
+        evidence and hashtags explicitly. Voice authority and approved examples are
+        style and reasoning evidence, never factual evidence. Dedication-style
+        requests may enable the opportunity preflight so weak subjects are skipped
+        and promising-but-generic subjects request one concrete detail before a
+        full draft is generated. They may also enable the publish-quality gate: a
+        finalized post below the configured threshold is preserved and receives one
+        bounded improvement candidate for human review.
+        """
+    
+        handoff = validate_handoff(editorial_handoff) if editorial_handoff is not None else None
+        base = os.path.join(os.path.dirname(__file__), "../../")
+        prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
+        prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
+        personas = load_yaml(os.path.join(base, "config/personas.yaml"))
+        cta_policies = load_yaml(os.path.join(base, "config/cta_policies.yaml"))
+    
+        cfg = {
+            "prompt_kit": {
+                "emoji_max": int(prompt_kit.get("emoji_max", 3)),
+                "bullet_char": prompt_kit.get("bullet_char", "🔹"),
+                "hashtag_min": int(prompt_kit.get("hashtag_min", 3)),
+                "hashtag_max": int(prompt_kit.get("hashtag_max", 5)),
+                "strip_links_in_body": prompt_kit.get("strip_links_in_body", "true")
+                in ("true", "True", "1"),
+                "append_sources_block": prompt_kit.get("append_sources_block", "false")
+                in ("true", "True", "1"),
+                "allow_em_dash": prompt_kit.get("allow_em_dash", "false") in ("true", "True", "1"),
+                "forbidden_phrases": list(cta_policies.get("forbidden_phrases", []) or []),
+            }
+        }
+        persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov,
+                                           writing_voice_id=writing_voice_id)
+        pipe = Pipeline(cfg, client=llm_client)
+    
+        plan_ctx = {
+            "topic": topic,
+            "services": services,
+            "targets": list(targets) if targets is not None else list(LEGACY_TARGETS),
+        }
+        plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
+    
+        source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
+        citations = [
+            str(item.get("url", ""))
+            for item in source_items
+            if str(item.get("url", "")).startswith("http")
+        ]
+    
+        if handoff is not None:
+            allowed_facts = {str(item.get("fact") or item.get("one_liner") or "") for item in source_items}
+            if any(fact["text"] not in allowed_facts for fact in handoff["meaning"]["facts"]):
+                raise ValueError("HANDOFF_FACT_NOT_ALLOWED: frozen fact absent from allowed sources")
+    
+        if opportunity_gate:
+            gate_client = opportunity_client or llm_client
+            if gate_client is None:
+                gate_model = os.getenv("OPPORTUNITY_MODEL", "").strip() or None
+                gate_client = LLMClient(model=gate_model, temperature=0.1, seed=42)
+            minimum_score = max(0, min(100, int(os.getenv("OPPORTUNITY_MIN_SCORE", "60"))))
+            assessment = assess_opportunity(
+                topic=topic,
+                audience=audience,
+                objective=objective,
+                evidence=source_items,
+                client=gate_client,
+                requested_goal=content_goal,
+                minimum_score=minimum_score,
+            )
+            opportunity = assessment.as_dict()
+            resolved_goal = assessment.goal
+            ending = ending_guidance(assessment)
+            if assessment.decision != "draft":
+                terminal = _terminal_opportunity_payload(
+                    persona_key=persona_key,
+                    citations=citations,
+                    opportunity=opportunity,
+                )
+                if "writing_voice" in persona_profile:
+                    terminal["telemetry"]["writing_voice"] = persona_profile["writing_voice"]
+                return terminal
+        else:
+            resolved_goal, ending = _goal_without_gate(content_goal)
+            opportunity = {
+                "score": None,
+                "decision": "draft",
+                "goal": resolved_goal,
+                "earned_question": False,
+                "reason": "Opportunity preflight disabled for this caller.",
+                "dimensions": {},
+                "warnings": ["opportunity_gate_disabled"],
+                "strongest_evidence_title": "",
+                "strongest_evidence_fact": "",
+                "missing_evidence_question": "",
+            }
+    
+        persona_profile["active_content_goal"] = resolved_goal
+        persona_profile["earned_question"] = bool(opportunity.get("earned_question", False))
+    
+        voice_items = list(voice_examples or [])[:3]
+        prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
+        strongest_concrete_evidence = {
+            "title": str(opportunity.get("strongest_evidence_title") or ""),
+            "fact": str(opportunity.get("strongest_evidence_fact") or ""),
+        }
+        if editorial_brief is not None:
+            central = next(c for c in editorial_brief["claims"] if c["claim_id"] == editorial_brief["central_claim_id"])
+            item = next(item for item in source_items if (item.get("fact") or item.get("one_liner")) == central["text"])
+            strongest_concrete_evidence = _source_for_prompt(item)
+        plan = pipe.plan(prompts.get("plan_prompt", {}), {
+            **plan_ctx, "audience": audience, "objective": objective,
+            "evidence": source_items, "strongest_concrete_evidence": strongest_concrete_evidence,
+            **({"editorial_handoff": handoff} if handoff is not None else {}),
+        })
+        angle_options = list(plan.get("angle_options") or [plan["angle"]])
+        draft_ctx = {
+            "editorial_plan": plan["editorial_plan"],
+            "persona_key": persona_key,
+            "audience": audience,
+            "objective": objective,
+            "author_pov": author_pov,
+            "content_goal": resolved_goal,
+            "opportunity_assessment": opportunity,
+            "strongest_concrete_evidence": strongest_concrete_evidence,
+            "ending_guidance": ending,
+            "topic": topic,
+            "services": services,
+            "angle_options": angle_options,
+            "persona_profile": persona_profile,
+            "allowed_sources": [_source_for_prompt(item) for item in source_items],
+            "approved_voice_examples": prompt_voice_examples,
+        }
+        persona_profile["editorial_context"] = {
+            "objective": objective, "topic": topic, "plan": plan["editorial_plan"],
+            "approved_voice_examples": prompt_voice_examples,
+            "source_bundle": editorial_brief,
+        }
+        if handoff is not None:
+            persona_profile["editorial_context"]["handoff"] = handoff
+            persona_profile["editorial_context"].pop("objective", None)
+            draft_ctx["objective"] = "Develop the supplied handoff meaning."
+        draft_prompt = dict(prompts.get("draft_prompt", {}))
+        if "writing_voice" in persona_profile:
+            # Keep one editorial authority, shared with editors and the evaluator.
+            # The planner's reasoning tasks must not prescribe a universal sequence.
+            persona_profile["editorial_context"]["plan"] = {
+                "reader": audience, "factual_anchor": strongest_concrete_evidence,
+            }
+            draft_prompt["system"] = draft_prompt["selected_voice_system"]
+            draft_prompt["user_template"] = draft_prompt["selected_voice_user_template"]
+        drafts = pipe.draft_variants(draft_prompt, draft_ctx)
+        best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
+        crit = pipe.critic(
+            prompts.get("critic_prompt", {}),
+            best,
+            persona_profile,
+            voice_examples=prompt_voice_examples,
+        )
+        hum = pipe.humanize(
+            prompts.get("humanize_prompt", {}),
+            crit,
+            persona_profile,
+            voice_examples=prompt_voice_examples,
+        )
+    
+        voice_reference_ids = [
+            str(item.get("example_id"))
+            for item in voice_items
+            if item.get("example_id")
+        ]
+        final_hashtags = list(hashtags) if hashtags is not None else list(LEGACY_HASHTAGS)
+        payload = pipe.finalize(
+            persona_key,
+            hum,
+            citations,
+            final_hashtags,
+            voice_reference_count=len(voice_items),
+            voice_reference_ids=voice_reference_ids,
+            opportunity=opportunity,
+        )
+        primary_body = str(payload.get("body") or hum)
+        telemetry = payload.setdefault("telemetry", {})
+        if "writing_voice" in persona_profile:
+            telemetry["writing_voice"] = persona_profile["writing_voice"]
+        telemetry.update(
+            {
+                "strongest_evidence_title": strongest_concrete_evidence["title"],
+                "strongest_evidence_fact": strongest_concrete_evidence["fact"],
+                "missing_evidence_question": "",
+            }
+        )
+    
+        if publish_quality_gate:
+            threshold = publish_quality_threshold
+            if threshold is None:
+>               threshold = int(os.getenv("PUBLISH_QUALITY_MIN_SCORE", "90"))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               ValueError: invalid literal for int() with base 10: 'retired-value'
+
+src/app/api.py:363: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_essential_review_gate.py::test_retired_score_environment_cannot_break_new_admission
+1 failed in 0.20s
