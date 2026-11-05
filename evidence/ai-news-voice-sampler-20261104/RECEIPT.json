@@ -1,0 +1,18 @@
+{
+  "kind": "exploratory_voice_sampler_not_full_pipeline_acceptance",
+  "source_commit": "0b6179db62a1377ad0f2b4c5a191cf5c3b1fae85",
+  "model_executions": 2,
+  "physical_starts": 6,
+  "cumulative_cli_seconds": 75.78090915083885,
+  "api_spend": 0,
+  "scores": null,
+  "human_decisions": null,
+  "pdf_validation": {
+    "pages": 9,
+    "contents_links": 8,
+    "bookmarks": 9,
+    "visual_review": "All nine rendered pages inspected; no clipping/overlap found."
+  },
+  "editorial_changes": "Four process/disclaimer sentences removed or tightened; exact generated bodies and changes retained in presented-versions.json. No new factual claim added.",
+  "source_config_tests_unchanged": true
+}

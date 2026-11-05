@@ -1,0 +1,99 @@
+{
+  "attempt_id": "attempt-048c8b684b114c0cab4e1294ca0d5225",
+  "auth": "chatgpt",
+  "cost": null,
+  "created_at": "2026-11-05T00:11:47.383481+00:00",
+  "elapsed_seconds": 39.45056836307049,
+  "events": [
+    {
+      "thread_id": "01a1a90c-2598-76b1-b679-5ed3368b40ff",
+      "type": "thread.started"
+    },
+    {
+      "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+      "item_id": "item_0",
+      "item_type": "error",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "agent_message_sha256": "f8ce20883f044cd2d2135de5775ae08df0d02c9b4098d0301e88b7b3cf412b13",
+      "item_id": "item_1",
+      "item_type": "agent_message",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 9965,
+        "output_tokens": 919,
+        "reasoning_output_tokens": 78
+      }
+    }
+  ],
+  "execution_kind": "native_cli",
+  "finished_at": "2026-11-05T00:12:27.195395+00:00",
+  "invocation_id": "linkedin",
+  "launch_requested": true,
+  "launched": true,
+  "launched_at": "2026-11-05T00:11:47.737250+00:00",
+  "limits": {
+    "max_input_bytes": 4194304,
+    "max_launches": 36,
+    "max_output_bytes": 2097152,
+    "max_seconds": 900,
+    "process_timeout": 300
+  },
+  "model": "gpt-6-astra",
+  "parent_attempt_id": null,
+  "processes": [
+    {
+      "finished_at": "2026-11-05T00:11:47.544643+00:00",
+      "operation": "version",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/ai-news-voice-sampler-20261104/codex-attempts/lig-ai-news-voice-sampler-20261104/linkedin/e7651c2af72b0d8f39250bb5fe5ad8189fa3fddeb9ea12985c217506434633b0/preflight-815c9cac32c94132b74dc38fa9bd7fa9.json",
+      "pid": 375130,
+      "returncode": 0,
+      "sha256": "9562fa84427230a36dba734b0fe265b38077f7f3ffdeb47172186daa44d4b33d",
+      "start_identity": "551775052",
+      "started_at": "2026-11-05T00:11:47.393743+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T00:11:47.732722+00:00",
+      "operation": "auth",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/ai-news-voice-sampler-20261104/codex-attempts/lig-ai-news-voice-sampler-20261104/linkedin/e7651c2af72b0d8f39250bb5fe5ad8189fa3fddeb9ea12985c217506434633b0/preflight-ba81a61e6210472a8177f471fe4de80c.json",
+      "pid": 375143,
+      "returncode": 0,
+      "sha256": "9171a22d0de5805fa84140e10bd82d6ab0accae71b61f888398cd8af05677c6b",
+      "start_identity": "551775067",
+      "started_at": "2026-11-05T00:11:47.551278+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T00:12:27.183398+00:00",
+      "operation": "exec",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/ai-news-voice-sampler-20261104/codex-attempts/lig-ai-news-voice-sampler-20261104/linkedin/e7651c2af72b0d8f39250bb5fe5ad8189fa3fddeb9ea12985c217506434633b0/process.json",
+      "pid": 375183,
+      "returncode": 0,
+      "sha256": "f73ffa150f77ed1eef7ff4dac014b3d5c9974979a7af59c4b9d97388c252003c",
+      "start_identity": "551775086",
+      "started_at": "2026-11-05T00:11:47.741750+00:00"
+    }
+  ],
+  "producer_version": "codex-cli 0.158.0",
+  "reasoning": "medium",
+  "request_sha256": "e7651c2af72b0d8f39250bb5fe5ad8189fa3fddeb9ea12985c217506434633b0",
+  "result_sha256": "41697749c4d66c53b39aaedfcfcfff6a0741db28d4e57f40147afcc76b0b79e2",
+  "run_id": "lig-ai-news-voice-sampler-20261104",
+  "schema_version": "1.0",
+  "state": "succeeded",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 7424,
+    "input_tokens": 9965,
+    "output_tokens": 919,
+    "reasoning_output_tokens": 78
+  }
+}

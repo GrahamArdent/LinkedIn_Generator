@@ -1,0 +1,283 @@
+{
+  "state": "completed",
+  "system": "Write three distinct LinkedIn draft posts for the supplied author and audience. Use the configured voice and frozen source brief. Return JSON only with versions: an array of exactly3 objects, each with id, title, angle, body and source_ids. Do not evaluate, score or explain the posts. A recognizable human point of view matters more than reciting a report.",
+  "user": {
+    "author": "Graham Hill",
+    "pov": "individual",
+    "audience": "business and IT leaders evaluating AI and cyber risk",
+    "voice": {
+      "tone": [
+        "direct",
+        "humble"
+      ],
+      "rhythm": [
+        "tight",
+        "punchy"
+      ],
+      "devices": [
+        "question",
+        "contrast"
+      ],
+      "donts": [
+        "clichés",
+        "em_dashes"
+      ],
+      "emoji_max": 3,
+      "bullet_char": "🔹",
+      "active_author_pov": "individual",
+      "voice_authority": {
+        "source": {
+          "authority": "Graham Voice Bible",
+          "repository": "GrahamArdent/LinkedInGenV2",
+          "path": "data/Voice_Bible_Graham (1).md",
+          "blob_sha": "e35aad7f324ea9cc691ea8fd5ca5fc3c7da5a5fd",
+          "role": "primary historical voice authority explicitly authorized for reuse"
+        },
+        "profile": {
+          "persona": "The Relatable Provocateur",
+          "essence": [
+            "bold",
+            "witty",
+            "empathetic",
+            "visceral",
+            "direct",
+            "conversational",
+            "confident_but_relatable",
+            "contrarian_without_being_performative"
+          ],
+          "rhythm": {
+            "hook_words": "6-12",
+            "sentence_mix": "short and long",
+            "one_liner_punches": true,
+            "paragraph_sentences": "2-3",
+            "conversational_punctuation": true
+          },
+          "emotional_palette": [
+            "frustration",
+            "empathy",
+            "protectiveness",
+            "humor",
+            "tension",
+            "inspiration"
+          ],
+          "reasoning_lenses": [
+            "name_the_surface_event",
+            "identify_the_mechanism_and_context",
+            "trace_operational_friction",
+            "trace_financial_or_practical_drag",
+            "trace_identity_and_trust_damage",
+            "identify_strategic_gravity",
+            "look_for_feedback_loops_and_hidden_correlations",
+            "distinguish_correlation_from_causation"
+          ],
+          "signature_devices": [
+            "short_myth_or_mood_hook",
+            "contrarian_flip",
+            "concrete_human_detail",
+            "memorable_analogy_or_wry_humor",
+            "practical_nugget",
+            "provocative_big_picture_closer"
+          ],
+          "thought_leadership_filter": [
+            "challenge_an_assumption",
+            "connect_the_issue_to_more_than_one_stakeholder_when_relevant",
+            "make_the_point_memorable_without_becoming_theatrical",
+            "be_actionable_and_elevated",
+            "end_with_a_real_provocation_when_it_earns_it"
+          ],
+          "boundaries": [
+            "no_cliches",
+            "minimize_jargon",
+            "no_em_dashes",
+            "do_not_copy_signature_example_phrases_as_boilerplate",
+            "do_not_invent_personal_experiences",
+            "do_not_invent_statistics_quotes_or_sources",
+            "do_not_treat_voice_examples_as_factual_evidence",
+            "use_named_author_reference_only_as_provenance_not_as_runtime_imitation_instruction"
+          ]
+        },
+        "semantic_quality": {
+          "default_author_pov": "individual",
+          "internal_terms_needing_translation": [
+            "mode c",
+            "stage 0",
+            "execution spine",
+            "canonical intake",
+            "canonical authority",
+            "regression coverage",
+            "work packet",
+            "kill signal"
+          ],
+          "generic_phrases": [
+            "in today's fast-paced world",
+            "game changer",
+            "the future is here",
+            "unlock the power",
+            "revolutionize",
+            "here's the thing",
+            "in the ever-evolving landscape",
+            "now more than ever",
+            "let that sink in"
+          ],
+          "guidance": [
+            "Assume a smart reader who has never seen the internal project documents.",
+            "Translate internal methodology and repository vocabulary into ordinary language before using it.",
+            "For an individual Graham post, default to I/me/my; use we/us/our only for genuinely shared actions.",
+            "Make one main point per post and make the practical or human consequence clear.",
+            "Prefer concrete details supported by the evidence over abstract process language.",
+            "Do not force a CTA; a natural insight or earned provocation can be the ending."
+          ]
+        },
+        "runtime_guidance": {
+          "style_summary": "Write in a bold, witty, empathetic, direct and conversational voice with vivid but controlled imagery, varied sentence length, compact paragraphs, occasional dry humor, and a contrarian insight grounded in real stakes.",
+          "causal_summary": "Move beyond the surface event. Explain what made it possible, what work breaks next, what cost or drag starts compounding, how trust or identity is affected, and what becomes harder to undo. Use only the layers that are actually supported by the topic and evidence.",
+          "domain_note": "The original Voice Bible was developed heavily around cybersecurity. Preserve its voice and causal-thinking method across topics, but do not assume cybersecurity, C-suite buyers, or any specific professional identity unless the current request supplies that context."
+        }
+      },
+      "spoken_voice": {
+        "name": "Graham Spoken Voice",
+        "schema_version": "1.0",
+        "runtime_summary": "Write as a thoughtful, plain-spoken Graham: curious before certain, direct without pretending every first impression is proven, conversational without transcribing filler, and willing to test his own argument before landing the point. Let the reasoning move from what happened, to what it may mean, to what it changes next. Use contrast, short declarative lines, occasional dry humor, and compact conclusions. Preserve the A-to-B-to-C instinct invisibly: show the current reality, the meaningful consequence, and the bridge or restraint that connects them. Do not over-explain. Do not sound like corporate copy. Do not turn private ENFP material into public biography.",
+        "boundaries": [
+          "Do not infer biography, health, relationships, identity claims, or factual events from this schema.",
+          "Do not mention ENFP unless the current request/topic makes ENFP relevant.",
+          "Do not treat personality-type generalizations as evidence about Graham.",
+          "Do not reproduce private-source anecdotes unless they are separately supplied as factual evidence for the current post.",
+          "Do not imitate conversational filler words merely to sound informal."
+        ],
+        "composition_rules": [
+          "Start from a concrete observation or tension rather than a generic thesis.",
+          "Let the reader see enough of the reasoning path to trust the conclusion.",
+          "Include one meaningful self-check or qualification when the claim genuinely needs it.",
+          "Move from the immediate event to the consequence that matters beyond Graham.",
+          "Land on a compact distinction, lesson, or earned question.",
+          "Keep the central point understandable to a smart outsider."
+        ],
+        "anti_patterns": [
+          "sounding certain because certainty is rhetorically cleaner",
+          "over-explaining until the post feels like a defence brief",
+          "turning every insight into a framework acronym",
+          "repeating signature phrases as branding slogans",
+          "performative vulnerability",
+          "manufactured controversy",
+          "generic inspiration"
+        ],
+        "signature_phrase_policy": "These are conceptual anchors, not mandatory catchphrases. Use an exact phrase only when it fits naturally and is not being repeated across recent posts."
+      }
+    },
+    "brief": {
+      "date": "2026-11-04",
+      "title": "AI-assisted financial attacks: the decision window and the payment workflow",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Escalation of AI-Driven Attacks on BFSI Entities by Threat Actor CRAFTY FALCON",
+          "publisher": "CERT-In / CSIRT-Fin, Government of India",
+          "published": "2026-11-04",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+          "read_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+          "facts": [
+            "CERT-In's November4 update describes an active AI-assisted campaign against financial entities, using victims' own payment/disbursement APIs.",
+            "The agency reports some entities were targeted again following incomplete remediation."
+          ],
+          "limitations": "Agency-reported activity in the affected Indian financial entities, not proof of universal AI capability, Canadian incidents or losses at Ardent clients. No named AI vendor/model attribution and no claim that every attack is autonomous."
+        },
+        {
+          "id": "S2",
+          "title": "Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities",
+          "publisher": "CERT-In / CSIRT-Fin",
+          "published": "2026-10-09",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+          "facts": [
+            "The earlier advisory describes stolen payment credentials being used to invoke fund-transfer interfaces directly, bypassing application-level validation.",
+            "Recommended actions include binding transaction stages together, validating payout approvals and enforcing payment-stage limits."
+          ],
+          "limitations": "These are recommendations for the described financial campaign, not a guarantee, universal mandate or a claim that every control is absent everywhere."
+        }
+      ],
+      "angles": [
+        {
+          "id": 1,
+          "name": "The decision window",
+          "direction": "AI acceleration changes how much time a team has to intervene. Keep speed qualitative; no invented minutes, frequency or universal prediction. One pointed management question; practical opinion distinct from source facts."
+        },
+        {
+          "id": 2,
+          "name": "Follow the money path",
+          "direction": "A payment interface can matter more than the screen above it. Explain APIs in plain language. Use an original managerial inference about validating authorization where money moves, without claiming a specific system is vulnerable."
+        },
+        {
+          "id": 3,
+          "name": "What counts as fixed?",
+          "direction": "The re-targeting/incomplete-remediation detail should drive a thoughtful distinction between completing a fix and checking its outcome. Avoid pretending patches or controls always fail. Verification is an interpretation/recommendation."
+        }
+      ],
+      "format": "Each post150–200 words, distinct hook and closing, compact paragraphs,3 relevant hashtags. One coherent point each. No em dashes, quotes, invented anecdotes, statistics, loss estimates, personal/client incidents, Ardent service promises, calls to DM or manufactured urgency. Paraphrase only; at most18 source-derived factual words per post from S1 and25 from S2; the rest should be original reasoning clearly posed as interpretation/opinion. Avoid reproducing the source's wording. Don't name obscure tool products or repeat a report's title in every draft.",
+      "purpose": "Exploratory voice sampler directly generated with the existing Codex bridge and configured voice guidance. Not a full engine/publish-quality trial; no automatic scores, no editorial or publication approval inferred.",
+      "budget": {
+        "model_executions": 2,
+        "physical_starts": 6,
+        "cumulative_cli_seconds": 900,
+        "api_spend": 0
+      }
+    },
+    "voice_emphasis": "Graham: plain-spoken, curious, direct, wry when earned. Personal interpretation without inventing a personal event. Challenge your first explanation once if useful. Avoid corporate or report-like narration."
+  },
+  "result": {
+    "versions": [
+      {
+        "id": 1,
+        "title": "Who can stop the payment?",
+        "angle": "The decision window",
+        "body": "A faster attack makes hesitation more expensive.\n\nCERT-In reports AI-assisted attacks on Indian financial entities through payment APIs.\n\nMy concern is the gap between spotting something suspicious and having the authority to interrupt it. AI acceleration could make that gap harder to tolerate. The brief gives me no basis for putting a stopwatch on it.\n\nI could make this an argument for faster alerts. But an alert cannot settle an ownership dispute between finance, security and operations. It can only announce one at an inconvenient moment.\n\nWho can pause a suspicious payment, on what evidence, without waiting for a committee?\n\nThat is the management question I would put first. Then I would test the answer with the people expected to act, including whoever carries the consequences of stopping a legitimate transfer.\n\nThe aim is proportionate authority: clear thresholds, a named decision maker and a way to resume safely.\n\nBuying detection is a purchasing decision. Making intervention possible takes an operating decision.\n\n#AI #CyberRisk #FinancialServices",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "The screen is only part of the payment",
+        "angle": "Follow the money path",
+        "body": "The approval screen is a reassuring place to look.\n\nI would follow the payment further.\n\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, sidestepping checks in the application.\n\nThose interfaces, or APIs, are how software asks other software to do something. In this case, move money.\n\nMy reading is that a reassuring approval screen tells a leader less than they might think about the whole transaction. The question is whether authorization still holds at the point where the transfer can actually happen.\n\nThat does not mean every payment system has this weakness. It means I would want evidence connecting the approval people see with the instruction the payment system accepts.\n\nAsk finance and IT to trace one transfer together: the amount, the recipient, the approval and the final instruction. Then examine what happens if one changes after approval.\n\nIt is a useful management exercise because each team can have a sensible account of its own step while the connection remains unclear.\n\nA convincing screen is useful. A payment that can prove its permission is more useful.\n\n#PaymentSecurity #CyberRisk #AIGovernance",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "What evidence lets us call it fixed?",
+        "angle": "What counts as fixed?",
+        "body": "A closed ticket is an administrative fact.\n\nI want to know what changed outside the ticket.\n\nCERT-In reports renewed targeting of some financial entities after incomplete remediation.\n\nThat detail makes me pause. It does not establish that every repair failed, or that another attack succeeded. It does give leaders a reason to examine what they accept as evidence of completion.\n\nMy instinct is to ask whether the fix was installed. The better follow-up is whether the unwanted action is now prevented. Those questions can produce different answers.\n\nFor a payment workflow, I would ask the responsible teams to demonstrate the repaired behaviour under controlled conditions, including an attempt that should be rejected. Finance should understand the result alongside security and IT.\n\nThis need not become an endless demand for certainty. Define the expected outcome, test it, record what remains uncertain and give someone ownership of the remainder.\n\nThat is how I would distinguish finishing the work from establishing confidence in it.\n\nWhat evidence would let the next person trust the word fixed?\n\n#CyberResilience #PaymentSecurity #RiskManagement",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ]
+  },
+  "raw": "{\"versions\":[{\"id\":1,\"title\":\"Who can stop the payment?\",\"angle\":\"The decision window\",\"body\":\"A faster attack makes hesitation more expensive.\\n\\nCERT-In reports AI-assisted attacks on Indian financial entities through payment APIs.\\n\\nMy concern is the gap between spotting something suspicious and having the authority to interrupt it. AI acceleration could make that gap harder to tolerate. The brief gives me no basis for putting a stopwatch on it.\\n\\nI could make this an argument for faster alerts. But an alert cannot settle an ownership dispute between finance, security and operations. It can only announce one at an inconvenient moment.\\n\\nWho can pause a suspicious payment, on what evidence, without waiting for a committee?\\n\\nThat is the management question I would put first. Then I would test the answer with the people expected to act, including whoever carries the consequences of stopping a legitimate transfer.\\n\\nThe aim is proportionate authority: clear thresholds, a named decision maker and a way to resume safely.\\n\\nBuying detection is a purchasing decision. Making intervention possible takes an operating decision.\\n\\n#AI #CyberRisk #FinancialServices\",\"source_ids\":[\"S1\"]},{\"id\":2,\"title\":\"The screen is only part of the payment\",\"angle\":\"Follow the money path\",\"body\":\"The approval screen is a reassuring place to look.\\n\\nI would follow the payment further.\\n\\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, sidestepping checks in the application.\\n\\nThose interfaces, or APIs, are how software asks other software to do something. In this case, move money.\\n\\nMy reading is that a reassuring approval screen tells a leader less than they might think about the whole transaction. The question is whether authorization still holds at the point where the transfer can actually happen.\\n\\nThat does not mean every payment system has this weakness. It means I would want evidence connecting the approval people see with the instruction the payment system accepts.\\n\\nAsk finance and IT to trace one transfer together: the amount, the recipient, the approval and the final instruction. Then examine what happens if one changes after approval.\\n\\nIt is a useful management exercise because each team can have a sensible account of its own step while the connection remains unclear.\\n\\nA convincing screen is useful. A payment that can prove its permission is more useful.\\n\\n#PaymentSecurity #CyberRisk #AIGovernance\",\"source_ids\":[\"S2\"]},{\"id\":3,\"title\":\"What evidence lets us call it fixed?\",\"angle\":\"What counts as fixed?\",\"body\":\"A closed ticket is an administrative fact.\\n\\nI want to know what changed outside the ticket.\\n\\nCERT-In reports renewed targeting of some financial entities after incomplete remediation.\\n\\nThat detail makes me pause. It does not establish that every repair failed, or that another attack succeeded. It does give leaders a reason to examine what they accept as evidence of completion.\\n\\nMy instinct is to ask whether the fix was installed. The better follow-up is whether the unwanted action is now prevented. Those questions can produce different answers.\\n\\nFor a payment workflow, I would ask the responsible teams to demonstrate the repaired behaviour under controlled conditions, including an attempt that should be rejected. Finance should understand the result alongside security and IT.\\n\\nThis need not become an endless demand for certainty. Define the expected outcome, test it, record what remains uncertain and give someone ownership of the remainder.\\n\\nThat is how I would distinguish finishing the work from establishing confidence in it.\\n\\nWhat evidence would let the next person trust the word fixed?\\n\\n#CyberResilience #PaymentSecurity #RiskManagement\",\"source_ids\":[\"S1\"]}]}",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"versions\":[{\"id\":1,\"title\":\"Who can stop the payment?\",\"angle\":\"The decision window\",\"body\":\"A faster attack makes hesitation more expensive.\\n\\nCERT-In reports AI-assisted attacks on Indian financial entities through payment APIs.\\n\\nMy concern is the gap between spotting something suspicious and having the authority to interrupt it. AI acceleration could make that gap harder to tolerate. The brief gives me no basis for putting a stopwatch on it.\\n\\nI could make this an argument for faster alerts. But an alert cannot settle an ownership dispute between finance, security and operations. It can only announce one at an inconvenient moment.\\n\\nWho can pause a suspicious payment, on what evidence, without waiting for a committee?\\n\\nThat is the management question I would put first. Then I would test the answer with the people expected to act, including whoever carries the consequences of stopping a legitimate transfer.\\n\\nThe aim is proportionate authority: clear thresholds, a named decision maker and a way to resume safely.\\n\\nBuying detection is a purchasing decision. Making intervention possible takes an operating decision.\\n\\n#AI #CyberRisk #FinancialServices\",\"source_ids\":[\"S1\"]},{\"id\":2,\"title\":\"The screen is only part of the payment\",\"angle\":\"Follow the money path\",\"body\":\"The approval screen is a reassuring place to look.\\n\\nI would follow the payment further.\\n\\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, sidestepping checks in the application.\\n\\nThose interfaces, or APIs, are how software asks other software to do something. In this case, move money.\\n\\nMy reading is that a reassuring approval screen tells a leader less than they might think about the whole transaction. The question is whether authorization still holds at the point where the transfer can actually happen.\\n\\nThat does not mean every payment system has this weakness. It means I would want evidence connecting the approval people see with the instruction the payment system accepts.\\n\\nAsk finance and IT to trace one transfer together: the amount, the recipient, the approval and the final instruction. Then examine what happens if one changes after approval.\\n\\nIt is a useful management exercise because each team can have a sensible account of its own step while the connection remains unclear.\\n\\nA convincing screen is useful. A payment that can prove its permission is more useful.\\n\\n#PaymentSecurity #CyberRisk #AIGovernance\",\"source_ids\":[\"S2\"]},{\"id\":3,\"title\":\"What evidence lets us call it fixed?\",\"angle\":\"What counts as fixed?\",\"body\":\"A closed ticket is an administrative fact.\\n\\nI want to know what changed outside the ticket.\\n\\nCERT-In reports renewed targeting of some financial entities after incomplete remediation.\\n\\nThat detail makes me pause. It does not establish that every repair failed, or that another attack succeeded. It does give leaders a reason to examine what they accept as evidence of completion.\\n\\nMy instinct is to ask whether the fix was installed. The better follow-up is whether the unwanted action is now prevented. Those questions can produce different answers.\\n\\nFor a payment workflow, I would ask the responsible teams to demonstrate the repaired behaviour under controlled conditions, including an attempt that should be rejected. Finance should understand the result alongside security and IT.\\n\\nThis need not become an endless demand for certainty. Define the expected outcome, test it, record what remains uncertain and give someone ownership of the remainder.\\n\\nThat is how I would distinguish finishing the work from establishing confidence in it.\\n\\nWhat evidence would let the next person trust the word fixed?\\n\\n#CyberResilience #PaymentSecurity #RiskManagement\",\"source_ids\":[\"S1\"]}]}"
+      },
+      "attempt_id": "attempt-be657920fa2043b58f43ea3c5b342230",
+      "result_sha256": "e0494e9e691540a64bb6c2bf63672dd8bcd81bc296f086d10e41576dca56c65e",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11321,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 910,
+        "reasoning_output_tokens": 73
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "finished_at": "2026-11-05T00:11:46.598958+00:00"
+}
