@@ -1,0 +1,18 @@
+{
+  "scope": "No duplicated product task list or competing numerical gate definitions in execution prompt",
+  "owners": {
+    "editorial": "GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+    "product_steps_budgets_expected_proofs": "CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+    "execution_mechanics": "LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+    "AT_E2E_definitions": "LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md",
+    "resume_pointer": "CURRENT_WORK_PACKET.md",
+    "review_evidence": "This evidence directory, snapshot-scoped"
+  },
+  "changes": [
+    "Replaced repeated M1\u2013M5 task lists with single Q1\u2013Q6 mapping",
+    "Preserved previously duplicated later calibration/pilot/human/visual obligations explicitly",
+    "Prompt references plan instead of repeating specific voice/topic/budget/release tasks",
+    "Retained conditional template concepts rather than copying48KB generic template into product prompt"
+  ],
+  "conformance_limit": "Scoped project adaptation of Orchestrate v2.11; no claim of registered PROGRAMSTART operator prompt, executed central CLI, every future effect intercept, or mandatory cross-project mutation"
+}
