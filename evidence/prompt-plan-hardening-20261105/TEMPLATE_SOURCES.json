@@ -1,0 +1,23 @@
+[
+  {
+    "repository": "GrahamArdent/PROGRAMSTART",
+    "path": ".github/prompts/start-programstart-project.prompt.md",
+    "blob_sha": "86692ba72f0ad779506acfe0e871473e5e20d523",
+    "bytes": 48214,
+    "sha256": "3a70ac7aec33fa8850544f7e1265371dad07267e513da2faa6d50c710ad9a4cf"
+  },
+  {
+    "repository": "GrahamArdent/PROGRAMSTART",
+    "path": ".github/prompts/OPERATOR_PROMPT_STANDARD.md",
+    "blob_sha": "c7d57cb3de3e257ef8ea8d81d646f83b256e3d62",
+    "bytes": 9234,
+    "sha256": "6c5cdce4e0b32d6e7f4baa11374681ab3bab8df7c312e1bbce6225b7293df65c"
+  },
+  {
+    "repository": "GrahamArdent/PROGRAMSTART",
+    "path": ".github/instructions/source-of-truth.instructions.md",
+    "blob_sha": "619279e80b6ca8a4b1dc45f41bc6f910309d7915",
+    "bytes": 7831,
+    "sha256": "d829cf2ca09c64791409ce554d676c8caa595f2a37bd170c64268d9738ddb531"
+  }
+]

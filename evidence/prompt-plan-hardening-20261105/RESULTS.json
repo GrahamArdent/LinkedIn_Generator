@@ -1,0 +1,29 @@
+{
+  "status": "GO_EXECUTION_PROMPT_READY",
+  "scope": "Prompt/game-plan generation and hardening only",
+  "canonical_template": "Orchestrate PROGRAMSTART Work v2.11,86692ba72f0ad779506acfe0e871473e5e20d523",
+  "adaptation": "Scoped project execution protocol; not full canonical runtime enforcement or registered PROGRAMSTART operator prompt",
+  "candidate_sha256": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "3dc12da81e1eb07843c0b53e445b1f6c607d62da053ee8dd274c7226b010a23b",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "2d425c8a3542ebdeac70e0844979d65cdaeeed014cdbd9d4e8cc67bafadf36d9"
+  },
+  "review": "Fresh independent complete-pair semantic review: no material finding",
+  "retention": {
+    "covered": 63,
+    "total": 63,
+    "baseline_files": 22,
+    "negative_controls": "missing item and altered-byte rejected"
+  },
+  "resolved_confusion": [
+    "Prompt does not repeat product Q steps, numerical budget, selected voice/topic or release checklist",
+    "One Q1\u2013Q6 product sequence; M1\u2013M5 reduced to mapping",
+    "Later calibration8\u201312, held-out subjects, six-pair4of6 and26/11 obligations preserved",
+    "Recorded authority continues, operator evidence resumes without redundant proceed",
+    "Plan-only request is not implementation; current next action Q1 under execution instruction"
+  ],
+  "installation": "unchanged2c2daf39398a993b698d1f225008a06217b14a7c",
+  "model_calls": 0,
+  "product_code_changed": false,
+  "hosted_CI": "NOT_RUN: no active workflow; planning checks only",
+  "next_action": "Execute current repository prompt from first unmet Q step, carrying existing authority and actual owner stop conditions"
+}

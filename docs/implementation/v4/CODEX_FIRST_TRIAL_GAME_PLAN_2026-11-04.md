@@ -4,53 +4,32 @@ Execution entry: LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md.
 Broader P0–P7 roadmap: LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md.
 Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md.
 
-## Current truth
-- Verified candidate: branch fix/essential-review-gate-20261105, product commit d3ee2a36d037323c080edec67b53a521bcceb75c;
-  evidence follow-up5dccb89689222adae5c83efd0c5fd207a0c3370b.251 local and251 clean-archive tests passed.
-- Installed release is2c2daf39398a993b698d1f225008a06217b14a7c, using essential-checks-v1. Previous0c099d7 remains preserved for rollback.
-- The candidate's essential-checks-v1 replaces numeric admission with four independent verdicts and reasons:
-  factual integrity, reader relevance, practical value, argument/voice fidelity.
-  All must pass. Scores are advisory; passing means human review eligibility, never approval.
-  Missing evidence pauses; fixable failures allow at most one guarded targeted rewrite; unavailable evaluation fails closed.
-- Real evaluator smoke: retained security draft72/reviewable, deliberately unsupported negative69/needs_evidence.
-  Two subscription evaluations/38.311 active CLI seconds/API0. These are not human quality labels.
-- Evidence: evidence/essential-review-gate-20261105/{REPORT.md,MILESTONE.json,ACCEPTANCE_AUDIT.json}.
-- The complete product is not accepted. All26 AT objectives and11 E2E scenarios remain;
-  the audit distinguishes fixture checks, historical observations and missing human/live proof.
+## Current checkpoint
 
-## Current milestone status
-M1/M2 GO: independent review and251 tests qualified the source; PR29 merged/installed2c2daf3,
-with rollback0c099d7, hashes/imports/subscription binding and zero-call reopening verified.
-M3 security package technically completed, but Graham rejected the subject as unsuitable. It is
-historical technical evidence, not a human accepted post. Do not require him to score that unsuitable pair.
-Current editorial authority: GRAHAM_CONTENT_DIRECTION_2026-11-05.md. Graham only; varied subjects;
-selectable writing style independent of identity/credentials; broad supported perspective permitted.
-The liked black-box chat draft is a positive reference, not installed evidence or publication approval.
-Current bounded diagnostic: two installed first drafts, concise_challenger v2 and reflective_leader v2,
-same facts/author/audience/question;2 model executions/6 CLI starts/32.254 active seconds/API0;
-exact-output/hash and zero-call reopen verified. Human feedback pending; no style winner declared.
-Receipt: evidence/graham-black-box-voices-20261105/MILESTONE.json. Review COMPARISON.md and
-CHAT_REFERENCE.md there. Both native drafts are more formal than the reference in assistant review.
-Next: recorded feedback prefers Version1 voice but rejects its construction; chat revision72946 is
-positively reviewed. Use the adopted scaffold/workflow in GRAHAM_CONTENT_DIRECTION_2026-11-05.md,
-then carry it through existing installed editorial handoff/full-engine/control M3/M4 qualification.
-Evaluate voice and coherent progression separately. Current feedback receipt:
- evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json. Installed structure behavior remains unproved.
-The style diagnostic does not substitute for full-engine/baseline, six-subject, visual or publishing gates.
-All26 AT/11 E2E retained; historical first-six eligibility unresolved. No active hosted workflow.
+| Concern | Observed state |
+|---|---|
+| Active scope | Graham-only structure-to-install slice Q1–Q6 below; Q1 first unmet |
+| Installed product |2c2daf39398a993b698d1f225008a06217b14a7c;251 installed tests; previous0c099d7 rollback |
+| Earlier technical proof | Evidence in evidence/release-essential-20261105 and evidence/essential-review-gate-20261105; reusable only for matching bytes |
+| Editorial feedback | Version1 voice preferred, construction rejected; structured chat72946 positively reviewed; no installed structure acceptance |
+| Scope/research/references | GRAHAM_CONTENT_DIRECTION_2026-11-05.md and evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json |
+| Prior Challenge | evidence/structure-install-challenge-20261105/CONVERGENCE.md cleared its exact earlier pair for planning; later edits require current review |
+| Current pair audit | evidence/prompt-plan-hardening-20261105/RESULTS.json; not a new implementation/release proof |
+| Remaining product acceptance | All26 AT/11 E2E retained; first-six eligibility and human/native/render/publish proofs remain scoped/pending |
 
-## Document ownership and just-in-time execution
-- CURRENT_WORK_PACKET.md owns the current checkpoint and evidence pointer.
-- This completion plan owns M1–M5 steps and milestone exit conditions.
-- The execution prompt routes the worker; it does not maintain another task list.
-- The acceptance document alone owns detailed AT/E2E criteria. The broader roadmap owns later dependencies.
-- Historical receipts prove only their recorded scope; later docs do not reinterpret them.
-Use known working routes directly. Load only the current milestone's sources/contracts; inspect
-later P3–P7 owner documents when their boundary is reached, not as a preload.
-Preserve exact failures and follow Paths recovery for actual route failures. Reconcile unknown effects
-through original receipts; never blindly retry. Continue independent admitted work while one item is held.
-Budget exhaustion or an unrecoverable provider/environment failure is a precise HOLD, not permission
-to exceed caps or repeatedly ask the user to perform machine work.
+## One owner per concern
+- GRAHAM_CONTENT_DIRECTION_2026-11-05.md owns editorial intent, the scaffold and recorded feedback.
+- This completion game plan alone owns product steps Q1–Q6, dependencies, budgets, tests, release
+  sequence, stop conditions and technical/editorial completion boundaries. It remains within M1–M5.
+- LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md owns execution mechanics: discovery,
+  bounded autonomous continuation, receipt recovery, safe handoff and final reporting. It points here
+  instead of maintaining a second product checklist.
+- The acceptance document alone defines detailed AT/E2E success criteria; the broader P0–P7 roadmap
+  owns later dependencies. Referenced criteria remain binding without duplicating all their text here.
+- CURRENT_WORK_PACKET.md is a derived resume pointer to the first unmet Q step and evidence.
+  It cannot override the plan, accepted user decisions or current factual runtime state.
+- Audit/Challenge receipts certify their exact reviewed snapshots, not later changes. Historical
+  security/style diagnostics remain immutable evidence, not the current generation target.
 
 ## Active structure-to-install slice — first unmet Q step
 
@@ -197,116 +176,59 @@ reliability requires actual human-supported transfer and retained later acceptan
 machine-solvable blocker continue legitimate independent work; stop only at a precise budget, judgment,
 external or owner gate. Preserve rollback and active work; never reset the project to Stage0.
 
-## Ordered remaining work
-Use the existing engine, launcher, saved results and receipts. Do not rerun completed research,
-eight workflows or nine voices merely to restart this sequence.
+## M1–M5 and later roadmap mapping
 
-### M1 — review and qualify the coherent release candidate
-1. Refresh Paths via connected GitHub, current packet, candidate/base/main, relevant PRs and installed launcher.
-   Resume from the first unmet milestone. If the candidate is already merged/promoted, verify its receipt
-   and advance; do not reset branches, reinstall or regenerate merely because this plan names an older checkpoint.
-2. Review the complete pending diff against current main, including earlier unmerged audit documentation.
-   Resolve concrete integration defects with reproducing regressions; do not weaken assertions.
-3. Reuse251-test/clean-archive receipts if source/config/tests hashes still match. If code changes,
-   run focused regressions and the full local suite; save exact command, exit, tested revision and hashes.
-   Ruff was unavailable in the previous venv: record actual lint availability/results, never claim lint passed.
-4. Verify strong80 can advance,90+ cannot compensate for failed essentials, missing support pauses,
-   malformed evaluation fails closed, at most one targeted rewrite, unsafe rewrite preserves A,
-   selected/visual bytes match, baseline context matches, and old results reopen without calls.
-5. Record GO/HOLD/FAIL for candidate readiness separately from merge and installation.
-Expected: one coherent reviewed and tested candidate, with preserved source and historical outputs.
-Proof: reviewed diff, regression/full-suite logs, clean archive, source/config/test hashes.
-Maps: AT01/02/03/06/07/08/14/15/16/18/26; only mode-specific coverage may be marked passed.
+This mapping replaces the older repeated task lists. Execute Q1–Q6 in dependency order; do not run
+another parallel M checklist or restart completed work.
 
-### M2 — merge and promote through the existing release setup
-1. Resolve current owner admission for merge/promotion; earlier release authorization is not unlimited authority.
-   Inspect automatic workflow triggers before opening/updating a PR or merging. Recorded operator approval
-   permits applicable focused hosted CI after local pass. Do not request that authority again. Never disable
-   checks or activate an unrelated legacy workflow merely to obtain a hosted run.
-2. When admitted, merge the exact verified candidate; record main/merge SHA and reviewed head.
-3. Install from the merged revision through the existing fixed-release launcher procedure.
-   Preserve the previous release and exact rollback command; do not edit the live installation in place.
-4. Verify launcher target, imported module paths, installed source/config hashes, subscription client/auth binding,
-   relevant smoke/full installed tests, and reopening a historical completed result with zero added calls.
-Expected: exact merged revision is actually running; rollback remains usable.
-Proof: merge receipt, installation/rollback receipt, import/hash/readiness/reopen logs.
-HOLD if unmerged, wrong installed bytes, uncertain effect or missing admission. Local tests alone cannot close M2.
+| Existing milestone | Active owning steps |
+|---|---|
+| M1 coherent source qualification | Q1–Q3 |
+| M2 release/promotion | Q4, only if installed product/script/config bytes change |
+| M3 installed acceptance package | Q5 |
+| M4 human judgment/calibration | Q5 human review plus retained calibration below |
+| M5 bounded P2 completion, then P3–P7 | Q6 and the existing broader roadmap |
 
-### M3 — one complete installed acceptance package
-1. Use the current Q5 Graham-only AI black-box brief, concise_challenger v2 and selected literal scaffold,
-   with at least two independent reputable origins. The older security/symbolic package is historical and
-   must not be regenerated or offered as the current editorial target. Preserve its original evidence.
-2. Freeze six building blocks: reader, decision, concept/argument, evidence and limits,
-   narrative plus verified voice, review questions. Separate fact/observation/inference/opinion.
-   Recheck source currentness and material conflicts when needed; do not add unnecessary research.
-3. Declare one shared batch budget before launch: at most12 subscription Codex model executions and900
-   cumulative CLI seconds, including preflight, draft, evaluation, optional rewrite, visual plan and control.
-   Save actual tokens/attempts/launches/time; missing IDs are unavailable, never invented.
-4. Run normal installed evidence admission → drafting → four-essential evaluation → at most one guarded
-   defect-driven rewrite → exact candidate selection → visual companion planning only if qualified.
-   Missing evidence or failed qualification is a valid recorded HOLD; do not force a passing package.
-5. Produce the simpler direct-prompt control with identical evidence, author, audience, meaning, voice
-   and narrative. Use the same evaluator/context if reporting model assessments.
-   If the engine records NO_QUALIFIED_CANDIDATE, retain that HOLD and use its existing comparison-only
-   continuation when the budget permits. Never promote the retained unqualified engine text to a selected
-   candidate or spend its visual call. If the control cannot run, record NOT_RUN with the reason.
-6. Save exact prompts/raw outputs, stage order/handoffs, IDs, code/voice/source bindings and hashes.
-   Reopen the completed result in a new process: exact content and zero additional calls.
-   Keep result policy/version immutable. A new policy run uses a new run/attempt identity; do not overwrite old results.
-7. Shuffle the engine/control texts before human review; keep method mapping separate.
-Expected: traceable installed review package, or a precise truthful reason it cannot qualify one.
-Proof: installed invocation, saved package/control, visual plan or deferral, receipts and zero-call reopen.
-Different word counts do not count against either candidate.
-Maps: AT01/02/03/05/06/14/15/16/18/21/25/26 and applicable E2E01/06/10 components.
-A single pair does not complete six-subject acceptance.
+## Retained acceptance beyond the first installed package
 
-### M4 — human judgment and calibration
-1. Present the shuffled pair with factual support and ask Graham for accuracy, audience usefulness,
-   recognizable voice, keep/light/structural/reject, preference/tie and actual editing effort.
-   Bind answers to exact candidate hashes. Do not turn general praise into approval or approved voice examples.
-2. Use8–12 retained exact-text examples for initial evaluator calibration when available, with a held-out subset.
-   Freeze the holdout before adjusting prompts/rubrics and separate it by subject, not draft variant,
-   to prevent the same underlying example leaking into both sets.
-   Draft variants are calibration examples, not additional independent subjects. Reuse labels already supplied;
-   do not require a new broad generation batch just to obtain calibration material.
-3. Record false accept/reject cases against human labels and inspect concrete causes. Keep scores advisory.
-   Do not introduce another numeric gate without evidence and explicit adoption.
-Expected: real labels and editing evidence; unresolved judgments remain pending.
-Proof: hash-bound reviewer records, edits/timing where observed, calibration findings and held-out result.
-Maps: AT04/05/19/20/21/23/24; no model verdict substitutes for these human requirements.
+The acceptance document remains the sole detailed26-AT/11-E2E authority. In particular retain:
+- At least5 genuine subjects and4 of first6 eligible drafts kept/light-edited; at least2 distinct live-provider
+  human-accepted subjects; default envelope at most8 subject trials. Do not reset eligibility after repairs.
+- Six equal-input blind engine/control pairs, engine preferred on at least4/6; ties are not wins. Record
+  factual errors, substantive usefulness and actual editing burden. Fewer eligible pairs is NOT_YET_EVALUABLE;
+  the pilot does not establish engagement/business impact or statistical superiority.
+- Human voice/insight/usefulness and claim support, six-post semantic originality, useful single-image/
+  carousel/ambiguous format decisions, actual effort, calibrated review and cost/latency evidence.
+- Use8–12 retained exact-text examples for calibration when available. Freeze holdout by underlying
+  subject before rubric changes; draft variants are not independent subjects. Reuse existing labels, leave
+  missing labels pending, preserve old results, inspect false accepts/rejects, and never add a numeric gate
+  from advisory model ratings or generate a broad batch solely to fill calibration counts.
+- Any winning hybrid must transfer to a different concept before being called a winner. Avoid nine-style
+  expansion without useful small-comparison differentiation. The liked chat text is not an active voice
+  example, native result, numerical label or publication approval merely because it was praised.
+- Later P3–P7: durable headless exports/recovery, authorized versioned voice examples, lightweight UI/
+  headless parity and isolation, material-edit invalidation, real rendered image/carousel mobile inspection,
+  Dedication-owned canonical approval/scheduling/publication, duplicate/unknown handling and independently
+  verified external publication. Plan approval alone closes none of these.
 
-### M5 — finish P2 in small batches, then follow P3–P7
-1. After initial human disposition, expand only in admitted small batches toward six eligible distinct subjects
-   within the existing default envelope of at most8 subject trials. Reconcile the existing subject ledger
-   and owner-approved eligibility/order before adding subjects; do not reset first-six history after a repair.
-   If historical eligibility is ambiguous, retain it as unresolved rather than silently excluding or counting it.
-   Do not force thin subjects or cherry-pick failures.
-2. Preserve >=5 genuine subjects, >=4/6 keep/light, >=2 live-provider human-accepted subjects;
-   evaluate the first-six fraction only when six eligible subjects exist.
-3. Complete blinded six-pair engine/control pilot: >=4/6 engine preference, ties not wins; record factual errors
-   and actual editing effort. Fewer subjects means NOT_YET_EVALUABLE. This is not statistical proof of impact.
-4. Review six-post voice/originality, claim support and useful single-image/carousel/ambiguous visual choices.
-   Human visual-plan approval is distinct from approval of rendered assets.
-5. Test any proposed winning hybrid on a second concept before declaring a winner. Historical trials remain
-   exploratory; do not expand nine voices before useful small-comparison differentiation is established.
-6. Resume existing P3–P7 dependencies only as prerequisites and authorizations permit:
-   durable headless recovery/exports; human-authorized voice management; lightweight UI/parity/security;
-   actual image/carousel rendering and mobile inspection; Dedication-owned approval/publishing integration.
-   Keep all unproved AT/E2E entries open, including edit invalidation and external publishing verification.
-Expected: complete acceptance evidence, or an explicit bounded HOLD with the missing proof.
-Proof: subject ledger, blind reviews/effort, claims, voice/visual records and original AT/E2E receipts.
+## Milestone evidence and continuation
 
-## Milestone closure and authority
-After each meaningful milestone record:
-- candidate/base/main/PR state; tested revision and hashes; commands/exits and observed outcomes;
-- actual installed revision/imports; rollback binding; no-call reopening where relevant;
-- declared/observed resource use, exact IDs or unavailable, human decisions still pending;
-- GO/HOLD/FAIL, remaining blockers and next eligible action.
+At each meaningful boundary record one owner evidence pointer: exact candidate/base/main/PR and
+source/config/test/script hashes, commands/exits, expected versus observed outcome, imported/runtime
+revision and rollback, original run/attempt/candidate/voice/structure/source bindings, resource usage or
+UNKNOWN, human judgments or PENDING, retained unknown effects and the first unmet Q step.
 
-Update CURRENT_WORK_PACKET.md, this plan and the execution prompt together; keep detailed results in
-one reproducible evidence packet and link its receipt. The execution prompt routes work; this plan owns
-sequence; the acceptance document owns detailed criteria. Preserve historical outcomes instead of
-appending competing “current” instructions. Documentation-only changes may reuse matching code tests.
-Provider-neutral visual planning is included in M3; image generation/rendering is a separately gated effect.
-No paid API/fallback, hosted CI, merge/promotion beyond admitted scope, deployment, rendering or publishing
-is granted by this document. Dedication owns canonical approval, scheduling and publication.
+Use current tools and actual owner admission through the companion execution prompt. Reuse still-valid
+receipts and classify blockers narrowly. Routine authorized machine waits are not operator gates; accepted
+return evidence resumes at the recorded point. A new security/destructive/spending/render/publish effect
+still needs its actual admission, not a generic assumption from this plan.
+
+On an unknown native or publication effect, retain the original identity and receipt, reconcile it through
+its owner and independently read back the target before retry. Never overwrite earlier results or restart
+attempt state to produce green tests. Preserve active work and rollback. No overall success claim from a
+local fix, green suite, source merge, technical install or advisory score alone.
+
+Before material handoff/closure, run known-information retention and semantic complete-pair review,
+including a missing-item/altered-byte negative control. Scope covered/total to the enumerated source set;
+retain omissions and unproved future work. Product/source changes require new affected proof; a new
+chat alone does not invalidate unchanged evidence.

@@ -499,3 +499,11 @@ Planning result: CLEAR for exact candidate2 pair after9 material corrections and
 Retention41/41 known obligations across22 exact baseline files, both negative controls rejected.
 Proof: evidence/structure-install-challenge-20261105/{FINAL_REVIEW.json,RETENTION_RESULTS.json,CANDIDATE.json}.
 Q1–Q6 implementation NOT_RUN; installed generator remains2c2daf3.
+
+
+## Autonomy prompt hardening checkpoint — November 5, 2026
+The execution prompt is a scoped adaptation of canonical Orchestrate PROGRAMSTART Work v2.11.
+The prompt owns execution mechanics; the completion plan alone owns product Q1–Q6 and gate values.
+Older repeated M task lists were replaced by a mapping; calibration/later acceptance obligations retained.
+Current pair audit: evidence/prompt-plan-hardening-20261105/RESULTS.json. Q1 remains first unmet.
+No product implementation or installation occurred in this prompt-generation task.
