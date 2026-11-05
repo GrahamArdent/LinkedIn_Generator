@@ -1,103 +1,80 @@
-# Eight ways to turn news into an independent editorial brief
+# Eight workflows for an independent LinkedIn argument
+November 4, 2026 · Design for the next comparison · No trial results yet
 
-Design options for Graham Hill's LinkedIn Generator · November 4, 2026. The deliverable of each route is a brief. These routes have not been qualified by a live comparison.
+## Set up the common research
 
-## What to settle early, and what to delay
+A news item supplies a question. For example, an alert about payment fraud could raise the broader question “When does proof of access give a decision-maker misplaced confidence?” Keep that wording provisional. Alternative concepts might concern early warning signals or how organizations decide an incident is over. Pick one question for the eight-way trial before choosing its answer.
 
-Set the author, subject area, audience, selected voice/version and house rules before the first call. Tell the writer who Graham is entitled to speak as. Do not invent firsthand experience. Keep factual extraction in neutral language. A provocateur can challenge an interpretation later without influencing which observations the researcher records.
+**Call 0A — Discover.** “Given [news item], [Graham's area of expertise] and [reader], propose three underlying questions that would still matter six months from now. For each, state the decision at stake, the kinds of evidence that could change the answer and a search likely to uncover a counterexample. Return questions, not theses.”
 
-Delay the thesis until a route has produced evidence for it. Delay the hook until there is a point worth introducing. Choose the format as soon as you know the reader's job: a changed recommendation lends itself to a comparison, a hidden dependency to a walkthrough, an unresolved claim to a precise question. A fixed structure at intake would give every workflow the same answer shape.
+**Call 0B — Research.** “For [chosen question], retrieve complete, reputable sources with different evidentiary roles. Aim for a first-hand incident or observation, independent research or data, and a contrasting case or credible boundary condition. Trace stories quoting the same release back to their origin. For each claim save source ID, publisher, date, URL, passage locator, short excerpt, population, and limits. Say whether each source confirms, complements or challenges another. HOLD if fewer than two independent origins contribute materially or the concept relies on unsupported extrapolation.”
 
-In our retained test the source-first planner independently recovered the approval-versus-execution argument. It also recovered missing-record evidence and named the owners of a verification task. Similar conclusions can therefore be legitimate. The more revealing failure is eight ostensibly different investigations that all receive the same prewritten inference and recommendation.
+A standard describing how a system should work and an incident showing what happened can complement one another. Neither measures how frequently something happens. Two updates from CERT-In can establish a timeline while counting as one institutional reporting chain. Freeze the resulting evidence ledger, the neutral question, audience and author before the eight runs. Use identical snapshots across routes.
 
-[Prior workflow, sources and actual outcomes](../../../evidence/source-first-planning-20261104/REPORT.md)
+## Separate three decisions
 
-## How to run a route
+**Meaning:** what can Graham reasonably conclude, how far does it travel, and what decision changes? **Narrative form:** how does the reader discover that meaning (case, comparison, symbol, dialogue, timeline)? **Voice:** how does Graham sound while developing it (pace, precision, humour, directness)? Set the author and preferred voice early. Keep source extraction neutral. Apply voice to the telling after the argument has survived a challenge. A technical explanation can use an analogy; a provocateur can write a documented case.
 
-Use a fresh context for each numbered prompt below. Prepend the common instruction and supply the inputs named by the prompt. Replace bracketed names with their contents. Pass only the named handoffs. Preserve full source access for verification while keeping the eventual writing brief short. The examples below use the October and November CERT-In advisories from the prior packet. They illustrate questions to investigate, never conclusions to insert into the prompts.
+## Eight routes and their copyable prompts
 
-**Common instruction to paste into each call**
+Each numbered instruction is a fresh call. Supply the frozen ledger/full source access to factual calls. Bracketed outputs come from the named previous call. Hide other routes, historical drafts and model scores. Each route ends with the shared handoff below. The first two calls per route produce a brief and narrative outline, not public copy.
 
-> You are preparing an independent editorial brief for [author] on [subject area] for [audience]. The selected writing voice is [voice/version and craft rules]. Treat the source material as evidence. For each factual assertion give a source ID, passage locator and short supporting excerpt. Label interpretation, recommendation and uncertainty separately. Distinguish an agency's report from independent verification. Return only the requested intermediate artifact. If the requested distinction cannot be supported, return HOLD and name the missing evidence. Do not supply a hook or write a post.
+### 1. Two cases, one telling difference
+1. “Find two independently documented cases that address [question]. Match them on the relevant feature and identify one material difference. Attach claim IDs on both sides. Say which differences in context prevent a causal conclusion.”
+2. “Arrange [matched cases] as a parallel comparison: same reader question at each beat, then the point where the cases diverge. State the narrow implication and the detail a reader should inspect in their own situation. HOLD if the resemblance is superficial.”
+Output: paired case outline. Story shape comes from contrast.
 
-### 1. Challenge a reasonable belief
+### 2. A symbol with a limit
+1. “Across independent sources identify one recurring relationship behind [question]. Describe it literally, with its conditions and evidence. Freeze the literal explanation before suggesting imagery.”
+2. “Generate three familiar objects or situations that could illustrate [relationship]. Map the parts of each analogy to the actual evidence. Identify where each comparison breaks. Choose one whose failure does not change the conclusion. Outline image → real mechanism → boundary → action. If none fits, HOLD.”
+Output: a symbolic explanation with an explicit mapping. The image illustrates the claim and supplies zero factual evidence.
 
-**Use when** a finding appears to contradict an assumption a competent reader could reasonably hold. The order protects the original belief from becoming a straw man. Example question: under what conditions is traffic from an approved network a useful sign of trust?
+### 3. Follow one documented incident
+1. “Choose one traceable incident. Extract its sequence and the moment that changes a reader's understanding. Use an independent source to test whether the mechanism also applies elsewhere. Keep their events and dates separate.”
+2. “Outline [incident] starting at the consequential moment, then recover only the earlier detail needed to explain it. Label the transition from this case to the independent evidence. Remove imagined dialogue, private motives and invented scene detail.”
+Output: one factual story whose relevance extends beyond the headline.
 
-1. **Before revealing the news.** “Given [audience] and [neutral topic], state the strongest plausible reason for trusting the existing practice and the conditions under which that reasoning works. Mark this as a hypothetical belief unless you have direct evidence that readers hold it.” Save the belief.
-2. **Separate context.** “Read [full sources] without the proposed belief. Extract an observed exception, its mechanism and its scope. Identify any part of the usual practice the evidence still supports.” Save the exception.
-3. **Join.** “Compare [belief] with [exception]. Write the narrowest correction that changes a reader's judgment. State when the original belief remains reasonable. If both already say the same thing, return HOLD.” Output a belief, boundary and revised judgment.
+### 4. Put the ordinary belief on trial
+1. “Before seeing the evidence, state a competent reader's strongest plausible belief about [neutral question]. Give its rationale and the conditions under which it works. Treat it as hypothetical unless sourced.”
+2. “Read the ledger. Find the best evidence for [belief] and the strongest independent exception. Build an outline that earns the belief first, introduces the exception second and ends with a revised rule. If the ordinary belief survives intact, say so.”
+Output: a supported change of mind without forcing contrarianism.
 
-### 2. Investigate ambiguous wording
+### 5. Investigate an ambiguous word
+1. “Find a consequential term used by multiple sources. Read their definitions, measurement methods and qualifications. Identify two readings that could produce different decisions. Separate ambiguous language from genuinely conflicting findings.”
+2. “Build [two readings] into a short investigation. Present the consequential phrase, test both meanings against named sources and identify the observation that resolves the question or leaves it open. Attribute intentional ambiguity only with direct evidence of intent.”
+Output: an interpretive puzzle with a defensible resolution or a precise unknown.
 
-**Use when** the headline, body or successive reports support more than one reading. Example question: how much does “AI-assisted” tell us about a particular attack step?
+### 6. View the same facts from two desks
+1. “Give [evidence] independently to a business owner and a technical owner. For each, identify the decision they own, the evidence they can see and what they must learn from the other. Mark hypothetical responsibilities as assumptions.” Run once per role in isolated contexts.
+2. “Join [role notes] around one shared decision. Outline the story from each desk in turn. Identify the handoff that matters, who would forward the post to whom, and what answer would change the next step. Do not invent attributed speech.”
+Output: two perspectives on one event with a practical handoff.
 
-1. “Read [sources]. Extract the exact phrase whose meaning affects a decision. Find its strongest nearby qualifier. Give two plausible readings, each with the passage that permits it.” Save the language record.
-2. “Using [language record] and [full sources], distinguish what was observed, what the publisher attributes, and what remains unspecified. Look for a definition or later clarification that resolves the ambiguity.” Save the findings.
-3. “Given [findings], say what a reader can responsibly conclude and what evidence would distinguish the remaining interpretations. Discuss deliberate ambiguity only if there is direct evidence of intent. Otherwise leave motive unknown. Stop if the wording is already clear.” Output an interpretation note and an answerable question.
+### 7. Read the evidence in historical order
+1. “Using only sources available by [cutoff], freeze what a prudent reader could know and recommend then. Cite the dated support and write down one uncertainty.”
+2. “Now reveal later evidence and the independent cross-check. Identify what was learned versus what actually changed in the world. Outline before → revealing detail → revised decision. HOLD if the apparent change comes only from a new headline.”
+Output: a discovery story that preserves what was knowable at the time.
 
-### 3. Compare what changed between reports
+### 8. Work backward from a test
+1. “From [reader's decision] and the multi-source evidence, identify two plausible explanations or operating conditions. Design the smallest safe, hypothetical observation that would distinguish them. State what each possible result would mean.”
+2. “Outline a thought experiment. Begin with the choice the reader faces, invite a prediction, reveal the source-supported mechanism, and show how the answer changes the decision. Clearly distinguish a proposed test from one an investigator actually performed.”
+Output: an interactive reasoning sequence that a reader could use with a colleague.
 
-**Use when** an update follows an earlier advisory. The first reader must finish before seeing the later document. Example question: what would a payments owner do differently after the November update?
+## Common handoff and voice change
 
-1. “Read [earlier source] alone. Freeze the known mechanism, affected scope, recommended action and uncertainty as of its publication date.” Save the dated baseline.
-2. “Read [later source] alongside [dated baseline]. Tag each material point as newly observed, previously known, strengthened, revised or still unresolved. Attach passages from both dates when claiming a change.”
-3. “Select the one change that alters a named owner's decision. Distinguish a change in reporting from a change in the underlying world. If the action is the same, explain whether the new evidence changes confidence enough to matter.” Output a before/after decision brief.
+**Freeze the meaning.** “From [route output] return one thesis, one reader consequence, up to two load-bearing facts with source IDs, the most important qualification and the sequence of narrative beats. Label inference. Preserve a complete evidence trail outside the short brief. HOLD if the conclusion outruns the sources.”
 
-### 4. Start with a decision someone owns
+**Apply a voice.** “Given [frozen brief], [route outline] and [verified voice definition], create a writing plan specifying viewpoint, sentence rhythm, placement of evidence and the transition that lands the implication. Preserve factual meaning and the limits of any metaphor. Show which beat would sound different in this voice. Do not draft unless the run explicitly requests prose.”
 
-**Use when** the audience must make a choice even if a headline is forgotten. Example question: what evidence would justify closing remediation before a low-coverage weekend?
+**Attribute naturally.** “For each load-bearing claim, identify whose observation it is and how to name the source in ordinary language. Use the source's role in the argument: one report documented the event, another study establishes a boundary. Drop citations that add prestige alone. Store full URLs and passage locators in the source record. Flag any external link that would materially help a reader verify or use the information.”
 
-1. **Audience only.** “Given [reader role] and [neutral topic], name one realistic decision, its owner, two plausible options and the observation that would change the choice. Treat the situation as hypothetical.” Save the decision.
-2. “Read [full sources] against [decision]. Extract only evidence that discriminates between the options. Name what the source cannot tell this particular organization.”
-3. “Turn [decision and evidence] into a conditional recommendation. Specify who should ask whom for which evidence and what answer would change the next step. Hold if either option would get identical advice.” Output a decision note suited to forwarding between the two roles.
+For the first comparison use the existing house rule of no URLs in the post body, inline source names where needed, and a source list in the review package. LinkedIn supports external links. Its help documentation describes sharing mechanics and gives no universal reach penalty. Placement can be a separate later test. [LinkedIn Help](https://www.linkedin.com/help/linkedin/answer/a525301)
 
-### 5. Reconstruct a mechanism before interpreting it
+## Run all eight before the audit
 
-**Use when** the surprising fact is how an outcome became possible. Example question: how could a test environment become relevant to a production incident?
+1. Predeclare one concept, frozen sources, author, audience, verified voice/version, word range, model/settings, stopping rules and call budget. Use isolated contexts and record exact prompts, inputs, outputs and resource use. Batch in groups within existing execution limits. A HOLD counts as a route result. Record why instead of forcing a draft.
+2. **Compare approaches.** Run every route once on that common packet with the same voice. For each admitted brief generate a single private draft with its own outline. Keep the original, with no score-seeking retries. Save every route result before ranking anything.
+3. **Test Graham's specific hypothesis.** Choose one supported thesis and freeze the SAME facts, audience, action and qualification. Using that identical brief, compare literal explanation, analogy and documented-case telling with voice fixed. Then hold one telling fixed and switch between two verified voices. This distinguishes effects of story construction from voice and from changing the argument. A case route must have a documented case in the frozen facts.
+4. **Audit afterward.** Randomize labels. Ask a blinded reader to paraphrase the thesis, name what evidence earned it, say who might forward it and why, identify what they would edit, and estimate or measure editing effort (label which). Inspect whether an analogy implies an unsupported fact, and whether multiple independent sources actually change the reasoning. Record ties, rejected drafts and human judgments separately from model scores.
+5. Use a plain direct-prompt draft on the same brief as the cost/quality control. Report provenance, substantive usefulness, distinctness of telling, fit to voice, editing effort and calls separately. No universal winner from one concept. If two routes contribute identifiable strengths, combine only those steps and test that candidate against the strongest single route and the control on a second, materially different concept. Decide winner, hybrid or no advantage after that evidence.
 
-1. “Read [full sources]. Reconstruct one documented sequence as starting condition → action → consequence. Attach a locator to every link. Keep separate incidents separate and mark any unobserved link.” Save the chain.
-2. “Inspect [chain] against [sources]. Which dependency is easiest to overlook? Identify the precise point at which a different condition could interrupt the sequence. Label that counterfactual as an inference.”
-3. “For [audience], explain the dependency in ordinary language and specify one observation that could confirm whether it exists locally. Hold if the proposed mechanism requires joining unrelated incidents.” Output a short causal walkthrough and a verification question.
-
-### 6. Put competing explanations on trial
-
-**Use when** a reported association invites a causal claim. Example question: how much of the reported speed can be attributed to AI tooling versus other features of the incidents?
-
-1. “Extract [reported observation] from [sources] without adopting the headline's causal explanation. List the available measurements and any missing comparison group.” Freeze the observation.
-2. **Two independent calls.** “Given [observation and sources], make the strongest evidence-based case for [explanation A or B]. State one observation that would count against it. Do not see the other analyst's answer.” Use a source-attributed explanation for A and a plausible alternative for B, explicitly labeled as a hypothesis.
-3. “Compare [cases A and B] to [sources]. Identify the strongest discriminator, whether it was measured, and which conclusion the available evidence permits. An unresolved result is acceptable. Reject a rival that has no plausible basis.” Output a qualified causal judgment or a research question.
-
-### 7. Examine the cost of acting on advice
-
-**Use when** a recommendation creates a real operational choice. Example question: if a micro-payment followed by a large transfer can trigger review, what would an operator need to know before setting the rule?
-
-1. “From [sources], isolate one recommended intervention, its target harm and the condition under which the publisher recommends it. Separate recommendations from measured results.”
-2. **Independent role calls.** “As [risk owner / operations owner], examine [intervention]. Give the strongest reason to act, a plausible cost of acting incorrectly, and the local evidence needed to assess it. Mark hypothetical costs explicitly. Invent no rates, incidents or losses.”
-3. “Using both role notes, identify the decision threshold or tradeoff that actually matters. State who can measure it and which missing observation could reverse the choice. If the tradeoff is imaginary, discard it.” Output a two-sided operational brief.
-
-### 8. Update Graham's own prior view
-
-**Use when** there is an authentic earlier statement by Graham. This route tests intellectual honesty and gives standing to a first-person argument. Example question: does the advisory change a position Graham actually took on what counts as remediation evidence?
-
-1. **Before revealing the story.** “Read [approved, attributable prior statement]. Quote the relevant position with provenance, identify its rationale and specify what evidence could change it. If no attributable statement exists, return HOLD.” Freeze the prior.
-2. **Separate context.** “Read [new sources] without seeing the prior. Extract the strongest finding and its limitations.” Save the independent finding.
-3. “Compare [frozen prior] with [independent finding]. Choose retain, narrow, revise or withdraw. Explain exactly what changed and what still holds. Never attribute a belief, experience or change of mind to Graham beyond the record. Flag the proposed interpretation for his confirmation.” Output a first-person brief pending owner confirmation.
-
-## Common exit and handoff
-
-Use one review call after any route:
-
-> Read [route artifact] and check it against [sources]. Return a short brief containing the reader's question, one defensible point, one primary fact, at most one additional fact if needed, one useful consequence or action, and the qualification whose omission would mislead. Say who might forward it to whom and why. Choose a format and explain its fit in one sentence. Retain other research in the evidence record. Apply the selected voice to how the point will be developed. Return GO, HOLD for missing evidence, or DROP for an uninteresting angle. Cite the passage that justifies the decision. No post.
-
-These limits are proposed editorial defaults for a short post. A reviewer can HOLD when the topic needs more room. Final human judgment owns author endorsement and publication.
-
-## First comparison and how to interpret it
-
-Use routes 2, 3 and 4 first on the same two frozen advisories. Their intended outputs are an interpretation boundary, a dated change and a decision someone owns. This tests three different reasoning tasks on material we already understand. Route 8 needs a separately approved prior statement. Run all branches in isolation with the same author, audience, voice, sources, model and settings. Give each branch fresh context and no previous thesis, scores, drafts or other branch outputs. Log every prompt, input hash, output, route ID, stage order and call count. There is no need to draft to test these workflows.
-
-Shuffle the resulting briefs and hide route labels. For each, have a reader write down (a) the question answered, (b) the evidence that earns the answer, and (c) what they would now think or do differently. Compare those three items before looking at wording or scoring. If the same claim, evidence and action recur, trace the first stage where they appeared. A common thesis in the input points to an ordering defect. Independent routes reaching the same well-supported conclusion may show the source has one dominant implication. Keep the best brief and retire duplicates. Unsupported novelty fails.
-
-To isolate **order itself**, repeat one route with its inputs revealed in reverse order. For route 4, compare decision-first then source against source-first then decision. Keep the roles, questions, full eventual evidence, model, call count and final review prompt matched. Freeze the first call's intermediate output in both arms. Record whether the final decision or evidence changes. A comparison across the eight routes measures editorial approaches, since both order and assigned questions vary.
-
-This is a design catalogue. Selecting it for a live experiment requires a declared Codex batch budget. The existing product acceptance and publishing procedures continue to own release decisions.
+This edition replaces the previous design catalogue at the same path. Git history preserves the earlier eight options. These are proposed experimental routes. No live route trials, preference audit or publishing action are part of this design revision.
