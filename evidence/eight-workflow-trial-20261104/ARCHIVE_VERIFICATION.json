@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "archive_commit": "12d3a54efe265d9b2c4a4fef443b1566cc6810bb",
-  "archive_sha256": "88d127b08caaca2a48a078e33bfb7f7fc6b3fa872d1e34f6faab4d8ed4f329c4",
+  "archive_commit": "301cc4b7263e2547cc2675f29e935fe816487a72",
+  "archive_sha256": "0f9d028a05bde68e623093851b2e8c3ebacced46ba6cc3ed877295f8ff41ccd4",
   "verifier": {
     "status": "PASS",
     "manifest_files": 597,
