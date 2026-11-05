@@ -7,7 +7,7 @@ CURRENT_SCOPE: Graham only; broad subject freedom; writing style independent of 
 CURRENT_EDITORIAL_DIRECTION: docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md
 CURRENT_EVIDENCE_POINTER: evidence/graham-black-box-voices-20261105/MILESTONE.json
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Graham-only direction settled; two installed AI black-box voice drafts complete; human voice/usefulness review pending
+CURRENT_STAGE_OR_MILESTONE: Version1 voice preferred but construction rejected; structured chat revision positively reviewed; default structure adopted; installed structure qualification pending
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: merged and installed revision2c2daf39398a993b698d1f225008a06217b14a7c; evidence/release-essential-20261105/INSTALLATION.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -478,3 +478,11 @@ Assistant observes both native versions are more formal than the liked chat exam
 All26 AT/11 E2E retained. No Ardent generation, source/config/test change, new install, rendering or publication.
 Existing broad operational authorization persists. Do not request it again; continue admitted work after
 specific human editorial disposition, preserving all historical records and their original scope.
+
+
+## Structure feedback checkpoint — November 5, 2026
+Version1 voice preference is distinct from rejected construction. Chat revision72946 received positive feedback.
+Default structure/workflow now lives solely in GRAHAM_CONTENT_DIRECTION_2026-11-05.md, Adopted structure and workflow.
+Exact rewrite and feedback: evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json.
+Next: carry selected structure through existing installed editorial handoff/full-engine qualification;
+no installed template behavior or human publication approval is inferred. No new model calls.

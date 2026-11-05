@@ -31,8 +31,11 @@ same facts/author/audience/question;2 model executions/6 CLI starts/32.254 activ
 exact-output/hash and zero-call reopen verified. Human feedback pending; no style winner declared.
 Receipt: evidence/graham-black-box-voices-20261105/MILESTONE.json. Review COMPARISON.md and
 CHAT_REFERENCE.md there. Both native drafts are more formal than the reference in assistant review.
-Next: gather exact-text voice/usefulness feedback; retain useful delivery traits, then qualify a suitable
-Graham full-engine/control package through existing M3/M4 before expanding M5 subjects.
+Next: recorded feedback prefers Version1 voice but rejects its construction; chat revision72946 is
+positively reviewed. Use the adopted scaffold/workflow in GRAHAM_CONTENT_DIRECTION_2026-11-05.md,
+then carry it through existing installed editorial handoff/full-engine/control M3/M4 qualification.
+Evaluate voice and coherent progression separately. Current feedback receipt:
+ evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json. Installed structure behavior remains unproved.
 The style diagnostic does not substitute for full-engine/baseline, six-subject, visual or publishing gates.
 All26 AT/11 E2E retained; historical first-six eligibility unresolved. No active hosted workflow.
 

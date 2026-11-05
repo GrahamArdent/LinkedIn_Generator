@@ -8,12 +8,12 @@ failure diagnostics only when needed. Tool availability is not action authority.
 
 Read docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md and execute its M1–M5
 sequence from the first unmet milestone. It owns steps, budgets and exit conditions.
-Latest checkpoint: Graham-only editorial direction settled; two installed AI black-box style drafts
-completed. Read GRAHAM_CONTENT_DIRECTION_2026-11-05.md and
- evidence/graham-black-box-voices-20261105/MILESTONE.json; review its COMPARISON.md against
-CHAT_REFERENCE.md. Human voice/usefulness feedback is pending. Do not regenerate these completed
-outputs or require review of the rejected security subject. After feedback, preserve useful traits and
-return to suitable full-engine/control qualification in existing M3/M4 before expanding M5.
+Latest checkpoint: Version1 voice preferred but construction rejected; structured chat revision72946
+positively reviewed. Read GRAHAM_CONTENT_DIRECTION_2026-11-05.md (Adopted structure and workflow)
+and evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json. Use that default scaffold,
+review voice and structure separately, and qualify its actual installed use through the existing
+editorial handoff/full-engine/control M3/M4 path. Do not regenerate completed comparisons or infer
+installed template behavior from chat output. Preserve historical drafts and human gates.
 Continued operational authority remains in evidence/release-essential-20261105/AUTHORIZATION.json.
 The acceptance document it references owns all26 AT/11 E2E criteria; consult the broader P0–P7
 roadmap only for the boundary being worked. Do not preload unrelated ecosystem material.

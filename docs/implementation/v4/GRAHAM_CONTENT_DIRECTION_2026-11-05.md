@@ -29,6 +29,33 @@ Declare2 model executions,6 expected CLI process starts,900 cumulative active CL
 
 The comparison should differ meaningfully in how it engages the reader while retaining the evidence boundaries. Distinct first words or sentence lengths alone are insufficient. Review which version sounds like Graham, whether either overstates expertise or evidence, whether the point is worthwhile, and what editing is actually needed. Do not force a winner.
 
+## Adopted structure and workflow
+
+Graham preferred Version1's voice but rejected its construction. This is a relative voice preference,
+not finished-post acceptance. The subsequent chat rewrite72946 received explicit positive feedback:
+“that's a much better rewrite.” Exact text/hash and feedback are preserved in
+ evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json and STRUCTURED_CHAT_REVISION.md.
+Both chat examples remain separate from native installed results and publication approval.
+
+Use this default progression: **hook → tension → relevant evidence → Graham's interpretation → earned landing**.
+The structure gives the thought a journey; voice controls its expression. Avoid mechanical headings,
+forced checklists, repeated one-line punches, manufactured controversy or a mandatory CTA. Evidence
+must advance the thought, rather than turn it into a research summary. A different scaffold may be
+chosen when the idea warrants it; choose deliberately instead of leaving construction unspecified.
+Do not copy the same opening/conclusion across subjects.
+
+Workflow: settle the brief → gather evidence/limits → map the chosen structure briefly → draft in the
+selected voice → check facts/credential restraint, voice and construction separately → revise the
+observed defect within the existing bounded policy → visual plan/human review when qualified.
+“Sounds like Graham” cannot substitute for a coherent argument. General praise does not supply
+numerical review scores, editing minutes, publication approval or automatic voice-example activation.
+
+This is now the documented operating direction. No product/config change or native regeneration
+occurred in recording it. Next suitable installed full-engine qualification must carry the selected
+structure through the existing editorial handoff, demonstrate the progression in actual output, and
+retain exact prompts/results and zero-call reopen proof. Do not claim installed template behavior
+from the successful chat rewrite alone. All existing essential-check and human gates remain.
+
 ## What follows
 
 After exact-text feedback, retain the useful delivery traits and compare on another genuine calendar/new idea before declaring a broadly successful voice. Recover the historical calendar as an idea bank, with flexible dates and optional style suggestions, rather than generating every voice for every row or automating publication. Topic ideas and writing voice remain independently selectable. The existing pipeline remains the implementation path; no replacement engine, new service or unsolicited broad architecture is needed.
