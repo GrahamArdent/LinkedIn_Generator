@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Scoring audit complete; review-admission policy revision recommended; live90 gate unchanged
+CURRENT_STAGE_OR_MILESTONE: Essential review gate source correction locally verified; installed release unchanged; human/product acceptance remains HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: product merge and installed revision0c099d70fc807044355af089d62d1bef049cbb95; receipt evidence/release-integration-20261105/MILESTONE.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -25,7 +25,7 @@ Therefore the current execution lane is:
 
 ## Durable Product Decisions
 
-1. **90 remains the publish-ready text threshold.** A sub-90 Draft A is preserved and receives at most one automatic guarded Draft B for review.
+1. **Owner adopted essential-checks-v1 on November5.** New source runs require four passing essential verdicts with reasons, not90. Scores are advisory. Preserve Draft A; allow at most one guarded defect-driven Draft B; missing evidence pauses. Human approval remains pending. Installed0c099d7 retains90 until promotion.
 2. **A normal publishable post package includes a visual companion plan.** Text-only publishing is not the target path, though the contract can disable visuals for tests/exceptional cases.
 3. **Format is a content decision.** Use `single_image` for one strong visual idea; use `carousel` when sequence, comparison, steps, layers, or multiple distinct takeaways genuinely improve understanding.
 4. **Visual planning precedes rendering.** Do not send a generic post directly to an image model and rely on the provider to invent the design.
@@ -85,8 +85,8 @@ For each trial:
 4. produce Draft A around the strongest grounded detail;
 5. apply deterministic compliance checks;
 6. score Draft A on publish quality;
-7. if Draft A is below 90, preserve it and create exactly one guarded Draft B;
-8. select only a 90+ safe candidate as publish-ready for review;
+7. if an essential check has a fixable defect, preserve Draft A and permit at most one guarded Draft B; missing evidence pauses;
+8. select only a candidate passing all four essential checks and existing guards for human review;
 9. create a provider-neutral visual plan for that candidate;
 10. review both **content quality and visual-plan usefulness**;
 11. record `keep`, `edit`, or `reject` plus reason codes where relevant;
@@ -168,8 +168,8 @@ Promotion rule: when one becomes a real candidate for action, evaluate it agains
 - [ ] Zero approved candidates contain invented factual specificity.
 - [ ] Zero approved candidates require unexplained internal terminology to understand the main point.
 - [ ] Zero individual-author candidates use unjustified collective `we/us/our` framing.
-- [ ] Every finished draft below 90 preserves Draft A and triggers no more than one automatic Draft B.
-- [ ] Publish-ready requires publish-quality >=90 plus existing factual/safety guardrails.
+- [ ] Failed essential checks preserve Draft A and trigger no more than one targeted guarded Draft B; evidence gaps pause.
+- [ ] Review eligibility requires all four essentials pass plus existing factual/safety guardrails; no aggregate cutoff.
 - [ ] At least 4 of the first 6 drafted candidates receive `keep` or only a light edit rather than structural rejection.
 - [ ] Major correction categories do not recur after a focused fix.
 - [x] Visual Asset Planning Slice A implementation criteria are satisfied.
@@ -401,3 +401,18 @@ Same cybersecurity subject reframed for non-specialist approvers, then AI usable
 ## Current scoring audit — November5,2026
 
 See evidence/scoring-audit-20261105/REPORT.md, ARITHMETIC.json, COHORT.json and MILESTONE.json.19 historical native totals recompute correctly;10 unique vectors, range71–81. All-strong4 means80, below the uncalibrated90 gate; fixed3 novelty/emotion/shareability caps even otherwise exceptional work at87. Synthetic gate probes accept zero usefulness at90 and zero voice at95, showing compensation weakness, not actual model ratings. Six evaluator-only native executions plus two explicitly distinguished cached reads: independent security72→72, AI73→74, generic negative14 and unsupported negative62. No new posts, API spend or product changes. Recommend separate non-compensable blockers and human-review eligibility, diagnostic scores and exact-text human calibration; do not merely lower to75. POLICY_RECOMMENDATION.md is proposed, not activated. Installed0c099d7 and90 runtime semantics remain unchanged. All26 AT/11 E2E and publishing approval gates preserved. Earlier score-based HOLDs are historical runtime outcomes, not calibrated human writing judgments.
+
+
+## Current essential-review correction — November5,2026
+Owner explicitly adopted the four-essential-check recommendation in chat. Source candidate implements
+essential-checks-v1 in the existing evaluator/API/selector. Exact outcomes, integration state and
+remaining debt: evidence/essential-review-gate-20261105/MILESTONE.json. Findings and complete
+chat/26-AT/11-E2E audit: REPORT.md and ACCEPTANCE_AUDIT.json in that directory.
+Scores are diagnostic; the retained threshold field is legacy metadata. A passing candidate is
+eligible for human review and visual planning, never publishing. Missing evidence pauses; failures
+receive at most one guarded targeted rewrite. Old saved results preserve original policy and bytes.
+This supersedes old threshold directives, not historical outcomes.
+Source correction is not merged or installed. Runtime0c099d7 remains unchanged. Next review and
+promote this coherent candidate through the existing release admission, then one installed trial
+and exact-text human review. No paid API, hosted CI, deployment or publishing. Human calibration,
+six-subject pilot, visual usefulness, UI and publishing milestones remain open; all26 AT/11 E2E retained.

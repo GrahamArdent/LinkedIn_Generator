@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 from .rewrite_guard import evaluate_rewrite
@@ -20,6 +20,32 @@ WEIGHTS: dict[str, int] = {
     "voice_authenticity": 5,
 }
 
+REVIEW_POLICY_VERSION = "essential-checks-v1"
+ESSENTIAL_CHECKS = {
+    "factual_integrity": "Claims and experiences are supported; preserve source limitations, author POV and safety rules. Missing support means needs_evidence; contradicted or unsafe claims mean revise.",
+    "reader_relevance": "The specified audience understands the argument and why it matters without reconstructing specialist context.",
+    "practical_value": "The reader gains a useful insight, question or action; a checklist is not mandatory.",
+    "argument_voice": "The intended meaning, selected narrative and selected writing voice are preserved, without invented identity or experience.",
+}
+
+
+def essential_review_status(checks: Any) -> str:
+    """Resolve non-compensable verdicts; malformed checks fail closed."""
+    if not isinstance(checks, dict) or set(checks) != set(ESSENTIAL_CHECKS):
+        return "assessment_unavailable"
+    for item in checks.values():
+        if (not isinstance(item, dict) or item.get("verdict") not in ("pass", "revise", "needs_evidence")
+                or not isinstance(item.get("reason"), str) or not item["reason"].strip()):
+            return "assessment_unavailable"
+    if any(item["verdict"] == "needs_evidence" for item in checks.values()):
+        return "needs_evidence"
+    if checks["factual_integrity"]["verdict"] != "pass":
+        return "blocked"
+    if any(item["verdict"] != "pass" for item in checks.values()):
+        return "needs_rework"
+    return "reviewable"
+
+
 _DIMENSION_KEYS = tuple(WEIGHTS)
 _JSON_RE = re.compile(r"\{.*\}", re.DOTALL)
 
@@ -31,9 +57,17 @@ class PublishQualityAssessment:
     gaps: tuple[str, ...]
     rationale: str
     warnings: tuple[str, ...] = ()
+    essential_checks: dict[str, dict[str, str]] = field(default_factory=dict)
+
+    @property
+    def review_status(self) -> str:
+        return essential_review_status(self.essential_checks)
 
     def as_dict(self) -> dict[str, Any]:
         return {
+            "policy_version": REVIEW_POLICY_VERSION,
+            "review_status": self.review_status,
+            "essential_checks": self.essential_checks,
             "score": self.score,
             "dimensions": dict(self.dimensions),
             "gaps": list(self.gaps),
@@ -78,7 +112,7 @@ def assess_publish_quality(
 ) -> PublishQualityAssessment:
     """Assess the finished post separately from deterministic compliance quality.
 
-    This score estimates publish readiness, not virality. The model evaluates
+    The score is advisory; explicit essential verdicts determine review admission. The model evaluates
     named dimensions from 0-5; weighting and final score calculation are kept
     deterministic in code. Evidence is supplied so specificity can be judged
     against grounded material rather than rewarding invented detail.
@@ -103,7 +137,11 @@ def assess_publish_quality(
     system = (
         "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 "
         "(absent) to 5 (exceptional) on each named dimension. Judge whether the post is understandable, useful, "
-        "specific, distinctive, interesting, shareable, and authentic enough to publish. Do not reward clickbait, "
+        "specific, distinctive, interesting, shareable, and authentic. Scores are advisory and never determine admission. "
+        "Independently assess four essential checks with pass, revise or needs_evidence and a concrete reason. "
+        "Passing permits human review only, never publication. Failures must identify an exact defect or claim, "
+        "not merely ordinary novelty, restrained emotion, length or low sharing potential. "
+        "Do not infer essential verdicts from numeric ratings. Novelty is relative to the intended reader. Do not reward clickbait, "
         "engagement bait, unsupported specificity, or generic LinkedIn polish. Use the supplied evidence only to "
         "judge whether concrete details are grounded. This is a publish-readiness heuristic, not a promise of "
         "virality. These ratings are not calibrated to the author's human judgments or engagement outcomes. "
@@ -143,7 +181,13 @@ def assess_publish_quality(
                 "shareability": "Would sharing the post make another professional look useful or insightful?",
                 "voice_authenticity": "Does the wording feel natural for the supplied voice rather than generic creator copy?",
             },
+            "essential_check_definitions": ESSENTIAL_CHECKS,
             "required_output": {
+                "essential_checks": {
+                    key: {"verdict": "pass | revise | needs_evidence",
+                          "reason": "specific evidence-linked finding, or why the requirement is met"}
+                    for key in ESSENTIAL_CHECKS
+                },
                 **{key: "integer 0-5" for key in _DIMENSION_KEYS},
                 "gaps": "array of at most 3 concise weaknesses that most limit publish quality",
                 "rationale": "one concise sentence explaining the overall score",
@@ -158,6 +202,9 @@ def assess_publish_quality(
         payload = _parse_payload(raw)
         if any(type(payload.get(key)) is not int or not 0 <= payload[key] <= 5 for key in _DIMENSION_KEYS):
             raise ValueError("missing_or_invalid_publish_quality_dimension")
+        checks = payload.get("essential_checks")
+        if essential_review_status(checks) == "assessment_unavailable":
+            raise ValueError("missing_or_invalid_essential_checks")
         dimensions = {key: payload[key] for key in _DIMENSION_KEYS}
         gaps_raw = payload.get("gaps")
         if (not isinstance(gaps_raw, list) or len(gaps_raw) > 3
@@ -173,6 +220,7 @@ def assess_publish_quality(
         return PublishQualityAssessment(
             score=_weighted_score(dimensions),
             dimensions=dimensions,
+            essential_checks=checks,
             gaps=gaps,
             rationale=rationale,
         )
@@ -210,7 +258,10 @@ def rewrite_for_publish_quality(
 
     values = {
         "post": original,
-        "primary_fix": assessment.gaps[0] if assessment.gaps else "Improve only a supported, identifiable weakness; otherwise preserve the original.",
+        "primary_fix": "; ".join(
+            f"{key}: {item['reason']}" for key, item in assessment.essential_checks.items()
+            if item["verdict"] != "pass"
+        ) or "Preserve the original; no essential defect was identified.",
         "publish_quality_report": assessment.as_dict(),
         "persona_profile": persona_profile,
         "allowed_sources": [

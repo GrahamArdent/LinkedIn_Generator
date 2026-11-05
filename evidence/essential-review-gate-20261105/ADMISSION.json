@@ -1,0 +1,7 @@
+{
+  "max_subscription_evaluations": 2,
+  "max_cumulative_cli_seconds": 900,
+  "api_spend": 0,
+  "generation": false,
+  "purpose": "Existing-text evaluator semantic smoke, not human calibration"
+}

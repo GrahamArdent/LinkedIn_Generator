@@ -53,6 +53,8 @@ class FixtureClient:
                         "conversation_potential": 4,
                         "shareability": 4,
                         "voice_authenticity": 4,
+                        "essential_checks": {key: {"verdict": "pass", "reason": "Meets the supplied brief."}
+                            for key in ("factual_integrity", "reader_relevance", "practical_value", "argument_voice")},
                         "gaps": [],
                         "rationale": "The post is grounded, clear, and useful.",
                     }

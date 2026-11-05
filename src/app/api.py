@@ -7,7 +7,7 @@ from .generation import Pipeline
 from .editorial_handoff import validate_handoff
 from .llm import LLMClient
 from .opportunity import assess_opportunity, ending_guidance
-from .publish_quality import assess_publish_quality, rewrite_for_publish_quality
+from .publish_quality import REVIEW_POLICY_VERSION, assess_publish_quality, rewrite_for_publish_quality
 from .utils import load_yaml
 from .writing_voice import resolve_writing_voice
 
@@ -360,7 +360,7 @@ def run_generation(
     if publish_quality_gate:
         threshold = publish_quality_threshold
         if threshold is None:
-            threshold = int(os.getenv("PUBLISH_QUALITY_MIN_SCORE", "90"))
+            threshold = 90  # legacy metadata only; retired score environment is ignored
         threshold = max(0, min(100, int(threshold)))
         quality_client = publish_quality_client or pipe.client
         original_assessment = assess_publish_quality(
@@ -371,14 +371,18 @@ def run_generation(
             persona_profile=persona_profile,
             client=quality_client,
         )
-        original_score = original_assessment.score
         publish_review: dict[str, Any] = {
-            "threshold": threshold,
+            "threshold": threshold,  # legacy request metadata, not an admission cutoff
+            "threshold_enforced": False,
+            "policy_version": REVIEW_POLICY_VERSION,
+            "human_approval": "pending",
+            "review_status": original_assessment.review_status,
             "evaluation_context": persona_profile,
             "calibration_status": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS",
             "rewrite_triggered": False,
-            "publish_ready": original_score is not None and original_score >= threshold,
-            "recommendation": "original" if original_score is not None else "assessment_unavailable",
+            "publish_ready": original_assessment.review_status == "reviewable",
+            "review_eligible": original_assessment.review_status == "reviewable",
+            "recommendation": "original" if original_assessment.review_status != "assessment_unavailable" else "assessment_unavailable",
             "original": {
                 "body": primary_body,
                 **original_assessment.as_dict(),
@@ -386,7 +390,7 @@ def run_generation(
             "rewrite": None,
         }
 
-        if original_score is not None and original_score < threshold:
+        if original_assessment.review_status in ("needs_rework", "blocked"):
             publish_review["rewrite_triggered"] = True
             try:
                 rewrite, guard = rewrite_for_publish_quality(
@@ -420,14 +424,13 @@ def run_generation(
                         client=quality_client,
                     )
                     rewrite_entry.update(rewrite_assessment.as_dict())
-                    rewrite_score = rewrite_assessment.score
-                    if rewrite_score is not None and rewrite_score >= threshold:
+                    if rewrite_assessment.review_status == "reviewable":
                         publish_review["publish_ready"] = True
+                        publish_review["review_eligible"] = True
+                        publish_review["review_status"] = "reviewable"
                         publish_review["recommendation"] = "rewrite"
-                    elif rewrite_score is not None and rewrite_score > original_score:
-                        publish_review["recommendation"] = "rewrite_below_threshold"
-                    else:
-                        publish_review["recommendation"] = "original"
+                    # Otherwise retain the original and its disposition. A
+                    # higher score cannot override a failed essential.
                 publish_review["rewrite"] = rewrite_entry
             except Exception as exc:
                 publish_review["recommendation"] = "original"
@@ -446,6 +449,9 @@ def run_generation(
             {
                 "publish_quality_score": publish_review["original"].get("score"),
                 "publish_quality_threshold": publish_review["threshold"],
+                "review_policy_version": REVIEW_POLICY_VERSION,
+                "publish_quality_threshold_enforced": False,
+                "review_status": publish_review["review_status"],
                 "publish_rewrite_triggered": publish_review["rewrite_triggered"],
                 "publish_rewrite_score": (
                     publish_review.get("rewrite", {}).get("score")

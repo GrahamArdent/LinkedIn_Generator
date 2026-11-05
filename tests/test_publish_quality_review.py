@@ -63,7 +63,12 @@ def quality_json(score: int) -> str:
         }
     else:
         raise AssertionError(f"unsupported fixture score: {score}")
-    return json.dumps({**dims, "gaps": ["Make the consequence more immediate."], "rationale": "Fixture."})
+    # Explicit essential verdicts, independent of production score thresholds.
+    checks = {key: {"verdict": "pass", "reason": "Meets the supplied brief."}
+              for key in ("factual_integrity", "reader_relevance", "practical_value", "argument_voice")}
+    if score == 87:
+        checks["reader_relevance"] = {"verdict": "revise", "reason": "The reader must reconstruct the consequence."}
+    return json.dumps({**dims, "essential_checks": checks, "gaps": ["Make the consequence more immediate."], "rationale": "Fixture."})
 
 
 class ReviewClient:
@@ -113,7 +118,7 @@ def test_publish_quality_weights_total_100():
     assert sum(WEIGHTS.values()) == 100
 
 
-def test_sub_90_draft_is_preserved_and_one_rewrite_is_scored():
+def test_failed_reader_check_preserves_draft_and_scores_one_rewrite():
     client = ReviewClient(first_score=87, second_score=93)
 
     result = _run(client)
@@ -133,7 +138,7 @@ def test_sub_90_draft_is_preserved_and_one_rewrite_is_scored():
     assert len([c for c in client.calls if "one bounded publish-quality rewrite" in c["system"]]) == 1
 
 
-def test_90_plus_draft_does_not_spend_a_rewrite_call():
+def test_passing_essentials_do_not_spend_a_rewrite_call():
     client = ReviewClient(first_score=92)
 
     result = _run(client)

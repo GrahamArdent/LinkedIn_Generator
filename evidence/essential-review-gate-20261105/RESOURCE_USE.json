@@ -1,0 +1,23 @@
+{
+  "subscription_evaluations": 2,
+  "physical_process_starts": 6,
+  "active_cli_seconds": 38.311493870802224,
+  "model_seconds": 37.616193229332566,
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 14848,
+    "input_tokens": 29056,
+    "output_tokens": 787,
+    "reasoning_output_tokens": 0
+  },
+  "api_spend": 0,
+  "subscription_dollar_cost": "unavailable",
+  "attempt_ids": [
+    "attempt-9ba804e2716543b2a2826b255693c89f",
+    "attempt-28ec055e118244188d4a24975817c5aa"
+  ],
+  "run_id": "essential-checks-evaluation-20261105",
+  "mode": "native_codex",
+  "auth": "chatgpt",
+  "note": "Two actual executions; cached input tokens are not cached result reads. CODE_MODE_HOST_DISABLED diagnostic retained in events; completed structured outputs observed."
+}

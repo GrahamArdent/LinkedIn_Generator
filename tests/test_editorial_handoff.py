@@ -64,7 +64,7 @@ class Capture:
     def call(self,system,user,response_json=True):
         self.calls.append({"system":system,"user":user})
         if "strict LinkedIn publish-quality evaluator" in system:
-            return {"text":json.dumps({**{k:5 for k in WEIGHTS},"gaps":[],"rationale":"Synthetic transport fixture, not quality acceptance."})}
+            return {"text":json.dumps({**{k:5 for k in WEIGHTS},"essential_checks":{key:{"verdict":"pass","reason":"Meets the fixture brief."} for key in ("factual_integrity","reader_relevance","practical_value","argument_voice")},"gaps":[],"rationale":"Synthetic transport fixture, not quality acceptance."})}
         return {"text":"An accepted credential does not prove permission for every action.\n\nThe fixture account remained usable. This single example cannot establish prevalence.\n\nInspect the authorization check where the action executes."}
 
 def generate(client,**extra):

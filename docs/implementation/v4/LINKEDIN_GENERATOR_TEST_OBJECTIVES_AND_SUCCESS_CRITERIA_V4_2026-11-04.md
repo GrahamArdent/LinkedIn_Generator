@@ -1,5 +1,8 @@
 # LinkedIn Generator — Durable Test Objectives and Success Criteria (v4)
 
+> Current owner-adopted correction — November 5, 2026: `essential-checks-v1` replaces numeric90 admission in the current source candidate. All four essentials must pass with reasons: factual integrity, reader relevance, practical value and argument/voice fidelity. Scores are advisory; missing evidence pauses; failed essentials allow at most one guarded targeted rewrite; unavailable evaluation fails closed. Passing means human-review eligibility only. Evidence: `evidence/essential-review-gate-20261105/REPORT.md` and `MILESTONE.json`. Installed release0c099d7 remains on its historical90 policy until separately promoted. This supersedes older90 instructions below for new source runs; historical receipts remain immutable. All26 AT/11 E2E and human/visual/baseline/publishing obligations remain.
+
+
 **Prepared:** 2026-11-04  
 **Status:** Proposed acceptance authority for this **download package only**; must be reconciled into `LinkedIn_Generator/CURRENT_WORK_PACKET.md` before treated as repository execution authority.  
 **Evidence status:** The objectives below are **planned**. A file containing a test and a previously recorded manual score are not observed executions of these new gates.  
@@ -24,8 +27,8 @@ These are the **sole detailed AT-01..AT-26 definitions in the v4 package**. The 
 
 | ID | Phase | Objective | Stimulus | Expected observable result | Required proof |
 |---|---|---|---|---|---|
-| **AT-01** | P1** | Candidate identity and visual parity** | Fixture A=87, safe B=93, one rewrite** | Both drafts retained; selected B score 93; visual-source SHA256 exactly B bytes; wrong-source plan rejected/deferred; legacy body semantics preserved** | pytest fixture call log; A/B bytes; selected/visual hashes; source SHA |
-| **AT-02** | P1** | Do not rewrite or promote unnecessarily** | A=92, A=87 with unsafe/low B, and missing quality score** | A92: zero rewrites; unsafe/low/missing: no publish-ready selected candidate or final visual plan; no unexplained model calls** | fixture counts, guard reasons, selection and result status |
+| **AT-01** | P1** | Candidate identity and visual parity** | Fixture A fails reader check (87 advisory), safe B passes (93 advisory), one rewrite** | Both drafts retained; selected B score 93; visual-source SHA256 exactly B bytes; wrong-source plan rejected/deferred; legacy body semantics preserved** | pytest fixture call log; A/B bytes; selected/visual hashes; source SHA |
+| **AT-02** | P1** | Do not rewrite or promote unnecessarily** | A passes essentials at80 or92; A fails with unsafe/failed B; missing essential assessment** | Passing A: zero rewrites; unsafe/failed/missing essentials: no selected candidate or final visual plan; no unexplained model calls** | fixture counts, guard reasons, selection and result status |
 | **AT-03** | P1/P2** | Evidence opportunity gate** | Thin/missing evidence, skip, needs_more_evidence** | No drafted body or visual; at most one targeted question if clarification is warranted; no draft calls after terminal preflight** | fixture trace + human real-subject review |
 | **AT-04** | P2** | Review real, distinct subjects** | At least five genuine subjects; gather six eligible drafts to evaluate first-six** | At least 4/6 eligible subjects kept or lightly edited; no synthetic subjects; Draft B not a second subject; no unsupported factual specificity or unjustified POV in accepted text** | per-subject manifest, edit_scope, reviewer decision and owner Challenge receipt |
 | **AT-05** | P2** | Live provider acceptance** | At least two distinct subjects via actual repository provider** | At least two genuinely generated and human-accepted posts, with model/config and redacted provider invocation records; fixture results excluded** | provider mode=live; run/attempt IDs, hashes, human verdicts |

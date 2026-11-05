@@ -1,0 +1,212 @@
+FFFFFFFFFFFFF                                                            [100%]
+=================================== FAILURES ===================================
+________ test_strong_80_reaches_human_review_and_visual_without_rewrite ________
+
+    def test_strong_80_reaches_human_review_and_visual_without_rewrite():
+        client = Client(judgment())
+        result, calls = run(client)
+>       assert result.selected_candidate is not None
+E       AssertionError: assert None is not None
+E        +  where None = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required'])).selected_candidate
+
+tests/test_essential_review_gate.py:56: AssertionError
+_ test_core_failure_cannot_be_compensated_by_high_total[practical_value-practical_usefulness] _
+
+key = 'practical_value', dimension = 'practical_usefulness'
+
+    @pytest.mark.parametrize("key,dimension", [("practical_value","practical_usefulness"),("argument_voice","voice_authenticity")])
+    def test_core_failure_cannot_be_compensated_by_high_total(key, dimension):
+        bad = judgment(rating=5, failure=key, dimension_override={dimension:0})
+        client = Client(bad, bad)
+        result, calls = run(client)
+        assert result.review["original"]["score"] >= 90
+>       assert result.review["review_status"] == "needs_rework"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:72: KeyError
+_ test_core_failure_cannot_be_compensated_by_high_total[argument_voice-voice_authenticity] _
+
+key = 'argument_voice', dimension = 'voice_authenticity'
+
+    @pytest.mark.parametrize("key,dimension", [("practical_value","practical_usefulness"),("argument_voice","voice_authenticity")])
+    def test_core_failure_cannot_be_compensated_by_high_total(key, dimension):
+        bad = judgment(rating=5, failure=key, dimension_override={dimension:0})
+        client = Client(bad, bad)
+        result, calls = run(client)
+        assert result.review["original"]["score"] >= 90
+>       assert result.review["review_status"] == "needs_rework"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:72: KeyError
+_____ test_unsupported_claim_blocks_even_at_100_without_inventing_evidence _____
+
+    def test_unsupported_claim_blocks_even_at_100_without_inventing_evidence():
+        client = Client(judgment(rating=5, failure="factual_integrity", verdict="needs_evidence"))
+        result, calls = run(client)
+        assert result.review["original"]["score"] == 100
+>       assert result.review["review_status"] == "needs_evidence"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:82: KeyError
+_____________ test_low_reach_is_advisory_when_all_essentials_pass ______________
+
+    def test_low_reach_is_advisory_when_all_essentials_pass():
+        result, calls = run(Client(judgment(dimension_override={"novel_insight":1,
+            "emotional_tension":1,"conversation_potential":1,"shareability":1})))
+>       assert result.selected_candidate is not None
+E       AssertionError: assert None is not None
+E        +  where None = LinkedInContentResult(request_id=None, origin='test', persona_key='graham', status='drafted', body='I built a planning...ct_ratio='4:5', single_image=None, carousel=None, review_required=True, warnings=['publish_ready_candidate_required'])).selected_candidate
+
+tests/test_essential_review_gate.py:90: AssertionError
+_________ test_one_targeted_rewrite_can_qualify_even_with_lower_score __________
+
+    def test_one_targeted_rewrite_can_qualify_even_with_lower_score():
+        client = Client(judgment(rating=5,failure="reader_relevance"), judgment(rating=3))
+        result, calls = run(client)
+>       assert result.selected_candidate.source == "rewrite"
+E       AssertionError: assert 'original' == 'rewrite'
+E         
+E         - rewrite
+E         + original
+
+tests/test_essential_review_gate.py:96: AssertionError
+__________ test_rejected_rewrite_preserves_original_and_blocks_visual __________
+
+    def test_rejected_rewrite_preserves_original_and_blocks_visual():
+        client = Client(judgment(failure="argument_voice"), rewrite=REWRITE+" Results improve 42%.")
+        result, calls = run(client)
+        assert result.body == ORIGINAL
+        assert result.review["rewrite"]["guard_accepted"] is False
+        assert result.selected_candidate is None
+>       assert result.review["review_status"] == "needs_rework"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:111: KeyError
+_ test_malformed_essential_checks_are_unavailable_not_legacy_fallback[missing] _
+
+mutation = 'missing'
+
+    @pytest.mark.parametrize("mutation", ["missing","unknown","blank","partial","numeric"])
+    def test_malformed_essential_checks_are_unavailable_not_legacy_fallback(mutation):
+        data = judgment(rating=5)
+        if mutation == "missing": del data["essential_checks"]
+        elif mutation == "unknown": data["essential_checks"]["practical_value"]["verdict"] = "maybe"
+        elif mutation == "blank": data["essential_checks"]["practical_value"]["reason"] = ""
+        elif mutation == "partial": del data["essential_checks"]["practical_value"]
+        else: data["essential_checks"]["practical_value"]["verdict"] = 5
+        client = Client(data)
+        result, calls = run(client)
+>       assert result.review["review_status"] == "assessment_unavailable"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:124: KeyError
+_ test_malformed_essential_checks_are_unavailable_not_legacy_fallback[unknown] _
+
+mutation = 'unknown'
+
+    @pytest.mark.parametrize("mutation", ["missing","unknown","blank","partial","numeric"])
+    def test_malformed_essential_checks_are_unavailable_not_legacy_fallback(mutation):
+        data = judgment(rating=5)
+        if mutation == "missing": del data["essential_checks"]
+        elif mutation == "unknown": data["essential_checks"]["practical_value"]["verdict"] = "maybe"
+        elif mutation == "blank": data["essential_checks"]["practical_value"]["reason"] = ""
+        elif mutation == "partial": del data["essential_checks"]["practical_value"]
+        else: data["essential_checks"]["practical_value"]["verdict"] = 5
+        client = Client(data)
+        result, calls = run(client)
+>       assert result.review["review_status"] == "assessment_unavailable"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:124: KeyError
+__ test_malformed_essential_checks_are_unavailable_not_legacy_fallback[blank] __
+
+mutation = 'blank'
+
+    @pytest.mark.parametrize("mutation", ["missing","unknown","blank","partial","numeric"])
+    def test_malformed_essential_checks_are_unavailable_not_legacy_fallback(mutation):
+        data = judgment(rating=5)
+        if mutation == "missing": del data["essential_checks"]
+        elif mutation == "unknown": data["essential_checks"]["practical_value"]["verdict"] = "maybe"
+        elif mutation == "blank": data["essential_checks"]["practical_value"]["reason"] = ""
+        elif mutation == "partial": del data["essential_checks"]["practical_value"]
+        else: data["essential_checks"]["practical_value"]["verdict"] = 5
+        client = Client(data)
+        result, calls = run(client)
+>       assert result.review["review_status"] == "assessment_unavailable"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:124: KeyError
+_ test_malformed_essential_checks_are_unavailable_not_legacy_fallback[partial] _
+
+mutation = 'partial'
+
+    @pytest.mark.parametrize("mutation", ["missing","unknown","blank","partial","numeric"])
+    def test_malformed_essential_checks_are_unavailable_not_legacy_fallback(mutation):
+        data = judgment(rating=5)
+        if mutation == "missing": del data["essential_checks"]
+        elif mutation == "unknown": data["essential_checks"]["practical_value"]["verdict"] = "maybe"
+        elif mutation == "blank": data["essential_checks"]["practical_value"]["reason"] = ""
+        elif mutation == "partial": del data["essential_checks"]["practical_value"]
+        else: data["essential_checks"]["practical_value"]["verdict"] = 5
+        client = Client(data)
+        result, calls = run(client)
+>       assert result.review["review_status"] == "assessment_unavailable"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:124: KeyError
+_ test_malformed_essential_checks_are_unavailable_not_legacy_fallback[numeric] _
+
+mutation = 'numeric'
+
+    @pytest.mark.parametrize("mutation", ["missing","unknown","blank","partial","numeric"])
+    def test_malformed_essential_checks_are_unavailable_not_legacy_fallback(mutation):
+        data = judgment(rating=5)
+        if mutation == "missing": del data["essential_checks"]
+        elif mutation == "unknown": data["essential_checks"]["practical_value"]["verdict"] = "maybe"
+        elif mutation == "blank": data["essential_checks"]["practical_value"]["reason"] = ""
+        elif mutation == "partial": del data["essential_checks"]["practical_value"]
+        else: data["essential_checks"]["practical_value"]["verdict"] = 5
+        client = Client(data)
+        result, calls = run(client)
+>       assert result.review["review_status"] == "assessment_unavailable"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'review_status'
+
+tests/test_essential_review_gate.py:124: KeyError
+________ test_actual_evaluator_prompt_requests_checks_and_keeps_context ________
+
+    def test_actual_evaluator_prompt_requests_checks_and_keeps_context():
+        client = Client(judgment())
+        assess_publish_quality(text=ORIGINAL,audience="Business leaders",content_goal="authority",
+            evidence=[{"title":"Record","fact":"A planning step reopened settled decisions."}],
+            persona_profile={"editorial_context":{"central_argument":"Review must earn its cost."}},client=client)
+        system,user = client.calls[0]
+        data=json.loads(user)
+>       assert set(data["required_output"]["essential_checks"]) == set(KEYS)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'essential_checks'
+
+tests/test_essential_review_gate.py:136: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_essential_review_gate.py::test_strong_80_reaches_human_review_and_visual_without_rewrite
+FAILED tests/test_essential_review_gate.py::test_core_failure_cannot_be_compensated_by_high_total[practical_value-practical_usefulness]
+FAILED tests/test_essential_review_gate.py::test_core_failure_cannot_be_compensated_by_high_total[argument_voice-voice_authenticity]
+FAILED tests/test_essential_review_gate.py::test_unsupported_claim_blocks_even_at_100_without_inventing_evidence
+FAILED tests/test_essential_review_gate.py::test_low_reach_is_advisory_when_all_essentials_pass
+FAILED tests/test_essential_review_gate.py::test_one_targeted_rewrite_can_qualify_even_with_lower_score
+FAILED tests/test_essential_review_gate.py::test_rejected_rewrite_preserves_original_and_blocks_visual
+FAILED tests/test_essential_review_gate.py::test_malformed_essential_checks_are_unavailable_not_legacy_fallback[missing]
+FAILED tests/test_essential_review_gate.py::test_malformed_essential_checks_are_unavailable_not_legacy_fallback[unknown]
+FAILED tests/test_essential_review_gate.py::test_malformed_essential_checks_are_unavailable_not_legacy_fallback[blank]
+FAILED tests/test_essential_review_gate.py::test_malformed_essential_checks_are_unavailable_not_legacy_fallback[partial]
+FAILED tests/test_essential_review_gate.py::test_malformed_essential_checks_are_unavailable_not_legacy_fallback[numeric]
+FAILED tests/test_essential_review_gate.py::test_actual_evaluator_prompt_requests_checks_and_keeps_context
+13 failed in 0.52s

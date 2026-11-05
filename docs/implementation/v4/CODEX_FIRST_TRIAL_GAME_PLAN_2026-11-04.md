@@ -1,5 +1,8 @@
 # LinkedIn Codex Trial Game Plan — evidence-first continuation
 
+> Current owner-adopted correction — November 5, 2026: `essential-checks-v1` replaces numeric90 admission in the current source candidate. All four essentials must pass with reasons: factual integrity, reader relevance, practical value and argument/voice fidelity. Scores are advisory; missing evidence pauses; failed essentials allow at most one guarded targeted rewrite; unavailable evaluation fails closed. Passing means human-review eligibility only. Evidence: `evidence/essential-review-gate-20261105/REPORT.md` and `MILESTONE.json`. Installed release0c099d7 remains on its historical90 policy until separately promoted. This supersedes older90 instructions below for new source runs; historical receipts remain immutable. All26 AT/11 E2E and human/visual/baseline/publishing obligations remain.
+
+
 > Current scoring-audit finding — November5,2026: evidence/scoring-audit-20261105/REPORT.md and MILESTONE.json. Arithmetic is correct, but90 admission is uncalibrated and compensatory; strong4 scores80. Proposed replacement policy is in POLICY_RECOMMENDATION.md; it is NOT installed. Keep factual/POV/safety guards and human publishing approval; do not rerun posts to chase90 or silently replace the threshold. Next adopt a coherent review-eligibility/calibration policy, then qualify it in the existing engine. Installed release0c099d7 unchanged; all26 AT/11 E2E remain.
 
 > Current release — November5,2026: PR24 merged and installed at0c099d70fc807044355af089d62d1bef049cbb95. Follow CURRENT_WORK_PACKET.md and evidence/release-integration-20261105/MILESTONE.json; REPORT.md holds the release findings.230 local and230 installed tests PASS. JSON narrative handoffs and baseline/evaluator propagation are integrated; numeric punctuation guard corrected. Fixed-revision launcher and rollback verified;0 new model calls/API0; no hosted CI or publishing. Different post lengths are not a failure. Earlier candidate-only/merge-install holds below are historical for this release. Continue P2 content/human evaluation through the installed engine; preserve all26 AT/11 E2E and publication gates.
@@ -17,7 +20,7 @@ Codex bridge/launcher and selected-text/visual identity work locally. Prior qual
 
 We used narrow conversation/code evidence, not zero evidence. That supported what happened in our test, but not broader customer outcomes or measured benefits. Opinion is legitimate; factual assertions inside it still need support. More citations alone do not create a better argument.
 
-**Limits:** No paid API/fallback; use the existing qualified Codex route. Preserve score90 and one guarded publish-quality rewrite unless the owner explicitly changes them after calibration. No mandatory extra critic/humanizer calls, database, UI, renderer or new architecture. No resume W7 rerun. Hosted CI, merge, installation promotion and publication require their existing admissions; checking their status does not authorize them.
+**Limits:** No paid API/fallback; use the existing qualified Codex route. Apply essential-checks-v1 and at most one defect-driven guarded rewrite; keep scores advisory. No mandatory extra critic/humanizer calls, database, UI, renderer or new architecture. No resume W7 rerun. Hosted CI, merge, installation promotion and publication require their existing admissions; checking their status does not authorize them.
 
 ## Phase 0 — establish one reliable checkpoint
 
@@ -58,7 +61,7 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 - [x] Give the evaluator the same relevant brief, goal, voice guidance and approved examples as the writer. Define concrete0–5 anchors; do not claim these ratings predict LinkedIn engagement.
 - [x] Compare against a small existing human-approved/rejected reference set if available; otherwise record calibration as missing. Preferences alone cannot fabricate that set.
 - [x] Make critiques identify the largest fixable defect. Missing evidence goes back to the brief; rewriting cannot create facts.
-- [x] When numerical comparisons are presented, assess engine and simple baseline with the same rubric. Preserve weights/threshold90 until a separately recorded owner decision changes them.
+- [x] When numerical comparisons are presented, assess engine and simple baseline with the same rubric. Keep weighted scores advisory; apply the owner-adopted essential-checks-v1 admission.
 
 **Tests:** consistent brief/voice reaches writer and judge; missing dimension or malformed judgment is explicit; supplied human labels remain immutable; uncertainty is reported; one targeted rewrite only; no artificial score inflation.
 **Pass:** transparent, test-qualified scoring contract. Model alignment with Graham remains unproved until actual reference judgments exist.
