@@ -50,6 +50,7 @@ exhaustive detection of all unsupported claims.
 - A later regression reproduced a stale environment parsing crash, retained-environment-red.log
   (actual filename retired-environment-red.log); removed dependence on that retired setting.
 - Final local suite:251 passed, full-local.log;21 new test cases versus the230-test baseline.
+- Clean git archive of d3ee2a36: verifier PASS and251 tests PASS; CLEAN_ARCHIVE.json and clean-archive-tests.log.
 - git diff --check passed.
 - Ruff was attempted but is not installed in this venv: No module named ruff. No lint PASS claimed.
 - Reproduce local tests: .venv/bin/python -m pytest -q.

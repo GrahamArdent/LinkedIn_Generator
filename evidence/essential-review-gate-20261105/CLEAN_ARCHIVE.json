@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "archived_commit": "d3ee2a36d037323c080edec67b53a521bcceb75c",
+  "verifier": "PASS",
+  "full_suite": "251 passed",
+  "model_calls": 0,
+  "log": "clean-archive-tests.log",
+  "receipt_only_followup": "src/config/tests hashes unchanged; installation remains0c099d7"
+}

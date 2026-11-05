@@ -32,5 +32,10 @@
   "e2e_count": 11,
   "lint": "NOT_RUN: ruff unavailable",
   "hosted_ci": "NOT_RUN",
-  "publishing": "NOT_RUN"
+  "publishing": "NOT_RUN",
+  "clean_archive": {
+    "commit": "d3ee2a36d037323c080edec67b53a521bcceb75c",
+    "verifier": "PASS",
+    "tests_passed": 251
+  }
 }
