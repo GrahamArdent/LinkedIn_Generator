@@ -1,0 +1,62 @@
+{
+  "request_sha256": "f34adf0191e98bf295789c55e60e4b484f32b9d6a888cdb4135e2ec0496344b1",
+  "sources": [
+    {
+      "source_id": "CF2024",
+      "publisher": "Cloudflare",
+      "date": "2024-02-01",
+      "url": "https://blog.cloudflare.com/thanksgiving-2023-security-incident/",
+      "origin": "victim first-party incident account, independent of CERT-In",
+      "passages": [
+        {
+          "locator": "Opening and October18 timeline",
+          "excerpt": "The one service token and three accounts were not rotated",
+          "claim": "Cloudflare reports that credentials stolen in the October2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment."
+        }
+      ],
+      "limitations": "Victim's retrospective account. Different organization, period and systems from CERT-In. Comparison supports a bounded conceptual contrast, not a shared attacker or a universal control-effectiveness claim.",
+      "retrieval": "Web search full article rendering turn16search0; direct archive download returned HTTP403.",
+      "title": "Cloudflare CF2024",
+      "status": "usable",
+      "checked_at": "2026-11-05"
+    },
+    {
+      "source_id": "CIAD-2026-0046",
+      "publisher": "CERT-In",
+      "date": "2026-10-09",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "article": "CIAD-2026-0046 Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities Original Issue Date: October 09, 2026 Severity Rating: Critical Description CERT-In/CSIRT-Fin has observed multiple cyber attack campaigns targeting non-banking financial companies (NBFCs), digital lending platforms, fintech entities, payment service providers and wallet operators. Threat actors compromise internet-facing applications, exposed APIs and privileged endpoints, steal payment aggregator/gateway and partner-bank API credentials, and invoke disbursal/fund-transfer APIs directly from within the entities' own whitelisted infrastructure, completely bypassing application-level controls such as loan creation, KYC, sanction, beneficiary verification, balance sufficiency and per-transaction limits. The fraudulent transactions carry dummy reference identifiers, exceed per-transaction limits, and credit funds to attacker-controlled mule accounts across multiple banks. Analysis of these attacks further indicates the possible use of AI-assisted offensive tooling, with the interval between initial compromise and fraudulent fund transfer reducing significantly in recent incidents. Attacker IPs are predominantly associated with hosting infrastructure. Attack Vector Initial compromise is achieved through: Exploitation of exposed internet-facing applications and application server middleware vulnerabilities. Abuse of deprecated, unauthenticated or unused APIs with unrestricted file-upload functionality. Use of stolen long-lived static API tokens hard-coded in source code. Supply-chain compromise of source-code repositories via forged commits. Exploitation of plaintext credentials in configuration files, source code or databases. Access to applications and remote services lacking MFA. Post-compromise, attackers establish persistence via web shells and backdoors, conduct reconnaissance of payment databases and API integrations, steal payment aggregator/gateway and bank API credentials, and directly invoke disbursal/fund-transfer APIs to execute unauthorized transactions. Key TTPs Observed Direct invocation of disbursal/fund-transfer APIs from whitelisted infrastructure using valid credentials. Bypassing of application-level checks (KYC, sanction, beneficiary verification, balance sufficiency). Supply of dummy loan/transaction reference numbers with no corresponding records. Rapid execution of multiple high-value transactions through IMPS/NEFT rails. Transfer of funds to mule accounts across multiple banks with immediate withdrawal. Deletion/truncation of logs, tampering with EDR tools, and anti-forensic cleanup. Possible use of AI-assisted offensive frameworks and large numbers of custom scripts. Recommended Actions Enforce MFA for payment platforms, administrative portals, payment/bank APIs and remote access services. Maintain a complete API inventory; formally decommission deprecated and unused APIs. Enforce per-session authentication on all APIs; eliminate long-lived static tokens. Bind multi-stage transaction flows cryptographically so debit-stage APIs cannot be invoked without preceding validation stages. Implement maker-checker or second-level verification for all fund movement. Validate every payout against sanctioned/approved records; reject reference identifiers with no corresponding records. Enforce per-transaction and per-day cumulative ceilings at the API/payment stage. Apply beneficiary validation (penny-drop, name-to-account matching) and velocity limits on all disbursement paths. Restrict outbound (egress) traffic from production servers through allow-listing. Store all API keys and credentials in secure secret management solutions or HSMs; enforce rotation. Implement real-time monitoring of fund transfers with velocity, amount-band and new-beneficiary checks, with automated blocking or holding. Enable near-real-time reconciliation of system records with bank/aggregator statements. Maintain centralized logging and log retention of at least 180 days. Deploy EDR with tamper protection on servers and endpoints. Adopt behavioural anti-automation controls (rate limiting, sequence-binding) to disrupt script-driven API abuse. Remove internet exposure of internal applications; enforce geofencing under formal change control. Isolate development, testing and production environments. Conduct regular VA/PT including API security testing. Upon detection of suspicious activity: disable compromised accounts, suspend affected APIs, preserve forensic evidence, rotate all credentials, and report to CERT-In/CSIRT-Fin at incident@cert-in.org.in. Reporting Entities are advised to report any signs of suspicious activity related to this attack campaign to CERT-In/CSIRT-Fin at incident@cert-in.org.in , along with all relevant logs, at the earliest.",
+      "origin": "CERT-In reporting chain",
+      "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness.",
+      "title": "CERT-In CIAD-2026-0046",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "passages": [
+        {
+          "locator": "Description",
+          "excerpt": "CIAD-2026-0046 Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities Original Issue Date: October 09, 2026 Severity Rating: Critical Description CERT-In/CSIRT-Fin has observed multiple cyber attack campaigns targeting non-banking financial companies (NBFCs), digital lending platforms, fintech entities, payment service providers and wallet operators. Threat actors compromise internet-facing applications, exposed APIs and privileged endpoints, steal payment aggregator/gateway and partner-bank API credentials, and invoke disbursal/fund-transfer APIs directly from within the entities' own whitelisted infrastructure, completely bypassing application-level controls such as loan creation, KYC, sanction, beneficiary verification, balance sufficiency and per-transaction limits. The fraudulent transactions carry dummy reference identifiers, exceed per-transaction limits, and credit funds to attacker-controlled mule accounts across multiple banks. Analysis of these attacks further indicates the possible use of AI-assisted offensive tooling, with the interval between initial compromise and fraudulent fund transfer reducing significantly in recent incidents. Attacker IPs are predominantly associated with hosting infrastructure. Attack Vector Initial compromise is achieved through: Exploitation of exposed internet-facing applications and application server middleware vulnerabilities. Abuse of deprecated, unauthenticated or unused APIs with unrestricted file-upload functionality. Use of stolen long-lived static API tokens hard-coded in source code. Supply-chain compromise of source-code repositories via forged commits. Exploitation of plaintext credentials in configuration files, source code or databases. Access to applications and remote services lacking MFA. Post-compromise, attackers establish persistence via web shells and backdoors, conduct reconnaissance of payment databases and API integrations, steal payment aggregator/gateway and bank API credentials, and directly invoke disbursal/fund-transfer APIs to execute unauthorized transactions. Key TTPs Observed Direct invocation of disbursal/fund-transfer APIs from whitelisted infrastructure using valid credentials. Bypassing of application-level checks (KYC, sanction, beneficiary verification, balance sufficiency). Supply of dummy loan/transaction reference numbers with no corresponding records. Rapid execution of multiple high-value transactions through IMPS/NEFT rails. Transfer of funds to mule accounts across multiple banks with immediate withdrawal. Deletion/truncation of logs, tampering with EDR tools, and anti-forensic cleanup. Possible use of AI-assisted offensive frameworks and large numbers of custom scripts. Recommended Actions Enforce MFA for payment platforms, administrative portals, payment/bank APIs and remote access services. Maintain a complete API inventory; formally decommission deprecated and unused APIs. Enforce per-session authentication on all APIs; eliminate long-lived static tokens. Bind multi-stage transaction flows cryptographically so debit-stage APIs cannot be invoked without preceding validation stages. Implement maker-checker or second-level verification for all fund movement. Validate every payout against sanctioned/approved records; reject reference identifiers with no corresponding records. Enforce per-transaction and per-day cumulative ceilings at the API/payment stage. Apply beneficiary validation (penny-drop, name-to-account matching) and velocity limits on all disbursement paths. Restrict outbound (egress) traffic from production servers through allow-listing. Store all API keys and credentials in secure secret management solutions or HSMs; enforce rotation. Implement real-time monitoring of fund transfers with velocity, amount-band and new-beneficiary checks, with automated blocking or holding. Enable near-real-time reconciliation of system records with bank/aggregator statements. Maintain centralized logging and log retention of at least 180 days. Deploy EDR with tamper protection on servers and endpoints. Adopt behavioural anti-automation controls (rate limiting, sequence-binding) to disrupt script-driven API abuse. Remove internet exposure of internal applications; enforce geofencing under formal change control. Isolate development, testing and production environments. Conduct regular VA/PT including API security testing. Upon detection of suspicious activity: disable compromised accounts, suspend affected APIs, preserve forensic evidence, rotate all credentials, and report to CERT-In/CSIRT-Fin at incident@cert-in.org.in. Reporting Entities are advised to report any signs of suspicious activity related to this attack campaign to CERT-In/CSIRT-Fin at incident@cert-in.org.in , along with all relevant logs, at the earliest."
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "kind": "fact",
+      "claim_id": "CF-1",
+      "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment.",
+      "source_ids": [
+        "CF2024"
+      ]
+    },
+    {
+      "kind": "fact",
+      "claim_id": "CI-1",
+      "text": "CERT-In reports that attackers used stolen API credentials from victims\u2019 own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts.",
+      "source_ids": [
+        "CIAD-2026-0046"
+      ]
+    }
+  ],
+  "central_claim_id": "CF-1",
+  "preparation_notes": "Application-level controls do not establish UI-screen enforcement. No screen-location assumption admitted. Reuse frozen evidence with recorded Cloudflare full-HTML limitation; historical drafts unchanged."
+}
