@@ -1,0 +1,36 @@
+{
+  "status": "TWO_INSTALLED_DRAFTS_COMPLETE_HUMAN_REVIEW_PENDING",
+  "scope": "Graham only",
+  "mode": "installed first-drafting-stage comparison; not full-engine/control acceptance",
+  "installed_revision": "2c2daf39398a993b698d1f225008a06217b14a7c",
+  "model": "gpt-6-astra",
+  "voices": {
+    "concise_challenger": {
+      "version": 2,
+      "content_sha256": "2c9ac4d25e79674e219e377e20dbd6cf704b9a12e922c6792d2086744c09bb4f",
+      "word_count": 150
+    },
+    "reflective_leader": {
+      "version": 2,
+      "content_sha256": "c242624f4eb85cb27cd7e22e373bfe65630532694c604bda6b1b74ea55379747",
+      "word_count": 263
+    }
+  },
+  "non_style_context_equal": true,
+  "actual_model_executions": 2,
+  "physical_cli_starts": 6,
+  "active_cli_seconds": 32.25399757549167,
+  "api_spend": 0,
+  "tokens_and_subscription_billing": "UNKNOWN where unreported; receipt fields retained",
+  "zero_call_reopen": true,
+  "manual_output_edits": false,
+  "human_decisions": null,
+  "AT": 26,
+  "E2E": 11,
+  "all_acceptance_complete": false,
+  "canonical_direction": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+  "next_action": "Review two exact drafts against liked chat reference, then choose useful delivery traits; no automatic voice-example activation or publication.",
+  "source_change": "No product/config/test changes; prior251-test qualification reused by matching installed hashes",
+  "CI": "No active workflow; not applicable to this content/evidence-only milestone",
+  "known_preparation_failure": "Unsupported content_goal awareness rejected before any model call; changed to supported auto, receipt retained"
+}

@@ -1,0 +1,31 @@
+{
+  "request_id": "graham-black-box-two-voices-20261105",
+  "origin": "manual",
+  "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+  "persona_key": "graham",
+  "audience": "Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.",
+  "objective": "Explore the tension between a convincing AI answer and a sound reason to rely on it. Keep the stance curious, measured and useful, without implying specialist credentials. Let the selected voice determine the opening, structure, rhythm and ending. No fixed outline, mandatory analogy, forced contrarian conclusion, sales CTA or engagement question.",
+  "author_pov": "individual",
+  "content_goal": "auto",
+  "opportunity_gate": false,
+  "publish_quality_gate": false,
+  "visual_asset_plan": false,
+  "services": [],
+  "targets": [],
+  "hashtags": [],
+  "voice_examples": [],
+  "evidence": [
+    {
+      "title": "ANTHROPIC-2025",
+      "fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts."
+    },
+    {
+      "title": "BUCINCA-2021",
+      "fact": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably."
+    },
+    {
+      "title": "VASCONCELOS-2023",
+      "fact": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions."
+    }
+  ]
+}

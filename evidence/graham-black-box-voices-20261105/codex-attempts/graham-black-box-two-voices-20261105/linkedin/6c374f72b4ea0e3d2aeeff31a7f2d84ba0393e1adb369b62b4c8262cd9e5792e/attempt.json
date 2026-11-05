@@ -1,0 +1,99 @@
+{
+  "attempt_id": "attempt-5a1c13a4f3064fa997661649794a5673",
+  "auth": "chatgpt",
+  "cost": null,
+  "created_at": "2026-11-05T05:59:18.399226+00:00",
+  "elapsed_seconds": 19.68666861858219,
+  "events": [
+    {
+      "thread_id": "01a1aa4a-4ee2-7b23-a9a4-795217625c9a",
+      "type": "thread.started"
+    },
+    {
+      "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+      "item_id": "item_0",
+      "item_type": "error",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "agent_message_sha256": "5b0a703aa737c57234e1b52d34f8235e40dbcf374d0e9804566426f9d1d5d0d6",
+      "item_id": "item_1",
+      "item_type": "agent_message",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 11223,
+        "output_tokens": 408,
+        "reasoning_output_tokens": 53
+      }
+    }
+  ],
+  "execution_kind": "native_cli",
+  "finished_at": "2026-11-05T05:59:38.463853+00:00",
+  "invocation_id": "linkedin",
+  "launch_requested": true,
+  "launched": true,
+  "launched_at": "2026-11-05T05:59:18.771841+00:00",
+  "limits": {
+    "max_input_bytes": 4194304,
+    "max_launches": 36,
+    "max_output_bytes": 2097152,
+    "max_seconds": 900,
+    "process_timeout": 300
+  },
+  "model": "gpt-6-astra",
+  "parent_attempt_id": null,
+  "processes": [
+    {
+      "finished_at": "2026-11-05T05:59:18.767518+00:00",
+      "operation": "auth",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/graham-black-box-voices-20261105/codex-attempts/graham-black-box-two-voices-20261105/linkedin/6c374f72b4ea0e3d2aeeff31a7f2d84ba0393e1adb369b62b4c8262cd9e5792e/preflight-8d7922b8996a43bbab59ea46e193a076.json",
+      "pid": 534822,
+      "returncode": 0,
+      "sha256": "210d505f27d665b1d243e3c48cca4faf50934776218eec5a12eb6e1b0dd13253",
+      "start_identity": "553860170",
+      "started_at": "2026-11-05T05:59:18.574120+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T05:59:18.567560+00:00",
+      "operation": "version",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/graham-black-box-voices-20261105/codex-attempts/graham-black-box-two-voices-20261105/linkedin/6c374f72b4ea0e3d2aeeff31a7f2d84ba0393e1adb369b62b4c8262cd9e5792e/preflight-923c52e397484b30965cf4e9c8a2a0b0.json",
+      "pid": 534809,
+      "returncode": 0,
+      "sha256": "f000790f1c670c514f08413f5f270f3b85e8ac9cbe0ad3166c634334aa557bef",
+      "start_identity": "553860153",
+      "started_at": "2026-11-05T05:59:18.407610+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T05:59:38.455264+00:00",
+      "operation": "exec",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/graham-black-box-voices-20261105/codex-attempts/graham-black-box-two-voices-20261105/linkedin/6c374f72b4ea0e3d2aeeff31a7f2d84ba0393e1adb369b62b4c8262cd9e5792e/process.json",
+      "pid": 534860,
+      "returncode": 0,
+      "sha256": "6d0daf2164f5ee8c3fa868efec0fe3e184e58beff420aa8adb108f3843ed714b",
+      "start_identity": "553860190",
+      "started_at": "2026-11-05T05:59:18.775766+00:00"
+    }
+  ],
+  "producer_version": "codex-cli 0.158.0",
+  "reasoning": "medium",
+  "request_sha256": "6c374f72b4ea0e3d2aeeff31a7f2d84ba0393e1adb369b62b4c8262cd9e5792e",
+  "result_sha256": "01581bad348fcbcc3110541b4171654fe3ceac51375209d681ea3a7c8a1eea46",
+  "run_id": "graham-black-box-two-voices-20261105",
+  "schema_version": "1.0",
+  "state": "succeeded",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 7424,
+    "input_tokens": 11223,
+    "output_tokens": 408,
+    "reasoning_output_tokens": 53
+  }
+}

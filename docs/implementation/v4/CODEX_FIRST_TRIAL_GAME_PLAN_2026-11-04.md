@@ -19,18 +19,22 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
   the audit distinguishes fixture checks, historical observations and missing human/live proof.
 
 ## Current milestone status
-M1 GO: independent review and251 local tests; reviewed source/config/test manifest unchanged.
-M2 GO: PR29 merged at2c2daf3; fixed-release install,251 installed tests, hashes/imports/auth,
-rollback0c099d7 and no-call historical reopen verified. Operator's continued operational approval
-is recorded in evidence/release-essential-20261105/AUTHORIZATION.json.
-M3 technical package GO: one installed engine/control pair completed with four essentials passing,
-no rewrite, exact selected/visual identity, equal baseline context and zero-call reopening.
-Observed6 subscription executions/18 CLI launches/97.171 active seconds/API0 within12/900 cap.
-M4 HOLD for real human judgments; M5 waits for initial disposition. Twelve retained calibration
-examples frozen by subject; labels pending. All26 AT/11 E2E retained, no six-subject acceptance claimed.
-Current receipts: evidence/release-essential-20261105/INSTALLATION.json and
- evidence/installed-essential-trial-20261105/MILESTONE.json. Blind review: trial/review.md in that trial packet.
-Hosted CI not run because no active workflow; no renderer/publication invoked.
+M1/M2 GO: independent review and251 tests qualified the source; PR29 merged/installed2c2daf3,
+with rollback0c099d7, hashes/imports/subscription binding and zero-call reopening verified.
+M3 security package technically completed, but Graham rejected the subject as unsuitable. It is
+historical technical evidence, not a human accepted post. Do not require him to score that unsuitable pair.
+Current editorial authority: GRAHAM_CONTENT_DIRECTION_2026-11-05.md. Graham only; varied subjects;
+selectable writing style independent of identity/credentials; broad supported perspective permitted.
+The liked black-box chat draft is a positive reference, not installed evidence or publication approval.
+Current bounded diagnostic: two installed first drafts, concise_challenger v2 and reflective_leader v2,
+same facts/author/audience/question;2 model executions/6 CLI starts/32.254 active seconds/API0;
+exact-output/hash and zero-call reopen verified. Human feedback pending; no style winner declared.
+Receipt: evidence/graham-black-box-voices-20261105/MILESTONE.json. Review COMPARISON.md and
+CHAT_REFERENCE.md there. Both native drafts are more formal than the reference in assistant review.
+Next: gather exact-text voice/usefulness feedback; retain useful delivery traits, then qualify a suitable
+Graham full-engine/control package through existing M3/M4 before expanding M5 subjects.
+The style diagnostic does not substitute for full-engine/baseline, six-subject, visual or publishing gates.
+All26 AT/11 E2E retained; historical first-six eligibility unresolved. No active hosted workflow.
 
 ## Document ownership and just-in-time execution
 - CURRENT_WORK_PACKET.md owns the current checkpoint and evidence pointer.

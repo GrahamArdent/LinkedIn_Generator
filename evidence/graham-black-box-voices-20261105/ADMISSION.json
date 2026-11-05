@@ -1,0 +1,11 @@
+{
+  "authorized_by": "Operator: Proceed with your recommendation and then document everything we have been talking about so it is referenceable and durable.",
+  "scope": "Two Graham-only installed drafting-stage treatments of one researched idea, concise_challenger v2 and reflective_leader v2; no new feature, full-engine/baseline claim or publication.",
+  "max_model_executions": 2,
+  "expected_physical_starts": 6,
+  "max_cumulative_cli_seconds": 900,
+  "api_spend": 0,
+  "retry": false,
+  "manual_draft_edits": false,
+  "installed_revision": "2c2daf39398a993b698d1f225008a06217b14a7c"
+}

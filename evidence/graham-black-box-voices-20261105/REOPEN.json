@@ -1,0 +1,11 @@
+{
+  "exit": 0,
+  "command": [
+    "/home/graham/work/linkedin-generator-releases/2c2daf39398a993b698d1f225008a06217b14a7c/.venv/bin/python",
+    "/home/graham/work/linkedin-codex-trial-20261104/evidence/graham-black-box-voices-20261105/run_comparison.py"
+  ],
+  "cwd": "/home/graham/work/linkedin-generator-releases/2c2daf39398a993b698d1f225008a06217b14a7c",
+  "stdout": "concise_challenger reopened without generation\nreflective_leader reopened without generation\nBoth2 styles completed\n",
+  "saved_style_manifest_attempt_hashes_unchanged": true,
+  "new_model_calls": 0
+}

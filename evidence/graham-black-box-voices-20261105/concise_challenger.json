@@ -1,0 +1,88 @@
+{
+  "state": "completed",
+  "prepared": {
+    "style": "concise_challenger",
+    "request": {
+      "request_id": "graham-black-box-two-voices-20261105",
+      "origin": "manual",
+      "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+      "persona_key": "graham",
+      "audience": "Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.",
+      "objective": "Explore the tension between a convincing AI answer and a sound reason to rely on it. Keep the stance curious, measured and useful, without implying specialist credentials. Let the selected voice determine the opening, structure, rhythm and ending. No fixed outline, mandatory analogy, forced contrarian conclusion, sales CTA or engagement question.",
+      "author_pov": "individual",
+      "content_goal": "auto",
+      "opportunity_gate": false,
+      "publish_quality_gate": false,
+      "visual_asset_plan": false,
+      "services": [],
+      "targets": [],
+      "hashtags": [],
+      "voice_examples": [],
+      "evidence": [
+        {
+          "title": "ANTHROPIC-2025",
+          "fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts."
+        },
+        {
+          "title": "BUCINCA-2021",
+          "fact": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably."
+        },
+        {
+          "title": "VASCONCELOS-2023",
+          "fact": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions."
+        }
+      ],
+      "writing_voice_id": "concise_challenger"
+    },
+    "request_sha256": "62708ea4f7a12820add151b0cc06d702d2deace65736b58a36336756a64542b7",
+    "voice": {
+      "id": "concise_challenger",
+      "version": 2,
+      "label": "Concise Challenger",
+      "style_traits": {
+        "tone": [
+          "spare",
+          "conversational",
+          "challenging"
+        ],
+        "avg_sentence_length": 12.0,
+        "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+        "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+        "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+        "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
+      },
+      "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007"
+    },
+    "system": "Write a LinkedIn post as graham for Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed..\nThe selected Writing Voice in Persona Profile is the sole rhetorical style: use its craft traits for tone, sentence rhythm, structure and imagery. Do not imitate a named author or borrow biography, audience, anecdotes or signature phrases. Numeric sentence lengths are approximate guidance, never quotas.\nKeep author identity and POV separate from style. For individual POV, use I/me/my for the author's own views; do not invent shared actions or use unjustified we/us/our.\nWhen editorial_context.handoff is supplied, use its meaning as the argument and preserve its narrative form, beat order, symbol mapping and boundary. The writing_plan annotates delivery; it cannot replace that selection. Imagery is illustration, never evidence. Express facts and inference in your own words; the brief does not lock sentences.\nOtherwise, express the supplied editorial objective in your own words. It fixes the argument, not an opening phrase, paragraph sequence or ending. Follow the Content Goal and write for a smart professional without assuming specialist or internal project knowledge. Translate necessary technical terms into plain language.\nUse Allowed Sources as the factual evidence. Preserve editorial_context.source_bundle claim types, designated central anchor, limitations and counterevidence when present. Faithfully paraphrase the anchor without embellishing it; distinguish fact from inference and opinion. Omit unsupported claims or clearly frame interpretation as such.\nNever invent statistics, quotations, citations, events, personal experiences, client claims or outcomes. A stylistic instruction cannot authorize factual invention. Approved voice examples guide compatible craft only; do not copy their distinctive phrases, anecdotes or facts.\nAvoid stock LinkedIn phrasing, empty inspiration, manufactured drama and engagement bait. Do not force a question, sales CTA or anecdote. Respect house boundaries, including no em dashes. Keep links out of the post body. Return only the finished post.\n",
+    "user": "Audience: Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.\nAuthor POV: individual\nContent Goal: authority\nTopic: Trusting useful AI answers while only partly understanding how they are produced.\nServices/related capabilities: []\nPersona Profile: {\"donts\": [\"clich\\u00e9s\", \"em_dashes\"], \"emoji_max\": 3, \"bullet_char\": \"\\ud83d\\udd39\", \"active_author_pov\": \"individual\", \"writing_voice\": {\"id\": \"concise_challenger\", \"version\": 2, \"label\": \"Concise Challenger\", \"style_traits\": {\"tone\": [\"spare\", \"conversational\", \"challenging\"], \"avg_sentence_length\": 12.0, \"rhythm\": \"Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.\", \"reasoning\": \"Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.\", \"imagery\": \"One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.\", \"preferred_structure\": \"A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph.\"}, \"content_sha256\": \"33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007\"}, \"semantic_quality\": {\"default_author_pov\": \"individual\", \"internal_terms_needing_translation\": [\"mode c\", \"stage 0\", \"execution spine\", \"canonical intake\", \"canonical authority\", \"regression coverage\", \"work packet\", \"kill signal\"], \"generic_phrases\": [\"in today's fast-paced world\", \"game changer\", \"the future is here\", \"unlock the power\", \"revolutionize\", \"here's the thing\", \"in the ever-evolving landscape\", \"now more than ever\", \"let that sink in\"]}, \"active_content_goal\": \"authority\", \"earned_question\": false, \"editorial_context\": {\"objective\": \"Explore the tension between a convincing AI answer and a sound reason to rely on it. Keep the stance curious, measured and useful, without implying specialist credentials. Let the selected voice determine the opening, structure, rhythm and ending. No fixed outline, mandatory analogy, forced contrarian conclusion, sales CTA or engagement question.\", \"topic\": \"Trusting useful AI answers while only partly understanding how they are produced.\", \"plan\": {\"reader\": \"Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.\", \"factual_anchor\": {\"title\": \"ANTHROPIC-2025\", \"fact\": \"In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku\\u2019s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.\"}}, \"approved_voice_examples\": [], \"source_bundle\": {\"sources\": [{\"source_id\": \"ANTHROPIC-2025\", \"title\": \"Tracing the thoughts of a large language model\", \"publisher\": \"Anthropic\", \"url\": \"https://www.anthropic.com/research/tracing-thoughts-language-model\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"passages\": [{\"locator\": \"Limitations paragraph\", \"excerpt\": \"our method only captures a fraction of the total computation performed by Claude\"}], \"limitations\": \"First-party research on specific model/task case studies, not evidence that every AI is wholly unknowable or that all explanations are false.\", \"retrieval\": \"Primary source retrieved in this conversation, turn3search0.\"}, {\"source_id\": \"BUCINCA-2021\", \"title\": \"To Trust or to Think\", \"publisher\": \"Bu\\u00e7inca, Malaya and Gajos; ACM CSCW, authors\\u2019 Harvard page\", \"url\": \"https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"passages\": [{\"locator\": \"Abstract, lines19-20\", \"excerpt\": \"cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches\"}], \"limitations\": \"Controlled experiment predating current generative chatbots. Do not generalize to all AI users or claim every explanation increases trust.\", \"retrieval\": \"Primary author page opened in this conversation, turn3view0.\"}, {\"source_id\": \"VASCONCELOS-2023\", \"title\": \"Explanations Can Reduce Overreliance on AI Systems During Decision-Making\", \"publisher\": \"Vasconcelos et al.; CSCW2023 author paper\", \"url\": \"https://arxiv.org/abs/2212.06823\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"passages\": [{\"locator\": \"Abstract, lines17-19\", \"excerpt\": \"there are scenarios where AI explanations reduce overreliance\"}], \"limitations\": \"Five controlled maze-task studies with simulated AI; not direct evidence about current workplace LLM adoption. Counterbalances blanket claims that explanations never help.\", \"retrieval\": \"Primary paper abstract opened in this conversation, turn3view2.\"}], \"claims\": [{\"claim_id\": \"1\", \"kind\": \"fact\", \"text\": \"In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku\\u2019s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.\", \"source_ids\": [\"ANTHROPIC-2025\"]}, {\"claim_id\": \"2\", \"kind\": \"fact\", \"text\": \"In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.\", \"source_ids\": [\"BUCINCA-2021\"]}, {\"claim_id\": \"3\", \"kind\": \"fact\", \"text\": \"Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.\", \"source_ids\": [\"VASCONCELOS-2023\"]}], \"central_claim_id\": \"1\", \"interpretive_limits\": [\"Incomplete understanding is not total ignorance.\", \"Distinguish the reliability of an answer from full access to internal computations.\", \"First-person opinions/recommendations may be proposed; do not invent lived experience, professional credentials, deployments, customers or experiments.\", \"Evidence may be selected/reordered to fit each treatment; same underlying facts and limits remain available to both.\", \"No assertion that people universally trust AI or that AI explanations are always misleading.\"]}}}\nAllowed Sources (titles + grounded facts): [{\"title\": \"ANTHROPIC-2025\", \"fact\": \"In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku\\u2019s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.\"}, {\"title\": \"BUCINCA-2021\", \"fact\": \"In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.\"}, {\"title\": \"VASCONCELOS-2023\", \"fact\": \"Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.\"}]\n---\nWith editorial_context.handoff, develop its meaning through its selected narrative and optional writing_plan. Otherwise write one LinkedIn post expressing editorial_context.objective. The argument fixes meaning, not sentences.\nUse the selected Writing Voice for sentence rhythm, language and imagery within the selected narrative when supplied. Without a handoff, let it determine opening, evidence placement, paragraph shape and ending; no common paragraph sequence is required.\nPreserve the designated factual anchor, source limitations and author POV. A style instruction to tell a story, experiment or personal reflection never authorizes invented events or experiences.\nDo not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question or framework phrase.\n",
+    "non_style_context_sha256": "ac3297241301fd1c9700fc2dcc999480bfcf5c59011da76734b00805f27245de"
+  },
+  "body": "A convincing AI answer still needs a reason to rely on it.\n\nIn its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations. Its method captured only a fraction of the computation, even on short prompts.\n\nThat is partial understanding. It doesn’t establish whether a particular answer is right or wrong.\n\nI’d separate two questions: how did the model produce this answer, and what evidence supports using it?\n\nFor everyday work, the second question gives me something concrete to check. Does the cited source support the claim? Does the calculation hold up? Is a recommendation resting on an assumption I haven’t checked?\n\nThose checks don’t reveal everything happening inside the model. They can still give an answer firmer footing than fluency alone.\n\nI don’t need complete understanding to find AI useful. I do want the strength of the check to match the consequences of being wrong.",
+  "content_sha256": "2c9ac4d25e79674e219e377e20dbd6cf704b9a12e922c6792d2086744c09bb4f",
+  "finished_at": "2026-11-05T05:59:17.562698+00:00",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "A convincing AI answer still needs a reason to rely on it.\n\nIn its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations. Its method captured only a fraction of the computation, even on short prompts.\n\nThat is partial understanding. It doesn’t establish whether a particular answer is right or wrong.\n\nI’d separate two questions: how did the model produce this answer, and what evidence supports using it?\n\nFor everyday work, the second question gives me something concrete to check. Does the cited source support the claim? Does the calculation hold up? Is a recommendation resting on an assumption I haven’t checked?\n\nThose checks don’t reveal everything happening inside the model. They can still give an answer firmer footing than fluency alone.\n\nI don’t need complete understanding to find AI useful. I do want the strength of the check to match the consequences of being wrong."
+      },
+      "attempt_id": "attempt-a6fc465f85a34d1894cf279c6a2b4176",
+      "result_sha256": "fb3673abbbf04dbed5388a8327d30e8dfcfa9f470ba927f9862c53280f7fb029",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11206,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 211,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "human_decision": null
+}
