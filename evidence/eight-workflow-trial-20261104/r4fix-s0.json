@@ -1,0 +1,85 @@
+{
+  "state": "completed",
+  "task": "Before seeing the evidence, state a competent reader's strongest plausible belief about [neutral question]. Give its rationale and the conditions under which it works. Treat it as hypothetical unless sourced. This step deliberately requests a hypothetical prior belief before sources. Return GO for a coherent explicitly hypothetical belief with no asserted empirical claims. Source support is evaluated in the next stage.",
+  "inputs": {
+    "question": "When can previously trusted access stop being reliable evidence of legitimate action?",
+    "sources": [],
+    "prior": [],
+    "voice": {
+      "id": "relatable_provocateur",
+      "version": 1,
+      "label": "Relatable Provocateur",
+      "style_traits": {
+        "tone": [
+          "bold",
+          "witty",
+          "empathetic",
+          "direct",
+          "conversational",
+          "contrarian_without_being_performative"
+        ],
+        "rhythm": "Short hooks, varied sentence length, compact paragraphs and occasional one-line punches.",
+        "reasoning": "Challenge a supported assumption; connect the mechanism to earned practical or human stakes.",
+        "imagery": "Vivid but controlled; use analogy or dry humour only when useful. No invented incidents or dramatic outcomes.",
+        "preferred_structure": "concrete_observation_supported_reframing_practical_takeaway_earned_closer"
+      },
+      "content_sha256": "5d251d00725704e08f7ab98ebf0d4b0772976580d8f84832659f486fd19fdf93"
+    }
+  },
+  "output": {
+    "decision": "GO",
+    "artifact": {
+      "type": "hypothetical_prior_belief",
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "belief": "A plausible starting belief: previously trusted access stops being reliable evidence of legitimate action when the reasons for trusting that access no longer hold. Permission to enter is not, by itself, permission for every action inside.",
+      "rationale": "As a hypothetical reasoning model, trust depends on a connection between the authorized person, the access they control, and the purpose and scope of the action. If that connection becomes uncertain, past trust alone would not settle whether a present action is legitimate.",
+      "conditions_under_which_it_works": [
+        "The access remains under the intended person's control.",
+        "The person's authorization remains current.",
+        "The action falls within the authorized purpose and scope.",
+        "The context relevant to the original trust decision remains applicable."
+      ],
+      "hypothetical_illustration": "If someone retained access after their authorization ended, successful entry would demonstrate access capability, but would not establish permission for the action."
+    },
+    "claim_support": [
+      {
+        "claim": "The proposed prior belief, rationale and illustration",
+        "classification": "Explicitly hypothetical; not an empirical finding",
+        "source_ids": [],
+        "basis": "A coherent conceptual distinction between access capability and authorization, offered before evidence review as requested."
+      }
+    ],
+    "limitations": [
+      "No sources were supplied. No reported facts or empirical claims are asserted.",
+      "GO applies only to the requested hypothetical prior-belief stage; an evidence-backed editorial conclusion requires subsequent source review.",
+      "No post has been produced or published."
+    ]
+  },
+  "raw": "{\"decision\":\"GO\",\"artifact\":{\"type\":\"hypothetical_prior_belief\",\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"belief\":\"A plausible starting belief: previously trusted access stops being reliable evidence of legitimate action when the reasons for trusting that access no longer hold. Permission to enter is not, by itself, permission for every action inside.\",\"rationale\":\"As a hypothetical reasoning model, trust depends on a connection between the authorized person, the access they control, and the purpose and scope of the action. If that connection becomes uncertain, past trust alone would not settle whether a present action is legitimate.\",\"conditions_under_which_it_works\":[\"The access remains under the intended person's control.\",\"The person's authorization remains current.\",\"The action falls within the authorized purpose and scope.\",\"The context relevant to the original trust decision remains applicable.\"],\"hypothetical_illustration\":\"If someone retained access after their authorization ended, successful entry would demonstrate access capability, but would not establish permission for the action.\"},\"claim_support\":[{\"claim\":\"The proposed prior belief, rationale and illustration\",\"classification\":\"Explicitly hypothetical; not an empirical finding\",\"source_ids\":[],\"basis\":\"A coherent conceptual distinction between access capability and authorization, offered before evidence review as requested.\"}],\"limitations\":[\"No sources were supplied. No reported facts or empirical claims are asserted.\",\"GO applies only to the requested hypothetical prior-belief stage; an evidence-backed editorial conclusion requires subsequent source review.\",\"No post has been produced or published.\"]}",
+  "receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"decision\":\"GO\",\"artifact\":{\"type\":\"hypothetical_prior_belief\",\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"belief\":\"A plausible starting belief: previously trusted access stops being reliable evidence of legitimate action when the reasons for trusting that access no longer hold. Permission to enter is not, by itself, permission for every action inside.\",\"rationale\":\"As a hypothetical reasoning model, trust depends on a connection between the authorized person, the access they control, and the purpose and scope of the action. If that connection becomes uncertain, past trust alone would not settle whether a present action is legitimate.\",\"conditions_under_which_it_works\":[\"The access remains under the intended person's control.\",\"The person's authorization remains current.\",\"The action falls within the authorized purpose and scope.\",\"The context relevant to the original trust decision remains applicable.\"],\"hypothetical_illustration\":\"If someone retained access after their authorization ended, successful entry would demonstrate access capability, but would not establish permission for the action.\"},\"claim_support\":[{\"claim\":\"The proposed prior belief, rationale and illustration\",\"classification\":\"Explicitly hypothetical; not an empirical finding\",\"source_ids\":[],\"basis\":\"A coherent conceptual distinction between access capability and authorization, offered before evidence review as requested.\"}],\"limitations\":[\"No sources were supplied. No reported facts or empirical claims are asserted.\",\"GO applies only to the requested hypothetical prior-belief stage; an evidence-backed editorial conclusion requires subsequent source review.\",\"No post has been produced or published.\"]}"
+      },
+      "attempt_id": "attempt-c6dfa0ea77d745a393c4b47a694cc9fa",
+      "result_sha256": "7c0f8b2526ab513157ec8f4cc29fa3d844cae5d068b1fe2148d804db0302f0ba",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9286,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 401,
+        "reasoning_output_tokens": 60
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "finished_at": "2026-11-05T03:05:39.904360+00:00"
+}

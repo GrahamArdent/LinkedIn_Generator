@@ -1,0 +1,103 @@
+{
+  "status": "DRAFTED",
+  "brief": {
+    "decision": "GO",
+    "artifact": {
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "title": "The credential is valid. Is the action?",
+      "thesis": {
+        "text": "A valid credential and an accepted network origin do not establish that a sensitive action has the required business approval.",
+        "type": "Editorial inference"
+      },
+      "reader_consequence": "Before allowing a payout to proceed, require evidence that approval is bound to that particular transaction, and establish where that evidence is checked after access is accepted.",
+      "load_bearing_facts": [
+        {
+          "id": "F1",
+          "source_id": "CIAD-2026-0046",
+          "text": "CERT-In reports direct invocation of fund-transfer APIs using valid credentials from victims’ whitelisted infrastructure, bypassing application-level checks. Transactions included dummy reference identifiers with no corresponding records."
+        },
+        {
+          "id": "F2",
+          "source_id": "CF2024",
+          "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were left unrotated and later used to access its Atlassian environment; segmentation and other controls limited lateral movement."
+        }
+      ],
+      "necessary_qualification": "These reports support separating accepted access from permitted consequences, but Cloudflare does not demonstrate payout approval controls, and neither report establishes whether a reader’s own system independently validates transaction approval.",
+      "narrative_beats": [
+        {
+          "beat": 1,
+          "role": "Reader decision",
+          "text": "A payout request presents a valid credential from an accepted origin. What evidence establishes that this particular payout was approved?"
+        },
+        {
+          "beat": 2,
+          "role": "Reported evidence",
+          "fact_ids": [
+            "F1"
+          ],
+          "text": "Use CERT-In’s reported transfers to show the practical consequence when accepted access reaches fund movement while business checks are bypassed."
+        },
+        {
+          "beat": 3,
+          "role": "Independent comparison",
+          "fact_ids": [
+            "F2"
+          ],
+          "text": "Use Cloudflare’s separate incident to show that compromised credentials can permit entry while additional controls constrain consequences. Keep the comparison bounded to that distinction."
+        },
+        {
+          "beat": 4,
+          "role": "Hypothetical illustration",
+          "text": "Imagine two synthetic payout requests with identical accepted access: one references a matching approved record; the other has no approved record. Ask whether the latter would be rejected specifically because approval is absent."
+        },
+        {
+          "beat": 5,
+          "role": "Practical consequence",
+          "text": "Ask for evidence of the approval check at the payout boundary, including how approval is bound to transaction details and which payout paths it covers."
+        }
+      ],
+      "hypothetical_illustration": {
+        "status": "Proposed thought experiment only; no test performed or result observed.",
+        "interpretation": "If both requests proceed, the modeled path permits a payout without the approval record. If the approved request proceeds and the other is rejected specifically for missing approval, the modeled path demonstrates that check. Failed baselines or inconsistent outcomes are inconclusive."
+      }
+    },
+    "claim_support": [
+      {
+        "claim": "F1",
+        "sources": [
+          "CIAD-2026-0046"
+        ],
+        "type": "Reported campaign finding attributed to CERT-In."
+      },
+      {
+        "claim": "F2",
+        "sources": [
+          "CF2024"
+        ],
+        "type": "Victim’s retrospective incident account attributed to Cloudflare."
+      },
+      {
+        "claim": "The thesis and reader consequence",
+        "sources": [
+          "CIAD-2026-0046",
+          "CF2024"
+        ],
+        "type": "Editorial inference and recommendation; not a measured control-effectiveness result."
+      },
+      {
+        "claim": "The synthetic request comparison",
+        "sources": [],
+        "type": "Hypothetical illustration, not source-reported testing."
+      }
+    ],
+    "limitations": [
+      "Prepared solely from supplied evidence; no external verification performed.",
+      "The incidents concern different systems and periods and do not establish a shared attacker.",
+      "A modeled approval check would not establish replay protection, correct transaction binding or production-wide coverage.",
+      "No publication performed."
+    ]
+  },
+  "draft": "The credential is valid. The request comes from an accepted origin.\n\nWhat establishes that this particular payout was approved?\n\nCERT-In’s October 2026 advisory reports direct fund-transfer API calls using valid credentials from victims’ whitelisted infrastructure, bypassing application-level checks. Transactions carried dummy reference identifiers with no corresponding records.\n\nAccepted access alone does not establish business approval.\n\nCloudflare’s February 2024 incident account offers a separate comparison: credentials stolen in the October 2023 Okta compromise remained unrotated and later enabled access to its Atlassian environment. Segmentation and other controls limited lateral movement. That illustrates constraints after entry, not payout approval controls. Neither report establishes what your system checks.\n\nConsider a thought experiment, not a performed test: two synthetic payout requests with identical accepted access. One references a matching approved record; the other has none. Does the first proceed while the second is rejected specifically for missing approval? Both proceeding would expose a missing approval requirement on that modeled path. Failed baselines or inconsistent outcomes would be inconclusive.\n\nBefore allowing a payout, ask for evidence of where approval is enforced after access is accepted, how it is bound to transaction details, and which payout paths it covers. The thought experiment alone cannot establish binding, replay protection or production-wide coverage.\n\nFor this payout, show the approval and where it is enforced.",
+  "human_preference": null
+}

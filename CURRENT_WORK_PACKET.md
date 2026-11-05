@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Source-first workflow verified; writer quality HOLD; numeric guard defect observed
+CURRENT_STAGE_OR_MILESTONE: Eight-workflow trial retained; narrative handoff defect demonstrated; human quality/winner HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate source/config4b261ae; exact source/config/test hashes and integration/runtime state in latest receipt
 BLOCKER_SCOPE: milestone
@@ -371,3 +371,7 @@ Operator authorized and completed the existing engine versus simpler-LLM control
 ## Current source-first experiment — November4,2026
 
 Current execution narrative and replication commands are evidence/source-first-planning-20261104/REPORT.md and WORKFLOW.md. MILESTONE.json owns observed results. Planner sources and all raw prompts/results/attempts are retained. Planning recovered the broad thesis independently and added concrete evidence. Same-new-brief comparison scored engine78/baseline81, with engine HOLD. Six calls/123.270 CLI seconds/API0, replay0 added calls,209 local tests PASS. Next repair the observed punctuation-sensitive number guard and focus the editorial brief before further generation. Human/P2/expansion and existing owner gates remain. Earlier next-step notes are historical.
+
+## Current eight-workflow trial — November4,2026
+
+The current evidence frontier is evidence/eight-workflow-trial-20261104/REPORT.md, WORKFLOW.md and MILESTONE.json. All eight route drafts, direct control, three tellings, three fixed-telling voices and a second-concept hybrid/single/direct comparison are saved with raw prompts and native IDs. Human preferences pending; no winner. Route2 selected an analogy that the shared brief erased; some upstream output prematurely wrote prose. The three voice controls are weakly differentiated. The second-concept hybrid narrows the closure question toward payment controls. This is exploratory evidence, not full product acceptance. RESOURCE_USE.json owns actual calls/usage; REPLAY.json owns zero-call reopening.209 local tests PASS. All26 acceptance objectives/11 E2E remain unchanged. No paid API, hosted CI, merge, installation promotion, deployment or publishing. Next eligible correction: preserve narrative form and prevent premature prose at consumer handoffs, verify with regression checks and a small same-facts literal-versus-symbolic comparison. Do not expand all voices or declare a workflow winner. Earlier milestone sections are historical.

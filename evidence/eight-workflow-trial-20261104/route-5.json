@@ -1,0 +1,118 @@
+{
+  "status": "DRAFTED",
+  "brief": {
+    "decision": "GO",
+    "artifact": {
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "format": "Frozen independent editorial brief",
+      "title": "The request got through. Was it authorized?",
+      "thesis": {
+        "type": "inference",
+        "text": "Accepted credentials and an approved source address do not, by themselves, prove that a particular action was authorized.",
+        "source_ids": [
+          "CF2024",
+          "CIAD-2026-0046"
+        ]
+      },
+      "reader_consequence": {
+        "type": "inference",
+        "text": "Leaders should review what evidence connects each sensitive transaction to an approved business record and completed authorization checks, beyond successful access."
+      },
+      "load_bearing_facts": [
+        {
+          "id": "F1",
+          "type": "reported_fact",
+          "text": "Cloudflare reports that one service token and three accounts stolen in the October 2023 Okta compromise were left unrotated because they were mistakenly considered unused; attackers subsequently used those credentials to access its Atlassian environment.",
+          "source_ids": [
+            "CF2024"
+          ]
+        },
+        {
+          "id": "F2",
+          "type": "reported_fact",
+          "text": "CERT-In reports that attackers invoked fund-transfer APIs using valid credentials from victims’ own whitelisted infrastructure, bypassed application checks and supplied dummy references without corresponding records to execute unauthorized transfers.",
+          "source_ids": [
+            "CIAD-2026-0046"
+          ]
+        }
+      ],
+      "necessary_qualification": "These supplied incident accounts support a distinction between technical acceptance and authorization across different systems; they were not independently verified here and do not measure how reliably any proposed control prevents abuse.",
+      "narrative_beats": [
+        {
+          "order": 1,
+          "type": "reported_fact",
+          "fact_id": "F1",
+          "text": "Open with Cloudflare’s account of stolen credentials that remained usable.",
+          "source_ids": [
+            "CF2024"
+          ]
+        },
+        {
+          "order": 2,
+          "type": "inference",
+          "text": "Distinguish credentials accepted by a system from evidence authorizing their use for a specific action; present this as an editorial distinction, not a shared publisher definition."
+        },
+        {
+          "order": 3,
+          "type": "reported_fact",
+          "fact_id": "F2",
+          "text": "Use CERT-In’s unauthorized transfers to show accepted access coexisting with bypassed business checks.",
+          "source_ids": [
+            "CIAD-2026-0046"
+          ]
+        },
+        {
+          "order": 4,
+          "type": "hypothetical_illustration",
+          "text": "Imagine a payout request with an accepted API key and approved source IP but no corresponding sanctioned record. A rule requiring that record would hold or reject the request. This is an illustration, not a reported incident."
+        },
+        {
+          "order": 5,
+          "type": "inference",
+          "text": "Close with the review question: What proves this action was authorized beyond the fact that the request got through?"
+        }
+      ]
+    },
+    "claim_support": [
+      {
+        "claim_id": "F1",
+        "source_ids": [
+          "CF2024"
+        ],
+        "locator": "Opening and October18 timeline",
+        "status": "Reported fact in supplied first-party account"
+      },
+      {
+        "claim_id": "F2",
+        "source_ids": [
+          "CIAD-2026-0046"
+        ],
+        "locator": "Description; Key TTPs Observed",
+        "status": "CERT-In reported finding"
+      },
+      {
+        "claim": "Accepted access alone does not prove authorization of a particular action.",
+        "source_ids": [
+          "CF2024",
+          "CIAD-2026-0046"
+        ],
+        "locator": "Credential reuse and unauthorized API invocation",
+        "status": "Editorial inference"
+      },
+      {
+        "claim": "Review transaction evidence against approved records and required authorization stages.",
+        "source_ids": [
+          "CIAD-2026-0046"
+        ],
+        "locator": "Recommended Actions: approved-record validation and cryptographic binding of transaction stages",
+        "status": "Editorial consequence supported by recommendations, not measured effectiveness"
+      }
+    ],
+    "limitations": [
+      "These supplied incident accounts support a distinction between technical acceptance and authorization across different systems; they were not independently verified here and do not measure how reliably any proposed control prevents abuse."
+    ]
+  },
+  "draft": "The stolen credentials still worked.\n\nIn its February 2024 account, Cloudflare reports that one service token and three accounts stolen in the October 2023 Okta compromise went unrotated because they were mistakenly considered unused. Attackers subsequently used them to access its Atlassian environment.\n\nWhat did acceptance prove?\n\nMy reading: accepted credentials and an approved source address do not, by themselves, establish permission for a particular action.\n\nIn its October 2026 advisory, CERT-In reports that attackers invoked fund-transfer APIs using valid credentials from victims’ own whitelisted infrastructure. They bypassed application checks and supplied dummy references without corresponding records, executing unauthorized transfers.\n\nImagine a hypothetical payout: accepted API key, approved source IP, no sanctioned record. An enforced rule requiring that record would hold or reject it. A matching record alone would still not prove every authorization check was completed.\n\nCERT-In recommends approved-record validation and cryptographic binding of transaction stages. For leaders, that makes the review concrete: connect sensitive transactions to approved business records and completed authorization checks.\n\nThese separate supplied accounts were not independently verified here. They support the distinction between acceptance and authorization; they do not measure how reliably proposed controls prevent abuse.\n\nWhat proves this action was authorized beyond the fact that the request got through?",
+  "human_preference": null
+}

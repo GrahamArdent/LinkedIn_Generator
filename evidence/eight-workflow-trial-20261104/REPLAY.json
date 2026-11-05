@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "commands": [
+    "run.py routes",
+    "run.py controls"
+  ],
+  "stdout": "Eight outcomes recorded\nControls completed\n",
+  "native_attempts_before": 55,
+  "native_attempts_after": 55,
+  "added_model_calls": 0,
+  "native_attempt_hashes_unchanged": true
+}

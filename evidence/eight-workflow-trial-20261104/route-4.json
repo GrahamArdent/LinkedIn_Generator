@@ -1,0 +1,127 @@
+{
+  "status": "DRAFTED",
+  "brief": {
+    "decision": "GO",
+    "artifact": {
+      "type": "frozen_editorial_brief",
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "thesis": {
+        "text": "Previously trusted access is insufficient evidence of legitimate action when its connection to current authorization, purpose or scope breaks or becomes uncertain.",
+        "classification": "Editorial inference",
+        "source_ids": [
+          "CIAD-2026-0046",
+          "CF2024"
+        ]
+      },
+      "reader_consequence": {
+        "text": "Require evidence that each sensitive action matches an approved business record or authorized scope, and enforce downstream boundaries independently of successful entry.",
+        "classification": "Editorial recommendation; not a measured effectiveness finding"
+      },
+      "load_bearing_facts": [
+        {
+          "id": "F1",
+          "statement": "CERT-In reports attackers invoking fund-transfer APIs from victims’ whitelisted infrastructure with valid credentials, bypassing application-level checks and supplying reference numbers with no corresponding records.",
+          "classification": "Reported fact",
+          "source_ids": [
+            "CIAD-2026-0046"
+          ],
+          "locator": "Description; Key TTPs Observed"
+        },
+        {
+          "id": "F2",
+          "statement": "Cloudflare reports that stolen credentials left unrotated enabled access to its Atlassian environment, while segmentation and other controls limited lateral movement, with no customer data or global network changes affected.",
+          "classification": "Victim-reported fact",
+          "source_ids": [
+            "CF2024"
+          ],
+          "locator": "Opening and October18 timeline; Opening containment summary"
+        }
+      ],
+      "necessary_qualification": {
+        "text": "Compromised access does not imply unrestricted downstream compromise: Cloudflare’s account limits that implication without contradicting the thesis or establishing universal control effectiveness.",
+        "fact_ids": [
+          "F2"
+        ]
+      },
+      "narrative_beats": [
+        {
+          "sequence": 1,
+          "purpose": "Establish the gap between accepted access and authorized action.",
+          "content": "Open with CERT-In’s reported transfers using valid credentials and whitelisted infrastructure despite missing underlying records.",
+          "fact_ids": [
+            "F1"
+          ]
+        },
+        {
+          "sequence": 2,
+          "purpose": "Interpret the evidence.",
+          "content": "Successful entry establishes access capability; it does not by itself establish approval for the transaction.",
+          "classification": "Editorial inference",
+          "fact_ids": [
+            "F1"
+          ]
+        },
+        {
+          "sequence": 3,
+          "purpose": "Bound the consequences with independent evidence.",
+          "content": "Use Cloudflare’s reported containment to show that compromised entry need not erase later boundaries.",
+          "fact_ids": [
+            "F2"
+          ]
+        },
+        {
+          "sequence": 4,
+          "purpose": "Make the consequence actionable for leaders.",
+          "content": "Ask what evidence authorizes the action and what independently limits its reach if entry credentials are compromised.",
+          "classification": "Editorial recommendation",
+          "fact_ids": [
+            "F1",
+            "F2"
+          ]
+        }
+      ],
+      "hypothetical_illustration": null,
+      "publication_status": "Brief only; no post produced or published."
+    },
+    "claim_support": [
+      {
+        "claim": "Accepted credentials and network origin can coexist with unauthorized transactions.",
+        "classification": "Editorial inference from reported facts",
+        "fact_ids": [
+          "F1"
+        ],
+        "source_ids": [
+          "CIAD-2026-0046"
+        ]
+      },
+      {
+        "claim": "Compromised entry need not enable unrestricted downstream reach.",
+        "classification": "Bounded editorial inference from a victim account",
+        "fact_ids": [
+          "F2"
+        ],
+        "source_ids": [
+          "CF2024"
+        ]
+      },
+      {
+        "claim": "Validate sensitive actions against approved records or scope and enforce independent boundaries.",
+        "classification": "Editorial recommendation",
+        "source_ids": [
+          "CIAD-2026-0046",
+          "CF2024"
+        ],
+        "basis": "CERT-In recommends approved-record validation; Cloudflare reports containment by segmentation and other controls. Neither establishes guaranteed effectiveness."
+      }
+    ],
+    "limitations": [
+      "Uses supplied source material only; authenticity and full underlying materials were not independently verified.",
+      "CERT-In describes an Indian financial-sector campaign; Cloudflare describes a different organization, period and system. Their comparison supports a conceptual distinction, not a shared attacker or a quantified general result.",
+      "CIAD-2026-0058 updates CIAD-2026-0046 and is not independent corroboration; it is not needed for the two frozen facts.",
+      "The evidence supports the original conditional belief rather than overturning it, and does not quantify when access signals become unreliable."
+    ]
+  },
+  "draft": "Valid credentials. Whitelisted infrastructure. Missing business records. CERT-In’s October 2026 advisory reports attackers invoking fund-transfer APIs from victims’ own infrastructure, bypassing application-level checks and supplying reference numbers with no corresponding records. The requests carried accepted access signals, but lacked the underlying records that should have justified the transfers.\n\nSuccessful entry establishes access capability; it does not establish transaction approval.\n\nWhat limits the damage after entry is a separate question. In its February 2024 account of a different incident, Cloudflare reports that stolen credentials left unrotated enabled access to its Atlassian environment. It also reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected. Compromised entry need not erase downstream boundaries. That account does not establish that those controls will work universally.\n\nFor business and IT leaders, previously trusted access becomes insufficient evidence when its connection to current authorization, purpose or scope is uncertain. CERT-In recommends validating every payout against approved records. My recommendation: require evidence that sensitive actions match an approved business record or authorized scope, and enforce downstream boundaries independently of successful entry. What evidence authorizes this action? What independently limits its reach if entry credentials are compromised?",
+  "human_preference": null
+}

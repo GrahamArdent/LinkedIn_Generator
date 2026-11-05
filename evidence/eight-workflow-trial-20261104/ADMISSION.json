@@ -1,0 +1,9 @@
+{
+  "route_batches": "8 batches, each at most7 calls/900 CLI seconds, max3 concurrent workflows",
+  "controls_batch": "at most12 calls/900 CLI seconds",
+  "api_spend": 0,
+  "retry": false,
+  "route_prompts": "Catalogue9001c2f, numbers1-8",
+  "isolation": "Fresh ephemeral native context each call. Route4 first call sees no sources; route7 first call excludes November update. Other branches never see outputs from other routes.",
+  "audit": "After eight outcomes and controls; human preferences remain null"
+}

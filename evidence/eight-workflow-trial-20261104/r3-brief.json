@@ -1,0 +1,362 @@
+{
+  "state": "completed",
+  "task": "Freeze one thesis, reader consequence, at most two load-bearing facts with IDs, one necessary qualification and narrative beats. HOLD if unsupported.",
+  "inputs": {
+    "route": [
+      {
+        "decision": "GO",
+        "artifact": {
+          "author": "Graham Hill",
+          "audience": "Business and IT leaders",
+          "title": "Valid credentials. Invalid conclusions.",
+          "reported_facts": "Cloudflare’s account provides a concrete sequence. Credentials were stolen in the October 2023 Okta compromise. One service token and three accounts were mistakenly considered unused and left unrotated. Attackers later used those credentials to access Cloudflare’s Atlassian environment. Cloudflare published its account on February 1, 2024. [CF2024]\n\nThe detail that changes the reading is the decision to leave the credentials unrotated. Their presumed lack of use did not prevent their subsequent use by attackers. Cloudflare also reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected. The reported intrusion and its reported limits both matter. [CF2024]\n\nA separate reporting chain tests whether the mechanism travels. In its October 9, 2026 advisory, CERT-In describes financial-sector campaigns in which attackers compromised systems, stole payment credentials and invoked fund-transfer APIs from victims’ own whitelisted infrastructure. Those calls bypassed application-level checks, including beneficiary verification and transaction limits. These are separate campaigns, not later stages of the Cloudflare incident. [CIAD-2026-0046]\n\nCERT-In’s November 4, 2026 update adds another failure of assumed trust: attackers originated requests through whitelisted shared third-party fetcher services that Internet users could cause to fetch arbitrary URLs. This update belongs to the same CERT-In reporting chain; it is not a second independent corroboration. [CIAD-2026-0058]",
+          "editorial_inference": "Previously trusted access stops being reliable evidence of legitimate action when someone else can possess the credential or originate traffic through the trusted route. The system may still recognize the access mechanism while drawing the wrong conclusion about the action behind it.\n\nThe independent comparison supports that narrow mechanism across different settings. Cloudflare describes stolen credentials remaining usable. CERT-In describes valid credentials and approved network origins carrying unauthorized financial instructions. It does not establish identical attacks or identical outcomes.\n\nFor leaders, the practical question is whether approval survives all the way to the consequential action. A recognized credential or network address needs additional evidence: current authority, appropriate scope and, for a payout, a validated underlying transaction. CERT-In recommends binding transaction stages and checking payouts against approved records; those are recommendations, not measured results. [CIAD-2026-0046]\n\nA successful access check answers one question. It should not silently answer every question that follows.",
+          "hypothetical_illustration": null
+        },
+        "claim_support": [
+          {
+            "claim": "Stolen credentials were left unrotated after being considered unused and were later used to access Atlassian.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CF2024"
+            ],
+            "locator": "Opening and October18 timeline"
+          },
+          {
+            "claim": "Cloudflare reports limited lateral movement and no affected customer data or global network changes.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CF2024"
+            ],
+            "locator": "Opening containment summary"
+          },
+          {
+            "claim": "Attackers invoked financial APIs using stolen valid credentials from victims’ whitelisted infrastructure, bypassing application checks.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CIAD-2026-0046"
+            ],
+            "locator": "Description; Key TTPs Observed"
+          },
+          {
+            "claim": "Shared third-party fetcher infrastructure could supply an allow-listed origin for attacker-induced requests.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CIAD-2026-0058"
+            ],
+            "locator": "Description: IP allow-listing bypass"
+          },
+          {
+            "claim": "CERT-In recommends cryptographic transaction-stage binding and validation against approved records.",
+            "type": "reported_recommendation",
+            "source_ids": [
+              "CIAD-2026-0046"
+            ],
+            "locator": "Recommended Actions"
+          },
+          {
+            "claim": "Recognized credentials or network origins alone do not establish legitimate authority for a consequential action.",
+            "type": "editorial_inference",
+            "source_ids": [
+              "CF2024",
+              "CIAD-2026-0046",
+              "CIAD-2026-0058"
+            ],
+            "scope": "Bounded comparison of trust mechanisms; no shared actor or incident asserted."
+          }
+        ],
+        "limitations": [
+          "Prepared only from supplied source material; no independent retrieval or verification was performed.",
+          "Cloudflare is a victim’s retrospective account. The supplied passages support a relative sequence but do not date the later Atlassian access precisely.",
+          "CERT-In describes multiple reported campaigns rather than a fully dated individual victim incident. Advisory publication dates are not transaction dates.",
+          "The two CERT-In advisories share a reporting chain. Cloudflare supplies the independent organizational comparison.",
+          "Different organizations, systems and periods limit the comparison. Reported containment and recommended controls do not establish universal effectiveness."
+        ]
+      },
+      {
+        "decision": "GO",
+        "artifact": {
+          "author": "Graham Hill",
+          "audience": "Business and IT leaders",
+          "title": "Valid credentials. Invalid conclusions.",
+          "format": "Editorial outline",
+          "reported_facts": [
+            {
+              "section": "1. Consequential moment",
+              "text": "Attackers used stolen credentials to access Cloudflare’s Atlassian environment. Credentials that remained usable enabled access by an unauthorized actor. Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected. [CF2024]"
+            },
+            {
+              "section": "2. Earlier detail needed to explain it",
+              "text": "The credentials had been stolen in the October 2023 Okta compromise. Cloudflare says one service token and three accounts were mistakenly considered unused and left unrotated. That decision explains why the stolen credentials remained available for the later access. [CF2024]"
+            },
+            {
+              "section": "3. Transition: from the Cloudflare case to independent evidence",
+              "text": "The comparison now moves to a separate organization, period and reporting chain: CERT-In’s accounts of Indian financial-sector campaigns. These are independent of Cloudflare’s account; they are not continuations of its incident."
+            },
+            {
+              "section": "4. Independent evidence: authorized routes carrying unauthorized instructions",
+              "text": "CERT-In’s October 9, 2026 advisory reports that attackers stole payment credentials and directly invoked fund-transfer APIs from victims’ own whitelisted infrastructure. Those calls bypassed application-level checks, including beneficiary verification and per-transaction limits, and transferred funds to attacker-controlled mule accounts. [CIAD-2026-0046]"
+            },
+            {
+              "section": "5. Related update within the same reporting chain",
+              "text": "CERT-In’s November 4 update reports another weakness in relying on an approved network origin: attackers induced requests through whitelisted shared third-party fetcher services that Internet users could cause to fetch arbitrary URLs. This is additional reporting within the CERT-In chain, not another independent corroboration. [CIAD-2026-0058]"
+            }
+          ],
+          "editorial_inference": {
+            "answer": "Previously trusted access stops being reliable evidence of legitimate action when an unauthorized actor can possess the credential or originate requests through the trusted route. A successful access check alone cannot establish that the consequential action is authorized.",
+            "bounded_comparison": "Cloudflare illustrates stolen credentials remaining usable. CERT-In illustrates valid credentials and trusted network origins carrying unauthorized financial instructions. Together, the accounts support a narrow comparison of failed trust assumptions across different settings.",
+            "practical_takeaway": "For leaders, the question is whether authorization is checked at the point where the consequence occurs. For a payout, that means evidence of an approved underlying transaction, beyond recognition of the credential or network address. CERT-In recommends cryptographically binding transaction stages and validating payouts against approved records. These are recommendations, not measured results. [CIAD-2026-0046]",
+            "closer": "Access is evidence. It is not the whole case."
+          },
+          "hypothetical_illustration": null
+        },
+        "claim_support": [
+          {
+            "claim": "Attackers used stolen credentials to access Cloudflare’s Atlassian environment after one service token and three accounts were mistakenly considered unused and left unrotated.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CF2024"
+            ],
+            "locator": "Opening and October18 timeline"
+          },
+          {
+            "claim": "Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CF2024"
+            ],
+            "locator": "Opening containment summary"
+          },
+          {
+            "claim": "Attackers used stolen payment credentials and victims’ whitelisted infrastructure to invoke fund-transfer APIs, bypass application checks and transfer funds to mule accounts.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CIAD-2026-0046"
+            ],
+            "locator": "Description; Key TTPs Observed"
+          },
+          {
+            "claim": "Attackers induced requests through whitelisted shared third-party fetcher services accessible to Internet users.",
+            "type": "reported_fact",
+            "source_ids": [
+              "CIAD-2026-0058"
+            ],
+            "locator": "Description: IP allow-listing bypass"
+          },
+          {
+            "claim": "CERT-In recommends cryptographic transaction-stage binding and payout validation against approved records.",
+            "type": "reported_recommendation",
+            "source_ids": [
+              "CIAD-2026-0046"
+            ],
+            "locator": "Recommended Actions"
+          },
+          {
+            "claim": "Recognition of a credential or network origin alone cannot establish legitimate authorization for a consequential action.",
+            "type": "editorial_inference",
+            "source_ids": [
+              "CF2024",
+              "CIAD-2026-0046",
+              "CIAD-2026-0058"
+            ],
+            "scope": "Comparison of trust mechanisms across different settings; no shared attacker, incident or outcome asserted."
+          }
+        ],
+        "limitations": [
+          "Prepared only from supplied material; no independent retrieval or verification was performed.",
+          "Cloudflare’s account is retrospective. The supplied passages establish relative sequence but do not precisely date the later Atlassian access.",
+          "CERT-In describes reported campaigns rather than a fully dated individual victim incident. Advisory publication dates are not transaction dates.",
+          "The two CERT-In advisories share one reporting chain; Cloudflare supplies the independent organizational comparison.",
+          "Different organizations, periods and systems constrain the comparison. Reported containment and recommended controls do not establish universal effectiveness."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "source_id": "CF2024",
+        "publisher": "Cloudflare",
+        "date": "2024-02-01",
+        "url": "https://blog.cloudflare.com/thanksgiving-2023-security-incident/",
+        "origin": "victim first-party incident account, independent of CERT-In",
+        "passages": [
+          {
+            "locator": "Opening and October18 timeline",
+            "excerpt": "The one service token and three accounts were not rotated",
+            "claim": "Cloudflare reports that credentials stolen in the October2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment."
+          },
+          {
+            "locator": "Opening containment summary",
+            "claim": "Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected."
+          }
+        ],
+        "limitations": "Victim's retrospective account. Different organization, period and systems from CERT-In. Comparison supports a bounded conceptual contrast, not a shared attacker or a universal control-effectiveness claim.",
+        "retrieval": "Web search full article rendering turn16search0; direct archive download returned HTTP403."
+      },
+      {
+        "source_id": "CIAD-2026-0046",
+        "publisher": "CERT-In",
+        "date": "2026-10-09",
+        "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+        "article": "CIAD-2026-0046 Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities Original Issue Date: October 09, 2026 Severity Rating: Critical Description CERT-In/CSIRT-Fin has observed multiple cyber attack campaigns targeting non-banking financial companies (NBFCs), digital lending platforms, fintech entities, payment service providers and wallet operators. Threat actors compromise internet-facing applications, exposed APIs and privileged endpoints, steal payment aggregator/gateway and partner-bank API credentials, and invoke disbursal/fund-transfer APIs directly from within the entities' own whitelisted infrastructure, completely bypassing application-level controls such as loan creation, KYC, sanction, beneficiary verification, balance sufficiency and per-transaction limits. The fraudulent transactions carry dummy reference identifiers, exceed per-transaction limits, and credit funds to attacker-controlled mule accounts across multiple banks. Analysis of these attacks further indicates the possible use of AI-assisted offensive tooling, with the interval between initial compromise and fraudulent fund transfer reducing significantly in recent incidents. Attacker IPs are predominantly associated with hosting infrastructure. Attack Vector Initial compromise is achieved through: Exploitation of exposed internet-facing applications and application server middleware vulnerabilities. Abuse of deprecated, unauthenticated or unused APIs with unrestricted file-upload functionality. Use of stolen long-lived static API tokens hard-coded in source code. Supply-chain compromise of source-code repositories via forged commits. Exploitation of plaintext credentials in configuration files, source code or databases. Access to applications and remote services lacking MFA. Post-compromise, attackers establish persistence via web shells and backdoors, conduct reconnaissance of payment databases and API integrations, steal payment aggregator/gateway and bank API credentials, and directly invoke disbursal/fund-transfer APIs to execute unauthorized transactions. Key TTPs Observed Direct invocation of disbursal/fund-transfer APIs from whitelisted infrastructure using valid credentials. Bypassing of application-level checks (KYC, sanction, beneficiary verification, balance sufficiency). Supply of dummy loan/transaction reference numbers with no corresponding records. Rapid execution of multiple high-value transactions through IMPS/NEFT rails. Transfer of funds to mule accounts across multiple banks with immediate withdrawal. Deletion/truncation of logs, tampering with EDR tools, and anti-forensic cleanup. Possible use of AI-assisted offensive frameworks and large numbers of custom scripts. Recommended Actions Enforce MFA for payment platforms, administrative portals, payment/bank APIs and remote access services. Maintain a complete API inventory; formally decommission deprecated and unused APIs. Enforce per-session authentication on all APIs; eliminate long-lived static tokens. Bind multi-stage transaction flows cryptographically so debit-stage APIs cannot be invoked without preceding validation stages. Implement maker-checker or second-level verification for all fund movement. Validate every payout against sanctioned/approved records; reject reference identifiers with no corresponding records. Enforce per-transaction and per-day cumulative ceilings at the API/payment stage. Apply beneficiary validation (penny-drop, name-to-account matching) and velocity limits on all disbursement paths. Restrict outbound (egress) traffic from production servers through allow-listing. Store all API keys and credentials in secure secret management solutions or HSMs; enforce rotation. Implement real-time monitoring of fund transfers with velocity, amount-band and new-beneficiary checks, with automated blocking or holding. Enable near-real-time reconciliation of system records with bank/aggregator statements. Maintain centralized logging and log retention of at least 180 days. Deploy EDR with tamper protection on servers and endpoints. Adopt behavioural anti-automation controls (rate limiting, sequence-binding) to disrupt script-driven API abuse. Remove internet exposure of internal applications; enforce geofencing under formal change control. Isolate development, testing and production environments. Conduct regular VA/PT including API security testing. Upon detection of suspicious activity: disable compromised accounts, suspend affected APIs, preserve forensic evidence, rotate all credentials, and report to CERT-In/CSIRT-Fin at incident@cert-in.org.in. Reporting Entities are advised to report any signs of suspicious activity related to this attack campaign to CERT-In/CSIRT-Fin at incident@cert-in.org.in , along with all relevant logs, at the earliest.",
+        "origin": "CERT-In reporting chain",
+        "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness."
+      },
+      {
+        "source_id": "CIAD-2026-0058",
+        "publisher": "CERT-In",
+        "date": "2026-11-04",
+        "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+        "article": "CIAD-2026-0058 Escalation of AI-Driven Attacks on BFSI Entities by Threat Actor \"CRAFTY FALCON\" Original Issue Date: November 04, 2026 Severity Rating: Critical Overview This advisory is an update to CERT-In Advisory CIAD-2026-0046 dated 09 October 2026 on Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities. Continued analysis of incidents reported by affected entities including non-banking financial companies (NBFCs), digital lending platforms, fintech entities, payment aggregators, payment service providers and cryptocurrency exchanges / virtual digital asset service providers has revealed a significant escalation of this campaign. Computer Security Incident Response Team - Finance (CSIRT-Fin) under CERT-In has designated the threat actor responsible for this campaign as \"CRAFTY FALCON\": an AI-assisted financial threat actor that surveys its targets with machine intelligence, operates at machine speed and strikes by invoking the victim's own payment and disbursement APIs. The threat is active and ongoing. CSIRT-Fin continues to receive reports of successful attacks, including from NBFCs and fintech entities that had already received the earlier restricted (TLP:AMBER) advisories and had undertaken remediation. The same entities have been deliberately re-targeted, including after incomplete remediation and attacks have been timed to coincide with holidays, weekends and other low-monitoring windows to delay detection and response. All BFSI entities are strongly advised to treat this campaign as an immediate and continuing threat. Analysis has identified the use of multiple publicly available AI-driven offensive security tools against affected entities including the \"ARTEX\" family of LLM-based, \"PentAGI\" autonomous multi-agent AI penetration testing system and the \"Cairn\" attack search engine, in addition to the \"CyberStrikeAI\" framework. These tools execute complete attack chains autonomously at machine speed, generate and refine large numbers of tailored attack scripts in rapid succession and adapt their payloads based on target responses. The supporting attack infrastructure rotates IP addresses within hours to days; infrastructure fingerprints and detailed detection rules have been shared with entities through the restricted advisories. Description Analysis of the reported incidents indicates below attack pattern: Cloud infrastructure of entities targeted including compute, serverless and management services with cloud management services (such as AWS Systems Manager and Lambda) abused to execute commands and deploy malicious files, blending malicious activity into legitimate cloud management channels. Internet-exposed non-production environments (UAT/staging/testing) used as entry points, followed by movement to production environments using shared credentials, tokens or network paths. Application codebases reverse-engineered by the threat actor to develop tailored exploits; unauthorized API calls subsequently initiated using altered/modified application packages, defeating controls that assumed only the legitimate client application would call the APIs. IP allow-listing bypassed by originating traffic from whitelisted third-party fetcher IP pools (such as content-acceleration and app-store review fetchers); any Internet user can cause such shared fetcher services to fetch arbitrary URLs. Micro-value test transactions (such as Rs. 1) performed to validate unauthorized fund flows before executing large-value transfers. Merchant settlement APIs of payment aggregators exploited or abused to move funds. Newly published vulnerabilities exploited as soon as they become public, including file-upload and deserialization exploit chains leading to web shells in PHP and Node.js applications. Cryptocurrency exchanges and virtual digital asset service providers targeted, with wallet keys stolen and funds siphoned from cryptocurrency wallets. Large numbers of custom, tailored scripts created on the fly, with functionally identical variants refined in rapid succession; a pattern consistent with AI-generated code and iterative AI-assisted development. Recommended Actions Treat this campaign as active and escalating: maintain heightened 24x7 security monitoring, with increased staffing and lowered alert thresholds during holidays, weekends and other low-coverage windows. After any incident, assume persistence: perform full eradication with forensic verification and continue periodic threat hunting; entities have been re-attacked after incomplete remediation. Enable centralized, real-time monitoring of cloud audit logs with alerting on high-risk events such as remote command execution, serverless function code updates and creation of roles, users or access keys. Restrict cloud management and serverless execution to approved principals and accounts; alert on any interactive remote-management session or serverless function code change in production. Enforce instance metadata service protections and least-privilege roles for instances and functions; deny wildcard egress in security groups; configure serverless functions with no Internet egress by default. Isolate UAT/staging/testing environments from production - no shared credentials, tokens, API keys, databases or direct network paths and apply production-grade hardening and monitoring to internet-facing non-production environments. Alert on and investigate any access from non-production systems to production systems, credentials or data. Make application deployment directories read-only for the application runtime user; deploy file-integrity monitoring on application directories for web shell detection. Treat client applications and packages as untrusted: enforce server-side validation of every transaction and business rule; implement API request signing with nonce and timestamp; adopt app attestation services and certificate pinning to detect altered or repackaged applications. Establish a rapid patching SLA for internet-facing applications, prioritizing file-upload and deserialization weaknesses in PHP and Node.js applications; use WAF virtual patching as an interim control. Prohibit hardcoded tokens and credentials in source and build code; deploy automated secret scanning across repositories and CI/CD pipelines; use short-lived, fine-grained, least-privileged access tokens and rotate all build and deployment tokens. Alert on token usage from unusual source IPs, user agents or geographies; enforce branch protection, commit signing and mandatory code review on production deployment branches. Replace IP allow-listing of shared third-party fetcher pools with identity-based controls such as mutual TLS, cryptographically signed requests or scoped API keys on dedicated vendor endpoints. Enforce default-deny egress from server segments through allow-listed proxies; unrestricted HTTPS egress was used for command-and-control and data exfiltration. Deploy TLS inspection with alerting on self-signed certificates presented over non-standard ports. Extend real-time transaction monitoring to flag micro-value test transactions to new beneficiaries followed by high-value transactions; treat this pattern as a strong precursor of unauthorized fund transfer and hold or review such flows. Implement transaction velocity rules, new-beneficiary cooling periods and amount-band anomaly detection across all payment and disbursement paths. Enforce server-side validation, maker-checker approval and reconciliation for all merchant settlement instructions submitted through payment aggregator APIs. Store cryptocurrency wallet keys in hardware security modules or cold custody; require multi-signature approvals for withdrawals; monitor withdrawal patterns for anomalies and rotate keys immediately upon any suspected compromise. Prohibit installation or execution of unauthorized security and attack tools including publicly available AI-driven offensive frameworks on corporate infrastructure; monitor for their download and for AI coding-agent processes running with permission checks disabled. Monitor and govern LLM API usage and keys; LLM API traffic originating from servers or other non-development hosts may indicate an attack rig or planted operator console. Establish a policy requiring written approval, defined scope and a time window for all penetration testing; the tools themselves do not validate authorization. Tune SIEM correlation for machine-speed, multi-technique attack patterns , multiple tools and techniques, parallel attack threads, adaptive payload mutation and continuous non-business-hours operation against a single target and adopt automated (SOAR-based) containment. Deploy deception measures such as honeypots, decoy administrative panels and canary credentials; autonomous attack agents enumerate targets exhaustively and are likely to touch decoy assets, generating high-confidence early alerts. Monitor web roots, temporary directories and staging paths for bursts of newly created commented scripts and rapid successive variants of functionally identical scripts - a strong indicator of AI-generated attack tooling. Adopt zero-trust principles , micro-segmentation, identity-based access for every user and service, and inspection of east-west traffic operating on the assumption that the threat actor is already inside the environment. Upon detection of suspicious activity: isolate affected hosts, preserve forensic evidence and logs, rotate all credentials, and report to CERT-In/CSIRT-Fin at incident@cert-in.org.in . Conclusion Entities are advised to report any signs of suspicious activity related to the \"CRAFTY FALCON\" campaign to CERT-In/CSIRT-Fin at incident@cert-in.org.in , along with all relevant logs, at the earliest. Entities shall also contact Indian Cybercrime Coordination Centre (I4C) for reporting of such fraudulent transactions in bulk at Cyber Fraud Mitigation Centre (CFCFRMS Portal). The detailed (restricted) version of this advisory, including the full indicators of compromise, infrastructure fingerprints and detection rules, has been shared with BFSI entities at the appropriate TLP level. Indicators may change while adversary techniques often remain consistent; entities should therefore not limit their response to blocking indicators.",
+        "origin": "CERT-In reporting chain",
+        "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness."
+      }
+    ]
+  },
+  "output": {
+    "decision": "GO",
+    "artifact": {
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "format": "Frozen editorial brief",
+      "title": "Valid credentials. Invalid conclusions.",
+      "thesis": {
+        "type": "editorial_inference",
+        "text": "Recognition of a credential or network origin alone does not establish legitimate authorization for the consequential action it enables."
+      },
+      "reader_consequence": {
+        "type": "editorial_inference",
+        "text": "Leaders should ask what validates authority at the point of consequence: for a payout, whether an approved underlying transaction supports the instruction, beyond recognition of credentials or network origin."
+      },
+      "reported_facts": [
+        {
+          "id": "F1",
+          "text": "Cloudflare reports that one service token and three accounts stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated; attackers later used those credentials to access its Atlassian environment.",
+          "source_ids": [
+            "CF2024"
+          ]
+        },
+        {
+          "id": "F2",
+          "text": "CERT-In reports that attackers used stolen payment credentials to invoke fund-transfer APIs from victims’ own whitelisted infrastructure, bypassing application checks including beneficiary verification and per-transaction limits and transferring funds to mule accounts.",
+          "source_ids": [
+            "CIAD-2026-0046"
+          ]
+        }
+      ],
+      "necessary_qualification": {
+        "text": "This comparison concerns a trust assumption across separate incidents and systems, not equivalent outcomes: Cloudflare reports limited lateral movement and no affected customer data or global network changes, while CERT-In reports unauthorized financial transfers.",
+        "source_ids": [
+          "CF2024",
+          "CIAD-2026-0046"
+        ]
+      },
+      "narrative_beats": [
+        {
+          "sequence": 1,
+          "purpose": "Open with the consequential moment",
+          "text": "Attackers accessed Cloudflare’s Atlassian environment using stolen credentials.",
+          "fact_ids": [
+            "F1"
+          ]
+        },
+        {
+          "sequence": 2,
+          "purpose": "Reveal the earlier decision",
+          "text": "The credentials had remained unrotated because they were mistakenly considered unused.",
+          "fact_ids": [
+            "F1"
+          ]
+        },
+        {
+          "sequence": 3,
+          "purpose": "Test the mechanism against independent reporting",
+          "text": "Move explicitly to CERT-In’s separate financial-sector campaigns: stolen credentials and whitelisted origins enabled calls that bypassed application checks.",
+          "fact_ids": [
+            "F2"
+          ]
+        },
+        {
+          "sequence": 4,
+          "purpose": "Bound the comparison",
+          "text": "State the necessary qualification before drawing a shared lesson."
+        },
+        {
+          "sequence": 5,
+          "purpose": "Deliver the reader consequence",
+          "text": "Ask what establishes authorization for the consequential action. Close: A successful access check should not silently answer every question that follows.",
+          "type": "editorial_inference"
+        }
+      ],
+      "hypothetical_illustration": null
+    },
+    "claim_support": [
+      {
+        "claim_id": "F1",
+        "type": "reported_fact",
+        "source_ids": [
+          "CF2024"
+        ],
+        "locator": "Opening and October18 timeline"
+      },
+      {
+        "claim_id": "F2",
+        "type": "reported_fact",
+        "source_ids": [
+          "CIAD-2026-0046"
+        ],
+        "locator": "Description; Key TTPs Observed"
+      },
+      {
+        "claim": "The incidents had different reported consequences, including Cloudflare’s reported containment.",
+        "type": "reported_fact",
+        "source_ids": [
+          "CF2024",
+          "CIAD-2026-0046"
+        ],
+        "locator": "Opening containment summary; Description"
+      },
+      {
+        "claim": "Recognized credentials or network origins alone do not establish authorization for consequential actions; leaders should examine validation at that point.",
+        "type": "editorial_inference",
+        "source_ids": [
+          "CF2024",
+          "CIAD-2026-0046"
+        ],
+        "scope": "Bounded comparison of trust mechanisms. CERT-In’s Recommended Actions support the payout-validation implication as a recommendation, not a measured result."
+      }
+    ],
+    "limitations": [
+      "Prepared from supplied material only; no independent retrieval or verification performed.",
+      "Cloudflare’s retrospective account establishes relative sequence; supplied passages do not precisely date the later Atlassian access.",
+      "CERT-In describes multiple campaigns; advisory publication dates are not transaction dates.",
+      "The November CERT-In update belongs to the same reporting chain and is not used as another independent corroboration.",
+      "The comparison establishes no shared attacker, identical attack sequence or universal control effectiveness."
+    ]
+  },
+  "raw": "{\"decision\":\"GO\",\"artifact\":{\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"format\":\"Frozen editorial brief\",\"title\":\"Valid credentials. Invalid conclusions.\",\"thesis\":{\"type\":\"editorial_inference\",\"text\":\"Recognition of a credential or network origin alone does not establish legitimate authorization for the consequential action it enables.\"},\"reader_consequence\":{\"type\":\"editorial_inference\",\"text\":\"Leaders should ask what validates authority at the point of consequence: for a payout, whether an approved underlying transaction supports the instruction, beyond recognition of credentials or network origin.\"},\"reported_facts\":[{\"id\":\"F1\",\"text\":\"Cloudflare reports that one service token and three accounts stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated; attackers later used those credentials to access its Atlassian environment.\",\"source_ids\":[\"CF2024\"]},{\"id\":\"F2\",\"text\":\"CERT-In reports that attackers used stolen payment credentials to invoke fund-transfer APIs from victims’ own whitelisted infrastructure, bypassing application checks including beneficiary verification and per-transaction limits and transferring funds to mule accounts.\",\"source_ids\":[\"CIAD-2026-0046\"]}],\"necessary_qualification\":{\"text\":\"This comparison concerns a trust assumption across separate incidents and systems, not equivalent outcomes: Cloudflare reports limited lateral movement and no affected customer data or global network changes, while CERT-In reports unauthorized financial transfers.\",\"source_ids\":[\"CF2024\",\"CIAD-2026-0046\"]},\"narrative_beats\":[{\"sequence\":1,\"purpose\":\"Open with the consequential moment\",\"text\":\"Attackers accessed Cloudflare’s Atlassian environment using stolen credentials.\",\"fact_ids\":[\"F1\"]},{\"sequence\":2,\"purpose\":\"Reveal the earlier decision\",\"text\":\"The credentials had remained unrotated because they were mistakenly considered unused.\",\"fact_ids\":[\"F1\"]},{\"sequence\":3,\"purpose\":\"Test the mechanism against independent reporting\",\"text\":\"Move explicitly to CERT-In’s separate financial-sector campaigns: stolen credentials and whitelisted origins enabled calls that bypassed application checks.\",\"fact_ids\":[\"F2\"]},{\"sequence\":4,\"purpose\":\"Bound the comparison\",\"text\":\"State the necessary qualification before drawing a shared lesson.\"},{\"sequence\":5,\"purpose\":\"Deliver the reader consequence\",\"text\":\"Ask what establishes authorization for the consequential action. Close: A successful access check should not silently answer every question that follows.\",\"type\":\"editorial_inference\"}],\"hypothetical_illustration\":null},\"claim_support\":[{\"claim_id\":\"F1\",\"type\":\"reported_fact\",\"source_ids\":[\"CF2024\"],\"locator\":\"Opening and October18 timeline\"},{\"claim_id\":\"F2\",\"type\":\"reported_fact\",\"source_ids\":[\"CIAD-2026-0046\"],\"locator\":\"Description; Key TTPs Observed\"},{\"claim\":\"The incidents had different reported consequences, including Cloudflare’s reported containment.\",\"type\":\"reported_fact\",\"source_ids\":[\"CF2024\",\"CIAD-2026-0046\"],\"locator\":\"Opening containment summary; Description\"},{\"claim\":\"Recognized credentials or network origins alone do not establish authorization for consequential actions; leaders should examine validation at that point.\",\"type\":\"editorial_inference\",\"source_ids\":[\"CF2024\",\"CIAD-2026-0046\"],\"scope\":\"Bounded comparison of trust mechanisms. CERT-In’s Recommended Actions support the payout-validation implication as a recommendation, not a measured result.\"}],\"limitations\":[\"Prepared from supplied material only; no independent retrieval or verification performed.\",\"Cloudflare’s retrospective account establishes relative sequence; supplied passages do not precisely date the later Atlassian access.\",\"CERT-In describes multiple campaigns; advisory publication dates are not transaction dates.\",\"The November CERT-In update belongs to the same reporting chain and is not used as another independent corroboration.\",\"The comparison establishes no shared attacker, identical attack sequence or universal control effectiveness.\"]}",
+  "receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"decision\":\"GO\",\"artifact\":{\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"format\":\"Frozen editorial brief\",\"title\":\"Valid credentials. Invalid conclusions.\",\"thesis\":{\"type\":\"editorial_inference\",\"text\":\"Recognition of a credential or network origin alone does not establish legitimate authorization for the consequential action it enables.\"},\"reader_consequence\":{\"type\":\"editorial_inference\",\"text\":\"Leaders should ask what validates authority at the point of consequence: for a payout, whether an approved underlying transaction supports the instruction, beyond recognition of credentials or network origin.\"},\"reported_facts\":[{\"id\":\"F1\",\"text\":\"Cloudflare reports that one service token and three accounts stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated; attackers later used those credentials to access its Atlassian environment.\",\"source_ids\":[\"CF2024\"]},{\"id\":\"F2\",\"text\":\"CERT-In reports that attackers used stolen payment credentials to invoke fund-transfer APIs from victims’ own whitelisted infrastructure, bypassing application checks including beneficiary verification and per-transaction limits and transferring funds to mule accounts.\",\"source_ids\":[\"CIAD-2026-0046\"]}],\"necessary_qualification\":{\"text\":\"This comparison concerns a trust assumption across separate incidents and systems, not equivalent outcomes: Cloudflare reports limited lateral movement and no affected customer data or global network changes, while CERT-In reports unauthorized financial transfers.\",\"source_ids\":[\"CF2024\",\"CIAD-2026-0046\"]},\"narrative_beats\":[{\"sequence\":1,\"purpose\":\"Open with the consequential moment\",\"text\":\"Attackers accessed Cloudflare’s Atlassian environment using stolen credentials.\",\"fact_ids\":[\"F1\"]},{\"sequence\":2,\"purpose\":\"Reveal the earlier decision\",\"text\":\"The credentials had remained unrotated because they were mistakenly considered unused.\",\"fact_ids\":[\"F1\"]},{\"sequence\":3,\"purpose\":\"Test the mechanism against independent reporting\",\"text\":\"Move explicitly to CERT-In’s separate financial-sector campaigns: stolen credentials and whitelisted origins enabled calls that bypassed application checks.\",\"fact_ids\":[\"F2\"]},{\"sequence\":4,\"purpose\":\"Bound the comparison\",\"text\":\"State the necessary qualification before drawing a shared lesson.\"},{\"sequence\":5,\"purpose\":\"Deliver the reader consequence\",\"text\":\"Ask what establishes authorization for the consequential action. Close: A successful access check should not silently answer every question that follows.\",\"type\":\"editorial_inference\"}],\"hypothetical_illustration\":null},\"claim_support\":[{\"claim_id\":\"F1\",\"type\":\"reported_fact\",\"source_ids\":[\"CF2024\"],\"locator\":\"Opening and October18 timeline\"},{\"claim_id\":\"F2\",\"type\":\"reported_fact\",\"source_ids\":[\"CIAD-2026-0046\"],\"locator\":\"Description; Key TTPs Observed\"},{\"claim\":\"The incidents had different reported consequences, including Cloudflare’s reported containment.\",\"type\":\"reported_fact\",\"source_ids\":[\"CF2024\",\"CIAD-2026-0046\"],\"locator\":\"Opening containment summary; Description\"},{\"claim\":\"Recognized credentials or network origins alone do not establish authorization for consequential actions; leaders should examine validation at that point.\",\"type\":\"editorial_inference\",\"source_ids\":[\"CF2024\",\"CIAD-2026-0046\"],\"scope\":\"Bounded comparison of trust mechanisms. CERT-In’s Recommended Actions support the payout-validation implication as a recommendation, not a measured result.\"}],\"limitations\":[\"Prepared from supplied material only; no independent retrieval or verification performed.\",\"Cloudflare’s retrospective account establishes relative sequence; supplied passages do not precisely date the later Atlassian access.\",\"CERT-In describes multiple campaigns; advisory publication dates are not transaction dates.\",\"The November CERT-In update belongs to the same reporting chain and is not used as another independent corroboration.\",\"The comparison establishes no shared attacker, identical attack sequence or universal control effectiveness.\"]}"
+      },
+      "attempt_id": "attempt-89e7b91c94ff43ef8db8d378ceb7fcaa",
+      "result_sha256": "f63c9fce44f55b485e02dfeb064913504d4463df92768a7f88dc8998a81ba314",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 14319,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 871,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "finished_at": "2026-11-05T03:02:36.157378+00:00"
+}
