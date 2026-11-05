@@ -81,4 +81,7 @@ We used narrow conversation/code evidence, not zero evidence. That supported wha
 
 Use one milestone receipt under `evidence/milestones/<milestone>/`, linked by the packet; no new registry or service. The packet names the latest receipt. Stale/missing proof is UNKNOWN/HOLD, never guessed. A clearly recorded unmerged development candidate may continue authorized source phases; it is not a main release. Merge/install only through existing admission, then refresh all affected states.
 
-**Next:** Phase4 exact-text human disposition. No further generation to chase90. Resume eligible expansion only after that decision; P2 product acceptance remains HOLD.
+## Independent voice-selection correction
+The previous two-identity PDF did not test writing voices. The bounded selector correction is implemented and locally qualified in [the selector subplan](WRITING_VOICE_SELECTOR_2026-11-04.md). Reuse it; do not recreate the V2 architecture. Nine generic craft-only projections are independent of author identity. The source of truth is config/writing_voices.json; historical labels are provenance/aliases, not imitation instructions.
+
+**Next:** Controlled writing-voice comparison using explicit writing_voice_id, fixing author/story/facts/audience/central argument, model and constraints. Preserve existing source bundle admission and all weak prior outcomes. Compare actual style behavior with human review; do not substitute195 green implementation tests for that result. P2 product/first-six/pilot/calibration/visual gates remain HOLD.

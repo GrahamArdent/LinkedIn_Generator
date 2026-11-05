@@ -4,9 +4,9 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Evidence-first machine phases GO; Phase4 substantive trial complete; human/content acceptance HOLD
+CURRENT_STAGE_OR_MILESTONE: Independent writing-voice selector machine GO; controlled voice comparison ready; P2 human/content acceptance HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
-AUTHORITY_VERSION_OR_COMMIT: default main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate production code f89e3d3 (full hash in git/freeze receipt); latest milestone receipt records tested source and live integration/runtime observations
+AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate production code436a165; exact source/config/test hashes and integration/runtime state in latest receipt
 BLOCKER_SCOPE: milestone
 SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, review, and reversible repo corrections can proceed
 BLOCKED_ACTION: paid image rendering, Replicate/render-provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/milestones/evidence-first-execution-20261104/phase4.json
-NEXT_ELIGIBLE_PHASE: Phase4 human exact-text disposition; no further generation before review
+CURRENT_MILESTONE_RECEIPT: evidence/writing-voice-selector-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: Controlled writing-voice comparison; freeze author/story/facts/audience/central argument and vary only writing_voice_id
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -325,3 +325,11 @@ Post-push integration readback: GitHub PR24 head16df725128a7ef8f91befa5cfc0556e2
 ## Current AI news voice sampler — 2026-11-04
 
 Operator requested a current reputable AI story, several versions per configured voice, and a PDF with linked contents. Prepared3 Graham and3 Ardent drafts using one existing native Codex bridge call per voice, based on CERT-In primary news/advisories. This is explicitly an exploratory sampler, not6 full engine runs, a paired pilot or human acceptance. No scorer used. Original prompts/outputs, source limitations, light presentation edits and actual execution receipts: evidence/ai-news-voice-sampler-20261104/. PDF validated9 pages/8 contents links/9 bookmarks; all pages visually reviewed. No production code/config/test change; prior171 local test result reused for unchanged code. No human keep, voice-example promotion, merge/install/render/publish permission inferred. P2 remains HOLD; next is review of retained writing.
+
+## Independent writing voice — 2026-11-04
+
+Operator authorized the recommended bounded selector repair. Recovered eight V2 presets plus existing Relatable Provocateur now have generic craft-only runtime definitions in config/writing_voices.json. Historical names remain provenance/aliases; biographies, audience fields, stock phrases and example experiences excluded. Optional writing_voice_id travels through the existing request/integration/engine/writer/judge/rewriters/baseline, independently of persona_key and author_pov. Omission retains previous defaults. Explicit selection takes precedence over inherited style and compatible-only examples; default Graham rhythm/contrast penalties cannot steer explicit styles back to Graham. House rules, factual guardrails,90 threshold, one guarded quality rewrite and exact selected/visual provenance remain.
+
+Expected/observed: all9 actual consumers have identical non-style context hash; unknown/malformed selection blocks before model call; style version/hash is visible even on terminal preflight; altered style cannot silently finish a retained comparison; completed historical show/reopen uses original records with0 additional calls. Final195 local tests PASS with original and review RED/GREEN logs retained. No native model call or API spending in this milestone. Fresh review and rulings: evidence/writing-voice-selector-20261104/REVIEW.md. Candidate-only launcher; no hosted CI, merge, install promotion, deployment or publishing.
+
+The previous PDF remains an identity/angle sampler, not controlled voice evidence. No new human keep, approved example or style-quality claim is inferred. Next controlled comparison fixes the author, subject, factual support, audience, objective/argument, model and constraints; only the explicit style changes. All26 AT and11 E2E definitions are retained.

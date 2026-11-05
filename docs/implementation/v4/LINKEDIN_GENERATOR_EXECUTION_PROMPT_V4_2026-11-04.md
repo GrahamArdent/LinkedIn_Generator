@@ -20,4 +20,5 @@ Continue through machine-solvable prerequisites, preserving all26 acceptance obj
 
 
 
-Current checkpoint: Phases1–3 machine GO after fresh-review corrections (171 tests PASS). Phase4 native trial completed: original73, one safe rewrite75, same-rubric baseline75; no selected candidate, visual deferred. Aggregate10 model executions/30 physical starts/73.838 CLI seconds, API0. Fresh show/duplicate generate add0 calls. Reuse exact evidence/evidence-first-20261104 outputs. Next is human factual/voice/usefulness/editorial/edit-effort review; do not regenerate or claim a pilot win. Packet points to current phase4 receipt.
+
+Current checkpoint: independent writing_voice_id selector and9 craft-only projections locally qualified (195 tests PASS). See WRITING_VOICE_SELECTOR_2026-11-04.md and evidence/writing-voice-selector-20261104/MILESTONE.json. Next controlled comparison varies only that selector; hold author, story, facts, audience, central argument and generation constraints fixed. Preserve defaults only when selection is omitted; reject unknown IDs. Historical named labels, biography and stock phrases are not generation instructions. No human voice-quality verdict or new post generation has occurred in this repair.

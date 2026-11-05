@@ -28,3 +28,5 @@ Phase0 reconciles the milestone; Phase1 freezes substantive evidence/claim suppo
 Every meaningful milestone records source, local CI, merge state, installed/runtime binding and reconciled docs. The packet names the latest receipt and next eligible phase. No automatic hosted CI, merge, installation promotion, rendering or publishing is authorized by status checks. Zero API spending/fallback; preserve Codex budgets, score90 and one guarded quality rewrite until explicitly changed.
 
 Latest results: evidence/evidence-first-20261104/EVALUATION.md and evidence/milestones/evidence-first-execution-20261104/phase4.json. Local171 PASS; actual original73/rewrite75/baseline75, no selected text/visual. No-call reopen proved. Next: human disposition of these retained texts.
+
+Writing-voice correction: WRITING_VOICE_SELECTOR_2026-11-04.md describes optional writing_voice_id and9 craft-only projections.195 local tests PASS; prompt invariance and replay checks in evidence/writing-voice-selector-20261104/MILESTONE.json. Previous PDF varied identities; the next controlled comparison fixes author/argument and varies only explicit style. Human style quality remains unproved.

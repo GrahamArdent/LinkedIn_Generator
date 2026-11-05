@@ -70,7 +70,7 @@ Manual subject, current evidence, voice choice
 
 ## 2. Critical-path sequence and acceptance dependency map
 
-**Current next work:** P0/P1, the local Codex connection and evidence-first machine repairs have receipts; do not restart them. Phase4 substantive trial is retained and awaits exact-text human disposition. P2 now proceeds through Phase0 checkpoint → Phase1 evidence brief → Phase2 source-specific writing → Phase3 scorer alignment → Phase4 substantive trial in [the current Codex P2 subplan](CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md). These are subphases, not a second product roadmap. Retain the earlier weak trial outputs and all26 AT/11 E2E obligations.
+**Current next work:** The independently selected writing-voice repair now has195-test machine qualification; run the controlled style comparison described in WRITING_VOICE_SELECTOR_2026-11-04.md. P0/P1, the local Codex connection and evidence-first machine repairs have receipts; do not restart them. Phase4 substantive trial is retained and awaits exact-text human disposition. P2 now proceeds through Phase0 checkpoint → Phase1 evidence brief → Phase2 source-specific writing → Phase3 scorer alignment → Phase4 substantive trial in [the current Codex P2 subplan](CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md). These are subphases, not a second product roadmap. Retain the earlier weak trial outputs and all26 AT/11 E2E obligations.
 
 ```text
 P0 authority/baseline
