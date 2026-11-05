@@ -1,0 +1,18 @@
+{
+  "local-pytest.log": "8a79c73db3caed21cddc71306d7a1495f882f1159052d33d34abe3ca238d36d0",
+  "verify.py": "2864a6e287bc53b6b2660c98fc2deb2d22862338ab2959ca538676160303909e",
+  "promote.py": "a6825d1a01f43d99bdc4337fd568ff8c670f61a7867c8e6372c5b93f96cbefa6",
+  "PROMOTION_INTENT.json": "4ce26fee5839c3205eb2405a02d2a2de26b2afc720ebd718d5eb4094e3342508",
+  "INSTALLATION.json": "a1f9b016484f7aca8e3246f1ef71372482e293b8073e0124ad1ac39348556dfb",
+  "promotion.log": "2dcdb97c8e1f1ad90fbf03a451b2e9e3ab0b1e083a63568b48192952555ee5df",
+  "local-pytest-exit.json": "141b2fb25cfd34c958bd4e980c3e8301bb24e23d309c8d77248cc9a0d2371498",
+  "red-numeric.log": "2a656d462d17ab8ec4670b05a668a43b4d3d773a402cd85a9d07a255c1d9bd2c",
+  "REVIEW.json": "12ee70e3a37c5d228bfb6e83e01fe411fd839a98aa11c8e8fe0a6d5dc7f1df50",
+  "red-handoff-exit.json": "7ba10b0c87dbc654b4196fd2fdb8520aec1bcae12b684b886e5922ad43203a17",
+  "MILESTONE.json": "8ec1d44b577dd3044ef0589eec0faf1f9c194cf86f000f5f7cce957ba1292993",
+  "red-handoff.log": "62c79486829d0daae841ba401963565a4692323330ead4b741a9d64fb3153496",
+  "installed-pytest.log": "966228e531ba52e1e9ccb3a4f280dff271d96f574e523491af1cf8e505b95d85",
+  "MERGE.json": "3b0e9e8a60ad1a6fa07e95647972b447b6495eaff5e55624096e123371addf9b",
+  "REPORT.md": "e02e4330b5d7db8c0088568e1bb123a91b805b8793cf38c9d6bee494fe2d8cba",
+  "red-numeric-exit.json": "7ba10b0c87dbc654b4196fd2fdb8520aec1bcae12b684b886e5922ad43203a17"
+}

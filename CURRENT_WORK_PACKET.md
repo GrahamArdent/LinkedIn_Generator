@@ -4,9 +4,9 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Narrative handoff correction verified; two telling comparison retained; human quality and strict output parity HOLD
+CURRENT_STAGE_OR_MILESTONE: Reviewed headless release merged and installed; P2 writing-quality evaluation continues
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
-AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; tested candidate62654ff; latest receipt evidence/narrative-handoff-repair-20261105/MILESTONE.json
+AUTHORITY_VERSION_OR_COMMIT: product merge and installed revision0c099d70fc807044355af089d62d1bef049cbb95; receipt evidence/release-integration-20261105/MILESTONE.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
 SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, review, and reversible repo corrections can proceed
 BLOCKED_ACTION: paid image rendering, Replicate/render-provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/source-first-planning-20261104/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: Focused numeric-guard punctuation regression repair and concise editorial selection
+CURRENT_MILESTONE_RECEIPT: evidence/release-integration-20261105/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: Continue P2 human/content evaluation using the installed headless release; no equal-post-length requirement
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -383,3 +383,9 @@ The sole current findings narrative is evidence/narrative-handoff-repair-2026110
 ## Authorized integration checkpoint — November5,2026
 
 Owner now explicitly authorizes review, concrete repairs, merge, launcher promotion with rollback and installed smoke verification. This supersedes earlier no-merge/no-install gates for this release only; hosted CI, paid API and publishing remain unrequested. The complete pending implementation was reviewed against maina714d1e. JSON request→engine→evaluator/baseline narrative propagation and numeric punctuation guard defects were reproduced and fixed.230 local tests PASS; source candidateba4af210. Release review/evidence: evidence/release-integration-20261105/REVIEW.json and local-pytest.log. Merge and installation are PENDING until exact receipts are recorded. Different draft lengths are descriptive, not a release failure or equal-length requirement. Human post-quality acceptance remains separate from technical release readiness.
+
+## Current merged and installed release — November5,2026
+
+GO: PR24 merged exact reviewed head00461009 at0c099d70fc807044355af089d62d1bef049cbb95; the same merged revision is installed through /home/graham/.local/bin/linkedin-codex at /home/graham/work/linkedin-generator-releases/0c099d70fc807044355af089d62d1bef049cbb95. Full pending review and concrete handoff/numeric-guard corrections are retained in evidence/release-integration-20261105/REVIEW.json; REPORT.md explains outcomes and MILESTONE.json owns the current state. Local230 PASS and installed230 PASS. Installed imports, ChatGPT login/pinned-client readiness, historical-result reopening and rollback-target smoke checks PASS. Prior93a9ee3 is frozen with a rollback launcher; exact command in INSTALLATION.json.109 native attempt records/hashes unchanged;0 new model calls, API0, no hosted CI or publishing. Final receipt-only main changes may advance repository HEAD; installed product hashes remain those of0c099d7.
+
+Different draft lengths are not a defect or a technical merge/install gate. Human writing-quality evaluation, source fidelity of individual posts, calibration, first-six/baseline/visual requirements and publication approval remain open. These are content/product gates, not a reversal of this completed technical release. All26 AT/11 E2E preserved. Earlier candidate-only/no-merge/no-install statements are historical and superseded for this authorized release. Continue P2 using the installed headless engine; do not infer post approval, a winning workflow or a newly implemented UI/publisher.

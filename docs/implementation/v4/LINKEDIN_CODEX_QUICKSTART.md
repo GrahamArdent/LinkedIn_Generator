@@ -2,8 +2,8 @@
 
 Ready on **execution-node**, account graham. Uses ChatGPT subscription authentication; no API key or paid API fallback.
 
-- LinkedIn checkout: `/home/graham/work/linkedin-codex-trial-20261104`
-- LinkedIn Python: `/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python`
+- Installed checkout: `/home/graham/work/linkedin-generator-releases/0c099d70fc807044355af089d62d1bef049cbb95` (detached merged revision0c099d7; development checkout and old evidence retained separately)
+- LinkedIn Python: `/home/graham/work/linkedin-generator-releases/0c099d70fc807044355af089d62d1bef049cbb95/.venv/bin/python` (reuses the qualified dependency environment)
 - Reused Resume Python: `/home/graham/work/resume-v6-smoke-venv/bin/python`
 - Pinned Resume client snapshot: `/home/graham/work/linkedin-resume-client-20261104`, source `a609c6d344037152c24cb81baabdb0fd9a6e9b00`
 - Codex: `/usr/local/bin/codex`, qualified CLI0.158.0, ChatGPT login, model `gpt-6-astra`, reasoning `medium`
@@ -26,7 +26,7 @@ For an explicitly admitted new subject/batch:
 Run offline checks:
 
 ```bash
-cd /home/graham/work/linkedin-codex-trial-20261104
+cd /home/graham/work/linkedin-generator-releases/0c099d70fc807044355af089d62d1bef049cbb95
 .venv/bin/python -m pytest -q
 ```
 
@@ -47,3 +47,7 @@ Add optional writing_voice_id to the request JSON. Canonical IDs are concise_cha
 ## Narrative handoff through normal requests
 
 Optional editorial_handoff now travels through LinkedInContentRequest, generate_content, the writer/evaluator and the simple comparison baseline. Use the validated version1 meaning/narrative shape from src/app/editorial_handoff.py; an optional writing_plan may annotate delivery. Unsupported or malformed shapes fail at request admission. Omission preserves existing behavior. Literal and symbolic are the currently supported forms; no equal post-word-count requirement is imposed. This release is being promoted through the same linkedin-codex launcher with fixed source revisions and rollback; the current installed receipt is maintained in CURRENT_WORK_PACKET.md.
+
+## Installed release and rollback
+
+Product merge and installed revision:0c099d70fc807044355af089d62d1bef049cbb95, PR24. Source, imports, full230-test suite and saved-result reopening verified. Canonical current receipt: evidence/release-integration-20261105/INSTALLATION.json on main; host copy: /home/graham/work/linkedin-generator-releases/INSTALLATION.json. Prior93a9ee3 and original launcher are preserved. The rollback target passed its saved-result smoke check without activation. Rollback command: `install -m 755 /home/graham/work/linkedin-generator-releases/rollback-20261105/rollback-launcher.sh /home/graham/.local/bin/linkedin-codex`. No new model generation, API spend, hosted CI or publication occurred during promotion. A later receipt-only main commit does not require reinstalling identical product code.
