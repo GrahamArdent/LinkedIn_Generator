@@ -416,3 +416,13 @@ Source correction is not merged or installed. Runtime0c099d7 remains unchanged. 
 promote this coherent candidate through the existing release admission, then one installed trial
 and exact-text human review. No paid API, hosted CI, deployment or publishing. Human calibration,
 six-subject pilot, visual usefulness, UI and publishing milestones remain open; all26 AT/11 E2E retained.
+
+
+## Current completion routing — November5,2026
+The operative completion game plan is docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md,
+M1–M5: exact candidate qualification → admitted merge/release with rollback → one installed package/control
+and zero-call reopening → human review/calibration → controlled P2 completion, then existing P3–P7 gates.
+The current execution prompt routes directly to that sequence. Historical next-action appendices are
+not instructions to restart. Source/evidence5dccb896 remains unmerged/uninstalled; installed0c099d7 unchanged.
+This documentation update grants no new CI, merge/install, provider-spending, rendering or publishing authority.
+Plan/prompt cross-check receipt: evidence/plan-reconciliation-20261105/RESULTS.json.

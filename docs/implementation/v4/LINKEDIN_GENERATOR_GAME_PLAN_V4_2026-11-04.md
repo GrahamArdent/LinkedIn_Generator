@@ -1,5 +1,7 @@
 # LinkedIn Generator — Verified-Outcomes Implementation Game Plan (v4)
 
+> Current completion sequence: CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md, M1–M5, owns remaining candidate review/release, installed trial, human calibration and P2 completion. Execute through LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md. Earlier dated checkpoint/next-action sections below are historical; do not restart them. Preserve this roadmap's P3–P7 dependencies and all26 AT/11 E2E definitions.
+
 > Current owner-adopted correction — November 5, 2026: `essential-checks-v1` replaces numeric90 admission in the current source candidate. All four essentials must pass with reasons: factual integrity, reader relevance, practical value and argument/voice fidelity. Scores are advisory; missing evidence pauses; failed essentials allow at most one guarded targeted rewrite; unavailable evaluation fails closed. Passing means human-review eligibility only. Evidence: `evidence/essential-review-gate-20261105/REPORT.md` and `MILESTONE.json`. Installed release0c099d7 remains on its historical90 policy until separately promoted. This supersedes older90 instructions below for new source runs; historical receipts remain immutable. All26 AT/11 E2E and human/visual/baseline/publishing obligations remain.
 
 
