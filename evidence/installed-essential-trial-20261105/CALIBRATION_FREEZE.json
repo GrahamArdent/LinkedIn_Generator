@@ -1,0 +1,129 @@
+{
+  "status": "FROZEN_UNLABELED; no rubric adjustment or calibration result claimed",
+  "model_calls": 0,
+  "partition_rule": "All variants of an underlying subject remain in one partition; future recognized-access/security variants also excluded from holdout",
+  "examples": [
+    {
+      "subject_group": "which-draft-is-final",
+      "partition": "calibration",
+      "original_record": "evidence/codex-first-20261104/trial/trial.json",
+      "request_id": "lig-codex-selected-revision-20261104",
+      "candidate_kind": "original",
+      "content_sha256": "4998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04",
+      "body": "Two drafts. One workflow. Which version is final?\n\nA finding in a LinkedIn post generator made that question surprisingly concrete: it could return the original draft as the main text while preparing a visual plan from a revised version.\n\nThat left the next step to work out which draft counted.\n\nThe mismatch was verified in source code and automated tests. There’s no evidence here of an incorrectly published post. But the ambiguity matters: checking the words and checking the visual separately won’t tell you whether they belong together.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy takeaway: choosing the final version is part of the work. Every step that follows needs to use that choice.\n\nA reliable handoff shouldn’t ask the next person, or the next tool, to guess what “final” means.",
+      "human_label": null
+    },
+    {
+      "subject_group": "which-draft-is-final",
+      "partition": "calibration",
+      "original_record": "evidence/codex-first-20261104/trial/trial.json",
+      "request_id": "lig-codex-selected-revision-20261104",
+      "candidate_kind": "rewrite",
+      "content_sha256": "32246a55d85a100a60ad28eaefe9eae4cfb0ddbcfec90492602d58720b88bac1",
+      "body": "The words were revised. The handoff was still ambiguous.\n\nA LinkedIn post generator could return its original draft as the main text while preparing a plan for the accompanying visual from a revised draft.\n\nTwo parts of one output could point to different versions. The next person, or tool, had to work out which one counted.\n\nThis was verified in source code and automated tests. It is not evidence of an incorrectly published post.\n\nBut it exposes a gap in how we check generated content: the words and the visual plan can each pass a review without belonging together. Quality checks on individual parts don't establish that the handoff is coherent.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy practical takeaway: before accepting a handoff, check which draft is selected, whether that exact draft is returned as the main text, and whether the accompanying visual plan is tied to it. If the words change, check the connection again.\n\n“Final” needs to be a choice the workflow carries forward, not a guess it passes along.",
+      "human_label": null
+    },
+    {
+      "subject_group": "which-draft-is-final",
+      "partition": "calibration",
+      "original_record": "evidence/codex-first-20261104/trial/trial.json",
+      "request_id": "lig-codex-selected-revision-20261104",
+      "candidate_kind": "baseline",
+      "content_sha256": "85987b5239e64bdd7794ded69ad98c4ca8779dd52fe0650c685d0e141eb49105",
+      "body": "Which draft is final? The workflow should know.\n\nA verified finding in the LinkedIn generator showed how that answer could become ambiguous. The main output could keep the original draft while the visual plan used a qualified rewrite.\n\nBoth versions were available. But someone using the output had to work out which one counted.\n\nThe repair made the choice explicit: identify the selected draft and tie the visual to a fingerprint of that draft’s exact text. That gives the next step something precise to check.\n\nThis was verified in source and automated tests. It wasn’t evidence of a wrong post being published.\n\nMy takeaway: improving a draft and selecting a draft are separate jobs. A rewrite can be better without the rest of the workflow knowing it is final.\n\nIf you’re building or using AI tools at work, check the handoff. Can the next step identify the chosen version and verify that its supporting material belongs to it?\n\n“Final” needs to be a shared decision, not a local opinion.\n\n#AI #ContentWorkflow #Automation",
+      "human_label": null
+    },
+    {
+      "subject_group": "mfa-helpdesk-recovery",
+      "partition": "calibration",
+      "original_record": "evidence/evidence-first-20261104/trial/trial.json",
+      "request_id": "lig-evidence-first-mfa-recovery-20261104",
+      "candidate_kind": "original",
+      "content_sha256": "a3454852cdbe14fc96e9370d5d94ff14df4f3e6aba1cf3f029978ed1b95c916e",
+      "body": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nI’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection.",
+      "human_label": null
+    },
+    {
+      "subject_group": "mfa-helpdesk-recovery",
+      "partition": "calibration",
+      "original_record": "evidence/evidence-first-20261104/trial/trial.json",
+      "request_id": "lig-evidence-first-mfa-recovery-20261104",
+      "candidate_kind": "rewrite",
+      "content_sha256": "0ce3c656025feba4f3688a4c67348106c6e6ef8885b6151020b7aaf0188b5939",
+      "body": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe distinction matters: convincing someone to reset access is different from defeating the technology protecting it. The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations.\n\nI’d include one question in an MFA review: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nThat’s a decision about who gets trusted as the account owner. It deserves the same scrutiny as sign-in.",
+      "human_label": null
+    },
+    {
+      "subject_group": "mfa-helpdesk-recovery",
+      "partition": "calibration",
+      "original_record": "evidence/evidence-first-20261104/trial/trial.json",
+      "request_id": "lig-evidence-first-mfa-recovery-20261104",
+      "candidate_kind": "baseline",
+      "content_sha256": "4c34af21eb7063aa06dbbb9f51115cb2a2888c377d1db6b2279cedaa2c8fdb69",
+      "body": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe mechanism matters: attackers persuaded someone to change access through recovery. They did not need to break the cryptography.\n\nAnd the same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation still belongs in the conversation.\n\nMy takeaway: an MFA review should follow the account through recovery, too. Checking the sign-in screen alone can miss how someone gets trusted again when their normal proof is unavailable.\n\nFor IT and business leaders, I’d bring one question to the review:\n\nWho can authorize a recovery reset, what independent evidence must they require, and what happens when the person requesting it cannot provide the normal proof?\n\nThe answer tells you something an “MFA enabled” checkbox cannot.\n\n#Cybersecurity #IdentitySecurity #MFA",
+      "human_label": null
+    },
+    {
+      "subject_group": "ai-time-to-usable-completion",
+      "partition": "holdout",
+      "original_record": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+      "request_id": "six-blocks-ai-20261105",
+      "candidate_kind": "original",
+      "content_sha256": "79575fb40d46baf3f6fcd0381a35643cfa9581c93b24227b3e5289051b4034a0",
+      "body": "The draft arrives in seconds. Is the work done, or just ready for someone to check?\n\nIf you approve work, that distinction matters more than how quickly the text appears.\n\nA Stanford-published study of 5,172 customer-support agents found that AI assistance increased issues resolved per hour by 15% on average. That measures resolved issues, a useful step beyond counting output.\n\nA different setting produced a different result. In METR’s randomized study, 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools. These were experienced contributors working on familiar software projects.\n\nDifferent workers, tasks and tools. The findings are not a matched comparison, and neither establishes checking as the cause of the slowdown.\n\nMy takeaway: a faster first draft is a promising start. It is not yet a time saving.\n\nFor one repeated task, I’d compare the time to usable completion with and without AI. Set the same standard for approval. Include the time spent giving instructions, checking the result and making corrections, including the approver’s time.\n\nThat is a measurement I’m proposing, not a result these studies reported. The practical test is whether AI reduces the total work needed to reach something you can use.\n\nKeep the evidence boundary clear: the support finding concerns one deployment, and METR’s early-2025 result is historical. Its February 2026 follow-up had selection and measurement biases, so it does not supply a reliable estimate of today’s effect.\n\nI’d judge the saving at the point of approval. The first output can arrive early while the work still finishes late.",
+      "human_label": null
+    },
+    {
+      "subject_group": "ai-time-to-usable-completion",
+      "partition": "holdout",
+      "original_record": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+      "request_id": "six-blocks-ai-20261105",
+      "candidate_kind": "rewrite",
+      "content_sha256": "4065dd44674a469ea1df987ce039762f0f55c1488d4d6e64e5b25866bab3044c",
+      "body": "The draft arrives in seconds. Approval still takes work.\n\nIf you approve work, the useful measure is how long it takes to reach something you can use.\n\nA Stanford-published study of 5,172 customer-support agents reported a 15% average increase in issues resolved per hour with AI assistance. Resolved issues: a stronger measure than output produced.\n\nIn METR’s randomized study, 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools.\n\nDifferent workers, tasks and tools, not a matched comparison. The support finding concerns one deployment; METR’s result is historical, not an estimate of today’s performance. Neither establishes checking as the cause of the slowdown.\n\nMy takeaway: before calling a faster draft a time saving, count the work needed to approve it. The approver’s time belongs in the total too.\n\nFor one repeated task, I’d compare time to usable completion with and without AI, using the same approval standard. Count time spent giving instructions, checking and correcting, whoever does it.\n\nThat’s a test I’m proposing, not a finding from these studies. It would help distinguish work removed from work passed to the next person.\n\nI’d judge the saving at approval. That’s where a quick draft has to become usable work.",
+      "human_label": null
+    },
+    {
+      "subject_group": "ai-time-to-usable-completion",
+      "partition": "holdout",
+      "original_record": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+      "request_id": "six-blocks-ai-20261105",
+      "candidate_kind": "baseline",
+      "content_sha256": "3f9defb76ac1361d3b50d72c11f217f194afa05cfac473af28d95789cb1bc9f4",
+      "body": "Is the work done when AI produces something, or when you can actually use it?\n\nIf you approve other people’s work, that gap matters. A quick draft can still leave you with a long job.\n\nThe Stanford-published study of 5,172 customer-support agents reports an average 15% increase in issues resolved per hour with AI assistance. That measures resolved issues, which is closer to the finish line than output appearing.\n\nIn a different setting, METR’s randomized study found that 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools.\n\nDifferent workers, tasks and tools. These are not a matched comparison, and the findings do not establish checking as the cause of the slowdown.\n\nMy takeaway: measure the work through to usable completion.\n\nPick one repeated task. Define what makes the result ready to use, then compare similar examples with and without AI. Count the time spent producing, checking and correcting the work, including the reviewer’s time. Apply the same quality standard to both.\n\nThat is a measurement I’d propose, not a result these studies reported.\n\nKeep the evidence in its lane: the support finding concerns one deployment. METR’s early-2025 result is historical; selection and measurement biases mean its February 2026 follow-up does not provide a reliable current estimate.\n\nFor your next approval decision, ask how much work remains after the output arrives.\n\n#AI #Productivity #Management",
+      "human_label": null
+    },
+    {
+      "subject_group": "recognized-access-vs-specific-permission",
+      "partition": "calibration",
+      "original_record": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+      "request_id": "six-blocks-security-20261105",
+      "candidate_kind": "original",
+      "content_sha256": "d74144dbd62dd2d06c22e835d72083211a598c4f27785b50ac2312310c5b120c",
+      "body": "An office key lets you open the door. It doesn’t give you permission to take the equipment home.\n\nThat distinction matters when approving work, too. A familiar account can make a request look legitimate before anyone checks what it is asking to do.\n\nCloudflare’s February 2024 incident account gives the key part a concrete meaning. It reports that account access details stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to enter its Atlassian work systems.\n\nThe lock still accepted the key.\n\nA separate CERT-In report from October 2026 shows why permission for the particular action deserves its own check. Attackers used stolen access details to send fund-transfer requests directly between computer systems, from the victims’ own recognized company systems. Those requests bypassed application checks and moved money into accounts used to receive the stolen funds.\n\nRecognized access. Unauthorized payments.\n\nThese are different reports about different systems. They illustrate the distinction between accepted access and permitted action; they don’t prove that any particular safeguard would have prevented either incident. And the key is only an illustration: digital access details can be copied and used remotely. No equipment theft is being alleged at Cloudflare.\n\nMy practical takeaway is to inspect one sensitive request you’re responsible for approving. Identify the evidence that permits that specific action: the approved record, its scope, the intended recipient and any applicable amount limit.\n\nThen check whether that evidence must actually be verified before the action happens.\n\nA familiar account or company tells you something about where a request appears to come from. Approval needs evidence about what it is allowed to do.",
+      "human_label": null
+    },
+    {
+      "subject_group": "recognized-access-vs-specific-permission",
+      "partition": "calibration",
+      "original_record": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+      "request_id": "six-blocks-security-20261105",
+      "candidate_kind": "rewrite",
+      "content_sha256": "fee70dedc82a3c8f484e9bb6f54950c023d049860e9fd463bd3b971788b071f1",
+      "body": "An office key lets you open the door. It doesn’t give you permission to take the equipment home.\n\nA familiar account can create the same confusion: access gets mistaken for approval.\n\nCloudflare reports that account access details stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to access its Atlassian work systems.\n\nThe lock still accepted the key.\n\nA separate CERT-In report describes attackers using stolen access details to send fund-transfer requests directly between computers, from victims’ own recognized company systems. They bypassed application checks and transferred money into accounts used to receive stolen funds.\n\nEven the familiar company systems were part of the route in.\n\nThese different incidents illustrate the gap between accepted access and permitted action. They don’t prove that a particular safeguard would have prevented either incident. The office key is an analogy for access, not a description of what was stolen.\n\nFor me, the practical test is whether approval is required for the action to happen, or merely expected along the way.\n\nTake one sensitive request you’re responsible for approving. Identify the approved record, what it permits, the intended recipient and any amount limit.\n\nThen ask the person responsible for the process to show what happens when that evidence is missing or doesn’t match the request. Does the action stop before it happens? Can another route skip the check?\n\nA record of approval is useful. Evidence that the action cannot proceed without that approval answers the harder question.\n\nRecognizing where a request appears to come from is only part of the decision. You still need to establish what this particular request is allowed to do.",
+      "human_label": null
+    },
+    {
+      "subject_group": "recognized-access-vs-specific-permission",
+      "partition": "calibration",
+      "original_record": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+      "request_id": "six-blocks-security-20261105",
+      "candidate_kind": "baseline",
+      "content_sha256": "0d03d5344cca00bfcdfca32e0e83425a4886e7aaab7f6de036d73365b66dd34f",
+      "body": "An office key can open the door. It cannot give you permission to take the equipment.\n\nThat distinction matters when approving work, too. A familiar account or company system is only part of the evidence.\n\nCloudflare reported that account access credentials stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to enter its Atlassian work environment.\n\nThe digital key still worked. That did not make the person using it entitled to enter.\n\nA separate CERT-In advisory from October 2026 shows the distinction at the payment stage. Attackers used stolen access credentials to send direct computer-to-computer payment requests from the victims’ own recognized company systems. They bypassed application checks and moved funds to accounts controlled by attackers.\n\nThe requests came through accepted systems. The payments still lacked permission.\n\nI’d bring that distinction into one practical review: choose a sensitive request you approve and trace what proves this particular action is permitted.\n\nCan you connect it to an approved record covering the action, recipient and amount, where relevant? What stops it proceeding if that evidence is missing?\n\n“Those are our account details” or “it came from our systems” leaves that question unanswered.\n\nThe office key is only an illustration. Digital access details can be copied and used remotely; a physical lock cannot capture the checks needed for a payment. These separate reports also do not prove that any particular safeguard would have prevented the incidents.\n\nThey do give managers a useful distinction to inspect: evidence that access works, and evidence that the requested action has approval.\n\n#Leadership #RiskManagement #CyberSecurity",
+      "human_label": null
+    }
+  ],
+  "human_labels_available": 0,
+  "human_review": "pending"
+}

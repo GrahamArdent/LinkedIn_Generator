@@ -7,7 +7,7 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
 ## Current truth
 - Verified candidate: branch fix/essential-review-gate-20261105, product commit d3ee2a36d037323c080edec67b53a521bcceb75c;
   evidence follow-up5dccb89689222adae5c83efd0c5fd207a0c3370b.251 local and251 clean-archive tests passed.
-- Installed release remains0c099d70fc807044355af089d62d1bef049cbb95, using its historical90 gate.
+- Installed release is2c2daf39398a993b698d1f225008a06217b14a7c, using essential-checks-v1. Previous0c099d7 remains preserved for rollback.
 - The candidate's essential-checks-v1 replaces numeric admission with four independent verdicts and reasons:
   factual integrity, reader relevance, practical value, argument/voice fidelity.
   All must pass. Scores are advisory; passing means human review eligibility, never approval.
@@ -19,11 +19,18 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
   the audit distinguishes fixture checks, historical observations and missing human/live proof.
 
 ## Current milestone status
-M1 GO: independent review and fresh251-test suite passed at reviewed head d6748d1; source/config/tests
-match prior clean-archive receipt. Evidence: evidence/m1-qualification-20261105/MILESTONE.json.
-M2 HOLD: exact-candidate merge and fixed-release installation await owner admission. Installed0c099d7
-was verified by launcher/imports and historical zero-call reopen. M3–M5 remain open. No generation
-or CI occurred. One non-blocking status-reporting issue is deferred in REVIEW.json.
+M1 GO: independent review and251 local tests; reviewed source/config/test manifest unchanged.
+M2 GO: PR29 merged at2c2daf3; fixed-release install,251 installed tests, hashes/imports/auth,
+rollback0c099d7 and no-call historical reopen verified. Operator's continued operational approval
+is recorded in evidence/release-essential-20261105/AUTHORIZATION.json.
+M3 technical package GO: one installed engine/control pair completed with four essentials passing,
+no rewrite, exact selected/visual identity, equal baseline context and zero-call reopening.
+Observed6 subscription executions/18 CLI launches/97.171 active seconds/API0 within12/900 cap.
+M4 HOLD for real human judgments; M5 waits for initial disposition. Twelve retained calibration
+examples frozen by subject; labels pending. All26 AT/11 E2E retained, no six-subject acceptance claimed.
+Current receipts: evidence/release-essential-20261105/INSTALLATION.json and
+ evidence/installed-essential-trial-20261105/MILESTONE.json. Blind review: trial/review.md in that trial packet.
+Hosted CI not run because no active workflow; no renderer/publication invoked.
 
 ## Document ownership and just-in-time execution
 - CURRENT_WORK_PACKET.md owns the current checkpoint and evidence pointer.

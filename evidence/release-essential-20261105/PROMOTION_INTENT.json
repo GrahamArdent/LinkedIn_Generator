@@ -1,0 +1,10 @@
+{
+  "merged": "2c2daf39398a993b698d1f225008a06217b14a7c",
+  "previous": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "new_release": "/home/graham/work/linkedin-generator-releases/2c2daf39398a993b698d1f225008a06217b14a7c",
+  "rollback_release": "/home/graham/work/linkedin-generator-releases/0c099d70fc807044355af089d62d1bef049cbb95",
+  "launcher": "/home/graham/.local/bin/linkedin-codex",
+  "prior_launcher_sha256": "1000cbd6ce072864f64c9c0113894ea417b3ec1f18b2b0e5dee2e6ea99a8f36d",
+  "new_launcher_sha256": "c3fc10be607e2baf9cdce2fe9832503a05694291ed358b930fda619f95bb027d",
+  "rollback_launcher": "/home/graham/work/linkedin-generator-releases/rollback-essential-20261105/rollback-launcher.sh"
+}

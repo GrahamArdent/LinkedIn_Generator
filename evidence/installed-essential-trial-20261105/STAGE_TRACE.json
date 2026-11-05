@@ -1,0 +1,176 @@
+[
+  {
+    "order": 1,
+    "attempt_id": "attempt-99ccbb31873a4023b182cccaa2f114a7",
+    "path": "evidence/installed-essential-trial-20261105/trial/codex-attempts/installed-essential-security-20261105/linkedin/4591756061384e482e1a72f45dd56d49c4ed51760c779cd5eaf23169976267a6/attempt.json",
+    "request_sha256": "4591756061384e482e1a72f45dd56d49c4ed51760c779cd5eaf23169976267a6",
+    "result_sha256": "a1c1eba852bff724b7c93569562b3501bf1695519d64d7d4f3e0f372050b08fc",
+    "request_keys": [
+      "config",
+      "contract",
+      "disabled",
+      "executable_sha256",
+      "instruction",
+      "model",
+      "reasoning",
+      "request",
+      "schema"
+    ],
+    "task": "You are a strict LinkedIn content-opportunity and evidence evaluator. Decide whether a real professional topic has enough value and grounded specificity to justify drafting a post. Do not write the post. Do not predict virality or invent evidence. Score each named dimension from 0 (absent) to 5 (exceptional) using only the supplied topic, audience, objective, and evidence. Identify the single strongest supplied evidence item by zero-based index. If the topic is promising but evidence is too generic, return one concise question that would elicit the missing concrete detail. Return JSON only.",
+    "usage": {
+      "input_tokens": 9641,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 129,
+      "reasoning_output_tokens": 0
+    },
+    "cost": null,
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  },
+  {
+    "order": 2,
+    "attempt_id": "attempt-84ef23f29a004c17bb69fb49eb8364c0",
+    "path": "evidence/installed-essential-trial-20261105/trial/codex-attempts/installed-essential-security-20261105/linkedin/31493fe3c513ac9b2ad4cf18cce1a482f71cf2107158da341fda9781994f658f/attempt.json",
+    "request_sha256": "31493fe3c513ac9b2ad4cf18cce1a482f71cf2107158da341fda9781994f658f",
+    "result_sha256": "7a75022e095bfd4cb4fc730e0fc59b7001b8b11e5f510b06521dda675b594fcb",
+    "request_keys": [
+      "config",
+      "contract",
+      "disabled",
+      "executable_sha256",
+      "instruction",
+      "model",
+      "reasoning",
+      "request",
+      "schema"
+    ],
+    "task": "Write a LinkedIn post as graham for Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed..\nThe selected Writing Voice in Persona Profile is the sole rhetorical style: use its craft traits for tone, sentence rhythm, structure and imagery. Do not imitate a named author or borrow biography, audience, anecdotes or signature phrases. Numeric sentence lengths are approximate guidance, never quotas.\nKeep author identity and POV separate from style. For individual POV, use I/me/my for the author's own views; do not invent shared actions or use unjustified we/us/our.\nWhen editorial_context.handoff is supplied, use its meaning as the argument and preserve its narrative form, beat order, symbol mapping and boundary. The writing_plan annotates delivery; it cannot replace that selection. Imagery is illustration, never evidence. Express facts and inference in your own words; the brief does not lock sentences.\nOtherwise, express the supplied editorial objective in your own words. It fixes the argument, not an opening phrase, paragraph sequence or ending. Follow the Content Goal and write for a smart professional without assuming specialist or internal project knowledge. Translate necessary technical terms into plain language.\nUse Allowed Sources as the factual evidence. Preserve editorial_context.source_bundle claim types, designated central anchor, limitations and counterevidence when present. Faithfully paraphrase the anchor without embellishing it; distinguish fact from inference and opinion. Omit unsupported claims or clearly frame interpretation as such.\nNever invent statistics, quotations, citations, events, personal experiences, client claims or outcomes. A stylistic instruction cannot authorize factual invention. Approved voice examples guide compatible craft only; do not copy their distinctive phrases, anecdotes or facts.\nAvoid stock LinkedIn phrasing, empty inspiration, manufactured drama and engagement bait. Do not force a question, sales CTA or anecdote. Respect house boundaries, including no em dashes. Keep links out of the post body. Return only the finished post.\n",
+    "usage": {
+      "input_tokens": 12517,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 350,
+      "reasoning_output_tokens": 0
+    },
+    "cost": null,
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  },
+  {
+    "order": 3,
+    "attempt_id": "attempt-0ccf248936de473f8e192836d43b2e47",
+    "path": "evidence/installed-essential-trial-20261105/trial/codex-attempts/installed-essential-security-20261105/linkedin/ab382e567f501d34b7d1fea6d60f3fc27680c8263e364ab59f6282cad7d556b9/attempt.json",
+    "request_sha256": "ab382e567f501d34b7d1fea6d60f3fc27680c8263e364ab59f6282cad7d556b9",
+    "result_sha256": "8e515494c8462dca33e75962b0c6243815836cc054b4522c03c6967cff5e03ac",
+    "request_keys": [
+      "config",
+      "contract",
+      "disabled",
+      "executable_sha256",
+      "instruction",
+      "model",
+      "reasoning",
+      "request",
+      "schema"
+    ],
+    "task": "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 (absent) to 5 (exceptional) on each named dimension. Judge whether the post is understandable, useful, specific, distinctive, interesting, shareable, and authentic. Scores are advisory and never determine admission. Independently assess four essential checks with pass, revise or needs_evidence and a concrete reason. Passing permits human review only, never publication. Failures must identify an exact defect or claim, not merely ordinary novelty, restrained emotion, length or low sharing potential. Do not infer essential verdicts from numeric ratings. Novelty is relative to the intended reader. Do not reward clickbait, engagement bait, unsupported specificity, or generic LinkedIn polish. Use the supplied evidence only to judge whether concrete details are grounded. This is a publish-readiness heuristic, not a promise of virality. These ratings are not calibrated to the author's human judgments or engagement outcomes. Apply the rating anchors to each dimension; never inflate scores to meet a threshold. Use the same brief and voice context as the writer. If writing_voice is present, assess voice fit against its selected style_traits over default persona style; approved examples supply compatible details only. Preserve factual and author-POV boundaries. Identify the largest fixable defect first; missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only.",
+    "usage": {
+      "input_tokens": 13308,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 378,
+      "reasoning_output_tokens": 0
+    },
+    "cost": null,
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  },
+  {
+    "order": 4,
+    "attempt_id": "attempt-33f542cbba194f1f934999475a365530",
+    "path": "evidence/installed-essential-trial-20261105/trial/codex-attempts/installed-essential-security-20261105/linkedin/0ebffa4c147836e0556530754a5c056e31962ae6a1c52f66d96ae01fa1d1a840/attempt.json",
+    "request_sha256": "0ebffa4c147836e0556530754a5c056e31962ae6a1c52f66d96ae01fa1d1a840",
+    "result_sha256": "67e3ffdf116d096f2a91c18081f30476e72221ffc3d9c3f4e1bc7041ab1513dc",
+    "request_keys": [
+      "config",
+      "contract",
+      "disabled",
+      "executable_sha256",
+      "instruction",
+      "model",
+      "reasoning",
+      "request",
+      "schema"
+    ],
+    "task": "You are a strict LinkedIn visual editor. Create one visual companion plan for a finished, publish-ready post. Do not render an image. Choose single_image or carousel based on whether the idea is best understood as one strong visual or a short sequence. Follow the supplied visual style policy. The visual should add meaning, not merely restate the post. Do not invent facts, metrics, quotations, screenshots, UI, logos, or claims. Keep typography separate from AI image generation: overlay text and carousel copy are structured fields, while image-generation prompts must request imagery without embedded text. Avoid generic robot, glowing-brain, neon-dashboard, and stock-corporate AI clichés. Return JSON only.",
+    "usage": {
+      "input_tokens": 10513,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 639,
+      "reasoning_output_tokens": 115
+    },
+    "cost": null,
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  },
+  {
+    "order": 5,
+    "attempt_id": "attempt-3eafbdac70c1499b9ceaade2bd02928f",
+    "path": "evidence/installed-essential-trial-20261105/trial/codex-attempts/installed-essential-security-20261105/linkedin/2f31f4d492c0e5e017398ec9783fe0c9797e525e4bcdb32e1802a928c60622e9/attempt.json",
+    "request_sha256": "2f31f4d492c0e5e017398ec9783fe0c9797e525e4bcdb32e1802a928c60622e9",
+    "result_sha256": "bae9265423677e9d2021bf3ab0fb6b917ad2c3dc5882004dd7e3cf794e05b700",
+    "request_keys": [
+      "config",
+      "contract",
+      "disabled",
+      "executable_sha256",
+      "instruction",
+      "model",
+      "reasoning",
+      "request",
+      "schema"
+    ],
+    "task": "Write one useful LinkedIn post in the supplied author's voice. Use only supplied facts; never invent experience, quotes, statistics or biography. When voice.writing_voice is present, its style_traits govern wording, rhythm and structure over default voice traits; approved examples supply compatible details only. Preserve the author POV, facts and constraints. Return only the finished post. Follow editorial_handoff.meaning and its selected narrative form, beats, symbol mapping and boundary. Voice governs expression within that narrative, never replaces it. Imagery is illustration, not evidence.",
+    "usage": {
+      "input_tokens": 11999,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 319,
+      "reasoning_output_tokens": 0
+    },
+    "cost": null,
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  },
+  {
+    "order": 6,
+    "attempt_id": "attempt-8342dd66eec34016b5b1208b91e9e604",
+    "path": "evidence/installed-essential-trial-20261105/trial/codex-attempts/installed-essential-security-20261105/linkedin/323c23ac79676ce8e9ff11fb826404d77538a5492b641eed720b75648f7cf3b7/attempt.json",
+    "request_sha256": "323c23ac79676ce8e9ff11fb826404d77538a5492b641eed720b75648f7cf3b7",
+    "result_sha256": "1869013ee6e6670eaeed519fcab743624d32981ee7d03a9f9e2b26a1e6dc8fe6",
+    "request_keys": [
+      "config",
+      "contract",
+      "disabled",
+      "executable_sha256",
+      "instruction",
+      "model",
+      "reasoning",
+      "request",
+      "schema"
+    ],
+    "task": "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 (absent) to 5 (exceptional) on each named dimension. Judge whether the post is understandable, useful, specific, distinctive, interesting, shareable, and authentic. Scores are advisory and never determine admission. Independently assess four essential checks with pass, revise or needs_evidence and a concrete reason. Passing permits human review only, never publication. Failures must identify an exact defect or claim, not merely ordinary novelty, restrained emotion, length or low sharing potential. Do not infer essential verdicts from numeric ratings. Novelty is relative to the intended reader. Do not reward clickbait, engagement bait, unsupported specificity, or generic LinkedIn polish. Use the supplied evidence only to judge whether concrete details are grounded. This is a publish-readiness heuristic, not a promise of virality. These ratings are not calibrated to the author's human judgments or engagement outcomes. Apply the rating anchors to each dimension; never inflate scores to meet a threshold. Use the same brief and voice context as the writer. If writing_voice is present, assess voice fit against its selected style_traits over default persona style; approved examples supply compatible details only. Preserve factual and author-POV boundaries. Identify the largest fixable defect first; missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only.",
+    "usage": {
+      "input_tokens": 13271,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 367,
+      "reasoning_output_tokens": 0
+    },
+    "cost": null,
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  }
+]

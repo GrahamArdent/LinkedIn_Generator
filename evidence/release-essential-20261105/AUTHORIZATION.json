@@ -1,0 +1,7 @@
+{
+  "operator_instruction": "I approve all actions going forward merging, installing, testing hosted CI when applicable after local tests. So with that approval, you'll continue executing the execution prompt",
+  "scope": "Continue execution plan; human editorial approval and publishing remain gated; existing declared subscription budgets retained",
+  "reviewed_head": "4ddc4d1c39b900607cf83aad138e5f37de9296a9",
+  "merge_sha": "2c2daf39398a993b698d1f225008a06217b14a7c",
+  "pr": 29
+}

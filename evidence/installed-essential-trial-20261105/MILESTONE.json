@@ -1,0 +1,22 @@
+{
+  "status": "M3_TECHNICAL_GO_M4_HUMAN_REVIEW_PENDING",
+  "installed_revision": "2c2daf39398a993b698d1f225008a06217b14a7c",
+  "request_id": "installed-essential-security-20261105",
+  "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+  "essential_checks": "4 pass; model advisory, not human approval",
+  "rewrite_count": 0,
+  "visual_plan": "single_image; human usefulness pending; no rendered image",
+  "selected_visual_hash_match": true,
+  "baseline_equal_context": true,
+  "blind_review": "trial/review.md",
+  "method_mapping": "trial/blind-mapping.json; kept separate from review",
+  "reopen": "PASS exact all saved bytes, zero new calls",
+  "resource_use": "6 model executions,18 CLI launches,97.171 active CLI seconds; API0",
+  "human_decision": null,
+  "at_count": 26,
+  "e2e_count": 11,
+  "all_acceptance_complete": false,
+  "first_six_eligibility": "Unresolved historical order retained; variants are not new subjects",
+  "calibration": "12 retained examples frozen subject-separated; human labels missing",
+  "next_action": "Present blinded A/B pair and ask for accuracy, usefulness, voice, edit scope, preference and actual editing effort; separately review visual plan. No more subject generation before initial human disposition."
+}

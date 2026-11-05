@@ -1,0 +1,13 @@
+# Installed essential-checks acceptance trial
+
+M2 GO: PR29 reviewed candidate4ddc4d1 merged at2c2daf39398a993b698d1f225008a06217b14a7c and installed through the existing fixed-release launcher. Installed251 tests passed; source/config/test hashes match reviewed qualification; imports, subscription auth binding, rollback and historical zero-call reopening verified. Prior release0c099d7 remains intact. Release proof: ../release-essential-20261105/INSTALLATION.json and HASH_VERIFICATION.json.
+
+M3 technical package GO: request installed-essential-security-20261105 used the retained security idea, Graham individual POV, non-specialist management audience, Relatable Provocateur v1 and symbolic key narrative. Both primary sources were rechecked. The brief explicitly separates facts, inference, opinion and hypothetical illustration and disallows screen-location/personal-experience invention. Historical requests and outputs remain unchanged.
+
+Stage order: opportunity/evidence evaluation; Draft A; four-essential review; single-image visual plan; equal-context plain-prompt control; same-context control evaluation. No rewrite. Exact prompts/raw outputs and native attempt identities are retained in trial/codex-attempts and STAGE_TRACE.json. Model assessments remain advisory; no human acceptance is inferred.
+
+Selected UTF-8 SHA256 equals visual source SHA256. Both blind candidates match original stored bodies. New-process installed show preserved every trial file hash with zero added calls. Shared batch budget: cap12 executions/900 active CLI seconds; observed6 executions,18 CLI launches,97.171 active CLI seconds; API0. Provider token/billing telemetry remains UNKNOWN where unreported.
+
+M4 HOLD for human judgment, not operational authorization. Review trial/review.md first, mapping kept separately. Record A/B/tie, each draft's accuracy, voice/insight/usefulness1–5, keep/light/structural/reject and actual edit effort. Review VISUAL_REVIEW.md separately. CLAIM_REVIEW.json records assistant source-checking, with human adjudication pending. Twelve retained exact-text examples are frozen as9 calibration and3 held-out, separated by underlying subject, with no invented labels or tuning.
+
+M5 waits for initial human disposition. Historical first-six eligibility/order is explicitly unresolved; repeated runs or draft variants are not new independent subjects. All26 AT/11 E2E remain; this single pair does not satisfy six-subject, human, UI, render or publication acceptance. No rendered assets or publication. Hosted CI NOT_RUN: no active workflow; local/installed suite and immutable source hashes qualify this milestone without reactivating historical commented-out pipelines.

@@ -1,0 +1,9 @@
+{
+  "AUTHORIZATION.json": "ac989f63db21bd86e3764760943ee88cdc69fbd6c30f4ed84faf7a1bc15f260d",
+  "HASH_VERIFICATION.json": "6c969aa2be7c536f590f3a6cc4c145f5e07a882a12c2b27a7f0a4dbd4bb1c62a",
+  "INSTALLATION.json": "3974ec1b2548c5374933c57c3502bce714eec61dc6172339e71734a4307b0981",
+  "PROMOTION_INTENT.json": "ceb95caf6fddc4b2a89f85dc0e89e1fc618dfddcf684bb65fb23f3b29317cd6e",
+  "installed-pytest.log": "141d28417c9e75d55f48f8c13c637e2a00e5495f8ff73e922d25658c1aa95de0",
+  "promote.py": "19c29333a863bbabe16313c17c39b2f0efed5b6d5a0439a8a4ac5b430204b879",
+  "promotion.log": "301bc34293cce5a306137aa42c03d86a25cddad7bffa3726ef18949d85bf517c"
+}
