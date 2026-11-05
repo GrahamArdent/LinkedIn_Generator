@@ -1,0 +1,102 @@
+.................FFFFF.                                                  [100%]
+=================================== FAILURES ===================================
+______ test_malformed_catalogue_never_resolves_partial_alias_or_biography ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7038aa5723f0>
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-383/test_malformed_catalogue_never0')
+
+    def test_malformed_catalogue_never_resolves_partial_alias_or_biography(monkeypatch,tmp_path):
+        from src.app import writing_voice
+        original=json.loads(writing_voice.CATALOG_PATH.read_text())
+        cases=[]
+        a=copy.deepcopy(original);a["voices"]["concise_challenger"]["aliases"]="seth_godin";cases.append((a,"seth"))
+        a=copy.deepcopy(original);a["voices"]["concise_challenger"]["style_traits"]["avg_sentence_length"]={"credentials":"Invented biography"};cases.append((a,"concise_challenger"))
+        a=copy.deepcopy(original);a["voices"]=[];cases.append((a,"concise_challenger"))
+        path=tmp_path/"voices.json";monkeypatch.setattr(writing_voice,"CATALOG_PATH",path)
+        for catalog,voice in cases:
+            path.write_text(json.dumps(catalog))
+>           with pytest.raises(ValueError,match="writing_voice"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+tests/test_writing_voice.py:115: Failed
+______ test_selected_voice_has_one_precedence_rule_in_writer_and_editors _______
+
+    def test_selected_voice_has_one_precedence_rule_in_writer_and_editors():
+        import yaml
+        prompts=yaml.safe_load(Path("config/prompts_packs.yaml").read_text())
+        for stage in ["draft_prompt","critic_prompt","humanize_prompt","publish_rewrite_prompt"]:
+            system=prompts[stage]["system"]
+>           assert "Approved examples may supply compatible details only" in system,stage
+E           AssertionError: draft_prompt
+E           assert 'Approved examples may supply compatible details only' in 'Write a LinkedIn post as {persona_key} for {audience}.\nFollow the supplied persona profile and objective rather than...actual claim, omit the claim or clearly frame the point as interpretation/opinion.\nKeep links out of the post body.\n'
+
+tests/test_writing_voice.py:123: AssertionError
+____________ test_terminal_preflight_preserves_selected_style_trace ____________
+
+    def test_terminal_preflight_preserves_selected_style_trace():
+        r=request("technical_explainer")
+        class Skip(Capture):
+            def call(self,*a,**kw):
+                return {"text":json.dumps({"outsider_clarity":0,"professional_relevance":0})}
+        result=generate_content(r.model_copy(update={"opportunity_gate":True}),
+            generator=lambda **kw:api.run_generation(**kw,llm_client=Skip()))
+        assert result.status=="skipped"
+>       assert result.telemetry.get("writing_voice",{}).get("id")=="technical_explainer"
+E       AssertionError: assert None == 'technical_explainer'
+E        +  where None = <built-in method get of dict object at 0x7038aa35a540>('id')
+E        +    where <built-in method get of dict object at 0x7038aa35a540> = {}.get
+E        +      where {} = <built-in method get of dict object at 0x7038aa35acc0>('writing_voice', {})
+E        +        where <built-in method get of dict object at 0x7038aa35acc0> = {'persona': 'graham', 'opportunity_score': 0, 'opportunity_decision': 'skip', 'opportunity_reason': 'Opportunity scored from the supplied topic and evidence.', ...}.get
+E        +          where {'persona': 'graham', 'opportunity_score': 0, 'opportunity_decision': 'skip', 'opportunity_reason': 'Opportunity scored from the supplied topic and evidence.', ...} = LinkedInContentResult(request_id=None, origin='dedication', persona_key='graham', status='skipped', body='', hashtags=...on': '', 'content_goal': 'authority', 'earned_question': False}, review={}, selected_candidate=None, visual_asset=None).telemetry
+
+tests/test_writing_voice.py:135: AssertionError
+_____ test_retained_completion_rejects_changed_voice_before_baseline_call ______
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-383/test_retained_completion_rejec0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7038aa573ce0>
+
+    def test_retained_completion_rejects_changed_voice_before_baseline_call(tmp_path,monkeypatch):
+        from src.app import writing_voice
+        from src.app.codex_trial import complete_comparison
+        r=request("concise_challenger");data=r.model_dump();old_voice=voice_context(r)
+        class Provider:
+            mode="fixture";error=None;receipts=[]
+            def __init__(self):self.calls=[]
+            def generate(self,**kwargs):self.calls.append(kwargs);return BODY
+        p=Provider()
+        with pytest.raises(ValueError,match="NO_QUALIFIED_CANDIDATE"):
+            run_trial(data,tmp_path/"trial",p,model="fixture",
+              engine=lambda *a,**kw:{"body":BODY,"selected_candidate":None,
+                  "review":{"evaluation_context":old_voice}})
+        catalog=json.loads(writing_voice.CATALOG_PATH.read_text())
+        catalog["voices"]["concise_challenger"]["style_traits"]["avg_sentence_length"]=13
+        path=tmp_path/"changed.json";path.write_text(json.dumps(catalog));monkeypatch.setattr(writing_voice,"CATALOG_PATH",path)
+>       with pytest.raises(ValueError,match="WRITING_VOICE_CHANGED"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_writing_voice.py:153: Failed
+_ test_selected_style_is_not_penalized_for_inherited_contrast_and_punchy_rhythm _
+
+    def test_selected_style_is_not_penalized_for_inherited_contrast_and_punchy_rhythm():
+        from src.app.quality import evaluate_quality
+        prose="A payment system needs to carry the approved amount and recipient through every stage of the transfer so that the final instruction can be checked against the same decision the responsible person originally reviewed and accepted before funds leave the account."
+        base=voice_context(LinkedInContentRequest(**DATA))
+        selected=voice_context(request("technical_explainer"))
+        legacy=evaluate_quality(prose,base,{})
+        chosen=evaluate_quality(prose,selected,{})
+        assert any("contrast" in x for x in legacy["issues"])
+        assert any("punchy rhythm" in x for x in legacy["issues"])
+>       assert not any("contrast" in x or "punchy rhythm" in x for x in chosen["issues"])
+E       assert not True
+E        +  where True = any(<generator object test_selected_style_is_not_penalized_for_inherited_contrast_and_punchy_rhythm.<locals>.<genexpr> at 0x7038aa4d12f0>)
+
+tests/test_writing_voice.py:166: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_writing_voice.py::test_malformed_catalogue_never_resolves_partial_alias_or_biography
+FAILED tests/test_writing_voice.py::test_selected_voice_has_one_precedence_rule_in_writer_and_editors
+FAILED tests/test_writing_voice.py::test_terminal_preflight_preserves_selected_style_trace
+FAILED tests/test_writing_voice.py::test_retained_completion_rejects_changed_voice_before_baseline_call
+FAILED tests/test_writing_voice.py::test_selected_style_is_not_penalized_for_inherited_contrast_and_punchy_rhythm
+5 failed, 18 passed in 0.60s

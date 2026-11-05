@@ -96,7 +96,10 @@ def evaluate_quality(
     signals["paragraph_word_counts"] = paragraph_lengths
     signals["sentence_word_counts"] = sentence_lengths
 
-    rhythm = {str(item) for item in persona.get("rhythm", [])}
+    # Explicit styles are assessed semantically against their selected traits.
+    # Do not steer selection/rewrites back toward inherited Graham devices.
+    selected_style = isinstance(persona.get("writing_voice"), dict)
+    rhythm = set() if selected_style else {str(item) for item in persona.get("rhythm", [])}
     wants_compact_rhythm = bool({"short_paragraphs", "tight", "punchy"} & rhythm)
     if wants_compact_rhythm:
         long_paragraphs = sum(1 for n in paragraph_lengths if n > 70)
@@ -125,7 +128,7 @@ def evaluate_quality(
     if "question" in devices and active_goal == "conversation" and earned_question and not has_question:
         score -= 5
         issues.append("Conversation-goal draft is missing the specific question this opportunity earned.")
-    if "contrast" in devices and not has_contrast:
+    if "contrast" in devices and not selected_style and not has_contrast:
         score -= 3
         issues.append("Configured contrast device is absent.")
 

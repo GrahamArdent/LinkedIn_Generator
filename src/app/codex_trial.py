@@ -99,10 +99,14 @@ def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=Fals
             else:
                 raise ValueError("RECONCILIATION_REQUIRED")
         request=LinkedInContentRequest.model_validate(data)
+        resolved_voice = voice_context(request).get("writing_voice") if request.writing_voice_id is not None else None
+        if retained is not None and resolved_voice != old.get("writing_voice"):
+            raise ValueError("WRITING_VOICE_CHANGED")
         record={"schema_version":"1","state":"running","input":data,"model":model,
                 "mode":provider.mode,"started_at_utc":now(),"api_spend":0,
                 "human_decision":None,"evidence_bundle_sha256":bundle_sha,
-                "evidence_bundle":evidence_bundle,"score_baseline":score_baseline}
+                "evidence_bundle":evidence_bundle,"score_baseline":score_baseline,
+                "writing_voice":resolved_voice}
         if retained is not None: record["engine_origin"]="engine-gate-failure.json"
         save(path,record)
         client=LLMClient(model=model,provider=provider)
@@ -130,14 +134,19 @@ def run_trial(data,directory,provider,*,model,engine=None,resume_comparison=Fals
             context = result.get("review", {}).get("evaluation_context")
             if score_baseline and not isinstance(context, dict):
                 raise ValueError("BASELINE_EVALUATION_CONTEXT_MISSING")
+            baseline_voice = voice_context(request)
+            if baseline_voice.get("writing_voice") != resolved_voice:
+                raise ValueError("WRITING_VOICE_CHANGED")
+            if resolved_voice is not None and isinstance(context, dict) and context.get("writing_voice") != resolved_voice:
+                raise ValueError("WRITING_VOICE_CHANGED")
             baseline_system=("Write one useful LinkedIn post in the supplied author's voice. Use only supplied facts; "
-                             "never invent experience, quotes, statistics or biography. When voice.writing_voice is present, its style_traits govern wording, rhythm and structure over default voice traits; preserve the author POV, facts and constraints. Return only the finished post.")
+                             "never invent experience, quotes, statistics or biography. When voice.writing_voice is present, its style_traits govern wording, rhythm and structure over default voice traits; approved examples supply compatible details only. Preserve the author POV, facts and constraints. Return only the finished post.")
             baseline_data={"topic":request.topic,"audience":request.audience,"objective":request.objective,
                            "author_pov":request.author_pov,"content_goal":result.get("telemetry",{}).get("content_goal") or request.content_goal,
                            "source_bundle":evidence_bundle,
                            "services":request.services,"targets":request.targets,"hashtags":request.hashtags,
                            "evidence":[x.model_dump() for x in request.evidence],
-                           "voice":voice_context(request),
+                           "voice":baseline_voice,
                            "approved_voice_examples":[x.model_dump() for x in request.voice_examples],
                            "format_rules":load_yaml(str(ROOT/"config/prompt_kit.config.yaml"))}
             baseline_user=json.dumps(baseline_data,ensure_ascii=False)

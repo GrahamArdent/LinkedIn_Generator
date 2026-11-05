@@ -217,11 +217,14 @@ def run_generation(
         resolved_goal = assessment.goal
         ending = ending_guidance(assessment)
         if assessment.decision != "draft":
-            return _terminal_opportunity_payload(
+            terminal = _terminal_opportunity_payload(
                 persona_key=persona_key,
                 citations=citations,
                 opportunity=opportunity,
             )
+            if "writing_voice" in persona_profile:
+                terminal["telemetry"]["writing_voice"] = persona_profile["writing_voice"]
+            return terminal
     else:
         resolved_goal, ending = _goal_without_gate(content_goal)
         opportunity = {
