@@ -22,3 +22,9 @@ Continue through machine-solvable prerequisites, preserving all26 acceptance obj
 
 
 Current checkpoint: independent writing_voice_id selector and9 craft-only projections locally qualified (195 tests PASS). See WRITING_VOICE_SELECTOR_2026-11-04.md and evidence/writing-voice-selector-20261104/MILESTONE.json. Next controlled comparison varies only that selector; hold author, story, facts, audience, central argument and generation constraints fixed. Preserve defaults only when selection is omitted; reject unknown IDs. Historical named labels, biography and stock phrases are not generation instructions. No human voice-quality verdict or new post generation has occurred in this repair.
+
+## Controlled writing-voice comparison — 2026-11-04
+
+Current receipt: evidence/controlled-voice-comparison-20261104/MILESTONE.json and REPORT.md. Nine actual unedited first drafts now hold Graham Hill, story, facts, audience, argument, model and constraints fixed; only the verified writing_voice changes. The existing drafting stage is isolated before critic/humanizer/scoring, so these are not full engine acceptance runs. Nine native model executions,27 physical starts,107.900 cumulative CLI seconds/API0; fresh-process reopen adds0 calls. Frozen product/config/tests and26 AT/11 E2E definitions remain unchanged. PDF:13 pages, linked contents, raw text verified and all pages visually reviewed.
+
+Fresh full local CI:195 PASS (1.96s); log retained. Machine result GO; human voice/quality acceptance HOLD. All9 hooks begin “An approval screen”; factual paragraphs and takeaways are similar. Preserve this weak differentiation finding and do not infer a winner or regenerate to manufacture contrast. Earlier identity/angle sampler remains historical. Next eligible action is human inspection of retained drafts and specific passage feedback; no scoring/keep/example promotion inferred. Candidate-only/unmerged; no hosted CI, installation promotion, deployment or publishing.

@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/writing-voice-selector-20261104/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: Controlled writing-voice comparison; freeze author/story/facts/audience/central argument and vary only writing_voice_id
+CURRENT_MILESTONE_RECEIPT: evidence/controlled-voice-comparison-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: Human review of retained controlled nine-style drafts; no further generation before feedback
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -333,3 +333,9 @@ Operator authorized the recommended bounded selector repair. Recovered eight V2 
 Expected/observed: all9 actual consumers have identical non-style context hash; unknown/malformed selection blocks before model call; style version/hash is visible even on terminal preflight; altered style cannot silently finish a retained comparison; completed historical show/reopen uses original records with0 additional calls. Final195 local tests PASS with original and review RED/GREEN logs retained. No native model call or API spending in this milestone. Fresh review and rulings: evidence/writing-voice-selector-20261104/REVIEW.md. Candidate-only launcher; no hosted CI, merge, install promotion, deployment or publishing.
 
 The previous PDF remains an identity/angle sampler, not controlled voice evidence. No new human keep, approved example or style-quality claim is inferred. Next controlled comparison fixes the author, subject, factual support, audience, objective/argument, model and constraints; only the explicit style changes. All26 AT and11 E2E definitions are retained.
+
+## Controlled writing-voice comparison — 2026-11-04
+
+Current receipt: evidence/controlled-voice-comparison-20261104/MILESTONE.json and REPORT.md. Nine actual unedited first drafts now hold Graham Hill, story, facts, audience, argument, model and constraints fixed; only the verified writing_voice changes. The existing drafting stage is isolated before critic/humanizer/scoring, so these are not full engine acceptance runs. Nine native model executions,27 physical starts,107.900 cumulative CLI seconds/API0; fresh-process reopen adds0 calls. Frozen product/config/tests and26 AT/11 E2E definitions remain unchanged. PDF:13 pages, linked contents, raw text verified and all pages visually reviewed.
+
+Fresh full local CI:195 PASS (1.96s); log retained. Machine result GO; human voice/quality acceptance HOLD. All9 hooks begin “An approval screen”; factual paragraphs and takeaways are similar. Preserve this weak differentiation finding and do not infer a winner or regenerate to manufacture contrast. Earlier identity/angle sampler remains historical. Next eligible action is human inspection of retained drafts and specific passage feedback; no scoring/keep/example promotion inferred. Candidate-only/unmerged; no hosted CI, installation promotion, deployment or publishing.
