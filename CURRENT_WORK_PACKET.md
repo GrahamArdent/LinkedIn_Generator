@@ -7,7 +7,7 @@ CURRENT_SCOPE: Graham only; broad subject freedom; writing style independent of 
 CURRENT_EDITORIAL_DIRECTION: docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md
 CURRENT_EVIDENCE_POINTER: evidence/graham-black-box-voices-20261105/MILESTONE.json
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Version1 voice preferred but construction rejected; structured chat revision positively reviewed; default structure adopted; installed structure qualification pending
+CURRENT_STAGE_OR_MILESTONE: Structure-to-install plan challenged; Q1 preparation/consumer qualification is next; product installation unchanged
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: merged and installed revision2c2daf39398a993b698d1f225008a06217b14a7c; evidence/release-essential-20261105/INSTALLATION.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -486,3 +486,16 @@ Default structure/workflow now lives solely in GRAHAM_CONTENT_DIRECTION_2026-11-
 Exact rewrite and feedback: evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json.
 Next: carry selected structure through existing installed editorial handoff/full-engine qualification;
 no installed template behavior or human publication approval is inferred. No new model calls.
+
+
+## Structure-to-install planning checkpoint — November 5, 2026
+Current bounded sequence is Q1–Q6 inside the existing completion game plan, preserving M1–M5/P0–P7.
+Operator requested PROGRAMSTART cycle challenge and a game plan; no product implementation is claimed.
+Planning convergence and retention proof: evidence/structure-install-challenge-20261105/CONVERGENCE.md.
+Current next action after execution instruction: Q1 no-model preparation/actual-consumer proof.
+Installed2c2daf3 remains unchanged. Continued merge/install/testing authority and all26 AT/11 E2E remain.
+
+Planning result: CLEAR for exact candidate2 pair after9 material corrections and fresh independent complete-pair review.
+Retention41/41 known obligations across22 exact baseline files, both negative controls rejected.
+Proof: evidence/structure-install-challenge-20261105/{FINAL_REVIEW.json,RETENTION_RESULTS.json,CANDIDATE.json}.
+Q1–Q6 implementation NOT_RUN; installed generator remains2c2daf3.

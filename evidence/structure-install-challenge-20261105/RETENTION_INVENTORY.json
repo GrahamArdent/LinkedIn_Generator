@@ -1,0 +1,374 @@
+{
+  "audited_source_set": "SOURCE_SET.json plus METHODOLOGY.json and exact operator request; no universal completeness claim",
+  "items": [
+    {
+      "id": "objective",
+      "required_information": "Apply documented structure reliably through installed workflow",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Goal: make the Graham workflow"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "one_spine",
+      "required_information": "Preserve existing ModeC execution spine",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "not another master plan"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "planning_boundary",
+      "required_information": "Current request plans; no product change claimed",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "planning request does not itself execute"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "author",
+      "required_information": "Graham only",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "Graham only"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "broad_topics",
+      "required_information": "No narrow industry positioning",
+      "location": {
+        "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+        "literal": "Subjects remain open"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "credentials",
+      "required_information": "No invented expertise or experience",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "invented credentials/experience"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "five_beats",
+      "required_information": "Adopted default progression",
+      "location": {
+        "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+        "literal": "hook → tension → relevant evidence"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "alternatives",
+      "required_information": "Preserve explicit alternate narratives",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "validate/preserve it exactly"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "meaning",
+      "required_information": "Explicit supported meaning, no inferred biography",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "must explicitly supply editorial_handoff.meaning"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "contract_bounds",
+      "required_information": "Existing1–2facts/1–8beats, no replacement schema",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "literal/symbolic narratives,1–8 beats and1–2"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "normal_route",
+      "required_information": "Public preparation path independent of chat",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Expose this no-model preparation as prepare"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "no_model_prepare",
+      "required_information": "Preparation creates no provider/trial",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "without creating a running trial or constructing a provider"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "immutable_binding",
+      "required_information": "Template/voice/input source binding",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "definition/input hashes and voice"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "actual_consumers",
+      "required_information": "Writer/rewrite/evaluator/control propagation",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "actual writer, guarded rewrite, evaluator and equal-context control"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "four_essentials",
+      "required_information": "Four verdicts, scores advisory",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Keep exactly\n  four essential IDs"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "construction",
+      "required_information": "Voice is not construction success",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "strong voice/high score cannot compensate"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "feedback_version1",
+      "required_information": "Voice preference distinct from construction rejection",
+      "location": {
+        "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+        "literal": "preferred Version1's voice but rejected its construction"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "feedback_chat",
+      "required_information": "Positive chat rewrite kept separate from installed proof",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "Chat revision72946 was positively reviewed"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "old_reference",
+      "required_information": "Original liked chat reference retained",
+      "location": {
+        "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+        "literal": "AI is a strange thing to trust"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "security_rejection",
+      "required_information": "Historical unsuitable subject not restarted",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "older security/symbolic package is historical"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "calendar",
+      "required_information": "48 historical ideas, no schedule activation",
+      "location": {
+        "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+        "literal": "48 historical ideas"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "installed_identity",
+      "required_information": "Exact current installed baseline",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "merged/installed2c2daf39398a993b698d1f225008a06217b14a7c"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "reuse",
+      "required_information": "Reuse only matching receipts",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "product changes invalidate the affected251-test receipt"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "local_release",
+      "required_information": "Regression/full/archive and exact candidate",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "clean archive at the\n  exact candidate"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "approval_ci",
+      "required_information": "Continued owner operational approval and applicable CI",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Existing approval permits focused hosted CI"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "rollback",
+      "required_information": "Fixed release and rollback",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Retain\n  previous2c2daf3 installation and exact rollback command"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "idempotency",
+      "required_information": "Identical reopen0, changed sameID conflicts",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "changed template/bundle under same ID conflicts0 calls"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "unknown",
+      "required_information": "Interrupted effect sameattempt reconciliation",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "original receipts/attempts, never blind retry"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "budget",
+      "required_information": "Single shared12/900/API0",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "cap12 subscription executions/900 cumulative active CLI"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "baseline",
+      "required_information": "Equal context direct control",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "same-context control"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "visual",
+      "required_information": "Exact selected visual identity, renderedassets distinct",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "selected/visual exact hash identity"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "human",
+      "required_information": "Real individual labels and edit effort",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "real Graham judgments of factual limits, voice and\n  construction separately"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "transfer",
+      "required_information": "Second distinct concept after initial disposition",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "After initial human disposition"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "history",
+      "required_information": "No first-six history reset or8trial expansion",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "existing8-subject envelope"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "full_acceptance",
+      "required_information": "All26AT11E2E retained incomplete",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "all26 AT/11 E2E"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "later_scope",
+      "required_information": "UI/directAPI/render/publication remain open",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "UI/direct-API parity, rendered assets, public publishing"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "retention",
+      "required_information": "Actual retained-information and negative controls",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "missing-item/altered-byte negative control must fail"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "currentness",
+      "required_information": "JIT actualtools/diagnosis/readback",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "independently read back consequential results"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "stopping",
+      "required_information": "Precise owner/budget/human/external stop",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "exact budget exhaustion, missing human judgment"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "packet",
+      "required_information": "Single current owner evidence pointer",
+      "location": {
+        "path": "CURRENT_WORK_PACKET.md",
+        "literal": "structure-install-challenge-20261105/CONVERGENCE.md"
+      },
+      "disposition": "retained in active complete pair or canonical referenced owner"
+    },
+    {
+      "id": "mandatory_preparation",
+      "required_information": "New normal Graham CLI generation cannot bypass compiled structure; historical completed reads remain0-call",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "require and validate prepared structure id/version/definition hash"
+      },
+      "disposition": "material F09 corrected in active plan and prompt"
+    }
+  ]
+}

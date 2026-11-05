@@ -52,6 +52,151 @@ through original receipts; never blindly retry. Continue independent admitted wo
 Budget exhaustion or an unrecoverable provider/environment failure is a precise HOLD, not permission
 to exceed caps or repeatedly ask the user to perform machine work.
 
+## Active structure-to-install slice — first unmet Q step
+
+This is the current bounded work inside the existing M1–M5 spine, not another master plan.
+Goal: make the Graham workflow deliberately prepare structure, carry it through actual writing/review,
+and run from a verified fixed release. “Reliable” means repeatable preparation, traceable execution,
+coherent reviewed output and safe read/recovery behavior; deterministic prose is not promised.
+Spec: GRAHAM_CONTENT_DIRECTION_2026-11-05.md, especially Adopted structure and workflow.
+Installed baseline2c2daf3/251 tests remains valid only for unchanged bytes. Current plan source baseline
+is365964983373611279f0c2e4f14ae7c6587fb135. No product change or new installation is claimed by this plan.
+
+### Q1 — prove and standardize normal Graham request preparation
+- [ ] Inspect/reuse src/app/editorial_handoff.py, src/app/api.py, src/app/codex_trial.py,
+  scripts/linkedin_codex_trial.py and existing consumer fixtures. Existing strict version1 handoff supports
+  literal/symbolic narratives,1–8 beats and1–2 load-bearing facts. Do not invent another engine/schema.
+- [ ] Add reproducing tests in tests/test_graham_structure.py before implementation. Cases: documented
+  five-part default, explicit alternate narrative preserved, missing meaning/evidence rejected before calls,
+  unsupported persona rejected in Graham preparation, and same input produces byte-identical prepared data.
+- [ ] Add minimal reusable src/app/editorial_structure.py: prepare_graham_request(data:dict,bundle:dict)
+  returns prepared_request, prepared_bundle. Input must explicitly supply editorial_handoff.meaning
+  (thesis, reader_consequence,1–2 sourced facts,qualification); do not infer claims/credentials from a voice.
+  If narrative is absent, supply literal five semantic beats matching the adopted scaffold; if present,
+  validate/preserve it exactly and mark provenance caller-selected. No finished hook/copy in the outline.
+  Reuse freeze_handoff/validate_handoff and validate_trial_evidence; reject unsupported facts/source IDs.
+- [ ] Expose this no-model preparation as prepare in the existing scripts/linkedin_codex_trial.py command.
+  Reuse --request/--evidence-bundle/--out; write request.json and source-bundle.json in the preparation
+  directory without creating a running trial or constructing a provider. Reject conflicting existing output;
+  identical preparation reopens without writes/calls. Preserve full source records and recompute request_sha256
+  only after compilation. Bind structure id graham-structured-v1, version1, definition/input hashes and voice
+  selection in source-bundle metadata retained by the existing request/bundle fingerprint and saved result.
+- [ ] Enforce the qualification boundary in normal Graham CLI generate: for every NEW execution,
+  require and validate prepared structure id/version/definition hash, input hash and request/bundle
+  binding before constructing/invoking the model provider. Missing binding raises
+  STRUCTURE_PREPARATION_REQUIRED with the prepare action; stale/inconsistent binding fails closed.
+  The normal Graham command must not silently run the legacy unstructured path. Other-persona and
+  direct-API legacy callers are outside this Graham-only qualification, not implicitly upgraded.
+  For an exact already-completed request, reconcile the saved immutable fingerprint/result first and
+  return its original receipt without calls or relabeling; show remains an unchanged historical read.
+  A changed same-ID request conflicts0 calls. Never require regeneration of old completed results.
+  Hash canonical semantic inputs/source data excluding the binding fields themselves to avoid a
+  self-referential hash; keep exact definition hashes/version pinned for new execution validation.
+- [ ] Add subprocess no-call negatives for absent preparation metadata, changed beat/definition hash,
+  stale version and mismatched request/bundle. Prove these cannot reach provider dispatch. Also prove
+  historical show/exact completed replay remains0 calls after active structure version changes.
+- [ ] Prove subprocess prepare→normal generate consumer propagation with injected model boundary:
+  selected structure/meaning/limits reach actual writer, guarded rewrite, evaluator and equal-context control.
+  Changing a selected beat must change the actual prompt; malformed or changed facts must stop before calls.
+Expected: normal installed Graham workflow requires validated prepare→generate for new executions,
+independent of this chat/evidence helper; missing/stale preparation can never silently bypass structure.
+No implicit rewrite of explicit alternate narratives. Direct API/UI parity remains an unproved later scope.
+If existing code already meets an item with proof, reuse it; do not add duplicate abstractions.
+
+### Q2 — evaluate voice and construction without a new score gate
+- [ ] Extend the existing argument_voice essential definition/prompt in src/app/publish_quality.py to
+  require both selected voice fidelity and coherent development of the selected narrative. Keep exactly
+  four essential IDs and advisory scores; no fifth gate or numeric structure cutoff. Reasons must identify
+  actual voice/construction strengths or defects, not mandatory heading/keyword counts.
+- [ ] Add tests in tests/test_editorial_handoff.py and tests/test_essential_review_gate.py: identical factual
+  content but disordered/repetitive argument is not admitted when the injected essential says revise;
+  strong voice/high score cannot compensate; corrected evaluation can admit a supported rewrite;
+  at most one targeted rewrite; unavailable evaluation/missing support still fail closed.
+- [ ] Preserve Version1 and chat72946 as separate exact-hash feedback records. Neither reference text
+  is automatically injected as an approved voice example or used as a copied expected output. The new
+  claim is coherent construction, not reproducing those exact words. A qualitative human comparison is
+  required for writing success; a fixture proves control flow only.
+Expected: selected structure reaches the real review and revision path, with separate voice/construction
+findings within the existing essential. No extra default model stage; optional planning calls, if used,
+consume the same budget. Do not turn every beat into a paragraph or force a CTA/checklist.
+
+### Q3 — local qualification and fresh post-implementation challenge
+- [ ] Run affected regressions RED→GREEN, then .venv/bin/python -m pytest -q and a clean archive at the
+  exact candidate; record commands/exits/source/config/test/script hashes and actual lint availability.
+  Reuse unrelated historical proofs; product changes invalidate the affected251-test receipt.
+- [ ] Challenge the actual changed persistence/provider boundary under Gate §2.1, Parts E/H as relevant:
+  same request+same template reopens0 calls; changed template/bundle under same ID conflicts0 calls;
+  process interruption after native dispatch stays unknown/reconciles original attempt; it never blindly
+  retries. Evidence content cannot smuggle finished copy/unsupported claims past preparation.
+- [ ] Obtain independent whole-candidate review; fix material findings and freshly review the corrected
+  candidate. Inspect workflow triggers. Existing approval permits focused hosted CI when applicable after
+  local pass; current repository has no active workflow. Record NOT_APPLICABLE with reason rather than
+  activating historical commented pipelines solely for ceremony or claiming a hosted pass.
+Expected: one reviewed candidate ready for technical release, separately from editorial acceptance.
+
+### Q4 — merge and install exact qualified bytes (M2)
+- [ ] Reuse recorded continued merge/install/testing authority; no repeat permission request. Refresh
+  exact candidate/base/main/reviews and original merge results; revalidate currentness before consequence.
+- [ ] Merge only the verified head and use existing fixed-release worktree/launcher procedure. Retain
+  previous2c2daf3 installation and exact rollback command; do not patch live files. Verify installed prepare
+  command, imported module paths and source/config/script hashes, subscription auth/client binding,
+  installed suite and historical result reopening0 calls. Record tested/main/installed identities separately.
+- [ ] If no product/script/config bytes changed, verify/reuse the existing installation and record why
+  reinstall is unnecessary; documentation-only main advancement never creates an installation gap.
+Expected: the installed command actually contains the qualified preparation/review path and usable rollback.
+Technical install GO is not approval of the new post or the complete26/11 product.
+
+### Q5 — one installed structured package and direct control (M3/M4)
+- [ ] Start with the retained AI black-box idea, Graham individual POV, concise_challenger v2 voice and
+  the adopted literal progression. Reuse three primary research records, rechecking material currentness
+  as needed. Select1–2 load-bearing facts for the strict handoff; preserve remaining source qualifications
+  as context, not unsupported extra claims. Keep incomplete understanding distinct from total ignorance.
+- [ ] Freeze reader, intended decision/question, meaning, sources/limits, chosen structure/voice and
+  review questions. Prepare using the installed public command, then normal installed generate with mandatory preparation validation. Do not
+  invoke the evidence-only diagnostic harness or manually edit outputs to manufacture a successful post.
+- [ ] Before any invocation declare one shared cap12 subscription executions/900 cumulative active CLI
+  seconds/API0, including preflight, draft, review, optional guarded rewrite/planning, visual and control.
+  Save actual prompts/raw results/attempt IDs/usage or UNKNOWN; no blind retries, paid fallback or cap reset.
+- [ ] Keep normal four-essential admission, selected/visual exact hash identity and same-context control.
+  Record valid HOLD without forcing a pass; use existing comparison-only continuation only after known
+  NO_QUALIFIED_CANDIDATE and within the original shared budget. Never render an unqualified candidate.
+- [ ] Fresh-process show/export/repeated identical request must preserve exact prepared/selected/source/
+  voice/structure bytes and0 added calls. Changed meaning/structure/evidence under the same ID conflicts
+  before launch. New policy/structure runs get new identities; older policy/results remain immutable.
+- [ ] Present blind engine/control texts; record real Graham judgments of factual limits, voice and
+  construction separately, keep/light/structural/reject, usefulness and actual editing effort. Ask only for
+  missing judgments; already recorded feedback is retained. Model scores/review never substitute for this.
+Expected: real installed review package or precise nonterminal failure, with no claim of accepted prose
+until human disposition. This is the next meaningful operator milestone; stop here for missing judgment.
+
+### Q6 — transfer, bounded acceptance and closure (M5)
+- [ ] After initial human disposition, test useful delivery traits on one genuinely different concept,
+  using the same path and another separately declared12/900/API0 cap. A retained candidate is AI time to
+  usable completion (existing Stanford/METR evidence, including its limits); confirm genuine distinctness
+  and historical eligibility before launch. Repeated variants do not create new subjects. Do not exceed
+  the existing8-subject envelope; unresolved eligibility stays unresolved and does not silently expand it.
+- [ ] Keep first-six history,>=5 genuine subjects,>=4/6 keep/light,>=2 live-provider human-accepted
+  subjects and six-pair control/voice/claim/visual/edit-effort requirements. A two-concept slice does not
+  close these gates; fewer eligible observations remain NOT_YET_EVALUABLE. Later P3–P7 stays in its roadmap.
+- [ ] At each material update and before handoff/closure, rerun the retained-information inventory and
+  semantic complete-pair challenge. Save covered/total for the enumerated source set, exact candidate
+  hashes, omissions and proof limits. A missing-item/altered-byte negative control must fail. Mechanical
+  coverage does not establish semantic completeness or implementation success.
+Expected: scope-limited installed workflow qualification, or explicit next owner checkpoint. Preserve all
+unproved26 AT/11 E2E, UI/direct-API parity, rendered assets, public publishing and six-subject acceptance.
+
+## Structure slice authority, recovery and terminal rule
+Recorded operator approval covers merges, installation and applicable hosted CI/testing after local pass.
+The planning request does not itself execute Q1–Q6. This corrected plan/prompt is ready for a subsequent
+execution instruction once its scoped Challenge and information retention are clear. Existing essential
+checks, API0, budget, human editorial/render/publish gates and privacy boundaries remain. Use directly
+callable routes first, exact selectors, original receipt lookup for unknown effects, Paths diagnostics on
+real failure and independently verified target readback. Never infer authority or global outage from lookup.
+Q5 is technical completion with human review pending, not overall product acceptance. Final editorial
+reliability requires actual human-supported transfer and retained later acceptance obligations. At a
+machine-solvable blocker continue legitimate independent work; stop only at a precise budget, judgment,
+external or owner gate. Preserve rollback and active work; never reset the project to Stage0.
+
 ## Ordered remaining work
 Use the existing engine, launcher, saved results and receipts. Do not rerun completed research,
 eight workflows or nine voices merely to restart this sequence.
@@ -75,9 +220,9 @@ Maps: AT01/02/03/06/07/08/14/15/16/18/26; only mode-specific coverage may be mar
 
 ### M2 — merge and promote through the existing release setup
 1. Resolve current owner admission for merge/promotion; earlier release authorization is not unlimited authority.
-   Inspect automatic workflow triggers before opening/updating a PR or merging. No hosted CI is authorized
-   by this plan. If release effects require new authorization, finish the reviewable candidate first and name
-   the exact remaining gate. Do not disable checks or quietly trigger hosted CI.
+   Inspect automatic workflow triggers before opening/updating a PR or merging. Recorded operator approval
+   permits applicable focused hosted CI after local pass. Do not request that authority again. Never disable
+   checks or activate an unrelated legacy workflow merely to obtain a hosted run.
 2. When admitted, merge the exact verified candidate; record main/merge SHA and reviewed head.
 3. Install from the merged revision through the existing fixed-release launcher procedure.
    Preserve the previous release and exact rollback command; do not edit the live installation in place.
@@ -88,9 +233,9 @@ Proof: merge receipt, installation/rollback receipt, import/hash/readiness/reope
 HOLD if unmerged, wrong installed bytes, uncertain effect or missing admission. Local tests alone cannot close M2.
 
 ### M3 — one complete installed acceptance package
-1. Reuse the retained evidence brief: Graham as author, business/IT leaders as audience,
-   Relatable Provocateur voice and selected symbolic narrative. Use at least two independent reputable origins.
-   Resolve the unsupported screen-location assumption in the new brief; preserve all historical drafts.
+1. Use the current Q5 Graham-only AI black-box brief, concise_challenger v2 and selected literal scaffold,
+   with at least two independent reputable origins. The older security/symbolic package is historical and
+   must not be regenerated or offered as the current editorial target. Preserve its original evidence.
 2. Freeze six building blocks: reader, decision, concept/argument, evidence and limits,
    narrative plus verified voice, review questions. Separate fact/observation/inference/opinion.
    Recheck source currentness and material conflicts when needed; do not add unnecessary research.
