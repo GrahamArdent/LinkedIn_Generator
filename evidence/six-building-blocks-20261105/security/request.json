@@ -1,0 +1,77 @@
+{
+  "request_id": "six-blocks-security-20261105",
+  "origin": "manual",
+  "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+  "persona_key": "graham",
+  "audience": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+  "objective": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+  "writing_voice_id": "relatable_provocateur",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "editorial_handoff": {
+    "version": 1,
+    "meaning": {
+      "thesis": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "reader_consequence": "For one sensitive request, check what proves that this particular action is permitted, beyond a familiar account or company.",
+      "facts": [
+        {
+          "claim_id": "CF-1",
+          "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment.",
+          "source_ids": [
+            "CF2024"
+          ]
+        },
+        {
+          "claim_id": "CI-1",
+          "text": "CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts.",
+          "source_ids": [
+            "CIAD-2026-0046"
+          ]
+        }
+      ],
+      "qualification": "These different accounts support a conceptual distinction between accepted access and authorized action; they do not establish that a particular defense caused different outcomes or would have prevented the reported losses."
+    },
+    "narrative": {
+      "form": "symbolic",
+      "beats": [
+        "Start with the ordinary distinction between having a key and permission to take something.",
+        "Explain the two reported incidents in ordinary workplace language; define any indispensable specialist term immediately.",
+        "Show why recognizing the account or company does not settle whether this action is permitted.",
+        "Give the fixed practical inspection task and retain the limits without a technical lecture."
+      ],
+      "symbol": {
+        "image": "A working office key establishes that a lock can be opened; it does not establish permission to remove the equipment inside.",
+        "mapping": [
+          {
+            "symbol_part": "The working key",
+            "real_relationship": "Cloudflare’s stolen credentials remained usable after being left unrotated."
+          },
+          {
+            "symbol_part": "The lock accepting the key",
+            "real_relationship": "Attackers subsequently accessed Cloudflare’s Atlassian environment."
+          },
+          {
+            "symbol_part": "Separate permission to take equipment",
+            "real_relationship": "Conceptual counterpart to authorization for a specific business action; CERT-In reports payment requests bypassing application checks."
+          }
+        ],
+        "boundary": "Digital credentials can be copied and used remotely. A physical key does not represent shared network origins or transaction-stage validation. Removing equipment is illustrative, not an allegation about Cloudflare."
+      }
+    }
+  },
+  "opportunity_gate": true,
+  "publish_quality_gate": true,
+  "publish_quality_threshold": 90,
+  "visual_asset_plan": true,
+  "evidence": [
+    {
+      "title": "CF2024",
+      "fact": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment."
+    },
+    {
+      "title": "CIAD-2026-0046",
+      "fact": "CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts."
+    }
+  ],
+  "hashtags": []
+}

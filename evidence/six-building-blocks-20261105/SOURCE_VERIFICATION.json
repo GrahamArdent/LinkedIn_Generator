@@ -1,0 +1,12 @@
+{
+  "timing": "Supplement after blinded audit; frozen request/source-bundle files unchanged",
+  "source_id": "METR-2025",
+  "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+  "retrieval": "Full primary page read through connected web retrieval turn18view1 before generation",
+  "locator": "Methodology line47",
+  "excerpts": [
+    "we recruited 16 experienced developers",
+    "246 total"
+  ],
+  "finding": "Counts16 and246 are supported. Audit correctly noted that the short frozen excerpts did not display them. This repairs record completeness, not an invented fact or changed experimental input."
+}

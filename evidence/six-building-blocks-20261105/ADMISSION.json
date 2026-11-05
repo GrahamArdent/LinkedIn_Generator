@@ -1,0 +1,20 @@
+{
+  "batches": {
+    "security": {
+      "max_calls": 12,
+      "max_cli_seconds": 900
+    },
+    "ai": {
+      "max_calls": 12,
+      "max_cli_seconds": 900,
+      "includes_comparison_audit": true
+    }
+  },
+  "api_spend": 0,
+  "installed_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "author": "Graham Hill",
+  "audience": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+  "voice": "relatable_provocateur v1",
+  "scope": "Audience-first reframing with unchanged security incidents, then cross-subject transfer. Audience/brief/telling change together; not single-factor causal proof.",
+  "source_retrieval": "Stanford GSB403; Stanford Digital Economy Lab full abstract read instead. METR original and2026 update read. Short excerpts retained; no invented checking-time causal result."
+}

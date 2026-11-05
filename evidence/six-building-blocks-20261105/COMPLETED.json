@@ -1,0 +1,21 @@
+{
+  "status": "GO recorded before/after and cross-subject comparisons / HOLD human acceptance",
+  "subjects": [
+    "security",
+    "ai"
+  ],
+  "model_calls": 15,
+  "api_spend": 0,
+  "human_preferences": null,
+  "prior_feedback": "Graham said both earlier posts were good but written for cybersecurity experts; no numerical quality labels or publishing approval inferred.",
+  "installed_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "comparison_labels": {
+    "B01": "security-control",
+    "B02": "ai-control",
+    "B03": "original-security-control",
+    "B04": "original-security-engine",
+    "B05": "security-engine",
+    "B06": "ai-engine"
+  },
+  "reopen_added_calls": 0
+}

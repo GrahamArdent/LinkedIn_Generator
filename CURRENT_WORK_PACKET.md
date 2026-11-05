@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Reviewed headless release merged and installed; P2 writing-quality evaluation continues
+CURRENT_STAGE_OR_MILESTONE: Same-subject six-building-block comparison and AI transfer retained; human review pending
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: product merge and installed revision0c099d70fc807044355af089d62d1bef049cbb95; receipt evidence/release-integration-20261105/MILESTONE.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -289,7 +289,7 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/release-integration-20261105/MILESTONE.json
+CURRENT_MILESTONE_RECEIPT: evidence/six-building-blocks-20261105/COMPLETED.json
 NEXT_ELIGIBLE_PHASE: Continue P2 human/content evaluation using the installed headless release; no equal-post-length requirement
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
@@ -393,3 +393,7 @@ Different draft lengths are not a defect or a technical merge/install gate. Huma
 ## Installed acceptance trial — November5,2026
 
 Completed installed-launcher trial: evidence/installed-acceptance-20261105/REPORT.md and RESULTS.json. Engine HOLD_NO_QUALIFIED_CANDIDATE retained; visual deferred. Same-brief symbolic baseline and shuffled pair saved. 6 subscription calls/API0 within12/900 admission; completed reopening adds0 calls. Human factual/usefulness/voice/editing-effort review pending. No publishing or new installation.
+
+## Current six-building-block comparisons — November5,2026
+
+Same cybersecurity subject reframed for non-specialist approvers, then AI usable-work concept tested with the same six decisions. See evidence/six-building-blocks-20261105/REPORT.md, BUILDING_BLOCKS.json and RESULTS.json. Both installed-launcher engine/control runs completed. Security72→74/control71; AI73→74/control71, uncalibrated model ratings; no candidate qualified and visuals deferred.15 subscription calls across admitted7/8-call batches; API0; completed reopen0 added calls. Accessibility improved in security; reader/decision structure transfers to AI, while source-summary repetition and qualifications remain. New human preferences pending; prior feedback both earlier drafts good but specialist-oriented preserved without inventing acceptance labels. Different word counts not a failure. Installed0c099d7 unchanged;230-test release qualification reused, all26 AT/11 E2E retained. No publishing or new product installation.
