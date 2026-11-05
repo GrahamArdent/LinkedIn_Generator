@@ -1,0 +1,149 @@
+{
+  "request_sha256": "7b06dc675258f0445807df5c7caff797f884a92247ba8eecea53b74a138f7503",
+  "sources": [
+    {
+      "source_id": "STANFORD-AI-WORK",
+      "title": "Generative AI at Work",
+      "publisher": "Stanford Digital Economy Lab",
+      "url": "https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "limitations": "Customer-support deployment; not every job or tool. Current publisher summary reports15%; earlier NBER version reported about14%.",
+      "passages": [
+        {
+          "locator": "Abstract line44",
+          "excerpt": "using data from 5,172 customer support agents"
+        }
+      ]
+    },
+    {
+      "source_id": "METR-2025",
+      "title": "Early-2025 experienced developer productivity experiment",
+      "publisher": "METR",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "limitations": "Small randomized study of experienced contributors on familiar repositories using early-2025 tools; not current universal AI performance. February2026 follow-up has selection and measurement biases; METR considers its later effect estimate unreliable. Neither study isolates checking as the cause of all overhead.",
+      "passages": [
+        {
+          "locator": "Core result line53",
+          "excerpt": "they take 19% longer to complete issues"
+        }
+      ]
+    },
+    {
+      "source_id": "METR-2026-BOUNDARY",
+      "title": "Developer productivity experiment design update",
+      "publisher": "METR",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "limitations": "Same METR origin, not third independent evidence chain.",
+      "passages": [
+        {
+          "locator": "Opening line38",
+          "excerpt": "an unreliable signal of the current productivity effect"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "kind": "fact",
+      "claim_id": "AI-F1",
+      "text": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.",
+      "source_ids": [
+        "STANFORD-AI-WORK"
+      ]
+    },
+    {
+      "kind": "fact",
+      "claim_id": "AI-F2",
+      "text": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.",
+      "source_ids": [
+        "METR-2025"
+      ]
+    }
+  ],
+  "central_claim_id": "AI-F1",
+  "editorial_building_blocks": {
+    "1_reader": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+    "2_decision": "For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.",
+    "3_concept": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+    "4_evidence": {
+      "sources": [
+        {
+          "source_id": "STANFORD-AI-WORK",
+          "title": "Generative AI at Work",
+          "publisher": "Stanford Digital Economy Lab",
+          "url": "https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/",
+          "status": "usable",
+          "checked_at": "2026-11-05",
+          "limitations": "Customer-support deployment; not every job or tool. Current publisher summary reports15%; earlier NBER version reported about14%.",
+          "passages": [
+            {
+              "locator": "Abstract line44",
+              "excerpt": "using data from 5,172 customer support agents"
+            }
+          ]
+        },
+        {
+          "source_id": "METR-2025",
+          "title": "Early-2025 experienced developer productivity experiment",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+          "status": "usable",
+          "checked_at": "2026-11-05",
+          "limitations": "Small randomized study of experienced contributors on familiar repositories using early-2025 tools; not current universal AI performance. February2026 follow-up has selection and measurement biases; METR considers its later effect estimate unreliable. Neither study isolates checking as the cause of all overhead.",
+          "passages": [
+            {
+              "locator": "Core result line53",
+              "excerpt": "they take 19% longer to complete issues"
+            }
+          ]
+        },
+        {
+          "source_id": "METR-2026-BOUNDARY",
+          "title": "Developer productivity experiment design update",
+          "publisher": "METR",
+          "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+          "status": "usable",
+          "checked_at": "2026-11-05",
+          "limitations": "Same METR origin, not third independent evidence chain.",
+          "passages": [
+            {
+              "locator": "Opening line38",
+              "excerpt": "an unreliable signal of the current productivity effect"
+            }
+          ]
+        }
+      ],
+      "purpose": "Support and bound the concept, rather than dictate a technical news summary."
+    },
+    "5_telling_voice": {
+      "narrative": {
+        "form": "literal",
+        "beats": [
+          "Begin with a familiar choice: is the work done when output appears, or when it can be used?",
+          "Compare the two attributed findings without pretending the settings are equivalent.",
+          "Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.",
+          "End with the practical task comparison and a compact evidence boundary."
+        ],
+        "symbol": null
+      },
+      "voice": "relatable_provocateur v1; Graham Hill individual author",
+      "instruction": "Explain ordinary decisions. Translate credentials as account access, whitelisted infrastructure as recognized company systems, API calls as direct computer-to-computer requests only if indispensable. No invented work experience, dialogue, screen-location assumptions or measured outcomes."
+    },
+    "6_review": {
+      "questions": [
+        "Can a non-specialist paraphrase the point?",
+        "What decision changes?",
+        "Which facts earn the inference?",
+        "Is the telling useful beyond its opening?",
+        "What needs editing?"
+      ],
+      "human_preferences": null,
+      "equal_word_count_required": false
+    }
+  }
+}

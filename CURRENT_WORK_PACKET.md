@@ -393,3 +393,7 @@ Different draft lengths are not a defect or a technical merge/install gate. Huma
 ## Installed acceptance trial — November5,2026
 
 Completed installed-launcher trial: evidence/installed-acceptance-20261105/REPORT.md and RESULTS.json. Engine HOLD_NO_QUALIFIED_CANDIDATE retained; visual deferred. Same-brief symbolic baseline and shuffled pair saved. 6 subscription calls/API0 within12/900 admission; completed reopening adds0 calls. Human factual/usefulness/voice/editing-effort review pending. No publishing or new installation.
+
+## Current six-building-block comparisons — November5,2026
+
+Same cybersecurity subject reframed for non-specialist approvers, then AI usable-work concept tested with the same six decisions. See evidence/six-building-blocks-20261105/REPORT.md, BUILDING_BLOCKS.json and RESULTS.json. Both installed-launcher engine/control runs completed. Security72→74/control71; AI73→74/control71, uncalibrated model ratings; no candidate qualified and visuals deferred.15 subscription calls across admitted7/8-call batches; API0; completed reopen0 added calls. Accessibility improved in security; reader/decision structure transfers to AI, while source-summary repetition and qualifications remain. New human preferences pending; prior feedback both earlier drafts good but specialist-oriented preserved without inventing acceptance labels. Different word counts not a failure. Installed0c099d7 unchanged;230-test release qualification reused, all26 AT/11 E2E retained. No publishing or new product installation.

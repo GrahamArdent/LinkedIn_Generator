@@ -1,0 +1,60 @@
+{
+  "request_id": "six-blocks-ai-20261105",
+  "origin": "manual",
+  "topic": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+  "persona_key": "graham",
+  "audience": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+  "objective": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+  "writing_voice_id": "relatable_provocateur",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "editorial_handoff": {
+    "version": 1,
+    "meaning": {
+      "thesis": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+      "reader_consequence": "For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.",
+      "facts": [
+        {
+          "claim_id": "AI-F1",
+          "text": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.",
+          "source_ids": [
+            "STANFORD-AI-WORK"
+          ]
+        },
+        {
+          "claim_id": "AI-F2",
+          "text": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.",
+          "source_ids": [
+            "METR-2025"
+          ]
+        }
+      ],
+      "qualification": "These studies involve different workers, tasks and tools, not a matched comparison. They do not establish checking as the cause of slowdown. METR’s early-2025 result is historical; its February2026 follow-up has selection and measurement biases and does not provide a reliable current effect estimate."
+    },
+    "narrative": {
+      "form": "literal",
+      "beats": [
+        "Begin with a familiar choice: is the work done when output appears, or when it can be used?",
+        "Compare the two attributed findings without pretending the settings are equivalent.",
+        "Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.",
+        "End with the practical task comparison and a compact evidence boundary."
+      ],
+      "symbol": null
+    }
+  },
+  "opportunity_gate": true,
+  "publish_quality_gate": true,
+  "publish_quality_threshold": 90,
+  "visual_asset_plan": true,
+  "evidence": [
+    {
+      "title": "STANFORD-AI-WORK",
+      "fact": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance."
+    },
+    {
+      "title": "METR-2025",
+      "fact": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study."
+    }
+  ],
+  "hashtags": []
+}

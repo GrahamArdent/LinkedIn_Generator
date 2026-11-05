@@ -1,0 +1,752 @@
+{
+  "security": {
+    "state": "completed",
+    "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+    "original_score": 72,
+    "rewrite_score": 74,
+    "rewrite_guard_accepted": true,
+    "rewrite_guard_reasons": [],
+    "control_score": 71,
+    "selected_candidate": null,
+    "visual": {
+      "status": "deferred",
+      "source_candidate": null,
+      "source_content_sha256": null,
+      "asset_type": null,
+      "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+      "creative_goal": "",
+      "aspect_ratio": "4:5",
+      "single_image": null,
+      "carousel": null,
+      "review_required": true,
+      "warnings": [
+        "publish_ready_candidate_required"
+      ]
+    },
+    "calls_including_audit_if_present": 7,
+    "seconds": 86.2091669421643,
+    "reopen_added_calls": 0,
+    "resources": [
+      {
+        "attempt_id": "attempt-8faf47e34dda4aefbc264ca4d96a784b",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 18.856127156876028,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 15039,
+          "output_tokens": 356,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "9f62c98342d23ceb70aed6bbb9da8bca608888b39e0b2612d4b0f9815c9222d0",
+        "result_sha256": "854d68f26b4293f83e6e037c46e5813995e02fa541e94b0b2286f32033850cb6",
+        "events": [
+          {
+            "thread_id": "01a1a9f3-17f4-75f0-bdb8-5758e6c89909",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "460d4dcf740699959e07b00c93f5e2b4188ad06e5ef67e6e7d5969d248f13b8a",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 15039,
+              "output_tokens": 356,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-a4e5c757b6394832b01e557fd7a99b47",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 8.864969164133072,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 16003,
+          "output_tokens": 169,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "748f28b4cf92ca36b4f42c632069113802ea2026d624651abb93fda37853de17",
+        "result_sha256": "e647fdfc91fe0f7add27905a71916fa51592136bf75535ef0fabb7406850dd3f",
+        "events": [
+          {
+            "thread_id": "01a1a9f3-6704-70f0-80f2-46842fd5c187",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "52ccbec57578ae4f717b88f0cd75ed866b46804f18dd666e93f93415f2ab2d31",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 16003,
+              "output_tokens": 169,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-64a7eb20828a45d48ce18a5d96c1c012",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 10.115268769674003,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 16009,
+          "output_tokens": 182,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "d6a6a2c4cbb3aa2b0ffb62684759031a799910f862540c160bde46b54abb2033",
+        "result_sha256": "76613461c2bd83e49294741d817fbc6c315d3d36292e683bba121cd1d2464ae5",
+        "events": [
+          {
+            "thread_id": "01a1a9f2-80b1-72b0-a86c-3b0132da2a9b",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "8f08e1fae9d5dca0c20483b920f8c3c87f70b2922e4da78829ee5ca9b47e9ca1",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 16009,
+              "output_tokens": 182,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-d8a70fa531014fa0bf7769dc9d845a58",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 14.142893640324473,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 15853,
+          "output_tokens": 359,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "736bc698d819ad0dcf909cd2fecdf10b37335093da566841008a1682f65cfab8",
+        "result_sha256": "0db271cb4aba260a072928cc23c64e61ee624ae9bae7c2e8089c15c7a745538a",
+        "events": [
+          {
+            "thread_id": "01a1a9f2-ada1-77b3-96ef-2f17f1f90175",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "efd364f41fed8450534dd72910c6887e9c94141b1c1e4e3966794b29e72dcd04",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 15853,
+              "output_tokens": 359,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-ea3963baedfb4f4d83debaa8d339f57c",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 5.792695163749158,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 9645,
+          "output_tokens": 129,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "4591756061384e482e1a72f45dd56d49c4ed51760c779cd5eaf23169976267a6",
+        "result_sha256": "17d23951613c77af00fdfd2a4454324e0ff8eecdb2ad3d8c05f9d1c0d038904f",
+        "events": [
+          {
+            "thread_id": "01a1a9f2-1764-70c2-a6f7-ca8b8561a845",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "8975b3fa7c748f0b8be35e2b6b2d4e03a2dcf34a4f704b9e3f18c351450c8242",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 9645,
+              "output_tokens": 129,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-0124a6ee48fd42829ce214c9809b85bb",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 10.090291447937489,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 16012,
+          "output_tokens": 182,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "6515098efd162b0a380992b4843e1a3e4f95248bfb6373ae2bf7deaa64049148",
+        "result_sha256": "674febe0a21785fb174b99c36978ee1f34976d67d00f5cbbe4eca01deac23b4f",
+        "events": [
+          {
+            "thread_id": "01a1a9f2-ea33-70a0-afaa-9f71cc055970",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "62a8339825ab3e2147c318f152b1a31ffd0416fbd517e64414e37bf8196d4541",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 16012,
+              "output_tokens": 182,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-82c3d87ad92e4c79b8d1c2d033e2c0d0",
+        "run_id": "six-blocks-security-20261105",
+        "elapsed_seconds": 18.34692159947008,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 15557,
+          "output_tokens": 358,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "2b4c2d51e7b3f097df55ba945af714b32b565c3b0b77ad952ac616badbe63afc",
+        "result_sha256": "4456d676f27809e0d6aa46ddbe10b0b5252687ca0b065d0fbc09104184b909e6",
+        "events": [
+          {
+            "thread_id": "01a1a9f2-33a0-76d0-875c-92a8944a29f9",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "31d9cb1462c3ea4ae8bd44fe9e2cc7c579f062fd0a96530b0e9d29a73c5a4dc2",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 0,
+              "input_tokens": 15557,
+              "output_tokens": 358,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      }
+    ]
+  },
+  "ai": {
+    "state": "completed",
+    "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+    "original_score": 73,
+    "rewrite_score": 74,
+    "rewrite_guard_accepted": true,
+    "rewrite_guard_reasons": [],
+    "control_score": 71,
+    "selected_candidate": null,
+    "visual": {
+      "status": "deferred",
+      "source_candidate": null,
+      "source_content_sha256": null,
+      "asset_type": null,
+      "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+      "creative_goal": "",
+      "aspect_ratio": "4:5",
+      "single_image": null,
+      "carousel": null,
+      "review_required": true,
+      "warnings": [
+        "publish_ready_candidate_required"
+      ]
+    },
+    "calls_including_audit_if_present": 8,
+    "seconds": 172.74407879356295,
+    "reopen_added_calls": 0,
+    "resources": [
+      {
+        "attempt_id": "attempt-00b753eff9cf4f4282cc73908a5552de",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 6.535187014378607,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 9639,
+          "output_tokens": 134,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "65b783d559f7898af1a06b92a1971d45b02a37bd5fdae156113d1ec0543ea86c",
+        "result_sha256": "b726bdab26a48517b75fd640db2dff7268a5c3c7a77e29676c7923038dd20298",
+        "events": [
+          {
+            "thread_id": "01a1a9f3-8ffc-7992-9d51-1f2e0a8b85ba",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "be85fe98e9e57f22d97cd0c70bede51e9c74d18a536881868ef7e3edfe5d1e8a",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 0,
+              "input_tokens": 9639,
+              "output_tokens": 134,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-8017258caffd46e3b5ddf2be10eb505e",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 16.67677411530167,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 11880,
+          "output_tokens": 356,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "73d16e6b21782670f6f72a69693c10c60b52dc9e4855f29b450d62e303891a9f",
+        "result_sha256": "707490717b070669a1f9f79959674dd373fccc1ab1c5b86a6ff17fccb36b1931",
+        "events": [
+          {
+            "thread_id": "01a1a9f3-aee0-7ec0-8cdd-01fa151b5c41",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "eac175d1aab9b43fda183d80c270d32445535dfe36e54b64dcb17e3e1e14f929",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 11880,
+              "output_tokens": 356,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-68556334377a4c9db3f07fe8665ab081",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 9.532454987056553,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 12346,
+          "output_tokens": 185,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "dc3ef7ef102e369096af8071df84a9eeeae33cffbeacaba549b6d0c73ba52a69",
+        "result_sha256": "10afc6cd07661fa3e7c5b7863d20f6a82504cc4b6f5e37b46b4f90604b8db05e",
+        "events": [
+          {
+            "thread_id": "01a1a9f3-f55c-7492-9cb3-6a1fa3ddac2b",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "fc5d7a4c255cea108d8ec5a6368968e3b5c74372c3fb6321b6eae8a8c4962262",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 12346,
+              "output_tokens": 185,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-bd9a1edb61234b00b7e92c1a7d5aba1e",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 14.95525202807039,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 12210,
+          "output_tokens": 344,
+          "reasoning_output_tokens": 50
+        },
+        "request_sha256": "622b1363ac06e5c24e943ed0137cb78b018e64a5b636b7ef548a412ff35752a4",
+        "result_sha256": "34025eb9567f97e53035c4b7e06897cc7bf3ab5eaeef0d68f7658231e6787eef",
+        "events": [
+          {
+            "thread_id": "01a1a9f4-1fe9-7431-84a7-f0023f5ab460",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "a6faeba859b31b98ad2f065f31e9939ffb6c51fd12adf643dc4a505dfa5447c3",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 12210,
+              "output_tokens": 344,
+              "reasoning_output_tokens": 50
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-f36c9547a6e1470aa810d9b58205c023",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 92.50401093252003,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 14616,
+          "output_tokens": 2515,
+          "reasoning_output_tokens": 52
+        },
+        "request_sha256": "f300015b130e6db798f65e86311f6a7afe7fb4b864e6b88c1e7dfcb2b4b1ae31",
+        "result_sha256": "7f21f370a2fe951604f227f52c15f90bbe757a2c3f82a186a1b0e302385a6825",
+        "events": [
+          {
+            "thread_id": "01a1a9f4-f059-7791-892f-2d5a1c8f25dd",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "c82991251b0b04d92304ebbf75c0c2cb9c837d3f522d735046a9744984c378ee",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 14616,
+              "output_tokens": 2515,
+              "reasoning_output_tokens": 52
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-0c703c82cda14d9da595dfec73d9511c",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 14.046173121780157,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 11384,
+          "output_tokens": 326,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "96839c104d1f81568de9dbd0e36477dcdcf03967e98ea3f7fc7b7be25b6637bb",
+        "result_sha256": "962f0a5db511a57ac764c15f76e35e297c98e6abece64cc1601560654c8cbdf6",
+        "events": [
+          {
+            "thread_id": "01a1a9f4-84d2-7751-9d67-d27d788fb8a1",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "bdc2215a014c876d9d7bfbcf6295ffcce00cfa4b57b48211c31f4be408788b11",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 0,
+              "input_tokens": 11384,
+              "output_tokens": 326,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-1b6b07be57474cbeb485af82d1a0eec1",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 7.821891884319484,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 12276,
+          "output_tokens": 191,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "3c009223b19621f3a77cd438e94155dad2727b3389873486892c9ca52dd77247",
+        "result_sha256": "51447aa639b6a6a7ce8e60fce1a474809e5f9850c6c97e5f64d1989e29277375",
+        "events": [
+          {
+            "thread_id": "01a1a9f4-5fec-7232-9a27-6a0df4365fd7",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "f593e8cc201b6f6b6ac10e8d0f147e7961d675ff9b9d07deeb8c1da4099ecb60",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 12276,
+              "output_tokens": 191,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      },
+      {
+        "attempt_id": "attempt-f22da562dbdf4ba9bbf7f3a645ee65fb",
+        "run_id": "six-blocks-ai-20261105",
+        "elapsed_seconds": 10.672334710136056,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 7424,
+          "input_tokens": 12330,
+          "output_tokens": 192,
+          "reasoning_output_tokens": 0
+        },
+        "request_sha256": "e7d7b5f72f8c3df05b54d2903d87529ecdf92def22d00951fe3ba0aa2db7ba0e",
+        "result_sha256": "60b29f0a0fc8a55125374c70e599ed0537b8e1a77522927870c1778d32b182dd",
+        "events": [
+          {
+            "thread_id": "01a1a9f4-c0fc-7721-891a-775eb75a60d3",
+            "type": "thread.started"
+          },
+          {
+            "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+            "item_id": "item_0",
+            "item_type": "error",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "agent_message_sha256": "0bbcbd2261094c4a17ae3ec8ea23eae4213cea3c0d86863caf1ef9ef82432b1d",
+            "item_id": "item_1",
+            "item_type": "agent_message",
+            "type": "item.completed"
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "cache_write_input_tokens": 0,
+              "cached_input_tokens": 7424,
+              "input_tokens": 12330,
+              "output_tokens": 192,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "provider_response_id": "unavailable"
+      }
+    ]
+  }
+}
