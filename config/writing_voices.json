@@ -1,0 +1,322 @@
+{
+  "catalog_version": 1,
+  "boundary": "Style only. Legacy author names are provenance, never runtime imitation instructions. Identity, audience, factual evidence and house rules come from the request. Omitted writing_voice_id preserves existing defaults.",
+  "voices": {
+    "concise_challenger": {
+      "version": 1,
+      "label": "Concise Challenger",
+      "aliases": [
+        "seth_godin"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "seth_godin",
+        "legacy_label": "Seth Godin - Marketing Sage"
+      },
+      "style_traits": {
+        "content_style": "conversational",
+        "avg_sentence_length": 12.0,
+        "sentence_length_variance": 8.0,
+        "colon_freq": 25,
+        "semicolon_freq": 2,
+        "question_freq": 30,
+        "exclamation_freq": 5,
+        "complexity_score": 0.6,
+        "professional_tone": 60,
+        "conversational_tone": 85,
+        "analytical_tone": 70,
+        "inspirational_tone": 80,
+        "controversial_strength": 0.7,
+        "vulnerability_comfort": 0.8,
+        "question_engagement_level": 0.9,
+        "preferred_emotional_triggers": "curiosity,validation,fear_of_mediocrity,belonging",
+        "pain_point_intensity": "subtle",
+        "controversy_boundaries": "personal_attacks",
+        "preferred_structure": "question_insight_challenge"
+      }
+    },
+    "reflective_leader": {
+      "version": 1,
+      "label": "Reflective Leader",
+      "aliases": [
+        "brene_brown"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "brene_brown",
+        "legacy_label": "Brené Brown - Vulnerability Scholar"
+      },
+      "style_traits": {
+        "content_style": "personal",
+        "avg_sentence_length": 16.0,
+        "sentence_length_variance": 7.0,
+        "colon_freq": 18,
+        "semicolon_freq": 8,
+        "question_freq": 25,
+        "exclamation_freq": 8,
+        "complexity_score": 0.65,
+        "professional_tone": 65,
+        "conversational_tone": 80,
+        "analytical_tone": 75,
+        "inspirational_tone": 90,
+        "controversial_strength": 0.6,
+        "vulnerability_comfort": 0.95,
+        "question_engagement_level": 0.8,
+        "preferred_emotional_triggers": "vulnerability,belonging,courage,shame_resilience",
+        "pain_point_intensity": "moderate",
+        "controversy_boundaries": "politics,religion",
+        "preferred_structure": "story_research_insight_cta"
+      }
+    },
+    "counterintuitive_analyst": {
+      "version": 1,
+      "label": "Counterintuitive Analyst",
+      "aliases": [
+        "malcolm_gladwell"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "malcolm_gladwell",
+        "legacy_label": "Malcolm Gladwell - Counter-Intuitive Storyteller"
+      },
+      "style_traits": {
+        "content_style": "analytical",
+        "avg_sentence_length": 20.0,
+        "sentence_length_variance": 9.0,
+        "colon_freq": 22,
+        "semicolon_freq": 12,
+        "question_freq": 28,
+        "exclamation_freq": 4,
+        "complexity_score": 0.75,
+        "professional_tone": 70,
+        "conversational_tone": 70,
+        "analytical_tone": 90,
+        "inspirational_tone": 60,
+        "controversial_strength": 0.8,
+        "vulnerability_comfort": 0.4,
+        "question_engagement_level": 0.85,
+        "preferred_emotional_triggers": "curiosity,intellectual_surprise,pattern_recognition,aha_moments",
+        "pain_point_intensity": "subtle",
+        "controversy_boundaries": "personal_attacks",
+        "preferred_structure": "counterintuitive_hook_evidence_revelation"
+      }
+    },
+    "direct_motivator": {
+      "version": 1,
+      "label": "Direct Motivator",
+      "aliases": [
+        "gary_vaynerchuk"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "gary_vaynerchuk",
+        "legacy_label": "Gary Vaynerchuk - No-BS Motivator"
+      },
+      "style_traits": {
+        "content_style": "aggressive",
+        "avg_sentence_length": 11.0,
+        "sentence_length_variance": 10.0,
+        "colon_freq": 15,
+        "semicolon_freq": 1,
+        "question_freq": 35,
+        "exclamation_freq": 40,
+        "complexity_score": 0.5,
+        "professional_tone": 50,
+        "conversational_tone": 95,
+        "analytical_tone": 40,
+        "inspirational_tone": 85,
+        "controversial_strength": 0.85,
+        "vulnerability_comfort": 0.7,
+        "question_engagement_level": 0.95,
+        "preferred_emotional_triggers": "urgency,motivation,call_out,accountability",
+        "pain_point_intensity": "strong",
+        "controversy_boundaries": "",
+        "preferred_structure": "aggressive_hook_reality_check_action"
+      }
+    },
+    "purpose_led": {
+      "version": 1,
+      "label": "Purpose-Led Leader",
+      "aliases": [
+        "simon_sinek"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "simon_sinek",
+        "legacy_label": "Simon Sinek - Why-Driven Leader"
+      },
+      "style_traits": {
+        "content_style": "inspirational",
+        "avg_sentence_length": 17.0,
+        "sentence_length_variance": 6.0,
+        "colon_freq": 20,
+        "semicolon_freq": 10,
+        "question_freq": 22,
+        "exclamation_freq": 6,
+        "complexity_score": 0.68,
+        "professional_tone": 75,
+        "conversational_tone": 75,
+        "analytical_tone": 65,
+        "inspirational_tone": 95,
+        "controversial_strength": 0.5,
+        "vulnerability_comfort": 0.7,
+        "question_engagement_level": 0.75,
+        "preferred_emotional_triggers": "purpose,belonging,inspiration,leadership_calling",
+        "pain_point_intensity": "moderate",
+        "controversy_boundaries": "politics,religion,personal_attacks",
+        "preferred_structure": "vision_why_how_inspiration"
+      }
+    },
+    "practical_experimenter": {
+      "version": 1,
+      "label": "Practical Experimenter",
+      "aliases": [
+        "tim_ferriss"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "tim_ferriss",
+        "legacy_label": "Tim Ferriss - Efficiency Hacker"
+      },
+      "style_traits": {
+        "content_style": "tactical",
+        "avg_sentence_length": 18.0,
+        "sentence_length_variance": 7.0,
+        "colon_freq": 25,
+        "semicolon_freq": 8,
+        "question_freq": 20,
+        "exclamation_freq": 5,
+        "complexity_score": 0.72,
+        "professional_tone": 70,
+        "conversational_tone": 65,
+        "analytical_tone": 85,
+        "inspirational_tone": 60,
+        "controversial_strength": 0.65,
+        "vulnerability_comfort": 0.6,
+        "question_engagement_level": 0.7,
+        "preferred_emotional_triggers": "optimization,control,efficiency,results",
+        "pain_point_intensity": "moderate",
+        "controversy_boundaries": "politics,religion",
+        "preferred_structure": "problem_experiment_result_system"
+      }
+    },
+    "balanced_authority": {
+      "version": 1,
+      "label": "Balanced Authority",
+      "aliases": [
+        "thought_leader"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "thought_leader",
+        "legacy_label": "Thought Leader Archetype"
+      },
+      "style_traits": {
+        "content_style": "professional",
+        "avg_sentence_length": 18.0,
+        "sentence_length_variance": 6.0,
+        "colon_freq": 18,
+        "semicolon_freq": 7,
+        "question_freq": 22,
+        "exclamation_freq": 8,
+        "complexity_score": 0.72,
+        "professional_tone": 75,
+        "conversational_tone": 65,
+        "analytical_tone": 75,
+        "inspirational_tone": 70,
+        "controversial_strength": 0.6,
+        "vulnerability_comfort": 0.7,
+        "question_engagement_level": 0.75,
+        "preferred_emotional_triggers": "validation,progress,insight,authority",
+        "pain_point_intensity": "moderate",
+        "controversy_boundaries": "politics,religion,personal_attacks",
+        "preferred_structure": "insight_evidence_application_cta"
+      }
+    },
+    "technical_explainer": {
+      "version": 1,
+      "label": "Technical Explainer",
+      "aliases": [
+        "technical_expert"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedInGenV2",
+        "commit": "e5608e94948684283aebb6149414791680463a52",
+        "path": "persona_presets.py",
+        "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
+        "legacy_id": "technical_expert",
+        "legacy_label": "Technical Expert Archetype"
+      },
+      "style_traits": {
+        "content_style": "technical",
+        "avg_sentence_length": 22.0,
+        "sentence_length_variance": 5.0,
+        "colon_freq": 30,
+        "semicolon_freq": 15,
+        "question_freq": 15,
+        "exclamation_freq": 3,
+        "complexity_score": 0.85,
+        "professional_tone": 90,
+        "conversational_tone": 40,
+        "analytical_tone": 95,
+        "inspirational_tone": 30,
+        "controversial_strength": 0.4,
+        "vulnerability_comfort": 0.5,
+        "question_engagement_level": 0.6,
+        "preferred_emotional_triggers": "mastery,precision,optimization,correctness",
+        "pain_point_intensity": "subtle",
+        "controversy_boundaries": "politics,religion,personal_attacks",
+        "preferred_structure": "problem_analysis_solution_implementation"
+      }
+    },
+    "relatable_provocateur": {
+      "version": 1,
+      "label": "Relatable Provocateur",
+      "aliases": [
+        "graham_relatable_provocateur",
+        "graham_relatable_provocateur_v2",
+        "the_relatable_provocateur_with_stephen_king_undertones"
+      ],
+      "source": {
+        "repository": "GrahamArdent/LinkedIn_Generator",
+        "path": "config/graham_voice_profile.yaml",
+        "basis": "Existing authorized trait projection of the historical Voice Bible, not historical biography or imitation instructions."
+      },
+      "style_traits": {
+        "tone": [
+          "bold",
+          "witty",
+          "empathetic",
+          "direct",
+          "conversational",
+          "contrarian_without_being_performative"
+        ],
+        "rhythm": "Short hooks, varied sentence length, compact paragraphs and occasional one-line punches.",
+        "reasoning": "Challenge a supported assumption; connect the mechanism to earned practical or human stakes.",
+        "imagery": "Vivid but controlled; use analogy or dry humour only when useful. No invented incidents or dramatic outcomes.",
+        "preferred_structure": "concrete_observation_supported_reframing_practical_takeaway_earned_closer"
+      }
+    }
+  }
+}

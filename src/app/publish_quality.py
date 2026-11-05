@@ -105,7 +105,9 @@ def assess_publish_quality(
         "judge whether concrete details are grounded. This is a publish-readiness heuristic, not a promise of "
         "virality. These ratings are not calibrated to the author's human judgments or engagement outcomes. "
         "Apply the rating anchors to each dimension; never inflate scores to meet a threshold. "
-        "Use the same brief and voice context as the writer. Identify the largest fixable defect first; "
+        "Use the same brief and voice context as the writer. If writing_voice is present, assess voice fit against "
+        "its selected style_traits over default persona style; preserve factual and author-POV boundaries. "
+        "Identify the largest fixable defect first; "
         "missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only."
     )
     user = json.dumps(

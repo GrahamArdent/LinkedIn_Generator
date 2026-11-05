@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, model_validator, field_validator
 
 
 FeedbackReason = Literal[
@@ -153,6 +153,15 @@ class LinkedInContentRequest(BaseModel):
     origin: Literal["dedication", "manual", "test"] = "dedication"
     topic: str = Field(min_length=1)
     persona_key: str = Field(default="graham", min_length=1)
+    writing_voice_id: str | None = Field(default=None, min_length=1)
+
+    @field_validator("writing_voice_id")
+    @classmethod
+    def validate_writing_voice(cls, value):
+        if value is None:
+            return None
+        from .writing_voice import resolve_writing_voice
+        return resolve_writing_voice(value)["id"]
     audience: str = Field(default="professional network", min_length=1)
     objective: str = Field(
         default="turn real professional activity into useful LinkedIn visibility",

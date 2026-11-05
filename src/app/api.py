@@ -8,6 +8,7 @@ from .llm import LLMClient
 from .opportunity import assess_opportunity, ending_guidance
 from .publish_quality import assess_publish_quality, rewrite_for_publish_quality
 from .utils import load_yaml
+from .writing_voice import resolve_writing_voice
 
 
 LEGACY_TARGETS = ["CFO", "CISO", "Board"]
@@ -60,11 +61,14 @@ def _persona_profile(
     persona_key: str,
     *,
     author_pov: str,
+    writing_voice_id: str | None = None,
 ) -> dict[str, Any]:
     """Return persona configuration plus authorized voice and active POV context."""
 
     profile = dict(personas.get("personas", {}).get(persona_key, {}) or {})
     profile["active_author_pov"] = author_pov
+    if writing_voice_id is not None:
+        profile["writing_voice"] = resolve_writing_voice(writing_voice_id)
     if persona_key != "graham":
         return profile
 
@@ -141,6 +145,7 @@ def run_generation(
     opportunity_client: Any | None = None,
     publish_quality_client: Any | None = None,
     editorial_brief: dict[str, Any] | None = None,
+    writing_voice_id: str | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
@@ -175,8 +180,9 @@ def run_generation(
             "forbidden_phrases": list(cta_policies.get("forbidden_phrases", []) or []),
         }
     }
+    persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov,
+                                       writing_voice_id=writing_voice_id)
     pipe = Pipeline(cfg, client=llm_client)
-    persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov)
 
     plan_ctx = {
         "topic": topic,
@@ -303,6 +309,8 @@ def run_generation(
     )
     primary_body = str(payload.get("body") or hum)
     telemetry = payload.setdefault("telemetry", {})
+    if "writing_voice" in persona_profile:
+        telemetry["writing_voice"] = persona_profile["writing_voice"]
     telemetry.update(
         {
             "strongest_evidence_title": strongest_concrete_evidence["title"],

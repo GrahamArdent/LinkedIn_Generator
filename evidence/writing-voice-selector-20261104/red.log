@@ -1,0 +1,361 @@
+FFFFFFFFFFFFFFFFF                                                        [100%]
+=================================== FAILURES ===================================
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[concise_challenger] _
+
+style = 'concise_challenger'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'concise_challenger'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[reflective_leader] _
+
+style = 'reflective_leader'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'reflective_leader'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[counterintuitive_analyst] _
+
+style = 'counterintuitive_analyst'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'counterintuitive_analyst'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[direct_motivator] _
+
+style = 'direct_motivator'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'direct_motivator'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[purpose_led] _
+
+style = 'purpose_led'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'purpose_led'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[practical_experimenter] _
+
+style = 'practical_experimenter'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'practical_experimenter'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[balanced_authority] _
+
+style = 'balanced_authority'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'balanced_authority'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[technical_explainer] _
+
+style = 'technical_explainer'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'technical_explainer'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[relatable_provocateur] _
+
+style = 'relatable_provocateur'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+>       r,client,result,draft,profile,judgment=prompts(style)
+                                               ^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'relatable_provocateur'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+___________ test_prompt_difference_is_only_the_selected_style_block ____________
+
+    def test_prompt_difference_is_only_the_selected_style_block():
+>       a=prompts("concise_challenger");b=prompts("technical_explainer")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_voice.py:31: in prompts
+    r=request(style);client=Capture()
+      ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'concise_challenger'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+__ test_unknown_explicit_voice_is_rejected_at_request_admission[not_a_voice] ___
+
+bad = 'not_a_voice'
+
+    @pytest.mark.parametrize("bad",["not_a_voice","../personas","", "Seth Godin"])
+    def test_unknown_explicit_voice_is_rejected_at_request_admission(bad):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields
+E       AssertionError: assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:66: AssertionError
+__ test_unknown_explicit_voice_is_rejected_at_request_admission[../personas] ___
+
+bad = '../personas'
+
+    @pytest.mark.parametrize("bad",["not_a_voice","../personas","", "Seth Godin"])
+    def test_unknown_explicit_voice_is_rejected_at_request_admission(bad):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields
+E       AssertionError: assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:66: AssertionError
+________ test_unknown_explicit_voice_is_rejected_at_request_admission[] ________
+
+bad = ''
+
+    @pytest.mark.parametrize("bad",["not_a_voice","../personas","", "Seth Godin"])
+    def test_unknown_explicit_voice_is_rejected_at_request_admission(bad):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields
+E       AssertionError: assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:66: AssertionError
+___ test_unknown_explicit_voice_is_rejected_at_request_admission[Seth Godin] ___
+
+bad = 'Seth Godin'
+
+    @pytest.mark.parametrize("bad",["not_a_voice","../personas","", "Seth Godin"])
+    def test_unknown_explicit_voice_is_rejected_at_request_admission(bad):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields
+E       AssertionError: assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:66: AssertionError
+________ test_direct_engine_unknown_voice_fails_before_any_client_call _________
+
+    def test_direct_engine_unknown_voice_fails_before_any_client_call():
+>       assert "writing_voice_id" in inspect.signature(api.run_generation).parameters
+E       assert 'writing_voice_id' in mappingproxy(OrderedDict({'topic': <Parameter "topic: 'str'">, 'services': <Parameter "services: 'list[str]'">, 'perso...lity_client: 'Any | None' = None">, 'editorial_brief': <Parameter "editorial_brief: 'dict[str, Any] | None' = None">}))
+E        +  where mappingproxy(OrderedDict({'topic': <Parameter "topic: 'str'">, 'services': <Parameter "services: 'list[str]'">, 'perso...lity_client: 'Any | None' = None">, 'editorial_brief': <Parameter "editorial_brief: 'dict[str, Any] | None' = None">})) = <Signature (topic: 'str', services: 'list[str]', persona_key: 'str' = 'ardent_v2', *, audience: 'str' = 'C-suite leade...one, publish_quality_client: 'Any | None' = None, editorial_brief: 'dict[str, Any] | None' = None) -> 'dict[str, Any]'>.parameters
+E        +    where <Signature (topic: 'str', services: 'list[str]', persona_key: 'str' = 'ardent_v2', *, audience: 'str' = 'C-suite leade...one, publish_quality_client: 'Any | None' = None, editorial_brief: 'dict[str, Any] | None' = None) -> 'dict[str, Any]'> = <function signature at 0x7df8ce57e400>(<function run_generation at 0x7df8cc107d70>)
+E        +      where <function signature at 0x7df8ce57e400> = inspect.signature
+E        +      and   <function run_generation at 0x7df8cc107d70> = api.run_generation
+
+tests/test_writing_voice.py:71: AssertionError
+_____ test_legacy_alias_projects_traits_without_named_author_or_biography ______
+
+    def test_legacy_alias_projects_traits_without_named_author_or_biography():
+>       r=request("seth_godin");profile=voice_context(r);block=profile.get("writing_voice",{})
+          ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'seth_godin'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+___ test_baseline_and_trial_identity_keep_selected_style_and_no_call_reopen ____
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-379/test_baseline_and_trial_identi0')
+
+    def test_baseline_and_trial_identity_keep_selected_style_and_no_call_reopen(tmp_path):
+>       r=request("technical_explainer")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_writing_voice.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+style = 'technical_explainer'
+
+    def request(style):
+>       assert "writing_voice_id" in LinkedInContentRequest.model_fields, "independent writing voice is missing"
+E       AssertionError: independent writing voice is missing
+E       assert 'writing_voice_id' in {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...}
+E        +  where {'request_id': FieldInfo(annotation=Union[str, NoneType], required=False, default=None), 'origin': FieldInfo(annotatio...1)]), 'persona_key': FieldInfo(annotation=str, required=False, default='graham', metadata=[MinLen(min_length=1)]), ...} = LinkedInContentRequest.model_fields
+
+tests/test_writing_voice.py:19: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[concise_challenger]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[reflective_leader]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[counterintuitive_analyst]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[direct_motivator]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[purpose_led]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[practical_experimenter]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[balanced_authority]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[technical_explainer]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[relatable_provocateur]
+FAILED tests/test_writing_voice.py::test_prompt_difference_is_only_the_selected_style_block
+FAILED tests/test_writing_voice.py::test_unknown_explicit_voice_is_rejected_at_request_admission[not_a_voice]
+FAILED tests/test_writing_voice.py::test_unknown_explicit_voice_is_rejected_at_request_admission[../personas]
+FAILED tests/test_writing_voice.py::test_unknown_explicit_voice_is_rejected_at_request_admission[]
+FAILED tests/test_writing_voice.py::test_unknown_explicit_voice_is_rejected_at_request_admission[Seth Godin]
+FAILED tests/test_writing_voice.py::test_direct_engine_unknown_voice_fails_before_any_client_call
+FAILED tests/test_writing_voice.py::test_legacy_alias_projects_traits_without_named_author_or_biography
+FAILED tests/test_writing_voice.py::test_baseline_and_trial_identity_keep_selected_style_and_no_call_reopen
+17 failed in 0.22s
