@@ -96,6 +96,9 @@ def assess_publish_quality(
     voice = persona_profile.get("voice_authority") if isinstance(persona_profile.get("voice_authority"), dict) else {}
     brief = dict(persona_profile.get("editorial_context") or {})
     voice_context = dict(persona_profile)
+    if "writing_voice" in voice_context:
+        # The same brief is supplied separately below; do not repeat its thesis.
+        voice_context.pop("editorial_context", None)
 
     system = (
         "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 "

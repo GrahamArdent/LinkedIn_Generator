@@ -1,0 +1,54 @@
+........................................................................ [ 35%]
+........................................................................ [ 70%]
+....................................FF.....F................             [100%]
+=================================== FAILURES ===================================
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[concise_challenger] _
+
+style = 'concise_challenger'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+        r,client,result,draft,profile,judgment=prompts(style)
+        block=profile.get("writing_voice",{})
+        assert block.get("id")==style
+>       assert block.get("version")==1 and len(block.get("content_sha256",""))==64
+E       AssertionError: assert (2 == 1)
+E        +  where 2 = <built-in method get of dict object at 0x7031170f0c00>('version')
+E        +    where <built-in method get of dict object at 0x7031170f0c00> = {'id': 'concise_challenger', 'version': 2, 'label': 'Concise Challenger', 'style_traits': {'tone': ['spare', 'conversa...e question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.', ...}, ...}.get
+
+tests/test_writing_voice.py:43: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[reflective_leader] _
+
+style = 'reflective_leader'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+        r,client,result,draft,profile,judgment=prompts(style)
+        block=profile.get("writing_voice",{})
+        assert block.get("id")==style
+>       assert block.get("version")==1 and len(block.get("content_sha256",""))==64
+E       AssertionError: assert (2 == 1)
+E        +  where 2 = <built-in method get of dict object at 0x703116f95680>('version')
+E        +    where <built-in method get of dict object at 0x703116f95680> = {'id': 'reflective_leader', 'version': 2, 'label': 'Reflective Leader', 'style_traits': {'tone': ['reflective', 'empat...nsibility and human judgment. First-person interpretation is allowed; invented personal experience is not.', ...}, ...}.get
+
+tests/test_writing_voice.py:43: AssertionError
+_ test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[technical_explainer] _
+
+style = 'technical_explainer'
+
+    @pytest.mark.parametrize("style",STYLE_IDS)
+    def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style):
+        r,client,result,draft,profile,judgment=prompts(style)
+        block=profile.get("writing_voice",{})
+        assert block.get("id")==style
+>       assert block.get("version")==1 and len(block.get("content_sha256",""))==64
+E       AssertionError: assert (2 == 1)
+E        +  where 2 = <built-in method get of dict object at 0x7031171250c0>('version')
+E        +    where <built-in method get of dict object at 0x7031171250c0> = {'id': 'technical_explainer', 'version': 2, 'label': 'Technical Explainer', 'style_traits': {'tone': ['precise', 'anal...ain the relevant dependency and the limits of the conclusion; define technical terms in ordinary language.', ...}, ...}.get
+
+tests/test_writing_voice.py:43: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[concise_challenger]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[reflective_leader]
+FAILED tests/test_writing_voice.py::test_each_recovered_style_reaches_actual_drafting_and_judging_consumer[technical_explainer]
+3 failed, 201 passed in 1.92s

@@ -3,7 +3,7 @@
   "boundary": "Style only. Legacy author names are provenance, never runtime imitation instructions. Identity, audience, factual evidence and house rules come from the request. Omitted writing_voice_id preserves existing defaults.",
   "voices": {
     "concise_challenger": {
-      "version": 1,
+      "version": 2,
       "label": "Concise Challenger",
       "aliases": [
         "seth_godin"
@@ -14,32 +14,24 @@
         "path": "persona_presets.py",
         "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
         "legacy_id": "seth_godin",
-        "legacy_label": "Seth Godin - Marketing Sage"
+        "legacy_label": "Seth Godin - Marketing Sage",
+        "revision_note": "Version2 operational craft projection after retained nine-style convergence diagnostic; original numeric preset retained in Git history. No new author identity or factual authority."
       },
       "style_traits": {
-        "content_style": "conversational",
+        "tone": [
+          "spare",
+          "conversational",
+          "challenging"
+        ],
         "avg_sentence_length": 12.0,
-        "sentence_length_variance": 8.0,
-        "colon_freq": 25,
-        "semicolon_freq": 2,
-        "question_freq": 30,
-        "exclamation_freq": 5,
-        "complexity_score": 0.6,
-        "professional_tone": 60,
-        "conversational_tone": 85,
-        "analytical_tone": 70,
-        "inspirational_tone": 80,
-        "controversial_strength": 0.7,
-        "vulnerability_comfort": 0.8,
-        "question_engagement_level": 0.9,
-        "preferred_emotional_triggers": "curiosity,validation,fear_of_mediocrity,belonging",
-        "pain_point_intensity": "subtle",
-        "controversy_boundaries": "personal_attacks",
-        "preferred_structure": "question_insight_challenge"
+        "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+        "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+        "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+        "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
       }
     },
     "reflective_leader": {
-      "version": 1,
+      "version": 2,
       "label": "Reflective Leader",
       "aliases": [
         "brene_brown"
@@ -50,28 +42,20 @@
         "path": "persona_presets.py",
         "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
         "legacy_id": "brene_brown",
-        "legacy_label": "Brené Brown - Vulnerability Scholar"
+        "legacy_label": "Bren\u00e9 Brown - Vulnerability Scholar",
+        "revision_note": "Version2 operational craft projection after retained nine-style convergence diagnostic; original numeric preset retained in Git history. No new author identity or factual authority."
       },
       "style_traits": {
-        "content_style": "personal",
+        "tone": [
+          "reflective",
+          "empathetic",
+          "measured"
+        ],
         "avg_sentence_length": 16.0,
-        "sentence_length_variance": 7.0,
-        "colon_freq": 18,
-        "semicolon_freq": 8,
-        "question_freq": 25,
-        "exclamation_freq": 8,
-        "complexity_score": 0.65,
-        "professional_tone": 65,
-        "conversational_tone": 80,
-        "analytical_tone": 75,
-        "inspirational_tone": 90,
-        "controversial_strength": 0.6,
-        "vulnerability_comfort": 0.95,
-        "question_engagement_level": 0.8,
-        "preferred_emotional_triggers": "vulnerability,belonging,courage,shame_resilience",
-        "pain_point_intensity": "moderate",
-        "controversy_boundaries": "politics,religion",
-        "preferred_structure": "story_research_insight_cta"
+        "rhythm": "Allow the reasoning to unfold in varied sentences and connected paragraphs. Use a brief pause for a meaningful qualification, not a succession of punchlines.",
+        "reasoning": "Explore what a reasonable person might initially trust and why that confidence deserves a second look. Connect the distinction to responsibility and human judgment. First-person interpretation is allowed; invented personal experience is not.",
+        "imagery": "Use a grounded human perspective without manufacturing a scene, conversation or vulnerable confession.",
+        "preferred_structure": "Begin with an honest reflection or leadership dilemma, consider a credible alternative, and arrive at a thoughtful practical conclusion. Integrate evidence within that reflection rather than following a fixed news-summary outline."
       }
     },
     "counterintuitive_analyst": {
@@ -255,7 +239,7 @@
       }
     },
     "technical_explainer": {
-      "version": 1,
+      "version": 2,
       "label": "Technical Explainer",
       "aliases": [
         "technical_expert"
@@ -266,28 +250,20 @@
         "path": "persona_presets.py",
         "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
         "legacy_id": "technical_expert",
-        "legacy_label": "Technical Expert Archetype"
+        "legacy_label": "Technical Expert Archetype",
+        "revision_note": "Version2 operational craft projection after retained nine-style convergence diagnostic; original numeric preset retained in Git history. No new author identity or factual authority."
       },
       "style_traits": {
-        "content_style": "technical",
+        "tone": [
+          "precise",
+          "analytical",
+          "restrained"
+        ],
         "avg_sentence_length": 22.0,
-        "sentence_length_variance": 5.0,
-        "colon_freq": 30,
-        "semicolon_freq": 15,
-        "question_freq": 15,
-        "exclamation_freq": 3,
-        "complexity_score": 0.85,
-        "professional_tone": 90,
-        "conversational_tone": 40,
-        "analytical_tone": 95,
-        "inspirational_tone": 30,
-        "controversial_strength": 0.4,
-        "vulnerability_comfort": 0.5,
-        "question_engagement_level": 0.6,
-        "preferred_emotional_triggers": "mastery,precision,optimization,correctness",
-        "pain_point_intensity": "subtle",
-        "controversy_boundaries": "politics,religion,personal_attacks",
-        "preferred_structure": "problem_analysis_solution_implementation"
+        "rhythm": "Use developed causal sentences when needed, balanced with shorter clarifying statements. Each paragraph should add a distinct mechanism, condition or implication.",
+        "reasoning": "Separate what is recorded from what is enforced. Explain the relevant dependency and the limits of the conclusion; define technical terms in ordinary language.",
+        "imagery": "Prefer a clear account of the mechanism over metaphor, motivation or emotional emphasis.",
+        "preferred_structure": "Organize around the system dependency or technical question. Connect the supplied evidence to that mechanism, then state the verification implication and limits. Do not impose a hook-news-lesson sequence."
       }
     },
     "relatable_provocateur": {

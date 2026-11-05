@@ -1,0 +1,111 @@
+FFFFFF..F                                                                [100%]
+=================================== FAILURES ===================================
+_ test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers[concise_challenger] _
+
+style = 'concise_challenger'
+
+    @pytest.mark.parametrize("style",STYLES)
+    def test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers(style):
+        c,draft,p,j=run(style)
+>       assert not FORBIDDEN.intersection(p), "default rhetoric still competes with selected style"
+E       AssertionError: default rhetoric still competes with selected style
+E       assert not {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}
+E        +  where {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'} = <built-in method intersection of set object at 0x7ad7614f2dc0>({'tone': ['direct', 'humble'], 'rhythm': ['tight', 'punchy'], 'devices': ['question', 'contrast'], 'donts': ['clichés', 'em_dashes'], ...})
+E        +    where <built-in method intersection of set object at 0x7ad7614f2dc0> = {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}.intersection
+
+tests/test_effective_writing_voice.py:41: AssertionError
+_ test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers[reflective_leader] _
+
+style = 'reflective_leader'
+
+    @pytest.mark.parametrize("style",STYLES)
+    def test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers(style):
+        c,draft,p,j=run(style)
+>       assert not FORBIDDEN.intersection(p), "default rhetoric still competes with selected style"
+E       AssertionError: default rhetoric still competes with selected style
+E       assert not {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}
+E        +  where {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'} = <built-in method intersection of set object at 0x7ad7614f2dc0>({'tone': ['direct', 'humble'], 'rhythm': ['tight', 'punchy'], 'devices': ['question', 'contrast'], 'donts': ['clichés', 'em_dashes'], ...})
+E        +    where <built-in method intersection of set object at 0x7ad7614f2dc0> = {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}.intersection
+
+tests/test_effective_writing_voice.py:41: AssertionError
+_ test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers[technical_explainer] _
+
+style = 'technical_explainer'
+
+    @pytest.mark.parametrize("style",STYLES)
+    def test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers(style):
+        c,draft,p,j=run(style)
+>       assert not FORBIDDEN.intersection(p), "default rhetoric still competes with selected style"
+E       AssertionError: default rhetoric still competes with selected style
+E       assert not {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}
+E        +  where {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'} = <built-in method intersection of set object at 0x7ad7614f2dc0>({'tone': ['direct', 'humble'], 'rhythm': ['tight', 'punchy'], 'devices': ['question', 'contrast'], 'donts': ['clichés', 'em_dashes'], ...})
+E        +    where <built-in method intersection of set object at 0x7ad7614f2dc0> = {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}.intersection
+
+tests/test_effective_writing_voice.py:41: AssertionError
+_ test_objective_is_stated_once_in_writer_and_evaluator_inputs[concise_challenger] _
+
+style = 'concise_challenger'
+
+    @pytest.mark.parametrize("style",STYLES)
+    def test_objective_is_stated_once_in_writer_and_evaluator_inputs(style):
+        _,draft,p,j=run(style)
+>       assert draft["user"].count(OBJECTIVE)==1
+E       AssertionError: assert 4 == 1
+E        +  where 4 = <built-in method count of str object at 0x39c3e20>('Authorization must remain enforceable at the point of transfer.')
+E        +    where <built-in method count of str object at 0x39c3e20> = 'Audience: Business and IT leaders\nObjective: Authorization must remain enforceable at the point of transfer.\nAuthor...ation, sales pitch, CTA, question, framework phrase, or rigid section when the supplied context does not justify it.\n'.count
+
+tests/test_effective_writing_voice.py:54: AssertionError
+_ test_objective_is_stated_once_in_writer_and_evaluator_inputs[reflective_leader] _
+
+style = 'reflective_leader'
+
+    @pytest.mark.parametrize("style",STYLES)
+    def test_objective_is_stated_once_in_writer_and_evaluator_inputs(style):
+        _,draft,p,j=run(style)
+>       assert draft["user"].count(OBJECTIVE)==1
+E       AssertionError: assert 4 == 1
+E        +  where 4 = <built-in method count of str object at 0x3a08a60>('Authorization must remain enforceable at the point of transfer.')
+E        +    where <built-in method count of str object at 0x3a08a60> = 'Audience: Business and IT leaders\nObjective: Authorization must remain enforceable at the point of transfer.\nAuthor...ation, sales pitch, CTA, question, framework phrase, or rigid section when the supplied context does not justify it.\n'.count
+
+tests/test_effective_writing_voice.py:54: AssertionError
+_ test_objective_is_stated_once_in_writer_and_evaluator_inputs[technical_explainer] _
+
+style = 'technical_explainer'
+
+    @pytest.mark.parametrize("style",STYLES)
+    def test_objective_is_stated_once_in_writer_and_evaluator_inputs(style):
+        _,draft,p,j=run(style)
+>       assert draft["user"].count(OBJECTIVE)==1
+E       AssertionError: assert 4 == 1
+E        +  where 4 = <built-in method count of str object at 0x39978c0>('Authorization must remain enforceable at the point of transfer.')
+E        +    where <built-in method count of str object at 0x39978c0> = 'Audience: Business and IT leaders\nObjective: Authorization must remain enforceable at the point of transfer.\nAuthor...ation, sales pitch, CTA, question, framework phrase, or rigid section when the supplied context does not justify it.\n'.count
+
+tests/test_effective_writing_voice.py:54: AssertionError
+_ test_actual_trial_baseline_and_evaluator_keep_one_selected_style_and_equal_facts _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-395/test_actual_trial_baseline_and0')
+
+    def test_actual_trial_baseline_and_evaluator_keep_one_selected_style_and_equal_facts(tmp_path):
+        class Provider:
+            mode="fixture";error=None;receipts=[]
+            def __init__(self):self.capture=Capture()
+            def generate(self,**kw):return self.capture.call(kw["system"],kw["user"])["text"]
+        p=Provider()
+        result=run_trial({**DATA,"writing_voice_id":"technical_explainer"},tmp_path,p,model="fixture",score_baseline=True)
+        baseline=result["baseline"]["user"]
+        engine_context=result["engine"]["review"]["evaluation_context"]
+>       assert not FORBIDDEN.intersection(baseline["voice"])
+E       AssertionError: assert not {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}
+E        +  where {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'} = <built-in method intersection of set object at 0x7ad7614f2dc0>({'tone': ['direct', 'humble'], 'rhythm': ['tight', 'punchy'], 'devices': ['question', 'contrast'], 'donts': ['clichés', 'em_dashes'], ...})
+E        +    where <built-in method intersection of set object at 0x7ad7614f2dc0> = {'devices', 'rhythm', 'spoken_voice', 'tone', 'voice_authority'}.intersection
+
+tests/test_effective_writing_voice.py:88: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_effective_writing_voice.py::test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers[concise_challenger]
+FAILED tests/test_effective_writing_voice.py::test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers[reflective_leader]
+FAILED tests/test_effective_writing_voice.py::test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers[technical_explainer]
+FAILED tests/test_effective_writing_voice.py::test_objective_is_stated_once_in_writer_and_evaluator_inputs[concise_challenger]
+FAILED tests/test_effective_writing_voice.py::test_objective_is_stated_once_in_writer_and_evaluator_inputs[reflective_leader]
+FAILED tests/test_effective_writing_voice.py::test_objective_is_stated_once_in_writer_and_evaluator_inputs[technical_explainer]
+FAILED tests/test_effective_writing_voice.py::test_actual_trial_baseline_and_evaluator_keep_one_selected_style_and_equal_facts
+7 failed, 2 passed in 0.43s

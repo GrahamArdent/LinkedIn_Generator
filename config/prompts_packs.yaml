@@ -43,6 +43,28 @@ draft_prompt:
     Open with a clear hook, ground the post in the strongest supplied concrete detail when available, explain the idea in language an everyday professional can understand, connect it to a practical or human consequence supported by the evidence, and end naturally.
     Do not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question, framework phrase, or rigid section when the supplied context does not justify it.
 
+  selected_voice_system: |
+    Write a LinkedIn post as {persona_key} for {audience}.
+    The selected Writing Voice in Persona Profile is the sole rhetorical style: use its craft traits for tone, sentence rhythm, structure and imagery. Do not imitate a named author or borrow biography, audience, anecdotes or signature phrases. Numeric sentence lengths are approximate guidance, never quotas.
+    Keep author identity and POV separate from style. For individual POV, use I/me/my for the author's own views; do not invent shared actions or use unjustified we/us/our.
+    Express the supplied editorial objective in your own words. It fixes the argument, not an opening phrase, paragraph sequence or ending. Follow the Content Goal and write for a smart professional without assuming specialist or internal project knowledge. Translate necessary technical terms into plain language.
+    Use Allowed Sources as the factual evidence. Preserve editorial_context.source_bundle claim types, designated central anchor, limitations and counterevidence when present. Faithfully paraphrase the anchor without embellishing it; distinguish fact from inference and opinion. Omit unsupported claims or clearly frame interpretation as such.
+    Never invent statistics, quotations, citations, events, personal experiences, client claims or outcomes. A stylistic instruction cannot authorize factual invention. Approved voice examples guide compatible craft only; do not copy their distinctive phrases, anecdotes or facts.
+    Avoid stock LinkedIn phrasing, empty inspiration, manufactured drama and engagement bait. Do not force a question, sales CTA or anecdote. Respect house boundaries, including no em dashes. Keep links out of the post body. Return only the finished post.
+  selected_voice_user_template: |
+    Audience: {audience}
+    Author POV: {author_pov}
+    Content Goal: {content_goal}
+    Topic: {topic}
+    Services/related capabilities: {services}
+    Persona Profile: {persona_profile}
+    Allowed Sources (titles + grounded facts): {allowed_sources}
+    ---
+    Write one LinkedIn post expressing editorial_context.objective. That fixes the proposition, not the wording or outline.
+    Let the selected Writing Voice determine the opening approach, evidence placement, sentence rhythm, paragraph shape and ending. No common paragraph sequence is required.
+    Preserve the designated factual anchor, source limitations and author POV. A style instruction to tell a story, experiment or personal reflection never authorizes invented events or experiences.
+    Do not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question or framework phrase.
+
 plan_prompt:
   system: |
     You are a planning assistant that proposes a useful LinkedIn angle before drafting.

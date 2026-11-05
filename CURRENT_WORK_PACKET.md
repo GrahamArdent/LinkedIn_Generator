@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Independent writing-voice selector machine GO; controlled voice comparison ready; P2 human/content acceptance HOLD
+CURRENT_STAGE_OR_MILESTONE: Effective selected-style repair machine GO; three-style native diagnostic next; P2 human acceptance HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate production code436a165; exact source/config/test hashes and integration/runtime state in latest receipt
 BLOCKER_SCOPE: milestone
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/voice-convergence-diagnosis-20261105/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: Existing effective-prompt projection repair and offline qualification, then bounded three-style diagnosis
+CURRENT_MILESTONE_RECEIPT: evidence/effective-voice-repair-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: One bounded three-style native drafting diagnostic; no nine-style expansion
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -345,3 +345,9 @@ Fresh full local CI:195 PASS (1.96s); log retained. Machine result GO; human voi
 Receipt: evidence/voice-convergence-diagnosis-20261105/MILESTONE.json; findings and bounded recommendation in REPORT.md. Offline audit confirms9 separate native requests/threads, no cache hits, exact native-to-retained text and selected-style delivery;18 substituted-input/output controls reject. No new model calls. All9 share opening prefix;7 share the exact factual paragraph. Confirmed prompt defects: objective repeated4 times,5 mentions of “approval screen”,5888 characters of inherited default style still present beside compact selected traits, common composition route and unqualified numeric preset controls. Leading hypothesis is prompt-driven convergence; no live causal ablation performed. Comparison usefulness FAIL; delivery integrity GO; human acceptance and precise causal contribution HOLD. The earlier195 PASS proves delivery/recovery assertions, not effective stylistic difference.
 
 Superseding next action: repair the existing effective prompt projection (one selected rhetorical style, deduplicated neutral proposition, retain all facts/POV/safety/default behavior and evaluator/baseline parity), verify offline, then qualify only3 distinct styles before expanding. Do not ask the owner to choose among near-duplicates as acceptance, ban the repeated phrase as a cosmetic fix, or silently regenerate this batch. Diagnostic-only change; all26 AT/11 E2E retained; no hosted CI/merge/install/deploy/publish.
+
+## Effective writing-style repair — 2026-11-04
+
+Operator authorized the focused repair and one bounded three-style comparison. Receipt: evidence/effective-voice-repair-20261104/MILESTONE.json. Explicit selection now projects one rhetorical style, retains identity/POV/house and public-language checks, supplies the semantic objective once to writer/evaluator, and removes the universal drafting sequence. Default omitted-selection templates remain unchanged. Concise/reflective/technical definitions areversion2 with operational craft guidance; original numeric profiles remain historical provenance. No other voice is newly qualified.
+
+Observed7 original RED cases and3 review-discovered public-language regressions corrected; full207 PASS. Existing195 obligations retained, three explicit version expectations advanced intentionally;26 AT/11 E2E definitions unchanged. Source candidate-only, PR24 draft/unmerged; no hosted CI, merge/install/deploy/publish. Next eligible action: declared three-style Codex drafting diagnostic; raw outputs and meaningful differentiation must be inspected before any expansion.

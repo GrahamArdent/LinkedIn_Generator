@@ -1,0 +1,28 @@
+........F                                                                [100%]
+=================================== FAILURES ===================================
+_ test_actual_trial_baseline_and_evaluator_keep_one_selected_style_and_equal_facts _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-396/test_actual_trial_baseline_and0')
+
+    def test_actual_trial_baseline_and_evaluator_keep_one_selected_style_and_equal_facts(tmp_path):
+        class Provider:
+            mode="fixture";error=None;receipts=[]
+            def __init__(self):self.capture=Capture()
+            def generate(self,**kw):return self.capture.call(kw["system"],kw["user"])["text"]
+        p=Provider()
+        result=run_trial({**DATA,"writing_voice_id":"technical_explainer"},tmp_path,p,model="fixture",score_baseline=True)
+        baseline=result["baseline"]["user"]
+        engine_context=result["engine"]["review"]["evaluation_context"]
+        assert not FORBIDDEN.intersection(baseline["voice"])
+        assert baseline["voice"]["writing_voice"]==engine_context["writing_voice"]
+        assert baseline["objective"]==engine_context["editorial_context"]["objective"]==OBJECTIVE
+>       assert baseline["evidence"]==[{"title":"S1","fact":FACT}]
+E       AssertionError: assert [{'title': 'S... 'url': None}] == [{'title': 'S...face abuse.'}]
+E         
+E         At index 0 diff: {'title': 'S1', 'fact': 'The supplied advisory describes payment-interface abuse.', 'url': None} != {'title': 'S1', 'fact': 'The supplied advisory describes payment-interface abuse.'}
+E         Use -v to get more diff
+
+tests/test_effective_writing_voice.py:91: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_effective_writing_voice.py::test_actual_trial_baseline_and_evaluator_keep_one_selected_style_and_equal_facts
+1 failed, 8 passed in 0.28s

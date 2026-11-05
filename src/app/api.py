@@ -69,6 +69,19 @@ def _persona_profile(
     profile["active_author_pov"] = author_pov
     if writing_voice_id is not None:
         profile["writing_voice"] = resolve_writing_voice(writing_voice_id)
+        # Identity, POV and house boundaries survive selection; default rhetoric
+        # must not compete with an explicitly selected style at any consumer.
+        for key in ("tone", "rhythm", "devices"):
+            profile.pop(key, None)
+        if persona_key == "graham":
+            authority = load_yaml(os.path.join(base, "config/graham_voice_profile.yaml")) or {}
+            semantic = authority.get("semantic_quality", {})
+            profile["semantic_quality"] = {
+                key: semantic[key] for key in (
+                    "default_author_pov", "internal_terms_needing_translation", "generic_phrases"
+                ) if key in semantic
+            }
+        return profile
     if persona_key != "graham":
         return profile
 
@@ -280,7 +293,16 @@ def run_generation(
         "approved_voice_examples": prompt_voice_examples,
         "source_bundle": editorial_brief,
     }
-    drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
+    draft_prompt = dict(prompts.get("draft_prompt", {}))
+    if "writing_voice" in persona_profile:
+        # Keep one editorial authority, shared with editors and the evaluator.
+        # The planner's reasoning tasks must not prescribe a universal sequence.
+        persona_profile["editorial_context"]["plan"] = {
+            "reader": audience, "factual_anchor": strongest_concrete_evidence,
+        }
+        draft_prompt["system"] = draft_prompt["selected_voice_system"]
+        draft_prompt["user_template"] = draft_prompt["selected_voice_user_template"]
+    drafts = pipe.draft_variants(draft_prompt, draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
     crit = pipe.critic(
         prompts.get("critic_prompt", {}),
