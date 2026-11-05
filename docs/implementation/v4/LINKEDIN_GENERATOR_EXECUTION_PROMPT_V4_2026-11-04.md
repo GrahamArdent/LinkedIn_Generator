@@ -1,39 +1,30 @@
 # LinkedIn Generator — current execution prompt
 Updated November 5, 2026.
 
-Continue GrahamArdent/LinkedIn_Generator on branch fix/essential-review-gate-20261105.
-Retrieve current default-branch GrahamArdent/paths/CHATGPT.md through connected GitHub and follow
-its JIT discovery/recovery procedures.
+Continue GrahamArdent/LinkedIn_Generator from CURRENT_WORK_PACKET.md.
+Retrieve current default-branch GrahamArdent/paths/CHATGPT.md through connected GitHub.
+Use known working routes directly; discover capabilities/owner contracts just in time and follow its
+failure diagnostics only when needed. Tool availability is not action authority.
 
-Read CURRENT_WORK_PACKET.md, then:
-- docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md — ordered completion work M1–M5;
-- docs/implementation/v4/LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md — broader P0–P7 dependencies;
-- docs/implementation/v4/LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md — all26 AT/11 E2E definitions;
-- evidence/essential-review-gate-20261105/REPORT.md, MILESTONE.json and ACCEPTANCE_AUDIT.json.
+Read docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md and execute its M1–M5
+sequence from the first unmet milestone. It owns steps, budgets and exit conditions.
+The acceptance document it references owns all26 AT/11 E2E criteria; consult the broader P0–P7
+roadmap only for the boundary being worked. Do not preload unrelated ecosystem material.
 
-Starting checkpoint: essential-checks-v1 source candidate has251 local and251 clean-archive tests passed.
-Product commit d3ee2a36; evidence follow-up5dccb896. Installed0c099d7 remains on the old90 gate.
-Verify current refs and actual installation; do not infer promotion from a branch or green tests.
+Recovery anchor: branch fix/essential-review-gate-20261105, verified product d3ee2a36,
+251 local/clean-archive tests; installed checkpoint0c099d7 was still on90. Refresh actual refs/runtime
+before acting. Do not reset an already advanced candidate or rerun completed work.
 
-Execute M1–M5 in order, within current admissions. Finish machine-solvable prerequisites.
-Review the complete pending diff, repair concrete integration defects, qualify the exact candidate,
-then merge/promote only when admitted, preserving rollback. Verify installed bytes/imports and reopening.
+Use the existing engine and subscription Codex bridge. Preserve essential-checks-v1, original drafts,
+selected narrative/voice, factual limits, exact candidate hashes, equal baseline context and human approval.
+Keep model scores advisory. Do not infer acceptance from tests or manufacture missing evidence/IDs.
 
-Next run one bounded installed engine/control package using the retained same-evidence brief,
-Graham, business/IT leaders, Relatable Provocateur and selected symbolic narrative.
-Resolve the screen-location assumption during brief preparation; retain historical drafts.
-Declare at most12 subscription Codex executions/900 cumulative CLI seconds for the shared batch.
-Scores are advisory; all four essential checks must pass. Missing evidence pauses; allow at most
-one guarded defect-driven rewrite. Preserve candidate/visual hashes and equal baseline context.
-Reopen with zero calls, shuffle the pair and leave factual/usefulness/voice/edit-effort judgments to Graham.
+Complete admitted machine-solvable work; reconcile uncertain effects from original receipts rather
+than retrying blindly. Keep human judgments pending. No new paid API, hosted CI, release/promotion,
+deployment, rendering or publishing authority is granted by this prompt.
 
-Follow the plan's calibration and controlled P2 expansion afterward. Preserve human acceptance,
-simpler-prompt comparison, first-six denominator, visual usefulness and all26 AT/11 E2E requirements.
-No equal-word-count penalty, fabricated evidence/IDs, cosmetic score chasing, competing engine or
-unearned workflow winner. Reuse previous work; do not rerun all routes or expand nine voices to restart.
-
-At each milestone save exact prompts/raw outputs/IDs/resources and expected versus observed outcomes.
-Update the packet/plan/prompt pointers together; report GO/HOLD/FAIL, source/main/runtime, remaining
-blocker and next eligible action. Never label fixtures or model judgments as human/live acceptance.
-No paid API, hosted CI, deployment, rendering or publishing without explicit applicable authorization;
-inspect automatic CI triggers before release effects. Stop only at a precise remaining human gate.
+At each meaningful milestone update the packet, plan status and evidence pointer together.
+Save exact prompts/raw outputs/IDs/resources and expected versus observed outcomes.
+Report GO/HOLD/FAIL, tested/main/installed revisions, remaining blocker and next eligible action.
+Stop at a precise authorization, human-review, exhausted-budget or unrecoverable external gate
+after completing eligible independent work.

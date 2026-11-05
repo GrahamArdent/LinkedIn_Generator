@@ -18,12 +18,27 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
 - The complete product is not accepted. All26 AT objectives and11 E2E scenarios remain;
   the audit distinguishes fixture checks, historical observations and missing human/live proof.
 
+## Document ownership and just-in-time execution
+- CURRENT_WORK_PACKET.md owns the current checkpoint and evidence pointer.
+- This completion plan owns M1–M5 steps and milestone exit conditions.
+- The execution prompt routes the worker; it does not maintain another task list.
+- The acceptance document alone owns detailed AT/E2E criteria. The broader roadmap owns later dependencies.
+- Historical receipts prove only their recorded scope; later docs do not reinterpret them.
+Use known working routes directly. Load only the current milestone's sources/contracts; inspect
+later P3–P7 owner documents when their boundary is reached, not as a preload.
+Preserve exact failures and follow Paths recovery for actual route failures. Reconcile unknown effects
+through original receipts; never blindly retry. Continue independent admitted work while one item is held.
+Budget exhaustion or an unrecoverable provider/environment failure is a precise HOLD, not permission
+to exceed caps or repeatedly ask the user to perform machine work.
+
 ## Ordered remaining work
 Use the existing engine, launcher, saved results and receipts. Do not rerun completed research,
 eight workflows or nine voices merely to restart this sequence.
 
 ### M1 — review and qualify the coherent release candidate
 1. Refresh Paths via connected GitHub, current packet, candidate/base/main, relevant PRs and installed launcher.
+   Resume from the first unmet milestone. If the candidate is already merged/promoted, verify its receipt
+   and advance; do not reset branches, reinstall or regenerate merely because this plan names an older checkpoint.
 2. Review the complete pending diff against current main, including earlier unmerged audit documentation.
    Resolve concrete integration defects with reproducing regressions; do not weaken assertions.
 3. Reuse251-test/clean-archive receipts if source/config/tests hashes still match. If code changes,
@@ -66,8 +81,12 @@ HOLD if unmerged, wrong installed bytes, uncertain effect or missing admission. 
    Missing evidence or failed qualification is a valid recorded HOLD; do not force a passing package.
 5. Produce the simpler direct-prompt control with identical evidence, author, audience, meaning, voice
    and narrative. Use the same evaluator/context if reporting model assessments.
+   If the engine records NO_QUALIFIED_CANDIDATE, retain that HOLD and use its existing comparison-only
+   continuation when the budget permits. Never promote the retained unqualified engine text to a selected
+   candidate or spend its visual call. If the control cannot run, record NOT_RUN with the reason.
 6. Save exact prompts/raw outputs, stage order/handoffs, IDs, code/voice/source bindings and hashes.
    Reopen the completed result in a new process: exact content and zero additional calls.
+   Keep result policy/version immutable. A new policy run uses a new run/attempt identity; do not overwrite old results.
 7. Shuffle the engine/control texts before human review; keep method mapping separate.
 Expected: traceable installed review package, or a precise truthful reason it cannot qualify one.
 Proof: installed invocation, saved package/control, visual plan or deferral, receipts and zero-call reopen.
@@ -80,6 +99,8 @@ A single pair does not complete six-subject acceptance.
    recognizable voice, keep/light/structural/reject, preference/tie and actual editing effort.
    Bind answers to exact candidate hashes. Do not turn general praise into approval or approved voice examples.
 2. Use8–12 retained exact-text examples for initial evaluator calibration when available, with a held-out subset.
+   Freeze the holdout before adjusting prompts/rubrics and separate it by subject, not draft variant,
+   to prevent the same underlying example leaking into both sets.
    Draft variants are calibration examples, not additional independent subjects. Reuse labels already supplied;
    do not require a new broad generation batch just to obtain calibration material.
 3. Record false accept/reject cases against human labels and inspect concrete causes. Keep scores advisory.
@@ -90,7 +111,10 @@ Maps: AT04/05/19/20/21/23/24; no model verdict substitutes for these human requi
 
 ### M5 — finish P2 in small batches, then follow P3–P7
 1. After initial human disposition, expand only in admitted small batches toward six eligible distinct subjects
-   within the existing default envelope of at most8 subject trials. Do not force thin subjects or cherry-pick failures.
+   within the existing default envelope of at most8 subject trials. Reconcile the existing subject ledger
+   and owner-approved eligibility/order before adding subjects; do not reset first-six history after a repair.
+   If historical eligibility is ambiguous, retain it as unresolved rather than silently excluding or counting it.
+   Do not force thin subjects or cherry-pick failures.
 2. Preserve >=5 genuine subjects, >=4/6 keep/light, >=2 live-provider human-accepted subjects;
    evaluate the first-six fraction only when six eligible subjects exist.
 3. Complete blinded six-pair engine/control pilot: >=4/6 engine preference, ties not wins; record factual errors
@@ -117,5 +141,6 @@ Update CURRENT_WORK_PACKET.md, this plan and the execution prompt together; keep
 one reproducible evidence packet and link its receipt. The execution prompt routes work; this plan owns
 sequence; the acceptance document owns detailed criteria. Preserve historical outcomes instead of
 appending competing “current” instructions. Documentation-only changes may reuse matching code tests.
+Provider-neutral visual planning is included in M3; image generation/rendering is a separately gated effect.
 No paid API/fallback, hosted CI, merge/promotion beyond admitted scope, deployment, rendering or publishing
 is granted by this document. Dedication owns canonical approval, scheduling and publication.

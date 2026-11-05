@@ -426,3 +426,11 @@ The current execution prompt routes directly to that sequence. Historical next-a
 not instructions to restart. Source/evidence5dccb896 remains unmerged/uninstalled; installed0c099d7 unchanged.
 This documentation update grants no new CI, merge/install, provider-spending, rendering or publishing authority.
 Plan/prompt cross-check receipt: evidence/plan-reconciliation-20261105/RESULTS.json.
+
+
+## Latest plan/prompt audit — November5,2026
+Current M1–M5 completion plan and routing prompt were cross-audited. Eight concrete ambiguities
+were resolved; evidence/plan-prompt-audit-20261105/RESULTS.json records findings and scope.
+One document owner per concern; JIT milestone reads, direct known-route use, bounded budgets,
+unknown-effect recovery, preserved first-six history and subject-separated calibration holdout are explicit.
+GO for M1 qualification; later release/native/human gates unchanged. Product hashes and installed0c099d7 unchanged.
