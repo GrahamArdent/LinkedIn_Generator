@@ -8,6 +8,8 @@ failure diagnostics only when needed. Tool availability is not action authority.
 
 Read docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md and execute its M1–M5
 sequence from the first unmet milestone. It owns steps, budgets and exit conditions.
+Latest checkpoint: M1 GO; M2 awaits exact-candidate merge/install admission. Refresh current state
+and evidence/m1-qualification-20261105/MILESTONE.json before acting; do not rerun matching qualification.
 The acceptance document it references owns all26 AT/11 E2E criteria; consult the broader P0–P7
 roadmap only for the boundary being worked. Do not preload unrelated ecosystem material.
 

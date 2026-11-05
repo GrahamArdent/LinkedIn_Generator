@@ -3,9 +3,9 @@
 > Current owner-adopted correction — November 5, 2026: `essential-checks-v1` replaces numeric90 admission in the current source candidate. All four essentials must pass with reasons: factual integrity, reader relevance, practical value and argument/voice fidelity. Scores are advisory; missing evidence pauses; failed essentials allow at most one guarded targeted rewrite; unavailable evaluation fails closed. Passing means human-review eligibility only. Evidence: `evidence/essential-review-gate-20261105/REPORT.md` and `MILESTONE.json`. Installed release0c099d7 remains on its historical90 policy until separately promoted. This supersedes older90 instructions below for new source runs; historical receipts remain immutable. All26 AT/11 E2E and human/visual/baseline/publishing obligations remain.
 
 
-**Prepared:** 2026-11-04  
-**Status:** Proposed acceptance authority for this **download package only**; must be reconciled into `LinkedIn_Generator/CURRENT_WORK_PACKET.md` before treated as repository execution authority.  
-**Evidence status:** The objectives below are **planned**. A file containing a test and a previously recorded manual score are not observed executions of these new gates.  
+**Prepared:** 2026-11-04
+**Status:** Current detailed acceptance definitions, adopted by `CURRENT_WORK_PACKET.md` and the M1–M5 completion plan. All 26 AT objectives and 11 E2E scenarios remain required; historical proposed wording below records package provenance, not a pending adoption gate.
+**Evidence status:** The objectives below are **planned**. A file containing a test and a previously recorded manual score are not observed executions of these new gates.
 **Companions:** [Game Plan](LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md) · [Evidence and Challenge](LINKEDIN_GENERATOR_EVIDENCE_AND_CHALLENGE_V4_2026-11-04.md) · [Execution Prompt](LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md) · [Acceptance Objectives](LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md) · [Start Here](LINKEDIN_GENERATOR_PACKAGE_README_V4_2026-11-04.md).
 
 ## 1. What success actually means
@@ -100,7 +100,9 @@ For any `AT-*` or `E2E-*` result labeled PASS, retain: source commit SHA; UTC te
 - A fixture test named `test_end_to_end_generation.py` is an **engine integration test**, not a fresh-process, browser, live model, visual rendering or external publication pass.
 - No tests in this package were executed against source code. This document records **test specifications**, not test results.
 
-## 6. Decisions still needing the owner's explicit reconciliation
+## 6. Historical package reconciliation checklist
+
+The current owner packet and completion plan retain these objectives and gates. This original checklist is historical; budget and consequential effects still require the current admission described in the completion plan.
 
 1. Add AT-19..26 and E2E-10..11 as acceptance policy to the current live work packet without rewriting the existing owner gate or forcing drafts to hit sample counts.
 2. Set concrete spending/latency caps for AT-26 **before** provider-bound tests; records may be `UNKNOWN` where a provider exposes no actual usage.

@@ -18,6 +18,13 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
 - The complete product is not accepted. All26 AT objectives and11 E2E scenarios remain;
   the audit distinguishes fixture checks, historical observations and missing human/live proof.
 
+## Current milestone status
+M1 GO: independent review and fresh251-test suite passed at reviewed head d6748d1; source/config/tests
+match prior clean-archive receipt. Evidence: evidence/m1-qualification-20261105/MILESTONE.json.
+M2 HOLD: exact-candidate merge and fixed-release installation await owner admission. Installed0c099d7
+was verified by launcher/imports and historical zero-call reopen. M3–M5 remain open. No generation
+or CI occurred. One non-blocking status-reporting issue is deferred in REVIEW.json.
+
 ## Document ownership and just-in-time execution
 - CURRENT_WORK_PACKET.md owns the current checkpoint and evidence pointer.
 - This completion plan owns M1–M5 steps and milestone exit conditions.

@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Essential review gate source correction locally verified; installed release unchanged; human/product acceptance remains HOLD
+CURRENT_STAGE_OR_MILESTONE: M1 qualified; M2 HOLD for exact-candidate merge and fixed-release installation authorization; installed release unchanged; human/product acceptance pending
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: product merge and installed revision0c099d70fc807044355af089d62d1bef049cbb95; receipt evidence/release-integration-20261105/MILESTONE.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
@@ -434,3 +434,14 @@ were resolved; evidence/plan-prompt-audit-20261105/RESULTS.json records findings
 One document owner per concern; JIT milestone reads, direct known-route use, bounded budgets,
 unknown-effect recovery, preserved first-six history and subject-separated calibration holdout are explicit.
 GO for M1 qualification; later release/native/human gates unchanged. Product hashes and installed0c099d7 unchanged.
+
+
+## M1 qualification checkpoint — November 5, 2026
+Independent full pending-diff review and fresh 251-test suite qualify the coherent candidate.
+Product/config/test hashes match prior clean-archive qualification. Current main b894149; reviewed
+head d6748d1; product d3ee2a36. Installed launcher/imports remain0c099d7; historical result
+reopened with exact bytes and zero added calls across138 unchanged attempt records.
+All26 AT/11 E2E retained. Lint unavailable; raw-log whitespace findings preserved.
+M2 HOLD: owner authorization needed for exact verified merge and fixed-release install with rollback;
+no new CI, spending, rendering or publishing admission. M3 remains dependent on M2.
+Receipt: evidence/m1-qualification-20261105/MILESTONE.json.

@@ -1,0 +1,59 @@
+{
+  "essential_verifier": {
+    "command": [
+      ".venv/bin/python",
+      "evidence/essential-review-gate-20261105/verify.py"
+    ],
+    "exit": 0,
+    "stdout": "{\"status\": \"PASS\", \"native_executions\": 2, \"tested_source_hashes\": \"match\", \"AT\": 26, \"E2E\": 11, \"installed\": false}\n",
+    "stderr": ""
+  },
+  "scoring_verifier": {
+    "command": [
+      ".venv/bin/python",
+      "evidence/scoring-audit-20261105/verify.py"
+    ],
+    "exit": 0,
+    "stdout": "{\"status\": \"PASS\", \"historical_totals_recomputed\": 19, \"unique_native_executions\": 6, \"cached_reads_distinguished\": 2, \"independent_same_input_comparisons\": 2, \"runtime_policy_changed\": false}\n",
+    "stderr": ""
+  },
+  "ruff": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "ruff",
+      "--version"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python: No module named ruff\n"
+  },
+  "all_diff_whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "origin/main...HEAD"
+    ],
+    "exit": 2,
+    "stdout": "evidence/essential-review-gate-20261105/native_smoke.py:36: new blank line at EOF.\nevidence/essential-review-gate-20261105/red.log:71: trailing whitespace.\n+E         \nevidence/essential-review-gate-20261105/retired-environment-red.log:14: trailing whitespace.\n+tests/test_essential_review_gate.py:188: \nevidence/essential-review-gate-20261105/retired-environment-red.log:15: trailing whitespace.\n+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nevidence/essential-review-gate-20261105/retired-environment-red.log:52: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:63: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:70: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:88: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:95: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:102: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:107: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:149: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:152: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:218: trailing whitespace.\n+    \nevidence/essential-review-gate-20261105/retired-environment-red.log:245: trailing whitespace.\n+    \n",
+    "stderr": ""
+  },
+  "product_docs_whitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "origin/main...HEAD",
+      "--",
+      "src",
+      "config",
+      "tests",
+      "docs",
+      "CURRENT_WORK_PACKET.md"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-11-05T05:24:00.950642+00:00",
+  "status": "GO_M1_HOLD_M2_AUTHORIZATION",
+  "reviewed_head": "d6748d12df9c45adfe2693523e545dde2f004129",
+  "base_main": "b894149d2a54e48f7f0a9bc0b7a69674c7bc5e33",
+  "branch": "fix/essential-review-gate-20261105",
+  "product_commit": "d3ee2a36d037323c080edec67b53a521bcceb75c",
+  "tests": {
+    "command": ".venv/bin/python -m pytest -q",
+    "exit": 0,
+    "passed": 251,
+    "log": "full-local.log"
+  },
+  "tested_source_config_test_hashes_match": true,
+  "hash_manifest": "../essential-review-gate-20261105/TESTED_SOURCE_HASHES.json",
+  "clean_archive_receipt_reused": "../essential-review-gate-20261105/CLEAN_ARCHIVE.json",
+  "lint": "NOT_RUN: ruff unavailable",
+  "whitespace": "Product/docs pass; archived raw logs and evidence native_smoke.py EOF flag retained unchanged",
+  "acceptance_objectives": 26,
+  "e2e_scenarios": 11,
+  "installed_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "installed_reopen_receipt": "INSTALLED_REOPEN.json",
+  "new_model_calls": 0,
+  "api_spend": 0,
+  "hosted_ci": false,
+  "workflow_inventory": [
+    "ci-full.yml.disabled",
+    "codeql.yml.disabled"
+  ],
+  "merge": false,
+  "installation": false,
+  "rendering": false,
+  "publishing": false,
+  "M2": "HOLD: exact-candidate merge and fixed-release installation require owner authorization; historical release grant not reused",
+  "M3": "BLOCKED_BY_M2: installed essential-checks package not generated",
+  "human_acceptance": "pending",
+  "next_action": "Approve reviewed candidate merge and fixed-release install with preserved 0c099d7 rollback, no hosted CI; then proceed M3 only within admitted subscription budget."
+}
