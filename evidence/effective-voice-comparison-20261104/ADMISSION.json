@@ -1,0 +1,29 @@
+{
+  "authorized_by": "2026-11-04 operator execution instruction in chat",
+  "declared_at": "2026-11-05T01:46:22.698060+00:00",
+  "method": "Existing engine drafting stage; one first draft per style; stop before critic/humanizer/scorer; same method as previous nine-style diagnostic",
+  "scope": "Three contrasting version2 style definitions only",
+  "budget": {
+    "expected_and_max_model_calls": 3,
+    "expected_physical_starts": 9,
+    "max_cumulative_cli_seconds": 900,
+    "api_spend": 0,
+    "retry": false,
+    "manual_output_edits": false
+  },
+  "fixed": [
+    "Graham author and individual POV",
+    "CERT-In story and exact factual evidence/source limitations",
+    "Business and IT leaders audience",
+    "semantic central argument",
+    "140-180 words and common safety/house constraints",
+    "Codex gpt-6-astra medium ChatGPT auth"
+  ],
+  "expected_differences": {
+    "concise_challenger": "Economical questioning/challenge, shorter declarative rhythm, compressed implication; not a mandatory opening phrase",
+    "reflective_leader": "Measured reasoning, credible qualification and leadership/human responsibility; no invented confession",
+    "technical_explainer": "Developed causal explanation of the dependency and its limits, precise plain-language terms"
+  },
+  "assessment": "Inspect raw argument, factual fidelity, sentence/paragraph rhythm, evidence placement and rhetorical structure. Different first words alone are insufficient. No numerical quality scores or human preference inferred. Combined repair diagnostic, not a single-factor causal ablation.",
+  "expansion": "No nine-style expansion unless this diagnostic demonstrates useful differentiation and owner admits further work."
+}

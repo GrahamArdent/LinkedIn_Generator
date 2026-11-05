@@ -1,0 +1,77 @@
+{
+  "schema_version": "1",
+  "request_sha256": "564263bff5b5f2779d824dc56cac9bdd07c5489ee3fb0ef36234249e353f0618",
+  "central_claim_id": "C1",
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Escalation of AI-Driven Attacks on BFSI Entities",
+      "publisher": "CERT-In / CSIRT-Fin, Government of India",
+      "published": "2026-11-04",
+      "checked_at": "2026-11-04",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+      "status": "usable",
+      "passages": [
+        {
+          "locator": "November4 current activity / overview",
+          "excerpt": "strikes by invoking the victim's own payment and disbursement APIs"
+        }
+      ],
+      "limitations": "Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses."
+    },
+    {
+      "source_id": "S2",
+      "title": "CIAD-2026-0046",
+      "publisher": "CERT-In / CSIRT-Fin",
+      "published": "2026-10-09",
+      "checked_at": "2026-11-04",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "status": "usable",
+      "passages": [
+        {
+          "locator": "Key TTPs Observed",
+          "excerpt": "Bypassing of application-level checks"
+        },
+        {
+          "locator": "Recommended Actions",
+          "excerpt": "Validate every payout against sanctioned/approved records"
+        }
+      ],
+      "limitations": "Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "kind": "fact",
+      "text": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "kind": "fact",
+      "text": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "claim_id": "I1",
+      "kind": "inference",
+      "text": "An approval screen alone does not establish that authorization is enforced at the point of transfer.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "claim_id": "O1",
+      "kind": "opinion",
+      "text": "Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.",
+      "source_ids": []
+    }
+  ],
+  "human_approval": null
+}

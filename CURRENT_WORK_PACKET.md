@@ -4,9 +4,9 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Effective selected-style repair machine GO; three-style native diagnostic next; P2 human acceptance HOLD
+CURRENT_STAGE_OR_MILESTONE: Effective style repair and3 native drafts machine GO; human quality and nine-style expansion HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
-AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate production code436a165; exact source/config/test hashes and integration/runtime state in latest receipt
+AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate production codee11b384; exact source/config/test hashes and integration/runtime state in latest receipt
 BLOCKER_SCOPE: milestone
 SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, review, and reversible repo corrections can proceed
 BLOCKED_ACTION: paid image rendering, Replicate/render-provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
@@ -220,7 +220,7 @@ VERIFICATION_SUMMARY: Slice A implemented; multi-subject human validation now ac
 EVIDENCE_INVALIDATED_OR_REUSED: existing voice/content/visual architecture reused; no settled decision reopened
 AUTHORITY_RECONCILED: prior packet update landed on main at a714d1e; v4 continuation delta is on a feature branch, not merged; no competing Master Game Plan
 REMAINING_BLOCKERS: multi-subject visual-plan evidence, real repo-provider acceptance, rendered-asset evidence, publishing integration
-NEXT_RECOMMENDED_SLICE: complete Trials #2–#5 and run a focused Challenge decision; promote Slice B only if the planner earns it
+NEXT_RECOMMENDED_SLICE: review retained three-style drafts per latest receipt; broader multi-subject content/visual gates remain open
 
 ## v4 continuation — 2026-11-04
 
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/effective-voice-repair-20261104/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: One bounded three-style native drafting diagnostic; no nine-style expansion
+CURRENT_MILESTONE_RECEIPT: evidence/effective-voice-comparison-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: Owner exact-text feedback on3 retained version2 drafts; no further generation/expansion
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -351,3 +351,11 @@ Superseding next action: repair the existing effective prompt projection (one se
 Operator authorized the focused repair and one bounded three-style comparison. Receipt: evidence/effective-voice-repair-20261104/MILESTONE.json. Explicit selection now projects one rhetorical style, retains identity/POV/house and public-language checks, supplies the semantic objective once to writer/evaluator, and removes the universal drafting sequence. Default omitted-selection templates remain unchanged. Concise/reflective/technical definitions areversion2 with operational craft guidance; original numeric profiles remain historical provenance. No other voice is newly qualified.
 
 Observed7 original RED cases and3 review-discovered public-language regressions corrected; full207 PASS. Existing195 obligations retained, three explicit version expectations advanced intentionally;26 AT/11 E2E definitions unchanged. Source candidate-only, PR24 draft/unmerged; no hosted CI, merge/install/deploy/publish. Next eligible action: declared three-style Codex drafting diagnostic; raw outputs and meaningful differentiation must be inspected before any expansion.
+
+## Three-style native comparison — 2026-11-04
+
+CURRENT RESULT: machine GO; useful differentiation modest/observable; human quality and nine-style expansion HOLD. Latest receipt: evidence/effective-voice-comparison-20261104/MILESTONE.json; raw drafts: COMPARISON.md and per-style JSON; expected/observed and limitations: REPORT.md in that directory. Exact tested implementation e11b384; full207 PASS and source/config/tests unchanged afterward.
+
+Actual Codex batch:3 first drafts,9 physical starts,35.997 cumulative CLI seconds/API0; distinct native requests/threads/results and exact output hashes. Fresh-process reopen exit0 with0 added calls. Within this batch all non-style input is identical; only3 version2 styles vary. Counts162/162/168 words; approximate sentence averages12.46/13.50/16.80. Concise compresses, reflective emphasizes qualified responsibility, technical develops a causal dependency and ends on scope limits. Shared early factual summary and similar overall reasoning remain. These are descriptive observations, not scores or human acceptance; combined repair is not single-factor causal proof. Shared central argument/recommendation is deliberately controlled.
+
+Superseding next action: owner exact-text feedback on these3 retained versions; no expansion or automatic rewrite/retuning. Preserve weak nine-style results, all26 AT/11 E2E, original simpler-LLM pilot requirements, measured editing-effort and visual gates. Drafting-stage diagnostic only; full engine/baseline paths verified offline, not natively accepted by this batch. Candidate-only/unmerged; no hosted CI, merge/install/deploy/render/publish.

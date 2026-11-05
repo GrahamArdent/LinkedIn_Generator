@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-11-05T01:49:37.863778+00:00",
+  "source_commit": "e11b384471c2c11b16e2ee33c54d3f904bf08f8d",
+  "repair_receipt": "evidence/effective-voice-repair-20261104/MILESTONE.json",
+  "status": {
+    "machine": "GO",
+    "style_differentiation": "MODEST_OBSERVABLE_EFFECT",
+    "human_quality": "HOLD",
+    "nine_style_expansion": "HOLD",
+    "P2_product_acceptance": "HOLD"
+  },
+  "tests": {
+    "full_pytest": "207 passed in1.99s",
+    "exit": 0,
+    "source_config_tests_unchanged_since_test": true
+  },
+  "expected_observed": {
+    "source_commit": "e11b384471c2c11b16e2ee33c54d3f904bf08f8d",
+    "fixed_non_style_context_sha256": "1aa5d3c91dd8ec68f3cd44ec3ac5f402a01b201751ea7ac622ff5b6622463cde",
+    "native_model_calls": 3,
+    "physical_starts": 9,
+    "cumulative_cli_seconds": 35.996989478357136,
+    "reopen_exit": 0,
+    "additional_calls_on_reopen": 0,
+    "api_spend": 0,
+    "subscription_cost": "unknown"
+  },
+  "method": "Existing run_generation -> Pipeline.draft_variants -> LLMClient/CodexProvider. Stop after known completed first draft, before any critic/humanizer/scorer. Bound request hashes validated outside prompts; prompt source context retains facts/claims/limitations and omits request-binding metadata only.",
+  "human_decision": null,
+  "acceptance_definitions_unchanged": true,
+  "integration": {
+    "main": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+    "PR24": "open/draft/unmerged",
+    "runtime": "candidate checkout; no promotion",
+    "hosted_workflows": "only disabled workflow files present; no dispatch"
+  },
+  "next_eligible_action": "Owner exact-text feedback on3 retained drafts; no nine-style expansion or automatic retuning"
+}

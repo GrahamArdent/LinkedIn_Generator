@@ -1,0 +1,261 @@
+{
+  "kind": "controlled_first_drafting_stage_only",
+  "created_at": "2026-11-05T01:46:22.927222+00:00",
+  "candidate": "e11b384471c2c11b16e2ee33c54d3f904bf08f8d",
+  "budget": {
+    "model_executions": 3,
+    "physical_starts": 9,
+    "cumulative_cli_seconds": 900,
+    "api_spend": 0
+  },
+  "fixed_context_sha256": "1aa5d3c91dd8ec68f3cd44ec3ac5f402a01b201751ea7ac622ff5b6622463cde",
+  "prepared": [
+    {
+      "style": "concise_challenger",
+      "request": {
+        "request_id": "lig-effective-voice-comparison-20261104",
+        "origin": "manual",
+        "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+        "persona_key": "graham",
+        "audience": "Business and IT leaders responsible for payment systems",
+        "objective": "An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.",
+        "author_pov": "individual",
+        "content_goal": "authority",
+        "opportunity_gate": false,
+        "publish_quality_gate": false,
+        "visual_asset_plan": false,
+        "services": [],
+        "targets": [
+          "Business leaders",
+          "IT leaders"
+        ],
+        "hashtags": [
+          "#AI",
+          "#PaymentSecurity",
+          "#CyberRisk"
+        ],
+        "voice_examples": [],
+        "evidence": [
+          {
+            "title": "S1 / C1: CERT-In update, November4,2026",
+            "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+            "fact": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces."
+          },
+          {
+            "title": "S2 / C2: CERT-In CIAD-2026-0046, October9,2026",
+            "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+            "fact": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records."
+          }
+        ],
+        "writing_voice_id": "concise_challenger"
+      },
+      "request_sha256": "698fc1fab3bc83efbfeb1cffa7859ea4642a57ebcf587ad4c27d84a469acc08b",
+      "voice": {
+        "id": "concise_challenger",
+        "version": 2,
+        "label": "Concise Challenger",
+        "style_traits": {
+          "tone": [
+            "spare",
+            "conversational",
+            "challenging"
+          ],
+          "avg_sentence_length": 12.0,
+          "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+          "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+          "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+          "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
+        },
+        "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007"
+      },
+      "system": "Write a LinkedIn post as graham for Business and IT leaders responsible for payment systems.\nThe selected Writing Voice in Persona Profile is the sole rhetorical style: use its craft traits for tone, sentence rhythm, structure and imagery. Do not imitate a named author or borrow biography, audience, anecdotes or signature phrases. Numeric sentence lengths are approximate guidance, never quotas.\nKeep author identity and POV separate from style. For individual POV, use I/me/my for the author's own views; do not invent shared actions or use unjustified we/us/our.\nExpress the supplied editorial objective in your own words. It fixes the argument, not an opening phrase, paragraph sequence or ending. Follow the Content Goal and write for a smart professional without assuming specialist or internal project knowledge. Translate necessary technical terms into plain language.\nUse Allowed Sources as the factual evidence. Preserve editorial_context.source_bundle claim types, designated central anchor, limitations and counterevidence when present. Faithfully paraphrase the anchor without embellishing it; distinguish fact from inference and opinion. Omit unsupported claims or clearly frame interpretation as such.\nNever invent statistics, quotations, citations, events, personal experiences, client claims or outcomes. A stylistic instruction cannot authorize factual invention. Approved voice examples guide compatible craft only; do not copy their distinctive phrases, anecdotes or facts.\nAvoid stock LinkedIn phrasing, empty inspiration, manufactured drama and engagement bait. Do not force a question, sales CTA or anecdote. Respect house boundaries, including no em dashes. Keep links out of the post body. Return only the finished post.\n",
+      "user": "Audience: Business and IT leaders responsible for payment systems\nAuthor POV: individual\nContent Goal: authority\nTopic: AI-assisted payment attacks: verify authorization where money actually moves\nServices/related capabilities: []\nPersona Profile: {\"donts\": [\"clich\\u00e9s\", \"em_dashes\"], \"emoji_max\": 3, \"bullet_char\": \"\\ud83d\\udd39\", \"active_author_pov\": \"individual\", \"writing_voice\": {\"id\": \"concise_challenger\", \"version\": 2, \"label\": \"Concise Challenger\", \"style_traits\": {\"tone\": [\"spare\", \"conversational\", \"challenging\"], \"avg_sentence_length\": 12.0, \"rhythm\": \"Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.\", \"reasoning\": \"Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.\", \"imagery\": \"One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.\", \"preferred_structure\": \"A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph.\"}, \"content_sha256\": \"33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007\"}, \"semantic_quality\": {\"default_author_pov\": \"individual\", \"internal_terms_needing_translation\": [\"mode c\", \"stage 0\", \"execution spine\", \"canonical intake\", \"canonical authority\", \"regression coverage\", \"work packet\", \"kill signal\"], \"generic_phrases\": [\"in today's fast-paced world\", \"game changer\", \"the future is here\", \"unlock the power\", \"revolutionize\", \"here's the thing\", \"in the ever-evolving landscape\", \"now more than ever\", \"let that sink in\"]}, \"active_content_goal\": \"authority\", \"earned_question\": false, \"editorial_context\": {\"objective\": \"An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.\", \"topic\": \"AI-assisted payment attacks: verify authorization where money actually moves\", \"plan\": {\"reader\": \"Business and IT leaders responsible for payment systems\", \"factual_anchor\": {\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}}, \"approved_voice_examples\": [], \"source_bundle\": {\"schema_version\": \"1\", \"central_claim_id\": \"C1\", \"sources\": [{\"source_id\": \"S1\", \"title\": \"Escalation of AI-Driven Attacks on BFSI Entities\", \"publisher\": \"CERT-In / CSIRT-Fin, Government of India\", \"published\": \"2026-11-04\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03\", \"status\": \"usable\", \"passages\": [{\"locator\": \"November4 current activity / overview\", \"excerpt\": \"strikes by invoking the victim's own payment and disbursement APIs\"}], \"limitations\": \"Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses.\"}, {\"source_id\": \"S2\", \"title\": \"CIAD-2026-0046\", \"publisher\": \"CERT-In / CSIRT-Fin\", \"published\": \"2026-10-09\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02\", \"status\": \"usable\", \"passages\": [{\"locator\": \"Key TTPs Observed\", \"excerpt\": \"Bypassing of application-level checks\"}, {\"locator\": \"Recommended Actions\", \"excerpt\": \"Validate every payout against sanctioned/approved records\"}], \"limitations\": \"Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness.\"}], \"claims\": [{\"claim_id\": \"C1\", \"kind\": \"fact\", \"text\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\", \"source_ids\": [\"S1\"]}, {\"claim_id\": \"C2\", \"kind\": \"fact\", \"text\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\", \"source_ids\": [\"S2\"]}, {\"claim_id\": \"I1\", \"kind\": \"inference\", \"text\": \"An approval screen alone does not establish that authorization is enforced at the point of transfer.\", \"source_ids\": [\"S1\", \"S2\"]}, {\"claim_id\": \"O1\", \"kind\": \"opinion\", \"text\": \"Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.\", \"source_ids\": []}], \"human_approval\": null}}}\nAllowed Sources (titles + grounded facts): [{\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}, {\"title\": \"S2 / C2: CERT-In CIAD-2026-0046, October9,2026\", \"fact\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\"}]\n---\nWrite one LinkedIn post expressing editorial_context.objective. That fixes the proposition, not the wording or outline.\nLet the selected Writing Voice determine the opening approach, evidence placement, sentence rhythm, paragraph shape and ending. No common paragraph sequence is required.\nPreserve the designated factual anchor, source limitations and author POV. A style instruction to tell a story, experiment or personal reflection never authorizes invented events or experiences.\nDo not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question or framework phrase.\n",
+      "non_style_context_sha256": "1aa5d3c91dd8ec68f3cd44ec3ac5f402a01b201751ea7ac622ff5b6622463cde"
+    },
+    {
+      "style": "reflective_leader",
+      "request": {
+        "request_id": "lig-effective-voice-comparison-20261104",
+        "origin": "manual",
+        "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+        "persona_key": "graham",
+        "audience": "Business and IT leaders responsible for payment systems",
+        "objective": "An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.",
+        "author_pov": "individual",
+        "content_goal": "authority",
+        "opportunity_gate": false,
+        "publish_quality_gate": false,
+        "visual_asset_plan": false,
+        "services": [],
+        "targets": [
+          "Business leaders",
+          "IT leaders"
+        ],
+        "hashtags": [
+          "#AI",
+          "#PaymentSecurity",
+          "#CyberRisk"
+        ],
+        "voice_examples": [],
+        "evidence": [
+          {
+            "title": "S1 / C1: CERT-In update, November4,2026",
+            "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+            "fact": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces."
+          },
+          {
+            "title": "S2 / C2: CERT-In CIAD-2026-0046, October9,2026",
+            "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+            "fact": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records."
+          }
+        ],
+        "writing_voice_id": "reflective_leader"
+      },
+      "request_sha256": "4f881a92840891d2aaadbb29f91a077e0a367272b50dd307530095fdd3871c70",
+      "voice": {
+        "id": "reflective_leader",
+        "version": 2,
+        "label": "Reflective Leader",
+        "style_traits": {
+          "tone": [
+            "reflective",
+            "empathetic",
+            "measured"
+          ],
+          "avg_sentence_length": 16.0,
+          "rhythm": "Allow the reasoning to unfold in varied sentences and connected paragraphs. Use a brief pause for a meaningful qualification, not a succession of punchlines.",
+          "reasoning": "Explore what a reasonable person might initially trust and why that confidence deserves a second look. Connect the distinction to responsibility and human judgment. First-person interpretation is allowed; invented personal experience is not.",
+          "imagery": "Use a grounded human perspective without manufacturing a scene, conversation or vulnerable confession.",
+          "preferred_structure": "Begin with an honest reflection or leadership dilemma, consider a credible alternative, and arrive at a thoughtful practical conclusion. Integrate evidence within that reflection rather than following a fixed news-summary outline."
+        },
+        "content_sha256": "42ef0afdde20cea57a4c2b40273fcba43db1de1d8600add829297011f7bb8e50"
+      },
+      "system": "Write a LinkedIn post as graham for Business and IT leaders responsible for payment systems.\nThe selected Writing Voice in Persona Profile is the sole rhetorical style: use its craft traits for tone, sentence rhythm, structure and imagery. Do not imitate a named author or borrow biography, audience, anecdotes or signature phrases. Numeric sentence lengths are approximate guidance, never quotas.\nKeep author identity and POV separate from style. For individual POV, use I/me/my for the author's own views; do not invent shared actions or use unjustified we/us/our.\nExpress the supplied editorial objective in your own words. It fixes the argument, not an opening phrase, paragraph sequence or ending. Follow the Content Goal and write for a smart professional without assuming specialist or internal project knowledge. Translate necessary technical terms into plain language.\nUse Allowed Sources as the factual evidence. Preserve editorial_context.source_bundle claim types, designated central anchor, limitations and counterevidence when present. Faithfully paraphrase the anchor without embellishing it; distinguish fact from inference and opinion. Omit unsupported claims or clearly frame interpretation as such.\nNever invent statistics, quotations, citations, events, personal experiences, client claims or outcomes. A stylistic instruction cannot authorize factual invention. Approved voice examples guide compatible craft only; do not copy their distinctive phrases, anecdotes or facts.\nAvoid stock LinkedIn phrasing, empty inspiration, manufactured drama and engagement bait. Do not force a question, sales CTA or anecdote. Respect house boundaries, including no em dashes. Keep links out of the post body. Return only the finished post.\n",
+      "user": "Audience: Business and IT leaders responsible for payment systems\nAuthor POV: individual\nContent Goal: authority\nTopic: AI-assisted payment attacks: verify authorization where money actually moves\nServices/related capabilities: []\nPersona Profile: {\"donts\": [\"clich\\u00e9s\", \"em_dashes\"], \"emoji_max\": 3, \"bullet_char\": \"\\ud83d\\udd39\", \"active_author_pov\": \"individual\", \"writing_voice\": {\"id\": \"reflective_leader\", \"version\": 2, \"label\": \"Reflective Leader\", \"style_traits\": {\"tone\": [\"reflective\", \"empathetic\", \"measured\"], \"avg_sentence_length\": 16.0, \"rhythm\": \"Allow the reasoning to unfold in varied sentences and connected paragraphs. Use a brief pause for a meaningful qualification, not a succession of punchlines.\", \"reasoning\": \"Explore what a reasonable person might initially trust and why that confidence deserves a second look. Connect the distinction to responsibility and human judgment. First-person interpretation is allowed; invented personal experience is not.\", \"imagery\": \"Use a grounded human perspective without manufacturing a scene, conversation or vulnerable confession.\", \"preferred_structure\": \"Begin with an honest reflection or leadership dilemma, consider a credible alternative, and arrive at a thoughtful practical conclusion. Integrate evidence within that reflection rather than following a fixed news-summary outline.\"}, \"content_sha256\": \"42ef0afdde20cea57a4c2b40273fcba43db1de1d8600add829297011f7bb8e50\"}, \"semantic_quality\": {\"default_author_pov\": \"individual\", \"internal_terms_needing_translation\": [\"mode c\", \"stage 0\", \"execution spine\", \"canonical intake\", \"canonical authority\", \"regression coverage\", \"work packet\", \"kill signal\"], \"generic_phrases\": [\"in today's fast-paced world\", \"game changer\", \"the future is here\", \"unlock the power\", \"revolutionize\", \"here's the thing\", \"in the ever-evolving landscape\", \"now more than ever\", \"let that sink in\"]}, \"active_content_goal\": \"authority\", \"earned_question\": false, \"editorial_context\": {\"objective\": \"An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.\", \"topic\": \"AI-assisted payment attacks: verify authorization where money actually moves\", \"plan\": {\"reader\": \"Business and IT leaders responsible for payment systems\", \"factual_anchor\": {\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}}, \"approved_voice_examples\": [], \"source_bundle\": {\"schema_version\": \"1\", \"central_claim_id\": \"C1\", \"sources\": [{\"source_id\": \"S1\", \"title\": \"Escalation of AI-Driven Attacks on BFSI Entities\", \"publisher\": \"CERT-In / CSIRT-Fin, Government of India\", \"published\": \"2026-11-04\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03\", \"status\": \"usable\", \"passages\": [{\"locator\": \"November4 current activity / overview\", \"excerpt\": \"strikes by invoking the victim's own payment and disbursement APIs\"}], \"limitations\": \"Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses.\"}, {\"source_id\": \"S2\", \"title\": \"CIAD-2026-0046\", \"publisher\": \"CERT-In / CSIRT-Fin\", \"published\": \"2026-10-09\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02\", \"status\": \"usable\", \"passages\": [{\"locator\": \"Key TTPs Observed\", \"excerpt\": \"Bypassing of application-level checks\"}, {\"locator\": \"Recommended Actions\", \"excerpt\": \"Validate every payout against sanctioned/approved records\"}], \"limitations\": \"Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness.\"}], \"claims\": [{\"claim_id\": \"C1\", \"kind\": \"fact\", \"text\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\", \"source_ids\": [\"S1\"]}, {\"claim_id\": \"C2\", \"kind\": \"fact\", \"text\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\", \"source_ids\": [\"S2\"]}, {\"claim_id\": \"I1\", \"kind\": \"inference\", \"text\": \"An approval screen alone does not establish that authorization is enforced at the point of transfer.\", \"source_ids\": [\"S1\", \"S2\"]}, {\"claim_id\": \"O1\", \"kind\": \"opinion\", \"text\": \"Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.\", \"source_ids\": []}], \"human_approval\": null}}}\nAllowed Sources (titles + grounded facts): [{\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}, {\"title\": \"S2 / C2: CERT-In CIAD-2026-0046, October9,2026\", \"fact\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\"}]\n---\nWrite one LinkedIn post expressing editorial_context.objective. That fixes the proposition, not the wording or outline.\nLet the selected Writing Voice determine the opening approach, evidence placement, sentence rhythm, paragraph shape and ending. No common paragraph sequence is required.\nPreserve the designated factual anchor, source limitations and author POV. A style instruction to tell a story, experiment or personal reflection never authorizes invented events or experiences.\nDo not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question or framework phrase.\n",
+      "non_style_context_sha256": "1aa5d3c91dd8ec68f3cd44ec3ac5f402a01b201751ea7ac622ff5b6622463cde"
+    },
+    {
+      "style": "technical_explainer",
+      "request": {
+        "request_id": "lig-effective-voice-comparison-20261104",
+        "origin": "manual",
+        "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+        "persona_key": "graham",
+        "audience": "Business and IT leaders responsible for payment systems",
+        "objective": "An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.",
+        "author_pov": "individual",
+        "content_goal": "authority",
+        "opportunity_gate": false,
+        "publish_quality_gate": false,
+        "visual_asset_plan": false,
+        "services": [],
+        "targets": [
+          "Business leaders",
+          "IT leaders"
+        ],
+        "hashtags": [
+          "#AI",
+          "#PaymentSecurity",
+          "#CyberRisk"
+        ],
+        "voice_examples": [],
+        "evidence": [
+          {
+            "title": "S1 / C1: CERT-In update, November4,2026",
+            "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+            "fact": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces."
+          },
+          {
+            "title": "S2 / C2: CERT-In CIAD-2026-0046, October9,2026",
+            "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+            "fact": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records."
+          }
+        ],
+        "writing_voice_id": "technical_explainer"
+      },
+      "request_sha256": "818b01700fbfb4354b8d6ef7c3bcfa281b2fe49ddd7c0f7242f60c399130c55c",
+      "voice": {
+        "id": "technical_explainer",
+        "version": 2,
+        "label": "Technical Explainer",
+        "style_traits": {
+          "tone": [
+            "precise",
+            "analytical",
+            "restrained"
+          ],
+          "avg_sentence_length": 22.0,
+          "rhythm": "Use developed causal sentences when needed, balanced with shorter clarifying statements. Each paragraph should add a distinct mechanism, condition or implication.",
+          "reasoning": "Separate what is recorded from what is enforced. Explain the relevant dependency and the limits of the conclusion; define technical terms in ordinary language.",
+          "imagery": "Prefer a clear account of the mechanism over metaphor, motivation or emotional emphasis.",
+          "preferred_structure": "Organize around the system dependency or technical question. Connect the supplied evidence to that mechanism, then state the verification implication and limits. Do not impose a hook-news-lesson sequence."
+        },
+        "content_sha256": "583966e2cbd8dc995c88e892ed20a2395b75b3bc9b4833a9026a11c5faa8474a"
+      },
+      "system": "Write a LinkedIn post as graham for Business and IT leaders responsible for payment systems.\nThe selected Writing Voice in Persona Profile is the sole rhetorical style: use its craft traits for tone, sentence rhythm, structure and imagery. Do not imitate a named author or borrow biography, audience, anecdotes or signature phrases. Numeric sentence lengths are approximate guidance, never quotas.\nKeep author identity and POV separate from style. For individual POV, use I/me/my for the author's own views; do not invent shared actions or use unjustified we/us/our.\nExpress the supplied editorial objective in your own words. It fixes the argument, not an opening phrase, paragraph sequence or ending. Follow the Content Goal and write for a smart professional without assuming specialist or internal project knowledge. Translate necessary technical terms into plain language.\nUse Allowed Sources as the factual evidence. Preserve editorial_context.source_bundle claim types, designated central anchor, limitations and counterevidence when present. Faithfully paraphrase the anchor without embellishing it; distinguish fact from inference and opinion. Omit unsupported claims or clearly frame interpretation as such.\nNever invent statistics, quotations, citations, events, personal experiences, client claims or outcomes. A stylistic instruction cannot authorize factual invention. Approved voice examples guide compatible craft only; do not copy their distinctive phrases, anecdotes or facts.\nAvoid stock LinkedIn phrasing, empty inspiration, manufactured drama and engagement bait. Do not force a question, sales CTA or anecdote. Respect house boundaries, including no em dashes. Keep links out of the post body. Return only the finished post.\n",
+      "user": "Audience: Business and IT leaders responsible for payment systems\nAuthor POV: individual\nContent Goal: authority\nTopic: AI-assisted payment attacks: verify authorization where money actually moves\nServices/related capabilities: []\nPersona Profile: {\"donts\": [\"clich\\u00e9s\", \"em_dashes\"], \"emoji_max\": 3, \"bullet_char\": \"\\ud83d\\udd39\", \"active_author_pov\": \"individual\", \"writing_voice\": {\"id\": \"technical_explainer\", \"version\": 2, \"label\": \"Technical Explainer\", \"style_traits\": {\"tone\": [\"precise\", \"analytical\", \"restrained\"], \"avg_sentence_length\": 22.0, \"rhythm\": \"Use developed causal sentences when needed, balanced with shorter clarifying statements. Each paragraph should add a distinct mechanism, condition or implication.\", \"reasoning\": \"Separate what is recorded from what is enforced. Explain the relevant dependency and the limits of the conclusion; define technical terms in ordinary language.\", \"imagery\": \"Prefer a clear account of the mechanism over metaphor, motivation or emotional emphasis.\", \"preferred_structure\": \"Organize around the system dependency or technical question. Connect the supplied evidence to that mechanism, then state the verification implication and limits. Do not impose a hook-news-lesson sequence.\"}, \"content_sha256\": \"583966e2cbd8dc995c88e892ed20a2395b75b3bc9b4833a9026a11c5faa8474a\"}, \"semantic_quality\": {\"default_author_pov\": \"individual\", \"internal_terms_needing_translation\": [\"mode c\", \"stage 0\", \"execution spine\", \"canonical intake\", \"canonical authority\", \"regression coverage\", \"work packet\", \"kill signal\"], \"generic_phrases\": [\"in today's fast-paced world\", \"game changer\", \"the future is here\", \"unlock the power\", \"revolutionize\", \"here's the thing\", \"in the ever-evolving landscape\", \"now more than ever\", \"let that sink in\"]}, \"active_content_goal\": \"authority\", \"earned_question\": false, \"editorial_context\": {\"objective\": \"An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.\", \"topic\": \"AI-assisted payment attacks: verify authorization where money actually moves\", \"plan\": {\"reader\": \"Business and IT leaders responsible for payment systems\", \"factual_anchor\": {\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}}, \"approved_voice_examples\": [], \"source_bundle\": {\"schema_version\": \"1\", \"central_claim_id\": \"C1\", \"sources\": [{\"source_id\": \"S1\", \"title\": \"Escalation of AI-Driven Attacks on BFSI Entities\", \"publisher\": \"CERT-In / CSIRT-Fin, Government of India\", \"published\": \"2026-11-04\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03\", \"status\": \"usable\", \"passages\": [{\"locator\": \"November4 current activity / overview\", \"excerpt\": \"strikes by invoking the victim's own payment and disbursement APIs\"}], \"limitations\": \"Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses.\"}, {\"source_id\": \"S2\", \"title\": \"CIAD-2026-0046\", \"publisher\": \"CERT-In / CSIRT-Fin\", \"published\": \"2026-10-09\", \"checked_at\": \"2026-11-04\", \"url\": \"https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02\", \"status\": \"usable\", \"passages\": [{\"locator\": \"Key TTPs Observed\", \"excerpt\": \"Bypassing of application-level checks\"}, {\"locator\": \"Recommended Actions\", \"excerpt\": \"Validate every payout against sanctioned/approved records\"}], \"limitations\": \"Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness.\"}], \"claims\": [{\"claim_id\": \"C1\", \"kind\": \"fact\", \"text\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\", \"source_ids\": [\"S1\"]}, {\"claim_id\": \"C2\", \"kind\": \"fact\", \"text\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\", \"source_ids\": [\"S2\"]}, {\"claim_id\": \"I1\", \"kind\": \"inference\", \"text\": \"An approval screen alone does not establish that authorization is enforced at the point of transfer.\", \"source_ids\": [\"S1\", \"S2\"]}, {\"claim_id\": \"O1\", \"kind\": \"opinion\", \"text\": \"Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.\", \"source_ids\": []}], \"human_approval\": null}}}\nAllowed Sources (titles + grounded facts): [{\"title\": \"S1 / C1: CERT-In update, November4,2026\", \"fact\": \"CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.\"}, {\"title\": \"S2 / C2: CERT-In CIAD-2026-0046, October9,2026\", \"fact\": \"The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.\"}]\n---\nWrite one LinkedIn post expressing editorial_context.objective. That fixes the proposition, not the wording or outline.\nLet the selected Writing Voice determine the opening approach, evidence placement, sentence rhythm, paragraph shape and ending. No common paragraph sequence is required.\nPreserve the designated factual anchor, source limitations and author POV. A style instruction to tell a story, experiment or personal reflection never authorizes invented events or experiences.\nDo not expose internal planning labels or force a statistic, quotation, sales pitch, CTA, question or framework phrase.\n",
+      "non_style_context_sha256": "1aa5d3c91dd8ec68f3cd44ec3ac5f402a01b201751ea7ac622ff5b6622463cde"
+    }
+  ],
+  "human_decisions": null,
+  "method": "Existing run_generation -> Pipeline.draft_variants -> LLMClient/CodexProvider. Stop after known completed first draft, before any critic/humanizer/scorer. Bound request hashes validated outside prompts; prompt source context retains facts/claims/limitations and omits request-binding metadata only.",
+  "code_config_hashes": {
+    "src/app/logger.py": "cea715348d55bee591dd5a7f85811303376fab5ddbce1149bf274081ed2373b8",
+    "src/app/publish_quality.py": "20b4a76fa38a50faf1e7838b04e6b39f746965c48f3141b43572320c1b2b3494",
+    "src/app/scheduler.py": "0713640474d1b141d87d61bd6d7a8b3a1f41349304fde057dff7a0792afb8b7f",
+    "src/app/writing_voice.py": "90625b36720a029813e4ac167d5deb20df75811e684d13240efac8bd65400c31",
+    "src/app/quality.py": "177e960941bfc332c300767201c4f54f8dee78b7afc620226470aae668faf28c",
+    "src/app/cli.py": "7876f288c62c86aa41aba9ed0a928a99fd1f15cf28073806997108289487ac7a",
+    "src/app/renderer.py": "8c77a2fe2e80665f78077f6884be7a4c4a5e686a770f3f8137cc656857b3c94b",
+    "src/app/settings.py": "ba8f25f4dddc8651bd1dc58ff1d8756ca9e3c36d8543cd8ad5d06db75ca31eb8",
+    "src/app/rewrite_guard.py": "2bf21403ac390241b108fc6bc4904a8492021aa2fc36233654887fe94a28c12c",
+    "src/app/prompt_builder.py": "4c585c8816325ce7cb6518c11e06bf36c51ec42413625bf1c94baec9de6ecd37",
+    "src/app/image_brief.py": "e35fb8266bacf136fbebc03093a8728b411a22d123dcaef1aec03e1f4dcb8272",
+    "src/app/codex_provider.py": "83dc8254a679f2ef0f18de9a214e2e47101b2071160ece43a1d3cf8249ef38ae",
+    "src/app/generation.py": "0d9d2c69b65590cc53d6b9c40553c8503275e43029789b173d9e829ac8ff6531",
+    "src/app/visual_assets.py": "ee30106d6121f65cd68a5e9c0faac48d640647c995b28bf1563081f6adb34e64",
+    "src/app/rag.py": "e8699ab7b3a963690af71db2f735d12744ad08c981f382332cf67a8292565084",
+    "src/app/models.py": "9e6e70281ef928d738236b81793bd6b395924676466e873b792584f4c54966e8",
+    "src/app/feedback.py": "382d44c097b884f2e864a09479ab754029e3cc075740d6a40e2f33a3cbc4c491",
+    "src/app/persona_logic.py": "3f48cabfa9a9efb7b773290189428662be0975609abeaeacf31f142559fa8f86",
+    "src/app/topics_loader.py": "e58b27eedd97938fbf93d98e8ebb2df6d07c1d6acb2d808b758809e45e92dc72",
+    "src/app/composer.py": "af39a7e209ed058e5015a79f7acc13e02ff388d99070e0226bd2e0777c334093",
+    "src/app/utils.py": "0653cc643ba0ab2f60f10ba988b5ba4d4199d36eb4d38b3df8ee2ac3cf966b9b",
+    "src/app/integration.py": "6b657b1c1f6f558d69a4d5e369ce0caf84aa1f3736dd5edc2f7aca44070101b5",
+    "src/app/opportunity.py": "f90afce473e9b4e4c94556e2183449a615052ac39c003f657913376718002317",
+    "src/app/citations.py": "21e92e09d82ffbc2fc35680749bc0a4b0fe196e57d2508375eb9a0ea654c66c9",
+    "src/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/app/llm.py": "2ac6f6bed9cf32a1a80bca614b5ddc0f5b43c5d013544a32a29e280c64f11165",
+    "src/app/research.py": "ba045e24c3a438125887e98b5d261c1887cbe581f1b2436ace0b8e04505f254c",
+    "src/app/validators.py": "e6f36a9a467490f9da1b414987f4c040982bfd93c1f2669cabcb9e59f733c42a",
+    "src/app/judge.py": "cf36b9f0c31afc0a5fb0ccb87ac05d06150c2ca7632cdd0773827a2f8555bfe6",
+    "src/app/api.py": "4e20b1ad699dfe874f3d34afee823001ed3b65a82ccdae6b876376116a9d2568",
+    "src/app/adapters.py": "caa97dccb9ef73584eadc6afd859ead446daf8df7df503f7f87ac158707c8813",
+    "src/app/contracts.py": "1ad30e1e6f78f1724aa2b28b5f0b3c460353e8015889ca1aa46e6d6f70f5ef83",
+    "src/app/codex_trial.py": "64d00fdd1b18ab776ae0ef757751d9c45b82c46e68581a036f8bdec5f83ae24f",
+    "src/app/schemas.py": "bd9cd4ed7741742ebb40835503b53800b947c2468cd4195d70c6f8cc006524d3",
+    "config/personas.yaml": "4a4100b142b6a005422ac081c1f3d5b160925eb209695683a83d5289ad8f0e5e",
+    "config/skeleton.yaml": "57aa88efb220b56ed0a9a90a3fe7fe20c323f9e82f0841b8e10faf2fc3f2675d",
+    "config/hashtags.yaml": "3870108ffdf6b2ee46b7f29f02ce0c607099f1cd2090b091259c1352272645e8",
+    "config/forbidden_cta.yaml": "b42af991c961710d68ca81953aa6dbf778fee58fca14f1a0106ec94f9ede986c",
+    "config/prompts.yaml": "8ecab21d8287807cdd397fbad75d54aa0f53651b2f425e53e6cd04156cdc7c54",
+    "config/prompts_packs.yaml": "a8cc711f5ef764c9fe183d1bd62cfbb091bf588c43d30f9240380dfc1eac3bae",
+    "config/reply_prompt_templates.yaml": "6c9fc485ef6304f42e746242dac6202fc453d981eb1d4e52bfa250a136a7e6cd",
+    "config/process-registry.json": "f8f774222e95c3a54af2251c094cda35756b3a1b3faa695a494d727aebdeb64e",
+    "config/calendar_registry.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "config/prompt_kit.config.yaml": "1b624a2fd1506b4168f53701ae58422d8e11933997070a09ce97c4de1a371dd2",
+    "config/graham_spoken_voice.yaml": "b739ede12cffd08337a121089437cd5bfc6b72d1a3e4eb956d408951b4e69ca6",
+    "config/hashtag_policy.yaml": "52c2e9e654d39b39a72ddc378e0d4ef2b59f95534e743d183040d9f0adc31c60",
+    "config/schedule.yaml": "0755b124be93050d8e13742ed451f84b99f853db3d5ec2949dacba96660ff7b5",
+    "config/hook_patterns.yaml": "3f8cfed1c38ebb5f5aaad8ebb042fb0c77cab644174fa36c21dc6a30af13fcf2",
+    "config/cta_policies.yaml": "02fa5112e8bdbdae1ea0c190d3b85fc6b6d021041727429ff1133acd16642810",
+    "config/source_whitelist.yaml": "fece5d0aff905ca87b22afd96de0cb16a27c37314d44d351ba8dabf618ff6fda",
+    "config/visual_style.yaml": "a10bc19ca1f0380589f56b975bdc992f885bde386a61d48277504201b7d4525b",
+    "config/hashtags.py": "ceb27824cefca667a8415dbfb80fa02fd7daf43fd7519d99c120935d1a56b5ea",
+    "config/pillars.yaml": "96e99f47c3e1fc67885bbfce03f2cdbf567c847bb743793e6dbee4ff35ba97b2",
+    "config/normalization_rules.yaml": "1fe603ce6861b7c91ba1817f3c71f86d182bd49b7ba4c0bcc3322b18815bea8d",
+    "config/graham_voice_profile.yaml": "7ab76579049b4fc935e05ffd4296fff13c79bbc27b74e5369997b7db6f4084e2",
+    "config/writing_voices.json": "141bcb4a70172776ec5cad0b86180d6596d1791ef08acb805638bce82fa8e64b",
+    "config/codex_runtime.example.json": "600e8fda4fd93f3e48f4ba36fdbbcbfa50d925767191f482d1d2c12027b53998"
+  }
+}
