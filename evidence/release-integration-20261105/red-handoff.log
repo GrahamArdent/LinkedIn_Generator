@@ -1,0 +1,49 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+____ test_json_request_preserves_selected_narrative_in_serialized_contract _____
+
+    def test_json_request_preserves_selected_narrative_in_serialized_contract():
+        request=LinkedInContentRequest.model_validate(data())
+>       assert request.model_dump().get("editorial_handoff")==frozen()
+E       AssertionError: assert None == {'version': 1, 'meaning': {'thesis': 'Accepted access alone does not establish action authorization.', 'reader_consequ...ationship': 'accepted credential'}], 'boundary': 'Entry and invoice approval are distinct; this is not an incident.'}}}
+E        +  where None = <built-in method get of dict object at 0x75be097c3cc0>('editorial_handoff')
+E        +    where <built-in method get of dict object at 0x75be097c3cc0> = {'request_id': 'release-handoff-fixture', 'origin': 'test', 'topic': 'Access and authority', 'persona_key': 'graham', ...}.get
+E        +      where {'request_id': 'release-handoff-fixture', 'origin': 'test', 'topic': 'Access and authority', 'persona_key': 'graham', ...} = model_dump()
+E        +        where model_dump = LinkedInContentRequest(request_id='release-handoff-fixture', origin='test', topic='Access and authority', persona_key=...idence(title='Fixture source', fact='The fixture account remained usable.', url=None)], voice_examples=[], hashtags=[]).model_dump
+E        +  and   {'version': 1, 'meaning': {'thesis': 'Accepted access alone does not establish action authorization.', 'reader_consequ...ationship': 'accepted credential'}], 'boundary': 'Entry and invoice approval are distinct; this is not an incident.'}}} = frozen()
+
+tests/test_release_handoff_integration.py:18: AssertionError
+____________ test_invalid_handoff_is_rejected_at_request_admission _____________
+
+    def test_invalid_handoff_is_rejected_at_request_admission():
+        bad=data();bad["editorial_handoff"]["editorial"]={"body":"Premature public post."}
+>       with pytest.raises(ValueError,match="PLANNING_CONTRACT"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_release_handoff_integration.py:22: Failed
+__ test_actual_orchestrated_trial_writer_evaluator_and_baseline_share_handoff __
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-436/test_actual_orchestrated_trial0')
+
+    def test_actual_orchestrated_trial_writer_evaluator_and_baseline_share_handoff(tmp_path):
+        class Provider:
+            mode="fixture";error=None;receipts=[]
+            def __init__(self):self.capture=Capture()
+            def generate(self,**kw):return self.capture.call(kw["system"],kw["user"])["text"]
+        p=Provider()
+        result=run_trial(data(),tmp_path,p,model="fixture",score_baseline=True)
+        writer=next(c for c in p.capture.calls if "Write a LinkedIn post as" in c["system"])
+        profile=json.loads(next(s.split(": ",1)[1] for s in writer["user"].splitlines() if s.startswith("Persona Profile: ")))
+>       assert profile["editorial_context"].get("handoff")==frozen()
+E       AssertionError: assert None == {'version': 1, 'meaning': {'thesis': 'Accepted access alone does not establish action authorization.', 'reader_consequ...ationship': 'accepted credential'}], 'boundary': 'Entry and invoice approval are distinct; this is not an incident.'}}}
+E        +  where None = <built-in method get of dict object at 0x75be0981d100>('handoff')
+E        +    where <built-in method get of dict object at 0x75be0981d100> = {'objective': 'Accepted access alone does not establish action authorization.', 'topic': 'Access and authority', 'plan': {'reader': 'Business and IT leaders', 'factual_anchor': {'title': '', 'fact': ''}}, 'approved_voice_examples': [], ...}.get
+E        +  and   {'version': 1, 'meaning': {'thesis': 'Accepted access alone does not establish action authorization.', 'reader_consequ...ationship': 'accepted credential'}], 'boundary': 'Entry and invoice approval are distinct; this is not an incident.'}}} = frozen()
+
+tests/test_release_handoff_integration.py:34: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_release_handoff_integration.py::test_json_request_preserves_selected_narrative_in_serialized_contract
+FAILED tests/test_release_handoff_integration.py::test_invalid_handoff_is_rejected_at_request_admission
+FAILED tests/test_release_handoff_integration.py::test_actual_orchestrated_trial_writer_evaluator_and_baseline_share_handoff
+3 failed in 0.27s

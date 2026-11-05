@@ -1,0 +1,44 @@
+.........F.F...                                                          [100%]
+=================================== FAILURES ===================================
+_ test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value[Advisory CIAD-2026-0046 describes the issue.-Advisory CIAD-2026-0046, describes the issue.] _
+
+original = 'Advisory CIAD-2026-0046 describes the issue.'
+candidate = 'Advisory CIAD-2026-0046, describes the issue.'
+
+    @pytest.mark.parametrize("original,candidate",[
+        ("Advisory CIAD-2026-0046 describes the issue.", "Advisory CIAD-2026-0046, describes the issue."),
+        ("The recorded amount is 1,000 units", "The recorded amount is 1,000 units."),
+        ("The measured value is 1.25", "The measured value is 1.25, in the record."),
+    ])
+    def test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value(original,candidate):
+        report=evaluate_rewrite(original,candidate,{},RULES)
+>       assert report["new_numbers"]==[]
+E       AssertionError: assert ['0046,'] == []
+E         
+E         Left contains one more item: '0046,'
+E         Use -v to get more diff
+
+tests/test_rewrite_guard.py:142: AssertionError
+_ test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value[The measured value is 1.25-The measured value is 1.25, in the record.] _
+
+original = 'The measured value is 1.25'
+candidate = 'The measured value is 1.25, in the record.'
+
+    @pytest.mark.parametrize("original,candidate",[
+        ("Advisory CIAD-2026-0046 describes the issue.", "Advisory CIAD-2026-0046, describes the issue."),
+        ("The recorded amount is 1,000 units", "The recorded amount is 1,000 units."),
+        ("The measured value is 1.25", "The measured value is 1.25, in the record."),
+    ])
+    def test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value(original,candidate):
+        report=evaluate_rewrite(original,candidate,{},RULES)
+>       assert report["new_numbers"]==[]
+E       AssertionError: assert ['1.25,'] == []
+E         
+E         Left contains one more item: '1.25,'
+E         Use -v to get more diff
+
+tests/test_rewrite_guard.py:142: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_rewrite_guard.py::test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value[Advisory CIAD-2026-0046 describes the issue.-Advisory CIAD-2026-0046, describes the issue.]
+FAILED tests/test_rewrite_guard.py::test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value[The measured value is 1.25-The measured value is 1.25, in the record.]
+2 failed, 13 passed in 0.14s
