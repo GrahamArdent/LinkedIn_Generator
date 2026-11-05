@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/home/graham/.local/bin/linkedin-codex",
+    "show",
+    "--out",
+    "/home/graham/work/linkedin-codex-trial-20261104/evidence/installed-essential-trial-20261105/trial"
+  ],
+  "exit": 0,
+  "stdout": "{\"state\": \"completed\", \"engine_gate\": \"QUALIFIED_FOR_HUMAN_REVIEW\", \"mode\": \"native_codex\", \"review\": \"/home/graham/work/linkedin-codex-trial-20261104/evidence/installed-essential-trial-20261105/trial/review.md\"}\n",
+  "all_trial_file_hashes_unchanged": true,
+  "trial_sha256": "dbfd1c3d29766347b43a01ba93e53ff6816646bc48051d4c6cf7e301abdbf0b7",
+  "model_calls_added": 0,
+  "saved_state": "completed",
+  "candidate_hashes": {
+    "A": "aab0773611b1a877ef41d1d4c464ce487e9483120db84793a9a412c874e54520",
+    "B": "25d0ef52e75cd2dab79a8f7a4e00971154686b640a677cbde85c843238025d91"
+  }
+}

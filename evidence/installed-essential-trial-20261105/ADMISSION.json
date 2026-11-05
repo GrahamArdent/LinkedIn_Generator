@@ -1,0 +1,10 @@
+{
+  "max_subscription_model_executions": 12,
+  "max_cumulative_cli_seconds": 900,
+  "api_spend": 0,
+  "scope": "One installed evidence->engine->essential-review->selected/visual or valid HOLD plus equal-context control and zero-call reopening",
+  "includes": "preflight, all draft/repair/evaluation/visual/control calls; comparison-only continuation shares same run budget",
+  "installed_revision": "2c2daf39398a993b698d1f225008a06217b14a7c",
+  "human_approval": "pending",
+  "publishing": false
+}

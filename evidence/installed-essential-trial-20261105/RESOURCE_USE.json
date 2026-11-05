@@ -1,0 +1,62 @@
+{
+  "declared_model_execution_cap": 12,
+  "declared_cli_seconds_cap": 900,
+  "actual_model_executions": 6,
+  "actual_cli_launches": 18,
+  "cumulative_active_cli_seconds": 97.17145485151559,
+  "model_cli_seconds": 95.10442110523582,
+  "api_spend": 0,
+  "usage": [
+    {
+      "input_tokens": 9641,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 129,
+      "reasoning_output_tokens": 0
+    },
+    {
+      "input_tokens": 12517,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 350,
+      "reasoning_output_tokens": 0
+    },
+    {
+      "input_tokens": 13308,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 378,
+      "reasoning_output_tokens": 0
+    },
+    {
+      "input_tokens": 10513,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 639,
+      "reasoning_output_tokens": 115
+    },
+    {
+      "input_tokens": 11999,
+      "cached_input_tokens": 7424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 319,
+      "reasoning_output_tokens": 0
+    },
+    {
+      "input_tokens": 13271,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 367,
+      "reasoning_output_tokens": 0
+    }
+  ],
+  "cost": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "note": "Null/unreported provider token/billing metrics remain UNKNOWN, not zero; API spend remains zero for subscription route."
+}

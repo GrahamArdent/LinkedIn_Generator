@@ -1,0 +1,92 @@
+[
+  {
+    "candidate": "A",
+    "content_sha256": "aab0773611b1a877ef41d1d4c464ce487e9483120db84793a9a412c874e54520",
+    "claims": [
+      {
+        "id": "A-CF",
+        "kind": "fact",
+        "summary": "Cloudflare stolen credentials believed unused and left unrotated, later used for Atlassian access.",
+        "sources": [
+          "CF2024"
+        ],
+        "disposition": "supported",
+        "locator": "Cloudflare timeline lines889-900"
+      },
+      {
+        "id": "A-CI",
+        "kind": "fact",
+        "summary": "CERT-In reports stolen credentials used for direct transfers from recognized victim infrastructure, bypassing checks to attacker accounts.",
+        "sources": [
+          "CIAD-2026-0046"
+        ],
+        "disposition": "supported",
+        "locator": "CERT-In Description lines125-127"
+      },
+      {
+        "id": "A-INFERENCE",
+        "kind": "inference",
+        "summary": "Accepted access does not establish action-specific permission.",
+        "disposition": "clearly qualified interpretation; not measured prevention claim"
+      },
+      {
+        "id": "A-RECOMMENDATION",
+        "kind": "opinion",
+        "summary": "Inspect evidence approving the particular sensitive request; recipient/amount/scope are suggested checks.",
+        "disposition": "practical recommendation, not claimed measured outcome"
+      },
+      {
+        "id": "A-SYMBOL",
+        "kind": "illustration",
+        "summary": "Office key and equipment removal.",
+        "disposition": "hypothetical, explicitly limited; no invented author experience"
+      }
+    ],
+    "machine_and_assistant_review": "No unresolved externally checkable claim identified; human adjudication remains pending"
+  },
+  {
+    "candidate": "B",
+    "content_sha256": "25d0ef52e75cd2dab79a8f7a4e00971154686b640a677cbde85c843238025d91",
+    "claims": [
+      {
+        "id": "B-CF",
+        "kind": "fact",
+        "summary": "Cloudflare stolen credentials believed unused and left unrotated, later used for Atlassian access.",
+        "sources": [
+          "CF2024"
+        ],
+        "disposition": "supported",
+        "locator": "Cloudflare timeline lines889-900"
+      },
+      {
+        "id": "B-CI",
+        "kind": "fact",
+        "summary": "CERT-In reports stolen credentials used for direct transfers from recognized victim infrastructure, bypassing checks to attacker accounts.",
+        "sources": [
+          "CIAD-2026-0046"
+        ],
+        "disposition": "supported",
+        "locator": "CERT-In Description lines125-127"
+      },
+      {
+        "id": "B-INFERENCE",
+        "kind": "inference",
+        "summary": "Accepted access does not establish action-specific permission.",
+        "disposition": "clearly qualified interpretation; not measured prevention claim"
+      },
+      {
+        "id": "B-RECOMMENDATION",
+        "kind": "opinion",
+        "summary": "Inspect evidence approving the particular sensitive request; recipient/amount/scope are suggested checks.",
+        "disposition": "practical recommendation, not claimed measured outcome"
+      },
+      {
+        "id": "B-SYMBOL",
+        "kind": "illustration",
+        "summary": "Office key and equipment removal.",
+        "disposition": "hypothetical, explicitly limited; no invented author experience"
+      }
+    ],
+    "machine_and_assistant_review": "No unresolved externally checkable claim identified; human adjudication remains pending"
+  }
+]

@@ -4,9 +4,9 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: M1 qualified; M2 HOLD for exact-candidate merge and fixed-release installation authorization; installed release unchanged; human/product acceptance pending
+CURRENT_STAGE_OR_MILESTONE: M1 and M2 GO; installed M3 comparison complete; M4 HOLD for human text and visual-plan judgments
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
-AUTHORITY_VERSION_OR_COMMIT: product merge and installed revision0c099d70fc807044355af089d62d1bef049cbb95; receipt evidence/release-integration-20261105/MILESTONE.json; later documentation-only main commits do not change installed product hashes
+AUTHORITY_VERSION_OR_COMMIT: merged and installed revision2c2daf39398a993b698d1f225008a06217b14a7c; evidence/release-essential-20261105/INSTALLATION.json; later documentation-only main commits do not change installed product hashes
 BLOCKER_SCOPE: milestone
 SAFE_EXECUTION_LANE: A/B — human content acceptance, provider-neutral visual-plan validation, idea preservation, evidence gathering, review, and reversible repo corrections can proceed
 BLOCKED_ACTION: paid image rendering, Replicate/render-provider implementation, and publishing remain gated until the current validation evidence is sufficient; final repo-provider acceptance also requires the actual generation path in a runtime with valid provider credentials
@@ -445,3 +445,17 @@ All26 AT/11 E2E retained. Lint unavailable; raw-log whitespace findings preserve
 M2 HOLD: owner authorization needed for exact verified merge and fixed-release install with rollback;
 no new CI, spending, rendering or publishing admission. M3 remains dependent on M2.
 Receipt: evidence/m1-qualification-20261105/MILESTONE.json.
+
+
+## Current installed acceptance checkpoint — November 5, 2026
+Operator authorized continued merges, installation and applicable hosted CI after local tests.
+PR29 merged at2c2daf39398a993b698d1f225008a06217b14a7c; installed251 tests pass, source hashes/imports
+and subscription binding verified. Rollback0c099d7 retained and usable. M2 GO.
+M3 installed request installed-essential-security-20261105 completed: all four essentials pass,
+no rewrite; single-image plan binds exact selected hash; equal-context control saved. Six model
+executions/18 CLI launches/97.171 active seconds/API0. New-process reopen unchanged/zero calls.
+M4 now requires real text/visual-plan judgments; blind pair: evidence/installed-essential-trial-20261105/trial/review.md.
+Initial human disposition precedes further subject generation; first-six historical eligibility remains unresolved.
+All26 AT/11 E2E and editorial/rendering/publishing gates retained. Hosted CI not run: no active workflow.
+Release receipt: evidence/release-essential-20261105/INSTALLATION.json.
+Trial receipt: evidence/installed-essential-trial-20261105/MILESTONE.json.

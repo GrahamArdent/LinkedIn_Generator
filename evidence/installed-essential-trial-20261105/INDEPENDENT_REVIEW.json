@@ -1,0 +1,17 @@
+{
+  "status": "GO",
+  "reviewed_head": "15d58bfa8e15afa5021ba75c9decfcb98c6cdfe7",
+  "mode": "independent read-only evidence/source review",
+  "blocking_findings": [],
+  "verified": [
+    "99 installed source/config/test/script hashes match",
+    "six native attempts succeeded;18 CLI processes",
+    "selected/visual exact SHA256",
+    "baseline shared evidence/selected voice/narrative",
+    "12 calibration exact texts, subject-separated holdout, zero human labels",
+    "zero-call reopening evidence",
+    "M4/M5 human/six-subject/render/publish gates preserved"
+  ],
+  "mutations": false,
+  "generation": false
+}

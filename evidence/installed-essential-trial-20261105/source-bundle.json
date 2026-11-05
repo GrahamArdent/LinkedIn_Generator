@@ -1,0 +1,169 @@
+{
+  "request_sha256": "009fac7d45ca87c519b0331689b80e104f6d990c5b54c72d96700614713ddfe6",
+  "sources": [
+    {
+      "source_id": "CF2024",
+      "publisher": "Cloudflare",
+      "date": "2024-02-01",
+      "url": "https://blog.cloudflare.com/thanksgiving-2023-security-incident/",
+      "origin": "victim first-party incident account, independent of CERT-In",
+      "passages": [
+        {
+          "locator": "October 18 timeline, lines 889-900 on refreshed article",
+          "excerpt": "The one service token and three accounts were not rotated",
+          "support_summary": "The account says they were believed unused, then used to access Atlassian."
+        }
+      ],
+      "limitations": "Victim's retrospective account. Different organization, period and systems from CERT-In. Comparison supports a bounded conceptual contrast, not a shared attacker or a universal control-effectiveness claim.",
+      "retrieval": "Reopened first-party page in current execution chat; source ref turn0view0/turn1view0; supported claims checked at lines889-900.",
+      "title": "Cloudflare CF2024",
+      "status": "usable",
+      "checked_at": "2026-11-05T05:36:05.160452+00:00"
+    },
+    {
+      "source_id": "CIAD-2026-0046",
+      "publisher": "CERT-In",
+      "date": "2026-10-09",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "origin": "CERT-In reporting chain",
+      "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness.",
+      "title": "CERT-In CIAD-2026-0046",
+      "status": "usable",
+      "checked_at": "2026-11-05T05:36:05.160483+00:00",
+      "passages": [
+        {
+          "locator": "Description lines 125-127",
+          "excerpt": "invoke disbursal/fund-transfer APIs directly from within the entities’ own whitelisted infrastructure",
+          "support_summary": "Stolen API credentials, bypassed application-level checks, funds credited to attacker-controlled mule accounts."
+        }
+      ],
+      "retrieval": "Reopened CERT-In advisory in current execution chat; source ref turn0view1; supported claims checked at lines125-127."
+    }
+  ],
+  "claims": [
+    {
+      "kind": "fact",
+      "claim_id": "CF-1",
+      "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment.",
+      "source_ids": [
+        "CF2024"
+      ]
+    },
+    {
+      "kind": "fact",
+      "claim_id": "CI-1",
+      "text": "CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts.",
+      "source_ids": [
+        "CIAD-2026-0046"
+      ]
+    },
+    {
+      "kind": "inference",
+      "claim_id": "INFERENCE-1",
+      "text": "Accepted access and permission for a particular business action are distinct questions.",
+      "source_ids": [
+        "CF2024",
+        "CIAD-2026-0046"
+      ],
+      "limitation": "Conceptual interpretation across different incidents, not causal effectiveness evidence."
+    },
+    {
+      "kind": "opinion",
+      "claim_id": "OPINION-1",
+      "text": "For one sensitive request, inspect what proves the specific action is permitted.",
+      "source_ids": [],
+      "limitation": "Practical recommendation, not a measured result."
+    }
+  ],
+  "central_claim_id": "CF-1",
+  "editorial_building_blocks": {
+    "1_reader": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+    "2_decision": "For one sensitive request, check what proves that this particular action is permitted, beyond a familiar account or company.",
+    "3_concept": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+    "4_evidence": {
+      "sources": [
+        {
+          "source_id": "CF2024",
+          "publisher": "Cloudflare",
+          "date": "2024-02-01",
+          "url": "https://blog.cloudflare.com/thanksgiving-2023-security-incident/",
+          "origin": "victim first-party incident account, independent of CERT-In",
+          "passages": [
+            {
+              "locator": "October 18 timeline, lines 889-900 on refreshed article",
+              "excerpt": "The one service token and three accounts were not rotated",
+              "support_summary": "The account says they were believed unused, then used to access Atlassian."
+            }
+          ],
+          "limitations": "Victim's retrospective account. Different organization, period and systems from CERT-In. Comparison supports a bounded conceptual contrast, not a shared attacker or a universal control-effectiveness claim.",
+          "retrieval": "Reopened first-party page in current execution chat; source ref turn0view0/turn1view0; supported claims checked at lines889-900.",
+          "title": "Cloudflare CF2024",
+          "status": "usable",
+          "checked_at": "2026-11-05T05:36:05.160452+00:00"
+        },
+        {
+          "source_id": "CIAD-2026-0046",
+          "publisher": "CERT-In",
+          "date": "2026-10-09",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+          "origin": "CERT-In reporting chain",
+          "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness.",
+          "title": "CERT-In CIAD-2026-0046",
+          "status": "usable",
+          "checked_at": "2026-11-05T05:36:05.160483+00:00",
+          "passages": [
+            {
+              "locator": "Description lines 125-127",
+              "excerpt": "invoke disbursal/fund-transfer APIs directly from within the entities’ own whitelisted infrastructure",
+              "support_summary": "Stolen API credentials, bypassed application-level checks, funds credited to attacker-controlled mule accounts."
+            }
+          ],
+          "retrieval": "Reopened CERT-In advisory in current execution chat; source ref turn0view1; supported claims checked at lines125-127."
+        }
+      ],
+      "purpose": "Support and bound the concept, rather than dictate a technical news summary."
+    },
+    "5_telling_voice": {
+      "narrative": {
+        "form": "symbolic",
+        "beats": [
+          "Start with the ordinary distinction between having a key and permission to take something.",
+          "Explain the two reported incidents in ordinary workplace language; define any indispensable specialist term immediately.",
+          "Show why recognizing the account or company does not settle whether this action is permitted.",
+          "Give the fixed practical inspection task and retain the limits without a technical lecture."
+        ],
+        "symbol": {
+          "image": "A working office key establishes that a lock can be opened; it does not establish permission to remove the equipment inside.",
+          "mapping": [
+            {
+              "symbol_part": "The working key",
+              "real_relationship": "Cloudflare’s stolen credentials remained usable after being left unrotated."
+            },
+            {
+              "symbol_part": "The lock accepting the key",
+              "real_relationship": "Attackers subsequently accessed Cloudflare’s Atlassian environment."
+            },
+            {
+              "symbol_part": "Separate permission to take equipment",
+              "real_relationship": "Conceptual counterpart to authorization for a specific business action; CERT-In reports payment requests bypassing application checks."
+            }
+          ],
+          "boundary": "Digital credentials can be copied and used remotely. A physical key does not represent shared network origins or transaction-stage validation. Removing equipment is illustrative, not an allegation about Cloudflare."
+        }
+      },
+      "voice": "relatable_provocateur v1; Graham Hill individual author",
+      "instruction": "Explain ordinary decisions. Translate credentials as account access, whitelisted infrastructure as recognized company systems, API calls as direct computer-to-computer requests only if indispensable. No invented work experience, dialogue, screen-location assumptions or measured outcomes. The office/key example is hypothetical. Do not assume where a person is standing, which screen shows a request, or that I witnessed an incident."
+    },
+    "6_review": {
+      "questions": [
+        "Can a non-specialist paraphrase the point?",
+        "What decision changes?",
+        "Which facts earn the inference?",
+        "Is the telling useful beyond its opening?",
+        "What needs editing?"
+      ],
+      "human_preferences": null,
+      "equal_word_count_required": false
+    }
+  }
+}

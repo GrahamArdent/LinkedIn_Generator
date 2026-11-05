@@ -8,13 +8,15 @@ failure diagnostics only when needed. Tool availability is not action authority.
 
 Read docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md and execute its M1–M5
 sequence from the first unmet milestone. It owns steps, budgets and exit conditions.
-Latest checkpoint: M1 GO; M2 awaits exact-candidate merge/install admission. Refresh current state
-and evidence/m1-qualification-20261105/MILESTONE.json before acting; do not rerun matching qualification.
+Latest checkpoint: M1/M2 GO; installed M3 pair complete; M4 waits for human text/visual judgments.
+Read evidence/installed-essential-trial-20261105/MILESTONE.json and trial/review.md; do not regenerate
+the completed pair or expand subjects before initial human disposition. Continued merges/install/CI
+authority is recorded in evidence/release-essential-20261105/AUTHORIZATION.json.
 The acceptance document it references owns all26 AT/11 E2E criteria; consult the broader P0–P7
 roadmap only for the boundary being worked. Do not preload unrelated ecosystem material.
 
-Recovery anchor: branch fix/essential-review-gate-20261105, verified product d3ee2a36,
-251 local/clean-archive tests; installed checkpoint0c099d7 was still on90. Refresh actual refs/runtime
+Recovery anchor: merged/installed2c2daf39398a993b698d1f225008a06217b14a7c, verified product d3ee2a36,
+251 local/clean-archive/installed tests; rollback0c099d7 retains historical90. Refresh actual refs/runtime
 before acting. Do not reset an already advanced candidate or rerun completed work.
 
 Use the existing engine and subscription Codex bridge. Preserve essential-checks-v1, original drafts,

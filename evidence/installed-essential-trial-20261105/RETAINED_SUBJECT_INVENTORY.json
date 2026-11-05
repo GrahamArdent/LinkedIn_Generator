@@ -1,0 +1,234 @@
+{
+  "status": "Historical inventory only; not eligible independent subject count or human labels",
+  "subjects": [
+    {
+      "path": "evidence/codex-first-20261104/trial/trial.json",
+      "request_id": "lig-codex-selected-revision-20261104",
+      "topic": "A content workflow needs to agree on which draft is final",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "4998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04",
+          "body": "Two drafts. One workflow. Which version is final?\n\nA finding in a LinkedIn post generator made that question surprisingly concrete: it could return the original draft as the main text while preparing a visual plan from a revised version.\n\nThat left the next step to work out which draft counted.\n\nThe mismatch was verified in source code and automated tests. There’s no evidence here of an incorrectly published post. But the ambiguity matters: checking the words and checking the visual separately won’t tell you whether they belong together.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy takeaway: choosing the final version is part of the work. Every step that follows needs to use that choice.\n\nA reliable handoff shouldn’t ask the next person, or the next tool, to guess what “final” means."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "32246a55d85a100a60ad28eaefe9eae4cfb0ddbcfec90492602d58720b88bac1",
+          "body": "The words were revised. The handoff was still ambiguous.\n\nA LinkedIn post generator could return its original draft as the main text while preparing a plan for the accompanying visual from a revised draft.\n\nTwo parts of one output could point to different versions. The next person, or tool, had to work out which one counted.\n\nThis was verified in source code and automated tests. It is not evidence of an incorrectly published post.\n\nBut it exposes a gap in how we check generated content: the words and the visual plan can each pass a review without belonging together. Quality checks on individual parts don't establish that the handoff is coherent.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy practical takeaway: before accepting a handoff, check which draft is selected, whether that exact draft is returned as the main text, and whether the accompanying visual plan is tied to it. If the words change, check the connection again.\n\n“Final” needs to be a choice the workflow carries forward, not a guess it passes along."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "85987b5239e64bdd7794ded69ad98c4ca8779dd52fe0650c685d0e141eb49105",
+          "body": "Which draft is final? The workflow should know.\n\nA verified finding in the LinkedIn generator showed how that answer could become ambiguous. The main output could keep the original draft while the visual plan used a qualified rewrite.\n\nBoth versions were available. But someone using the output had to work out which one counted.\n\nThe repair made the choice explicit: identify the selected draft and tie the visual to a fingerprint of that draft’s exact text. That gives the next step something precise to check.\n\nThis was verified in source and automated tests. It wasn’t evidence of a wrong post being published.\n\nMy takeaway: improving a draft and selecting a draft are separate jobs. A rewrite can be better without the rest of the workflow knowing it is final.\n\nIf you’re building or using AI tools at work, check the handoff. Can the next step identify the chosen version and verify that its supporting material belongs to it?\n\n“Final” needs to be a shared decision, not a local opinion.\n\n#AI #ContentWorkflow #Automation"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/equal-input-engine-baseline-20261104/trial/trial.json",
+      "request_id": "lig-equal-input-engine-baseline-20261104",
+      "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "3a4ef554d711b414467ee1eafa2a85d580376b92e5ecdba9ee13cae447324065",
+          "body": "Payment authorization depends on what the system checks when it releases funds. An approval record establishes a decision; it does not, by itself, establish that the final transfer must follow that decision.\n\nCERT-In’s November 4, 2026 update reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its October 9 advisory describes stolen credentials enabling direct payment calls that bypass application checks. It recommends binding transaction stages together and validating every payout against approved records.\n\nThe distinction matters: if a payment interface accepts credentials without checking the approved transaction, the approval process may not constrain the transfer. That is the control implication I draw from the reported mechanism, not evidence that every payment system has this weakness.\n\nI would ask leaders to trace one approved payment through to execution: which recipient and amount were authorized, and what enforces those details when funds move? The evidence concerns the described Indian campaign. It does not establish Canadian incidents, attack frequency, losses or fully autonomous AI attacks."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "7e18e0dca5f0fcde2e4f89be6505588984d9633d688cea54afec435b759826d9",
+          "body": "Payment authorization depends on what the system checks when funds move. An approval record establishes a decision; it does not establish that the final transfer is bound to it.\n\nCERT-In’s November 4, 2026 update reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its October 9 advisory describes stolen credentials enabling direct payment calls that bypass application checks. It recommends binding transaction stages and validating payouts against approved records.\n\nMy reading is that credentials can permit a payment call without proving that the particular payment was approved. If the interface does not enforce that connection, approval may not constrain execution.\n\nThis evidence concerns the described Indian campaign. It does not establish Canadian incidents, frequency, losses, fully autonomous AI attacks or a weakness in every payment system.\n\nI would ask leaders to trace one approved payment to execution: identify the authorized recipient and amount, then verify what requires the final transfer to match those details."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "68b92a5b7c8f2c8bd7ec48c92baef909ccb299bd300753aa8e7fa22bd70b8388",
+          "body": "An approval record establishes what was authorized. It does not, by itself, establish that the system enforces that authorization when money moves.\n\nCERT-In’s November 4 update reports an AI-assisted campaign targeting Indian financial entities through their own payment and disbursement interfaces. Its earlier advisory, CIAD-2026-0046, describes stolen credentials enabling direct payment calls that bypass application checks. It recommends binding transaction stages and validating every payout against approved records.\n\nThe dependency matters: if the final transfer can proceed without checking the approved decision, checks in the approval workflow may not constrain execution. That is the inference I draw from the reported mechanism.\n\nI would trace one approved payment from decision to execution: identify the permission the final transfer accepts, then verify how the payout is checked against the approved record. The evidence should connect the decision to the money movement.\n\nThese reports concern Indian financial entities. They do not establish that every payment system has this weakness, or demonstrate universal AI autonomy, attack frequency or losses.\n\n#AI #PaymentSecurity #CyberRisk"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/evidence-first-20261104/trial/trial.json",
+      "request_id": "lig-evidence-first-mfa-recovery-20261104",
+      "topic": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "a3454852cdbe14fc96e9370d5d94ff14df4f3e6aba1cf3f029978ed1b95c916e",
+          "body": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nI’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "0ce3c656025feba4f3688a4c67348106c6e6ef8885b6151020b7aaf0188b5939",
+          "body": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe distinction matters: convincing someone to reset access is different from defeating the technology protecting it. The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations.\n\nI’d include one question in an MFA review: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nThat’s a decision about who gets trusted as the account owner. It deserves the same scrutiny as sign-in."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "4c34af21eb7063aa06dbbb9f51115cb2a2888c377d1db6b2279cedaa2c8fdb69",
+          "body": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe mechanism matters: attackers persuaded someone to change access through recovery. They did not need to break the cryptography.\n\nAnd the same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation still belongs in the conversation.\n\nMy takeaway: an MFA review should follow the account through recovery, too. Checking the sign-in screen alone can miss how someone gets trusted again when their normal proof is unavailable.\n\nFor IT and business leaders, I’d bring one question to the review:\n\nWho can authorize a recovery reset, what independent evidence must they require, and what happens when the person requesting it cannot provide the normal proof?\n\nThe answer tells you something an “MFA enabled” checkbox cannot.\n\n#Cybersecurity #IdentitySecurity #MFA"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/installed-acceptance-20261105/trial/trial.json",
+      "request_id": "installed-acceptance-20261105",
+      "topic": "Accepted credentials or an allowed network origin do not, by themselves, establish that a particular business action is authorized.",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "39494681f66a24ed79e4fdac35f091c38955288ec142c1e8e6bcfca1c95b1026",
+          "body": "A working office key opens the lock. It doesn’t give its holder permission to take the equipment.\n\nI’d apply that distinction to accepted credentials: access alone does not establish authority for the next action.\n\nCloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment.\n\nThe key still worked. The lock accepted it.\n\nSeparate permission to act is the next issue. CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to call fund-transfer APIs directly. They bypassed application-level checks and transferred funds to mule accounts.\n\nAn accepted credential and an allowed network origin did not, by themselves, establish that those payouts were authorized.\n\nThe office-key image has limits. Digital credentials can be copied and used remotely; a physical key doesn’t capture shared network origins or validation at each transaction stage. Taking equipment is only an illustration, not an allegation about Cloudflare.\n\nThese are different accounts involving different systems. They support the distinction between accepted access and authorized action. They don’t show that a particular defense explains different outcomes or would have prevented the reported losses.\n\nMy practical takeaway: pick one sensitive payout and inspect the final point where the system allows money to move. Identify the evidence of authorization required there: an approved record, the necessary approvals, beneficiary validation and transaction limits. Check whether a direct API call must satisfy those requirements too.\n\nThe key opening the door is one check. Permission for the specific action needs its own evidence."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "96f5e1fc3b4fc8c0a0203b606e4c1b0fa92bd337ad0d232c4a3baa8f5f0c62bd",
+          "body": "A working office key opens the door. It doesn’t give its holder permission to take the equipment.\n\nCloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment.\n\nThe key still worked. The lock accepted it.\n\nCERT-In’s account brings the permission problem into focus: attackers used stolen API credentials from victims’ own whitelisted infrastructure to call fund-transfer APIs directly. They bypassed application-level checks and transferred funds to mule accounts.\n\nThat’s the detail I’d focus on: a payout request could come through an allowed network path with accepted credentials while bypassing the business checks meant to govern it.\n\nThe key analogy only goes so far. Digital credentials can be copied and used remotely; a key doesn’t capture shared network origins or transaction checks. Equipment removal is illustrative, not a claim about Cloudflare. These separate accounts also don’t prove which defense would have prevented the reported losses.\n\nMy practical takeaway: pick one sensitive payout. Inspect the point where the system actually allows money to move.\n\nWhat must that request prove? Look for an approved record, the required approvals, a validated beneficiary and enforced transaction limits. Then check whether a direct API call must meet those same requirements.\n\n“Those checks happen earlier” deserves a closer look. The useful test is whether the payout can proceed without them."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "e60e0379ac1e6b2d5cba60b59c7f5e2ef95343a8be4b7df2d416eb1165169b92",
+          "body": "Your office key works. Does that give you permission to take the equipment home?\n\nThe lock has answered one question. Permission is another.\n\nCloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment.\n\nThe key still worked. The lock accepted it.\n\nThat separate question of permission matters when money moves, too. CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to call fund-transfer APIs directly, bypass application-level checks and send funds to mule accounts.\n\nAccepted credentials. Allowed network origin. Unauthorized transfers.\n\nThe office-key image has limits: digital credentials can be copied and used remotely. A physical key does not capture shared network origins or transaction-stage validation. And taking equipment is an illustration, not an allegation about Cloudflare.\n\nThese are different accounts involving different systems. They illustrate the distinction between accepted access and authorized action; they do not prove that a particular defense caused different outcomes or would have prevented losses.\n\nMy practical takeaway: pick one sensitive action and inspect the point where it can actually proceed.\n\nFor a payout, what evidence of authorization must accompany an accepted credential or network path? Must a direct API call satisfy the required approvals and business checks, including an approved record, beneficiary validation and transaction limits?\n\nAsk your team to show you what enforces those requirements at the final payment step.\n\nA working key answers whether you can get in. Your payout controls still need to answer whether this money may move.\n\n#Cybersecurity #APISecurity #BusinessRisk"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/installed-essential-trial-20261105/trial/trial.json",
+      "request_id": "installed-essential-security-20261105",
+      "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "state": "completed",
+      "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "25d0ef52e75cd2dab79a8f7a4e00971154686b640a677cbde85c843238025d91",
+          "body": "An office key opens the door. It doesn’t give its holder permission to take the equipment.\n\nThat distinction is easy to see with a key. A familiar account or company name can make it easier to overlook.\n\nCloudflare reports that account access details stolen in the October 2023 Okta compromise were mistakenly thought to be unused and left unchanged. Attackers later used them to enter its Atlassian environment, a system for collaboration and managing work.\n\nThe digital key still worked.\n\nIn a separate account, India’s CERT-In reports that attackers used stolen access details to send direct computer-to-computer fund-transfer requests from the victims’ own recognized company systems. Those requests bypassed application checks and moved money into accounts used to receive the stolen funds.\n\nA request coming from a recognized system did not make the transfer legitimate.\n\nI read these accounts as illustrations of two separate questions: does the system accept this access, and is this particular action permitted?\n\nThey concern different organizations and systems. They don’t establish that any particular safeguard would have prevented the incidents. And the office key is only an illustration: digital access details can be copied and used remotely, while payment approval involves checks a door lock cannot represent.\n\nMy practical recommendation: take one sensitive request you’re responsible for approving and inspect what proves that specific action is allowed. Look for approval covering the actual action, such as its recipient, amount or scope.\n\nIf the explanation stops at “it’s a known account” or “it came from that company,” the permission question is still unanswered.\n\nThe key working is where the approval decision starts."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "aab0773611b1a877ef41d1d4c464ce487e9483120db84793a9a412c874e54520",
+          "body": "A working office key opens the door. It doesn’t give you permission to take the equipment.\n\nThat distinction matters when we approve work, too. A familiar account or company can leave a crucial question unanswered: is this particular request permitted?\n\nCloudflare reports that account access details stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to enter its Atlassian work systems.\n\nThe key still worked. That was the problem.\n\nA separate CERT-In report describes attackers using stolen access details to send payment requests directly between computers, from the victims’ own recognized company systems. Those requests bypassed application checks and moved money to accounts controlled by attackers.\n\nRecognizing the company systems did not establish permission for those transfers.\n\nThe office key is only an illustration. Digital access details can be copied and used remotely, and a lock doesn’t capture how payment checks work. These different incidents support a distinction between accepted access and permitted action. They don’t prove that a particular safeguard would have prevented either incident.\n\nMy recommendation: pick one sensitive request you’re responsible for approving. Check what proves that the specific action is permitted, beyond the familiar account or company behind it.\n\nFor a payment, that means evidence of approval for this payment, including its amount and recipient.\n\nIf the explanation stops at “we recognize the account,” the permission question is still open.\n\n#Leadership #RiskManagement #DecisionMaking"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+      "request_id": "six-blocks-ai-20261105",
+      "topic": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "79575fb40d46baf3f6fcd0381a35643cfa9581c93b24227b3e5289051b4034a0",
+          "body": "The draft arrives in seconds. Is the work done, or just ready for someone to check?\n\nIf you approve work, that distinction matters more than how quickly the text appears.\n\nA Stanford-published study of 5,172 customer-support agents found that AI assistance increased issues resolved per hour by 15% on average. That measures resolved issues, a useful step beyond counting output.\n\nA different setting produced a different result. In METR’s randomized study, 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools. These were experienced contributors working on familiar software projects.\n\nDifferent workers, tasks and tools. The findings are not a matched comparison, and neither establishes checking as the cause of the slowdown.\n\nMy takeaway: a faster first draft is a promising start. It is not yet a time saving.\n\nFor one repeated task, I’d compare the time to usable completion with and without AI. Set the same standard for approval. Include the time spent giving instructions, checking the result and making corrections, including the approver’s time.\n\nThat is a measurement I’m proposing, not a result these studies reported. The practical test is whether AI reduces the total work needed to reach something you can use.\n\nKeep the evidence boundary clear: the support finding concerns one deployment, and METR’s early-2025 result is historical. Its February 2026 follow-up had selection and measurement biases, so it does not supply a reliable estimate of today’s effect.\n\nI’d judge the saving at the point of approval. The first output can arrive early while the work still finishes late."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "4065dd44674a469ea1df987ce039762f0f55c1488d4d6e64e5b25866bab3044c",
+          "body": "The draft arrives in seconds. Approval still takes work.\n\nIf you approve work, the useful measure is how long it takes to reach something you can use.\n\nA Stanford-published study of 5,172 customer-support agents reported a 15% average increase in issues resolved per hour with AI assistance. Resolved issues: a stronger measure than output produced.\n\nIn METR’s randomized study, 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools.\n\nDifferent workers, tasks and tools, not a matched comparison. The support finding concerns one deployment; METR’s result is historical, not an estimate of today’s performance. Neither establishes checking as the cause of the slowdown.\n\nMy takeaway: before calling a faster draft a time saving, count the work needed to approve it. The approver’s time belongs in the total too.\n\nFor one repeated task, I’d compare time to usable completion with and without AI, using the same approval standard. Count time spent giving instructions, checking and correcting, whoever does it.\n\nThat’s a test I’m proposing, not a finding from these studies. It would help distinguish work removed from work passed to the next person.\n\nI’d judge the saving at approval. That’s where a quick draft has to become usable work."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "3f9defb76ac1361d3b50d72c11f217f194afa05cfac473af28d95789cb1bc9f4",
+          "body": "Is the work done when AI produces something, or when you can actually use it?\n\nIf you approve other people’s work, that gap matters. A quick draft can still leave you with a long job.\n\nThe Stanford-published study of 5,172 customer-support agents reports an average 15% increase in issues resolved per hour with AI assistance. That measures resolved issues, which is closer to the finish line than output appearing.\n\nIn a different setting, METR’s randomized study found that 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools.\n\nDifferent workers, tasks and tools. These are not a matched comparison, and the findings do not establish checking as the cause of the slowdown.\n\nMy takeaway: measure the work through to usable completion.\n\nPick one repeated task. Define what makes the result ready to use, then compare similar examples with and without AI. Count the time spent producing, checking and correcting the work, including the reviewer’s time. Apply the same quality standard to both.\n\nThat is a measurement I’d propose, not a result these studies reported.\n\nKeep the evidence in its lane: the support finding concerns one deployment. METR’s early-2025 result is historical; selection and measurement biases mean its February 2026 follow-up does not provide a reliable current estimate.\n\nFor your next approval decision, ask how much work remains after the output arrives.\n\n#AI #Productivity #Management"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+      "request_id": "six-blocks-security-20261105",
+      "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "d74144dbd62dd2d06c22e835d72083211a598c4f27785b50ac2312310c5b120c",
+          "body": "An office key lets you open the door. It doesn’t give you permission to take the equipment home.\n\nThat distinction matters when approving work, too. A familiar account can make a request look legitimate before anyone checks what it is asking to do.\n\nCloudflare’s February 2024 incident account gives the key part a concrete meaning. It reports that account access details stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to enter its Atlassian work systems.\n\nThe lock still accepted the key.\n\nA separate CERT-In report from October 2026 shows why permission for the particular action deserves its own check. Attackers used stolen access details to send fund-transfer requests directly between computer systems, from the victims’ own recognized company systems. Those requests bypassed application checks and moved money into accounts used to receive the stolen funds.\n\nRecognized access. Unauthorized payments.\n\nThese are different reports about different systems. They illustrate the distinction between accepted access and permitted action; they don’t prove that any particular safeguard would have prevented either incident. And the key is only an illustration: digital access details can be copied and used remotely. No equipment theft is being alleged at Cloudflare.\n\nMy practical takeaway is to inspect one sensitive request you’re responsible for approving. Identify the evidence that permits that specific action: the approved record, its scope, the intended recipient and any applicable amount limit.\n\nThen check whether that evidence must actually be verified before the action happens.\n\nA familiar account or company tells you something about where a request appears to come from. Approval needs evidence about what it is allowed to do."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "fee70dedc82a3c8f484e9bb6f54950c023d049860e9fd463bd3b971788b071f1",
+          "body": "An office key lets you open the door. It doesn’t give you permission to take the equipment home.\n\nA familiar account can create the same confusion: access gets mistaken for approval.\n\nCloudflare reports that account access details stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to access its Atlassian work systems.\n\nThe lock still accepted the key.\n\nA separate CERT-In report describes attackers using stolen access details to send fund-transfer requests directly between computers, from victims’ own recognized company systems. They bypassed application checks and transferred money into accounts used to receive stolen funds.\n\nEven the familiar company systems were part of the route in.\n\nThese different incidents illustrate the gap between accepted access and permitted action. They don’t prove that a particular safeguard would have prevented either incident. The office key is an analogy for access, not a description of what was stolen.\n\nFor me, the practical test is whether approval is required for the action to happen, or merely expected along the way.\n\nTake one sensitive request you’re responsible for approving. Identify the approved record, what it permits, the intended recipient and any amount limit.\n\nThen ask the person responsible for the process to show what happens when that evidence is missing or doesn’t match the request. Does the action stop before it happens? Can another route skip the check?\n\nA record of approval is useful. Evidence that the action cannot proceed without that approval answers the harder question.\n\nRecognizing where a request appears to come from is only part of the decision. You still need to establish what this particular request is allowed to do."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "0d03d5344cca00bfcdfca32e0e83425a4886e7aaab7f6de036d73365b66dd34f",
+          "body": "An office key can open the door. It cannot give you permission to take the equipment.\n\nThat distinction matters when approving work, too. A familiar account or company system is only part of the evidence.\n\nCloudflare reported that account access credentials stolen in the October 2023 Okta compromise were mistakenly considered unused and left unchanged. Attackers later used them to enter its Atlassian work environment.\n\nThe digital key still worked. That did not make the person using it entitled to enter.\n\nA separate CERT-In advisory from October 2026 shows the distinction at the payment stage. Attackers used stolen access credentials to send direct computer-to-computer payment requests from the victims’ own recognized company systems. They bypassed application checks and moved funds to accounts controlled by attackers.\n\nThe requests came through accepted systems. The payments still lacked permission.\n\nI’d bring that distinction into one practical review: choose a sensitive request you approve and trace what proves this particular action is permitted.\n\nCan you connect it to an approved record covering the action, recipient and amount, where relevant? What stops it proceeding if that evidence is missing?\n\n“Those are our account details” or “it came from our systems” leaves that question unanswered.\n\nThe office key is only an illustration. Digital access details can be copied and used remotely; a physical lock cannot capture the checks needed for a payment. These separate reports also do not prove that any particular safeguard would have prevented the incidents.\n\nThey do give managers a useful distinction to inspect: evidence that access works, and evidence that the requested action has approval.\n\n#Leadership #RiskManagement #CyberSecurity"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/source-first-planning-20261104/trial/trial.json",
+      "request_id": "lig-source-first-planning-20261104",
+      "topic": "CERT-In financial-sector campaign update",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "5eb47c66037910b1a05c5c40d36a82ccd7e87e1fb9af1efdbdfebd3a60a8ddf2",
+          "body": "Permission to call a payment API does not establish approval for the transfer it executes. I would examine whether the endpoint that moves funds enforces that distinction.\n\nCERT-In/CSIRT-Fin reports in CIAD-2026-0046 that attackers stole credentials and invoked fund-transfer APIs from victims’ whitelisted infrastructure, bypassing application controls. Attackers supplied transaction references without corresponding records. The November update, CIAD-2026-0058, reports modified applications defeating assumptions that only legitimate clients would call APIs, and explicitly recommends approval controls for merchant settlements.\n\nMy verification question is: what prevents execution when business approval is absent?\n\nAsk payment engineering and finance control owners to trace one disbursement and one merchant settlement path together. In an authorized test environment, check that valid credentials cannot enable execution without an approved record, without preceding validation, or above applicable limits. Record where rejection occurs, then extend the review to every fund-movement path.\n\nAssess CERT-In’s recommended cryptographic binding: making debit execution depend on proof of preceding validation. These are proposed checks, not reported test results; the advisories provide neither implementation specifications nor measured control effectiveness."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "b333d4049d3f56d04137b2ca91f1a8f15c6fdd14a56bf3b82af55501b6f1d497",
+          "body": "Permission to call a payment API does not establish approval for the transfer. I would ask: what does the endpoint that moves funds verify independently?\n\nIn CIAD-2026-0046, CERT-In/CSIRT-Fin reports stolen credentials used from victims’ whitelisted infrastructure to invoke fund-transfer APIs, bypassing application controls. Attackers supplied references without corresponding records. Its November update, CIAD-2026-0058, reports modified applications defeating assumptions about legitimate callers and recommends approval controls for merchant settlements.\n\nAsk payment engineering and finance control owners to trace one disbursement and one merchant settlement path together. In an authorized test environment, verify that the execution endpoint rejects requests with valid credentials but no approved record, missing preceding validation, or breaches of either per-transaction limits or daily cumulative ceilings. Record where rejection occurs, then review every fund-movement path.\n\nAssess CERT-In’s recommended cryptographic binding: tamper-evident proof linking preceding validation to the transaction being debited. Engineering must assess how that dependency is enforced; the advisory supplies no implementation specification.\n\nThese are proposed verification steps, not reported test results or evidence of measured control effectiveness."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "8f7c7b33ee218bcb26c0a47115ce13f5d64ecd174a06d49a93e6a03b9d78b17c",
+          "body": "Valid credentials and a trusted origin do not establish business approval for a transfer. The execution endpoint must enforce that dependency.\n\nCERT-In/CSIRT-Fin reports attackers using stolen credentials to invoke fund-transfer APIs from victims’ whitelisted infrastructure, bypassing application controls. Dummy transaction references had no corresponding records. Its November update reports modified clients defeating assumptions about legitimate callers and recommends server-side validation and maker-checker approval for merchant settlements.\n\nMy verification question: does the fund-moving endpoint independently enforce the approved transaction and its preceding validation stages?\n\nPayment leaders should ask the payment engineering lead and finance control owner to trace one disbursement path and one merchant settlement path together. In an authorized test environment, verify rejection of requests carrying valid credentials but lacking an approved record, missing preceding validation, or exceeding applicable transaction or daily limits. Record where each rejection occurs, then extend the review to every fund-movement path.\n\nAssess cryptographic binding between validation and debit as a design requirement, consistent with CERT-In’s recommendation. These are proposed checks, not reported test results.\n\n#PaymentSecurity #CyberRisk #APISecurity"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    },
+    {
+      "path": "evidence/transparent-evaluation-20261104/trial/trial.json",
+      "request_id": "lig-codex-earn-the-steps-20261104",
+      "topic": "Before adding more AI steps, show me what they improve",
+      "state": "completed",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "human_decision": null,
+      "texts": [
+        {
+          "candidate_kind": "original",
+          "content_sha256": "1268f95c982ab66227e84dfc814ae07dcc3b1809cba83eceae795814913e7dde",
+          "body": "I liked the AI draft. That proved very little.\n\nI preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.\n\nI also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?\n\nThat distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.\n\nMy starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.\n\nI’m willing to add complexity. I want to see what it earns."
+        },
+        {
+          "candidate_kind": "rewrite",
+          "content_sha256": "3f00601d1d11fa93e7e6f086ca9478639a0628928ac36a4b0d978b1a28a7472e",
+          "body": "I preferred one AI draft. The process still had to earn its place.\n\nThe comparison was basic. I wanted to see the brief, the context given to the model, what changed at each stage, and the final writing. I also wanted to know what my preference would be used to change.\n\nPicking a favourite answers one question. It doesn’t tell me which steps helped, or which were unnecessary.\n\nThat mattered when a paid-API trial was proposed. I already had a Codex subscription environment that could be reused, so I questioned the need for another route. I asked for a quick, economical solution, with extra layers deferred.\n\nThat wasn’t evidence of measured savings. It was a reason to make the case for adding something.\n\nThe same standard applies to the writing process. Show me the draft before a step and after it, alongside the requirement that step was meant to address. Then I can judge the change instead of giving the whole process credit for an answer I happen to like.\n\nI’m willing to add complexity. My preference alone doesn’t justify it."
+        },
+        {
+          "candidate_kind": "baseline",
+          "content_sha256": "6662249ab3eb740d80436bc8772b40d02bbe73f7ad0c8dfd8908a223bac32d7d",
+          "body": "Before adding more AI steps, show me what improves.\n\nMy first question is whether something I already have can do the job. If it can, I’d rather start there and leave the extra layers until there’s a reason to add them.\n\nThat’s practical skepticism, but I need to apply it to my own judgments too.\n\nI can prefer one draft without knowing why it’s better, or whether the process behind it deserves any credit. A preference is a starting point. It doesn’t settle the question.\n\nWhat was it asked to do? What information did it have? What did each extra step actually change?\n\nThose questions matter when deciding how much AI to put into everyday work. Otherwise, it’s easy to add another review, another tool, another subscription, while still being unclear about what any of them contributes.\n\nI want a clear reason to keep each addition: a mistake caught, a clearer answer, a result that better meets the brief. Something I can inspect, rather than just a more elaborate description of the process.\n\nI’m open to more steps. I just want them to earn their place.\n\n#AI #PracticalAI #FutureOfWork"
+        }
+      ],
+      "first_six_eligibility": "UNRESOLVED: historical review/owner adjudication required; no reset or silent exclusion"
+    }
+  ]
+}
