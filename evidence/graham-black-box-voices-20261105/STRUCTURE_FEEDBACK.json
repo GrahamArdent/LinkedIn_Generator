@@ -1,0 +1,36 @@
+{
+  "voice_feedback": {
+    "candidate": "concise_challenger",
+    "candidate_sha256": "2c9ac4d25e79674e219e377e20dbd6cf704b9a12e922c6792d2086744c09bb4f",
+    "user_statement": "I liked version one better ... sounded more like me but it was just badly constructed",
+    "disposition": "Relative voice preference; construction rejected; no finished-post acceptance or numerical score."
+  },
+  "structured_revision": {
+    "writing_block_id": "72946",
+    "path": "STRUCTURED_CHAT_REVISION.md",
+    "content_sha256": "407502d2a2160280ab81783235ef344dfd26ea5cd958bc379bd455afbefc9c02",
+    "authoring_mode": "assistant chat rewrite, not native installed output",
+    "user_statement": "that is a much better rewrite ... keep the template in mind ... get some structure in our workflow",
+    "disposition": "Positive revision feedback and workflow-structure adoption; not publishing approval or automatic active voice-example insertion."
+  },
+  "adopted_default_scaffold": [
+    "hook",
+    "tension",
+    "relevant evidence",
+    "Graham interpretation",
+    "earned landing"
+  ],
+  "workflow": [
+    "brief: idea, reader, intended point and voice",
+    "research: factual support and limits",
+    "structure: choose scaffold and map progression briefly",
+    "draft: selected voice within coherent progression",
+    "review separately: factual/credential limits, voice authenticity, construction",
+    "revise observed defect within existing bounded policy",
+    "visual plan only for selected qualified text; human approval remains separate"
+  ],
+  "implementation_boundary": "Documented operating instruction; no claim that installed generator now applies a new scaffold. Next installed full-engine qualification must carry it through existing editorial handoff and verify actual output.",
+  "model_calls": 0,
+  "AT": 26,
+  "E2E": 11
+}
