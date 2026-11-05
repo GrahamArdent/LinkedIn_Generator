@@ -1,0 +1,9 @@
+{
+  "active_seconds": 125.34437881875783,
+  "in_flight": null,
+  "launches": 18,
+  "model_execution_slots": 6,
+  "model_seconds": 123.24349360726774,
+  "schema_version": "2.0",
+  "started": 1793845806.0191748
+}

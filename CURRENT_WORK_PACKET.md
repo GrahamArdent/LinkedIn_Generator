@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Fresh equal-input comparison machine GO; engine advantage not demonstrated; quality/P2/expansion HOLD
+CURRENT_STAGE_OR_MILESTONE: Source-first workflow verified; writer quality HOLD; numeric guard defect observed
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate source/config4b261ae; exact source/config/test hashes and integration/runtime state in latest receipt
 BLOCKER_SCOPE: milestone
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/equal-input-engine-baseline-20261104/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: Read-only full-primary-source versus compressed-brief audit; no automatic new generation or expansion
+CURRENT_MILESTONE_RECEIPT: evidence/source-first-planning-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: Focused numeric-guard punctuation regression repair and concise editorial selection
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -367,3 +367,7 @@ Operator authorized the focused editorial recommendation. See evidence/editorial
 ## Current continuation — fresh equal-input comparison, November4,2026
 
 Operator authorized and completed the existing engine versus simpler-LLM control. The sole current narrative is evidence/equal-input-engine-baseline-20261104/REPORT.md; MILESTONE.json owns current tests, parity, execution and integration status. Engine original74, one guarded rewrite72, baseline74 under the identical evaluator context; no qualified candidate or human verdict.6 calls/77.278 CLI seconds/API0; fresh-process reopen0 added calls.209 local tests PASS, product bytes unchanged. Next frontier is the read-only source-versus-brief audit, not another rewrite or collection. All26 AT/11 E2E and owner gates remain. Earlier milestone sections are historical.
+
+## Current source-first experiment — November4,2026
+
+Current execution narrative and replication commands are evidence/source-first-planning-20261104/REPORT.md and WORKFLOW.md. MILESTONE.json owns observed results. Planner sources and all raw prompts/results/attempts are retained. Planning recovered the broad thesis independently and added concrete evidence. Same-new-brief comparison scored engine78/baseline81, with engine HOLD. Six calls/123.270 CLI seconds/API0, replay0 added calls,209 local tests PASS. Next repair the observed punctuation-sensitive number guard and focus the editorial brief before further generation. Human/P2/expansion and existing owner gates remain. Earlier next-step notes are historical.

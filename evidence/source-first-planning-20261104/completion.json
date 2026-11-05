@@ -1,0 +1,8 @@
+{
+  "completed_at": "2026-11-05T02:34:16.149446+00:00",
+  "state": "completed",
+  "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+  "model_calls": 6,
+  "api_spend": 0,
+  "human_decision": null
+}

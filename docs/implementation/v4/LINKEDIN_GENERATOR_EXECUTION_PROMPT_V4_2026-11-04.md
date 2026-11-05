@@ -56,3 +56,7 @@ Follow CURRENT_WORK_PACKET.md current receipt/frontier. The single-draft editori
 ## Current continuation — November4,2026
 
 The equal-input control was explicitly authorized and completed. Follow CURRENT_WORK_PACKET.md current receipt/frontier; evidence/equal-input-engine-baseline-20261104/REPORT.md is the single narrative and MILESTONE.json records actual results. Engine writing advantage not demonstrated; human/P2/expansion HOLD. Next: read-only full-source versus compressed-brief audit before further authoring changes or generation. Earlier next-action statements are historical. Preserve all26 AT/11 E2E and human/provider/CI/merge/install/deploy/publish gates.
+
+## Current source-first experiment — November4,2026
+
+Current execution narrative and replication commands are evidence/source-first-planning-20261104/REPORT.md and WORKFLOW.md. MILESTONE.json owns observed results. Planner sources and all raw prompts/results/attempts are retained. Planning recovered the broad thesis independently and added concrete evidence. Same-new-brief comparison scored engine78/baseline81, with engine HOLD. Six calls/123.270 CLI seconds/API0, replay0 added calls,209 local tests PASS. Next repair the observed punctuation-sensitive number guard and focus the editorial brief before further generation. Human/P2/expansion and existing owner gates remain. Earlier next-step notes are historical.
