@@ -286,3 +286,7 @@ Superseding next action: owner exact-text feedback on these3 retained versions; 
 ## Current continuation — November4,2026
 
 Follow CURRENT_WORK_PACKET.md current receipt/frontier. The single-draft editorial diagnosis and expected/observed results are maintained once in evidence/editorial-single-draft-20261104/REPORT.md, with MILESTONE.json and immutable original/revision records in that directory. Prior milestones above are historical. Editorial outcome PARTIAL/HOLD; no further automatic rewrite or voice expansion. A fresh equal-input simpler-LLM control is recommended, not yet admitted/executed. Preserve all26 AT/11 E2E and existing human/provider/CI/merge/install/deploy/publish gates.
+
+## Current continuation — November4,2026
+
+The equal-input control was explicitly authorized and completed. Follow CURRENT_WORK_PACKET.md current receipt/frontier; evidence/equal-input-engine-baseline-20261104/REPORT.md is the single narrative and MILESTONE.json records actual results. Engine writing advantage not demonstrated; human/P2/expansion HOLD. Next: read-only full-source versus compressed-brief audit before further authoring changes or generation. Earlier next-action statements are historical. Preserve all26 AT/11 E2E and human/provider/CI/merge/install/deploy/publish gates.

@@ -1,0 +1,56 @@
+{
+  "observed_error": "McpServerError: Connection timed out; UNAVAILABLE; mcp_network_error at hosted Desktop Commander during read-only result inspection after native process completed",
+  "completed_native_pid": 424979,
+  "completed_native_exit": 0,
+  "background_remote_calls": [],
+  "paths_diagnosis": {
+    "authorizes_effect": false,
+    "automatic_chat_tool_interception": false,
+    "entrypoint": "chatgpt_paths_diagnose",
+    "executes_effect": false,
+    "gate": {
+      "access_blocker_proven": false,
+      "actor_ref": "actor:chatgpt-remote-desktop-commander",
+      "authority": "none",
+      "authorization_inferred": false,
+      "direct_actor_admission_state": "unknown",
+      "direct_candidate_refs": [
+        "ER-006"
+      ],
+      "direct_classification": "NO_SUPPORTED_COMPOSITION",
+      "direct_constituent_refs": [
+        "PF-08#dc_en",
+        "access:dc_en"
+      ],
+      "direct_evidence_refs": [
+        "evidence/CODEX-CLI-MAINTENANCE-PATH-2026-09-29.md"
+      ],
+      "direct_owner_refs": [
+        "GrahamArdent/execution-node-control",
+        "GrahamArdent/programstart-compute-spine",
+        "surface-specific identity owners"
+      ],
+      "direct_reason_code": "HUMAN_TRANSPORT_EXCLUDED",
+      "disposition": "ESCALATION_NOT_PRECLUDED_BY_PATHS",
+      "effect_ref": "effect:human-en-administration",
+      "escalation_allowed": true,
+      "failure_kind": "unspecified",
+      "jit_owner_currentness_collision_required": false,
+      "lookup_preflight_obligations": [],
+      "operator_retry_required": false,
+      "reason_code": "NO_CURRENT_DIRECT_OR_KNOWN_RECOVERY_REALIZATION",
+      "recovery_matches": [],
+      "registered_capability_ids": [
+        "human_en_administration"
+      ],
+      "registered_route_lookup_required": false,
+      "related_diagnostic_capability_ids": [],
+      "related_diagnostic_is_effect_equivalent": false,
+      "schema_version": "1.0.0",
+      "target_ref": "execution-node"
+    },
+    "mode": "read_only_diagnostic"
+  },
+  "recovery": "Repeated only the read-only inspection after diagnosis; succeeded. No model execution was retried.",
+  "local_diagnostic_preparation": "Oversized shell argument rejected with Argument list too long; materialized current classifier/dependencies using file patches, then ran classifier locally."
+}

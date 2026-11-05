@@ -4,7 +4,7 @@ PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01
 STATUS: active
 PROJECT: LinkedIn_Generator
 ENTRY_MODE: PROGRAMSTART Mode C
-CURRENT_STAGE_OR_MILESTONE: Technical voice v3 machine GO; single-draft editorial correction PARTIAL/HOLD; P2 and expansion HOLD
+CURRENT_STAGE_OR_MILESTONE: Fresh equal-input comparison machine GO; engine advantage not demonstrated; quality/P2/expansion HOLD
 AUTHORITY_SPINE: `README.md` product role + Dedication boundary, current explicit operator decisions, accepted project contracts/voice authority, validated implementation state on `main`, and this bounded packet
 AUTHORITY_VERSION_OR_COMMIT: main a714d1ef355ade9ca47a52b301ea477bd0c14f34; candidate source/config4b261ae; exact source/config/test hashes and integration/runtime state in latest receipt
 BLOCKER_SCOPE: milestone
@@ -220,7 +220,7 @@ VERIFICATION_SUMMARY: Slice A implemented; multi-subject human validation now ac
 EVIDENCE_INVALIDATED_OR_REUSED: existing voice/content/visual architecture reused; no settled decision reopened
 AUTHORITY_RECONCILED: prior packet update landed on main at a714d1e; v4 continuation delta is on a feature branch, not merged; no competing Master Game Plan
 REMAINING_BLOCKERS: multi-subject visual-plan evidence, real repo-provider acceptance, rendered-asset evidence, publishing integration
-NEXT_RECOMMENDED_SLICE: review single-draft diagnostic and qualify next control experiment; broader content/visual gates remain open
+NEXT_RECOMMENDED_SLICE: inspect whether source compression lost useful supported detail; broader human/content/visual gates remain open
 
 ## v4 continuation — 2026-11-04
 
@@ -289,8 +289,8 @@ Transport and environment remain GO; P2 content acceptance HOLD. Human feedback 
 
 Current operator decision: strengthen substantive evidence before further opinion-only diagnostics, phase the work, and check local CI plus actual merge/install currentness after each meaningful milestone. Narrow conversational/code observations are evidence of those observations; they do not establish broader client or business outcomes. Opinion is permitted when clearly framed; central factual claims require adequate support, not an arbitrary citation count.
 
-CURRENT_MILESTONE_RECEIPT: evidence/editorial-single-draft-20261104/MILESTONE.json
-NEXT_ELIGIBLE_PHASE: Review retained single-draft editorial diagnostic; fresh equal-input simpler-LLM control is recommended but not yet admitted; no automatic rewrite/expansion
+CURRENT_MILESTONE_RECEIPT: evidence/equal-input-engine-baseline-20261104/MILESTONE.json
+NEXT_ELIGIBLE_PHASE: Read-only full-primary-source versus compressed-brief audit; no automatic new generation or expansion
 
 Controlling plan and execution prompt are the updated v4 companions. Sequence: currentness checkpoint → substantive evidence brief → source-specific writer repair → scorer qualification → one bounded substantive comparison and human disposition → controlled expansion. All26 AT objectives and11 E2E scenarios remain intact. Prior weak trials stay in the record; limited draft preferences are not editorial keeps or approved voice examples. Trial3's simple-baseline preference is limited feedback, not a blinded pilot win.
 
@@ -363,3 +363,7 @@ Superseding next action: owner exact-text feedback on these3 retained versions; 
 ## Current continuation — November4,2026
 
 Operator authorized the focused editorial recommendation. See evidence/editorial-single-draft-20261104/REPORT.md for the sole current diagnostic narrative, paragraph-audit.json for the paragraph diagnosis, COMPARISON.md for exact original/revision and MILESTONE.json for current tests/execution/integration status. Technical voiceversion3;209 local tests PASS;1 native revision. Editorial outcome PARTIAL/HOLD, no human approval or publish-ready selection. Prior milestone sections above are historical; the current receipt/frontier fields control continuation.
+
+## Current continuation — fresh equal-input comparison, November4,2026
+
+Operator authorized and completed the existing engine versus simpler-LLM control. The sole current narrative is evidence/equal-input-engine-baseline-20261104/REPORT.md; MILESTONE.json owns current tests, parity, execution and integration status. Engine original74, one guarded rewrite72, baseline74 under the identical evaluator context; no qualified candidate or human verdict.6 calls/77.278 CLI seconds/API0; fresh-process reopen0 added calls.209 local tests PASS, product bytes unchanged. Next frontier is the read-only source-versus-brief audit, not another rewrite or collection. All26 AT/11 E2E and owner gates remain. Earlier milestone sections are historical.

@@ -1,0 +1,99 @@
+{
+  "attempt_id": "attempt-589625d4305442ae9281d7c6b28d1dc6",
+  "auth": "chatgpt",
+  "cost": null,
+  "created_at": "2026-11-05T02:07:47.851336+00:00",
+  "elapsed_seconds": 11.126252642832696,
+  "events": [
+    {
+      "thread_id": "01a1a976-5af0-7520-968b-7b769483df13",
+      "type": "thread.started"
+    },
+    {
+      "diagnostic_code": "CODE_MODE_HOST_DISABLED",
+      "item_id": "item_0",
+      "item_type": "error",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.started"
+    },
+    {
+      "agent_message_sha256": "1f8805ae70e460a803c3f3d2588f407c583a8363ab4dff1fed4a8c6fea571a9a",
+      "item_id": "item_1",
+      "item_type": "agent_message",
+      "type": "item.completed"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 10705,
+        "output_tokens": 215,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ],
+  "execution_kind": "native_cli",
+  "finished_at": "2026-11-05T02:07:59.344494+00:00",
+  "invocation_id": "linkedin",
+  "launch_requested": true,
+  "launched": true,
+  "launched_at": "2026-11-05T02:07:48.212912+00:00",
+  "limits": {
+    "max_input_bytes": 4194304,
+    "max_launches": 36,
+    "max_output_bytes": 2097152,
+    "max_seconds": 900,
+    "process_timeout": 300
+  },
+  "model": "gpt-6-astra",
+  "parent_attempt_id": null,
+  "processes": [
+    {
+      "finished_at": "2026-11-05T02:07:48.207831+00:00",
+      "operation": "auth",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/equal-input-engine-baseline-20261104/codex-attempts/lig-equal-input-engine-baseline-20261104/linkedin/b45a3094f38523db46f443a3c4973fcf2f6bc5c00a0b9651e80656d59d238053/preflight-556e589864db48348b4ae284766503ec.json",
+      "pid": 425018,
+      "returncode": 0,
+      "sha256": "01d4d55f90ceae39a8b4a06a6f9708d356b87d99dcb69aa2c142cb13626fcab6",
+      "start_identity": "552471114",
+      "started_at": "2026-11-05T02:07:48.022400+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T02:07:48.015866+00:00",
+      "operation": "version",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/equal-input-engine-baseline-20261104/codex-attempts/lig-equal-input-engine-baseline-20261104/linkedin/b45a3094f38523db46f443a3c4973fcf2f6bc5c00a0b9651e80656d59d238053/preflight-e9f9f211fd654c23ad046cf189ea25f0.json",
+      "pid": 425005,
+      "returncode": 0,
+      "sha256": "78bf4a86c17526854e5a19c026ed1373a81b68d8c43483da227b05e2fceca5ab",
+      "start_identity": "552471098",
+      "started_at": "2026-11-05T02:07:47.860869+00:00"
+    },
+    {
+      "finished_at": "2026-11-05T02:07:59.335863+00:00",
+      "operation": "exec",
+      "path": "/home/graham/work/linkedin-codex-trial-20261104/evidence/equal-input-engine-baseline-20261104/codex-attempts/lig-equal-input-engine-baseline-20261104/linkedin/b45a3094f38523db46f443a3c4973fcf2f6bc5c00a0b9651e80656d59d238053/process.json",
+      "pid": 425054,
+      "returncode": 0,
+      "sha256": "4a64e999c6c473c56408bb3e7d293678405c01369380fafff8246a362610129b",
+      "start_identity": "552471134",
+      "started_at": "2026-11-05T02:07:48.217744+00:00"
+    }
+  ],
+  "producer_version": "codex-cli 0.158.0",
+  "reasoning": "medium",
+  "request_sha256": "b45a3094f38523db46f443a3c4973fcf2f6bc5c00a0b9651e80656d59d238053",
+  "result_sha256": "5515b3f01c26cb5172756e06cf72918354151cf9b4c15f1f7dc4bf917925bf6c",
+  "run_id": "lig-equal-input-engine-baseline-20261104",
+  "schema_version": "1.0",
+  "state": "succeeded",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 10705,
+    "output_tokens": 215,
+    "reasoning_output_tokens": 0
+  }
+}

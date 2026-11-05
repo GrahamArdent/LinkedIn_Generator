@@ -1,0 +1,34 @@
+{
+  "declared_at": "2026-11-05T02:07:46.848858+00:00",
+  "owner_authorization": "Latest operator proceed with fresh equal-input simpler-LLM comparison recommendation",
+  "budget": {
+    "max_model_calls": 12,
+    "max_physical_starts": 36,
+    "max_cumulative_cli_seconds": 900,
+    "api_spend": 0,
+    "retry": false
+  },
+  "fixed": [
+    "Graham individual author",
+    "Technical Explainer version3 and exact definition hash",
+    "same frozen CERT-In factual bundle/limitations/inference/opinion",
+    "same business/IT audience, payment authorization argument and140-180-word target",
+    "same model/reasoning/ChatGPT native provider",
+    "same publish-quality evaluator context/rubric for both finished texts"
+  ],
+  "comparison": "Fresh full existing engine path versus existing simple baseline prompt. Engine may exercise its one guarded rewrite and quality gate; simple baseline gets one draft. No hand editing or repeated generation to improve scores. If engine has no qualified candidate, preserve HOLD and compare its original as diagnostic material; retain any rewrite separately, never silently select it.",
+  "engine_settings": {
+    "opportunity_gate": false,
+    "publish_quality_gate": true,
+    "visual_asset_plan": false
+  },
+  "assessment": [
+    "factual fidelity and scope",
+    "clarity and paragraph contribution",
+    "useful concrete action",
+    "repetition, source-summary bloat, defensive caveats",
+    "natural selected voice",
+    "actual calls/tokens/time; no dollar cost invented"
+  ],
+  "boundaries": "Single repeated subject, not a new distinct first-six subject or a6-pair human pilot win. Numeric judgments uncalibrated. Human decision remains null. No publishing/merge/install/CI/deploy/render/voice expansion."
+}

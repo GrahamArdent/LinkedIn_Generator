@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-11-05T02:14:52.927351+00:00",
+  "source_commit": "f506cae4568df505941d7f0b1f7475558fba75c8",
+  "status": {
+    "comparison_integrity": "GO",
+    "writing_advantage": "NOT_DEMONSTRATED",
+    "engine_publish_ready": "HOLD",
+    "human_quality": "HOLD",
+    "nine_style_expansion": "HOLD",
+    "P2_acceptance": "HOLD"
+  },
+  "tests": {
+    "command": ".venv/bin/python -m pytest -q",
+    "observed": "209 passed in2.05s",
+    "exit": 0,
+    "production_hashes_unchanged": true
+  },
+  "expected_observed": {
+    "source_commit": "f506cae4568df505941d7f0b1f7475558fba75c8",
+    "state": "completed",
+    "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+    "model_scores": {
+      "engine_original": 74,
+      "engine_rewrite": 72,
+      "baseline": 74,
+      "threshold": 90,
+      "calibration": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS"
+    },
+    "parity": {
+      "same_factual_bundle": true,
+      "same_voice_id_version_hash": true,
+      "same_objective_audience_POV_goal": true,
+      "same_evaluator_context_excluding_post": true,
+      "same_evaluator_context_sha256": "80bd7d08dc13754da5dbaaed34562cbb0b0b5e64cfe8cf42e7ff8215c2871e26"
+    },
+    "resources": {
+      "engine": {
+        "model_calls": 4,
+        "cumulative_cli_seconds": 50.31548994779587,
+        "input_tokens": 44004,
+        "output_tokens": 936
+      },
+      "baseline": {
+        "model_calls": 2,
+        "cumulative_cli_seconds": 26.9626159761101,
+        "input_tokens": 21536,
+        "output_tokens": 500
+      }
+    },
+    "total_model_calls": 6,
+    "total_physical_starts": 18,
+    "total_cumulative_cli_seconds": 77.27810592390597,
+    "api_spend": 0,
+    "subscription_cost": "unknown",
+    "fresh_process_reopen": {
+      "exit": 0,
+      "additional_calls": 0,
+      "attempt_bytes_unchanged": true
+    },
+    "human_decision": null,
+    "selected_candidate": null
+  },
+  "human_decision": null,
+  "selected_candidate": null,
+  "acceptance_definitions_unchanged": true,
+  "integration": {
+    "main": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+    "PR24": "open/draft/unmerged",
+    "runtime": "existing candidate checkout; no promotion",
+    "hosted_CI": "not run"
+  },
+  "next_eligible_action": "Read-only audit of full primary source versus compressed brief; identify supported mechanism/consequence/tradeoff lost before drafting. No automatic new generation, voice expansion, merge/install/publishing."
+}
