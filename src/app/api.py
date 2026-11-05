@@ -4,6 +4,7 @@ import os
 from typing import Any
 
 from .generation import Pipeline
+from .editorial_handoff import validate_handoff
 from .llm import LLMClient
 from .opportunity import assess_opportunity, ending_guidance
 from .publish_quality import assess_publish_quality, rewrite_for_publish_quality
@@ -159,6 +160,7 @@ def run_generation(
     publish_quality_client: Any | None = None,
     editorial_brief: dict[str, Any] | None = None,
     writing_voice_id: str | None = None,
+    editorial_handoff: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
@@ -173,6 +175,7 @@ def run_generation(
     bounded improvement candidate for human review.
     """
 
+    handoff = validate_handoff(editorial_handoff) if editorial_handoff is not None else None
     base = os.path.join(os.path.dirname(__file__), "../../")
     prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
     prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
@@ -210,6 +213,11 @@ def run_generation(
         for item in source_items
         if str(item.get("url", "")).startswith("http")
     ]
+
+    if handoff is not None:
+        allowed_facts = {str(item.get("fact") or item.get("one_liner") or "") for item in source_items}
+        if any(fact["text"] not in allowed_facts for fact in handoff["meaning"]["facts"]):
+            raise ValueError("HANDOFF_FACT_NOT_ALLOWED: frozen fact absent from allowed sources")
 
     if opportunity_gate:
         gate_client = opportunity_client or llm_client
@@ -269,6 +277,7 @@ def run_generation(
     plan = pipe.plan(prompts.get("plan_prompt", {}), {
         **plan_ctx, "audience": audience, "objective": objective,
         "evidence": source_items, "strongest_concrete_evidence": strongest_concrete_evidence,
+        **({"editorial_handoff": handoff} if handoff is not None else {}),
     })
     angle_options = list(plan.get("angle_options") or [plan["angle"]])
     draft_ctx = {
@@ -293,6 +302,10 @@ def run_generation(
         "approved_voice_examples": prompt_voice_examples,
         "source_bundle": editorial_brief,
     }
+    if handoff is not None:
+        persona_profile["editorial_context"]["handoff"] = handoff
+        persona_profile["editorial_context"].pop("objective", None)
+        draft_ctx["objective"] = "Develop the supplied handoff meaning."
     draft_prompt = dict(prompts.get("draft_prompt", {}))
     if "writing_voice" in persona_profile:
         # Keep one editorial authority, shared with editors and the evaluator.

@@ -87,6 +87,15 @@ class Pipeline:
                 "Explain the mechanism behind that anchor, with its source limitations.",
                 "Challenge only an assumption that this anchor actually complicates.",
             ]
+        if ctx.get("editorial_handoff") is not None:
+            from .editorial_handoff import validate_handoff
+            handoff = validate_handoff(ctx["editorial_handoff"])
+            editorial_plan = {
+                "reader": str(ctx.get("audience") or audience_lens),
+                "factual_anchor": anchor,
+                "narrative": handoff["narrative"],
+            }
+            angle_options = ["Develop the selected narrative without changing the frozen meaning."]
         return {
             "editorial_plan": editorial_plan,
             "angle": angle_options[0],
