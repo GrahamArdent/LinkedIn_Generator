@@ -15,5 +15,7 @@
     "exact model/CLI budget and gates consistent",
     "no competing current execution sequence",
     "git diff --check"
-  ]
+  ],
+  "observed_checks": "PASS",
+  "validation_correction": "Reference checker corrected to distinguish evidence-relative REPORT.md and external Paths CHATGPT.md, already fetched via connected GitHub. All local references resolve."
 }
