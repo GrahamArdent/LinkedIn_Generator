@@ -1,0 +1,458 @@
+[
+  {
+    "path": "evidence/evidence-first-20261104/trial/trial.json",
+    "role": "original",
+    "score": 73,
+    "recomputed": 73,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "The recovery takeaway repeats across several paragraphs; tightening those repetitions would give the post more momentum.",
+      "The familiar sign-in-versus-recovery distinction is useful but offers limited additional insight beyond the documented tactic.",
+      "Phrases such as ‘That recommendation belongs alongside the recovery lesson’ sound editorial and dilute the direct, conversational voice."
+    ],
+    "body_sha256": "a3454852cdbe14fc96e9370d5d94ff14df4f3e6aba1cf3f029978ed1b95c916e",
+    "context_sha256": "9e28e754b20bf2a0b8bbd0d13851ecc41029fde095aa186ce60c9b3ece315fad"
+  },
+  {
+    "path": "evidence/evidence-first-20261104/trial/trial.json",
+    "role": "rewrite",
+    "score": 75,
+    "recomputed": 75,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 4,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The central distinction is useful but familiar; the closing trust observation adds little beyond the recovery-review question.",
+      "The practical question is long and abstract enough to soften the otherwise tight rhythm.",
+      "FIDO/WebAuthn and PKI are unexplained, creating minor friction for business readers."
+    ],
+    "body_sha256": "0ce3c656025feba4f3688a4c67348106c6e6ef8885b6151020b7aaf0188b5939",
+    "context_sha256": "9e28e754b20bf2a0b8bbd0d13851ecc41029fde095aa186ce60c9b3ece315fad"
+  },
+  {
+    "path": "evidence/evidence-first-20261104/trial/trial.json",
+    "role": "baseline",
+    "score": 75,
+    "recomputed": 75,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 4,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The recovery-versus-sign-in distinction repeats across several paragraphs without adding much, weakening the tight rhythm.",
+      "FIDO/WebAuthn and PKI are unexplained, creating friction for business readers.",
+      "The recovery reframing is useful but familiar to identity specialists, limiting distinctiveness."
+    ],
+    "body_sha256": "4c34af21eb7063aa06dbbb9f51115cb2a2888c377d1db6b2279cedaa2c8fdb69",
+    "context_sha256": "9e28e754b20bf2a0b8bbd0d13851ecc41029fde095aa186ce60c9b3ece315fad"
+  },
+  {
+    "path": "evidence/source-first-planning-20261104/trial/trial.json",
+    "role": "original",
+    "score": 78,
+    "recomputed": 78,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 4,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 4,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The post exceeds the brief’s 140–180-word limit; compress repeated framing around approval versus execution.",
+      "The testing instruction leaves ‘applicable limits’ underspecified despite evidence distinguishing per-transaction limits from daily cumulative ceilings.",
+      "‘Cryptographic binding’ receives only a functional explanation, leaving business readers with limited understanding of what engineering should assess."
+    ],
+    "body_sha256": "5eb47c66037910b1a05c5c40d36a82ccd7e87e1fb9af1efdbdfebd3a60a8ddf2",
+    "context_sha256": "107ae6a1963356a27e7fdca5c7b33520eb793d911bce5d6878a3821d5a6128b0"
+  },
+  {
+    "path": "evidence/source-first-planning-20261104/trial/trial.json",
+    "role": "baseline",
+    "score": 81,
+    "recomputed": 81,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 5,
+      "specificity": 4,
+      "novel_insight": 4,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 4,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The post exceeds the requested 140–180 words; repeated approval-and-validation language dilutes an otherwise focused brief.",
+      "Terms such as maker-checker approval and cryptographic binding need brief plain-language explanations for business readers.",
+      "The proposed review names both owners but leaves their distinct responsibilities implicit, reducing its usefulness as a forwarded assignment."
+    ],
+    "body_sha256": "8f7c7b33ee218bcb26c0a47115ce13f5d64ecd174a06d49a93e6a03b9d78b17c",
+    "context_sha256": "107ae6a1963356a27e7fdca5c7b33520eb793d911bce5d6878a3821d5a6128b0"
+  },
+  {
+    "path": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+    "role": "original",
+    "score": 72,
+    "recomputed": 72,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 3,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The long qualification paragraph interrupts the momentum and gives the analogy’s limits more space than the practical decision.",
+      "The inspection task names useful evidence but leaves readers to interpret how to establish that verification is mandatory before action.",
+      "The access-versus-permission distinction is clear, but the post develops little additional insight after the opening analogy."
+    ],
+    "body_sha256": "d74144dbd62dd2d06c22e835d72083211a598c4f27785b50ac2312310c5b120c",
+    "context_sha256": "3de70ad05655a1d5bea5fafece6051f5608dac789febaf39ff6e51e7799ae845"
+  },
+  {
+    "path": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+    "role": "rewrite",
+    "score": 74,
+    "recomputed": 74,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "Repeated statements of the access-versus-approval distinction and clustered caveats slow the post after its strong opening.",
+      "The practical task needs a clearer instruction to demonstrate rejected requests safely, using a test or existing evidence.",
+      "The familiar key analogy makes the point accessible, but the incidents add more illustration than a distinctive new insight."
+    ],
+    "body_sha256": "fee70dedc82a3c8f484e9bb6f54950c023d049860e9fd463bd3b971788b071f1",
+    "context_sha256": "3de70ad05655a1d5bea5fafece6051f5608dac789febaf39ff6e51e7799ae845"
+  },
+  {
+    "path": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+    "role": "baseline",
+    "score": 71,
+    "recomputed": 71,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 3,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "Repeated restatements of access versus permission, followed by a lengthy qualification, dilute the closing impact.",
+      "The key analogy makes the distinction accessible, but the post offers limited further insight beyond that familiar distinction.",
+      "The explanatory middle feels more formal and cautious than the selected voice’s conversational boldness."
+    ],
+    "body_sha256": "0d03d5344cca00bfcdfca32e0e83425a4886e7aaab7f6de036d73365b66dd34f",
+    "context_sha256": "3de70ad05655a1d5bea5fafece6051f5608dac789febaf39ff6e51e7799ae845"
+  },
+  {
+    "path": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+    "role": "original",
+    "score": 73,
+    "recomputed": 73,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "Repeated qualifications and restatements slow the middle and dilute the practical takeaway; consolidate them while preserving the evidence boundaries.",
+      "The central distinction between fast output and finished work is useful but familiar, with limited development beyond the proposed timing comparison.",
+      "The explanatory, cautious wording fits the author's directness but only partly delivers the selected voice's bold, conversational rhythm."
+    ],
+    "body_sha256": "79575fb40d46baf3f6fcd0381a35643cfa9581c93b24227b3e5289051b4034a0",
+    "context_sha256": "31c12373a599690d9744504c75bc4f0ca580262709820a8007fd9ee988d6c938"
+  },
+  {
+    "path": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+    "role": "rewrite",
+    "score": 74,
+    "recomputed": 74,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The approval-time thesis repeats across the takeaway, proposed test and closing; trimming repetition would give the ending more force.",
+      "The extended study qualifications interrupt the conversational rhythm and make the middle feel more like a research note.",
+      "The reframing is useful but familiar; the post gives limited development to how approvers would distinguish elapsed completion time from total effort across people."
+    ],
+    "body_sha256": "4065dd44674a469ea1df987ce039762f0f55c1488d4d6e64e5b25866bab3044c",
+    "context_sha256": "31c12373a599690d9744504c75bc4f0ca580262709820a8007fd9ee988d6c938"
+  },
+  {
+    "path": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+    "role": "baseline",
+    "score": 71,
+    "recomputed": 71,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 3,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "Qualifications occupy several paragraphs and interrupt the practical payoff; consolidate them while preserving the comparison, causality and recency boundaries.",
+      "The usable-completion lesson is sound but familiar, and the closing line repeats it without adding a sharper implication for approval decisions.",
+      "The opening feels direct and relatable, but the body shifts into research-summary language that weakens the supplied voice’s conversational rhythm."
+    ],
+    "body_sha256": "3f9defb76ac1361d3b50d72c11f217f194afa05cfac473af28d95789cb1bc9f4",
+    "context_sha256": "31c12373a599690d9744504c75bc4f0ca580262709820a8007fd9ee988d6c938"
+  },
+  {
+    "path": "evidence/installed-acceptance-20261105/trial/trial.json",
+    "role": "original",
+    "score": 73,
+    "recomputed": 73,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "Repeated explanations of access versus permission and two dense qualification paragraphs slow the post and dilute its punch.",
+      "The core distinction is familiar; the grounded API mechanism offers more insight than the repeated key analogy develops.",
+      "Formal phrases such as ‘establish authority’ and ‘validation at each transaction stage’ weaken the selected conversational voice."
+    ],
+    "body_sha256": "39494681f66a24ed79e4fdac35f091c38955288ec142c1e8e6bcfca1c95b1026",
+    "context_sha256": "63425c4acd1455d0152b165c61146f36153496ef65d8cb0848a177a69f89c6bc"
+  },
+  {
+    "path": "evidence/installed-acceptance-20261105/trial/trial.json",
+    "role": "baseline",
+    "score": 73,
+    "recomputed": 73,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "The extended analogy limitations and evidence qualifications interrupt momentum; compress them while preserving their boundaries.",
+      "Repeated key, lock and permission statements take space without advancing the familiar access-versus-authorization insight.",
+      "The practical takeaway is concrete, but dense technical questions and formal caveats dilute the voice’s conversational rhythm."
+    ],
+    "body_sha256": "e60e0379ac1e6b2d5cba60b59c7f5e2ef95343a8be4b7df2d416eb1165169b92",
+    "context_sha256": "63425c4acd1455d0152b165c61146f36153496ef65d8cb0848a177a69f89c6bc"
+  },
+  {
+    "path": "evidence/codex-first-20261104/trial/trial.json",
+    "role": "original",
+    "score": 73,
+    "recomputed": 73,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 4,
+      "practical_usefulness": 3,
+      "emotional_tension": 3,
+      "conversation_potential": 3,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "‘Visual plan’ remains vague, making the mismatch harder for outsiders to picture.",
+      "The lesson is useful but stops short of a concrete check readers could apply to their own workflows.",
+      "The closing paragraphs repeat the final-version point without adding much consequence or insight."
+    ],
+    "body_sha256": "4998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04",
+    "context_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": "evidence/equal-input-engine-baseline-20261104/trial/trial.json",
+    "role": "original",
+    "score": 74,
+    "recomputed": 74,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The post exceeds the 140–180-word brief; repeated explanations of the approval-versus-execution distinction offer the clearest cuts.",
+      "The control insight is useful but familiar to payment-security specialists, limiting distinctiveness.",
+      "The dense closing list of evidentiary limits weakens the emphasis on the practical verification step."
+    ],
+    "body_sha256": "3a4ef554d711b414467ee1eafa2a85d580376b92e5ecdba9ee13cae447324065",
+    "context_sha256": "122098beb917617c0e014158f57ca6289e47f30b4f5deafcb999e7ec162a08e1"
+  },
+  {
+    "path": "evidence/equal-input-engine-baseline-20261104/trial/trial.json",
+    "role": "rewrite",
+    "score": 72,
+    "recomputed": 72,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 3,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The opening and interpretation paragraphs repeat the approval-versus-execution distinction without substantially developing the mechanism.",
+      "The verification advice identifies recipient and amount but leaves the evidence needed to demonstrate enforcement somewhat abstract.",
+      "The extensive limitations paragraph interrupts the causal argument and reduces momentum toward the practical recommendation."
+    ],
+    "body_sha256": "7e18e0dca5f0fcde2e4f89be6505588984d9633d688cea54afec435b759826d9",
+    "context_sha256": "122098beb917617c0e014158f57ca6289e47f30b4f5deafcb999e7ec162a08e1"
+  },
+  {
+    "path": "evidence/equal-input-engine-baseline-20261104/trial/trial.json",
+    "role": "baseline",
+    "score": 74,
+    "recomputed": 74,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The post exceeds the brief’s 180-word maximum; repeated statements about approval versus execution offer room to cut.",
+      "The verification advice identifies what to trace but leaves the evidence needed to demonstrate enforcement underspecified.",
+      "The central distinction is useful but familiar to security practitioners, limiting its distinctiveness."
+    ],
+    "body_sha256": "68b92a5b7c8f2c8bd7ec48c92baef909ccb299bd300753aa8e7fa22bd70b8388",
+    "context_sha256": "122098beb917617c0e014158f57ca6289e47f30b4f5deafcb999e7ec162a08e1"
+  },
+  {
+    "path": "evidence/transparent-evaluation-20261104/trial/trial.json",
+    "role": "original",
+    "score": 78,
+    "recomputed": 78,
+    "dimensions": {
+      "outsider_clarity": 5,
+      "professional_relevance": 4,
+      "specificity": 3,
+      "novel_insight": 4,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 5
+    },
+    "gaps": [
+      "No concrete comparison shows what an added step actually changed; the examples remain hypothetical.",
+      "The professional stakes stay broad, with no specific work situation showing why the distinction matters.",
+      "The middle repeats the need to understand the process without substantially advancing the argument."
+    ],
+    "body_sha256": "1268f95c982ab66227e84dfc814ae07dcc3b1809cba83eceae795814913e7dde",
+    "context_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+    "path": "evidence/transparent-evaluation-20261104/trial/trial.json",
+    "role": "rewrite",
+    "score": 77,
+    "recomputed": 77,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 4,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 4
+    },
+    "gaps": [
+      "The paid-API detour introduces a second decision without making its connection to draft evaluation immediately clear.",
+      "The central distinction between liking an output and validating a process repeats more than it develops.",
+      "No concrete before-and-after writing example shows how the proposed evaluation would change a decision."
+    ],
+    "body_sha256": "3f00601d1d11fa93e7e6f086ca9478639a0628928ac36a4b0d978b1a28a7472e",
+    "context_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  }
+]

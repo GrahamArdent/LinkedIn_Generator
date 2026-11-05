@@ -1,0 +1,362 @@
+{
+  "state": "completed",
+  "post": "The draft arrives in seconds. Is the work done, or just ready for someone to check?\n\nIf you approve work, that distinction matters more than how quickly the text appears.\n\nA Stanford-published study of 5,172 customer-support agents found that AI assistance increased issues resolved per hour by 15% on average. That measures resolved issues, a useful step beyond counting output.\n\nA different setting produced a different result. In METR’s randomized study, 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools. These were experienced contributors working on familiar software projects.\n\nDifferent workers, tasks and tools. The findings are not a matched comparison, and neither establishes checking as the cause of the slowdown.\n\nMy takeaway: a faster first draft is a promising start. It is not yet a time saving.\n\nFor one repeated task, I’d compare the time to usable completion with and without AI. Set the same standard for approval. Include the time spent giving instructions, checking the result and making corrections, including the approver’s time.\n\nThat is a measurement I’m proposing, not a result these studies reported. The practical test is whether AI reduces the total work needed to reach something you can use.\n\nKeep the evidence boundary clear: the support finding concerns one deployment, and METR’s early-2025 result is historical. Its February 2026 follow-up had selection and measurement biases, so it does not supply a reliable estimate of today’s effect.\n\nI’d judge the saving at the point of approval. The first output can arrive early while the work still finishes late.",
+  "request_context": {
+    "request_id": "six-blocks-ai-20261105",
+    "origin": "manual",
+    "topic": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+    "persona_key": "graham",
+    "audience": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+    "objective": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+    "writing_voice_id": "relatable_provocateur",
+    "author_pov": "individual",
+    "content_goal": "authority",
+    "editorial_handoff": {
+      "version": 1,
+      "meaning": {
+        "thesis": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+        "reader_consequence": "For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.",
+        "facts": [
+          {
+            "claim_id": "AI-F1",
+            "text": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.",
+            "source_ids": [
+              "STANFORD-AI-WORK"
+            ]
+          },
+          {
+            "claim_id": "AI-F2",
+            "text": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.",
+            "source_ids": [
+              "METR-2025"
+            ]
+          }
+        ],
+        "qualification": "These studies involve different workers, tasks and tools, not a matched comparison. They do not establish checking as the cause of slowdown. METR’s early-2025 result is historical; its February2026 follow-up has selection and measurement biases and does not provide a reliable current effect estimate."
+      },
+      "narrative": {
+        "form": "literal",
+        "beats": [
+          "Begin with a familiar choice: is the work done when output appears, or when it can be used?",
+          "Compare the two attributed findings without pretending the settings are equivalent.",
+          "Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.",
+          "End with the practical task comparison and a compact evidence boundary."
+        ],
+        "symbol": null
+      }
+    },
+    "opportunity_gate": true,
+    "publish_quality_gate": true,
+    "publish_quality_threshold": 90,
+    "visual_asset_plan": true,
+    "evidence": [
+      {
+        "title": "STANFORD-AI-WORK",
+        "fact": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance."
+      },
+      {
+        "title": "METR-2025",
+        "fact": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study."
+      }
+    ],
+    "hashtags": []
+  },
+  "persona_context": {
+    "donts": [
+      "clichés",
+      "em_dashes"
+    ],
+    "emoji_max": 3,
+    "bullet_char": "🔹",
+    "active_author_pov": "individual",
+    "writing_voice": {
+      "id": "relatable_provocateur",
+      "version": 1,
+      "label": "Relatable Provocateur",
+      "style_traits": {
+        "tone": [
+          "bold",
+          "witty",
+          "empathetic",
+          "direct",
+          "conversational",
+          "contrarian_without_being_performative"
+        ],
+        "rhythm": "Short hooks, varied sentence length, compact paragraphs and occasional one-line punches.",
+        "reasoning": "Challenge a supported assumption; connect the mechanism to earned practical or human stakes.",
+        "imagery": "Vivid but controlled; use analogy or dry humour only when useful. No invented incidents or dramatic outcomes.",
+        "preferred_structure": "concrete_observation_supported_reframing_practical_takeaway_earned_closer"
+      },
+      "content_sha256": "5d251d00725704e08f7ab98ebf0d4b0772976580d8f84832659f486fd19fdf93"
+    },
+    "semantic_quality": {
+      "default_author_pov": "individual",
+      "internal_terms_needing_translation": [
+        "mode c",
+        "stage 0",
+        "execution spine",
+        "canonical intake",
+        "canonical authority",
+        "regression coverage",
+        "work packet",
+        "kill signal"
+      ],
+      "generic_phrases": [
+        "in today's fast-paced world",
+        "game changer",
+        "the future is here",
+        "unlock the power",
+        "revolutionize",
+        "here's the thing",
+        "in the ever-evolving landscape",
+        "now more than ever",
+        "let that sink in"
+      ]
+    },
+    "active_content_goal": "authority",
+    "earned_question": false,
+    "editorial_context": {
+      "topic": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+      "plan": {
+        "reader": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+        "factual_anchor": {
+          "title": "STANFORD-AI-WORK",
+          "fact": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance."
+        }
+      },
+      "approved_voice_examples": [],
+      "source_bundle": {
+        "request_sha256": "7b06dc675258f0445807df5c7caff797f884a92247ba8eecea53b74a138f7503",
+        "sources": [
+          {
+            "source_id": "STANFORD-AI-WORK",
+            "title": "Generative AI at Work",
+            "publisher": "Stanford Digital Economy Lab",
+            "url": "https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/",
+            "status": "usable",
+            "checked_at": "2026-11-05",
+            "limitations": "Customer-support deployment; not every job or tool. Current publisher summary reports15%; earlier NBER version reported about14%.",
+            "passages": [
+              {
+                "locator": "Abstract line44",
+                "excerpt": "using data from 5,172 customer support agents"
+              }
+            ]
+          },
+          {
+            "source_id": "METR-2025",
+            "title": "Early-2025 experienced developer productivity experiment",
+            "publisher": "METR",
+            "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+            "status": "usable",
+            "checked_at": "2026-11-05",
+            "limitations": "Small randomized study of experienced contributors on familiar repositories using early-2025 tools; not current universal AI performance. February2026 follow-up has selection and measurement biases; METR considers its later effect estimate unreliable. Neither study isolates checking as the cause of all overhead.",
+            "passages": [
+              {
+                "locator": "Core result line53",
+                "excerpt": "they take 19% longer to complete issues"
+              }
+            ]
+          },
+          {
+            "source_id": "METR-2026-BOUNDARY",
+            "title": "Developer productivity experiment design update",
+            "publisher": "METR",
+            "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+            "status": "usable",
+            "checked_at": "2026-11-05",
+            "limitations": "Same METR origin, not third independent evidence chain.",
+            "passages": [
+              {
+                "locator": "Opening line38",
+                "excerpt": "an unreliable signal of the current productivity effect"
+              }
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "kind": "fact",
+            "claim_id": "AI-F1",
+            "text": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.",
+            "source_ids": [
+              "STANFORD-AI-WORK"
+            ]
+          },
+          {
+            "kind": "fact",
+            "claim_id": "AI-F2",
+            "text": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.",
+            "source_ids": [
+              "METR-2025"
+            ]
+          }
+        ],
+        "central_claim_id": "AI-F1",
+        "editorial_building_blocks": {
+          "1_reader": "Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.",
+          "2_decision": "For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.",
+          "3_concept": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+          "4_evidence": {
+            "sources": [
+              {
+                "source_id": "STANFORD-AI-WORK",
+                "title": "Generative AI at Work",
+                "publisher": "Stanford Digital Economy Lab",
+                "url": "https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/",
+                "status": "usable",
+                "checked_at": "2026-11-05",
+                "limitations": "Customer-support deployment; not every job or tool. Current publisher summary reports15%; earlier NBER version reported about14%.",
+                "passages": [
+                  {
+                    "locator": "Abstract line44",
+                    "excerpt": "using data from 5,172 customer support agents"
+                  }
+                ]
+              },
+              {
+                "source_id": "METR-2025",
+                "title": "Early-2025 experienced developer productivity experiment",
+                "publisher": "METR",
+                "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+                "status": "usable",
+                "checked_at": "2026-11-05",
+                "limitations": "Small randomized study of experienced contributors on familiar repositories using early-2025 tools; not current universal AI performance. February2026 follow-up has selection and measurement biases; METR considers its later effect estimate unreliable. Neither study isolates checking as the cause of all overhead.",
+                "passages": [
+                  {
+                    "locator": "Core result line53",
+                    "excerpt": "they take 19% longer to complete issues"
+                  }
+                ]
+              },
+              {
+                "source_id": "METR-2026-BOUNDARY",
+                "title": "Developer productivity experiment design update",
+                "publisher": "METR",
+                "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+                "status": "usable",
+                "checked_at": "2026-11-05",
+                "limitations": "Same METR origin, not third independent evidence chain.",
+                "passages": [
+                  {
+                    "locator": "Opening line38",
+                    "excerpt": "an unreliable signal of the current productivity effect"
+                  }
+                ]
+              }
+            ],
+            "purpose": "Support and bound the concept, rather than dictate a technical news summary."
+          },
+          "5_telling_voice": {
+            "narrative": {
+              "form": "literal",
+              "beats": [
+                "Begin with a familiar choice: is the work done when output appears, or when it can be used?",
+                "Compare the two attributed findings without pretending the settings are equivalent.",
+                "Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.",
+                "End with the practical task comparison and a compact evidence boundary."
+              ],
+              "symbol": null
+            },
+            "voice": "relatable_provocateur v1; Graham Hill individual author",
+            "instruction": "Explain ordinary decisions. Translate credentials as account access, whitelisted infrastructure as recognized company systems, API calls as direct computer-to-computer requests only if indispensable. No invented work experience, dialogue, screen-location assumptions or measured outcomes."
+          },
+          "6_review": {
+            "questions": [
+              "Can a non-specialist paraphrase the point?",
+              "What decision changes?",
+              "Which facts earn the inference?",
+              "Is the telling useful beyond its opening?",
+              "What needs editing?"
+            ],
+            "human_preferences": null,
+            "equal_word_count_required": false
+          }
+        }
+      },
+      "handoff": {
+        "version": 1,
+        "meaning": {
+          "thesis": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+          "reader_consequence": "For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.",
+          "facts": [
+            {
+              "claim_id": "AI-F1",
+              "text": "The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.",
+              "source_ids": [
+                "STANFORD-AI-WORK"
+              ]
+            },
+            {
+              "claim_id": "AI-F2",
+              "text": "METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.",
+              "source_ids": [
+                "METR-2025"
+              ]
+            }
+          ],
+          "qualification": "These studies involve different workers, tasks and tools, not a matched comparison. They do not establish checking as the cause of slowdown. METR’s early-2025 result is historical; its February2026 follow-up has selection and measurement biases and does not provide a reliable current effect estimate."
+        },
+        "narrative": {
+          "form": "literal",
+          "beats": [
+            "Begin with a familiar choice: is the work done when output appears, or when it can be used?",
+            "Compare the two attributed findings without pretending the settings are equivalent.",
+            "Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.",
+            "End with the practical task comparison and a compact evidence boundary."
+          ],
+          "symbol": null
+        }
+      }
+    }
+  },
+  "negative_fixture": false,
+  "system": "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 (absent) to 5 (exceptional) on each named dimension. Judge whether the post is understandable, useful, specific, distinctive, interesting, shareable, and authentic enough to publish. Do not reward clickbait, engagement bait, unsupported specificity, or generic LinkedIn polish. Use the supplied evidence only to judge whether concrete details are grounded. This is a publish-readiness heuristic, not a promise of virality. These ratings are not calibrated to the author's human judgments or engagement outcomes. Apply the rating anchors to each dimension; never inflate scores to meet a threshold. Use the same brief and voice context as the writer. If writing_voice is present, assess voice fit against its selected style_traits over default persona style; approved examples supply compatible details only. Preserve factual and author-POV boundaries. Identify the largest fixable defect first; missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only.",
+  "user": "{\"post\": \"The draft arrives in seconds. Is the work done, or just ready for someone to check?\\n\\nIf you approve work, that distinction matters more than how quickly the text appears.\\n\\nA Stanford-published study of 5,172 customer-support agents found that AI assistance increased issues resolved per hour by 15% on average. That measures resolved issues, a useful step beyond counting output.\\n\\nA different setting produced a different result. In METR’s randomized study, 16 experienced open-source developers completing 246 tasks took 19% longer with early-2025 AI tools. These were experienced contributors working on familiar software projects.\\n\\nDifferent workers, tasks and tools. The findings are not a matched comparison, and neither establishes checking as the cause of the slowdown.\\n\\nMy takeaway: a faster first draft is a promising start. It is not yet a time saving.\\n\\nFor one repeated task, I’d compare the time to usable completion with and without AI. Set the same standard for approval. Include the time spent giving instructions, checking the result and making corrections, including the approver’s time.\\n\\nThat is a measurement I’m proposing, not a result these studies reported. The practical test is whether AI reduces the total work needed to reach something you can use.\\n\\nKeep the evidence boundary clear: the support finding concerns one deployment, and METR’s early-2025 result is historical. Its February 2026 follow-up had selection and measurement biases, so it does not supply a reliable estimate of today’s effect.\\n\\nI’d judge the saving at the point of approval. The first output can arrive early while the work still finishes late.\", \"audience\": \"Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.\", \"content_goal\": \"authority\", \"grounded_evidence\": [{\"title\": \"STANFORD-AI-WORK\", \"fact\": \"The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.\"}, {\"title\": \"METR-2025\", \"fact\": \"METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.\"}], \"voice_context\": {\"donts\": [\"clichés\", \"em_dashes\"], \"emoji_max\": 3, \"bullet_char\": \"🔹\", \"active_author_pov\": \"individual\", \"writing_voice\": {\"id\": \"relatable_provocateur\", \"version\": 1, \"label\": \"Relatable Provocateur\", \"style_traits\": {\"tone\": [\"bold\", \"witty\", \"empathetic\", \"direct\", \"conversational\", \"contrarian_without_being_performative\"], \"rhythm\": \"Short hooks, varied sentence length, compact paragraphs and occasional one-line punches.\", \"reasoning\": \"Challenge a supported assumption; connect the mechanism to earned practical or human stakes.\", \"imagery\": \"Vivid but controlled; use analogy or dry humour only when useful. No invented incidents or dramatic outcomes.\", \"preferred_structure\": \"concrete_observation_supported_reframing_practical_takeaway_earned_closer\"}, \"content_sha256\": \"5d251d00725704e08f7ab98ebf0d4b0772976580d8f84832659f486fd19fdf93\"}, \"semantic_quality\": {\"default_author_pov\": \"individual\", \"internal_terms_needing_translation\": [\"mode c\", \"stage 0\", \"execution spine\", \"canonical intake\", \"canonical authority\", \"regression coverage\", \"work packet\", \"kill signal\"], \"generic_phrases\": [\"in today's fast-paced world\", \"game changer\", \"the future is here\", \"unlock the power\", \"revolutionize\", \"here's the thing\", \"in the ever-evolving landscape\", \"now more than ever\", \"let that sink in\"]}, \"active_content_goal\": \"authority\", \"earned_question\": false}, \"editorial_brief\": {\"topic\": \"AI saves work only when it helps produce usable finished work, not merely faster first output.\", \"plan\": {\"reader\": \"Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.\", \"factual_anchor\": {\"title\": \"STANFORD-AI-WORK\", \"fact\": \"The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.\"}}, \"approved_voice_examples\": [], \"source_bundle\": {\"request_sha256\": \"7b06dc675258f0445807df5c7caff797f884a92247ba8eecea53b74a138f7503\", \"sources\": [{\"source_id\": \"STANFORD-AI-WORK\", \"title\": \"Generative AI at Work\", \"publisher\": \"Stanford Digital Economy Lab\", \"url\": \"https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"limitations\": \"Customer-support deployment; not every job or tool. Current publisher summary reports15%; earlier NBER version reported about14%.\", \"passages\": [{\"locator\": \"Abstract line44\", \"excerpt\": \"using data from 5,172 customer support agents\"}]}, {\"source_id\": \"METR-2025\", \"title\": \"Early-2025 experienced developer productivity experiment\", \"publisher\": \"METR\", \"url\": \"https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"limitations\": \"Small randomized study of experienced contributors on familiar repositories using early-2025 tools; not current universal AI performance. February2026 follow-up has selection and measurement biases; METR considers its later effect estimate unreliable. Neither study isolates checking as the cause of all overhead.\", \"passages\": [{\"locator\": \"Core result line53\", \"excerpt\": \"they take 19% longer to complete issues\"}]}, {\"source_id\": \"METR-2026-BOUNDARY\", \"title\": \"Developer productivity experiment design update\", \"publisher\": \"METR\", \"url\": \"https://metr.org/blog/2026-02-24-uplift-update/\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"limitations\": \"Same METR origin, not third independent evidence chain.\", \"passages\": [{\"locator\": \"Opening line38\", \"excerpt\": \"an unreliable signal of the current productivity effect\"}]}], \"claims\": [{\"kind\": \"fact\", \"claim_id\": \"AI-F1\", \"text\": \"The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.\", \"source_ids\": [\"STANFORD-AI-WORK\"]}, {\"kind\": \"fact\", \"claim_id\": \"AI-F2\", \"text\": \"METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.\", \"source_ids\": [\"METR-2025\"]}], \"central_claim_id\": \"AI-F1\", \"editorial_building_blocks\": {\"1_reader\": \"Managers and professionals responsible for approving work, with no cybersecurity or software-development expertise assumed.\", \"2_decision\": \"For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.\", \"3_concept\": \"AI saves work only when it helps produce usable finished work, not merely faster first output.\", \"4_evidence\": {\"sources\": [{\"source_id\": \"STANFORD-AI-WORK\", \"title\": \"Generative AI at Work\", \"publisher\": \"Stanford Digital Economy Lab\", \"url\": \"https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"limitations\": \"Customer-support deployment; not every job or tool. Current publisher summary reports15%; earlier NBER version reported about14%.\", \"passages\": [{\"locator\": \"Abstract line44\", \"excerpt\": \"using data from 5,172 customer support agents\"}]}, {\"source_id\": \"METR-2025\", \"title\": \"Early-2025 experienced developer productivity experiment\", \"publisher\": \"METR\", \"url\": \"https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"limitations\": \"Small randomized study of experienced contributors on familiar repositories using early-2025 tools; not current universal AI performance. February2026 follow-up has selection and measurement biases; METR considers its later effect estimate unreliable. Neither study isolates checking as the cause of all overhead.\", \"passages\": [{\"locator\": \"Core result line53\", \"excerpt\": \"they take 19% longer to complete issues\"}]}, {\"source_id\": \"METR-2026-BOUNDARY\", \"title\": \"Developer productivity experiment design update\", \"publisher\": \"METR\", \"url\": \"https://metr.org/blog/2026-02-24-uplift-update/\", \"status\": \"usable\", \"checked_at\": \"2026-11-05\", \"limitations\": \"Same METR origin, not third independent evidence chain.\", \"passages\": [{\"locator\": \"Opening line38\", \"excerpt\": \"an unreliable signal of the current productivity effect\"}]}], \"purpose\": \"Support and bound the concept, rather than dictate a technical news summary.\"}, \"5_telling_voice\": {\"narrative\": {\"form\": \"literal\", \"beats\": [\"Begin with a familiar choice: is the work done when output appears, or when it can be used?\", \"Compare the two attributed findings without pretending the settings are equivalent.\", \"Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.\", \"End with the practical task comparison and a compact evidence boundary.\"], \"symbol\": null}, \"voice\": \"relatable_provocateur v1; Graham Hill individual author\", \"instruction\": \"Explain ordinary decisions. Translate credentials as account access, whitelisted infrastructure as recognized company systems, API calls as direct computer-to-computer requests only if indispensable. No invented work experience, dialogue, screen-location assumptions or measured outcomes.\"}, \"6_review\": {\"questions\": [\"Can a non-specialist paraphrase the point?\", \"What decision changes?\", \"Which facts earn the inference?\", \"Is the telling useful beyond its opening?\", \"What needs editing?\"], \"human_preferences\": null, \"equal_word_count_required\": false}}}, \"handoff\": {\"version\": 1, \"meaning\": {\"thesis\": \"AI saves work only when it helps produce usable finished work, not merely faster first output.\", \"reader_consequence\": \"For one repeated task, compare the time to usable completion with and without AI, including checking and corrections; treat this as a proposed measurement, not a reported study result.\", \"facts\": [{\"claim_id\": \"AI-F1\", \"text\": \"The Stanford-published study of 5,172 customer-support agents reports an average15% increase in issues resolved per hour with AI assistance.\", \"source_ids\": [\"STANFORD-AI-WORK\"]}, {\"claim_id\": \"AI-F2\", \"text\": \"METR reports that16 experienced open-source developers completing246 tasks took19% longer with early-2025 AI tools in its randomized study.\", \"source_ids\": [\"METR-2025\"]}], \"qualification\": \"These studies involve different workers, tasks and tools, not a matched comparison. They do not establish checking as the cause of slowdown. METR’s early-2025 result is historical; its February2026 follow-up has selection and measurement biases and does not provide a reliable current effect estimate.\"}, \"narrative\": {\"form\": \"literal\", \"beats\": [\"Begin with a familiar choice: is the work done when output appears, or when it can be used?\", \"Compare the two attributed findings without pretending the settings are equivalent.\", \"Explain the narrow measurement implication; distinguish proposed checking-and-correction measurement from a proven causal explanation.\", \"End with the practical task comparison and a compact evidence boundary.\"], \"symbol\": null}}}, \"approved_voice_examples\": [], \"calibration_status\": \"NOT_CALIBRATED_TO_HUMAN_JUDGMENTS\", \"rating_anchors\": {\"0\": \"Absent, contradicted or unusable for this dimension.\", \"1\": \"Severe weakness; the reader must reconstruct the point.\", \"2\": \"Partial; generic, unclear or insufficiently supported.\", \"3\": \"Adequate but ordinary; the dimension works with a material limitation.\", \"4\": \"Strong; grounded, clear and useful with only a minor weakness.\", \"5\": \"Exceptional for this supplied brief; explain why the dimension earns this judgment, not merely because no rule was broken.\"}, \"dimensions\": {\"outsider_clarity\": \"Can a smart stranger understand the post without project context?\", \"professional_relevance\": \"Does the post matter to the intended professional audience?\", \"specificity\": \"Is the post anchored in concrete grounded detail rather than abstractions?\", \"novel_insight\": \"Does it contain a non-obvious lesson, tension, or reframing?\", \"practical_usefulness\": \"Can a reader carry something useful into their own work?\", \"emotional_tension\": \"Is there earned curiosity, recognition, surprise, frustration, relief, or another human stake?\", \"conversation_potential\": \"Could qualified readers add substantive experience or judgment, whether or not the post ends in a question?\", \"shareability\": \"Would sharing the post make another professional look useful or insightful?\", \"voice_authenticity\": \"Does the wording feel natural for the supplied voice rather than generic creator copy?\"}, \"required_output\": {\"outsider_clarity\": \"integer 0-5\", \"professional_relevance\": \"integer 0-5\", \"specificity\": \"integer 0-5\", \"novel_insight\": \"integer 0-5\", \"practical_usefulness\": \"integer 0-5\", \"emotional_tension\": \"integer 0-5\", \"conversation_potential\": \"integer 0-5\", \"shareability\": \"integer 0-5\", \"voice_authenticity\": \"integer 0-5\", \"gaps\": \"array of at most 3 concise weaknesses that most limit publish quality\", \"rationale\": \"one concise sentence explaining the overall score\"}}",
+  "raw": "{\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":3,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":3,\"gaps\":[\"Repeated qualifications and restatements dilute the central point; consolidate the evidence boundaries and shorten the ending.\",\"The familiar distinction between fast output and finished work is useful but offers limited fresh insight beyond the proposed measurement.\",\"The explanatory middle feels more like a research briefing than the supplied conversational, bold voice.\"],\"rationale\":\"The post offers grounded, appropriately bounded evidence and a useful approval-time comparison, but repetition, modest novelty and a formal middle limit its distinctiveness and impact.\"}",
+  "assessment": {
+    "score": 73,
+    "dimensions": {
+      "outsider_clarity": 4,
+      "professional_relevance": 4,
+      "specificity": 4,
+      "novel_insight": 3,
+      "practical_usefulness": 4,
+      "emotional_tension": 3,
+      "conversation_potential": 4,
+      "shareability": 3,
+      "voice_authenticity": 3
+    },
+    "gaps": [
+      "Repeated qualifications and restatements dilute the central point; consolidate the evidence boundaries and shorten the ending.",
+      "The familiar distinction between fast output and finished work is useful but offers limited fresh insight beyond the proposed measurement.",
+      "The explanatory middle feels more like a research briefing than the supplied conversational, bold voice."
+    ],
+    "rationale": "The post offers grounded, appropriately bounded evidence and a useful approval-time comparison, but repetition, modest novelty and a formal middle limit its distinctiveness and impact.",
+    "warnings": []
+  },
+  "receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":3,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":3,\"gaps\":[\"Repeated qualifications and restatements dilute the central point; consolidate the evidence boundaries and shorten the ending.\",\"The familiar distinction between fast output and finished work is useful but offers limited fresh insight beyond the proposed measurement.\",\"The explanatory middle feels more like a research briefing than the supplied conversational, bold voice.\"],\"rationale\":\"The post offers grounded, appropriately bounded evidence and a useful approval-time comparison, but repetition, modest novelty and a formal middle limit its distinctiveness and impact.\"}"
+      },
+      "attempt_id": "attempt-336310f503944590b86e941e4bb74af1",
+      "result_sha256": "aa15b7baff8ccb24607b57e4d4f92514688204ccd45b6bf63f42d90a82294651",
+      "cache_hit": true,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12328,
+        "output_tokens": 176,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ]
+}

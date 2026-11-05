@@ -1,0 +1,38 @@
+{
+  "weights": {
+    "outsider_clarity": 15,
+    "professional_relevance": 15,
+    "specificity": 15,
+    "novel_insight": 15,
+    "practical_usefulness": 10,
+    "emotional_tension": 10,
+    "conversation_potential": 8,
+    "shareability": 7,
+    "voice_authenticity": 5
+  },
+  "all_adequate_3": 60,
+  "all_strong_4": 80,
+  "all_exceptional_5": 100,
+  "ceiling_if_novelty_emotion_shareability_stay_3": 87,
+  "strong_4_vs_exceptional_5_weights_needed_for90": 50,
+  "cohort_rows": 19,
+  "unique_rating_vectors": 10,
+  "histogram": {
+    "73": 5,
+    "75": 2,
+    "78": 2,
+    "81": 1,
+    "72": 2,
+    "74": 4,
+    "71": 2,
+    "77": 1
+  },
+  "threshold_sensitivity_descriptive_only": {
+    "70": 19,
+    "75": 6,
+    "80": 1,
+    "85": 0,
+    "90": 0
+  },
+  "caution": "Historical repeated subjects, changing prompts/voices and correlated drafts; not a representative independent sample or validated human-label dataset."
+}

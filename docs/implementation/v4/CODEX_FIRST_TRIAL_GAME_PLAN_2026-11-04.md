@@ -1,5 +1,7 @@
 # LinkedIn Codex Trial Game Plan — evidence-first continuation
 
+> Current scoring-audit finding — November5,2026: evidence/scoring-audit-20261105/REPORT.md and MILESTONE.json. Arithmetic is correct, but90 admission is uncalibrated and compensatory; strong4 scores80. Proposed replacement policy is in POLICY_RECOMMENDATION.md; it is NOT installed. Keep factual/POV/safety guards and human publishing approval; do not rerun posts to chase90 or silently replace the threshold. Next adopt a coherent review-eligibility/calibration policy, then qualify it in the existing engine. Installed release0c099d7 unchanged; all26 AT/11 E2E remain.
+
 > Current release — November5,2026: PR24 merged and installed at0c099d70fc807044355af089d62d1bef049cbb95. Follow CURRENT_WORK_PACKET.md and evidence/release-integration-20261105/MILESTONE.json; REPORT.md holds the release findings.230 local and230 installed tests PASS. JSON narrative handoffs and baseline/evaluator propagation are integrated; numeric punctuation guard corrected. Fixed-revision launcher and rollback verified;0 new model calls/API0; no hosted CI or publishing. Different post lengths are not a failure. Earlier candidate-only/merge-install holds below are historical for this release. Continue P2 content/human evaluation through the installed engine; preserve all26 AT/11 E2E and publication gates.
 
 
