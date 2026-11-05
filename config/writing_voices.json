@@ -239,7 +239,7 @@
       }
     },
     "technical_explainer": {
-      "version": 2,
+      "version": 3,
       "label": "Technical Explainer",
       "aliases": [
         "technical_expert"
@@ -251,7 +251,7 @@
         "blob_sha": "f008ebd158a4840bb6a501db4ee2e9f02afb4524",
         "legacy_id": "technical_expert",
         "legacy_label": "Technical Expert Archetype",
-        "revision_note": "Version2 operational craft projection after retained nine-style convergence diagnostic; original numeric preset retained in Git history. No new author identity or factual authority."
+        "revision_note": "Version2 operational craft projection after retained nine-style convergence diagnostic; original numeric preset retained in Git history. No new author identity or factual authority. Version3 removes the payment-story recorded-versus-enforced conclusion from reusable craft guidance; source-specific argument belongs only in the editorial brief."
       },
       "style_traits": {
         "tone": [
@@ -261,7 +261,7 @@
         ],
         "avg_sentence_length": 22.0,
         "rhythm": "Use developed causal sentences when needed, balanced with shorter clarifying statements. Each paragraph should add a distinct mechanism, condition or implication.",
-        "reasoning": "Separate what is recorded from what is enforced. Explain the relevant dependency and the limits of the conclusion; define technical terms in ordinary language.",
+        "reasoning": "Explain how the supplied evidence supports the proposed explanation. Identify relevant dependencies and conditions, distinguish observation from inference, and define necessary technical terms in ordinary language.",
         "imagery": "Prefer a clear account of the mechanism over metaphor, motivation or emotional emphasis.",
         "preferred_structure": "Organize around the system dependency or technical question. Connect the supplied evidence to that mechanism, then state the verification implication and limits. Do not impose a hook-news-lesson sequence."
       }

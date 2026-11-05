@@ -1,0 +1,72 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_ test_technical_style_does_not_inject_recorded_versus_enforced_argument[Stellar spectra-Explain how evidence supports a scientific interpretation.] _
+
+topic = 'Stellar spectra'
+objective = 'Explain how evidence supports a scientific interpretation.'
+
+    @pytest.mark.parametrize("topic,objective",[
+     ("Stellar spectra","Explain how evidence supports a scientific interpretation."),
+     ("Compost decomposition","Explain one useful distinction supported by the supplied material."),
+    ])
+    def test_technical_style_does_not_inject_recorded_versus_enforced_argument(topic,objective):
+        class Captured(Exception):pass
+        class Client:
+            def call(self,system,user,response_json=True):
+                self.system,self.user=system,user
+                raise Captured
+        c=Client()
+        with pytest.raises(Captured):
+            api.run_generation(topic,[],persona_key="graham",audience="Curious professionals",
+                objective=objective,writing_voice_id="technical_explainer",allowed_sources=[],
+                opportunity_gate=False,publish_quality_gate=False,llm_client=c)
+        profile=json.loads(next(x.split(": ",1)[1] for x in c.user.splitlines() if x.startswith("Persona Profile: ")))
+        assert profile["editorial_context"]["objective"]==objective
+        assert c.user.count(objective)==1
+>       assert "Separate what is recorded from what is enforced." not in c.user, "style injected a prior story's conclusion"
+E       AssertionError: style injected a prior story's conclusion
+E       assert 'Separate wh...is enforced.' not in 'Audience: C...rk phrase.\n'
+E         
+E         'Separate what is r...m what is enforced.' is contained here:
+E         ?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_topic_independent_voice.py:24: AssertionError
+_ test_technical_style_does_not_inject_recorded_versus_enforced_argument[Compost decomposition-Explain one useful distinction supported by the supplied material.] _
+
+topic = 'Compost decomposition'
+objective = 'Explain one useful distinction supported by the supplied material.'
+
+    @pytest.mark.parametrize("topic,objective",[
+     ("Stellar spectra","Explain how evidence supports a scientific interpretation."),
+     ("Compost decomposition","Explain one useful distinction supported by the supplied material."),
+    ])
+    def test_technical_style_does_not_inject_recorded_versus_enforced_argument(topic,objective):
+        class Captured(Exception):pass
+        class Client:
+            def call(self,system,user,response_json=True):
+                self.system,self.user=system,user
+                raise Captured
+        c=Client()
+        with pytest.raises(Captured):
+            api.run_generation(topic,[],persona_key="graham",audience="Curious professionals",
+                objective=objective,writing_voice_id="technical_explainer",allowed_sources=[],
+                opportunity_gate=False,publish_quality_gate=False,llm_client=c)
+        profile=json.loads(next(x.split(": ",1)[1] for x in c.user.splitlines() if x.startswith("Persona Profile: ")))
+        assert profile["editorial_context"]["objective"]==objective
+        assert c.user.count(objective)==1
+>       assert "Separate what is recorded from what is enforced." not in c.user, "style injected a prior story's conclusion"
+E       AssertionError: style injected a prior story's conclusion
+E       assert 'Separate wh...is enforced.' not in 'Audience: C...rk phrase.\n'
+E         
+E         'Separate what is r...m what is enforced.' is contained here:
+E         ?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_topic_independent_voice.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_topic_independent_voice.py::test_technical_style_does_not_inject_recorded_versus_enforced_argument[Stellar spectra-Explain how evidence supports a scientific interpretation.]
+FAILED tests/test_topic_independent_voice.py::test_technical_style_does_not_inject_recorded_versus_enforced_argument[Compost decomposition-Explain one useful distinction supported by the supplied material.]
+2 failed in 0.15s

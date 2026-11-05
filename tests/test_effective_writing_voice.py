@@ -43,7 +43,7 @@ def test_explicit_style_is_the_only_rhetorical_authority_at_actual_consumers(sty
     assert p["active_author_pov"]=="individual"
     assert "em_dashes" in p["donts"]
     assert j["voice_context"]["writing_voice"]==p["writing_voice"]
-    assert p["writing_voice"]["version"]==2
+    assert p["writing_voice"]["version"]==(3 if style=="technical_explainer" else 2)
     assert not any(k.endswith("_freq") for k in p["writing_voice"]["style_traits"])
     assert "hook → evidence" not in draft["user"]
     assert "Open with a clear hook, ground the post" not in draft["user"]

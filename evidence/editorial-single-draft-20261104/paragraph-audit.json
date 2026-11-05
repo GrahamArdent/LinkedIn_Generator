@@ -1,0 +1,42 @@
+{
+  "kind": "assistant_editorial_diagnosis_not_human_acceptance",
+  "original_source": "evidence/effective-voice-comparison-20261104/technical_explainer.json",
+  "original_sha256": "b8a89caf7e0b048152a02cc644677ac07b14c07c68e009372daddc4eb4dd8a1e",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "job": "State the distinction between recorded approval and enforced authorization.",
+      "issue": "Two sentences establish the same contrast that paragraph3 repeats.",
+      "correction": "Establish this distinction once; later paragraphs must add mechanism or action."
+    },
+    {
+      "paragraph": 2,
+      "job": "Ground the point in the current agency report and prior advisory.",
+      "issue": "Long news-summary block spends scarce words on dates/advisory identifiers.",
+      "correction": "Preserve C1 and the relevant C2 mechanism; source identifiers can remain in the evidence record instead of dominating the post."
+    },
+    {
+      "paragraph": 3,
+      "job": "Explain the inference and conditional failure path.",
+      "issue": "First sentence largely restates paragraph1; second conditionally explains why approval may not constrain a direct request.",
+      "correction": "Keep the useful causal condition, remove the repeated thesis; do not assert all systems allow bypass."
+    },
+    {
+      "paragraph": 4,
+      "job": "Give a practical verification task.",
+      "issue": "Identify permission and check against record remains abstract.",
+      "correction": "Frame a recipient/amount change as a proposed verification question; explicitly ask what prevents a changed instruction from proceeding. This is advice, not a claim that a test was performed or all systems fail."
+    },
+    {
+      "paragraph": 5,
+      "job": "Bound the claim.",
+      "issue": "Geography is relevant; list of unclaimed frequency/loss/autonomy findings makes the ending defensive.",
+      "correction": "Keep the Indian-campaign scope and avoid universal claims. Preserve all limits in the evidence bundle, but verbalize only the caveat that prevents a material misreading."
+    }
+  ],
+  "further_findings": [
+    "The semantic proposition appears in objective and retained inference/opinion records even though the full objective literal occurs once. Do not equate literal count with conceptual independence.",
+    "AI-assisted is a sourced label; no supplied evidence establishes a distinct AI mechanism or business outcome. Use the incident as the occasion for a payment-control observation rather than inventing AI-specific novelty."
+  ],
+  "bounded_test": "One proposed editorial revision of the retained technical draft, using the existing guarded rewrite function. Not a new scoring run, full engine rerun or style comparison. No automatic retries."
+}

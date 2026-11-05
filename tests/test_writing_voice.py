@@ -40,7 +40,7 @@ def test_each_recovered_style_reaches_actual_drafting_and_judging_consumer(style
     r,client,result,draft,profile,judgment=prompts(style)
     block=profile.get("writing_voice",{})
     assert block.get("id")==style
-    assert block.get("version")==(2 if style in {"concise_challenger","reflective_leader","technical_explainer"} else 1) and len(block.get("content_sha256",""))==64
+    assert block.get("version")==(3 if style=="technical_explainer" else 2 if style in {"concise_challenger","reflective_leader"} else 1) and len(block.get("content_sha256",""))==64
     assert judgment["voice_context"]["writing_voice"]==block
     assert result.telemetry["writing_voice"]==block
     assert "selected Writing Voice" in draft["system"]
