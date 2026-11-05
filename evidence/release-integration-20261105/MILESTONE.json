@@ -1,0 +1,19 @@
+{
+  "status": "GO merged and installed",
+  "reviewed_code_commit": "ba4af210239e113790faf972e0dd15d822942fb5",
+  "merged_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "installed_revision": "0c099d70fc807044355af089d62d1bef049cbb95",
+  "installed_root": "/home/graham/work/linkedin-generator-releases/0c099d70fc807044355af089d62d1bef049cbb95",
+  "local_tests": 230,
+  "installed_tests": 230,
+  "api_spend": 0,
+  "new_model_calls": 0,
+  "hosted_ci": false,
+  "publishing": false,
+  "rollback_verified": true,
+  "human_post_approval": null,
+  "acceptance_objectives_preserved": 26,
+  "e2e_scenarios_preserved": 11,
+  "documentation_only_main_advancement": "May advance main without changing installed product source; REVIEW.json owns source/config/test hashes.",
+  "next_action": "Continue P2 content evaluation with installed headless engine; publishing remains human gated."
+}
