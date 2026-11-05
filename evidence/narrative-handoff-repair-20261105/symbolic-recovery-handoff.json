@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "meaning": {
+    "thesis": "Accepted credentials or an allowed network origin do not, by themselves, establish that a particular business action is authorized.",
+    "reader_consequence": "Inspect one sensitive action at its final enforcement point: what evidence of authorization must accompany an accepted account or network path before the action proceeds? For a payout, examine whether direct API calls must satisfy the required approvals and business checks.",
+    "facts": [
+      {
+        "claim_id": "CF-1",
+        "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment.",
+        "source_ids": [
+          "CF2024"
+        ]
+      },
+      {
+        "claim_id": "CI-1",
+        "text": "CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts.",
+        "source_ids": [
+          "CIAD-2026-0046"
+        ]
+      }
+    ],
+    "qualification": "These different accounts support a conceptual distinction between accepted access and authorized action; they do not establish that a particular defense caused different outcomes or would have prevented the reported losses."
+  },
+  "narrative": {
+    "form": "symbolic",
+    "beats": [
+      "Introduce the selected office-key image as an illustration.",
+      "Use the symbol mapping while developing the two attributed mechanisms; do not leave the image as a decorative hook.",
+      "State the image boundary and necessary evidentiary qualification.",
+      "Carry the same inspection task back through the access-versus-permission distinction."
+    ],
+    "symbol": {
+      "image": "A working office key establishes that a lock can be opened; it does not establish permission to remove the equipment inside.",
+      "mapping": [
+        {
+          "symbol_part": "The working key",
+          "real_relationship": "Cloudflare’s stolen credentials remained usable after being left unrotated."
+        },
+        {
+          "symbol_part": "The lock accepting the key",
+          "real_relationship": "Attackers subsequently accessed Cloudflare’s Atlassian environment."
+        },
+        {
+          "symbol_part": "Separate permission to take equipment",
+          "real_relationship": "Conceptual counterpart to authorization for a specific business action; CERT-In reports payment requests bypassing application checks."
+        }
+      ],
+      "boundary": "Digital credentials can be copied and used remotely. A physical key does not represent shared network origins or transaction-stage validation. Removing equipment is illustrative, not an allegation about Cloudflare."
+    }
+  },
+  "writing_plan": {
+    "beats": [
+      {
+        "index": 1,
+        "delivery": "Open with the selected office-key illustration; brisk, conversational setup for access versus action permission; symbol supplies no evidence."
+      },
+      {
+        "index": 2,
+        "delivery": "Develop CF-1 through working key and accepting lock; connect separate equipment permission to CI-1’s action-authorization distinction; attribute each."
+      },
+      {
+        "index": 3,
+        "delivery": "Boundary: credentials copyable, remotely usable; key omits shared origins and transaction validation; equipment removal not alleged at Cloudflare. Qualify CF-1/CI-1: conceptual contrast, no defense-causality or loss-prevention inference."
+      },
+      {
+        "index": 4,
+        "delivery": "Return through access versus permission: inspect one payout’s final enforcement point for required authorization evidence, approvals and direct-API business checks."
+      }
+    ],
+    "attribution": [
+      {
+        "claim_id": "CF-1",
+        "source_name": "Cloudflare"
+      },
+      {
+        "claim_id": "CI-1",
+        "source_name": "CERT-In"
+      }
+    ]
+  }
+}

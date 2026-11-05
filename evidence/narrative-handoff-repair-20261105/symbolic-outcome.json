@@ -1,0 +1,5 @@
+{
+  "status": "HOLD",
+  "reason": "PLANNING_CONTRACT: missing or unbounded planning text",
+  "human_preference": null
+}

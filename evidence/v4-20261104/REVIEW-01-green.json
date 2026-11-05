@@ -1,0 +1,18 @@
+{
+  "test_id": "REVIEW-01-green",
+  "checked_at_utc": "2026-11-04T21:55:09.093841+00:00",
+  "ended_at_utc": "2026-11-04T21:55:10.463818+00:00",
+  "head_sha": "e856859c044213458bbc1a0cb68df0e3ec87a55d",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_selected_candidate.py"
+  ],
+  "mode": "fixture",
+  "exit_code": 0,
+  "log": "evidence/v4-20261104/REVIEW-01-green.log",
+  "log_sha256": "c0e69ce52e4f3a02942b6f29633f9e3eb8f4519496f5980d860f8301b0e98e31",
+  "diff_sha256": "6cfed6356d27e7924fd9e25c5a02103e99dde33bc03ae3a9c670013b57f60c8b"
+}

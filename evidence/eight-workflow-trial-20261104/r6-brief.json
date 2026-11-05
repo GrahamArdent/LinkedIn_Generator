@@ -1,0 +1,562 @@
+{
+  "state": "completed",
+  "task": "Freeze one thesis, reader consequence, at most two load-bearing facts with IDs, one necessary qualification and narrative beats. HOLD if unsupported.",
+  "inputs": {
+    "route": [
+      {
+        "decision": "GO",
+        "artifact": [
+          {
+            "decision": "GO",
+            "artifact": {
+              "author": "Graham Hill",
+              "audience": "Business and IT leaders",
+              "perspective": "Business owner only",
+              "title": "Valid access is not proof of an authorized payment",
+              "reported_facts": [
+                {
+                  "text": "CERT-In reports that attackers used valid credentials from victims’ whitelisted infrastructure to invoke fund-transfer APIs directly, bypassing application-level checks. Dummy transaction references had no corresponding records.",
+                  "sources": [
+                    "CIAD-2026-0046"
+                  ]
+                },
+                {
+                  "text": "The follow-up advisory reports abuse of legitimate cloud management channels, movement from non-production to production through shared credentials or network paths, and attacks after incomplete remediation. It also describes bypassing IP allow-lists through shared third-party fetcher services.",
+                  "sources": [
+                    "CIAD-2026-0058"
+                  ]
+                },
+                {
+                  "text": "In a separate incident, Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment. Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected.",
+                  "sources": [
+                    "CF2024"
+                  ]
+                }
+              ],
+              "inference": {
+                "text": "Previously trusted access stops being reliable evidence of legitimate action when an attacker can reuse the credential, originate traffic through an accepted route, or invoke a sensitive operation without its required business approvals. Successful authentication establishes that an access mechanism accepted the request; it does not, by itself, establish that the underlying payment was authorized. The business decision should therefore depend on evidence linking each payout to an approved obligation, beneficiary and amount.",
+                "basis": [
+                  "CIAD-2026-0046",
+                  "CIAD-2026-0058",
+                  "CF2024"
+                ]
+              },
+              "business_owner_brief": {
+                "responsibility_status": "Assumption: the business owner has authority over payment operating policy, acceptable disruption and the business conditions for continuing or resuming payouts. Actual accountability must be confirmed locally.",
+                "decision_owned": "Determine when payouts may proceed, require additional review or be held, and define the business evidence required before normal processing resumes.",
+                "evidence_available": {
+                  "reported": "The supplied accounts show that accepted credentials and trusted infrastructure can coexist with unauthorized action. CERT-In recommends matching payouts to approved records, second-level verification, payment-stage limits and reconciliation; these are recommendations, not demonstrated outcomes.",
+                  "sources": [
+                    "CIAD-2026-0046",
+                    "CIAD-2026-0058"
+                  ],
+                  "organization_specific": "Assumption: the owner can obtain approved payment records, beneficiary approvals, exception reports and bank or aggregator reconciliation results. None of these organization-specific records was supplied."
+                },
+                "must_learn_from_technical_owner": [
+                  "Can every route that moves funds enforce the required business validations, including direct API calls and settlement instructions?",
+                  "Which credentials, execution paths or environments may remain compromised, and what evidence supports eradication and credential replacement?",
+                  "Can monitoring and retained logs establish what happened, including during low-coverage periods, and what uncertainty remains?"
+                ],
+                "hypothetical_illustration": "Assumption-based illustration, not a reported event: a payout arrives with an accepted API credential and an allowed source address, but has no matching approved obligation. Under the proposed business policy, it is held for review because the access evidence does not establish payment authorization."
+              }
+            },
+            "claim_support": [
+              {
+                "claim": "Valid credentials and whitelisted infrastructure can be used for unauthorized transfers that bypass business checks.",
+                "type": "reported fact",
+                "sources": [
+                  "CIAD-2026-0046"
+                ],
+                "location": "Description; Key TTPs Observed"
+              },
+              {
+                "claim": "Trusted execution channels and incomplete remediation can leave paths for further abuse.",
+                "type": "reported fact",
+                "sources": [
+                  "CIAD-2026-0058"
+                ],
+                "location": "Overview; Description"
+              },
+              {
+                "claim": "Unrotated stolen credentials enabled later access, while other controls reportedly bounded the impact.",
+                "type": "reported fact",
+                "sources": [
+                  "CF2024"
+                ],
+                "location": "Opening and October18 timeline; Opening containment summary"
+              },
+              {
+                "claim": "Payment authorization needs evidence beyond successful access.",
+                "type": "editorial inference",
+                "sources": [
+                  "CIAD-2026-0046",
+                  "CIAD-2026-0058",
+                  "CF2024"
+                ]
+              },
+              {
+                "claim": "The proposed business-owner authority, local evidence access and payout example are hypothetical.",
+                "type": "explicit assumptions",
+                "sources": []
+              }
+            ],
+            "limitations": [
+              "Analysis uses only the supplied source material; sources were not independently retrieved or verified.",
+              "The two CERT-In advisories belong to one reporting chain; the later advisory is an update, not independent corroboration.",
+              "Cloudflare provides an independent first-party retrospective account involving different systems, dates and an organization outside the reported financial-sector campaign. It supports a conceptual comparison, not a shared attacker or payment-incident claim.",
+              "Reported containment outcomes and recommended safeguards do not establish universal control effectiveness.",
+              "No local evidence establishes a particular organization's exposure, remediation status or readiness to resume payments.",
+              "Only the business-owner perspective is developed, as requested. This is an editorial artifact, not a publication action."
+            ]
+          },
+          {
+            "decision": "GO",
+            "artifact": {
+              "author": "Graham Hill",
+              "audience": "Business and IT leaders",
+              "perspective": "Technical owner only",
+              "title": "Valid access does not establish legitimate action",
+              "reported_facts": [
+                {
+                  "text": "CERT-In reports that attackers used valid credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypassing application-level checks. Reported transactions included dummy references with no corresponding records.",
+                  "sources": [
+                    "CIAD-2026-0046"
+                  ]
+                },
+                {
+                  "text": "The subsequent CERT-In advisory reports abuse of legitimate cloud management channels, movement from non-production to production through shared credentials or network paths, and requests originating from shared third-party fetcher IP pools that defeated IP allow-listing.",
+                  "sources": [
+                    "CIAD-2026-0058"
+                  ]
+                },
+                {
+                  "text": "In a separate incident, Cloudflare reports that one service token and three accounts stolen during the October 2023 Okta compromise were left unrotated after being mistakenly considered unused. Attackers later used them to access its Atlassian environment. Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected.",
+                  "sources": [
+                    "CF2024"
+                  ]
+                }
+              ],
+              "inference": {
+                "text": "Previously trusted access stops being reliable evidence of legitimate action when an attacker can inherit its credentials, originate requests through its trusted infrastructure, or bypass the checks that connect access to an approved action. A successful authentication or familiar network origin then establishes too little: the technical owner needs evidence that this particular action is authorized and that its required validations occurred.",
+                "sources": [
+                  "CIAD-2026-0046",
+                  "CIAD-2026-0058",
+                  "CF2024"
+                ]
+              },
+              "decision_owned": {
+                "status": "Assumption: hypothetical organizational responsibility",
+                "text": "The technical owner decides whether the technical evidence is sufficient to permit a transaction path to operate, or whether it requires containment and revalidation. This responsibility includes verifying credential integrity, isolation between environments, and enforcement of transaction approvals at the API boundary."
+              },
+              "evidence_the_owner_can_see": {
+                "status": "Assumption: availability depends on the organization’s instrumentation and access",
+                "items": [
+                  "Credential inventories, rotation records and authentication logs.",
+                  "Cloud audit events, deployment changes and evidence of cross-environment access.",
+                  "API requests linked to approved transaction records, beneficiaries and completed validation stages.",
+                  "Bank or aggregator reconciliation results and forensic evidence of persistence or log tampering."
+                ],
+                "basis": "These evidence categories follow from the attack patterns and recommended controls described by CERT-In; their availability in any particular organization is not established.",
+                "sources": [
+                  "CIAD-2026-0046",
+                  "CIAD-2026-0058"
+                ]
+              },
+              "what_the_technical_owner_must_learn_from_the_business_owner": {
+                "status": "Assumption: hypothetical division of responsibilities",
+                "text": "Which records establish a legitimate payment; who may approve beneficiaries, amounts and exceptions; what transaction limits apply; and what interruption or manual-review capacity the business can tolerate. Technical verification depends on those business definitions of authorization."
+              },
+              "hypothetical_illustration": {
+                "status": "Hypothetical illustration, not a reported event",
+                "text": "A payout request arrives with a valid token from an approved server, but its reference has no matching sanctioned record. The technical owner should treat the token and server as insufficient evidence of authorization and apply the agreed rejection or hold rule. The business owner supplies the definition of an approved record and the permitted exception process."
+              },
+              "editorial_conclusion": "Require evidence linking each sensitive action to current authorization and completed validation. Treat credentials and network location as inputs to that judgment, rather than sufficient proof."
+            },
+            "claim_support": [
+              {
+                "claim": "Valid credentials and whitelisted infrastructure can coexist with unauthorized transfers.",
+                "type": "Reported fact",
+                "sources": [
+                  "CIAD-2026-0046"
+                ]
+              },
+              {
+                "claim": "Trusted management channels, shared environment credentials and shared fetcher pools can be abused.",
+                "type": "Reported fact",
+                "sources": [
+                  "CIAD-2026-0058"
+                ]
+              },
+              {
+                "claim": "Unrotated stolen credentials enabled access in Cloudflare’s separate incident; Cloudflare reports bounded impact.",
+                "type": "Reported fact attributed to the victim",
+                "sources": [
+                  "CF2024"
+                ]
+              },
+              {
+                "claim": "Access evidence must be connected to action-specific authorization.",
+                "type": "Editorial inference",
+                "sources": [
+                  "CIAD-2026-0046",
+                  "CIAD-2026-0058",
+                  "CF2024"
+                ]
+              },
+              {
+                "claim": "The proposed technical ownership, evidence access and business handoff apply to an illustrative organization.",
+                "type": "Explicit assumption",
+                "sources": []
+              }
+            ],
+            "limitations": [
+              "Based solely on supplied source text; no independent retrieval or verification was performed.",
+              "The two CERT-In advisories belong to the same reporting chain; the November advisory updates the October advisory and is not independent corroboration.",
+              "Cloudflare provides an independent first-party retrospective account from a different organization, period and system. The comparison supports a bounded conceptual contrast, not a common attacker or universal control-effectiveness claim.",
+              "CERT-In recommendations do not demonstrate measured effectiveness. No claim about AI’s causal contribution is needed for this argument.",
+              "Only the technical owner perspective is developed, following the explicit perspective restriction. Responsibilities and local evidence availability are assumptions."
+            ]
+          }
+        ]
+      },
+      {
+        "decision": "GO",
+        "artifact": {
+          "author": "Graham Hill",
+          "audience": "Business and IT leaders",
+          "format": "Editorial story outline, not a publication-ready post",
+          "title": "The credential worked. Was the payment authorized?",
+          "shared_decision": "What evidence must both owners accept before a payout path can continue operating or resume after suspected compromise?",
+          "reported_facts": [
+            {
+              "text": "CERT-In reports direct invocation of fund-transfer APIs using valid credentials from victims’ whitelisted infrastructure, bypassing application-level checks. Reported transactions included dummy references without corresponding records.",
+              "sources": [
+                "CIAD-2026-0046"
+              ]
+            },
+            {
+              "text": "The follow-up advisory reports abuse of legitimate cloud management channels, movement from non-production to production through shared credentials or network paths, bypass of IP allow-listing through shared third-party fetcher pools, and renewed attacks after incomplete remediation.",
+              "sources": [
+                "CIAD-2026-0058"
+              ]
+            },
+            {
+              "text": "In a separate incident, Cloudflare reports that one service token and three accounts stolen in the October 2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers subsequently accessed its Atlassian environment. Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected.",
+              "sources": [
+                "CF2024"
+              ]
+            }
+          ],
+          "inference": {
+            "text": "Previously trusted access becomes unreliable evidence of legitimate action when someone can reuse its credentials, exploit an accepted execution route, or reach a sensitive operation without the required business validations. Successful access alone cannot establish payment authorization. The shared decision needs evidence connecting the requested payout to an approved obligation, beneficiary and amount, alongside evidence that every relevant execution path enforces those conditions.",
+            "basis": [
+              "CIAD-2026-0046",
+              "CIAD-2026-0058",
+              "CF2024"
+            ]
+          },
+          "story_from_each_desk": [
+            {
+              "desk": "Business owner",
+              "responsibility_status": "Proposed responsibility; actual accountability must be confirmed locally.",
+              "story_beat": "Start with the obligation behind the money. A familiar server and an accepted token do not answer whether this beneficiary should receive this amount against this approved record.",
+              "decision_contribution": "Define the records, approvals, limits and exception process that establish an authorized payout; specify acceptable interruption and manual-review capacity.",
+              "needs_from_other_desk": "Evidence that those rules hold across direct API calls, settlement instructions and other fund-movement paths, plus explicit uncertainty about compromise or missing records."
+            },
+            {
+              "desk": "Technical owner",
+              "responsibility_status": "Proposed responsibility; actual accountability must be confirmed locally.",
+              "story_beat": "Trace the payout beyond the normal application journey. CERT-In’s reported bypasses make the direct API boundary central. Cloudflare’s separate account illustrates both the danger of retained stolen credentials and a reported limit on their reach.",
+              "sources": [
+                "CIAD-2026-0046",
+                "CIAD-2026-0058",
+                "CF2024"
+              ],
+              "decision_contribution": "Map fund-movement paths to the agreed business rules and present evidence of enforcement, credential replacement, environment isolation and investigation of persistence. Identify paths and evidence gaps that remain unresolved.",
+              "needs_from_other_desk": "An explicit definition of an authorized payment, named approval authority and an agreed response when validation is absent or ambiguous."
+            }
+          ],
+          "handoff_that_matters": {
+            "status": "Proposed operating arrangement, not a reported organizational practice.",
+            "business_to_technical": "Supply the authorization conditions and exception rules for payouts.",
+            "technical_to_business": "Return a path-by-path assessment showing where those conditions are enforced, what evidence supports the assessment and what remains unknown.",
+            "shared_result": "Agree which paths may operate, which require review and which must remain held. Credential rotation alone does not settle that decision."
+          },
+          "forwarding_logic": {
+            "status": "Hypothetical editorial audience behavior; no forwarding or publication is being performed.",
+            "who_to_whom": "A business owner would forward the eventual post to the technical owner responsible for payment integrations. That owner would return the assessment to the business owner who controls payout policy.",
+            "reason": "Each holds part of the answer: the business defines legitimate payment intent; the technical owner establishes whether execution paths preserve it.",
+            "answer_that_changes_the_next_step": {
+              "question": "Can every route that moves funds demonstrate the required payment authorization, and what evidence supports safe operation after any suspected compromise?",
+              "if_supported": "Both owners can consider continuing or resuming the verified paths within agreed limits and monitoring; this is not a guarantee of safety.",
+              "if_bypassed_or_unknown": "Hold the affected path or use a separately verified review route, then resolve the missing validation or compromise evidence before reconsidering normal processing."
+            }
+          },
+          "hypothetical_illustration": {
+            "status": "Illustration only; not a reported event or attributed speech.",
+            "text": "A payout request presents an accepted token and an allowed source address, but its reference has no matching approved obligation. Under the proposed policy, the technical owner holds or rejects it and gives the business owner the missing-record evidence. The next step changes only when authorization can be established through the agreed process; the token’s validity does not supply that answer."
+          },
+          "editorial_closer": "The useful handoff is evidence that the payment is authorized and the path enforces that authorization."
+        },
+        "claim_support": [
+          {
+            "claim": "Valid credentials and whitelisted infrastructure were used to bypass application-level payment checks.",
+            "type": "Reported fact",
+            "sources": [
+              "CIAD-2026-0046"
+            ],
+            "locations": [
+              "Description",
+              "Key TTPs Observed"
+            ]
+          },
+          {
+            "claim": "Accepted management channels, shared environment access and shared fetcher pools were abused; incomplete remediation preceded renewed attacks.",
+            "type": "Reported fact",
+            "sources": [
+              "CIAD-2026-0058"
+            ],
+            "locations": [
+              "Overview",
+              "Description"
+            ]
+          },
+          {
+            "claim": "Unrotated stolen credentials enabled later Cloudflare access, while other controls reportedly limited impact.",
+            "type": "Victim-attributed reported fact",
+            "sources": [
+              "CF2024"
+            ],
+            "locations": [
+              "Opening and October18 timeline",
+              "Opening containment summary"
+            ]
+          },
+          {
+            "claim": "Payment decisions need action-specific authorization evidence beyond successful access.",
+            "type": "Editorial inference",
+            "sources": [
+              "CIAD-2026-0046",
+              "CIAD-2026-0058",
+              "CF2024"
+            ]
+          },
+          {
+            "claim": "Matching payouts to approved records and enforcing payment-stage checks are recommended safeguards.",
+            "type": "Reported recommendations, not measured outcomes",
+            "sources": [
+              "CIAD-2026-0046",
+              "CIAD-2026-0058"
+            ],
+            "locations": [
+              "Recommended Actions"
+            ]
+          },
+          {
+            "claim": "The role allocation, handoff, forwarding behavior, decision branches and payout illustration are proposed or hypothetical.",
+            "type": "Explicit assumptions and editorial proposals",
+            "sources": []
+          }
+        ],
+        "limitations": [
+          "Only supplied material was used; sources were not independently retrieved or verified.",
+          "The CERT-In advisories form one reporting chain. The November update is not independent corroboration of the October advisory.",
+          "Cloudflare is an independent first-party retrospective involving different systems, dates and an organization outside the reported financial-sector campaign. It supports a bounded conceptual comparison, not a shared attacker or payment incident claim.",
+          "Reported containment and recommended safeguards do not establish universal or measured control effectiveness.",
+          "No organization-specific evidence establishes exposure, enforcement coverage, eradication or readiness to resume payouts. Proposed responsibilities require local confirmation.",
+          "No claim about AI’s causal contribution is necessary to this argument.",
+          "This artifact joins the two role notes into an editorial outline. No post has been drafted for publication, published or forwarded."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "source_id": "CF2024",
+        "publisher": "Cloudflare",
+        "date": "2024-02-01",
+        "url": "https://blog.cloudflare.com/thanksgiving-2023-security-incident/",
+        "origin": "victim first-party incident account, independent of CERT-In",
+        "passages": [
+          {
+            "locator": "Opening and October18 timeline",
+            "excerpt": "The one service token and three accounts were not rotated",
+            "claim": "Cloudflare reports that credentials stolen in the October2023 Okta compromise were mistakenly considered unused and left unrotated. Attackers later used them to access its Atlassian environment."
+          },
+          {
+            "locator": "Opening containment summary",
+            "claim": "Cloudflare reports that segmentation and other controls limited lateral movement, with no customer data or global network changes affected."
+          }
+        ],
+        "limitations": "Victim's retrospective account. Different organization, period and systems from CERT-In. Comparison supports a bounded conceptual contrast, not a shared attacker or a universal control-effectiveness claim.",
+        "retrieval": "Web search full article rendering turn16search0; direct archive download returned HTTP403."
+      },
+      {
+        "source_id": "CIAD-2026-0046",
+        "publisher": "CERT-In",
+        "date": "2026-10-09",
+        "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+        "article": "CIAD-2026-0046 Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities Original Issue Date: October 09, 2026 Severity Rating: Critical Description CERT-In/CSIRT-Fin has observed multiple cyber attack campaigns targeting non-banking financial companies (NBFCs), digital lending platforms, fintech entities, payment service providers and wallet operators. Threat actors compromise internet-facing applications, exposed APIs and privileged endpoints, steal payment aggregator/gateway and partner-bank API credentials, and invoke disbursal/fund-transfer APIs directly from within the entities' own whitelisted infrastructure, completely bypassing application-level controls such as loan creation, KYC, sanction, beneficiary verification, balance sufficiency and per-transaction limits. The fraudulent transactions carry dummy reference identifiers, exceed per-transaction limits, and credit funds to attacker-controlled mule accounts across multiple banks. Analysis of these attacks further indicates the possible use of AI-assisted offensive tooling, with the interval between initial compromise and fraudulent fund transfer reducing significantly in recent incidents. Attacker IPs are predominantly associated with hosting infrastructure. Attack Vector Initial compromise is achieved through: Exploitation of exposed internet-facing applications and application server middleware vulnerabilities. Abuse of deprecated, unauthenticated or unused APIs with unrestricted file-upload functionality. Use of stolen long-lived static API tokens hard-coded in source code. Supply-chain compromise of source-code repositories via forged commits. Exploitation of plaintext credentials in configuration files, source code or databases. Access to applications and remote services lacking MFA. Post-compromise, attackers establish persistence via web shells and backdoors, conduct reconnaissance of payment databases and API integrations, steal payment aggregator/gateway and bank API credentials, and directly invoke disbursal/fund-transfer APIs to execute unauthorized transactions. Key TTPs Observed Direct invocation of disbursal/fund-transfer APIs from whitelisted infrastructure using valid credentials. Bypassing of application-level checks (KYC, sanction, beneficiary verification, balance sufficiency). Supply of dummy loan/transaction reference numbers with no corresponding records. Rapid execution of multiple high-value transactions through IMPS/NEFT rails. Transfer of funds to mule accounts across multiple banks with immediate withdrawal. Deletion/truncation of logs, tampering with EDR tools, and anti-forensic cleanup. Possible use of AI-assisted offensive frameworks and large numbers of custom scripts. Recommended Actions Enforce MFA for payment platforms, administrative portals, payment/bank APIs and remote access services. Maintain a complete API inventory; formally decommission deprecated and unused APIs. Enforce per-session authentication on all APIs; eliminate long-lived static tokens. Bind multi-stage transaction flows cryptographically so debit-stage APIs cannot be invoked without preceding validation stages. Implement maker-checker or second-level verification for all fund movement. Validate every payout against sanctioned/approved records; reject reference identifiers with no corresponding records. Enforce per-transaction and per-day cumulative ceilings at the API/payment stage. Apply beneficiary validation (penny-drop, name-to-account matching) and velocity limits on all disbursement paths. Restrict outbound (egress) traffic from production servers through allow-listing. Store all API keys and credentials in secure secret management solutions or HSMs; enforce rotation. Implement real-time monitoring of fund transfers with velocity, amount-band and new-beneficiary checks, with automated blocking or holding. Enable near-real-time reconciliation of system records with bank/aggregator statements. Maintain centralized logging and log retention of at least 180 days. Deploy EDR with tamper protection on servers and endpoints. Adopt behavioural anti-automation controls (rate limiting, sequence-binding) to disrupt script-driven API abuse. Remove internet exposure of internal applications; enforce geofencing under formal change control. Isolate development, testing and production environments. Conduct regular VA/PT including API security testing. Upon detection of suspicious activity: disable compromised accounts, suspend affected APIs, preserve forensic evidence, rotate all credentials, and report to CERT-In/CSIRT-Fin at incident@cert-in.org.in. Reporting Entities are advised to report any signs of suspicious activity related to this attack campaign to CERT-In/CSIRT-Fin at incident@cert-in.org.in , along with all relevant logs, at the earliest.",
+        "origin": "CERT-In reporting chain",
+        "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness."
+      },
+      {
+        "source_id": "CIAD-2026-0058",
+        "publisher": "CERT-In",
+        "date": "2026-11-04",
+        "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+        "article": "CIAD-2026-0058 Escalation of AI-Driven Attacks on BFSI Entities by Threat Actor \"CRAFTY FALCON\" Original Issue Date: November 04, 2026 Severity Rating: Critical Overview This advisory is an update to CERT-In Advisory CIAD-2026-0046 dated 09 October 2026 on Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities. Continued analysis of incidents reported by affected entities including non-banking financial companies (NBFCs), digital lending platforms, fintech entities, payment aggregators, payment service providers and cryptocurrency exchanges / virtual digital asset service providers has revealed a significant escalation of this campaign. Computer Security Incident Response Team - Finance (CSIRT-Fin) under CERT-In has designated the threat actor responsible for this campaign as \"CRAFTY FALCON\": an AI-assisted financial threat actor that surveys its targets with machine intelligence, operates at machine speed and strikes by invoking the victim's own payment and disbursement APIs. The threat is active and ongoing. CSIRT-Fin continues to receive reports of successful attacks, including from NBFCs and fintech entities that had already received the earlier restricted (TLP:AMBER) advisories and had undertaken remediation. The same entities have been deliberately re-targeted, including after incomplete remediation and attacks have been timed to coincide with holidays, weekends and other low-monitoring windows to delay detection and response. All BFSI entities are strongly advised to treat this campaign as an immediate and continuing threat. Analysis has identified the use of multiple publicly available AI-driven offensive security tools against affected entities including the \"ARTEX\" family of LLM-based, \"PentAGI\" autonomous multi-agent AI penetration testing system and the \"Cairn\" attack search engine, in addition to the \"CyberStrikeAI\" framework. These tools execute complete attack chains autonomously at machine speed, generate and refine large numbers of tailored attack scripts in rapid succession and adapt their payloads based on target responses. The supporting attack infrastructure rotates IP addresses within hours to days; infrastructure fingerprints and detailed detection rules have been shared with entities through the restricted advisories. Description Analysis of the reported incidents indicates below attack pattern: Cloud infrastructure of entities targeted including compute, serverless and management services with cloud management services (such as AWS Systems Manager and Lambda) abused to execute commands and deploy malicious files, blending malicious activity into legitimate cloud management channels. Internet-exposed non-production environments (UAT/staging/testing) used as entry points, followed by movement to production environments using shared credentials, tokens or network paths. Application codebases reverse-engineered by the threat actor to develop tailored exploits; unauthorized API calls subsequently initiated using altered/modified application packages, defeating controls that assumed only the legitimate client application would call the APIs. IP allow-listing bypassed by originating traffic from whitelisted third-party fetcher IP pools (such as content-acceleration and app-store review fetchers); any Internet user can cause such shared fetcher services to fetch arbitrary URLs. Micro-value test transactions (such as Rs. 1) performed to validate unauthorized fund flows before executing large-value transfers. Merchant settlement APIs of payment aggregators exploited or abused to move funds. Newly published vulnerabilities exploited as soon as they become public, including file-upload and deserialization exploit chains leading to web shells in PHP and Node.js applications. Cryptocurrency exchanges and virtual digital asset service providers targeted, with wallet keys stolen and funds siphoned from cryptocurrency wallets. Large numbers of custom, tailored scripts created on the fly, with functionally identical variants refined in rapid succession; a pattern consistent with AI-generated code and iterative AI-assisted development. Recommended Actions Treat this campaign as active and escalating: maintain heightened 24x7 security monitoring, with increased staffing and lowered alert thresholds during holidays, weekends and other low-coverage windows. After any incident, assume persistence: perform full eradication with forensic verification and continue periodic threat hunting; entities have been re-attacked after incomplete remediation. Enable centralized, real-time monitoring of cloud audit logs with alerting on high-risk events such as remote command execution, serverless function code updates and creation of roles, users or access keys. Restrict cloud management and serverless execution to approved principals and accounts; alert on any interactive remote-management session or serverless function code change in production. Enforce instance metadata service protections and least-privilege roles for instances and functions; deny wildcard egress in security groups; configure serverless functions with no Internet egress by default. Isolate UAT/staging/testing environments from production - no shared credentials, tokens, API keys, databases or direct network paths and apply production-grade hardening and monitoring to internet-facing non-production environments. Alert on and investigate any access from non-production systems to production systems, credentials or data. Make application deployment directories read-only for the application runtime user; deploy file-integrity monitoring on application directories for web shell detection. Treat client applications and packages as untrusted: enforce server-side validation of every transaction and business rule; implement API request signing with nonce and timestamp; adopt app attestation services and certificate pinning to detect altered or repackaged applications. Establish a rapid patching SLA for internet-facing applications, prioritizing file-upload and deserialization weaknesses in PHP and Node.js applications; use WAF virtual patching as an interim control. Prohibit hardcoded tokens and credentials in source and build code; deploy automated secret scanning across repositories and CI/CD pipelines; use short-lived, fine-grained, least-privileged access tokens and rotate all build and deployment tokens. Alert on token usage from unusual source IPs, user agents or geographies; enforce branch protection, commit signing and mandatory code review on production deployment branches. Replace IP allow-listing of shared third-party fetcher pools with identity-based controls such as mutual TLS, cryptographically signed requests or scoped API keys on dedicated vendor endpoints. Enforce default-deny egress from server segments through allow-listed proxies; unrestricted HTTPS egress was used for command-and-control and data exfiltration. Deploy TLS inspection with alerting on self-signed certificates presented over non-standard ports. Extend real-time transaction monitoring to flag micro-value test transactions to new beneficiaries followed by high-value transactions; treat this pattern as a strong precursor of unauthorized fund transfer and hold or review such flows. Implement transaction velocity rules, new-beneficiary cooling periods and amount-band anomaly detection across all payment and disbursement paths. Enforce server-side validation, maker-checker approval and reconciliation for all merchant settlement instructions submitted through payment aggregator APIs. Store cryptocurrency wallet keys in hardware security modules or cold custody; require multi-signature approvals for withdrawals; monitor withdrawal patterns for anomalies and rotate keys immediately upon any suspected compromise. Prohibit installation or execution of unauthorized security and attack tools including publicly available AI-driven offensive frameworks on corporate infrastructure; monitor for their download and for AI coding-agent processes running with permission checks disabled. Monitor and govern LLM API usage and keys; LLM API traffic originating from servers or other non-development hosts may indicate an attack rig or planted operator console. Establish a policy requiring written approval, defined scope and a time window for all penetration testing; the tools themselves do not validate authorization. Tune SIEM correlation for machine-speed, multi-technique attack patterns , multiple tools and techniques, parallel attack threads, adaptive payload mutation and continuous non-business-hours operation against a single target and adopt automated (SOAR-based) containment. Deploy deception measures such as honeypots, decoy administrative panels and canary credentials; autonomous attack agents enumerate targets exhaustively and are likely to touch decoy assets, generating high-confidence early alerts. Monitor web roots, temporary directories and staging paths for bursts of newly created commented scripts and rapid successive variants of functionally identical scripts - a strong indicator of AI-generated attack tooling. Adopt zero-trust principles , micro-segmentation, identity-based access for every user and service, and inspection of east-west traffic operating on the assumption that the threat actor is already inside the environment. Upon detection of suspicious activity: isolate affected hosts, preserve forensic evidence and logs, rotate all credentials, and report to CERT-In/CSIRT-Fin at incident@cert-in.org.in . Conclusion Entities are advised to report any signs of suspicious activity related to the \"CRAFTY FALCON\" campaign to CERT-In/CSIRT-Fin at incident@cert-in.org.in , along with all relevant logs, at the earliest. Entities shall also contact Indian Cybercrime Coordination Centre (I4C) for reporting of such fraudulent transactions in bulk at Cyber Fraud Mitigation Centre (CFCFRMS Portal). The detailed (restricted) version of this advisory, including the full indicators of compromise, infrastructure fingerprints and detection rules, has been shared with BFSI entities at the appropriate TLP level. Indicators may change while adversary techniques often remain consistent; entities should therefore not limit their response to blocking indicators.",
+        "origin": "CERT-In reporting chain",
+        "limitations": "Reported Indian financial-sector campaign. Recommendations are not measured effectiveness."
+      }
+    ]
+  },
+  "output": {
+    "decision": "GO",
+    "artifact": {
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "format": "Frozen editorial outline; not a drafted post",
+      "thesis": {
+        "type": "Editorial inference",
+        "text": "Successful access alone does not establish payment authorization: payout decisions need evidence of an approved obligation, beneficiary and amount, and evidence that the execution path enforces those conditions.",
+        "sources": [
+          "CIAD-2026-0046",
+          "CIAD-2026-0058"
+        ]
+      },
+      "reader_consequence": {
+        "type": "Proposed operating arrangement",
+        "text": "The business owner defines what authorizes a payout; the technical owner supplies evidence that each fund-movement path enforces those requirements. Together they determine which paths may operate, require review or remain held when authorization or remediation evidence is missing."
+      },
+      "load_bearing_facts": [
+        {
+          "id": "F1",
+          "text": "CERT-In reports that attackers invoked fund-transfer APIs directly using valid credentials from victims’ whitelisted infrastructure, bypassing application-level checks. Transactions included dummy references with no corresponding records.",
+          "sources": [
+            "CIAD-2026-0046"
+          ]
+        },
+        {
+          "id": "F2",
+          "text": "CERT-In’s follow-up advisory reports renewed attacks after incomplete remediation, as well as movement from non-production to production through shared credentials, tokens or network paths.",
+          "sources": [
+            "CIAD-2026-0058"
+          ]
+        }
+      ],
+      "necessary_qualification": "These reports support an evidence requirement, not a finding that any particular organization is exposed or ready to resume payouts; local authorization, enforcement and remediation evidence is still required.",
+      "narrative_beats": [
+        {
+          "beat": 1,
+          "purpose": "Establish the authorization gap",
+          "content": "Open with CERT-In’s reported combination of accepted credentials, whitelisted infrastructure and transaction references lacking corresponding records.",
+          "fact_ids": [
+            "F1"
+          ]
+        },
+        {
+          "beat": 2,
+          "purpose": "Make the business consequence concrete",
+          "content": "Ask what approved obligation, beneficiary and amount justify the payout. Present these as proposed decision requirements, not evidence already available locally.",
+          "type": "Editorial inference"
+        },
+        {
+          "beat": 3,
+          "purpose": "Define the technical handoff",
+          "content": "Require evidence that relevant execution paths enforce the agreed authorization conditions, and that suspected compromise has been investigated. Use the reported repeat attacks to explain why remediation completion needs evidence.",
+          "type": "Editorial inference",
+          "fact_ids": [
+            "F1",
+            "F2"
+          ]
+        },
+        {
+          "beat": 4,
+          "purpose": "Illustrate the decision",
+          "content": "A hypothetical request has an accepted token and allowed source address but no matching approved obligation. Under the proposed policy, it is held for review until authorization can be established.",
+          "type": "Hypothetical illustration; not a reported event"
+        },
+        {
+          "beat": 5,
+          "purpose": "Close on the shared decision",
+          "content": "The useful handoff is the business definition of an authorized payment paired with technical evidence that the payment path enforces it.",
+          "type": "Editorial conclusion"
+        }
+      ]
+    },
+    "claim_support": [
+      {
+        "claim_id": "F1",
+        "type": "Reported fact",
+        "sources": [
+          "CIAD-2026-0046"
+        ],
+        "locations": [
+          "Description",
+          "Key TTPs Observed"
+        ]
+      },
+      {
+        "claim_id": "F2",
+        "type": "Reported fact",
+        "sources": [
+          "CIAD-2026-0058"
+        ],
+        "locations": [
+          "Overview",
+          "Description"
+        ]
+      },
+      {
+        "claim": "Access alone is insufficient evidence of payment authorization; decisions should connect approved payment records to enforcement across execution paths.",
+        "type": "Editorial inference and proposed decision requirement",
+        "sources": [
+          "CIAD-2026-0046",
+          "CIAD-2026-0058"
+        ],
+        "locations": [
+          "Description",
+          "Recommended Actions"
+        ]
+      },
+      {
+        "claim": "Role allocation, operating decisions and the illustrative payout hold are proposed or hypothetical.",
+        "type": "Explicit proposal or illustration",
+        "sources": []
+      }
+    ],
+    "limitations": [
+      "Only supplied material was used; sources were not independently retrieved or verified.",
+      "The CERT-In advisories form one reporting chain; the follow-up is not independent corroboration.",
+      "Recommended safeguards are not demonstrated outcomes or guarantees of control effectiveness.",
+      "No organization-specific evidence or confirmed allocation of owner responsibilities was supplied.",
+      "This freezes an editorial outline only; no post has been drafted, published or forwarded."
+    ]
+  },
+  "raw": "{\"decision\":\"GO\",\"artifact\":{\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"format\":\"Frozen editorial outline; not a drafted post\",\"thesis\":{\"type\":\"Editorial inference\",\"text\":\"Successful access alone does not establish payment authorization: payout decisions need evidence of an approved obligation, beneficiary and amount, and evidence that the execution path enforces those conditions.\",\"sources\":[\"CIAD-2026-0046\",\"CIAD-2026-0058\"]},\"reader_consequence\":{\"type\":\"Proposed operating arrangement\",\"text\":\"The business owner defines what authorizes a payout; the technical owner supplies evidence that each fund-movement path enforces those requirements. Together they determine which paths may operate, require review or remain held when authorization or remediation evidence is missing.\"},\"load_bearing_facts\":[{\"id\":\"F1\",\"text\":\"CERT-In reports that attackers invoked fund-transfer APIs directly using valid credentials from victims’ whitelisted infrastructure, bypassing application-level checks. Transactions included dummy references with no corresponding records.\",\"sources\":[\"CIAD-2026-0046\"]},{\"id\":\"F2\",\"text\":\"CERT-In’s follow-up advisory reports renewed attacks after incomplete remediation, as well as movement from non-production to production through shared credentials, tokens or network paths.\",\"sources\":[\"CIAD-2026-0058\"]}],\"necessary_qualification\":\"These reports support an evidence requirement, not a finding that any particular organization is exposed or ready to resume payouts; local authorization, enforcement and remediation evidence is still required.\",\"narrative_beats\":[{\"beat\":1,\"purpose\":\"Establish the authorization gap\",\"content\":\"Open with CERT-In’s reported combination of accepted credentials, whitelisted infrastructure and transaction references lacking corresponding records.\",\"fact_ids\":[\"F1\"]},{\"beat\":2,\"purpose\":\"Make the business consequence concrete\",\"content\":\"Ask what approved obligation, beneficiary and amount justify the payout. Present these as proposed decision requirements, not evidence already available locally.\",\"type\":\"Editorial inference\"},{\"beat\":3,\"purpose\":\"Define the technical handoff\",\"content\":\"Require evidence that relevant execution paths enforce the agreed authorization conditions, and that suspected compromise has been investigated. Use the reported repeat attacks to explain why remediation completion needs evidence.\",\"type\":\"Editorial inference\",\"fact_ids\":[\"F1\",\"F2\"]},{\"beat\":4,\"purpose\":\"Illustrate the decision\",\"content\":\"A hypothetical request has an accepted token and allowed source address but no matching approved obligation. Under the proposed policy, it is held for review until authorization can be established.\",\"type\":\"Hypothetical illustration; not a reported event\"},{\"beat\":5,\"purpose\":\"Close on the shared decision\",\"content\":\"The useful handoff is the business definition of an authorized payment paired with technical evidence that the payment path enforces it.\",\"type\":\"Editorial conclusion\"}]},\"claim_support\":[{\"claim_id\":\"F1\",\"type\":\"Reported fact\",\"sources\":[\"CIAD-2026-0046\"],\"locations\":[\"Description\",\"Key TTPs Observed\"]},{\"claim_id\":\"F2\",\"type\":\"Reported fact\",\"sources\":[\"CIAD-2026-0058\"],\"locations\":[\"Overview\",\"Description\"]},{\"claim\":\"Access alone is insufficient evidence of payment authorization; decisions should connect approved payment records to enforcement across execution paths.\",\"type\":\"Editorial inference and proposed decision requirement\",\"sources\":[\"CIAD-2026-0046\",\"CIAD-2026-0058\"],\"locations\":[\"Description\",\"Recommended Actions\"]},{\"claim\":\"Role allocation, operating decisions and the illustrative payout hold are proposed or hypothetical.\",\"type\":\"Explicit proposal or illustration\",\"sources\":[]}],\"limitations\":[\"Only supplied material was used; sources were not independently retrieved or verified.\",\"The CERT-In advisories form one reporting chain; the follow-up is not independent corroboration.\",\"Recommended safeguards are not demonstrated outcomes or guarantees of control effectiveness.\",\"No organization-specific evidence or confirmed allocation of owner responsibilities was supplied.\",\"This freezes an editorial outline only; no post has been drafted, published or forwarded.\"]}",
+  "receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"decision\":\"GO\",\"artifact\":{\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"format\":\"Frozen editorial outline; not a drafted post\",\"thesis\":{\"type\":\"Editorial inference\",\"text\":\"Successful access alone does not establish payment authorization: payout decisions need evidence of an approved obligation, beneficiary and amount, and evidence that the execution path enforces those conditions.\",\"sources\":[\"CIAD-2026-0046\",\"CIAD-2026-0058\"]},\"reader_consequence\":{\"type\":\"Proposed operating arrangement\",\"text\":\"The business owner defines what authorizes a payout; the technical owner supplies evidence that each fund-movement path enforces those requirements. Together they determine which paths may operate, require review or remain held when authorization or remediation evidence is missing.\"},\"load_bearing_facts\":[{\"id\":\"F1\",\"text\":\"CERT-In reports that attackers invoked fund-transfer APIs directly using valid credentials from victims’ whitelisted infrastructure, bypassing application-level checks. Transactions included dummy references with no corresponding records.\",\"sources\":[\"CIAD-2026-0046\"]},{\"id\":\"F2\",\"text\":\"CERT-In’s follow-up advisory reports renewed attacks after incomplete remediation, as well as movement from non-production to production through shared credentials, tokens or network paths.\",\"sources\":[\"CIAD-2026-0058\"]}],\"necessary_qualification\":\"These reports support an evidence requirement, not a finding that any particular organization is exposed or ready to resume payouts; local authorization, enforcement and remediation evidence is still required.\",\"narrative_beats\":[{\"beat\":1,\"purpose\":\"Establish the authorization gap\",\"content\":\"Open with CERT-In’s reported combination of accepted credentials, whitelisted infrastructure and transaction references lacking corresponding records.\",\"fact_ids\":[\"F1\"]},{\"beat\":2,\"purpose\":\"Make the business consequence concrete\",\"content\":\"Ask what approved obligation, beneficiary and amount justify the payout. Present these as proposed decision requirements, not evidence already available locally.\",\"type\":\"Editorial inference\"},{\"beat\":3,\"purpose\":\"Define the technical handoff\",\"content\":\"Require evidence that relevant execution paths enforce the agreed authorization conditions, and that suspected compromise has been investigated. Use the reported repeat attacks to explain why remediation completion needs evidence.\",\"type\":\"Editorial inference\",\"fact_ids\":[\"F1\",\"F2\"]},{\"beat\":4,\"purpose\":\"Illustrate the decision\",\"content\":\"A hypothetical request has an accepted token and allowed source address but no matching approved obligation. Under the proposed policy, it is held for review until authorization can be established.\",\"type\":\"Hypothetical illustration; not a reported event\"},{\"beat\":5,\"purpose\":\"Close on the shared decision\",\"content\":\"The useful handoff is the business definition of an authorized payment paired with technical evidence that the payment path enforces it.\",\"type\":\"Editorial conclusion\"}]},\"claim_support\":[{\"claim_id\":\"F1\",\"type\":\"Reported fact\",\"sources\":[\"CIAD-2026-0046\"],\"locations\":[\"Description\",\"Key TTPs Observed\"]},{\"claim_id\":\"F2\",\"type\":\"Reported fact\",\"sources\":[\"CIAD-2026-0058\"],\"locations\":[\"Overview\",\"Description\"]},{\"claim\":\"Access alone is insufficient evidence of payment authorization; decisions should connect approved payment records to enforcement across execution paths.\",\"type\":\"Editorial inference and proposed decision requirement\",\"sources\":[\"CIAD-2026-0046\",\"CIAD-2026-0058\"],\"locations\":[\"Description\",\"Recommended Actions\"]},{\"claim\":\"Role allocation, operating decisions and the illustrative payout hold are proposed or hypothetical.\",\"type\":\"Explicit proposal or illustration\",\"sources\":[]}],\"limitations\":[\"Only supplied material was used; sources were not independently retrieved or verified.\",\"The CERT-In advisories form one reporting chain; the follow-up is not independent corroboration.\",\"Recommended safeguards are not demonstrated outcomes or guarantees of control effectiveness.\",\"No organization-specific evidence or confirmed allocation of owner responsibilities was supplied.\",\"This freezes an editorial outline only; no post has been drafted, published or forwarded.\"]}"
+      },
+      "attempt_id": "attempt-43c7bcb31bee48269d5d4269878de2e8",
+      "result_sha256": "0c01159dde103f82b8bb9cedd670ab59b88583c9acf620c4178a2a885ae6242f",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 16064,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 909,
+        "reasoning_output_tokens": 18
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "finished_at": "2026-11-05T03:07:04.146985+00:00"
+}

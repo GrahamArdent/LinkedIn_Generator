@@ -1,0 +1,22 @@
+--- original
++++ one-rewrite
+@@ -1,11 +1,13 @@
+-I liked the AI draft. That proved very little.
++I preferred one AI draft. The process still had to earn its place.
+ 
+-I preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.
++The comparison was basic. I wanted to see the brief, the context given to the model, what changed at each stage, and the final writing. I also wanted to know what my preference would be used to change.
+ 
+-I also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?
++Picking a favourite answers one question. It doesn’t tell me which steps helped, or which were unnecessary.
+ 
+-That distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.
++That mattered when a paid-API trial was proposed. I already had a Codex subscription environment that could be reused, so I questioned the need for another route. I asked for a quick, economical solution, with extra layers deferred.
+ 
+-My starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.
++That wasn’t evidence of measured savings. It was a reason to make the case for adding something.
+ 
+-I’m willing to add complexity. I want to see what it earns.
++The same standard applies to the writing process. Show me the draft before a step and after it, alongside the requirement that step was meant to address. Then I can judge the change instead of giving the whole process credit for an answer I happen to like.
++
++I’m willing to add complexity. My preference alone doesn’t justify it.

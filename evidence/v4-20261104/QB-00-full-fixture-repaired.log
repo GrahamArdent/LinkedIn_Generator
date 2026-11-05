@@ -1,0 +1,155 @@
+F....................................................................... [ 72%]
+............................                                             [100%]
+=================================== FAILURES ===================================
+____________ test_run_generation_uses_explicit_orchestrator_context ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x78816c5196e0>
+
+    def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
+        captured = {}
+    
+        class FakePipeline:
+            def __init__(self, config):
+                captured["config"] = config
+    
+            def plan(self, _prompt, ctx):
+                captured["plan_ctx"] = ctx
+                return {"angle": "real-work lesson", "citations": []}
+    
+            def draft_variants(self, _prompt, ctx):
+                captured["draft_ctx"] = ctx
+                return ["draft"]
+    
+            def judge_select(self, _prompt, _persona_profile, drafts):
+                return drafts[0]
+    
+            def critic(self, _prompt, text, _persona_profile, *, voice_examples):
+                return text
+    
+            def humanize(self, _prompt, text, _persona_profile, *, voice_examples):
+                return text
+    
+            def finalize(self, persona_key, text, citations, hashtags, **_metadata):
+                captured["finalize"] = {
+                    "persona_key": persona_key,
+                    "text": text,
+                    "citations": citations,
+                    "hashtags": hashtags,
+                }
+                return {
+                    "body": text,
+                    "hashtags": hashtags,
+                    "sources": citations,
+                    "telemetry": {"persona": persona_key},
+                }
+    
+        def fake_load_yaml(path):
+            if path.endswith("prompt_kit.config.yaml"):
+                return {}
+            if path.endswith("prompts_packs.yaml"):
+                return {
+                    "plan_prompt": {},
+                    "draft_prompt": {},
+                    "judge_prompt": {},
+                    "critic_prompt": {},
+                    "humanize_prompt": {},
+                }
+            if path.endswith("personas.yaml"):
+                return {"personas": {"graham": {"tone": ["direct"]}}}
+            if path.endswith(("cta_policies.yaml", "graham_voice_profile.yaml", "graham_spoken_voice.yaml")):
+                return {}
+            raise AssertionError(path)
+    
+        monkeypatch.setattr(api, "Pipeline", FakePipeline)
+        monkeypatch.setattr(api, "load_yaml", fake_load_yaml)
+    
+>       result = api.run_generation(
+            topic="What real buyer work taught us",
+            services=["discovery"],
+            persona_key="graham",
+            audience="AI founders",
+            objective="useful visibility from real work",
+            targets=["founders"],
+            allowed_sources=[
+                {
+                    "title": "Buyer note",
+                    "fact": "Reliability mattered more than novelty.",
+                    "url": "https://example.com/note",
+                }
+            ],
+            hashtags=["#AI"],
+        )
+
+tests/test_api_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+topic = 'What real buyer work taught us', services = ['discovery']
+persona_key = 'graham', audience = 'AI founders'
+objective = 'useful visibility from real work', author_pov = 'individual'
+content_goal = 'auto', opportunity_gate = False, publish_quality_gate = False
+publish_quality_threshold = None, targets = ['founders']
+allowed_sources = [{'title': 'Buyer note', 'fact': 'Reliability mattered more than novelty.', 'url': 'https://example.com/note'}]
+voice_examples = None, hashtags = ['#AI'], llm_client = None
+opportunity_client = None, publish_quality_client = None
+
+    def run_generation(
+        topic: str,
+        services: list[str],
+        persona_key: str = "ardent_v2",
+        *,
+        audience: str = "C-suite leaders",
+        objective: str = "Educate and convert attention to pipeline",
+        author_pov: str = "individual",
+        content_goal: str = "auto",
+        opportunity_gate: bool = False,
+        publish_quality_gate: bool = False,
+        publish_quality_threshold: int | None = None,
+        targets: list[str] | None = None,
+        allowed_sources: list[dict[str, Any]] | None = None,
+        voice_examples: list[dict[str, Any]] | None = None,
+        hashtags: list[str] | None = None,
+        llm_client: Any | None = None,
+        opportunity_client: Any | None = None,
+        publish_quality_client: Any | None = None,
+    ) -> dict[str, Any]:
+        """Run the generation pipeline with explicit caller context.
+    
+        Existing positional/default arguments remain for legacy callers. New
+        orchestrators should supply audience, objective, author POV, content goal,
+        evidence and hashtags explicitly. Voice authority and approved examples are
+        style and reasoning evidence, never factual evidence. Dedication-style
+        requests may enable the opportunity preflight so weak subjects are skipped
+        and promising-but-generic subjects request one concrete detail before a
+        full draft is generated. They may also enable the publish-quality gate: a
+        finalized post below the configured threshold is preserved and receives one
+        bounded improvement candidate for human review.
+        """
+    
+        base = os.path.join(os.path.dirname(__file__), "../../")
+        prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
+        prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
+        personas = load_yaml(os.path.join(base, "config/personas.yaml"))
+        cta_policies = load_yaml(os.path.join(base, "config/cta_policies.yaml"))
+    
+        cfg = {
+            "prompt_kit": {
+                "emoji_max": int(prompt_kit.get("emoji_max", 3)),
+                "bullet_char": prompt_kit.get("bullet_char", "🔹"),
+                "hashtag_min": int(prompt_kit.get("hashtag_min", 3)),
+                "hashtag_max": int(prompt_kit.get("hashtag_max", 5)),
+                "strip_links_in_body": prompt_kit.get("strip_links_in_body", "true")
+                in ("true", "True", "1"),
+                "append_sources_block": prompt_kit.get("append_sources_block", "false")
+                in ("true", "True", "1"),
+                "allow_em_dash": prompt_kit.get("allow_em_dash", "false") in ("true", "True", "1"),
+                "forbidden_phrases": list(cta_policies.get("forbidden_phrases", []) or []),
+            }
+        }
+>       pipe = Pipeline(cfg, client=llm_client)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: test_run_generation_uses_explicit_orchestrator_context.<locals>.FakePipeline.__init__() got an unexpected keyword argument 'client'
+
+src/app/api.py:177: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_api_contract.py::test_run_generation_uses_explicit_orchestrator_context
+1 failed, 99 passed in 1.63s

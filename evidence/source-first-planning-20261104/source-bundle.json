@@ -1,0 +1,209 @@
+{
+  "schema_version": "1",
+  "request_sha256": "00cb5a3ff91916d81af7054c23fb3bf27c529a2ff0350fc4d2b2c93ded79d23d",
+  "central_claim_id": "C1",
+  "sources": [
+    {
+      "source_id": "CIAD-2026-0046",
+      "title": "CIAD-2026-0046",
+      "publisher": "CERT-In / CSIRT-Fin",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "checked_at": "2026-11-04",
+      "status": "usable",
+      "limitations": "Agency-reported Indian campaign. Public report lacks comparative AI causal measurements, losses, control-effectiveness measurements and restricted indicators. Proposed tests are advice, not observed outcomes.",
+      "passages": [
+        {
+          "locator": "Description, second sentence",
+          "excerpt": "Threat actors compromise internet-facing applications, exposed APIs and privileged endpoints, steal payment aggregator/gateway and partner-bank API credentials, and invoke disbursal/fund-transfer APIs directly from within the entities' own whitelisted infrastructure, completely bypassing application-level controls such as loan creation, KYC, sanction, beneficiary verification, balance sufficiency and per-transaction limits."
+        },
+        {
+          "locator": "Key TTPs Observed",
+          "excerpt": "Supply of dummy loan/transaction reference numbers with no corresponding records."
+        },
+        {
+          "locator": "Recommended Actions",
+          "excerpt": "Bind multi-stage transaction flows cryptographically so debit-stage APIs cannot be invoked without preceding validation stages."
+        },
+        {
+          "locator": "Recommended Actions",
+          "excerpt": "Validate every payout against sanctioned/approved records; reject reference identifiers with no corresponding records. Enforce per-transaction and per-day cumulative ceilings at the API/payment stage."
+        }
+      ]
+    },
+    {
+      "source_id": "CIAD-2026-0058",
+      "title": "CIAD-2026-0058",
+      "publisher": "CERT-In / CSIRT-Fin",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+      "checked_at": "2026-11-04",
+      "status": "usable",
+      "limitations": "Agency-reported Indian campaign. Public report lacks comparative AI causal measurements, losses, control-effectiveness measurements and restricted indicators. Proposed tests are advice, not observed outcomes.",
+      "passages": [
+        {
+          "locator": "Description, attack-pattern list",
+          "excerpt": "Application codebases reverse-engineered by the threat actor to develop tailored exploits; unauthorized API calls subsequently initiated using altered/modified application packages, defeating controls that assumed only the legitimate client application would call the APIs."
+        },
+        {
+          "locator": "Description, attack-pattern list",
+          "excerpt": "IP allow-listing bypassed by originating traffic from whitelisted third-party fetcher IP pools (such as content-acceleration and app-store review fetchers); any Internet user can cause such shared fetcher services to fetch arbitrary URLs."
+        },
+        {
+          "locator": "Recommended Actions",
+          "excerpt": "Enforce server-side validation, maker-checker approval and reconciliation for all merchant settlement instructions submitted through payment aggregator APIs."
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "kind": "fact",
+      "text": "CERT-In/CSIRT-Fin reports direct invocation of fund-transfer APIs from victims' whitelisted infrastructure after credential theft, bypassing application-level controls.",
+      "source_ids": [
+        "CIAD-2026-0046"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "kind": "fact",
+      "text": "The advisory reports reference identifiers without corresponding records as an observed technique.",
+      "source_ids": [
+        "CIAD-2026-0046"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "kind": "fact",
+      "text": "CERT-In recommends binding transaction stages so the debit API depends on preceding validation.",
+      "source_ids": [
+        "CIAD-2026-0046"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "kind": "fact",
+      "text": "CERT-In recommends approval-record validation and limits at the API/payment stage.",
+      "source_ids": [
+        "CIAD-2026-0046"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "kind": "fact",
+      "text": "The November update reports modified application packages defeating controls that assumed only legitimate clients would call APIs.",
+      "source_ids": [
+        "CIAD-2026-0058"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "kind": "fact",
+      "text": "The update reports bypass of IP allow-listing through shared third-party fetcher services.",
+      "source_ids": [
+        "CIAD-2026-0058"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "kind": "fact",
+      "text": "CERT-In extends transaction validation and approval recommendations explicitly to merchant settlement APIs.",
+      "source_ids": [
+        "CIAD-2026-0058"
+      ]
+    },
+    {
+      "claim_id": "I1",
+      "kind": "inference",
+      "text": "The reported bypasses support a distinction between permission to call an API and authorization for the particular transfer. A trusted origin or valid credential does not by itself demonstrate that the business approved the beneficiary, amount and transaction. My proposed editorial implication is that leaders should seek evidence of enforcement at the fund-moving endpoint, including its dependency on prior approval, rather than infer coverage from checks elsewhere in the application. The proposed tests are verification steps derived from the advisories, not tests reported by CERT-In.",
+      "source_ids": [
+        "CIAD-2026-0046",
+        "CIAD-2026-0058"
+      ]
+    },
+    {
+      "claim_id": "O1",
+      "kind": "opinion",
+      "text": "Ask the payment engineering owner and finance control owner to trace one disbursement path and one merchant settlement path. In an authorized test environment, verify that the execution endpoint rejects a request with valid credentials but no corresponding approved record, missing preceding validation, or an amount above the applicable limit. Record where each rejection is enforced, then extend the review to every fund-movement path. Treat cryptographic binding between validation and debit stages as a design requirement to assess, consistent with CERT-In's recommendation.",
+      "source_ids": []
+    }
+  ],
+  "planning_brief": {
+    "decision": "draft",
+    "angle": "A payment API can accept valid credentials from trusted infrastructure while executing a transaction that never passed business approval. Examine whether the fund-moving endpoint independently verifies the approved transaction and its preceding validation stages.",
+    "useful_difference_from_generic_advice": "Moves beyond credential protection and IP restrictions to the dependency between business approval and execution. CERT-In's October advisory describes attackers bypassing application checks through direct API calls; its November update adds altered clients and shared third-party fetcher infrastructure as routes around assumptions about who is calling. The editorial question is whether approval remains enforceable when those assumptions fail.",
+    "reader_action": "Ask the payment engineering owner and finance control owner to trace one disbursement path and one merchant settlement path. In an authorized test environment, verify that the execution endpoint rejects a request with valid credentials but no corresponding approved record, missing preceding validation, or an amount above the applicable limit. Record where each rejection is enforced, then extend the review to every fund-movement path. Treat cryptographic binding between validation and debit stages as a design requirement to assess, consistent with CERT-In's recommendation.",
+    "forward_who_to_whom_and_why": "A CIO or business payments leader should forward the brief jointly to the payment API engineering lead and the finance operations control owner. Engineering can establish what the execution endpoint enforces; finance can establish which approval records and limits must govern the transfer.",
+    "format": "Short technical editorial brief organized around the approval-to-execution dependency, with an attributed incident mechanism, supporting evidence from the update, and a concrete verification question. Use Graham Hill's individual, precise, restrained voice without claiming personal incident experience.",
+    "facts": [
+      {
+        "source_id": "CIAD-2026-0046",
+        "claim": "CERT-In/CSIRT-Fin reports direct invocation of fund-transfer APIs from victims' whitelisted infrastructure after credential theft, bypassing application-level controls.",
+        "exact_excerpt": "Threat actors compromise internet-facing applications, exposed APIs and privileged endpoints, steal payment aggregator/gateway and partner-bank API credentials, and invoke disbursal/fund-transfer APIs directly from within the entities' own whitelisted infrastructure, completely bypassing application-level controls such as loan creation, KYC, sanction, beneficiary verification, balance sufficiency and per-transaction limits.",
+        "locator": "Description, second sentence"
+      },
+      {
+        "source_id": "CIAD-2026-0046",
+        "claim": "The advisory reports reference identifiers without corresponding records as an observed technique.",
+        "exact_excerpt": "Supply of dummy loan/transaction reference numbers with no corresponding records.",
+        "locator": "Key TTPs Observed"
+      },
+      {
+        "source_id": "CIAD-2026-0046",
+        "claim": "CERT-In recommends binding transaction stages so the debit API depends on preceding validation.",
+        "exact_excerpt": "Bind multi-stage transaction flows cryptographically so debit-stage APIs cannot be invoked without preceding validation stages.",
+        "locator": "Recommended Actions"
+      },
+      {
+        "source_id": "CIAD-2026-0046",
+        "claim": "CERT-In recommends approval-record validation and limits at the API/payment stage.",
+        "exact_excerpt": "Validate every payout against sanctioned/approved records; reject reference identifiers with no corresponding records. Enforce per-transaction and per-day cumulative ceilings at the API/payment stage.",
+        "locator": "Recommended Actions"
+      },
+      {
+        "source_id": "CIAD-2026-0058",
+        "claim": "The November update reports modified application packages defeating controls that assumed only legitimate clients would call APIs.",
+        "exact_excerpt": "Application codebases reverse-engineered by the threat actor to develop tailored exploits; unauthorized API calls subsequently initiated using altered/modified application packages, defeating controls that assumed only the legitimate client application would call the APIs.",
+        "locator": "Description, attack-pattern list"
+      },
+      {
+        "source_id": "CIAD-2026-0058",
+        "claim": "The update reports bypass of IP allow-listing through shared third-party fetcher services.",
+        "exact_excerpt": "IP allow-listing bypassed by originating traffic from whitelisted third-party fetcher IP pools (such as content-acceleration and app-store review fetchers); any Internet user can cause such shared fetcher services to fetch arbitrary URLs.",
+        "locator": "Description, attack-pattern list"
+      },
+      {
+        "source_id": "CIAD-2026-0058",
+        "claim": "CERT-In extends transaction validation and approval recommendations explicitly to merchant settlement APIs.",
+        "exact_excerpt": "Enforce server-side validation, maker-checker approval and reconciliation for all merchant settlement instructions submitted through payment aggregator APIs.",
+        "locator": "Recommended Actions"
+      }
+    ],
+    "inference": "The reported bypasses support a distinction between permission to call an API and authorization for the particular transfer. A trusted origin or valid credential does not by itself demonstrate that the business approved the beneficiary, amount and transaction. My proposed editorial implication is that leaders should seek evidence of enforcement at the fund-moving endpoint, including its dependency on prior approval, rather than infer coverage from checks elsewhere in the application. The proposed tests are verification steps derived from the advisories, not tests reported by CERT-In.",
+    "limitations": [
+      "The supplied public advisories provide agency findings and recommendations, not transaction traces or implementation details sufficient to independently reproduce the incidents.",
+      "They do not quantify losses, attack success rates or the effectiveness of individual controls.",
+      "They do not establish that every affected entity had the same approval architecture, or that the proposed checks would prevent every attack route.",
+      "Cryptographic stage binding is recommended without an implementation specification; its design and coverage require system-specific assessment.",
+      "The November advisory says detailed indicators and detection rules were distributed separately in restricted advisories; those materials are not included here."
+    ],
+    "rejected_angles": [
+      {
+        "angle": "AI makes payment fraud unstoppable or universally autonomous.",
+        "reason": "This would overstate the evidence and distract from the concrete authorization failure. The advisories attribute AI-assisted tooling to the campaign but supply no comparative measurements establishing its causal contribution."
+      },
+      {
+        "angle": "IP allow-listing is useless.",
+        "reason": "The sources document particular trust failures, not the absence of value in all network restrictions. The useful distinction is between network origin and transaction approval."
+      },
+      {
+        "angle": "A broad checklist of every recommended security control.",
+        "reason": "It would obscure the specific business dependency that payment and finance owners can verify together."
+      },
+      {
+        "angle": "Graham Hill has personally seen or resolved these incidents.",
+        "reason": "The input supplies an author identity and subject area, not evidence of personal involvement."
+      }
+    ]
+  },
+  "human_approval": null
+}

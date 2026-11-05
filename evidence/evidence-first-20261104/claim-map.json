@@ -1,0 +1,59 @@
+{
+  "review_status": "machine qualitative mapping; human entailment review pending",
+  "outputs": {
+    "original": {
+      "content_sha256": "a3454852cdbe14fc96e9370d5d94ff14df4f3e6aba1cf3f029978ed1b95c916e",
+      "documented_fact_support": [
+        "C1 / S1: historical help-desk reset/MFA transfer tactic",
+        "C2 / S1: phishing-resistant MFA recommendation"
+      ],
+      "interpretations": [
+        "I1: recovery changes who is trusted as owner; cryptography distinction is interpretation, not a measured source outcome"
+      ],
+      "opinion": [
+        "O1: recommended practical review question"
+      ],
+      "not_claimed": [
+        "Graham/Ardent client incident",
+        "loss, frequency or prevention guarantee"
+      ],
+      "human_verdict": null
+    },
+    "rewrite": {
+      "content_sha256": "0ce3c656025feba4f3688a4c67348106c6e6ef8885b6151020b7aaf0188b5939",
+      "documented_fact_support": [
+        "C1 / S1: historical help-desk reset/MFA transfer tactic",
+        "C2 / S1: phishing-resistant MFA recommendation"
+      ],
+      "interpretations": [
+        "I1: recovery changes who is trusted as owner; cryptography distinction is interpretation, not a measured source outcome"
+      ],
+      "opinion": [
+        "O1: recommended practical review question"
+      ],
+      "not_claimed": [
+        "Graham/Ardent client incident",
+        "loss, frequency or prevention guarantee"
+      ],
+      "human_verdict": null
+    },
+    "baseline": {
+      "content_sha256": "4c34af21eb7063aa06dbbb9f51115cb2a2888c377d1db6b2279cedaa2c8fdb69",
+      "documented_fact_support": [
+        "C1 / S1: historical help-desk reset/MFA transfer tactic",
+        "C2 / S1: phishing-resistant MFA recommendation"
+      ],
+      "interpretations": [
+        "I1: recovery changes who is trusted as owner; cryptography distinction is interpretation, not a measured source outcome"
+      ],
+      "opinion": [
+        "O1: recommended practical review question"
+      ],
+      "not_claimed": [
+        "Graham/Ardent client incident",
+        "loss, frequency or prevention guarantee"
+      ],
+      "human_verdict": null
+    }
+  }
+}

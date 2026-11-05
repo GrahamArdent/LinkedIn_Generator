@@ -1,0 +1,17 @@
+{
+  "test_id": "QB-00-full-venv",
+  "checked_at_utc": "2026-11-04T21:49:29.267265+00:00",
+  "ended_at_utc": "2026-11-04T21:49:31.854481+00:00",
+  "head_sha": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "mode": "fixture",
+  "exit_code": 1,
+  "log": "evidence/v4-20261104/QB-00-full-venv.log",
+  "log_sha256": "cbb92e601d7d7e898f6b60111e6f32e671f7d2d2405df4831ec314a123313f27",
+  "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

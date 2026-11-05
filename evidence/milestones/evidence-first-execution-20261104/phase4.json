@@ -1,0 +1,116 @@
+{
+  "phase": "phase4",
+  "checked_at": "2026-11-04T23:54:29.816377+00:00",
+  "tested_head": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "output": "f89e3d3bc75f4acc42351d3b041cb54f23250393\n"
+  },
+  "dirty_changes": {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 0,
+    "output": " M CURRENT_WORK_PACKET.md\n M docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md\n M docs/implementation/v4/LINKEDIN_GENERATOR_EVIDENCE_AND_CHALLENGE_V4_2026-11-04.md\n M docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md\n M docs/implementation/v4/LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md\n M docs/implementation/v4/LINKEDIN_GENERATOR_PACKAGE_README_V4_2026-11-04.md\n?? evidence/evidence-first-20261104/EVALUATION.md\n?? evidence/evidence-first-20261104/claim-map.json\n?? evidence/evidence-first-20261104/comparison-command.log\n?? evidence/evidence-first-20261104/execution-trace.json\n?? evidence/evidence-first-20261104/freeze.json\n?? evidence/evidence-first-20261104/omitted-source-command.log\n?? evidence/evidence-first-20261104/omitted-source.json\n?? evidence/evidence-first-20261104/original-to-rewrite.diff\n?? evidence/evidence-first-20261104/pre-review-freeze.json\n?? evidence/evidence-first-20261104/prompts/\n?? evidence/evidence-first-20261104/reopen.json\n?? evidence/evidence-first-20261104/trial-command.log\n?? evidence/evidence-first-20261104/trial/\n?? evidence/milestones/evidence-first-execution-20261104/phase4-diff.log\n?? evidence/milestones/evidence-first-execution-20261104/phase4-pytest.log\n?? evidence/milestones/evidence-first-execution-20261104/phase4-show.log\n"
+  },
+  "source_config_tests_sha256": "a8e3d3dab75e0922eba6620839abe271a50b151bd06b47e9311cabb34fe771cb",
+  "checks": {
+    "pytest": {
+      "command": [
+        "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "phase4-pytest.log",
+      "sha256": "180c2d7486592a79c2ab02446acc6435f3b6898f1a71e3c0794b693acd693181"
+    },
+    "diff": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "phase4-diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "show": {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "show",
+        "--out",
+        "evidence/transparent-evaluation-20261104/trial"
+      ],
+      "exit_code": 0,
+      "log": "phase4-show.log",
+      "sha256": "4891c0ff3164be749abd0a6fdc7964cbe6499219389d12ca4f0f5b533c07f487"
+    }
+  },
+  "remote_heads": {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/fix/selected-candidate-v4-20261104"
+    ],
+    "exit_code": 0,
+    "output": "e0efc3a69d4e1db3c42efccf87f6a6b054a65966\trefs/heads/fix/selected-candidate-v4-20261104\na714d1ef355ade9ca47a52b301ea477bd0c14f34\trefs/heads/main\n"
+  },
+  "pr": {
+    "number": 24,
+    "observed_state": "open/draft/unmerged",
+    "read_surface": "connected GitHub metadata; required reviews/checks not established; no hosted acceptance claimed"
+  },
+  "runtime": {
+    "state": "CANDIDATE_ONLY",
+    "checkout": "/home/graham/work/linkedin-codex-trial-20261104",
+    "launcher": "/home/graham/.local/bin/linkedin-codex",
+    "python": "/usr/bin/python3.14",
+    "client_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+    "new_generation_during_checkpoint": false
+  },
+  "disposition": "GO",
+  "product_acceptance": "HOLD",
+  "native_trial": {
+    "report": "../../evidence-first-20261104/EVALUATION.md",
+    "trace": "../../evidence-first-20261104/execution-trace.json",
+    "budget": {
+      "model_executions": 10,
+      "physical_starts": 30,
+      "cumulative_cli_seconds": 73.83807976357639,
+      "api_spend": 0,
+      "subscription_dollar_cost": null
+    },
+    "scores": {
+      "original": 73,
+      "one_guarded_rewrite": 75,
+      "simple_baseline": 75
+    },
+    "human_verdict": null,
+    "selected_candidate": null,
+    "visual": "deferred",
+    "reopen": "../../evidence-first-20261104/reopen.json",
+    "critical_source_omission": "blocked before provider creation"
+  },
+  "acceptance_definitions_unchanged": true,
+  "next_eligible_action": "Human exact-text disposition; no further generation, expansion, rendering or publishing before existing gates clear.",
+  "post_push_readback": {
+    "checked_at": "2026-11-04T23:55:44.360411+00:00",
+    "source": "connected GitHub PR24 metadata + evidence readback",
+    "head": "16df725128a7ef8f91befa5cfc0556e246abf1f5",
+    "main": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+    "draft": true,
+    "merged": false,
+    "production_source_commit": "f89e3d3bc75f4acc42351d3b041cb54f23250393",
+    "later_commit_policy": "This readback predates the final documentation receipt commit; production/config/tests must remain unchanged."
+  }
+}

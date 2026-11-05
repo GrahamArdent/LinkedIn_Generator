@@ -1,0 +1,182 @@
+{
+  "model_calls": 6,
+  "attempt_elapsed_seconds_sum": 123.63119077775627,
+  "cumulative_cli_model_seconds": 123.60772717744112,
+  "api_spend": 0,
+  "subscription_dollar_cost": "unavailable; not API billing",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 37120,
+    "input_tokens": 79701,
+    "output_tokens": 3027,
+    "reasoning_output_tokens": 287
+  },
+  "batches": [
+    {
+      "run_id": "narrative-handoff-20261105",
+      "active_seconds": 44.29234171565622,
+      "in_flight": null,
+      "launches": 9,
+      "model_execution_slots": 3,
+      "model_seconds": 43.244873399846256,
+      "schema_version": "2.0",
+      "started": 1793849360.2497575
+    },
+    {
+      "run_id": "narrative-handoff-recovery-20261105",
+      "active_seconds": 81.46138373576105,
+      "in_flight": null,
+      "launches": 9,
+      "model_execution_slots": 3,
+      "model_seconds": 80.36285377759486,
+      "schema_version": "2.0",
+      "started": 1793849578.6457038
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": "attempt-697036a0ed82436e934c7d54c327611a",
+      "run_id": "narrative-handoff-20261105",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "elapsed_seconds": 13.836642427369952,
+      "request_sha256": "02935c29711e89ab189f942a09c6a198587426d709d096be8e07c8ffc1b89ed6",
+      "result_sha256": "7171de66ff26200b2ba907d8063e1bdb5c2e53ca173b06f4e925f0bab4513b6c",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13912,
+        "output_tokens": 272,
+        "reasoning_output_tokens": 0
+      },
+      "producer_version": "codex-cli 0.158.0",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "path": "attempts/narrative-handoff-20261105/linkedin/02935c29711e89ab189f942a09c6a198587426d709d096be8e07c8ffc1b89ed6/attempt.json",
+      "thread_ids": [
+        "01a1a9c1-34c5-7b03-bd24-e36cbfdc4cc8"
+      ],
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-dddae0f500204c71bc3b0c4ad1cdd1b2",
+      "run_id": "narrative-handoff-20261105",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "elapsed_seconds": 11.646301575936377,
+      "request_sha256": "8cd173726241d9bcfee4a2ebcccd463448cb0deef57ecf06ccd713ab9c487fa0",
+      "result_sha256": "9f8698686f6a24ffd2588e248c247114fcde4b87313164e002f105ae51b68ead",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12664,
+        "output_tokens": 218,
+        "reasoning_output_tokens": 0
+      },
+      "producer_version": "codex-cli 0.158.0",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "path": "attempts/narrative-handoff-20261105/linkedin/8cd173726241d9bcfee4a2ebcccd463448cb0deef57ecf06ccd713ab9c487fa0/attempt.json",
+      "thread_ids": [
+        "01a1a9c1-01d6-7cf0-a07a-8205fc531c8d"
+      ],
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-b53c284d65aa43418d995156aa77da51",
+      "run_id": "narrative-handoff-20261105",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "elapsed_seconds": 17.77334417961538,
+      "request_sha256": "ba94f6d64c19e8b7ef32b03657e67b11af7c2a3d26200e1ee2e12118e9a93333",
+      "result_sha256": "d6e4c59694e0041bb40566c0ea56b0ed8e07cf58843b7220bb3e70192e5b30dc",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12881,
+        "output_tokens": 363,
+        "reasoning_output_tokens": 123
+      },
+      "producer_version": "codex-cli 0.158.0",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "path": "attempts/narrative-handoff-20261105/linkedin/ba94f6d64c19e8b7ef32b03657e67b11af7c2a3d26200e1ee2e12118e9a93333/attempt.json",
+      "thread_ids": [
+        "01a1a9c1-7098-7010-aadd-56cb2ff9853e"
+      ],
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-39e5ec88d1bb4713b530bc1c33fb928b",
+      "run_id": "narrative-handoff-recovery-20261105",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "elapsed_seconds": 16.887531224638224,
+      "request_sha256": "73bbdefbabfae8290724563d9e2df5f517bd53b18aed6b017402dea310fdaa48",
+      "result_sha256": "a901d182a84af9c6f1a54b786209d9b66be25ea80b5153134cc885659b26bad4",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12901,
+        "output_tokens": 357,
+        "reasoning_output_tokens": 142
+      },
+      "producer_version": "codex-cli 0.158.0",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "path": "attempts/narrative-handoff-recovery-20261105/linkedin/73bbdefbabfae8290724563d9e2df5f517bd53b18aed6b017402dea310fdaa48/attempt.json",
+      "thread_ids": [
+        "01a1a9c4-56f1-76e2-8457-394097533ef0"
+      ],
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-b8be6e0eeb074e20bcbbbb5072a7e7fa",
+      "run_id": "narrative-handoff-recovery-20261105",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "elapsed_seconds": 16.90570431947708,
+      "request_sha256": "c0dd92afb8b924b772df65bf2a49c1d8623c71b6ed71e44e54c86b9736da8d40",
+      "result_sha256": "c80ce623f3210ab949dd89c93683e71b8a97232d3be6ab31fe110cd2a41bc1ba",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14124,
+        "output_tokens": 370,
+        "reasoning_output_tokens": 0
+      },
+      "producer_version": "codex-cli 0.158.0",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "path": "attempts/narrative-handoff-recovery-20261105/linkedin/c0dd92afb8b924b772df65bf2a49c1d8623c71b6ed71e44e54c86b9736da8d40/attempt.json",
+      "thread_ids": [
+        "01a1a9c4-9eaf-7740-868e-595aac15dc41"
+      ],
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-c7313e5582074d22821d952a90c86c0e",
+      "run_id": "narrative-handoff-recovery-20261105",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "elapsed_seconds": 46.58166705071926,
+      "request_sha256": "e489760b8a102afc2b1cb611bc67cd704f6d23a36897634936d2ef3d0f7cc9dd",
+      "result_sha256": "2032ea50915c51908bf6a510fbb98c6e7abd8fbc8a792a122185e6d2597c1e00",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13219,
+        "output_tokens": 1447,
+        "reasoning_output_tokens": 22
+      },
+      "producer_version": "codex-cli 0.158.0",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "path": "attempts/narrative-handoff-recovery-20261105/linkedin/e489760b8a102afc2b1cb611bc67cd704f6d23a36897634936d2ef3d0f7cc9dd/attempt.json",
+      "thread_ids": [
+        "01a1a9c4-e67e-7821-bcbe-f571991712c2"
+      ],
+      "provider_response_id": "unavailable"
+    }
+  ]
+}

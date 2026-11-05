@@ -1,0 +1,28 @@
+.........FF                                                              [100%]
+=================================== FAILURES ===================================
+_ test_actual_planning_consumer_accepts_only_annotations_and_preserves_selection _
+
+    def test_actual_planning_consumer_accepts_only_annotations_and_preserves_selection():
+        h=functions()
+>       assert callable(getattr(h,"plan_writing",None)), "planning consumer is missing"
+E       AssertionError: planning consumer is missing
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(<module 'src.app.editorial_handoff' from '/home/graham/work/linkedin-codex-trial-20261104/src/app/editorial_handoff.py'>, 'plan_writing', None)
+
+tests/test_editorial_handoff.py:110: AssertionError
+_ test_actual_planning_consumer_rejects_finished_copy_instead_of_sending_it_forward _
+
+    def test_actual_planning_consumer_rejects_finished_copy_instead_of_sending_it_forward():
+        h=functions()
+>       assert callable(getattr(h,"plan_writing",None)), "planning consumer is missing"
+E       AssertionError: planning consumer is missing
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(<module 'src.app.editorial_handoff' from '/home/graham/work/linkedin-codex-trial-20261104/src/app/editorial_handoff.py'>, 'plan_writing', None)
+
+tests/test_editorial_handoff.py:126: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_editorial_handoff.py::test_actual_planning_consumer_accepts_only_annotations_and_preserves_selection
+FAILED tests/test_editorial_handoff.py::test_actual_planning_consumer_rejects_finished_copy_instead_of_sending_it_forward
+2 failed, 9 passed in 0.17s

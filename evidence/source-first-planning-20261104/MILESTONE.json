@@ -1,0 +1,168 @@
+{
+  "created_at": "2026-11-05T02:35:44.977797+00:00",
+  "source_commit": "7219160d40a22beb940d1f9b28f91acb4b6fcc38",
+  "status": {
+    "workflow_execution": "GO",
+    "planner_source_support": "GO_ASSISTANT_REVIEW",
+    "writing_quality": "HOLD",
+    "production_planner_integration": "NOT_PERFORMED",
+    "P2": "HOLD"
+  },
+  "observed": {
+    "calls": [
+      {
+        "attempt_id": "attempt-b58286683b7e468193dc775422dfd32d",
+        "seconds": 16.99252278264612,
+        "physical_starts": 3,
+        "model": "gpt-6-astra"
+      },
+      {
+        "attempt_id": "attempt-2c983d39fc8942d9a2e7faf241b13585",
+        "seconds": 52.71563439350575,
+        "physical_starts": 3,
+        "model": "gpt-6-astra"
+      },
+      {
+        "attempt_id": "attempt-342cc7b7d7934e89b0263fd7cd87f4e1",
+        "seconds": 14.323109933175147,
+        "physical_starts": 3,
+        "model": "gpt-6-astra"
+      },
+      {
+        "attempt_id": "attempt-7d64db0bab2f4b0f8fbc6d976df36c7f",
+        "seconds": 10.469181000255048,
+        "physical_starts": 3,
+        "model": "gpt-6-astra"
+      },
+      {
+        "attempt_id": "attempt-9c1a7108f1b946db8739376c827e1c03",
+        "seconds": 12.536460225470364,
+        "physical_starts": 3,
+        "model": "gpt-6-astra"
+      },
+      {
+        "attempt_id": "attempt-4d354562ac72463a94a8d81c7adab42a",
+        "seconds": 16.232702589593828,
+        "physical_starts": 3,
+        "model": "gpt-6-astra"
+      }
+    ],
+    "total_model_calls": 6,
+    "cli_seconds": 123.26961092464626,
+    "physical_starts": 18,
+    "api_spend": 0,
+    "reopen_added_calls": 0,
+    "identical_evaluator_context": true,
+    "scores": {
+      "engine": 78,
+      "rewrite": null,
+      "baseline": 81
+    },
+    "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+    "rewrite_guard": {
+      "accepted": false,
+      "reasons": [
+        "rewrite introduces a new number"
+      ],
+      "original_report": {
+        "score": 100,
+        "issues": [],
+        "signals": {
+          "word_count": 175,
+          "emoji_count": 0,
+          "paragraph_word_counts": [
+            27,
+            51,
+            12,
+            52,
+            33
+          ],
+          "sentence_word_counts": [
+            15,
+            12,
+            20,
+            7,
+            24,
+            12,
+            17,
+            23,
+            12,
+            15,
+            18
+          ],
+          "has_question": true,
+          "has_contrast": false,
+          "active_content_goal": "authority",
+          "earned_question": false,
+          "matched_forbidden_phrases": [],
+          "matched_internal_terms": [],
+          "matched_generic_phrases": [],
+          "author_pov": "individual",
+          "collective_pronoun_count": 0,
+          "unscored_traits": [
+            "clich\u00e9s beyond the explicit generic-phrase list"
+          ]
+        }
+      },
+      "candidate_report": {
+        "score": 100,
+        "issues": [],
+        "signals": {
+          "word_count": 172,
+          "emoji_count": 0,
+          "paragraph_word_counts": [
+            25,
+            44,
+            58,
+            30,
+            15
+          ],
+          "sentence_word_counts": [
+            13,
+            12,
+            19,
+            6,
+            19,
+            17,
+            32,
+            9,
+            16,
+            14,
+            15
+          ],
+          "has_question": true,
+          "has_contrast": true,
+          "active_content_goal": "authority",
+          "earned_question": false,
+          "matched_forbidden_phrases": [],
+          "matched_internal_terms": [],
+          "matched_generic_phrases": [],
+          "author_pov": "individual",
+          "collective_pronoun_count": 0,
+          "unscored_traits": [
+            "clich\u00e9s beyond the explicit generic-phrase list"
+          ]
+        }
+      },
+      "new_urls": [],
+      "new_numbers": [
+        "0046,"
+      ],
+      "new_quotes": [],
+      "introduced_forbidden_phrases": []
+    },
+    "words": {
+      "engine": 173,
+      "baseline": 172
+    }
+  },
+  "tests": "209 PASS",
+  "human_approval": null,
+  "acceptance_definitions_unchanged": true,
+  "next_action": "Focused numeric-guard punctuation regression repair; concise evidence selection before further generation",
+  "integration": {
+    "PR24": "draft/unmerged",
+    "main": "a714d1e",
+    "runtime": "existing candidate checkout"
+  }
+}

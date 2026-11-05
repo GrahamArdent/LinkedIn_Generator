@@ -1,0 +1,26 @@
+{
+  "status": "SECOND_CONCEPT_DRAFTS_RETAINED",
+  "human_preferences": null,
+  "proposal": {
+    "base_label": "D15",
+    "contributing_labels": [
+      "D08",
+      "D05"
+    ],
+    "steps": [
+      {
+        "action": "Retain D15’s attributed incident comparison and bounded inference.",
+        "evidence": "D15 says ‘My reading’ and ‘They do not establish that a particular defense caused different outcomes’; these keep interpretation separate from reported facts."
+      },
+      {
+        "action": "Make D15’s final inspection question concrete using D08’s approved-record requirement: ask what verifies an approved underlying transaction and enforces the required checks when the direct API call executes. Attribute the record-validation recommendation to CIAD-2026-0046.",
+        "evidence": "D08 asks whether ‘a payout instruction is supported by an approved underlying transaction’ and names the recommendation to reject references without corresponding records."
+      },
+      {
+        "action": "Add a short sufficiency qualification without importing a second hypothetical: ‘A matching record alone does not prove that every authorization check was completed.’",
+        "evidence": "D05 explicitly states ‘A matching record alone would still not prove every authorization check was completed.’ CIAD-2026-0046 separately recommends stage binding, maker-checker approval and beneficiary validation."
+      }
+    ],
+    "complementary_strength": "D15 supplies the coherent attributed structure, D08 supplies a specific inspection object, and D05 prevents that object from being mistaken for complete authorization. This is a targeted revision, not an accumulation of all routes."
+  }
+}

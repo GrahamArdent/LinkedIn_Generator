@@ -1,0 +1,18 @@
+{
+  "model_calls": 1,
+  "physical_starts": 3,
+  "cumulative_cli_seconds": 11.587320920079947,
+  "api_spend": 0,
+  "subscription_cost": "unknown",
+  "attempt_id": "attempt-5e6ea68b1b724b9baca1dbf11e553629",
+  "native_request_sha256": "f7139135da603fb90583eef371a775faf6449af29d6822b972e011515cf2ff00",
+  "guard_accepted": true,
+  "original_words_guard": 169,
+  "revision_words_guard": 164,
+  "max_revision_sentence_words": 46,
+  "source_summary_paragraph_words": 59,
+  "reopen_exit": 0,
+  "reopen_added_calls": 0,
+  "native_prompt_and_output_match": true,
+  "tested_hashes_unchanged": true
+}

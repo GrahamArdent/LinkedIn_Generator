@@ -1,0 +1,113 @@
+........FFFFFF                                                           [100%]
+=================================== FAILURES ===================================
+_ test_real_evaluator_receives_same_brief_full_voice_examples_and_rating_anchors _
+
+    def test_real_evaluator_receives_same_brief_full_voice_examples_and_rating_anchors():
+        client=QualityCapture()
+        example={"example_id":"reference-fixture","provenance":"user_approved","text":"A synthetic style fixture only; never real acceptance evidence."}
+        run_generation("Recovery",[],persona_key="graham",audience="IT leaders",objective="Review identity recovery.",
+            allowed_sources=[{"title":"S1","fact":"Help desks reset tokens."}],voice_examples=[example],
+            opportunity_gate=False,publish_quality_gate=True,llm_client=client,hashtags=[])
+        call=next(c for c in client.calls if "strict LinkedIn publish-quality evaluator" in c["system"])
+        data=json.loads(call["user"])
+>       assert data.get("editorial_brief",{}).get("objective")=="Review identity recovery."
+E       AssertionError: assert None == 'Review identity recovery.'
+E        +  where None = <built-in method get of dict object at 0x7472af77ec80>('objective')
+E        +    where <built-in method get of dict object at 0x7472af77ec80> = {}.get
+E        +      where {} = <built-in method get of dict object at 0x7472af77d680>('editorial_brief', {})
+E        +        where <built-in method get of dict object at 0x7472af77d680> = {'post': 'Account recovery is part of identity security.\n\nThe advisory describes help-desk resets. A review should i...leaders', 'content_goal': 'authority', 'grounded_evidence': [{'title': 'S1', 'fact': 'Help desks reset tokens.'}], ...}.get
+
+tests/test_evidence_first.py:98: AssertionError
+_ test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[missing] _
+
+bad = 'missing'
+
+    @pytest.mark.parametrize("bad",["missing",True,8,2.5,"five"])
+    def test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score(bad):
+        dims={k:4 for k in QUALITY_WEIGHTS}
+        if bad=="missing": dims.pop("voice_authenticity")
+        else: dims["voice_authenticity"]=bad
+        class Invalid:
+            def call(self,*args,**kwargs):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Invalid())
+>       assert result.score is None
+E       AssertionError: assert 76 is None
+E        +  where 76 = PublishQualityAssessment(score=76, dimensions={'outsider_clarity': 4, 'professional_relevance': 4, 'specificity': 4, '...bility': 4, 'voice_authenticity': 0}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:113: AssertionError
+_ test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[True] _
+
+bad = True
+
+    @pytest.mark.parametrize("bad",["missing",True,8,2.5,"five"])
+    def test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score(bad):
+        dims={k:4 for k in QUALITY_WEIGHTS}
+        if bad=="missing": dims.pop("voice_authenticity")
+        else: dims["voice_authenticity"]=bad
+        class Invalid:
+            def call(self,*args,**kwargs):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Invalid())
+>       assert result.score is None
+E       AssertionError: assert 77 is None
+E        +  where 77 = PublishQualityAssessment(score=77, dimensions={'outsider_clarity': 4, 'professional_relevance': 4, 'specificity': 4, '...bility': 4, 'voice_authenticity': 1}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:113: AssertionError
+_ test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[8] _
+
+bad = 8
+
+    @pytest.mark.parametrize("bad",["missing",True,8,2.5,"five"])
+    def test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score(bad):
+        dims={k:4 for k in QUALITY_WEIGHTS}
+        if bad=="missing": dims.pop("voice_authenticity")
+        else: dims["voice_authenticity"]=bad
+        class Invalid:
+            def call(self,*args,**kwargs):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Invalid())
+>       assert result.score is None
+E       AssertionError: assert 81 is None
+E        +  where 81 = PublishQualityAssessment(score=81, dimensions={'outsider_clarity': 4, 'professional_relevance': 4, 'specificity': 4, '...bility': 4, 'voice_authenticity': 5}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:113: AssertionError
+_ test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[2.5] _
+
+bad = 2.5
+
+    @pytest.mark.parametrize("bad",["missing",True,8,2.5,"five"])
+    def test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score(bad):
+        dims={k:4 for k in QUALITY_WEIGHTS}
+        if bad=="missing": dims.pop("voice_authenticity")
+        else: dims["voice_authenticity"]=bad
+        class Invalid:
+            def call(self,*args,**kwargs):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Invalid())
+>       assert result.score is None
+E       AssertionError: assert 78 is None
+E        +  where 78 = PublishQualityAssessment(score=78, dimensions={'outsider_clarity': 4, 'professional_relevance': 4, 'specificity': 4, '...bility': 4, 'voice_authenticity': 2}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:113: AssertionError
+_ test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[five] _
+
+bad = 'five'
+
+    @pytest.mark.parametrize("bad",["missing",True,8,2.5,"five"])
+    def test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score(bad):
+        dims={k:4 for k in QUALITY_WEIGHTS}
+        if bad=="missing": dims.pop("voice_authenticity")
+        else: dims["voice_authenticity"]=bad
+        class Invalid:
+            def call(self,*args,**kwargs):return {"text":json.dumps(dims)}
+        result=assess_publish_quality(text="A post",audience="IT leaders",content_goal="authority",evidence=[],persona_profile={},client=Invalid())
+>       assert result.score is None
+E       AssertionError: assert 76 is None
+E        +  where 76 = PublishQualityAssessment(score=76, dimensions={'outsider_clarity': 4, 'professional_relevance': 4, 'specificity': 4, '...bility': 4, 'voice_authenticity': 0}, gaps=(), rationale='Publish quality scored from the finished post.', warnings=()).score
+
+tests/test_evidence_first.py:113: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evidence_first.py::test_real_evaluator_receives_same_brief_full_voice_examples_and_rating_anchors
+FAILED tests/test_evidence_first.py::test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[missing]
+FAILED tests/test_evidence_first.py::test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[True]
+FAILED tests/test_evidence_first.py::test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[8]
+FAILED tests/test_evidence_first.py::test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[2.5]
+FAILED tests/test_evidence_first.py::test_incomplete_or_invalid_model_rating_is_unavailable_not_an_invented_score[five]
+6 failed, 8 passed in 0.21s

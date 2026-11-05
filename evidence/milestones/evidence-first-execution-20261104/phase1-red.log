@@ -1,0 +1,122 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+_____ test_evidence_brief_admits_supported_fact_and_unstatistical_opinion ______
+
+    def test_evidence_brief_admits_supported_fact_and_unstatistical_opinion():
+        data,bundle=fixture()
+>       assert validate_trial_evidence(data,bundle) is None
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_first.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'topic': 'MFA recovery', 'evidence': [{'title': 'S1 advisory', 'fact': 'Help desks were socially engineered to reset... 'C2', 'kind': 'opinion', 'text': 'Review recovery as well as sign-in.', 'source_ids': []}], 'central_claim_id': 'C1'})
+
+    def validate_trial_evidence(*args):
+>       assert callable(getattr(codex_trial, "validate_trial_evidence", None)), "trial evidence admission is not implemented"
+E       AssertionError: trial evidence admission is not implemented
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(codex_trial, 'validate_trial_evidence', None)
+
+tests/test_evidence_first.py:7: AssertionError
+_____ test_unusable_central_source_blocks_before_provider_launch[missing] ______
+
+status = 'missing'
+
+    @pytest.mark.parametrize("status",["missing","stale","contradicted"])
+    def test_unusable_central_source_blocks_before_provider_launch(status):
+        data,bundle=fixture()
+        bundle["sources"][0]["status"]=status
+        with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"):
+>           validate_trial_evidence(data,bundle)
+
+tests/test_evidence_first.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'topic': 'MFA recovery', 'evidence': [{'title': 'S1 advisory', 'fact': 'Help desks were socially engineered to reset... 'C2', 'kind': 'opinion', 'text': 'Review recovery as well as sign-in.', 'source_ids': []}], 'central_claim_id': 'C1'})
+
+    def validate_trial_evidence(*args):
+>       assert callable(getattr(codex_trial, "validate_trial_evidence", None)), "trial evidence admission is not implemented"
+E       AssertionError: trial evidence admission is not implemented
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(codex_trial, 'validate_trial_evidence', None)
+
+tests/test_evidence_first.py:7: AssertionError
+______ test_unusable_central_source_blocks_before_provider_launch[stale] _______
+
+status = 'stale'
+
+    @pytest.mark.parametrize("status",["missing","stale","contradicted"])
+    def test_unusable_central_source_blocks_before_provider_launch(status):
+        data,bundle=fixture()
+        bundle["sources"][0]["status"]=status
+        with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"):
+>           validate_trial_evidence(data,bundle)
+
+tests/test_evidence_first.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'topic': 'MFA recovery', 'evidence': [{'title': 'S1 advisory', 'fact': 'Help desks were socially engineered to reset... 'C2', 'kind': 'opinion', 'text': 'Review recovery as well as sign-in.', 'source_ids': []}], 'central_claim_id': 'C1'})
+
+    def validate_trial_evidence(*args):
+>       assert callable(getattr(codex_trial, "validate_trial_evidence", None)), "trial evidence admission is not implemented"
+E       AssertionError: trial evidence admission is not implemented
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(codex_trial, 'validate_trial_evidence', None)
+
+tests/test_evidence_first.py:7: AssertionError
+___ test_unusable_central_source_blocks_before_provider_launch[contradicted] ___
+
+status = 'contradicted'
+
+    @pytest.mark.parametrize("status",["missing","stale","contradicted"])
+    def test_unusable_central_source_blocks_before_provider_launch(status):
+        data,bundle=fixture()
+        bundle["sources"][0]["status"]=status
+        with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"):
+>           validate_trial_evidence(data,bundle)
+
+tests/test_evidence_first.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'topic': 'MFA recovery', 'evidence': [{'title': 'S1 advisory', 'fact': 'Help desks were socially engineered to reset... 'C2', 'kind': 'opinion', 'text': 'Review recovery as well as sign-in.', 'source_ids': []}], 'central_claim_id': 'C1'})
+
+    def validate_trial_evidence(*args):
+>       assert callable(getattr(codex_trial, "validate_trial_evidence", None)), "trial evidence admission is not implemented"
+E       AssertionError: trial evidence admission is not implemented
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(codex_trial, 'validate_trial_evidence', None)
+
+tests/test_evidence_first.py:7: AssertionError
+_____________ test_missing_source_and_changed_frozen_request_block _____________
+
+    def test_missing_source_and_changed_frozen_request_block():
+        data,bundle=fixture()
+        bundle["sources"]=[]
+>       with pytest.raises(ValueError,match="EVIDENCE_SUPPORT_REQUIRED"): validate_trial_evidence(data,bundle)
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_first.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({'topic': 'MFA recovery', 'evidence': [{'title': 'S1 advisory', 'fact': 'Help desks were socially engineered to reset... 'C2', 'kind': 'opinion', 'text': 'Review recovery as well as sign-in.', 'source_ids': []}], 'central_claim_id': 'C1'})
+
+    def validate_trial_evidence(*args):
+>       assert callable(getattr(codex_trial, "validate_trial_evidence", None)), "trial evidence admission is not implemented"
+E       AssertionError: trial evidence admission is not implemented
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(codex_trial, 'validate_trial_evidence', None)
+
+tests/test_evidence_first.py:7: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evidence_first.py::test_evidence_brief_admits_supported_fact_and_unstatistical_opinion
+FAILED tests/test_evidence_first.py::test_unusable_central_source_blocks_before_provider_launch[missing]
+FAILED tests/test_evidence_first.py::test_unusable_central_source_blocks_before_provider_launch[stale]
+FAILED tests/test_evidence_first.py::test_unusable_central_source_blocks_before_provider_launch[contradicted]
+FAILED tests/test_evidence_first.py::test_missing_source_and_changed_frozen_request_block
+5 failed in 0.14s

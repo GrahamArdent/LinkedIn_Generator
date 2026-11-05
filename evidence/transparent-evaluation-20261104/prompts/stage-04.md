@@ -1,0 +1,56 @@
+# Stage 4: One guarded rewrite
+
+Model: gpt-6-astra; reasoning: medium; auth: chatgpt
+Attempt: attempt-9d8d01be1f17401195381b0fa5b24a3e
+Started: 2026-11-04T23:01:50.908234+00:00
+
+## Exact task/system prompt
+
+You are doing one bounded publish-quality rewrite of a LinkedIn post that scored below the configured publish threshold.
+Preserve the original post as a separate review candidate; your job is only to produce one improved alternative.
+Address the weaknesses in Publish Quality Report without changing the supported factual meaning.
+Use Persona Profile and Approved Voice Examples only for wording, cadence, reasoning style, and voice. They are not factual evidence or biography.
+Use Allowed Sources as the only factual evidence. You may faithfully paraphrase existing supported facts, but do not add new factual claims, names, dates, numbers, statistics, quotations, sources, links, personal experiences, or anecdotes.
+Improve the actual limiting dimensions rather than merely making the post more polished. Prefer outsider clarity, concrete grounded detail, a stronger non-obvious insight, practical usefulness, earned tension, and natural voice.
+Do not manufacture controversy, engagement bait, a CTA, or a question just to raise engagement potential.
+Do not expose internal project vocabulary when plain language will work.
+Return only the rewritten post.
+
+
+## Exact supplied input
+
+Content Goal: authority
+Publish Quality Report: {"score": 78, "dimensions": {"outsider_clarity": 5, "professional_relevance": 4, "specificity": 3, "novel_insight": 4, "practical_usefulness": 4, "emotional_tension": 3, "conversation_potential": 4, "shareability": 3, "voice_authenticity": 5}, "gaps": ["No concrete comparison shows what an added step actually changed; the examples remain hypothetical.", "The professional stakes stay broad, with no specific work situation showing why the distinction matters.", "The middle repeats the need to understand the process without substantially advancing the argument."], "rationale": "The post is clear, grounded and authentic, with a useful distinction between preference and evidence of a step’s value, but lacks a concrete example that would make the argument more distinctive and shareable.", "warnings": []}
+Persona Profile: {"tone": ["direct", "humble"], "rhythm": ["tight", "punchy"], "devices": ["question", "contrast"], "donts": ["clichés", "em_dashes"], "emoji_max": 3, "bullet_char": "🔹", "active_author_pov": "individual", "voice_authority": {"source": {"authority": "Graham Voice Bible", "repository": "GrahamArdent/LinkedInGenV2", "path": "data/Voice_Bible_Graham (1).md", "blob_sha": "e35aad7f324ea9cc691ea8fd5ca5fc3c7da5a5fd", "role": "primary historical voice authority explicitly authorized for reuse"}, "profile": {"persona": "The Relatable Provocateur", "essence": ["bold", "witty", "empathetic", "visceral", "direct", "conversational", "confident_but_relatable", "contrarian_without_being_performative"], "rhythm": {"hook_words": "6-12", "sentence_mix": "short and long", "one_liner_punches": true, "paragraph_sentences": "2-3", "conversational_punctuation": true}, "emotional_palette": ["frustration", "empathy", "protectiveness", "humor", "tension", "inspiration"], "reasoning_lenses": ["name_the_surface_event", "identify_the_mechanism_and_context", "trace_operational_friction", "trace_financial_or_practical_drag", "trace_identity_and_trust_damage", "identify_strategic_gravity", "look_for_feedback_loops_and_hidden_correlations", "distinguish_correlation_from_causation"], "signature_devices": ["short_myth_or_mood_hook", "contrarian_flip", "concrete_human_detail", "memorable_analogy_or_wry_humor", "practical_nugget", "provocative_big_picture_closer"], "thought_leadership_filter": ["challenge_an_assumption", "connect_the_issue_to_more_than_one_stakeholder_when_relevant", "make_the_point_memorable_without_becoming_theatrical", "be_actionable_and_elevated", "end_with_a_real_provocation_when_it_earns_it"], "boundaries": ["no_cliches", "minimize_jargon", "no_em_dashes", "do_not_copy_signature_example_phrases_as_boilerplate", "do_not_invent_personal_experiences", "do_not_invent_statistics_quotes_or_sources", "do_not_treat_voice_examples_as_factual_evidence", "use_named_author_reference_only_as_provenance_not_as_runtime_imitation_instruction"]}, "semantic_quality": {"default_author_pov": "individual", "internal_terms_needing_translation": ["mode c", "stage 0", "execution spine", "canonical intake", "canonical authority", "regression coverage", "work packet", "kill signal"], "generic_phrases": ["in today's fast-paced world", "game changer", "the future is here", "unlock the power", "revolutionize", "here's the thing", "in the ever-evolving landscape", "now more than ever", "let that sink in"], "guidance": ["Assume a smart reader who has never seen the internal project documents.", "Translate internal methodology and repository vocabulary into ordinary language before using it.", "For an individual Graham post, default to I/me/my; use we/us/our only for genuinely shared actions.", "Make one main point per post and make the practical or human consequence clear.", "Prefer concrete details supported by the evidence over abstract process language.", "Do not force a CTA; a natural insight or earned provocation can be the ending."]}, "runtime_guidance": {"style_summary": "Write in a bold, witty, empathetic, direct and conversational voice with vivid but controlled imagery, varied sentence length, compact paragraphs, occasional dry humor, and a contrarian insight grounded in real stakes.", "causal_summary": "Move beyond the surface event. Explain what made it possible, what work breaks next, what cost or drag starts compounding, how trust or identity is affected, and what becomes harder to undo. Use only the layers that are actually supported by the topic and evidence.", "domain_note": "The original Voice Bible was developed heavily around cybersecurity. Preserve its voice and causal-thinking method across topics, but do not assume cybersecurity, C-suite buyers, or any specific professional identity unless the current request supplies that context."}}, "spoken_voice": {"name": "Graham Spoken Voice", "schema_version": "1.0", "runtime_summary": "Write as a thoughtful, plain-spoken Graham: curious before certain, direct without pretending every first impression is proven, conversational without transcribing filler, and willing to test his own argument before landing the point. Let the reasoning move from what happened, to what it may mean, to what it changes next. Use contrast, short declarative lines, occasional dry humor, and compact conclusions. Preserve the A-to-B-to-C instinct invisibly: show the current reality, the meaningful consequence, and the bridge or restraint that connects them. Do not over-explain. Do not sound like corporate copy. Do not turn private ENFP material into public biography.", "boundaries": ["Do not infer biography, health, relationships, identity claims, or factual events from this schema.", "Do not mention ENFP unless the current request/topic makes ENFP relevant.", "Do not treat personality-type generalizations as evidence about Graham.", "Do not reproduce private-source anecdotes unless they are separately supplied as factual evidence for the current post.", "Do not imitate conversational filler words merely to sound informal."], "composition_rules": ["Start from a concrete observation or tension rather than a generic thesis.", "Let the reader see enough of the reasoning path to trust the conclusion.", "Include one meaningful self-check or qualification when the claim genuinely needs it.", "Move from the immediate event to the consequence that matters beyond Graham.", "Land on a compact distinction, lesson, or earned question.", "Keep the central point understandable to a smart outsider."], "anti_patterns": ["sounding certain because certainty is rhetorically cleaner", "over-explaining until the post feels like a defence brief", "turning every insight into a framework acronym", "repeating signature phrases as branding slogans", "performative vulnerability", "manufactured controversy", "generic inspiration"], "signature_phrase_policy": "These are conceptual anchors, not mandatory catchphrases. Use an exact phrase only when it fits naturally and is not being repeated across recent posts."}, "active_content_goal": "authority", "earned_question": false}
+Approved Voice Examples (style evidence only): []
+Allowed Sources: [{"title": "Graham's explicit direction in this conversation", "fact": "Graham questioned a proposed paid-API trial because an existing Codex subscription environment could be reused. He requested a quick, economical solution with extra layers deferred. This supports a preference for reusing what works and requiring complexity to earn its place; no savings have been measured."}, {"title": "Graham's actual reaction to the first comparison", "fact": "Graham said he preferred one draft, but called the test basic. He asked what had been used to generate it and what would be done with his answer. He requested an evaluation showing the brief, model context, changes made at each stage and final writing. Do not describe his preference as content approval or proof of superior quality."}]
+Original Post: I liked the AI draft. That proved very little.
+
+I preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.
+
+I also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?
+
+That distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.
+
+My starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.
+
+I’m willing to add complexity. I want to see what it earns.
+---
+Produce exactly one improved alternative for human review. Do not explain the changes.
+
+
+## Exact model result
+
+I preferred one AI draft. The process still had to earn its place.
+
+The comparison was basic. I wanted to see the brief, the context given to the model, what changed at each stage, and the final writing. I also wanted to know what my preference would be used to change.
+
+Picking a favourite answers one question. It doesn’t tell me which steps helped, or which were unnecessary.
+
+That mattered when a paid-API trial was proposed. I already had a Codex subscription environment that could be reused, so I questioned the need for another route. I asked for a quick, economical solution, with extra layers deferred.
+
+That wasn’t evidence of measured savings. It was a reason to make the case for adding something.
+
+The same standard applies to the writing process. Show me the draft before a step and after it, alongside the requirement that step was meant to address. Then I can judge the change instead of giving the whole process credit for an answer I happen to like.
+
+I’m willing to add complexity. My preference alone doesn’t justify it.

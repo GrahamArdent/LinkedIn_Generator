@@ -1,0 +1,37 @@
+{
+  "request_id": "lig-equal-input-engine-baseline-20261104",
+  "origin": "manual",
+  "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+  "persona_key": "graham",
+  "audience": "Business and IT leaders responsible for payment systems",
+  "objective": "An approval record alone is insufficient evidence that authorization holds at the point of payment execution. Leaders should trace the approved decision through to the final transfer. Write 140-180 words; keep the argument and factual limits fixed, with no sales CTA or generic engagement question.",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "opportunity_gate": false,
+  "publish_quality_gate": true,
+  "visual_asset_plan": false,
+  "services": [],
+  "targets": [
+    "Business leaders",
+    "IT leaders"
+  ],
+  "hashtags": [
+    "#AI",
+    "#PaymentSecurity",
+    "#CyberRisk"
+  ],
+  "voice_examples": [],
+  "evidence": [
+    {
+      "title": "S1 / C1: CERT-In update, November4,2026",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+      "fact": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces."
+    },
+    {
+      "title": "S2 / C2: CERT-In CIAD-2026-0046, October9,2026",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "fact": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records."
+    }
+  ],
+  "writing_voice_id": "technical_explainer"
+}

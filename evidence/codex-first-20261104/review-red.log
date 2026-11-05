@@ -1,0 +1,170 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_______ test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-361/test_lost_terminal_receipt_is_0')
+raw = ''
+
+    @pytest.mark.parametrize("raw",["","not-json","[]","null","{}"])
+    def test_lost_terminal_receipt_is_unknown_and_blocks_second_launch(tmp_path,raw):
+        calls=[]
+        def run(argv,**kw):
+            calls.append(argv)
+            return CompletedProcess(argv,1,raw,"")
+        p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",runner=run)
+        for _ in range(2):
+>           with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'CODEX_COMPLETION_UNKNOWN'
+E             Actual message: 'CODEX_BRIDGE_OUTPUT_INVALID'
+
+tests/test_codex_provider.py:59: AssertionError
+___ test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[not-json] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-361/test_lost_terminal_receipt_is_1')
+raw = 'not-json'
+
+    @pytest.mark.parametrize("raw",["","not-json","[]","null","{}"])
+    def test_lost_terminal_receipt_is_unknown_and_blocks_second_launch(tmp_path,raw):
+        calls=[]
+        def run(argv,**kw):
+            calls.append(argv)
+            return CompletedProcess(argv,1,raw,"")
+        p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",runner=run)
+        for _ in range(2):
+>           with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'CODEX_COMPLETION_UNKNOWN'
+E             Actual message: 'CODEX_BRIDGE_OUTPUT_INVALID'
+
+tests/test_codex_provider.py:59: AssertionError
+______ test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[[]] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-361/test_lost_terminal_receipt_is_2')
+raw = '[]'
+
+    @pytest.mark.parametrize("raw",["","not-json","[]","null","{}"])
+    def test_lost_terminal_receipt_is_unknown_and_blocks_second_launch(tmp_path,raw):
+        calls=[]
+        def run(argv,**kw):
+            calls.append(argv)
+            return CompletedProcess(argv,1,raw,"")
+        p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",runner=run)
+        for _ in range(2):
+            with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
+>               p.generate(model="gpt-6-astra",system="s",user="u",temperature=.5)
+
+tests/test_codex_provider.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.codex_provider.CodexProvider object at 0x78ba509f1d10>
+model = 'gpt-6-astra', system = 's', user = 'u', temperature = 0.5
+
+    def generate(self, *, model, system, user, temperature):
+        if self.error:
+            raise self.error
+        if model != self.config.model:
+            raise CodexError("CODEX_MODEL_MISMATCH")
+        payload = {**{k:str(v) for k,v in asdict(self.config).items()},
+                   "directory":str(self.directory),"run_id":self.run_id,
+                   "system":system,"user":user,"requested_temperature":temperature}
+        # Credentials stay in Codex's own authentication store.
+        env = {k:os.environ[k] for k in ("HOME","PATH","CODEX_HOME","LANG","SSL_CERT_FILE") if k in os.environ}
+        argv = [str(self.config.python),str(Path(__file__).resolve()),"--bridge"]
+        try:
+            completed = self.runner(argv,input=json.dumps(payload),text=True,capture_output=True,
+                                    timeout=920,env=env)
+            result = json.loads(completed.stdout)
+            self.receipts.append(result)
+>           if not result.get("ok"):
+                   ^^^^^^^^^^
+E           AttributeError: 'list' object has no attribute 'get'
+
+src/app/codex_provider.py:47: AttributeError
+_____ test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[null] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-361/test_lost_terminal_receipt_is_3')
+raw = 'null'
+
+    @pytest.mark.parametrize("raw",["","not-json","[]","null","{}"])
+    def test_lost_terminal_receipt_is_unknown_and_blocks_second_launch(tmp_path,raw):
+        calls=[]
+        def run(argv,**kw):
+            calls.append(argv)
+            return CompletedProcess(argv,1,raw,"")
+        p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",runner=run)
+        for _ in range(2):
+            with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
+>               p.generate(model="gpt-6-astra",system="s",user="u",temperature=.5)
+
+tests/test_codex_provider.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.codex_provider.CodexProvider object at 0x78ba50966b10>
+model = 'gpt-6-astra', system = 's', user = 'u', temperature = 0.5
+
+    def generate(self, *, model, system, user, temperature):
+        if self.error:
+            raise self.error
+        if model != self.config.model:
+            raise CodexError("CODEX_MODEL_MISMATCH")
+        payload = {**{k:str(v) for k,v in asdict(self.config).items()},
+                   "directory":str(self.directory),"run_id":self.run_id,
+                   "system":system,"user":user,"requested_temperature":temperature}
+        # Credentials stay in Codex's own authentication store.
+        env = {k:os.environ[k] for k in ("HOME","PATH","CODEX_HOME","LANG","SSL_CERT_FILE") if k in os.environ}
+        argv = [str(self.config.python),str(Path(__file__).resolve()),"--bridge"]
+        try:
+            completed = self.runner(argv,input=json.dumps(payload),text=True,capture_output=True,
+                                    timeout=920,env=env)
+            result = json.loads(completed.stdout)
+            self.receipts.append(result)
+>           if not result.get("ok"):
+                   ^^^^^^^^^^
+E           AttributeError: 'NoneType' object has no attribute 'get'
+
+src/app/codex_provider.py:47: AttributeError
+______ test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[{}] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-361/test_lost_terminal_receipt_is_4')
+raw = '{}'
+
+    @pytest.mark.parametrize("raw",["","not-json","[]","null","{}"])
+    def test_lost_terminal_receipt_is_unknown_and_blocks_second_launch(tmp_path,raw):
+        calls=[]
+        def run(argv,**kw):
+            calls.append(argv)
+            return CompletedProcess(argv,1,raw,"")
+        p=module.CodexProvider(config(tmp_path),tmp_path/"attempts","trial-1",runner=run)
+        for _ in range(2):
+>           with pytest.raises(module.CodexError,match="CODEX_COMPLETION_UNKNOWN"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'CODEX_COMPLETION_UNKNOWN'
+E             Actual message: 'CODEX_BRIDGE_FAILED'
+
+tests/test_codex_provider.py:59: AssertionError
+___________ test_baseline_receives_every_explicit_engine_constraint ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-361/test_baseline_receives_every_e0')
+
+    def test_baseline_receives_every_explicit_engine_constraint(tmp_path):
+        p=Provider()
+        data={**INPUT,"services":["discovery"],"targets":["operators"],"hashtags":["#AI"]}
+        r=run_trial(data,tmp_path,p,model="gpt-6-astra",engine=engine)
+        for key in ("services","targets","hashtags"):
+>           assert r["baseline"]["user"][key]==data[key]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'services'
+
+tests/test_codex_trial.py:90: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_codex_provider.py::test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[]
+FAILED tests/test_codex_provider.py::test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[not-json]
+FAILED tests/test_codex_provider.py::test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[[]]
+FAILED tests/test_codex_provider.py::test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[null]
+FAILED tests/test_codex_provider.py::test_lost_terminal_receipt_is_unknown_and_blocks_second_launch[{}]
+FAILED tests/test_codex_trial.py::test_baseline_receives_every_explicit_engine_constraint
+6 failed, 14 deselected in 0.19s

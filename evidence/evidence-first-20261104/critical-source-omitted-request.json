@@ -1,0 +1,33 @@
+{
+  "request_id": "lig-evidence-first-mfa-recovery-20261104",
+  "origin": "manual",
+  "topic": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+  "persona_key": "graham",
+  "audience": "Canadian IT leaders and business leaders responsible for identity security",
+  "objective": "Challenge the assumption that enabling MFA completes identity protection. Use the documented recovery-reset tactic to explain why verification during recovery matters, while retaining the advisory's recommendation for phishing-resistant MFA. Offer one practical review question, not a promise of prevention or an invented customer story.",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "opportunity_gate": true,
+  "publish_quality_gate": true,
+  "publish_quality_threshold": 90,
+  "visual_asset_plan": true,
+  "visual_asset_preference": "auto",
+  "services": [],
+  "targets": [
+    "IT leaders",
+    "security leaders"
+  ],
+  "hashtags": [
+    "#Cybersecurity",
+    "#IdentitySecurity",
+    "#MFA"
+  ],
+  "voice_examples": [],
+  "evidence": [
+    {
+      "title": "S2 / C3: Canadian Centre for Cyber Security, July 29, 2025",
+      "url": "https://www.cyber.gc.ca/en/news-events/joint-cyber-security-advisory-scattered-spider",
+      "fact": "The Canadian Centre for Cyber Security urges organizations covered by the Scattered Spider advisory to regularly test their cyber security business processes, including those used by their service providers."
+    }
+  ]
+}

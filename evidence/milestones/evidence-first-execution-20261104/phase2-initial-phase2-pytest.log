@@ -1,0 +1,242 @@
+F....................................................................... [ 48%]
+........................................................................ [ 96%]
+......                                                                   [100%]
+=================================== FAILURES ===================================
+____________ test_run_generation_uses_explicit_orchestrator_context ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x700166a2d6e0>
+
+    def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
+        captured = {}
+    
+        class FakePipeline:
+            def __init__(self, config, *, client=None):
+                captured["config"] = config
+    
+            def plan(self, _prompt, ctx):
+                captured["plan_ctx"] = ctx
+                return {"angle": "real-work lesson", "citations": []}
+    
+            def draft_variants(self, _prompt, ctx):
+                captured["draft_ctx"] = ctx
+                return ["draft"]
+    
+            def judge_select(self, _prompt, _persona_profile, drafts):
+                return drafts[0]
+    
+            def critic(self, _prompt, text, _persona_profile, *, voice_examples):
+                return text
+    
+            def humanize(self, _prompt, text, _persona_profile, *, voice_examples):
+                return text
+    
+            def finalize(self, persona_key, text, citations, hashtags, **_metadata):
+                captured["finalize"] = {
+                    "persona_key": persona_key,
+                    "text": text,
+                    "citations": citations,
+                    "hashtags": hashtags,
+                }
+                return {
+                    "body": text,
+                    "hashtags": hashtags,
+                    "sources": citations,
+                    "telemetry": {"persona": persona_key},
+                }
+    
+        def fake_load_yaml(path):
+            if path.endswith("prompt_kit.config.yaml"):
+                return {}
+            if path.endswith("prompts_packs.yaml"):
+                return {
+                    "plan_prompt": {},
+                    "draft_prompt": {},
+                    "judge_prompt": {},
+                    "critic_prompt": {},
+                    "humanize_prompt": {},
+                }
+            if path.endswith("personas.yaml"):
+                return {"personas": {"graham": {"tone": ["direct"]}}}
+            if path.endswith(("cta_policies.yaml", "graham_voice_profile.yaml", "graham_spoken_voice.yaml")):
+                return {}
+            raise AssertionError(path)
+    
+        monkeypatch.setattr(api, "Pipeline", FakePipeline)
+        monkeypatch.setattr(api, "load_yaml", fake_load_yaml)
+    
+>       result = api.run_generation(
+            topic="What real buyer work taught us",
+            services=["discovery"],
+            persona_key="graham",
+            audience="AI founders",
+            objective="useful visibility from real work",
+            targets=["founders"],
+            allowed_sources=[
+                {
+                    "title": "Buyer note",
+                    "fact": "Reliability mattered more than novelty.",
+                    "url": "https://example.com/note",
+                }
+            ],
+            hashtags=["#AI"],
+        )
+
+tests/test_api_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+topic = 'What real buyer work taught us', services = ['discovery']
+persona_key = 'graham', audience = 'AI founders'
+objective = 'useful visibility from real work', author_pov = 'individual'
+content_goal = 'auto', opportunity_gate = False, publish_quality_gate = False
+publish_quality_threshold = None, targets = ['founders']
+allowed_sources = [{'title': 'Buyer note', 'fact': 'Reliability mattered more than novelty.', 'url': 'https://example.com/note'}]
+voice_examples = None, hashtags = ['#AI'], llm_client = None
+opportunity_client = None, publish_quality_client = None
+
+    def run_generation(
+        topic: str,
+        services: list[str],
+        persona_key: str = "ardent_v2",
+        *,
+        audience: str = "C-suite leaders",
+        objective: str = "Educate and convert attention to pipeline",
+        author_pov: str = "individual",
+        content_goal: str = "auto",
+        opportunity_gate: bool = False,
+        publish_quality_gate: bool = False,
+        publish_quality_threshold: int | None = None,
+        targets: list[str] | None = None,
+        allowed_sources: list[dict[str, Any]] | None = None,
+        voice_examples: list[dict[str, Any]] | None = None,
+        hashtags: list[str] | None = None,
+        llm_client: Any | None = None,
+        opportunity_client: Any | None = None,
+        publish_quality_client: Any | None = None,
+    ) -> dict[str, Any]:
+        """Run the generation pipeline with explicit caller context.
+    
+        Existing positional/default arguments remain for legacy callers. New
+        orchestrators should supply audience, objective, author POV, content goal,
+        evidence and hashtags explicitly. Voice authority and approved examples are
+        style and reasoning evidence, never factual evidence. Dedication-style
+        requests may enable the opportunity preflight so weak subjects are skipped
+        and promising-but-generic subjects request one concrete detail before a
+        full draft is generated. They may also enable the publish-quality gate: a
+        finalized post below the configured threshold is preserved and receives one
+        bounded improvement candidate for human review.
+        """
+    
+        base = os.path.join(os.path.dirname(__file__), "../../")
+        prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
+        prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
+        personas = load_yaml(os.path.join(base, "config/personas.yaml"))
+        cta_policies = load_yaml(os.path.join(base, "config/cta_policies.yaml"))
+    
+        cfg = {
+            "prompt_kit": {
+                "emoji_max": int(prompt_kit.get("emoji_max", 3)),
+                "bullet_char": prompt_kit.get("bullet_char", "🔹"),
+                "hashtag_min": int(prompt_kit.get("hashtag_min", 3)),
+                "hashtag_max": int(prompt_kit.get("hashtag_max", 5)),
+                "strip_links_in_body": prompt_kit.get("strip_links_in_body", "true")
+                in ("true", "True", "1"),
+                "append_sources_block": prompt_kit.get("append_sources_block", "false")
+                in ("true", "True", "1"),
+                "allow_em_dash": prompt_kit.get("allow_em_dash", "false") in ("true", "True", "1"),
+                "forbidden_phrases": list(cta_policies.get("forbidden_phrases", []) or []),
+            }
+        }
+        pipe = Pipeline(cfg, client=llm_client)
+        persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov)
+    
+        plan_ctx = {
+            "topic": topic,
+            "services": services,
+            "targets": list(targets) if targets is not None else list(LEGACY_TARGETS),
+        }
+        plan = pipe.plan(prompts.get("plan_prompt", {}), plan_ctx)
+    
+        source_items = list(allowed_sources) if allowed_sources is not None else list(plan.get("citations", []))
+        citations = [
+            str(item.get("url", ""))
+            for item in source_items
+            if str(item.get("url", "")).startswith("http")
+        ]
+    
+        if opportunity_gate:
+            gate_client = opportunity_client or llm_client
+            if gate_client is None:
+                gate_model = os.getenv("OPPORTUNITY_MODEL", "").strip() or None
+                gate_client = LLMClient(model=gate_model, temperature=0.1, seed=42)
+            minimum_score = max(0, min(100, int(os.getenv("OPPORTUNITY_MIN_SCORE", "60"))))
+            assessment = assess_opportunity(
+                topic=topic,
+                audience=audience,
+                objective=objective,
+                evidence=source_items,
+                client=gate_client,
+                requested_goal=content_goal,
+                minimum_score=minimum_score,
+            )
+            opportunity = assessment.as_dict()
+            resolved_goal = assessment.goal
+            ending = ending_guidance(assessment)
+            if assessment.decision != "draft":
+                return _terminal_opportunity_payload(
+                    persona_key=persona_key,
+                    citations=citations,
+                    opportunity=opportunity,
+                )
+        else:
+            resolved_goal, ending = _goal_without_gate(content_goal)
+            opportunity = {
+                "score": None,
+                "decision": "draft",
+                "goal": resolved_goal,
+                "earned_question": False,
+                "reason": "Opportunity preflight disabled for this caller.",
+                "dimensions": {},
+                "warnings": ["opportunity_gate_disabled"],
+                "strongest_evidence_title": "",
+                "strongest_evidence_fact": "",
+                "missing_evidence_question": "",
+            }
+    
+        persona_profile["active_content_goal"] = resolved_goal
+        persona_profile["earned_question"] = bool(opportunity.get("earned_question", False))
+    
+        voice_items = list(voice_examples or [])[:3]
+        prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
+        strongest_concrete_evidence = {
+            "title": str(opportunity.get("strongest_evidence_title") or ""),
+            "fact": str(opportunity.get("strongest_evidence_fact") or ""),
+        }
+        plan = pipe.plan(prompts.get("plan_prompt", {}), {
+            **plan_ctx, "audience": audience, "objective": objective,
+            "evidence": source_items, "strongest_concrete_evidence": strongest_concrete_evidence,
+        })
+        angle_options = list(plan.get("angle_options") or [plan["angle"]])
+        draft_ctx = {
+>           "editorial_plan": plan["editorial_plan"],
+                              ^^^^^^^^^^^^^^^^^^^^^^
+            "persona_key": persona_key,
+            "audience": audience,
+            "objective": objective,
+            "author_pov": author_pov,
+            "content_goal": resolved_goal,
+            "opportunity_assessment": opportunity,
+            "strongest_concrete_evidence": strongest_concrete_evidence,
+            "ending_guidance": ending,
+            "topic": topic,
+            "services": services,
+            "angle_options": angle_options,
+            "persona_profile": persona_profile,
+            "allowed_sources": [_source_for_prompt(item) for item in source_items],
+            "approved_voice_examples": prompt_voice_examples,
+        }
+E       KeyError: 'editorial_plan'
+
+src/app/api.py:248: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_api_contract.py::test_run_generation_uses_explicit_orchestrator_context
+1 failed, 149 passed in 1.35s

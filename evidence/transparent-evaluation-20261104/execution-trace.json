@@ -1,0 +1,87 @@
+{
+  "evaluation_kind": "transparent_diagnostic_not_blinded_acceptance",
+  "recorded_at_utc": "2026-11-04T23:04:06.677787+00:00",
+  "source_commit": "4a95aa72e8b313e73f76432ada63b1160294cabd",
+  "stages": [
+    {
+      "order": 1,
+      "name": "Opportunity and evidence check",
+      "attempt_id": "attempt-43fc7eaf1ed2485e9ab9d449ee3d668c",
+      "request_sha256": "be5838b9eec2da9336a30382cca3068291e6fa2139b8ba6c37aedadbbe72ac31",
+      "result_sha256": "e8daef4377f926db0bd10d5b9c184d4671f9b7bf9d1d1c74876f69dfc3663816",
+      "prompt_ref": "prompts/stage-01.md",
+      "elapsed_seconds": 6.011501689441502,
+      "mode": "native_cli",
+      "model": "gpt-6-astra"
+    },
+    {
+      "order": 2,
+      "name": "Initial draft",
+      "attempt_id": "attempt-26951fdd78aa49a780af914238890d07",
+      "request_sha256": "0d5e8671e6e941895150f70dd3d58e6a959c427c0036ce36796d3c6e686febe1",
+      "result_sha256": "b3cfc0e0e14b9b57b68386bfcfa679b8a280aa70bdbd8b7948e9fe028610a780",
+      "prompt_ref": "prompts/stage-02.md",
+      "elapsed_seconds": 8.780161635018885,
+      "mode": "native_cli",
+      "model": "gpt-6-astra"
+    },
+    {
+      "order": 3,
+      "name": "Publish-quality evaluation",
+      "attempt_id": "attempt-f45f5153612246dbbddf449a24f524e3",
+      "request_sha256": "c4a5e208dda1315bd1699ac4e7b6a468ea9168ec010617ab675a5a7f7b553f7b",
+      "result_sha256": "064a8b17fad1c87397509c1b5a70e16f17c3632287d891aad1185e81998837fb",
+      "prompt_ref": "prompts/stage-03.md",
+      "elapsed_seconds": 7.911197806708515,
+      "mode": "native_cli",
+      "model": "gpt-6-astra"
+    },
+    {
+      "order": 4,
+      "name": "One guarded rewrite",
+      "attempt_id": "attempt-9d8d01be1f17401195381b0fa5b24a3e",
+      "request_sha256": "1ca9dcf06bfe0fa40599bbc5d5c149320879f9d880e751a9549f69075dbdeb1c",
+      "result_sha256": "162f001e5c852cb2cd7f0af7b63c226f89f3c0c675b971ff7dd4b545aa50ea33",
+      "prompt_ref": "prompts/stage-04.md",
+      "elapsed_seconds": 13.075818124227226,
+      "mode": "native_cli",
+      "model": "gpt-6-astra"
+    },
+    {
+      "order": 5,
+      "name": "Publish-quality evaluation",
+      "attempt_id": "attempt-34432b2c3414476d97daacac7ce2103e",
+      "request_sha256": "ff74c337e41b6ad0a993ddf67ec1677ba2c15f7445205c5158e73e97e161c7ea",
+      "result_sha256": "048942590f9ceee79116775de44b52337359589733b428177326f30310083a38",
+      "prompt_ref": "prompts/stage-05.md",
+      "elapsed_seconds": 6.3972786432132125,
+      "mode": "native_cli",
+      "model": "gpt-6-astra"
+    },
+    {
+      "order": 6,
+      "name": "Simple-prompt baseline",
+      "attempt_id": "attempt-49271be3012c4d82a17906bc06de1c52",
+      "request_sha256": "275c99f6dff5c204f5042ca54d54ee3cda6b088ded4580fa63db2ca0225f6f1d",
+      "result_sha256": "ca0039d38f967dc619400310b0687405bd7cd10bd2f36988ceadc5f74f05514e",
+      "prompt_ref": "prompts/stage-06.md",
+      "elapsed_seconds": 13.173294061794877,
+      "mode": "native_cli",
+      "model": "gpt-6-astra"
+    }
+  ],
+  "budget": {
+    "active_seconds": 57.392304660752416,
+    "in_flight": null,
+    "launches": 18,
+    "model_execution_slots": 6,
+    "model_seconds": 55.32264139410108,
+    "schema_version": "2.0",
+    "started": 1793833284.0713675
+  },
+  "original_score": 78,
+  "rewrite_score": 77,
+  "selected_candidate": null,
+  "human_decision": null,
+  "publication_approved": false
+}

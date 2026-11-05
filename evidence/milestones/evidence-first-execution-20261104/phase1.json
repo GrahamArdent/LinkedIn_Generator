@@ -1,0 +1,83 @@
+{
+  "phase": "phase1",
+  "checked_at": "2026-11-04T23:40:12.147623+00:00",
+  "tested_head": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "output": "e0efc3a69d4e1db3c42efccf87f6a6b054a65966\n"
+  },
+  "dirty_changes": {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 0,
+    "output": " M scripts/linkedin_codex_trial.py\n M src/app/codex_trial.py\n?? evidence/evidence-first-20261104/\n?? evidence/milestones/evidence-first-execution-20261104/\n?? tests/test_evidence_first.py\n"
+  },
+  "source_config_tests_sha256": "5a453b09fea58a3fcc9a0135e6857b95aa8e874ba23e8fb36b6138373eed5da6",
+  "checks": {
+    "pytest": {
+      "command": [
+        "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "phase1-pytest.log",
+      "sha256": "a265949b2d73dd688e1897922c50cc4a797bd20ec452ef78977661bb28d6e0b0"
+    },
+    "diff": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "phase1-diff-repaired.log"
+    },
+    "show": {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "show",
+        "--out",
+        "evidence/transparent-evaluation-20261104/trial"
+      ],
+      "exit_code": 0,
+      "log": "phase1-show.log",
+      "sha256": "4891c0ff3164be749abd0a6fdc7964cbe6499219389d12ca4f0f5b533c07f487"
+    }
+  },
+  "remote_heads": {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/fix/selected-candidate-v4-20261104"
+    ],
+    "exit_code": 0,
+    "output": "e0efc3a69d4e1db3c42efccf87f6a6b054a65966\trefs/heads/fix/selected-candidate-v4-20261104\na714d1ef355ade9ca47a52b301ea477bd0c14f34\trefs/heads/main\n"
+  },
+  "pr": {
+    "number": 24,
+    "observed_state": "open/draft/unmerged",
+    "read_surface": "connected GitHub metadata; required reviews/checks not established; no hosted acceptance claimed"
+  },
+  "runtime": {
+    "state": "CANDIDATE_ONLY",
+    "checkout": "/home/graham/work/linkedin-codex-trial-20261104",
+    "launcher": "/home/graham/.local/bin/linkedin-codex",
+    "python": "/usr/bin/python3.14",
+    "client_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+    "new_generation_during_checkpoint": false
+  },
+  "disposition": "GO",
+  "product_acceptance": "HOLD",
+  "repair": "Whitespace-only diff failure repaired; initial receipt retained; full147 passed."
+}

@@ -1,0 +1,27 @@
+{
+  "declared_at": "2026-11-05T01:58:12.079518+00:00",
+  "authorization": "Operator proceed with focused single-draft editorial recommendation, November4,2026",
+  "budget": {
+    "model_calls": 1,
+    "physical_starts_expected": 3,
+    "cumulative_cli_seconds_max": 900,
+    "api_spend": 0,
+    "automatic_retry": false
+  },
+  "method": "Existing rewrite_for_publish_quality function and fact/quality guard; explicit editorial diagnostic, not score-triggered automatic rewrite or full engine rerun. Manual assistant diagnosis supplies gaps; score is null. Native original remains immutable.",
+  "preserved": [
+    "original technical draft and hash",
+    "author Graham individual POV",
+    "source facts, dates, scope and limitations",
+    "central payment authorization argument",
+    "140-180-word target",
+    "no invented event, quote, outcome or AI-specific mechanism"
+  ],
+  "expected": [
+    "each paragraph adds evidence, explanation, action or necessary scope",
+    "less paraphrased thesis repetition",
+    "recipient/amount verification expressed as a proposed test, not observed fact",
+    "no defensive list of unclaimed outcomes"
+  ],
+  "acceptance": "Actual raw output and existing guard inspected; human approval and90+ publish-ready gate remain unperformed. No nine-style expansion. A safe revision can still fail editorially."
+}

@@ -1,0 +1,695 @@
+{
+  "schema_version": "1",
+  "state": "failed",
+  "input": {
+    "request_id": "lig-evidence-first-mfa-recovery-20261104",
+    "origin": "manual",
+    "topic": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+    "persona_key": "graham",
+    "audience": "Canadian IT leaders and business leaders responsible for identity security",
+    "objective": "Challenge the assumption that enabling MFA completes identity protection. Use the documented recovery-reset tactic to explain why verification during recovery matters, while retaining the advisory's recommendation for phishing-resistant MFA. Offer one practical review question, not a promise of prevention or an invented customer story.",
+    "author_pov": "individual",
+    "content_goal": "authority",
+    "opportunity_gate": true,
+    "publish_quality_gate": true,
+    "publish_quality_threshold": 90,
+    "visual_asset_plan": true,
+    "visual_asset_preference": "auto",
+    "services": [],
+    "targets": [
+      "IT leaders",
+      "security leaders"
+    ],
+    "hashtags": [
+      "#Cybersecurity",
+      "#IdentitySecurity",
+      "#MFA"
+    ],
+    "voice_examples": [],
+    "evidence": [
+      {
+        "title": "S1 / C1: Joint Scattered Spider advisory, revised July 29, 2025",
+        "url": "https://www.cyber.gov.au/advisory/scattered-spider",
+        "fact": "The July 29, 2025 joint Scattered Spider advisory describes attackers gathering password-reset information through calls, then persuading IT help-desk personnel to reset passwords and/or transfer MFA tokens, enabling account takeovers in SSO environments."
+      },
+      {
+        "title": "S1 / C2: Same advisory's mitigation recommendation",
+        "url": "https://www.cyber.gov.au/advisory/scattered-spider",
+        "fact": "The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. The recovery-reset tactic is not evidence that all MFA is useless."
+      },
+      {
+        "title": "S2 / C3: Canadian Centre for Cyber Security, July 29, 2025",
+        "url": "https://www.cyber.gc.ca/en/news-events/joint-cyber-security-advisory-scattered-spider",
+        "fact": "The Canadian Centre for Cyber Security urges organizations covered by the Scattered Spider advisory to regularly test their cyber security business processes, including those used by their service providers."
+      }
+    ]
+  },
+  "model": "gpt-6-astra",
+  "mode": "native_codex",
+  "started_at_utc": "2026-11-04T23:50:29.320846+00:00",
+  "api_spend": 0,
+  "human_decision": null,
+  "evidence_bundle_sha256": "5766da7c142f068a063e9b558b385b3a1ab45b2244bdc3b85ae04d8ec765de3f",
+  "evidence_bundle": {
+    "schema_version": "1",
+    "request_sha256": "5b6321cdc48333cbbba580376a8f93e80397a2311a93f332afd8b81e44569966",
+    "checked_at": "2026-11-04",
+    "reader": "Canadian IT leaders and business leaders responsible for identity security",
+    "central_claim_id": "C1",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "Scattered Spider joint advisory",
+        "publisher": "FBI, CISA, RCMP, ASD ACSC, AFP, CCCS, NCSC-UK; co-author ASD official publication",
+        "url": "https://www.cyber.gov.au/advisory/scattered-spider",
+        "published": "2023-11-16",
+        "revised": "2025-07-29",
+        "checked_at": "2026-11-04",
+        "status": "usable",
+        "passages": [
+          {
+            "locator": "Recent Scattered Spider TTPs / initial access",
+            "excerpt": "reset passwords and/or transfer MFA tokens"
+          },
+          {
+            "locator": "Mitigations",
+            "excerpt": "Implement FIDO/WebAuthn authentication or Public Key Infrastructure (PKI)-based MFA."
+          }
+        ],
+        "limitations": "Historical documented tactics, not a 2026 prevalence estimate or an incident at Graham/Ardent/a client. Recovery compromise is distinct from breaking cryptography. No loss, frequency, guarantee or product claim is supported.",
+        "retrieval": "Opened official source through web research; passages and surrounding context read."
+      },
+      {
+        "source_id": "S2",
+        "title": "Joint cyber security advisory on Scattered Spider",
+        "publisher": "Canadian Centre for Cyber Security",
+        "url": "https://www.cyber.gc.ca/en/news-events/joint-cyber-security-advisory-scattered-spider",
+        "revised": "2025-07-29",
+        "checked_at": "2026-11-04",
+        "status": "usable",
+        "passages": [
+          {
+            "locator": "recommendations paragraph",
+            "excerpt": "regularly test their cyber security business processes"
+          }
+        ],
+        "limitations": "Co-author announcement of the same advisory, not an independent second incident or prevalence study. Recommendation scope is the addressed critical infrastructure/commercial facilities organizations.",
+        "retrieval": "Opened official source through web research."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "kind": "fact",
+        "text": "The July 29, 2025 joint Scattered Spider advisory describes attackers gathering password-reset information through calls, then persuading IT help-desk personnel to reset passwords and/or transfer MFA tokens, enabling account takeovers in SSO environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "kind": "fact",
+        "text": "The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. The recovery-reset tactic is not evidence that all MFA is useless.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim_id": "C3",
+        "kind": "fact",
+        "text": "The Canadian Centre for Cyber Security urges organizations covered by the Scattered Spider advisory to regularly test their cyber security business processes, including those used by their service providers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim_id": "I1",
+        "kind": "inference",
+        "text": "A review limited to the normal sign-in screen can miss how identity is re-established during account recovery.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "claim_id": "O1",
+        "kind": "opinion",
+        "text": "Ask who can authorize a recovery reset, what independent evidence they require, and what happens when the normal proof is unavailable.",
+        "source_ids": []
+      }
+    ],
+    "counterevidence": "The same advisory recommends phishing-resistant MFA. Do not write MFA is pointless, all recovery processes fail, or a checklist guarantees safety.",
+    "calibration": "No exact-text approved/rejected corpus established. Existing preference votes are not such a corpus.",
+    "human_approval": null
+  },
+  "score_baseline": true,
+  "engine": {
+    "request_id": "lig-evidence-first-mfa-recovery-20261104",
+    "origin": "manual",
+    "persona_key": "graham",
+    "status": "drafted",
+    "body": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nI’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection.",
+    "hashtags": [
+      "#Cybersecurity",
+      "#IdentitySecurity",
+      "#MFA"
+    ],
+    "sources": [
+      "https://www.cyber.gov.au/advisory/scattered-spider",
+      "https://www.cyber.gc.ca/en/news-events/joint-cyber-security-advisory-scattered-spider"
+    ],
+    "telemetry": {
+      "emoji_count": 0,
+      "bullet_char": "🔹",
+      "persona": "graham",
+      "score": 97,
+      "voice_reference_count": 0,
+      "voice_reference_ids": [],
+      "opportunity_score": 82,
+      "opportunity_decision": "draft",
+      "opportunity_reason": "Draft: the advisory's specific help-desk password-reset and MFA-token transfer tactic grounds a useful recovery-verification review question while preserving its recommendation for phishing-resistant MFA.",
+      "opportunity_dimensions": {
+        "outsider_clarity": 4,
+        "professional_relevance": 5,
+        "concrete_evidence": 4,
+        "distinctiveness": 4,
+        "novel_insight": 4,
+        "practical_usefulness": 4,
+        "emotional_tension": 3,
+        "conversation_potential": 4,
+        "shareability": 4,
+        "voice_fit": 5
+      },
+      "opportunity_warnings": [],
+      "strongest_evidence_title": "S1 / C1: Joint Scattered Spider advisory, revised July 29, 2025",
+      "strongest_evidence_fact": "The July 29, 2025 joint Scattered Spider advisory describes attackers gathering password-reset information through calls, then persuading IT help-desk personnel to reset passwords and/or transfer MFA tokens, enabling account takeovers in SSO environments.",
+      "missing_evidence_question": "",
+      "content_goal": "authority",
+      "earned_question": false,
+      "publish_quality_score": 73,
+      "publish_quality_threshold": 90,
+      "publish_rewrite_triggered": true,
+      "publish_rewrite_score": 75,
+      "publish_ready": false
+    },
+    "review": {
+      "threshold": 90,
+      "evaluation_context": {
+        "tone": [
+          "direct",
+          "humble"
+        ],
+        "rhythm": [
+          "tight",
+          "punchy"
+        ],
+        "devices": [
+          "question",
+          "contrast"
+        ],
+        "donts": [
+          "clichés",
+          "em_dashes"
+        ],
+        "emoji_max": 3,
+        "bullet_char": "🔹",
+        "active_author_pov": "individual",
+        "voice_authority": {
+          "source": {
+            "authority": "Graham Voice Bible",
+            "repository": "GrahamArdent/LinkedInGenV2",
+            "path": "data/Voice_Bible_Graham (1).md",
+            "blob_sha": "e35aad7f324ea9cc691ea8fd5ca5fc3c7da5a5fd",
+            "role": "primary historical voice authority explicitly authorized for reuse"
+          },
+          "profile": {
+            "persona": "The Relatable Provocateur",
+            "essence": [
+              "bold",
+              "witty",
+              "empathetic",
+              "visceral",
+              "direct",
+              "conversational",
+              "confident_but_relatable",
+              "contrarian_without_being_performative"
+            ],
+            "rhythm": {
+              "hook_words": "6-12",
+              "sentence_mix": "short and long",
+              "one_liner_punches": true,
+              "paragraph_sentences": "2-3",
+              "conversational_punctuation": true
+            },
+            "emotional_palette": [
+              "frustration",
+              "empathy",
+              "protectiveness",
+              "humor",
+              "tension",
+              "inspiration"
+            ],
+            "reasoning_lenses": [
+              "name_the_surface_event",
+              "identify_the_mechanism_and_context",
+              "trace_operational_friction",
+              "trace_financial_or_practical_drag",
+              "trace_identity_and_trust_damage",
+              "identify_strategic_gravity",
+              "look_for_feedback_loops_and_hidden_correlations",
+              "distinguish_correlation_from_causation"
+            ],
+            "signature_devices": [
+              "short_myth_or_mood_hook",
+              "contrarian_flip",
+              "concrete_human_detail",
+              "memorable_analogy_or_wry_humor",
+              "practical_nugget",
+              "provocative_big_picture_closer"
+            ],
+            "thought_leadership_filter": [
+              "challenge_an_assumption",
+              "connect_the_issue_to_more_than_one_stakeholder_when_relevant",
+              "make_the_point_memorable_without_becoming_theatrical",
+              "be_actionable_and_elevated",
+              "end_with_a_real_provocation_when_it_earns_it"
+            ],
+            "boundaries": [
+              "no_cliches",
+              "minimize_jargon",
+              "no_em_dashes",
+              "do_not_copy_signature_example_phrases_as_boilerplate",
+              "do_not_invent_personal_experiences",
+              "do_not_invent_statistics_quotes_or_sources",
+              "do_not_treat_voice_examples_as_factual_evidence",
+              "use_named_author_reference_only_as_provenance_not_as_runtime_imitation_instruction"
+            ]
+          },
+          "semantic_quality": {
+            "default_author_pov": "individual",
+            "internal_terms_needing_translation": [
+              "mode c",
+              "stage 0",
+              "execution spine",
+              "canonical intake",
+              "canonical authority",
+              "regression coverage",
+              "work packet",
+              "kill signal"
+            ],
+            "generic_phrases": [
+              "in today's fast-paced world",
+              "game changer",
+              "the future is here",
+              "unlock the power",
+              "revolutionize",
+              "here's the thing",
+              "in the ever-evolving landscape",
+              "now more than ever",
+              "let that sink in"
+            ],
+            "guidance": [
+              "Assume a smart reader who has never seen the internal project documents.",
+              "Translate internal methodology and repository vocabulary into ordinary language before using it.",
+              "For an individual Graham post, default to I/me/my; use we/us/our only for genuinely shared actions.",
+              "Make one main point per post and make the practical or human consequence clear.",
+              "Prefer concrete details supported by the evidence over abstract process language.",
+              "Do not force a CTA; a natural insight or earned provocation can be the ending."
+            ]
+          },
+          "runtime_guidance": {
+            "style_summary": "Write in a bold, witty, empathetic, direct and conversational voice with vivid but controlled imagery, varied sentence length, compact paragraphs, occasional dry humor, and a contrarian insight grounded in real stakes.",
+            "causal_summary": "Move beyond the surface event. Explain what made it possible, what work breaks next, what cost or drag starts compounding, how trust or identity is affected, and what becomes harder to undo. Use only the layers that are actually supported by the topic and evidence.",
+            "domain_note": "The original Voice Bible was developed heavily around cybersecurity. Preserve its voice and causal-thinking method across topics, but do not assume cybersecurity, C-suite buyers, or any specific professional identity unless the current request supplies that context."
+          }
+        },
+        "spoken_voice": {
+          "name": "Graham Spoken Voice",
+          "schema_version": "1.0",
+          "runtime_summary": "Write as a thoughtful, plain-spoken Graham: curious before certain, direct without pretending every first impression is proven, conversational without transcribing filler, and willing to test his own argument before landing the point. Let the reasoning move from what happened, to what it may mean, to what it changes next. Use contrast, short declarative lines, occasional dry humor, and compact conclusions. Preserve the A-to-B-to-C instinct invisibly: show the current reality, the meaningful consequence, and the bridge or restraint that connects them. Do not over-explain. Do not sound like corporate copy. Do not turn private ENFP material into public biography.",
+          "boundaries": [
+            "Do not infer biography, health, relationships, identity claims, or factual events from this schema.",
+            "Do not mention ENFP unless the current request/topic makes ENFP relevant.",
+            "Do not treat personality-type generalizations as evidence about Graham.",
+            "Do not reproduce private-source anecdotes unless they are separately supplied as factual evidence for the current post.",
+            "Do not imitate conversational filler words merely to sound informal."
+          ],
+          "composition_rules": [
+            "Start from a concrete observation or tension rather than a generic thesis.",
+            "Let the reader see enough of the reasoning path to trust the conclusion.",
+            "Include one meaningful self-check or qualification when the claim genuinely needs it.",
+            "Move from the immediate event to the consequence that matters beyond Graham.",
+            "Land on a compact distinction, lesson, or earned question.",
+            "Keep the central point understandable to a smart outsider."
+          ],
+          "anti_patterns": [
+            "sounding certain because certainty is rhetorically cleaner",
+            "over-explaining until the post feels like a defence brief",
+            "turning every insight into a framework acronym",
+            "repeating signature phrases as branding slogans",
+            "performative vulnerability",
+            "manufactured controversy",
+            "generic inspiration"
+          ],
+          "signature_phrase_policy": "These are conceptual anchors, not mandatory catchphrases. Use an exact phrase only when it fits naturally and is not being repeated across recent posts."
+        },
+        "active_content_goal": "authority",
+        "earned_question": false,
+        "editorial_context": {
+          "objective": "Challenge the assumption that enabling MFA completes identity protection. Use the documented recovery-reset tactic to explain why verification during recovery matters, while retaining the advisory's recommendation for phishing-resistant MFA. Offer one practical review question, not a promise of prevention or an invented customer story.",
+          "topic": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+          "plan": {
+            "reader": "Canadian IT leaders and business leaders responsible for identity security",
+            "question": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+            "factual_anchor": {
+              "title": "S1 / C1: Joint Scattered Spider advisory, revised July 29, 2025",
+              "fact": "The July 29, 2025 joint Scattered Spider advisory describes attackers gathering password-reset information through calls, then persuading IT help-desk personnel to reset passwords and/or transfer MFA tokens, enabling account takeovers in SSO environments."
+            },
+            "tension_task": "Identify a reasonable assumption this exact anchor complicates; do not force disagreement.",
+            "mechanism_task": "Explain how the documented event works, using only supplied support.",
+            "consequence_task": "Trace one supported practical or human consequence; mark interpretation and omit unearned cost claims.",
+            "takeaway": "Challenge the assumption that enabling MFA completes identity protection. Use the documented recovery-reset tactic to explain why verification during recovery matters, while retaining the advisory's recommendation for phishing-resistant MFA. Offer one practical review question, not a promise of prevention or an invented customer story.",
+            "closer_task": "End with the takeaway naturally; no forced CTA, anecdote or signature phrase."
+          },
+          "approved_voice_examples": [],
+          "source_bundle": {
+            "schema_version": "1",
+            "request_sha256": "5b6321cdc48333cbbba580376a8f93e80397a2311a93f332afd8b81e44569966",
+            "checked_at": "2026-11-04",
+            "reader": "Canadian IT leaders and business leaders responsible for identity security",
+            "central_claim_id": "C1",
+            "sources": [
+              {
+                "source_id": "S1",
+                "title": "Scattered Spider joint advisory",
+                "publisher": "FBI, CISA, RCMP, ASD ACSC, AFP, CCCS, NCSC-UK; co-author ASD official publication",
+                "url": "https://www.cyber.gov.au/advisory/scattered-spider",
+                "published": "2023-11-16",
+                "revised": "2025-07-29",
+                "checked_at": "2026-11-04",
+                "status": "usable",
+                "passages": [
+                  {
+                    "locator": "Recent Scattered Spider TTPs / initial access",
+                    "excerpt": "reset passwords and/or transfer MFA tokens"
+                  },
+                  {
+                    "locator": "Mitigations",
+                    "excerpt": "Implement FIDO/WebAuthn authentication or Public Key Infrastructure (PKI)-based MFA."
+                  }
+                ],
+                "limitations": "Historical documented tactics, not a 2026 prevalence estimate or an incident at Graham/Ardent/a client. Recovery compromise is distinct from breaking cryptography. No loss, frequency, guarantee or product claim is supported.",
+                "retrieval": "Opened official source through web research; passages and surrounding context read."
+              },
+              {
+                "source_id": "S2",
+                "title": "Joint cyber security advisory on Scattered Spider",
+                "publisher": "Canadian Centre for Cyber Security",
+                "url": "https://www.cyber.gc.ca/en/news-events/joint-cyber-security-advisory-scattered-spider",
+                "revised": "2025-07-29",
+                "checked_at": "2026-11-04",
+                "status": "usable",
+                "passages": [
+                  {
+                    "locator": "recommendations paragraph",
+                    "excerpt": "regularly test their cyber security business processes"
+                  }
+                ],
+                "limitations": "Co-author announcement of the same advisory, not an independent second incident or prevalence study. Recommendation scope is the addressed critical infrastructure/commercial facilities organizations.",
+                "retrieval": "Opened official source through web research."
+              }
+            ],
+            "claims": [
+              {
+                "claim_id": "C1",
+                "kind": "fact",
+                "text": "The July 29, 2025 joint Scattered Spider advisory describes attackers gathering password-reset information through calls, then persuading IT help-desk personnel to reset passwords and/or transfer MFA tokens, enabling account takeovers in SSO environments.",
+                "source_ids": [
+                  "S1"
+                ]
+              },
+              {
+                "claim_id": "C2",
+                "kind": "fact",
+                "text": "The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. The recovery-reset tactic is not evidence that all MFA is useless.",
+                "source_ids": [
+                  "S1"
+                ]
+              },
+              {
+                "claim_id": "C3",
+                "kind": "fact",
+                "text": "The Canadian Centre for Cyber Security urges organizations covered by the Scattered Spider advisory to regularly test their cyber security business processes, including those used by their service providers.",
+                "source_ids": [
+                  "S2"
+                ]
+              },
+              {
+                "claim_id": "I1",
+                "kind": "inference",
+                "text": "A review limited to the normal sign-in screen can miss how identity is re-established during account recovery.",
+                "source_ids": [
+                  "S1",
+                  "S2"
+                ]
+              },
+              {
+                "claim_id": "O1",
+                "kind": "opinion",
+                "text": "Ask who can authorize a recovery reset, what independent evidence they require, and what happens when the normal proof is unavailable.",
+                "source_ids": []
+              }
+            ],
+            "counterevidence": "The same advisory recommends phishing-resistant MFA. Do not write MFA is pointless, all recovery processes fail, or a checklist guarantees safety.",
+            "calibration": "No exact-text approved/rejected corpus established. Existing preference votes are not such a corpus.",
+            "human_approval": null
+          }
+        }
+      },
+      "calibration_status": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS",
+      "rewrite_triggered": true,
+      "publish_ready": false,
+      "recommendation": "rewrite_below_threshold",
+      "original": {
+        "body": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nI’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection.",
+        "score": 73,
+        "dimensions": {
+          "outsider_clarity": 4,
+          "professional_relevance": 4,
+          "specificity": 4,
+          "novel_insight": 3,
+          "practical_usefulness": 4,
+          "emotional_tension": 3,
+          "conversation_potential": 4,
+          "shareability": 3,
+          "voice_authenticity": 3
+        },
+        "gaps": [
+          "The recovery takeaway repeats across several paragraphs; tightening those repetitions would give the post more momentum.",
+          "The familiar sign-in-versus-recovery distinction is useful but offers limited additional insight beyond the documented tactic.",
+          "Phrases such as ‘That recommendation belongs alongside the recovery lesson’ sound editorial and dilute the direct, conversational voice."
+        ],
+        "rationale": "The post is grounded, relevant and practically useful, but repetition, restrained human stakes and occasional editorial phrasing keep it adequate to strong rather than exceptional.",
+        "warnings": []
+      },
+      "rewrite": {
+        "body": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe distinction matters: convincing someone to reset access is different from defeating the technology protecting it. The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations.\n\nI’d include one question in an MFA review: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nThat’s a decision about who gets trusted as the account owner. It deserves the same scrutiny as sign-in.",
+        "guard_accepted": true,
+        "guard_reasons": [],
+        "score": 75,
+        "dimensions": {
+          "outsider_clarity": 4,
+          "professional_relevance": 4,
+          "specificity": 4,
+          "novel_insight": 3,
+          "practical_usefulness": 4,
+          "emotional_tension": 3,
+          "conversation_potential": 4,
+          "shareability": 4,
+          "voice_authenticity": 4
+        },
+        "gaps": [
+          "The central distinction is useful but familiar; the closing trust observation adds little beyond the recovery-review question.",
+          "The practical question is long and abstract enough to soften the otherwise tight rhythm.",
+          "FIDO/WebAuthn and PKI are unexplained, creating minor friction for business readers."
+        ],
+        "rationale": "The post is grounded, relevant and actionable, with a restrained individual voice, but familiar framing and modest human tension keep it strong rather than exceptional.",
+        "warnings": []
+      }
+    },
+    "selected_candidate": null,
+    "visual_asset": {
+      "status": "deferred",
+      "source_candidate": null,
+      "source_content_sha256": null,
+      "asset_type": null,
+      "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+      "creative_goal": "",
+      "aspect_ratio": "4:5",
+      "single_image": null,
+      "carousel": null,
+      "review_required": true,
+      "warnings": [
+        "publish_ready_candidate_required"
+      ]
+    }
+  },
+  "error_code": "NO_QUALIFIED_CANDIDATE",
+  "finished_at_utc": "2026-11-04T23:51:30.864544+00:00",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":4,\"professional_relevance\":5,\"concrete_evidence\":4,\"distinctiveness\":4,\"novel_insight\":4,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":4,\"voice_fit\":5,\"strongest_evidence_index\":0,\"missing_evidence_question\":\"\",\"reason\":\"Draft: the advisory's specific help-desk password-reset and MFA-token transfer tactic grounds a useful recovery-verification review question while preserving its recommendation for phishing-resistant MFA.\"}"
+      },
+      "attempt_id": "attempt-fc9327021d0d40c39ace0b59937631de",
+      "result_sha256": "ed2970d72535b73d3cbec953dd5340c959530771ca3529436b47ab5035877bbb",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9777,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 127,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe recovery process matters because it decides who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should follow the recovery path as carefully as the normal sign-in process.\n\nOne practical review question: what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer when someone cannot provide their usual proof?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection."
+      },
+      "attempt_id": "attempt-edbb7b0c4df24d918774486af49ef91f",
+      "result_sha256": "425fee50c33bbc900d874e7adb7ca4ca86f1f34cc0f593dfa578e86263b0b56d",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 13548,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 207,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nOne practical review question: what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer when someone cannot provide their usual proof?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection."
+      },
+      "attempt_id": "attempt-12061406a2b84abe8b9e2c649a174471",
+      "result_sha256": "fb6bf44a4e3659772174995dfe7a1f0624fec6da11b9a758fad9d1e85ebd7d76",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 12153,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 202,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "MFA is enabled. How does account recovery work?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nRecovery matters because it determines who gets access when the usual proof is unavailable.\n\nThe same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations. That recommendation belongs alongside the recovery lesson.\n\nMy takeaway: an MFA review should examine account recovery as carefully as normal sign-in.\n\nI’d start with one practical question: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nEnabling MFA is a meaningful step. Verifying who gets to reset access is part of the protection."
+      },
+      "attempt_id": "attempt-827dd6665dcf464687321ca1b1010760",
+      "result_sha256": "9e77bf4849381fc21b6fae1b63005c02e6127d3aaad77b5362f71c533adfaa80",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 12076,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 206,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":3,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":3,\"gaps\":[\"The recovery takeaway repeats across several paragraphs; tightening those repetitions would give the post more momentum.\",\"The familiar sign-in-versus-recovery distinction is useful but offers limited additional insight beyond the documented tactic.\",\"Phrases such as ‘That recommendation belongs alongside the recovery lesson’ sound editorial and dilute the direct, conversational voice.\"],\"rationale\":\"The post is grounded, relevant and practically useful, but repetition, restrained human stakes and occasional editorial phrasing keep it adequate to strong rather than exceptional.\"}"
+      },
+      "attempt_id": "attempt-8ecb0a7da76345888a49ea002a3ee108",
+      "result_sha256": "0be00c162d5350247ddc88e7b84b9be8fb2d57f3d263b3548297c0ee3b7aed64",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 13969,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 179,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "MFA is enabled. Who can reset it?\n\nThe joint Scattered Spider advisory, revised July 29, 2025, describes attackers gathering password-reset information through calls, then persuading IT help-desk staff to reset passwords and/or transfer MFA tokens. That enabled account takeovers in single sign-on environments.\n\nThe distinction matters: convincing someone to reset access is different from defeating the technology protecting it. The same advisory recommends phishing-resistant MFA, including FIDO/WebAuthn or PKI-based implementations.\n\nI’d include one question in an MFA review: when someone cannot provide their usual proof, what independent evidence must the help desk verify before authorizing a password reset or MFA-token transfer?\n\nThat’s a decision about who gets trusted as the account owner. It deserves the same scrutiny as sign-in."
+      },
+      "attempt_id": "attempt-295f56bf57204cd8ad8ca421e97faaca",
+      "result_sha256": "45cdf2b29d874451e823bd776dd10d21baf7336beeb336aac3c31225bdaee368",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 12536,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 182,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":3,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":4,\"voice_authenticity\":4,\"gaps\":[\"The central distinction is useful but familiar; the closing trust observation adds little beyond the recovery-review question.\",\"The practical question is long and abstract enough to soften the otherwise tight rhythm.\",\"FIDO/WebAuthn and PKI are unexplained, creating minor friction for business readers.\"],\"rationale\":\"The post is grounded, relevant and actionable, with a restrained individual voice, but familiar framing and modest human tension keep it strong rather than exceptional.\"}"
+      },
+      "attempt_id": "attempt-b104127db1a74f4db2374ef8471194fe",
+      "result_sha256": "33b3bc2d794042de50f1e71b2c77a0b84cdaf5637b931a8ff7ed620ecc4d562a",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 13947,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 170,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ]
+}

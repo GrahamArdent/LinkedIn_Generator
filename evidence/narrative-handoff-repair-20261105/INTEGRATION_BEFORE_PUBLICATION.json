@@ -1,0 +1,10 @@
+{
+  "number": 24,
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "head": "8b8fa62b4a86301ca198b87e2225b88c2ee9b294",
+  "base": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "observed_at": "2026-11-05T03:33:46.119Z",
+  "retrieval": "connected GitHub fetch REST equivalent after fetch_pr Transport closed"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "GO evidence retention / HOLD quality acceptance and workflow selection",
+  "source_commit": "9001c2f855261f4dbeab70ce5018d8d930683d7a",
+  "branch": "fix/selected-candidate-v4-20261104",
+  "eight_routes": "8 DRAFTED; 2 original setup HOLDs retained",
+  "private_drafts": 18,
+  "model_calls": 55,
+  "model_seconds": 1895.3261753506958,
+  "api_spend": 0,
+  "tests": {
+    "local_suite": "209 passed in 2.13s",
+    "log": "local-pytest.log",
+    "replay_added_calls": 0
+  },
+  "human_preference": null,
+  "winner": null,
+  "scope": "exploratory existing-provider workflow trial; no product code or test changes",
+  "acceptance_objectives_preserved": 26,
+  "e2e_scenarios_preserved": 11,
+  "full_product_acceptance": "not established by this trial",
+  "integration": {
+    "merge": false,
+    "hosted_ci": false,
+    "installation_promotion": false,
+    "deployment": false,
+    "publishing": false
+  },
+  "next_action": "Preserve narrative selection and prevent premature prose across the handoff; narrow literal-versus-symbolic regression comparison before wider generation"
+}

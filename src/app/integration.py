@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 from collections.abc import Callable
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
+from pydantic import ValidationError
+
 from .api import run_generation
-from .contracts import LinkedInContentRequest, LinkedInContentResult, VisualAssetPlan
+from .contracts import LinkedInContentRequest, LinkedInContentResult, SelectedCandidate, VisualAssetPlan
 from .utils import load_yaml
 from .visual_assets import plan_visual_asset
 
@@ -14,29 +17,40 @@ VisualPlanner = Callable[..., VisualAssetPlan | dict[str, Any]]
 CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
 
 
-def _publish_candidate(payload: dict[str, Any]) -> tuple[str | None, str | None]:
-    """Return the 90+ candidate selected by publish-quality review, if any."""
+def _publish_candidate(
+    payload: dict[str, Any], *, threshold: int
+) -> SelectedCandidate | None:
+    """Resolve one qualified candidate, failing closed on malformed review data."""
 
-    review = payload.get("review") if isinstance(payload.get("review"), dict) else {}
-    if not review or not bool(review.get("publish_ready")):
-        return None, None
-
-    recommendation = str(review.get("recommendation") or "")
-    if recommendation == "rewrite":
-        rewrite = review.get("rewrite") if isinstance(review.get("rewrite"), dict) else {}
-        body = str(rewrite.get("body") or "").strip()
-        score = rewrite.get("score")
-        threshold = int(review.get("threshold") or 90)
-        if body and score is not None and int(score) >= threshold and bool(rewrite.get("guard_accepted")):
-            return "rewrite", body
-
-    original = review.get("original") if isinstance(review.get("original"), dict) else {}
-    body = str(original.get("body") or payload.get("body") or "").strip()
-    score = original.get("score")
-    threshold = int(review.get("threshold") or 90)
-    if body and score is not None and int(score) >= threshold:
-        return "original", body
-    return None, None
+    if payload.get("status", "drafted") != "drafted":
+        return None
+    review = payload.get("review")
+    if not isinstance(review, dict) or review.get("publish_ready") is not True:
+        return None
+    if type(review.get("threshold")) is not int or review["threshold"] != threshold:
+        return None
+    source = review.get("recommendation")
+    if source not in ("original", "rewrite"):
+        return None
+    candidate = review.get(source)
+    if not isinstance(candidate, dict):
+        return None
+    if source == "rewrite" and candidate.get("guard_accepted") is not True:
+        return None
+    body, score = candidate.get("body"), candidate.get("score")
+    if not isinstance(body, str) or not body.strip():
+        return None
+    if type(score) is not int or not threshold <= score <= 100:
+        return None
+    # Preserve the actual UTF-8 bytes: normalization would break provenance.
+    digest = sha256(body.encode("utf-8")).hexdigest()
+    return SelectedCandidate(
+        candidate_id=f"{source}:{digest}",
+        source=source,
+        body=body,
+        score=score,
+        content_sha256=digest,
+    )
 
 
 def generate_content(
@@ -53,7 +67,11 @@ def generate_content(
     """
 
     evidence = [item.model_dump() for item in request.evidence]
+    voice_selection = {"writing_voice_id": request.writing_voice_id} if request.writing_voice_id is not None else {}
+    if request.editorial_handoff is not None:
+        voice_selection["editorial_handoff"] = request.editorial_handoff
     payload = generator(
+        **voice_selection,
         topic=request.topic,
         services=request.services,
         persona_key=request.persona_key,
@@ -75,9 +93,9 @@ def generate_content(
 
     visual_asset: VisualAssetPlan | None = None
     status = str(payload.get("status") or "drafted")
+    selected = _publish_candidate(payload, threshold=request.publish_quality_threshold)
     if request.visual_asset_plan and status == "drafted":
-        source_candidate, candidate_body = _publish_candidate(payload)
-        if source_candidate is None or candidate_body is None:
+        if selected is None:
             visual_asset = VisualAssetPlan(
                 status="deferred",
                 rationale=(
@@ -92,15 +110,37 @@ def generate_content(
             telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
             resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
             planned = visual_planner(
-                post_text=candidate_body,
-                source_candidate=source_candidate,
+                post_text=selected.body,
+                source_candidate=selected.source,
                 audience=request.audience,
                 content_goal=resolved_goal,
                 evidence=evidence,
                 preference=request.visual_asset_preference,
                 style_profile=style_profile,
             )
-            visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+            try:
+                visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
+            except ValidationError:
+                visual_asset = VisualAssetPlan(
+                    status="deferred",
+                    rationale="The visual planner returned an invalid plan.",
+                    warnings=["invalid_visual_plan"],
+                )
+            if visual_asset.status == "planned":
+                if (
+                    visual_asset.source_candidate != selected.source
+                    or visual_asset.source_content_sha256 not in (None, selected.content_sha256)
+                ):
+                    visual_asset = VisualAssetPlan(
+                        status="deferred",
+                        rationale="The visual planner returned a different text candidate.",
+                        warnings=["selected_candidate_mismatch"],
+                    )
+                else:
+                    visual_asset = visual_asset.model_copy(
+                        update={"source_content_sha256": selected.content_sha256}
+                    )
+
 
     return LinkedInContentResult(
         request_id=request.request_id,
@@ -112,5 +152,6 @@ def generate_content(
         sources=list(payload.get("sources") or []),
         telemetry=dict(payload.get("telemetry") or {}),
         review=dict(payload.get("review") or {}),
+        selected_candidate=selected,
         visual_asset=visual_asset,
     )

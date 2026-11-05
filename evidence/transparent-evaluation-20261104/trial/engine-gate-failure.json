@@ -1,0 +1,260 @@
+{
+  "schema_version": "1",
+  "state": "failed",
+  "input": {
+    "request_id": "lig-codex-earn-the-steps-20261104",
+    "origin": "manual",
+    "topic": "Before adding more AI steps, show me what they improve",
+    "persona_key": "graham",
+    "audience": "Professionals deciding how to use AI in their work",
+    "objective": "Express Graham's practical skepticism about complexity and ask for observable usefulness. Make a clear, broadly relevant LinkedIn post, not a report about this software project or an explanation of tests. Use first-person judgment supported by the supplied conversation, without inventing a personal event, customer story, measurable saving or business result.",
+    "author_pov": "individual",
+    "content_goal": "authority",
+    "opportunity_gate": true,
+    "publish_quality_gate": true,
+    "publish_quality_threshold": 90,
+    "visual_asset_plan": true,
+    "visual_asset_preference": "auto",
+    "evidence": [
+      {
+        "title": "Graham's explicit direction in this conversation",
+        "fact": "Graham questioned a proposed paid-API trial because an existing Codex subscription environment could be reused. He requested a quick, economical solution with extra layers deferred. This supports a preference for reusing what works and requiring complexity to earn its place; no savings have been measured."
+      },
+      {
+        "title": "Graham's actual reaction to the first comparison",
+        "fact": "Graham said he preferred one draft, but called the test basic. He asked what had been used to generate it and what would be done with his answer. He requested an evaluation showing the brief, model context, changes made at each stage and final writing. Do not describe his preference as content approval or proof of superior quality."
+      }
+    ],
+    "hashtags": []
+  },
+  "model": "gpt-6-astra",
+  "mode": "native_codex",
+  "started_at_utc": "2026-11-04T23:01:23.246528+00:00",
+  "api_spend": 0,
+  "human_decision": null,
+  "engine": {
+    "request_id": "lig-codex-earn-the-steps-20261104",
+    "origin": "manual",
+    "persona_key": "graham",
+    "status": "drafted",
+    "body": "I liked the AI draft. That proved very little.\n\nI preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.\n\nI also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?\n\nThat distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.\n\nMy starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.\n\nI’m willing to add complexity. I want to see what it earns.",
+    "hashtags": [],
+    "sources": [],
+    "telemetry": {
+      "emoji_count": 0,
+      "bullet_char": "🔹",
+      "persona": "graham",
+      "score": 100,
+      "voice_reference_count": 0,
+      "voice_reference_ids": [],
+      "opportunity_score": 79,
+      "opportunity_decision": "draft",
+      "opportunity_reason": "Draft because Graham's preference for one draft, paired with his demand to see what shaped it, grounds a useful distinction between liking an AI output and knowing whether extra steps improve it.",
+      "opportunity_dimensions": {
+        "outsider_clarity": 5,
+        "professional_relevance": 5,
+        "concrete_evidence": 4,
+        "distinctiveness": 3,
+        "novel_insight": 3,
+        "practical_usefulness": 4,
+        "emotional_tension": 3,
+        "conversation_potential": 4,
+        "shareability": 3,
+        "voice_fit": 5
+      },
+      "opportunity_warnings": [],
+      "strongest_evidence_title": "Graham's actual reaction to the first comparison",
+      "strongest_evidence_fact": "Graham said he preferred one draft, but called the test basic. He asked what had been used to generate it and what would be done with his answer. He requested an evaluation showing the brief, model context, changes made at each stage and final writing. Do not describe his preference as content approval or proof of superior quality.",
+      "missing_evidence_question": "",
+      "content_goal": "authority",
+      "earned_question": false,
+      "publish_quality_score": 78,
+      "publish_quality_threshold": 90,
+      "publish_rewrite_triggered": true,
+      "publish_rewrite_score": 77,
+      "publish_ready": false
+    },
+    "review": {
+      "threshold": 90,
+      "rewrite_triggered": true,
+      "publish_ready": false,
+      "recommendation": "original",
+      "original": {
+        "body": "I liked the AI draft. That proved very little.\n\nI preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.\n\nI also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?\n\nThat distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.\n\nMy starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.\n\nI’m willing to add complexity. I want to see what it earns.",
+        "score": 78,
+        "dimensions": {
+          "outsider_clarity": 5,
+          "professional_relevance": 4,
+          "specificity": 3,
+          "novel_insight": 4,
+          "practical_usefulness": 4,
+          "emotional_tension": 3,
+          "conversation_potential": 4,
+          "shareability": 3,
+          "voice_authenticity": 5
+        },
+        "gaps": [
+          "No concrete comparison shows what an added step actually changed; the examples remain hypothetical.",
+          "The professional stakes stay broad, with no specific work situation showing why the distinction matters.",
+          "The middle repeats the need to understand the process without substantially advancing the argument."
+        ],
+        "rationale": "The post is clear, grounded and authentic, with a useful distinction between preference and evidence of a step’s value, but lacks a concrete example that would make the argument more distinctive and shareable.",
+        "warnings": []
+      },
+      "rewrite": {
+        "body": "I preferred one AI draft. The process still had to earn its place.\n\nThe comparison was basic. I wanted to see the brief, the context given to the model, what changed at each stage, and the final writing. I also wanted to know what my preference would be used to change.\n\nPicking a favourite answers one question. It doesn’t tell me which steps helped, or which were unnecessary.\n\nThat mattered when a paid-API trial was proposed. I already had a Codex subscription environment that could be reused, so I questioned the need for another route. I asked for a quick, economical solution, with extra layers deferred.\n\nThat wasn’t evidence of measured savings. It was a reason to make the case for adding something.\n\nThe same standard applies to the writing process. Show me the draft before a step and after it, alongside the requirement that step was meant to address. Then I can judge the change instead of giving the whole process credit for an answer I happen to like.\n\nI’m willing to add complexity. My preference alone doesn’t justify it.",
+        "guard_accepted": true,
+        "guard_reasons": [],
+        "score": 77,
+        "dimensions": {
+          "outsider_clarity": 4,
+          "professional_relevance": 4,
+          "specificity": 4,
+          "novel_insight": 4,
+          "practical_usefulness": 4,
+          "emotional_tension": 3,
+          "conversation_potential": 4,
+          "shareability": 3,
+          "voice_authenticity": 4
+        },
+        "gaps": [
+          "The paid-API detour introduces a second decision without making its connection to draft evaluation immediately clear.",
+          "The central distinction between liking an output and validating a process repeats more than it develops.",
+          "No concrete before-and-after writing example shows how the proposed evaluation would change a decision."
+        ],
+        "rationale": "The post offers a grounded, credible distinction between output preference and process value, with a useful evaluation method, but repetition and modest human stakes limit its impact.",
+        "warnings": []
+      }
+    },
+    "selected_candidate": null,
+    "visual_asset": {
+      "status": "deferred",
+      "source_candidate": null,
+      "source_content_sha256": null,
+      "asset_type": null,
+      "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+      "creative_goal": "",
+      "aspect_ratio": "4:5",
+      "single_image": null,
+      "carousel": null,
+      "review_required": true,
+      "warnings": [
+        "publish_ready_candidate_required"
+      ]
+    }
+  },
+  "error_code": "NO_QUALIFIED_CANDIDATE",
+  "finished_at_utc": "2026-11-04T23:02:12.336321+00:00",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":5,\"professional_relevance\":5,\"concrete_evidence\":4,\"distinctiveness\":3,\"novel_insight\":3,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_fit\":5,\"strongest_evidence_index\":1,\"missing_evidence_question\":\"\",\"reason\":\"Draft because Graham's preference for one draft, paired with his demand to see what shaped it, grounds a useful distinction between liking an AI output and knowing whether extra steps improve it.\"}"
+      },
+      "attempt_id": "attempt-43fc7eaf1ed2485e9ab9d449ee3d668c",
+      "result_sha256": "e8daef4377f926db0bd10d5b9c184d4671f9b7bf9d1d1c74876f69dfc3663816",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9737,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 130,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "I liked the AI draft. That proved very little.\n\nI preferred one version, but I still wanted to know what had shaped it: the brief, the information the model had been given, and what each extra step changed in the final writing.\n\nI also wanted to know what would happen with my preference. Would it inform a useful change, or just count as a vote for the winner?\n\nThat distinction matters when deciding how much AI to put into everyday work. Liking an answer is a useful signal. It doesn’t tell me which steps deserve the credit.\n\nMy starting point is to reuse what works and keep the process simple. If another step helps, show me where: a mistake caught, a clearer explanation, a requirement finally met.\n\nI’m willing to add complexity. I want to see what it earns."
+      },
+      "attempt_id": "attempt-26951fdd78aa49a780af914238890d07",
+      "result_sha256": "b3cfc0e0e14b9b57b68386bfcfa679b8a280aa70bdbd8b7948e9fe028610a780",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11941,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 187,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":5,\"professional_relevance\":4,\"specificity\":3,\"novel_insight\":4,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":5,\"gaps\":[\"No concrete comparison shows what an added step actually changed; the examples remain hypothetical.\",\"The professional stakes stay broad, with no specific work situation showing why the distinction matters.\",\"The middle repeats the need to understand the process without substantially advancing the argument.\"],\"rationale\":\"The post is clear, grounded and authentic, with a useful distinction between preference and evidence of a step’s value, but lacks a concrete example that would make the argument more distinctive and shareable.\"}"
+      },
+      "attempt_id": "attempt-f45f5153612246dbbddf449a24f524e3",
+      "result_sha256": "064a8b17fad1c87397509c1b5a70e16f17c3632287d891aad1185e81998837fb",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9923,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 174,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "I preferred one AI draft. The process still had to earn its place.\n\nThe comparison was basic. I wanted to see the brief, the context given to the model, what changed at each stage, and the final writing. I also wanted to know what my preference would be used to change.\n\nPicking a favourite answers one question. It doesn’t tell me which steps helped, or which were unnecessary.\n\nThat mattered when a paid-API trial was proposed. I already had a Codex subscription environment that could be reused, so I questioned the need for another route. I asked for a quick, economical solution, with extra layers deferred.\n\nThat wasn’t evidence of measured savings. It was a reason to make the case for adding something.\n\nThe same standard applies to the writing process. Show me the draft before a step and after it, alongside the requirement that step was meant to address. Then I can judge the change instead of giving the whole process credit for an answer I happen to like.\n\nI’m willing to add complexity. My preference alone doesn’t justify it."
+      },
+      "attempt_id": "attempt-9d8d01be1f17401195381b0fa5b24a3e",
+      "result_sha256": "162f001e5c852cb2cd7f0af7b63c226f89f3c0c675b971ff7dd4b545aa50ea33",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11180,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 239,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":4,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":4,\"gaps\":[\"The paid-API detour introduces a second decision without making its connection to draft evaluation immediately clear.\",\"The central distinction between liking an output and validating a process repeats more than it develops.\",\"No concrete before-and-after writing example shows how the proposed evaluation would change a decision.\"],\"rationale\":\"The post offers a grounded, credible distinction between output preference and process value, with a useful evaluation method, but repetition and modest human stakes limit its impact.\"}"
+      },
+      "attempt_id": "attempt-34432b2c3414476d97daacac7ce2103e",
+      "result_sha256": "048942590f9ceee79116775de44b52337359589733b428177326f30310083a38",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9977,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 172,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ]
+}

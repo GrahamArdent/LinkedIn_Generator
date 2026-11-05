@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-04",
+  "title": "AI-assisted financial attacks: the decision window and the payment workflow",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Escalation of AI-Driven Attacks on BFSI Entities by Threat Actor CRAFTY FALCON",
+      "publisher": "CERT-In / CSIRT-Fin, Government of India",
+      "published": "2026-11-04",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+      "read_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+      "facts": [
+        "CERT-In's November4 update describes an active AI-assisted campaign against financial entities, using victims' own payment/disbursement APIs.",
+        "The agency reports some entities were targeted again following incomplete remediation."
+      ],
+      "limitations": "Agency-reported activity in the affected Indian financial entities, not proof of universal AI capability, Canadian incidents or losses at Ardent clients. No named AI vendor/model attribution and no claim that every attack is autonomous."
+    },
+    {
+      "id": "S2",
+      "title": "Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities",
+      "publisher": "CERT-In / CSIRT-Fin",
+      "published": "2026-10-09",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "facts": [
+        "The earlier advisory describes stolen payment credentials being used to invoke fund-transfer interfaces directly, bypassing application-level validation.",
+        "Recommended actions include binding transaction stages together, validating payout approvals and enforcing payment-stage limits."
+      ],
+      "limitations": "These are recommendations for the described financial campaign, not a guarantee, universal mandate or a claim that every control is absent everywhere."
+    }
+  ],
+  "angles": [
+    {
+      "id": 1,
+      "name": "The decision window",
+      "direction": "AI acceleration changes how much time a team has to intervene. Keep speed qualitative; no invented minutes, frequency or universal prediction. One pointed management question; practical opinion distinct from source facts."
+    },
+    {
+      "id": 2,
+      "name": "Follow the money path",
+      "direction": "A payment interface can matter more than the screen above it. Explain APIs in plain language. Use an original managerial inference about validating authorization where money moves, without claiming a specific system is vulnerable."
+    },
+    {
+      "id": 3,
+      "name": "What counts as fixed?",
+      "direction": "The re-targeting/incomplete-remediation detail should drive a thoughtful distinction between completing a fix and checking its outcome. Avoid pretending patches or controls always fail. Verification is an interpretation/recommendation."
+    }
+  ],
+  "format": "Each post150\u2013200 words, distinct hook and closing, compact paragraphs,3 relevant hashtags. One coherent point each. No em dashes, quotes, invented anecdotes, statistics, loss estimates, personal/client incidents, Ardent service promises, calls to DM or manufactured urgency. Paraphrase only; at most18 source-derived factual words per post from S1 and25 from S2; the rest should be original reasoning clearly posed as interpretation/opinion. Avoid reproducing the source's wording. Don't name obscure tool products or repeat a report's title in every draft.",
+  "purpose": "Exploratory voice sampler directly generated with the existing Codex bridge and configured voice guidance. Not a full engine/publish-quality trial; no automatic scores, no editorial or publication approval inferred.",
+  "budget": {
+    "model_executions": 2,
+    "physical_starts": 6,
+    "cumulative_cli_seconds": 900,
+    "api_spend": 0
+  }
+}

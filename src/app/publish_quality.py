@@ -94,11 +94,11 @@ def assess_publish_quality(
     ]
     spoken = persona_profile.get("spoken_voice") if isinstance(persona_profile.get("spoken_voice"), dict) else {}
     voice = persona_profile.get("voice_authority") if isinstance(persona_profile.get("voice_authority"), dict) else {}
-    voice_context = {
-        "persona": voice.get("profile", {}).get("persona") if isinstance(voice.get("profile"), dict) else None,
-        "spoken_summary": spoken.get("runtime_summary", ""),
-        "author_pov": persona_profile.get("active_author_pov"),
-    }
+    brief = dict(persona_profile.get("editorial_context") or {})
+    voice_context = dict(persona_profile)
+    if "writing_voice" in voice_context:
+        # The same brief is supplied separately below; do not repeat its thesis.
+        voice_context.pop("editorial_context", None)
 
     system = (
         "You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the raw topic, from 0 "
@@ -106,7 +106,13 @@ def assess_publish_quality(
         "specific, distinctive, interesting, shareable, and authentic enough to publish. Do not reward clickbait, "
         "engagement bait, unsupported specificity, or generic LinkedIn polish. Use the supplied evidence only to "
         "judge whether concrete details are grounded. This is a publish-readiness heuristic, not a promise of "
-        "virality. Return JSON only."
+        "virality. These ratings are not calibrated to the author's human judgments or engagement outcomes. "
+        "Apply the rating anchors to each dimension; never inflate scores to meet a threshold. "
+        "Use the same brief and voice context as the writer. If writing_voice is present, assess voice fit against "
+        "its selected style_traits over default persona style; approved examples supply compatible details only. "
+        "Preserve factual and author-POV boundaries. "
+        "Identify the largest fixable defect first; "
+        "missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only."
     )
     user = json.dumps(
         {
@@ -115,6 +121,17 @@ def assess_publish_quality(
             "content_goal": content_goal,
             "grounded_evidence": source_facts,
             "voice_context": voice_context,
+            "editorial_brief": brief,
+            "approved_voice_examples": list(brief.get("approved_voice_examples") or []),
+            "calibration_status": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS",
+            "rating_anchors": {
+                "0": "Absent, contradicted or unusable for this dimension.",
+                "1": "Severe weakness; the reader must reconstruct the point.",
+                "2": "Partial; generic, unclear or insufficiently supported.",
+                "3": "Adequate but ordinary; the dimension works with a material limitation.",
+                "4": "Strong; grounded, clear and useful with only a minor weakness.",
+                "5": "Exceptional for this supplied brief; explain why the dimension earns this judgment, not merely because no rule was broken.",
+            },
             "dimensions": {
                 "outsider_clarity": "Can a smart stranger understand the post without project context?",
                 "professional_relevance": "Does the post matter to the intended professional audience?",
@@ -139,8 +156,14 @@ def assess_publish_quality(
         out = client.call(system, user, response_json=True)
         raw = str(out.get("text", "") if isinstance(out, dict) else out)
         payload = _parse_payload(raw)
-        dimensions = {key: _clamp_dimension(payload.get(key)) for key in _DIMENSION_KEYS}
+        if any(type(payload.get(key)) is not int or not 0 <= payload[key] <= 5 for key in _DIMENSION_KEYS):
+            raise ValueError("missing_or_invalid_publish_quality_dimension")
+        dimensions = {key: payload[key] for key in _DIMENSION_KEYS}
         gaps_raw = payload.get("gaps")
+        if (not isinstance(gaps_raw, list) or len(gaps_raw) > 3
+                or any(not isinstance(g, str) or not g.strip() for g in gaps_raw)
+                or not isinstance(payload.get("rationale"), str) or not payload["rationale"].strip()):
+            raise ValueError("missing_or_invalid_publish_quality_judgment")
         gaps = tuple(
             str(item).strip()[:300]
             for item in (gaps_raw if isinstance(gaps_raw, list) else [])
@@ -187,6 +210,7 @@ def rewrite_for_publish_quality(
 
     values = {
         "post": original,
+        "primary_fix": assessment.gaps[0] if assessment.gaps else "Improve only a supported, identifiable weakness; otherwise preserve the original.",
         "publish_quality_report": assessment.as_dict(),
         "persona_profile": persona_profile,
         "allowed_sources": [

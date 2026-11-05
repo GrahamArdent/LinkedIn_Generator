@@ -1,0 +1,92 @@
+{
+  "candidates": {
+    "A": {
+      "body": "An approval record establishes what was authorized. It does not, by itself, establish that the system enforces that authorization when money moves.\n\nCERT-In’s November 4 update reports an AI-assisted campaign targeting Indian financial entities through their own payment and disbursement interfaces. Its earlier advisory, CIAD-2026-0046, describes stolen credentials enabling direct payment calls that bypass application checks. It recommends binding transaction stages and validating every payout against approved records.\n\nThe dependency matters: if the final transfer can proceed without checking the approved decision, checks in the approval workflow may not constrain execution. That is the inference I draw from the reported mechanism.\n\nI would trace one approved payment from decision to execution: identify the permission the final transfer accepts, then verify how the payout is checked against the approved record. The evidence should connect the decision to the money movement.\n\nThese reports concern Indian financial entities. They do not establish that every payment system has this weakness, or demonstrate universal AI autonomy, attack frequency or losses.\n\n#AI #PaymentSecurity #CyberRisk",
+      "content_sha256": "68b92a5b7c8f2c8bd7ec48c92baef909ccb299bd300753aa8e7fa22bd70b8388"
+    },
+    "B": {
+      "body": "Payment authorization depends on what the system checks when it releases funds. An approval record establishes a decision; it does not, by itself, establish that the final transfer must follow that decision.\n\nCERT-In’s November 4, 2026 update reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces. Its October 9 advisory describes stolen credentials enabling direct payment calls that bypass application checks. It recommends binding transaction stages together and validating every payout against approved records.\n\nThe distinction matters: if a payment interface accepts credentials without checking the approved transaction, the approval process may not constrain the transfer. That is the control implication I draw from the reported mechanism, not evidence that every payment system has this weakness.\n\nI would ask leaders to trace one approved payment through to execution: which recipient and amount were authorized, and what enforces those details when funds move? The evidence concerns the described Indian campaign. It does not establish Canadian incidents, attack frequency, losses or fully autonomous AI attacks.",
+      "content_sha256": "3a4ef554d711b414467ee1eafa2a85d580376b92e5ecdba9ee13cae447324065"
+    }
+  },
+  "human_decision": null,
+  "evidence_bundle_sha256": "0f5ba14a6ecc7c3fbb478ad34e74823e885b88fa1ce8bde981f66c1aca5bb05e",
+  "evidence_bundle": {
+    "schema_version": "1",
+    "request_sha256": "48292b85db821b0790e4dcce0423be977c311979e3c7e0dc93a9d6060cfb48ba",
+    "central_claim_id": "C1",
+    "sources": [
+      {
+        "source_id": "S1",
+        "title": "Escalation of AI-Driven Attacks on BFSI Entities",
+        "publisher": "CERT-In / CSIRT-Fin, Government of India",
+        "published": "2026-11-04",
+        "checked_at": "2026-11-04",
+        "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+        "status": "usable",
+        "passages": [
+          {
+            "locator": "November4 current activity / overview",
+            "excerpt": "strikes by invoking the victim's own payment and disbursement APIs"
+          }
+        ],
+        "limitations": "Agency-reported affected Indian financial entities; not evidence of a Canadian/Ardent-client incident, universal AI autonomy, frequency or losses."
+      },
+      {
+        "source_id": "S2",
+        "title": "CIAD-2026-0046",
+        "publisher": "CERT-In / CSIRT-Fin",
+        "published": "2026-10-09",
+        "checked_at": "2026-11-04",
+        "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+        "status": "usable",
+        "passages": [
+          {
+            "locator": "Key TTPs Observed",
+            "excerpt": "Bypassing of application-level checks"
+          },
+          {
+            "locator": "Recommended Actions",
+            "excerpt": "Validate every payout against sanctioned/approved records"
+          }
+        ],
+        "limitations": "Recommendations apply to the described campaign; no guarantee or claim that every system has the weakness."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "C1",
+        "kind": "fact",
+        "text": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim_id": "C2",
+        "kind": "fact",
+        "text": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim_id": "I1",
+        "kind": "inference",
+        "text": "An approval screen alone does not establish that authorization is enforced at the point of transfer.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "claim_id": "O1",
+        "kind": "opinion",
+        "text": "Leaders should trace one approved payment from decision to execution, checking what permission the final transfer accepts.",
+        "source_ids": []
+      }
+    ],
+    "human_approval": null
+  },
+  "score_baseline": true
+}

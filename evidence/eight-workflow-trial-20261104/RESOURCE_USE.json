@@ -1,0 +1,1447 @@
+{
+  "model_calls": 55,
+  "api_spend": 0,
+  "subscription_cost": "unavailable; subscription resource use, not API billing",
+  "token_usage_provider_reported": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 319232,
+    "input_tokens": 736153,
+    "output_tokens": 53727,
+    "reasoning_output_tokens": 1847
+  },
+  "model_seconds": 1895.3261753506958,
+  "batches": [
+    {
+      "run_id": "eight-route-6",
+      "active_seconds": 265.09323911648244,
+      "in_flight": null,
+      "launches": 18,
+      "model_execution_slots": 6,
+      "model_seconds": 262.9835246903822,
+      "schema_version": "2.0",
+      "started": 1793847830.2603548
+    },
+    {
+      "run_id": "eight-route-8",
+      "active_seconds": 180.2781571606174,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 178.50458648055792,
+      "schema_version": "2.0",
+      "started": 1793847864.4566352
+    },
+    {
+      "run_id": "eight-route-2",
+      "active_seconds": 185.27300924621522,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 183.44679765310138,
+      "schema_version": "2.0",
+      "started": 1793847642.6224532
+    },
+    {
+      "run_id": "eight-route-4-corrected-input",
+      "active_seconds": 160.91824675165117,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 159.14611655287445,
+      "schema_version": "2.0",
+      "started": 1793847915.1464007
+    },
+    {
+      "run_id": "eight-route-5",
+      "active_seconds": 186.31749476399273,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 184.59377425163984,
+      "schema_version": "2.0",
+      "started": 1793847814.6332443
+    },
+    {
+      "run_id": "eight-route-4",
+      "active_seconds": 25.409259046427906,
+      "in_flight": null,
+      "launches": 3,
+      "model_execution_slots": 1,
+      "model_seconds": 25.063560617156327,
+      "schema_version": "2.0",
+      "started": 1793847803.7989676
+    },
+    {
+      "run_id": "eight-route-7-corrected-input",
+      "active_seconds": 184.5756637826562,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 182.74588828533888,
+      "schema_version": "2.0",
+      "started": 1793847915.1464024
+    },
+    {
+      "run_id": "eight-route-3",
+      "active_seconds": 166.72116730175912,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 164.907365180552,
+      "schema_version": "2.0",
+      "started": 1793847642.6374445
+    },
+    {
+      "run_id": "eight-controls",
+      "active_seconds": 374.1786116026342,
+      "in_flight": null,
+      "launches": 36,
+      "model_execution_slots": 12,
+      "model_seconds": 370.0072086621076,
+      "schema_version": "2.0",
+      "started": 1793848118.251916
+    },
+    {
+      "run_id": "eight-route-1",
+      "active_seconds": 155.89231087081134,
+      "in_flight": null,
+      "launches": 15,
+      "model_execution_slots": 5,
+      "model_seconds": 154.0079047875479,
+      "schema_version": "2.0",
+      "started": 1793847642.622452
+    },
+    {
+      "run_id": "eight-route-7",
+      "active_seconds": 30.27990383654833,
+      "in_flight": null,
+      "launches": 3,
+      "model_execution_slots": 1,
+      "model_seconds": 29.91944818943739,
+      "schema_version": "2.0",
+      "started": 1793847833.144146
+    }
+  ],
+  "attempts": [
+    {
+      "attempt_id": "attempt-d10a1c514f644cadaead14f66e15401f",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "0af8b8a9c125c7bd2c3afe2b2af5726593049bfd383927153f93897b75d9002f",
+      "result_sha256": "6e7cadd53e193528e82af2c0da8c086fc2aaaa374b0df25ff5d3e4c619fec759",
+      "elapsed_seconds": 12.724013878032565,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13232,
+        "output_tokens": 307,
+        "reasoning_output_tokens": 76
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ae-7e9b-7fc2-9634-e418673760e7"
+      ],
+      "path": "attempts/eight-controls/linkedin/0af8b8a9c125c7bd2c3afe2b2af5726593049bfd383927153f93897b75d9002f/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-ad80a0f9ca844b82a83a40cd80a44cb7",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "0ea6ec3de0a32b2793cc627b6fb0f4e683586f4169530483fc734b63cf7a4463",
+      "result_sha256": "d1028747c3df71bef942658dbfd078219a2545ba2d42a34e2a85ed4949dc50ff",
+      "elapsed_seconds": 13.931950656697154,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13215,
+        "output_tokens": 304,
+        "reasoning_output_tokens": 24
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ae-0e3e-7331-99d7-0e678f1af187"
+      ],
+      "path": "attempts/eight-controls/linkedin/0ea6ec3de0a32b2793cc627b6fb0f4e683586f4169530483fc734b63cf7a4463/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-3ed78cfc98ba4fc197f064bc0a4c129a",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "4436f8b1abaf1a68e9f997befff5ea27aaace74b836af60ff91ba19c5738bbe5",
+      "result_sha256": "5e78c6f7ea58180a84f3ce81aeb300cfa6b76c6f9164a076636081f1785de06c",
+      "elapsed_seconds": 10.017871911637485,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13281,
+        "output_tokens": 273,
+        "reasoning_output_tokens": 23
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9af-1bf3-7a71-bc12-cdb3c1c921b5"
+      ],
+      "path": "attempts/eight-controls/linkedin/4436f8b1abaf1a68e9f997befff5ea27aaace74b836af60ff91ba19c5738bbe5/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-fe387f1b8b1640e0961cea1ba0b81932",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "58802a2f52cbc8025646c6efea9fd40b81847e981d37b276396147be546e8824",
+      "result_sha256": "4e51986800afb6a4a6e2d7981d33a19d1d8856d239e3dee81e4c9dfd1e1db0d1",
+      "elapsed_seconds": 11.883479517884552,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13290,
+        "output_tokens": 289,
+        "reasoning_output_tokens": 33
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9af-4882-7ba1-a568-02ee756e996e"
+      ],
+      "path": "attempts/eight-controls/linkedin/58802a2f52cbc8025646c6efea9fd40b81847e981d37b276396147be546e8824/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-5edd502de20749988721e85786a77143",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "62ca8fc601819a7227e009d29c3343dec01f395139cab5d07f822204f6f6d006",
+      "result_sha256": "0c392aed451ada2840a107d64dd34cf16cec3e431e8b280cbe07db3bf9527b7b",
+      "elapsed_seconds": 11.400285689160228,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13226,
+        "output_tokens": 298,
+        "reasoning_output_tokens": 36
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ae-b5ae-7b62-8674-45e2e1c580d2"
+      ],
+      "path": "attempts/eight-controls/linkedin/62ca8fc601819a7227e009d29c3343dec01f395139cab5d07f822204f6f6d006/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-6a51a6a3700f4224a0516cb31f7fd74f",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "724471969fc10a2037636e3df62dbf50c1207c9806fe5d340b0c6ff3d0d68216",
+      "result_sha256": "0dfa4f51daedc00ce3d594335d4ced8406484d4409d8e67b53cbec1d11533884",
+      "elapsed_seconds": 11.989292265847325,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13259,
+        "output_tokens": 299,
+        "reasoning_output_tokens": 52
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ae-e78f-70a3-8ce2-bdea04e066ad"
+      ],
+      "path": "attempts/eight-controls/linkedin/724471969fc10a2037636e3df62dbf50c1207c9806fe5d340b0c6ff3d0d68216/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-fa72d08611d54ab7a5bdcb3b735c2c02",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "73a396bffb2ceeb598ff52176d49fb6321c93b6576fc3ca4a867367410490883",
+      "result_sha256": "03321fc6ca1c90ca1b3a0536002a3eed42ce151ffc3aef011ef663f6e035d5ee",
+      "elapsed_seconds": 161.8446204997599,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 16289,
+        "output_tokens": 4479,
+        "reasoning_output_tokens": 59
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9af-7d23-7461-920d-2b7b2c73af60"
+      ],
+      "path": "attempts/eight-controls/linkedin/73a396bffb2ceeb598ff52176d49fb6321c93b6576fc3ca4a867367410490883/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-ab4c87584fd34512bad9b5234c102732",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "a91d95332e37a146c118f47e1f680d3fe8fa17509518bfa7964f764bf7675398",
+      "result_sha256": "91b3ea46913ccf161e309f8d960c29e3bf3ea24cecf501d0f7e709d7d0f826d1",
+      "elapsed_seconds": 16.340423425659537,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12638,
+        "output_tokens": 312,
+        "reasoning_output_tokens": 22
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9b2-331e-7f43-ae37-6d0747f46b98"
+      ],
+      "path": "attempts/eight-controls/linkedin/a91d95332e37a146c118f47e1f680d3fe8fa17509518bfa7964f764bf7675398/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-d6778bea13e9474bb4d5ece364b50074",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "b9cb8c6cefbe2791f0e211aff34343ba92056000f1243e1083dab0c2cdc80bd7",
+      "result_sha256": "83ce102bcad3ce800d7abeac44d360829a9b37363b67289dc0888d7964b2abb2",
+      "elapsed_seconds": 12.081238178536296,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13223,
+        "output_tokens": 315,
+        "reasoning_output_tokens": 62
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ae-4a08-7212-87db-c3195985f51d"
+      ],
+      "path": "attempts/eight-controls/linkedin/b9cb8c6cefbe2791f0e211aff34343ba92056000f1243e1083dab0c2cdc80bd7/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-aa4b7e4311c34c8bb2f7424dc6f473a5",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "bcb5ba10a48b81dc00b4c4761ee9d6b12f8632a553b81c2bb949716776625199",
+      "result_sha256": "15da534f18b0b4bddb28b2717d9a68d451014b624429e20e1d04bb71f15447e9",
+      "elapsed_seconds": 77.904365606606,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13068,
+        "output_tokens": 2290,
+        "reasoning_output_tokens": 47
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9b2-e064-7ed2-88fb-9ebe58a65553"
+      ],
+      "path": "attempts/eight-controls/linkedin/bcb5ba10a48b81dc00b4c4761ee9d6b12f8632a553b81c2bb949716776625199/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-98238070ce4b45cc9b24420f74269546",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "d3a285c60f7bf15b1bf399d91ccc4dd12d9648f74f474ac220dc06851f737407",
+      "result_sha256": "2ae9f0d27189a5fe3880012cfeefa21b06dba64a39432da6de63f92b138942d1",
+      "elapsed_seconds": 13.046009971760213,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12634,
+        "output_tokens": 346,
+        "reasoning_output_tokens": 32
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9b1-fae1-7fa1-bc46-972d071e628c"
+      ],
+      "path": "attempts/eight-controls/linkedin/d3a285c60f7bf15b1bf399d91ccc4dd12d9648f74f474ac220dc06851f737407/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-a1d0159714b84beeb781e29668bf5f8d",
+      "run_id": "eight-controls",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "db3dc3d31d15679f3daabf58b7c34f94560ca931b2cb8d839acad6a967a4bfef",
+      "result_sha256": "bed47e758561ebcecefe3668474523effe88ccb1dbbceb8c6e9f7ce9471adce6",
+      "elapsed_seconds": 16.890870122238994,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12353,
+        "output_tokens": 313,
+        "reasoning_output_tokens": 28
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9b2-7873-7ee0-8346-de1f85cc52f8"
+      ],
+      "path": "attempts/eight-controls/linkedin/db3dc3d31d15679f3daabf58b7c34f94560ca931b2cb8d839acad6a967a4bfef/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-e3ada3908557408988b967d0aef6106b",
+      "run_id": "eight-route-1",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "28672f9ff9217ade9a9410a8f044579aa7f51c0c66b1eda1822d76ab4a3d9042",
+      "result_sha256": "c54375c5eaa3bc280a243c90f8571e495380de0b23e98b421f8de5b2444a9627",
+      "elapsed_seconds": 11.254275429062545,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14527,
+        "output_tokens": 271,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-1074-7c30-82c8-7b7496ab5d94"
+      ],
+      "path": "attempts/eight-route-1/linkedin/28672f9ff9217ade9a9410a8f044579aa7f51c0c66b1eda1822d76ab4a3d9042/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-793a71f274b14728ad438b4aed0c7fae",
+      "run_id": "eight-route-1",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "367c4ed8a750b8f5cb365f399f580a2a33e7a0abe5823e78b267419f0f91d3b2",
+      "result_sha256": "5bdd79ae01e0b9f9fa7afc808d43a055cb44a409051e830f00e35162127f334d",
+      "elapsed_seconds": 40.56961365882307,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13273,
+        "output_tokens": 1257,
+        "reasoning_output_tokens": 48
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a8-6c7c-7b03-8001-1bfccfe1cd08"
+      ],
+      "path": "attempts/eight-route-1/linkedin/367c4ed8a750b8f5cb365f399f580a2a33e7a0abe5823e78b267419f0f91d3b2/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-70f34aace5174ecb995430d490f059e2",
+      "run_id": "eight-route-1",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "72b16d928703ec827cf1a11c0154bf4f95534241967b0b8fd14287922449b357",
+      "result_sha256": "347aacdeb4475694c3343699a6a30e195841b63039cbc43a6e200c9d5072267d",
+      "elapsed_seconds": 41.52492430061102,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13425,
+        "output_tokens": 1468,
+        "reasoning_output_tokens": 16
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a7-6b0a-7bb2-a3d1-c81f46c851a0"
+      ],
+      "path": "attempts/eight-route-1/linkedin/72b16d928703ec827cf1a11c0154bf4f95534241967b0b8fd14287922449b357/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-ac2a00d0138f48baa3e4ca4b20be0fd4",
+      "run_id": "eight-route-1",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "bd2c8329716555b8fd47b0fda1b6b5d5d78abb84d2e0ee86a6b86eb2ebec8568",
+      "result_sha256": "9fc0e87fc9e6ff119d61362a360f3fb77e95c68eac398d3e32682d1e630c53a4",
+      "elapsed_seconds": 39.16879927366972,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 12362,
+        "output_tokens": 1056,
+        "reasoning_output_tokens": 37
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a6-ccf2-7b02-b68a-24f3dbc458c9"
+      ],
+      "path": "attempts/eight-route-1/linkedin/bd2c8329716555b8fd47b0fda1b6b5d5d78abb84d2e0ee86a6b86eb2ebec8568/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-8682096ed9534a06b79889ed14055b69",
+      "run_id": "eight-route-1",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "d8d9c363fb2aba20927d0cf91f05a903427e486018fa01de8bb85adc02f5d899",
+      "result_sha256": "cd73b974563b7162bd0cc9d91c602cd930d15f330be008f61ab82db684355df8",
+      "elapsed_seconds": 21.512227550148964,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14742,
+        "output_tokens": 864,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a8-12eb-7ad0-a6fd-aa88111547be"
+      ],
+      "path": "attempts/eight-route-1/linkedin/d8d9c363fb2aba20927d0cf91f05a903427e486018fa01de8bb85adc02f5d899/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-bc1dd0cc3f9b40bf9624ddeece15dcee",
+      "run_id": "eight-route-2",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "2c5132b0dbc6c580f513e29e41aefcfc994355e1092073cff694ca1cb8a17b26",
+      "result_sha256": "9a71900654fcaa292c90fd557d1b431f3742797e479ec8d95dc2a65492002cef",
+      "elapsed_seconds": 47.31754115317017,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 12340,
+        "output_tokens": 1158,
+        "reasoning_output_tokens": 30
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a6-ccf6-7832-b38c-954a949475c0"
+      ],
+      "path": "attempts/eight-route-2/linkedin/2c5132b0dbc6c580f513e29e41aefcfc994355e1092073cff694ca1cb8a17b26/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-71e8e99d222043cea91b5e1c68358cd0",
+      "run_id": "eight-route-2",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "4fc098d82498651ab020ba35e6a5f3e1478d19d4f1f28c8cb4e7eae4c4a69652",
+      "result_sha256": "792b3ddf36f225502a158d80669101bc10f9dcead590352706b85d29a33bc094",
+      "elapsed_seconds": 29.00675194710493,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 15335,
+        "output_tokens": 946,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a8-7486-73b1-b242-9195e3727500"
+      ],
+      "path": "attempts/eight-route-2/linkedin/4fc098d82498651ab020ba35e6a5f3e1478d19d4f1f28c8cb4e7eae4c4a69652/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-f571e365948f43919ebd4613f5b9935f",
+      "run_id": "eight-route-2",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "59c3752666d2b47ad0d0dacfe8eeea82a651566ae06fe922f032ff55d88ae1f9",
+      "result_sha256": "d49fd78ea8d1d45515f61947b40ef51d092f56fac8dc5455ced5404802b00c56",
+      "elapsed_seconds": 37.58371744211763,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13347,
+        "output_tokens": 1378,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a8-eb1f-7f53-aff2-a0f00add888d"
+      ],
+      "path": "attempts/eight-route-2/linkedin/59c3752666d2b47ad0d0dacfe8eeea82a651566ae06fe922f032ff55d88ae1f9/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-18dbe96ae04a408491d04c28eb2356b0",
+      "run_id": "eight-route-2",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "868d2eccc8cf7dcf37fca1c59db4e44c6ea3acb6e7a077dcfbd561bb05ae19d9",
+      "result_sha256": "9ba13b6fae2bfdbba508ed37e165839b3a039855271acd18b34802cecdcabbe0",
+      "elapsed_seconds": 11.184678541496396,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 14808,
+        "output_tokens": 321,
+        "reasoning_output_tokens": 44
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-835c-74e0-8970-8a513f9495df"
+      ],
+      "path": "attempts/eight-route-2/linkedin/868d2eccc8cf7dcf37fca1c59db4e44c6ea3acb6e7a077dcfbd561bb05ae19d9/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-a3eebebeba814a44b75fc815417f0f01",
+      "run_id": "eight-route-2",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "984b629207cfd73902400fa17847cfe291b4308149d920b69f3b3afc0c82aabc",
+      "result_sha256": "3c5c36fc963472079c4086f8980f0888feff0934d8ba70491259ff8a9e5ff951",
+      "elapsed_seconds": 58.3760723862797,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13533,
+        "output_tokens": 1942,
+        "reasoning_output_tokens": 24
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a7-8acf-74f1-8cd9-3c62fb26c964"
+      ],
+      "path": "attempts/eight-route-2/linkedin/984b629207cfd73902400fa17847cfe291b4308149d920b69f3b3afc0c82aabc/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-3cb397283272427a94bb329a88413be9",
+      "run_id": "eight-route-3",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "10883e91fa69c8cbc7b8f19931ac6b6eb53a601a479be6eca64d1969cde919d4",
+      "result_sha256": "86b97d875ee055aa7059ae4aee35749ce2d9068154168bff7aca6434c0e5c6ae",
+      "elapsed_seconds": 36.388433784246445,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13410,
+        "output_tokens": 1125,
+        "reasoning_output_tokens": 25
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a7-838a-7ba2-87d5-0356f7e88ffe"
+      ],
+      "path": "attempts/eight-route-3/linkedin/10883e91fa69c8cbc7b8f19931ac6b6eb53a601a479be6eca64d1969cde919d4/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-5c2285e782c5476a909bef9082a2df40",
+      "run_id": "eight-route-3",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "25966c641d52ace27e4594ffaebaa86f821c47c088a61f439d2f9e6f8ccae11e",
+      "result_sha256": "dcd22e797f75c51dea88357c4ae261f2d818ca1b75f574ab79611492d122367b",
+      "elapsed_seconds": 45.37683783657849,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12352,
+        "output_tokens": 1142,
+        "reasoning_output_tokens": 115
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a6-cceb-7ab2-8ae7-f72159fd93e2"
+      ],
+      "path": "attempts/eight-route-3/linkedin/25966c641d52ace27e4594ffaebaa86f821c47c088a61f439d2f9e6f8ccae11e/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-48341c65c9c64ad887adb4731eadb025",
+      "run_id": "eight-route-3",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "41a217191414b8fbc4052980a3e0ab16e48921c2d90274cb725f3112851ad230",
+      "result_sha256": "02e36c98eeef8b1a303cac57b0be53e411aaac22596ec3db6579f31f75a0798b",
+      "elapsed_seconds": 10.964075895957649,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 14904,
+        "output_tokens": 302,
+        "reasoning_output_tokens": 26
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-3c3b-7c32-8f74-b7cf503f456c"
+      ],
+      "path": "attempts/eight-route-3/linkedin/41a217191414b8fbc4052980a3e0ab16e48921c2d90274cb725f3112851ad230/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-89e7b91c94ff43ef8db8d378ceb7fcaa",
+      "run_id": "eight-route-3",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "769f37c151113f33c4367015377e5980400413cce288f8e47a594b00706c1a84",
+      "result_sha256": "f63c9fce44f55b485e02dfeb064913504d4463df92768a7f88dc8998a81ba314",
+      "elapsed_seconds": 28.211938673630357,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14319,
+        "output_tokens": 871,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a8-1769-7d81-9493-28ef02fb7376"
+      ],
+      "path": "attempts/eight-route-3/linkedin/769f37c151113f33c4367015377e5980400413cce288f8e47a594b00706c1a84/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-caf389e82fca4f84a6908c702bd30bd6",
+      "run_id": "eight-route-3",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "b2fa5349723ba8ba1e7a0fb18fb54e9b65caa318dc86cc9b6a86bbdb8097319b",
+      "result_sha256": "d4d792efc4596fd0fa08579dcdf47824bcedb180e19e295bd0825ece5e57c474",
+      "elapsed_seconds": 43.98550232499838,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13266,
+        "output_tokens": 1575,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a8-8af2-7222-aee7-3310ef91183a"
+      ],
+      "path": "attempts/eight-route-3/linkedin/b2fa5349723ba8ba1e7a0fb18fb54e9b65caa318dc86cc9b6a86bbdb8097319b/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-6e239caa28cd4dc39b86847fd5f06ad9",
+      "run_id": "eight-route-4",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "1f646995603709202baf150e6efc5a4a1b600764c30f5dce2c9b241b75da0d14",
+      "result_sha256": "1c778127b7e43d7e3c9f9823ef625cf9ab24fc0950d6f767db384a51cf2a592b",
+      "elapsed_seconds": 25.068377229385078,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 9256,
+        "output_tokens": 493,
+        "reasoning_output_tokens": 34
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-41ee-78d2-9f7e-b67b8b685163"
+      ],
+      "path": "attempts/eight-route-4/linkedin/1f646995603709202baf150e6efc5a4a1b600764c30f5dce2c9b241b75da0d14/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-93e97a1ef85d4bd5976351dc6ef2ad26",
+      "run_id": "eight-route-4-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "8a25270f66f386fc33a1be9994dc3551a145aa91e68958963b346710f5d5bcc5",
+      "result_sha256": "d6c10bc962972b4743f9797cb27333acc478e7980852cd207712c7bb1afb2c92",
+      "elapsed_seconds": 40.83517542295158,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13266,
+        "output_tokens": 1329,
+        "reasoning_output_tokens": 58
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-a789-7621-8254-8cd0e67f4862"
+      ],
+      "path": "attempts/eight-route-4-corrected-input/linkedin/8a25270f66f386fc33a1be9994dc3551a145aa91e68958963b346710f5d5bcc5/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-c6dfa0ea77d745a393c4b47a694cc9fa",
+      "run_id": "eight-route-4-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "97124d061a10109ad399491443e958da32de8f8d89845774a4bd6166a28acc7f",
+      "result_sha256": "7c0f8b2526ab513157ec8f4cc29fa3d844cae5d068b1fe2148d804db0302f0ba",
+      "elapsed_seconds": 24.150382723659277,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 9286,
+        "output_tokens": 401,
+        "reasoning_output_tokens": 60
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9aa-f53f-7523-9a00-9e4a36d40c54"
+      ],
+      "path": "attempts/eight-route-4-corrected-input/linkedin/97124d061a10109ad399491443e958da32de8f8d89845774a4bd6166a28acc7f/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-4375fc503d314b19b0c8e08062b812e3",
+      "run_id": "eight-route-4-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "c217b6e3fbbe012d1dbad9dd2559cb1a25bc06abe44bf6dca039e3f29c1fe8ad",
+      "result_sha256": "105a44c73c505514a85251dd1a214f5cf0f30a39db6370df471d417665a79e04",
+      "elapsed_seconds": 55.797431321814656,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12714,
+        "output_tokens": 1493,
+        "reasoning_output_tokens": 65
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ab-58bc-7830-8ff6-1b7ed6a6c2e6"
+      ],
+      "path": "attempts/eight-route-4-corrected-input/linkedin/c217b6e3fbbe012d1dbad9dd2559cb1a25bc06abe44bf6dca039e3f29c1fe8ad/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-0bfdf66c14244b4eade61b4b94ed3d29",
+      "run_id": "eight-route-4-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "c81e54987d48209a5191be36ae1f9f1b56ae04f20fece475d9fc38225a16e184",
+      "result_sha256": "50adaa1b0342c123c3c7e46d936f245a72ac6e47eabcffd61bbed5ba7bd0eb91",
+      "elapsed_seconds": 11.262310064397752,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14581,
+        "output_tokens": 296,
+        "reasoning_output_tokens": 32
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ad-4c4c-75b1-abaf-1d1dbb7e1493"
+      ],
+      "path": "attempts/eight-route-4-corrected-input/linkedin/c81e54987d48209a5191be36ae1f9f1b56ae04f20fece475d9fc38225a16e184/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-3ae8dd0ada8044f889b7669cdaadfa74",
+      "run_id": "eight-route-4-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "d83ad6302b0baad8c34bd4da554636afdf152fa07f918fdec405bebdae7f6aa7",
+      "result_sha256": "6d78f809012afa0fff38cf44fa0fed94ded4bdd13d27dc4138edfb96ac9de144",
+      "elapsed_seconds": 27.120807211846113,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13968,
+        "output_tokens": 879,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-3804-7e92-b2ae-fef063148c72"
+      ],
+      "path": "attempts/eight-route-4-corrected-input/linkedin/d83ad6302b0baad8c34bd4da554636afdf152fa07f918fdec405bebdae7f6aa7/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-a1b9bf2e60824ea8b51c9bf5610dadaf",
+      "run_id": "eight-route-5",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "0e89bce540df3d0265549402a23e58c8b513668bb4eb85d57a79645549e8591a",
+      "result_sha256": "6613e350840c703f7c581de6b145d30809809d162b38ed5a2b0143b2075c27b5",
+      "elapsed_seconds": 55.81024127174169,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12346,
+        "output_tokens": 1384,
+        "reasoning_output_tokens": 69
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-6c44-77b0-b154-fb3e52d41837"
+      ],
+      "path": "attempts/eight-route-5/linkedin/0e89bce540df3d0265549402a23e58c8b513668bb4eb85d57a79645549e8591a/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-60fa65b8739b41098bf43a12072a9eaf",
+      "run_id": "eight-route-5",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "123aad49084f77724035d3ecf8ae27289a43191ec8508e491bf5aa6296b0ed35",
+      "result_sha256": "4d79442dec583e3dcb8b6e67ef5c6d5067087dfac91458038d44004fdd83e6e0",
+      "elapsed_seconds": 21.209644770249724,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14956,
+        "output_tokens": 830,
+        "reasoning_output_tokens": 20
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ab-1af5-7e92-8b5d-94a917a8deb5"
+      ],
+      "path": "attempts/eight-route-5/linkedin/123aad49084f77724035d3ecf8ae27289a43191ec8508e491bf5aa6296b0ed35/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-38f03d9935a24704a078fa815f3cce6b",
+      "run_id": "eight-route-5",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "3364e730ae11d67e81fb4c8754fb288fc87b184c19d11f6997160f4fc8f536ab",
+      "result_sha256": "bacb7612160fa5a4964cbce5c9d50261a64ab88047a06c089ed1e253588639fc",
+      "elapsed_seconds": 51.66842210665345,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13727,
+        "output_tokens": 1429,
+        "reasoning_output_tokens": 27
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9aa-4bb5-78f1-a9db-b65f0d09737f"
+      ],
+      "path": "attempts/eight-route-5/linkedin/3364e730ae11d67e81fb4c8754fb288fc87b184c19d11f6997160f4fc8f536ab/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-69958f726d244a1ba583b066c045bbd9",
+      "run_id": "eight-route-5",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "67e4ce857d120596501dac7df0abef31dedbb00af8282ab426ffb1f3898b0b59",
+      "result_sha256": "0acc91869d8bc7d36c882cee126208e67e8ee792369d44f75a1e822874983daa",
+      "elapsed_seconds": 42.45177633874118,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13200,
+        "output_tokens": 1407,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ab-732c-7d42-91d0-5b6d500eace2"
+      ],
+      "path": "attempts/eight-route-5/linkedin/67e4ce857d120596501dac7df0abef31dedbb00af8282ab426ffb1f3898b0b59/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-a3aac8ae57d5466c866e25c43fca305a",
+      "run_id": "eight-route-5",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "bfafa27b54725f76c93e6c818d5218ff9c3f85e2a7af126320b91f73f5a630fe",
+      "result_sha256": "08bba09212bf582d9927ca39091f9362e125fceae9f6189cf23e6d08c5698a75",
+      "elapsed_seconds": 13.475104386918247,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14671,
+        "output_tokens": 322,
+        "reasoning_output_tokens": 36
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-1e6f-7a61-bae9-dddfd7591615"
+      ],
+      "path": "attempts/eight-route-5/linkedin/bfafa27b54725f76c93e6c818d5218ff9c3f85e2a7af126320b91f73f5a630fe/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-c760fd03390246eb9a3c1f9236065d45",
+      "run_id": "eight-route-6",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "095e045b3ebebf47f3b8f4f502b695c5078c2e86ad0c9e2dd0f39d26fc9b928a",
+      "result_sha256": "793bbae05373725999c46d838e39afed3c7cf04b9cbba9d1b06fa3c327e95c30",
+      "elapsed_seconds": 13.465039431117475,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 15139,
+        "output_tokens": 311,
+        "reasoning_output_tokens": 26
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ad-9353-7630-a5f9-94b582f1ff84"
+      ],
+      "path": "attempts/eight-route-6/linkedin/095e045b3ebebf47f3b8f4f502b695c5078c2e86ad0c9e2dd0f39d26fc9b928a/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-43c7bcb31bee48269d5d4269878de2e8",
+      "run_id": "eight-route-6",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "33a5896058b9d5af4ac30736d8e4dadeaaea9959fd062b1b797345cd9601bdd6",
+      "result_sha256": "0c01159dde103f82b8bb9cedd670ab59b88583c9acf620c4178a2a885ae6242f",
+      "elapsed_seconds": 29.44217624142766,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 16064,
+        "output_tokens": 909,
+        "reasoning_output_tokens": 18
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-2979-7981-b575-31982dd4700d"
+      ],
+      "path": "attempts/eight-route-6/linkedin/33a5896058b9d5af4ac30736d8e4dadeaaea9959fd062b1b797345cd9601bdd6/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-183826ec446543f8ab8a1d932d728e0c",
+      "run_id": "eight-route-6",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "736c4774c34428966aab8d219de2bfc1b6fbaedf645b2f98aabf4e2a8e0d2b12",
+      "result_sha256": "51a7076a2911c7ed06e2bc90a33210cc68e776e4ea98ceef87fb7135cd715618",
+      "elapsed_seconds": 50.55782717093825,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12166,
+        "output_tokens": 1130,
+        "reasoning_output_tokens": 27
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9aa-680c-77b1-add4-545ce9ed3c0c"
+      ],
+      "path": "attempts/eight-route-6/linkedin/736c4774c34428966aab8d219de2bfc1b6fbaedf645b2f98aabf4e2a8e0d2b12/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-8318eb5569d64d57866fa69b45d25a0c",
+      "run_id": "eight-route-6",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "8839ff8708667c6758dee577b5ca56049f7e233a494f1ea9289d980fa1468238",
+      "result_sha256": "00b6ac03ad75b3d0e7d78464ff8c6e4fee1ae06fe7159fdfc4cbf6705ed0f6df",
+      "elapsed_seconds": 61.77336995117366,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14640,
+        "output_tokens": 1617,
+        "reasoning_output_tokens": 27
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ab-32ee-72e1-8058-052e3b08fce8"
+      ],
+      "path": "attempts/eight-route-6/linkedin/8839ff8708667c6758dee577b5ca56049f7e233a494f1ea9289d980fa1468238/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-9f42ad7b38ee4aa8be7c11dc85bf7d4a",
+      "run_id": "eight-route-6",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "8f82694d469ae74e251988c3d072bfcf5d0f1e6f14b5feab787612ce89960186",
+      "result_sha256": "d7492ec17c7a15b9ff48de4d7e0cb937b9268110bd19b51059ec52e992520451",
+      "elapsed_seconds": 47.42280367016792,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12156,
+        "output_tokens": 1117,
+        "reasoning_output_tokens": 38
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-a95e-7e41-9dc1-152f8305af60"
+      ],
+      "path": "attempts/eight-route-6/linkedin/8f82694d469ae74e251988c3d072bfcf5d0f1e6f14b5feab787612ce89960186/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-1f77c554f61246c9923895f1eacb4472",
+      "run_id": "eight-route-6",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "b08ee69857e44d719a59b3fc8835b08fae978be6ec7e86443e87894aa4625d87",
+      "result_sha256": "24bd22dd1fed8560266b28b227e9df2d9f3528025a36d772e5bd0087869c9d54",
+      "elapsed_seconds": 60.34636377170682,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13278,
+        "output_tokens": 1818,
+        "reasoning_output_tokens": 58
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-a22a-7281-9d26-1acf4489c076"
+      ],
+      "path": "attempts/eight-route-6/linkedin/b08ee69857e44d719a59b3fc8835b08fae978be6ec7e86443e87894aa4625d87/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-305cbb35e9514be0b457454b9721f967",
+      "run_id": "eight-route-7",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "b2293f5b12f4d256e076604c6f00c2ea04a797390db96b6d076288c4341a169e",
+      "result_sha256": "e9ca00a308b9ddffab3ee26e56190c2f4acaa61d508fa86e8ecb46348a5fe8df",
+      "elapsed_seconds": 29.922913363203406,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 10431,
+        "output_tokens": 838,
+        "reasoning_output_tokens": 40
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9a9-b494-7f60-a257-3a69079f7265"
+      ],
+      "path": "attempts/eight-route-7/linkedin/b2293f5b12f4d256e076604c6f00c2ea04a797390db96b6d076288c4341a169e/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-07a3deadb99d4183a08d33b4a6ff06f5",
+      "run_id": "eight-route-7-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "016533379f98420553b113b03f17d155b8b60d37c2b4b1b8faa3600737c6c14a",
+      "result_sha256": "95650ca59688530b078ccf46c11fcf9773107637b0403b2d255ff11560727299",
+      "elapsed_seconds": 45.028221999295056,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13303,
+        "output_tokens": 1531,
+        "reasoning_output_tokens": 35
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-f28f-76f0-b26c-e21d2f38f006"
+      ],
+      "path": "attempts/eight-route-7-corrected-input/linkedin/016533379f98420553b113b03f17d155b8b60d37c2b4b1b8faa3600737c6c14a/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-22f03338fbad4f8b8b43433f624ee5a8",
+      "run_id": "eight-route-7-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "17b5315d5b512c4638a20205b7a2f823cf39e9f4d58245c405d054e3dab1ea2c",
+      "result_sha256": "98c752b893768178f45247ae351161e9643818e039a1728df93b7ff4c7b1eab9",
+      "elapsed_seconds": 58.663129412569106,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13335,
+        "output_tokens": 1520,
+        "reasoning_output_tokens": 48
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ab-86fb-7650-925a-98691a73df40"
+      ],
+      "path": "attempts/eight-route-7-corrected-input/linkedin/17b5315d5b512c4638a20205b7a2f823cf39e9f4d58245c405d054e3dab1ea2c/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-66eb27e892654b63afa131e6269c7040",
+      "run_id": "eight-route-7-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "1a414f8957e66e958a995b48c3c2072feaa203087c9ca4d10edcb7b9f3c7b65d",
+      "result_sha256": "be3b383e32dae830d582fd6242585a7ce21d7cc144de8a471e2e8b7171a98f8d",
+      "elapsed_seconds": 35.81970986537635,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 10451,
+        "output_tokens": 975,
+        "reasoning_output_tokens": 56
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9aa-f543-78a3-a61a-99c2de9f5717"
+      ],
+      "path": "attempts/eight-route-7-corrected-input/linkedin/1a414f8957e66e958a995b48c3c2072feaa203087c9ca4d10edcb7b9f3c7b65d/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-0c61524a952a4885b80d0adea08a6e3b",
+      "run_id": "eight-route-7-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "2eea5dcb28d94c1b15591089d19bcab588aee004c3fbc575ff6871a528c0d7b5",
+      "result_sha256": "299d9963557183d51236a7ab99166a64f68a20cfff660df1b4bfa96471494ec6",
+      "elapsed_seconds": 31.625024628825486,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14647,
+        "output_tokens": 932,
+        "reasoning_output_tokens": 41
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-7159-7f23-ad89-109f4bea1c6a"
+      ],
+      "path": "attempts/eight-route-7-corrected-input/linkedin/2eea5dcb28d94c1b15591089d19bcab588aee004c3fbc575ff6871a528c0d7b5/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-f2b08e82249140b288c144ba3aa8f25b",
+      "run_id": "eight-route-7-corrected-input",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "3c35b94fb1f06e29f8a42216a0f244d7fb3494d44133e5fb4ea201037da353ea",
+      "result_sha256": "f36c256b11d552f47824b6517498f555eef3397b0761045fb9cf882de772d56c",
+      "elapsed_seconds": 11.631931707262993,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14861,
+        "output_tokens": 302,
+        "reasoning_output_tokens": 32
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ad-a7c3-7ff1-a44d-9b7c01b8ce7c"
+      ],
+      "path": "attempts/eight-route-7-corrected-input/linkedin/3c35b94fb1f06e29f8a42216a0f244d7fb3494d44133e5fb4ea201037da353ea/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-1738e3fe7ea34c4495334c526d2bec80",
+      "run_id": "eight-route-8",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "4f700bc62d0afd669cc1d7819bcd15953f57055e75ef05ad25613b3dd20f615c",
+      "result_sha256": "bb3ce1aa280f17b5392c8c6e9b247a79456009c31dbca349b0dde1304c44b840",
+      "elapsed_seconds": 47.31296749599278,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 12349,
+        "output_tokens": 1033,
+        "reasoning_output_tokens": 44
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9aa-2f03-74a0-8f7e-92c258a194f3"
+      ],
+      "path": "attempts/eight-route-8/linkedin/4f700bc62d0afd669cc1d7819bcd15953f57055e75ef05ad25613b3dd20f615c/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-5fd13cb50aff45e981bffe0fd10cbbaa",
+      "run_id": "eight-route-8",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "886f4aa4b59e3f4a5f17c0492a2bdee0ce6d19ef7af85b523f6efff62aedbf8e",
+      "result_sha256": "cc544e3fbcff69c61f868f98aec079edf6d46d37525c32ff7ead8cd45ba1fdc5",
+      "elapsed_seconds": 12.763258693739772,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14882,
+        "output_tokens": 335,
+        "reasoning_output_tokens": 36
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-cc70-7a72-ab0e-271b922e5e58"
+      ],
+      "path": "attempts/eight-route-8/linkedin/886f4aa4b59e3f4a5f17c0492a2bdee0ce6d19ef7af85b523f6efff62aedbf8e/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-c3ef0d5a982545efa574e2b2d0c49584",
+      "run_id": "eight-route-8",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "8b64afe91da81718561107433a6d5d4f8a0359ed41ffd42c62c5c961d3ca849f",
+      "result_sha256": "58868219c881bfe7142076c97488a603c414f756c6afca49741536b39ecad1d7",
+      "elapsed_seconds": 32.76005131471902,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 14288,
+        "output_tokens": 850,
+        "reasoning_output_tokens": 61
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ab-8651-7f31-b7b0-6667ac181f8d"
+      ],
+      "path": "attempts/eight-route-8/linkedin/8b64afe91da81718561107433a6d5d4f8a0359ed41ffd42c62c5c961d3ca849f/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-4fb2a7cdaad74251ad504acfec460da1",
+      "run_id": "eight-route-8",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "c5bc640ab70e2604bb4e237cf2408a373cdec6d27588e135d097f8db34d68f27",
+      "result_sha256": "33fbafd59d691b251908ca007595ae68d697d5411ca9833975b637c507d93231",
+      "elapsed_seconds": 47.98351872712374,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7424,
+        "input_tokens": 13167,
+        "output_tokens": 1636,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9ac-0b97-7ee3-96cc-512334a0f3e1"
+      ],
+      "path": "attempts/eight-route-8/linkedin/c5bc640ab70e2604bb4e237cf2408a373cdec6d27588e135d097f8db34d68f27/attempt.json",
+      "provider_response_id": "unavailable"
+    },
+    {
+      "attempt_id": "attempt-dc5c798d4493416c90b09ccf66d21c5e",
+      "run_id": "eight-route-8",
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "request_sha256": "f595d4257b526f054657129fca01491eaddab36f07f6458393497ef3f9cf60c6",
+      "result_sha256": "0e8e55fbef146795718431fe227d729d1e87c9dcb771a08e9d7b027ae2b704a7",
+      "elapsed_seconds": 37.705083744600415,
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 13374,
+        "output_tokens": 1109,
+        "reasoning_output_tokens": 0
+      },
+      "auth": "chatgpt",
+      "execution_kind": "native_cli",
+      "producer_version": "codex-cli 0.158.0",
+      "thread_ids": [
+        "01a1a9aa-ed10-76d0-86da-e760e98aedc2"
+      ],
+      "path": "attempts/eight-route-8/linkedin/f595d4257b526f054657129fca01491eaddab36f07f6458393497ef3f9cf60c6/attempt.json",
+      "provider_response_id": "unavailable"
+    }
+  ]
+}

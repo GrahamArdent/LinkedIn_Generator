@@ -7,12 +7,12 @@ def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
     captured = {}
 
     class FakePipeline:
-        def __init__(self, config):
+        def __init__(self, config, *, client=None):
             captured["config"] = config
 
         def plan(self, _prompt, ctx):
             captured["plan_ctx"] = ctx
-            return {"angle": "real-work lesson", "citations": []}
+            return {"angle": "real-work lesson", "citations": [], "editorial_plan": {}}
 
         def draft_variants(self, _prompt, ctx):
             captured["draft_ctx"] = ctx
@@ -21,13 +21,13 @@ def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
         def judge_select(self, _prompt, _persona_profile, drafts):
             return drafts[0]
 
-        def critic(self, _prompt, text):
+        def critic(self, _prompt, text, _persona_profile, *, voice_examples):
             return text
 
-        def humanize(self, _prompt, text):
+        def humanize(self, _prompt, text, _persona_profile, *, voice_examples):
             return text
 
-        def finalize(self, persona_key, text, citations, hashtags):
+        def finalize(self, persona_key, text, citations, hashtags, **_metadata):
             captured["finalize"] = {
                 "persona_key": persona_key,
                 "text": text,
@@ -54,6 +54,8 @@ def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
             }
         if path.endswith("personas.yaml"):
             return {"personas": {"graham": {"tone": ["direct"]}}}
+        if path.endswith(("cta_policies.yaml", "graham_voice_profile.yaml", "graham_spoken_voice.yaml")):
+            return {}
         raise AssertionError(path)
 
     monkeypatch.setattr(api, "Pipeline", FakePipeline)
@@ -80,6 +82,10 @@ def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
         "topic": "What real buyer work taught us",
         "services": ["discovery"],
         "targets": ["founders"],
+        "audience": "AI founders",
+        "objective": "useful visibility from real work",
+        "evidence": [{"title": "Buyer note", "fact": "Reliability mattered more than novelty.", "url": "https://example.com/note"}],
+        "strongest_concrete_evidence": {"title": "", "fact": ""},
     }
     assert captured["draft_ctx"]["audience"] == "AI founders"
     assert captured["draft_ctx"]["objective"] == "useful visibility from real work"

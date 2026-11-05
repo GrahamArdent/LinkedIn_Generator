@@ -1,0 +1,365 @@
+{
+  "schema_version": "1",
+  "state": "completed",
+  "input": {
+    "request_id": "lig-codex-selected-revision-20261104",
+    "origin": "manual",
+    "topic": "A content workflow needs to agree on which draft is final",
+    "persona_key": "graham",
+    "audience": "People building or using AI tools at work",
+    "objective": "Share a practical lesson about reliable handoffs in plain language. Do not claim Graham personally wrote code, experienced a production incident, published a wrong post or measured any performance improvement.",
+    "author_pov": "individual",
+    "content_goal": "authority",
+    "opportunity_gate": true,
+    "publish_quality_gate": true,
+    "publish_quality_threshold": 90,
+    "visual_asset_plan": true,
+    "visual_asset_preference": "auto",
+    "evidence": [
+      {
+        "title": "P1 integration finding, verified source and fixture evidence",
+        "fact": "The LinkedIn generator could preserve its original draft in the top-level body while preparing a visual plan from a qualified rewrite. This made the selected version ambiguous for callers. A focused repair added an explicit selected candidate and bound the visual to that candidate's exact text hash. This was verified in source and automated tests; it is not evidence of a production incident or an incorrectly published post.",
+        "url": "https://github.com/GrahamArdent/LinkedIn_Generator/pull/24"
+      }
+    ],
+    "hashtags": []
+  },
+  "model": "gpt-6-astra",
+  "mode": "native_codex",
+  "started_at_utc": "2026-11-04T22:37:32.644016+00:00",
+  "api_spend": 0,
+  "human_decision": null,
+  "engine_origin": "engine-gate-failure.json",
+  "engine": {
+    "request_id": "lig-codex-selected-revision-20261104",
+    "origin": "manual",
+    "persona_key": "graham",
+    "status": "drafted",
+    "body": "Two drafts. One workflow. Which version is final?\n\nA finding in a LinkedIn post generator made that question surprisingly concrete: it could return the original draft as the main text while preparing a visual plan from a revised version.\n\nThat left the next step to work out which draft counted.\n\nThe mismatch was verified in source code and automated tests. There’s no evidence here of an incorrectly published post. But the ambiguity matters: checking the words and checking the visual separately won’t tell you whether they belong together.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy takeaway: choosing the final version is part of the work. Every step that follows needs to use that choice.\n\nA reliable handoff shouldn’t ask the next person, or the next tool, to guess what “final” means.",
+    "hashtags": [],
+    "sources": [
+      "https://github.com/GrahamArdent/LinkedIn_Generator/pull/24"
+    ],
+    "telemetry": {
+      "emoji_count": 0,
+      "bullet_char": "🔹",
+      "persona": "graham",
+      "score": 100,
+      "voice_reference_count": 0,
+      "voice_reference_ids": [],
+      "opportunity_score": 82,
+      "opportunity_decision": "draft",
+      "opportunity_reason": "Draft: the source-and-test-verified mismatch between the retained draft and visual plan provides a specific, useful lesson about explicitly selecting a final version and binding downstream work to it.",
+      "opportunity_dimensions": {
+        "outsider_clarity": 4,
+        "professional_relevance": 5,
+        "concrete_evidence": 5,
+        "distinctiveness": 4,
+        "novel_insight": 4,
+        "practical_usefulness": 5,
+        "emotional_tension": 2,
+        "conversation_potential": 3,
+        "shareability": 4,
+        "voice_fit": 5
+      },
+      "opportunity_warnings": [],
+      "strongest_evidence_title": "P1 integration finding, verified source and fixture evidence",
+      "strongest_evidence_fact": "The LinkedIn generator could preserve its original draft in the top-level body while preparing a visual plan from a qualified rewrite. This made the selected version ambiguous for callers. A focused repair added an explicit selected candidate and bound the visual to that candidate's exact text hash. This was verified in source and automated tests; it is not evidence of a production incident or an incorrectly published post.",
+      "missing_evidence_question": "",
+      "content_goal": "authority",
+      "earned_question": false,
+      "publish_quality_score": 73,
+      "publish_quality_threshold": 90,
+      "publish_rewrite_triggered": true,
+      "publish_rewrite_score": null,
+      "publish_ready": false
+    },
+    "review": {
+      "threshold": 90,
+      "rewrite_triggered": true,
+      "publish_ready": false,
+      "recommendation": "original",
+      "original": {
+        "body": "Two drafts. One workflow. Which version is final?\n\nA finding in a LinkedIn post generator made that question surprisingly concrete: it could return the original draft as the main text while preparing a visual plan from a revised version.\n\nThat left the next step to work out which draft counted.\n\nThe mismatch was verified in source code and automated tests. There’s no evidence here of an incorrectly published post. But the ambiguity matters: checking the words and checking the visual separately won’t tell you whether they belong together.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy takeaway: choosing the final version is part of the work. Every step that follows needs to use that choice.\n\nA reliable handoff shouldn’t ask the next person, or the next tool, to guess what “final” means.",
+        "score": 73,
+        "dimensions": {
+          "outsider_clarity": 4,
+          "professional_relevance": 4,
+          "specificity": 4,
+          "novel_insight": 4,
+          "practical_usefulness": 3,
+          "emotional_tension": 3,
+          "conversation_potential": 3,
+          "shareability": 3,
+          "voice_authenticity": 4
+        },
+        "gaps": [
+          "‘Visual plan’ remains vague, making the mismatch harder for outsiders to picture.",
+          "The lesson is useful but stops short of a concrete check readers could apply to their own workflows.",
+          "The closing paragraphs repeat the final-version point without adding much consequence or insight."
+        ],
+        "rationale": "The post offers a grounded, clearly bounded example and a useful insight about checking outputs together, but vague visual terminology and a repetitive conclusion limit its practical impact.",
+        "warnings": []
+      },
+      "rewrite": {
+        "body": "The words were revised. The handoff was still ambiguous.\n\nA LinkedIn post generator could return its original draft as the main text while preparing a plan for the accompanying visual from a revised draft.\n\nTwo parts of one output could point to different versions. The next person, or tool, had to work out which one counted.\n\nThis was verified in source code and automated tests. It is not evidence of an incorrectly published post.\n\nBut it exposes a gap in how we check generated content: the words and the visual plan can each pass a review without belonging together. Quality checks on individual parts don't establish that the handoff is coherent.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy practical takeaway: before accepting a handoff, check which draft is selected, whether that exact draft is returned as the main text, and whether the accompanying visual plan is tied to it. If the words change, check the connection again.\n\n“Final” needs to be a choice the workflow carries forward, not a guess it passes along.",
+        "guard_accepted": false,
+        "guard_reasons": [
+          "rewrite lowers deterministic quality score"
+        ],
+        "score": null,
+        "dimensions": {},
+        "gaps": [],
+        "rationale": "",
+        "warnings": []
+      }
+    },
+    "selected_candidate": null,
+    "visual_asset": {
+      "status": "deferred",
+      "source_candidate": null,
+      "source_content_sha256": null,
+      "asset_type": null,
+      "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+      "creative_goal": "",
+      "aspect_ratio": "4:5",
+      "single_image": null,
+      "carousel": null,
+      "review_required": true,
+      "warnings": [
+        "publish_ready_candidate_required"
+      ]
+    }
+  },
+  "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+  "baseline": {
+    "body": "Which draft is final? The workflow should know.\n\nA verified finding in the LinkedIn generator showed how that answer could become ambiguous. The main output could keep the original draft while the visual plan used a qualified rewrite.\n\nBoth versions were available. But someone using the output had to work out which one counted.\n\nThe repair made the choice explicit: identify the selected draft and tie the visual to a fingerprint of that draft’s exact text. That gives the next step something precise to check.\n\nThis was verified in source and automated tests. It wasn’t evidence of a wrong post being published.\n\nMy takeaway: improving a draft and selecting a draft are separate jobs. A rewrite can be better without the rest of the workflow knowing it is final.\n\nIf you’re building or using AI tools at work, check the handoff. Can the next step identify the chosen version and verify that its supporting material belongs to it?\n\n“Final” needs to be a shared decision, not a local opinion.\n\n#AI #ContentWorkflow #Automation",
+    "content_sha256": "85987b5239e64bdd7794ded69ad98c4ca8779dd52fe0650c685d0e141eb49105",
+    "system": "Write one useful LinkedIn post in the supplied author's voice. Use only supplied facts; never invent experience, quotes, statistics or biography. Return only the finished post.",
+    "user": {
+      "topic": "A content workflow needs to agree on which draft is final",
+      "audience": "People building or using AI tools at work",
+      "objective": "Share a practical lesson about reliable handoffs in plain language. Do not claim Graham personally wrote code, experienced a production incident, published a wrong post or measured any performance improvement.",
+      "author_pov": "individual",
+      "content_goal": "authority",
+      "services": [],
+      "targets": [],
+      "hashtags": [],
+      "evidence": [
+        {
+          "title": "P1 integration finding, verified source and fixture evidence",
+          "fact": "The LinkedIn generator could preserve its original draft in the top-level body while preparing a visual plan from a qualified rewrite. This made the selected version ambiguous for callers. A focused repair added an explicit selected candidate and bound the visual to that candidate's exact text hash. This was verified in source and automated tests; it is not evidence of a production incident or an incorrectly published post.",
+          "url": "https://github.com/GrahamArdent/LinkedIn_Generator/pull/24"
+        }
+      ],
+      "voice": {
+        "tone": [
+          "direct",
+          "humble"
+        ],
+        "rhythm": [
+          "tight",
+          "punchy"
+        ],
+        "devices": [
+          "question",
+          "contrast"
+        ],
+        "donts": [
+          "clichés",
+          "em_dashes"
+        ],
+        "emoji_max": 3,
+        "bullet_char": "🔹",
+        "active_author_pov": "individual",
+        "voice_authority": {
+          "source": {
+            "authority": "Graham Voice Bible",
+            "repository": "GrahamArdent/LinkedInGenV2",
+            "path": "data/Voice_Bible_Graham (1).md",
+            "blob_sha": "e35aad7f324ea9cc691ea8fd5ca5fc3c7da5a5fd",
+            "role": "primary historical voice authority explicitly authorized for reuse"
+          },
+          "profile": {
+            "persona": "The Relatable Provocateur",
+            "essence": [
+              "bold",
+              "witty",
+              "empathetic",
+              "visceral",
+              "direct",
+              "conversational",
+              "confident_but_relatable",
+              "contrarian_without_being_performative"
+            ],
+            "rhythm": {
+              "hook_words": "6-12",
+              "sentence_mix": "short and long",
+              "one_liner_punches": true,
+              "paragraph_sentences": "2-3",
+              "conversational_punctuation": true
+            },
+            "emotional_palette": [
+              "frustration",
+              "empathy",
+              "protectiveness",
+              "humor",
+              "tension",
+              "inspiration"
+            ],
+            "reasoning_lenses": [
+              "name_the_surface_event",
+              "identify_the_mechanism_and_context",
+              "trace_operational_friction",
+              "trace_financial_or_practical_drag",
+              "trace_identity_and_trust_damage",
+              "identify_strategic_gravity",
+              "look_for_feedback_loops_and_hidden_correlations",
+              "distinguish_correlation_from_causation"
+            ],
+            "signature_devices": [
+              "short_myth_or_mood_hook",
+              "contrarian_flip",
+              "concrete_human_detail",
+              "memorable_analogy_or_wry_humor",
+              "practical_nugget",
+              "provocative_big_picture_closer"
+            ],
+            "thought_leadership_filter": [
+              "challenge_an_assumption",
+              "connect_the_issue_to_more_than_one_stakeholder_when_relevant",
+              "make_the_point_memorable_without_becoming_theatrical",
+              "be_actionable_and_elevated",
+              "end_with_a_real_provocation_when_it_earns_it"
+            ],
+            "boundaries": [
+              "no_cliches",
+              "minimize_jargon",
+              "no_em_dashes",
+              "do_not_copy_signature_example_phrases_as_boilerplate",
+              "do_not_invent_personal_experiences",
+              "do_not_invent_statistics_quotes_or_sources",
+              "do_not_treat_voice_examples_as_factual_evidence",
+              "use_named_author_reference_only_as_provenance_not_as_runtime_imitation_instruction"
+            ]
+          },
+          "semantic_quality": {
+            "default_author_pov": "individual",
+            "internal_terms_needing_translation": [
+              "mode c",
+              "stage 0",
+              "execution spine",
+              "canonical intake",
+              "canonical authority",
+              "regression coverage",
+              "work packet",
+              "kill signal"
+            ],
+            "generic_phrases": [
+              "in today's fast-paced world",
+              "game changer",
+              "the future is here",
+              "unlock the power",
+              "revolutionize",
+              "here's the thing",
+              "in the ever-evolving landscape",
+              "now more than ever",
+              "let that sink in"
+            ],
+            "guidance": [
+              "Assume a smart reader who has never seen the internal project documents.",
+              "Translate internal methodology and repository vocabulary into ordinary language before using it.",
+              "For an individual Graham post, default to I/me/my; use we/us/our only for genuinely shared actions.",
+              "Make one main point per post and make the practical or human consequence clear.",
+              "Prefer concrete details supported by the evidence over abstract process language.",
+              "Do not force a CTA; a natural insight or earned provocation can be the ending."
+            ]
+          },
+          "runtime_guidance": {
+            "style_summary": "Write in a bold, witty, empathetic, direct and conversational voice with vivid but controlled imagery, varied sentence length, compact paragraphs, occasional dry humor, and a contrarian insight grounded in real stakes.",
+            "causal_summary": "Move beyond the surface event. Explain what made it possible, what work breaks next, what cost or drag starts compounding, how trust or identity is affected, and what becomes harder to undo. Use only the layers that are actually supported by the topic and evidence.",
+            "domain_note": "The original Voice Bible was developed heavily around cybersecurity. Preserve its voice and causal-thinking method across topics, but do not assume cybersecurity, C-suite buyers, or any specific professional identity unless the current request supplies that context."
+          }
+        },
+        "spoken_voice": {
+          "name": "Graham Spoken Voice",
+          "schema_version": "1.0",
+          "runtime_summary": "Write as a thoughtful, plain-spoken Graham: curious before certain, direct without pretending every first impression is proven, conversational without transcribing filler, and willing to test his own argument before landing the point. Let the reasoning move from what happened, to what it may mean, to what it changes next. Use contrast, short declarative lines, occasional dry humor, and compact conclusions. Preserve the A-to-B-to-C instinct invisibly: show the current reality, the meaningful consequence, and the bridge or restraint that connects them. Do not over-explain. Do not sound like corporate copy. Do not turn private ENFP material into public biography.",
+          "boundaries": [
+            "Do not infer biography, health, relationships, identity claims, or factual events from this schema.",
+            "Do not mention ENFP unless the current request/topic makes ENFP relevant.",
+            "Do not treat personality-type generalizations as evidence about Graham.",
+            "Do not reproduce private-source anecdotes unless they are separately supplied as factual evidence for the current post.",
+            "Do not imitate conversational filler words merely to sound informal."
+          ],
+          "composition_rules": [
+            "Start from a concrete observation or tension rather than a generic thesis.",
+            "Let the reader see enough of the reasoning path to trust the conclusion.",
+            "Include one meaningful self-check or qualification when the claim genuinely needs it.",
+            "Move from the immediate event to the consequence that matters beyond Graham.",
+            "Land on a compact distinction, lesson, or earned question.",
+            "Keep the central point understandable to a smart outsider."
+          ],
+          "anti_patterns": [
+            "sounding certain because certainty is rhetorically cleaner",
+            "over-explaining until the post feels like a defence brief",
+            "turning every insight into a framework acronym",
+            "repeating signature phrases as branding slogans",
+            "performative vulnerability",
+            "manufactured controversy",
+            "generic inspiration"
+          ],
+          "signature_phrase_policy": "These are conceptual anchors, not mandatory catchphrases. Use an exact phrase only when it fits naturally and is not being repeated across recent posts."
+        }
+      },
+      "approved_voice_examples": [],
+      "format_rules": {
+        "emoji_max": 3,
+        "bullet_char": "🔹",
+        "hashtag_min": 3,
+        "hashtag_max": 5,
+        "strip_links_in_body": true,
+        "append_sources_block": false,
+        "allow_em_dash": false
+      }
+    }
+  },
+  "review": {
+    "candidates": {
+      "A": {
+        "body": "Which draft is final? The workflow should know.\n\nA verified finding in the LinkedIn generator showed how that answer could become ambiguous. The main output could keep the original draft while the visual plan used a qualified rewrite.\n\nBoth versions were available. But someone using the output had to work out which one counted.\n\nThe repair made the choice explicit: identify the selected draft and tie the visual to a fingerprint of that draft’s exact text. That gives the next step something precise to check.\n\nThis was verified in source and automated tests. It wasn’t evidence of a wrong post being published.\n\nMy takeaway: improving a draft and selecting a draft are separate jobs. A rewrite can be better without the rest of the workflow knowing it is final.\n\nIf you’re building or using AI tools at work, check the handoff. Can the next step identify the chosen version and verify that its supporting material belongs to it?\n\n“Final” needs to be a shared decision, not a local opinion.\n\n#AI #ContentWorkflow #Automation",
+        "content_sha256": "85987b5239e64bdd7794ded69ad98c4ca8779dd52fe0650c685d0e141eb49105"
+      },
+      "B": {
+        "body": "Two drafts. One workflow. Which version is final?\n\nA finding in a LinkedIn post generator made that question surprisingly concrete: it could return the original draft as the main text while preparing a visual plan from a revised version.\n\nThat left the next step to work out which draft counted.\n\nThe mismatch was verified in source code and automated tests. There’s no evidence here of an incorrectly published post. But the ambiguity matters: checking the words and checking the visual separately won’t tell you whether they belong together.\n\nThe repair made the selected draft explicit and tied the visual plan to a digital fingerprint of that exact text.\n\nMy takeaway: choosing the final version is part of the work. Every step that follows needs to use that choice.\n\nA reliable handoff shouldn’t ask the next person, or the next tool, to guess what “final” means.",
+        "content_sha256": "4998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04"
+      }
+    },
+    "human_decision": null
+  },
+  "finished_at_utc": "2026-11-04T22:37:45.619784+00:00",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "Which draft is final? The workflow should know.\n\nA verified finding in the LinkedIn generator showed how that answer could become ambiguous. The main output could keep the original draft while the visual plan used a qualified rewrite.\n\nBoth versions were available. But someone using the output had to work out which one counted.\n\nThe repair made the choice explicit: identify the selected draft and tie the visual to a fingerprint of that draft’s exact text. That gives the next step something precise to check.\n\nThis was verified in source and automated tests. It wasn’t evidence of a wrong post being published.\n\nMy takeaway: improving a draft and selecting a draft are separate jobs. A rewrite can be better without the rest of the workflow knowing it is final.\n\nIf you’re building or using AI tools at work, check the handoff. Can the next step identify the chosen version and verify that its supporting material belongs to it?\n\n“Final” needs to be a shared decision, not a local opinion.\n\n#AI #ContentWorkflow #Automation"
+      },
+      "attempt_id": "attempt-9b4ed71058b647c4a13c8a6cf193b27f",
+      "result_sha256": "01ba7ac703131fa2555e8c4acc2bc84fb8ac986202feeff6a7aff18f50ad9e44",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 10687,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 232,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ]
+}

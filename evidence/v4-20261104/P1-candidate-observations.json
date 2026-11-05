@@ -1,0 +1,631 @@
+{
+  "head_sha": "1afd1b3738dba1eada53d8839d77fe6699c9b085",
+  "checked_at_utc": "2026-11-04T21:57:54.594065+00:00",
+  "command": ".venv/bin/python evidence/v4-20261104/capture_fixture_results.py",
+  "mode": "fixture",
+  "cases": {
+    "A87-B93": {
+      "mode": "fixture",
+      "result": {
+        "request_id": null,
+        "origin": "test",
+        "persona_key": "graham",
+        "status": "drafted",
+        "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+        "hashtags": [],
+        "sources": [],
+        "telemetry": {
+          "emoji_count": 0,
+          "bullet_char": "🔹",
+          "persona": "graham",
+          "score": 100,
+          "voice_reference_count": 0,
+          "voice_reference_ids": [],
+          "opportunity_score": null,
+          "opportunity_decision": "draft",
+          "opportunity_reason": "Opportunity preflight disabled for this caller.",
+          "opportunity_dimensions": {},
+          "opportunity_warnings": [
+            "opportunity_gate_disabled"
+          ],
+          "strongest_evidence_title": "",
+          "strongest_evidence_fact": "",
+          "missing_evidence_question": "",
+          "content_goal": "authority",
+          "earned_question": false,
+          "publish_quality_score": 87,
+          "publish_quality_threshold": 90,
+          "publish_rewrite_triggered": true,
+          "publish_rewrite_score": 93,
+          "publish_ready": true
+        },
+        "review": {
+          "threshold": 90,
+          "rewrite_triggered": true,
+          "publish_ready": true,
+          "recommendation": "rewrite",
+          "original": {
+            "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+            "score": 87,
+            "dimensions": {
+              "outsider_clarity": 5,
+              "professional_relevance": 4,
+              "specificity": 5,
+              "novel_insight": 4,
+              "practical_usefulness": 4,
+              "emotional_tension": 4,
+              "conversation_potential": 4,
+              "shareability": 4,
+              "voice_authenticity": 5
+            },
+            "gaps": [
+              "Make the consequence more immediate."
+            ],
+            "rationale": "Fixture.",
+            "warnings": []
+          },
+          "rewrite": {
+            "body": "I built a planning system to reduce repeated work.\n\nThen I caught one part reopening decisions I had already settled. It looked careful, but the result was more work, not less.\n\nThat changed the rule for me. A check earns its place when it reduces a real uncertainty. If nothing changed, reopening a good decision is not extra intelligence. It is rework.",
+            "guard_accepted": true,
+            "guard_reasons": [],
+            "score": 93,
+            "dimensions": {
+              "outsider_clarity": 5,
+              "professional_relevance": 5,
+              "specificity": 5,
+              "novel_insight": 5,
+              "practical_usefulness": 4,
+              "emotional_tension": 4,
+              "conversation_potential": 4,
+              "shareability": 4,
+              "voice_authenticity": 5
+            },
+            "gaps": [
+              "Make the consequence more immediate."
+            ],
+            "rationale": "Fixture.",
+            "warnings": []
+          }
+        },
+        "selected_candidate": {
+          "candidate_id": "rewrite:b500bb8324a2944eee8ec2c3b8482023487da5f7157b415d0de73740c5599649",
+          "source": "rewrite",
+          "body": "I built a planning system to reduce repeated work.\n\nThen I caught one part reopening decisions I had already settled. It looked careful, but the result was more work, not less.\n\nThat changed the rule for me. A check earns its place when it reduces a real uncertainty. If nothing changed, reopening a good decision is not extra intelligence. It is rework.",
+          "score": 93,
+          "content_sha256": "b500bb8324a2944eee8ec2c3b8482023487da5f7157b415d0de73740c5599649"
+        },
+        "visual_asset": {
+          "status": "planned",
+          "source_candidate": "rewrite",
+          "source_content_sha256": "b500bb8324a2944eee8ec2c3b8482023487da5f7157b415d0de73740c5599649",
+          "asset_type": "single_image",
+          "rationale": "One visual metaphor supports the post.",
+          "creative_goal": "Make reliability over novelty visible.",
+          "aspect_ratio": "4:5",
+          "single_image": {
+            "concept": "A stable bridge carrying a workflow while flashy decorative elements sit unused nearby.",
+            "overlay_text": "Reliability beats novelty",
+            "composition": "One centered stable bridge with generous negative space.",
+            "style": "Clean editorial conceptual illustration.",
+            "generation_prompt": "Editorial illustration of a stable bridge representing a reliable workflow. No embedded text, lettering, logos, watermarks, fake interface labels, or pseudo-typography.",
+            "negative_guidance": [
+              "robots",
+              "neon dashboards"
+            ],
+            "alt_text": "A stable bridge symbolizes a reliable AI workflow."
+          },
+          "carousel": null,
+          "review_required": true,
+          "warnings": []
+        }
+      },
+      "visual_inputs": [
+        {
+          "post_text": "I built a planning system to reduce repeated work.\n\nThen I caught one part reopening decisions I had already settled. It looked careful, but the result was more work, not less.\n\nThat changed the rule for me. A check earns its place when it reduces a real uncertainty. If nothing changed, reopening a good decision is not extra intelligence. It is rework.",
+          "source_candidate": "rewrite",
+          "audience": "AI builders and operators",
+          "content_goal": "authority",
+          "evidence": [
+            {
+              "title": "Build note",
+              "fact": "One planning step reopened settled decisions.",
+              "url": null
+            }
+          ],
+          "preference": "auto",
+          "style_profile": {
+            "schema_version": "1.0",
+            "name": "LinkedIn Visual Companion",
+            "objective": "Create a visual asset that reinforces the post's idea and earns attention without repeating the whole post, inventing evidence, or looking like generic AI artwork.",
+            "format_policy": {
+              "default": "auto",
+              "allowed": [
+                "single_image",
+                "carousel"
+              ],
+              "single_image_when": [
+                "The post has one sharp idea, tension, metaphor, or memorable takeaway.",
+                "A single visual can create recognition without needing a sequence."
+              ],
+              "carousel_when": [
+                "The idea benefits from progression, comparison, steps, layers, or several distinct takeaways.",
+                "The reader gains value by moving through the idea one frame at a time."
+              ],
+              "rule": "Choose the format because it improves understanding or attention, not because one format is fashionable. Do not turn a one-point post into a padded carousel."
+            },
+            "shared_style": [
+              "clean_editorial",
+              "modern_professional",
+              "visually_simple",
+              "one_clear_focal_idea",
+              "human_and_grounded",
+              "conceptual_when_literal_imagery_is_weak",
+              "designed_for_mobile_feed"
+            ],
+            "hard_avoids": [
+              "generic robot heads, glowing brains, humanoid AI assistants, or neon circuit clichés",
+              "floating dashboards, fake software interfaces, fake screenshots, or illegible UI",
+              "stock-photo handshake/business-team imagery unless the post genuinely requires people",
+              "random decorative technology symbols that do not explain the idea",
+              "embedded generated text, letters, logos, watermarks, or pseudo-typography inside AI imagery",
+              "invented charts, metrics, screenshots, quotations, or factual claims",
+              "visual clutter, multiple competing focal points, or excessive small detail",
+              "sensational imagery that overstates the post's actual stakes"
+            ],
+            "single_image": {
+              "aspect_ratio": "4:5",
+              "overlay_text_max_words": 12,
+              "rules": [
+                "Use one visual metaphor or one concrete scene, not a collage of ideas.",
+                "Keep any headline/overlay text outside the image-generation prompt so typography can be applied separately.",
+                "The generation prompt should explicitly request no text, lettering, logos, or watermark.",
+                "Prefer a visual that adds meaning instead of merely illustrating the first sentence literally."
+              ]
+            },
+            "carousel": {
+              "aspect_ratio": "4:5",
+              "min_slides": 4,
+              "max_slides": 8,
+              "rules": [
+                "Slide 1 earns the swipe with a clear, useful hook.",
+                "Each slide advances the idea; do not repeat the post sentence by sentence.",
+                "Use concise slide copy that can be typeset by a deterministic layout layer later.",
+                "Keep a consistent visual system across all slides.",
+                "Do not ask an image model to render the finished slide typography.",
+                "End with a useful takeaway or memorable distinction, not a forced engagement CTA."
+              ]
+            },
+            "rendering_boundary": {
+              "planner_owns": [
+                "format recommendation",
+                "visual concept",
+                "overlay or slide copy",
+                "composition and art direction",
+                "provider-neutral generation prompt",
+                "alt text"
+              ],
+              "renderer_owns_later": [
+                "actual image generation",
+                "deterministic typography/layout",
+                "carousel slide rendering",
+                "output file creation"
+              ],
+              "orchestrator_owns": [
+                "human approval",
+                "scheduling",
+                "publishing",
+                "canonical post state"
+              ]
+            }
+          }
+        }
+      ],
+      "visual_call_count": 1,
+      "quality_call_count": 2,
+      "rewrite_call_count": 1,
+      "total_llm_fixture_calls": 4
+    },
+    "A92": {
+      "mode": "fixture",
+      "result": {
+        "request_id": null,
+        "origin": "test",
+        "persona_key": "graham",
+        "status": "drafted",
+        "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+        "hashtags": [],
+        "sources": [],
+        "telemetry": {
+          "emoji_count": 0,
+          "bullet_char": "🔹",
+          "persona": "graham",
+          "score": 100,
+          "voice_reference_count": 0,
+          "voice_reference_ids": [],
+          "opportunity_score": null,
+          "opportunity_decision": "draft",
+          "opportunity_reason": "Opportunity preflight disabled for this caller.",
+          "opportunity_dimensions": {},
+          "opportunity_warnings": [
+            "opportunity_gate_disabled"
+          ],
+          "strongest_evidence_title": "",
+          "strongest_evidence_fact": "",
+          "missing_evidence_question": "",
+          "content_goal": "authority",
+          "earned_question": false,
+          "publish_quality_score": 92,
+          "publish_quality_threshold": 90,
+          "publish_rewrite_triggered": false,
+          "publish_rewrite_score": null,
+          "publish_ready": true
+        },
+        "review": {
+          "threshold": 90,
+          "rewrite_triggered": false,
+          "publish_ready": true,
+          "recommendation": "original",
+          "original": {
+            "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+            "score": 92,
+            "dimensions": {
+              "outsider_clarity": 5,
+              "professional_relevance": 5,
+              "specificity": 5,
+              "novel_insight": 5,
+              "practical_usefulness": 4,
+              "emotional_tension": 4,
+              "conversation_potential": 4,
+              "shareability": 4,
+              "voice_authenticity": 4
+            },
+            "gaps": [
+              "Make the consequence more immediate."
+            ],
+            "rationale": "Fixture.",
+            "warnings": []
+          },
+          "rewrite": null
+        },
+        "selected_candidate": {
+          "candidate_id": "original:90ed3d86e1c7e42459f5575957858c97b35914b2890b42597ed253d763b7897c",
+          "source": "original",
+          "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+          "score": 92,
+          "content_sha256": "90ed3d86e1c7e42459f5575957858c97b35914b2890b42597ed253d763b7897c"
+        },
+        "visual_asset": {
+          "status": "planned",
+          "source_candidate": "original",
+          "source_content_sha256": "90ed3d86e1c7e42459f5575957858c97b35914b2890b42597ed253d763b7897c",
+          "asset_type": "single_image",
+          "rationale": "One visual metaphor supports the post.",
+          "creative_goal": "Make reliability over novelty visible.",
+          "aspect_ratio": "4:5",
+          "single_image": {
+            "concept": "A stable bridge carrying a workflow while flashy decorative elements sit unused nearby.",
+            "overlay_text": "Reliability beats novelty",
+            "composition": "One centered stable bridge with generous negative space.",
+            "style": "Clean editorial conceptual illustration.",
+            "generation_prompt": "Editorial illustration of a stable bridge representing a reliable workflow. No embedded text, lettering, logos, watermarks, fake interface labels, or pseudo-typography.",
+            "negative_guidance": [
+              "robots",
+              "neon dashboards"
+            ],
+            "alt_text": "A stable bridge symbolizes a reliable AI workflow."
+          },
+          "carousel": null,
+          "review_required": true,
+          "warnings": []
+        }
+      },
+      "visual_inputs": [
+        {
+          "post_text": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+          "source_candidate": "original",
+          "audience": "AI builders and operators",
+          "content_goal": "authority",
+          "evidence": [
+            {
+              "title": "Build note",
+              "fact": "One planning step reopened settled decisions.",
+              "url": null
+            }
+          ],
+          "preference": "auto",
+          "style_profile": {
+            "schema_version": "1.0",
+            "name": "LinkedIn Visual Companion",
+            "objective": "Create a visual asset that reinforces the post's idea and earns attention without repeating the whole post, inventing evidence, or looking like generic AI artwork.",
+            "format_policy": {
+              "default": "auto",
+              "allowed": [
+                "single_image",
+                "carousel"
+              ],
+              "single_image_when": [
+                "The post has one sharp idea, tension, metaphor, or memorable takeaway.",
+                "A single visual can create recognition without needing a sequence."
+              ],
+              "carousel_when": [
+                "The idea benefits from progression, comparison, steps, layers, or several distinct takeaways.",
+                "The reader gains value by moving through the idea one frame at a time."
+              ],
+              "rule": "Choose the format because it improves understanding or attention, not because one format is fashionable. Do not turn a one-point post into a padded carousel."
+            },
+            "shared_style": [
+              "clean_editorial",
+              "modern_professional",
+              "visually_simple",
+              "one_clear_focal_idea",
+              "human_and_grounded",
+              "conceptual_when_literal_imagery_is_weak",
+              "designed_for_mobile_feed"
+            ],
+            "hard_avoids": [
+              "generic robot heads, glowing brains, humanoid AI assistants, or neon circuit clichés",
+              "floating dashboards, fake software interfaces, fake screenshots, or illegible UI",
+              "stock-photo handshake/business-team imagery unless the post genuinely requires people",
+              "random decorative technology symbols that do not explain the idea",
+              "embedded generated text, letters, logos, watermarks, or pseudo-typography inside AI imagery",
+              "invented charts, metrics, screenshots, quotations, or factual claims",
+              "visual clutter, multiple competing focal points, or excessive small detail",
+              "sensational imagery that overstates the post's actual stakes"
+            ],
+            "single_image": {
+              "aspect_ratio": "4:5",
+              "overlay_text_max_words": 12,
+              "rules": [
+                "Use one visual metaphor or one concrete scene, not a collage of ideas.",
+                "Keep any headline/overlay text outside the image-generation prompt so typography can be applied separately.",
+                "The generation prompt should explicitly request no text, lettering, logos, or watermark.",
+                "Prefer a visual that adds meaning instead of merely illustrating the first sentence literally."
+              ]
+            },
+            "carousel": {
+              "aspect_ratio": "4:5",
+              "min_slides": 4,
+              "max_slides": 8,
+              "rules": [
+                "Slide 1 earns the swipe with a clear, useful hook.",
+                "Each slide advances the idea; do not repeat the post sentence by sentence.",
+                "Use concise slide copy that can be typeset by a deterministic layout layer later.",
+                "Keep a consistent visual system across all slides.",
+                "Do not ask an image model to render the finished slide typography.",
+                "End with a useful takeaway or memorable distinction, not a forced engagement CTA."
+              ]
+            },
+            "rendering_boundary": {
+              "planner_owns": [
+                "format recommendation",
+                "visual concept",
+                "overlay or slide copy",
+                "composition and art direction",
+                "provider-neutral generation prompt",
+                "alt text"
+              ],
+              "renderer_owns_later": [
+                "actual image generation",
+                "deterministic typography/layout",
+                "carousel slide rendering",
+                "output file creation"
+              ],
+              "orchestrator_owns": [
+                "human approval",
+                "scheduling",
+                "publishing",
+                "canonical post state"
+              ]
+            }
+          }
+        }
+      ],
+      "visual_call_count": 1,
+      "quality_call_count": 1,
+      "rewrite_call_count": 0,
+      "total_llm_fixture_calls": 2
+    },
+    "unsafe-B": {
+      "mode": "fixture",
+      "result": {
+        "request_id": null,
+        "origin": "test",
+        "persona_key": "graham",
+        "status": "drafted",
+        "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+        "hashtags": [],
+        "sources": [],
+        "telemetry": {
+          "emoji_count": 0,
+          "bullet_char": "🔹",
+          "persona": "graham",
+          "score": 100,
+          "voice_reference_count": 0,
+          "voice_reference_ids": [],
+          "opportunity_score": null,
+          "opportunity_decision": "draft",
+          "opportunity_reason": "Opportunity preflight disabled for this caller.",
+          "opportunity_dimensions": {},
+          "opportunity_warnings": [
+            "opportunity_gate_disabled"
+          ],
+          "strongest_evidence_title": "",
+          "strongest_evidence_fact": "",
+          "missing_evidence_question": "",
+          "content_goal": "authority",
+          "earned_question": false,
+          "publish_quality_score": 87,
+          "publish_quality_threshold": 90,
+          "publish_rewrite_triggered": true,
+          "publish_rewrite_score": null,
+          "publish_ready": false
+        },
+        "review": {
+          "threshold": 90,
+          "rewrite_triggered": true,
+          "publish_ready": false,
+          "recommendation": "original",
+          "original": {
+            "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+            "score": 87,
+            "dimensions": {
+              "outsider_clarity": 5,
+              "professional_relevance": 4,
+              "specificity": 5,
+              "novel_insight": 4,
+              "practical_usefulness": 4,
+              "emotional_tension": 4,
+              "conversation_potential": 4,
+              "shareability": 4,
+              "voice_authenticity": 5
+            },
+            "gaps": [
+              "Make the consequence more immediate."
+            ],
+            "rationale": "Fixture.",
+            "warnings": []
+          },
+          "rewrite": {
+            "body": "I built a planning system to reduce repeated work.\n\nThen I caught one part reopening decisions I had already settled. It looked careful, but the result was more work, not less.\n\nThat changed the rule for me. A check earns its place when it reduces a real uncertainty. If nothing changed, reopening a good decision is not extra intelligence. It is rework. It improves results by 42%.",
+            "guard_accepted": false,
+            "guard_reasons": [
+              "rewrite introduces a new number"
+            ],
+            "score": null,
+            "dimensions": {},
+            "gaps": [],
+            "rationale": "",
+            "warnings": []
+          }
+        },
+        "selected_candidate": null,
+        "visual_asset": {
+          "status": "deferred",
+          "source_candidate": null,
+          "source_content_sha256": null,
+          "asset_type": null,
+          "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+          "creative_goal": "",
+          "aspect_ratio": "4:5",
+          "single_image": null,
+          "carousel": null,
+          "review_required": true,
+          "warnings": [
+            "publish_ready_candidate_required"
+          ]
+        }
+      },
+      "visual_inputs": [],
+      "visual_call_count": 0,
+      "quality_call_count": 1,
+      "rewrite_call_count": 1,
+      "total_llm_fixture_calls": 3
+    },
+    "low-B": {
+      "mode": "fixture",
+      "result": {
+        "request_id": null,
+        "origin": "test",
+        "persona_key": "graham",
+        "status": "drafted",
+        "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+        "hashtags": [],
+        "sources": [],
+        "telemetry": {
+          "emoji_count": 0,
+          "bullet_char": "🔹",
+          "persona": "graham",
+          "score": 100,
+          "voice_reference_count": 0,
+          "voice_reference_ids": [],
+          "opportunity_score": null,
+          "opportunity_decision": "draft",
+          "opportunity_reason": "Opportunity preflight disabled for this caller.",
+          "opportunity_dimensions": {},
+          "opportunity_warnings": [
+            "opportunity_gate_disabled"
+          ],
+          "strongest_evidence_title": "",
+          "strongest_evidence_fact": "",
+          "missing_evidence_question": "",
+          "content_goal": "authority",
+          "earned_question": false,
+          "publish_quality_score": 87,
+          "publish_quality_threshold": 90,
+          "publish_rewrite_triggered": true,
+          "publish_rewrite_score": 87,
+          "publish_ready": false
+        },
+        "review": {
+          "threshold": 90,
+          "rewrite_triggered": true,
+          "publish_ready": false,
+          "recommendation": "original",
+          "original": {
+            "body": "I built a planning system to reduce repeated work.\n\nIt looked careful, but one part kept reopening decisions I had already settled. That made the process feel safer while quietly creating more work.\n\nThe useful lesson was simple: another check only helps when it reduces a real uncertainty. Otherwise the system is not protecting the work. It is repeating it.",
+            "score": 87,
+            "dimensions": {
+              "outsider_clarity": 5,
+              "professional_relevance": 4,
+              "specificity": 5,
+              "novel_insight": 4,
+              "practical_usefulness": 4,
+              "emotional_tension": 4,
+              "conversation_potential": 4,
+              "shareability": 4,
+              "voice_authenticity": 5
+            },
+            "gaps": [
+              "Make the consequence more immediate."
+            ],
+            "rationale": "Fixture.",
+            "warnings": []
+          },
+          "rewrite": {
+            "body": "I built a planning system to reduce repeated work.\n\nThen I caught one part reopening decisions I had already settled. It looked careful, but the result was more work, not less.\n\nThat changed the rule for me. A check earns its place when it reduces a real uncertainty. If nothing changed, reopening a good decision is not extra intelligence. It is rework.",
+            "guard_accepted": true,
+            "guard_reasons": [],
+            "score": 87,
+            "dimensions": {
+              "outsider_clarity": 5,
+              "professional_relevance": 4,
+              "specificity": 5,
+              "novel_insight": 4,
+              "practical_usefulness": 4,
+              "emotional_tension": 4,
+              "conversation_potential": 4,
+              "shareability": 4,
+              "voice_authenticity": 5
+            },
+            "gaps": [
+              "Make the consequence more immediate."
+            ],
+            "rationale": "Fixture.",
+            "warnings": []
+          }
+        },
+        "selected_candidate": null,
+        "visual_asset": {
+          "status": "deferred",
+          "source_candidate": null,
+          "source_content_sha256": null,
+          "asset_type": null,
+          "rationale": "Visual planning waits until the post has a publish-quality score at or above the configured threshold, so image/carousel work is not spent on a text candidate that still needs revision.",
+          "creative_goal": "",
+          "aspect_ratio": "4:5",
+          "single_image": null,
+          "carousel": null,
+          "review_required": true,
+          "warnings": [
+            "publish_ready_candidate_required"
+          ]
+        }
+      },
+      "visual_inputs": [],
+      "visual_call_count": 0,
+      "quality_call_count": 2,
+      "rewrite_call_count": 1,
+      "total_llm_fixture_calls": 4
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "checked_at_utc": "2026-11-05T01:09:55.573385+00:00",
+  "tested_head": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "output": "436a16540bea0f8e5b9c4c74bc46a0b72b00cbc2\n"
+  },
+  "source_config_tests_sha256": "baf162b7fad5064ec66fefb928f4fe142cc8f86f822df7eba5977b5afaf286a2",
+  "checks": {
+    "pytest": {
+      "command": [
+        "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log": "pytest.log",
+      "sha256": "e0cdaea54a783117913690a1aee3c494767143615513fb1f399cd1095eb82026"
+    },
+    "diff": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "legacy_show": {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "show",
+        "--out",
+        "evidence/evidence-first-20261104/trial"
+      ],
+      "exit_code": 0,
+      "log": "legacy_show.log",
+      "sha256": "698196747f3a72b398876900ebe92b84f478221502d5fd89a51850bd26dc42d2"
+    },
+    "legacy_duplicate": {
+      "command": [
+        "/home/graham/.local/bin/linkedin-codex",
+        "generate",
+        "--out",
+        "evidence/evidence-first-20261104/trial",
+        "--request",
+        "evidence/evidence-first-20261104/request.json",
+        "--evidence-bundle",
+        "evidence/evidence-first-20261104/source-bundle.json",
+        "--score-baseline"
+      ],
+      "exit_code": 0,
+      "log": "legacy_duplicate.log",
+      "sha256": "698196747f3a72b398876900ebe92b84f478221502d5fd89a51850bd26dc42d2"
+    }
+  },
+  "model_executions_this_milestone": 0,
+  "api_spend": 0,
+  "legacy_attempts_before_after": {
+    "before": 10,
+    "after": 10
+  },
+  "styles": 9,
+  "fixed_context_equal": true,
+  "style_ids": [
+    "concise_challenger",
+    "reflective_leader",
+    "counterintuitive_analyst",
+    "direct_motivator",
+    "purpose_led",
+    "practical_experimenter",
+    "balanced_authority",
+    "technical_explainer",
+    "relatable_provocateur"
+  ],
+  "remote_heads": {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/main",
+      "refs/heads/fix/selected-candidate-v4-20261104"
+    ],
+    "exit_code": 0,
+    "output": "368236ce214f3981eef31ff03c97451be5490b5f\trefs/heads/fix/selected-candidate-v4-20261104\na714d1ef355ade9ca47a52b301ea477bd0c14f34\trefs/heads/main\n"
+  },
+  "runtime": {
+    "state": "CANDIDATE_ONLY",
+    "checkout": "/home/graham/work/linkedin-codex-trial-20261104",
+    "launcher": "/home/graham/.local/bin/linkedin-codex",
+    "interpreter": "/usr/bin/python3.14",
+    "client_commit": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+    "selected_style_resolver": "/home/graham/work/linkedin-codex-trial-20261104/src/app/writing_voice.py"
+  },
+  "integration": {
+    "pr": 24,
+    "last_observed": "open/draft/unmerged; refreshed connected GitHub metadata in this session",
+    "hosted_ci": "not enabled or dispatched",
+    "required_checks_and_reviews": "not established; no merge acceptance claimed"
+  },
+  "expected_vs_observed": {
+    "unknown_style": "rejected before provider call",
+    "style_only_difference": "all9 writer/judge prompt captures share identical non-style context hash",
+    "retained_style_change": "unfinished completion rejects without baseline call",
+    "completed_replay": "historical completion reopens zero-call even without current catalogue",
+    "legacy_default": "no new generator kwarg when omitted",
+    "safety": "house/POV/URL and factual rewrite guards retained"
+  },
+  "disposition": "GO",
+  "human_content_acceptance": "HOLD",
+  "next": "Controlled same-author/story/facts/audience/argument writing comparison using explicit writing_voice_id; no human preference inferred",
+  "paths_recovery": {
+    "snapshot": "d6eea4daa0fb5a90dfa02be60941354b3576ac92",
+    "diagnostic": "read-only classifier run in current scratch snapshot; no access blocker proven",
+    "observed_failure": "DC Connection failed, then -32603 Internal error during source-state reconciliation",
+    "reconciled": "list_remote_tool_calls empty; subsequent EN git log/status proved commit had not occurred, then original authorized commit proceeded"
+  }
+}

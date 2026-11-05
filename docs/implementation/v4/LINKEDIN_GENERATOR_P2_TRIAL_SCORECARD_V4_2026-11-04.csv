@@ -1,0 +1,9 @@
+subject_id,trial_id,first_six_draft_order,genuine_subject_y_n,eligible_draft_y_n,run_id,candidate_id,candidate_sha256,voice_version,provider_mode,source_ids,claim_ids,unresolved_claim_count,gate_decision,quality_score,human_decision,edit_scope,voice_rating_1_5,insight_rating_1_5,usefulness_rating_1_5,visual_format,visual_value,visual_reason,baseline_pair_id,blinded_preference,baseline_edit_minutes,engine_edit_minutes,model_calls,latency_s,observed_cost,reviewer,reviewed_utc,status,notes
+SUBJECT-01,TRIAL-01,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-02,TRIAL-02,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-03,TRIAL-03,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-04,TRIAL-04,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-05,TRIAL-05,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-06,TRIAL-06,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-07,TRIAL-07,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,
+SUBJECT-08,TRIAL-08,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,NOT_RUN,

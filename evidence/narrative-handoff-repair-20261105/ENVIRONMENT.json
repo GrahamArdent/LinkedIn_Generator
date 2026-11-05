@@ -1,0 +1,11 @@
+{
+  "resume_root": "/home/graham/work/linkedin-resume-client-20261104",
+  "python": "/home/graham/work/resume-v6-smoke-venv/bin/python",
+  "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+  "model": "gpt-6-astra",
+  "reasoning": "medium",
+  "candidate_interpreter": "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python",
+  "candidate_root": "/home/graham/work/linkedin-codex-trial-20261104",
+  "auth": "Existing Codex ChatGPT authentication; no credentials retained",
+  "runtime": "candidate checkout only; no installation promotion"
+}

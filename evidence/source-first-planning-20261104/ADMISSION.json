@@ -1,0 +1,10 @@
+{
+  "authorization": "Operator proceed with source-first planning experiment and replicable workflow",
+  "budget": {
+    "max_native_calls": 12,
+    "max_cli_seconds": 900,
+    "api_spend": 0
+  },
+  "sequence": "One planning call, assistant source/novelty review, conditional same-brief engine and simple-prompt drafting via existing runner. No thesis, prior outputs or prior scores supplied to planner. No retry.",
+  "human_approval": null
+}

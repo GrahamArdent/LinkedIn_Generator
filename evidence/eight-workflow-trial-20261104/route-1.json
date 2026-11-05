@@ -1,0 +1,125 @@
+{
+  "status": "DRAFTED",
+  "brief": {
+    "decision": "GO",
+    "artifact": {
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "status": "Frozen editorial brief; not a post",
+      "thesis": {
+        "classification": "editorial inference",
+        "text": "Accepted credentials or an allowed network origin do not, by themselves, establish that a particular business action is authorized.",
+        "claim_ids": [
+          "CF-1",
+          "CI-1"
+        ]
+      },
+      "reader_consequence": {
+        "classification": "practical inference",
+        "text": "Inspect one sensitive action at its final enforcement point: what evidence of authorization must accompany an accepted account or network path before the action proceeds? For a payout, examine whether direct API calls must satisfy the required approvals and business checks.",
+        "claim_ids": [
+          "CI-1"
+        ]
+      },
+      "load_bearing_facts": [
+        {
+          "classification": "reported fact",
+          "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment.",
+          "claim_id": "CF-1",
+          "source_ids": [
+            "CF2024"
+          ]
+        },
+        {
+          "classification": "reported fact",
+          "text": "CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts.",
+          "claim_id": "CI-1",
+          "source_ids": [
+            "CIAD-2026-0046"
+          ]
+        }
+      ],
+      "necessary_qualification": {
+        "classification": "evidentiary boundary",
+        "text": "These different accounts support a conceptual distinction between accepted access and authorized action; they do not establish that a particular defense caused different outcomes or would have prevented the reported losses."
+      },
+      "narrative_beats": [
+        {
+          "sequence": 1,
+          "classification": "editorial inference",
+          "purpose": "Open with the distinction",
+          "text": "An accepted request can still serve an unauthorized actor. Establish what the access check actually proves.",
+          "claim_ids": [
+            "CF-1",
+            "CI-1"
+          ]
+        },
+        {
+          "sequence": 2,
+          "classification": "reported fact",
+          "purpose": "Ground the credential example",
+          "text": "Use Cloudflare’s account of stolen, unrotated credentials being reused to access Atlassian.",
+          "claim_ids": [
+            "CF-1"
+          ],
+          "source_ids": [
+            "CF2024"
+          ]
+        },
+        {
+          "sequence": 3,
+          "classification": "reported fact",
+          "purpose": "Connect access to a business consequence",
+          "text": "Use CERT-In’s account of stolen credentials and whitelisted infrastructure accompanying unauthorized fund transfers that bypassed application checks.",
+          "claim_ids": [
+            "CI-1"
+          ],
+          "source_ids": [
+            "CIAD-2026-0046"
+          ]
+        },
+        {
+          "sequence": 4,
+          "classification": "editorial inference",
+          "purpose": "Bound the comparison",
+          "text": "Identify the shared failure of access signals to establish legitimacy, while retaining the necessary qualification about causation and prevention.",
+          "claim_ids": [
+            "CF-1",
+            "CI-1"
+          ]
+        },
+        {
+          "sequence": 5,
+          "classification": "practical inference",
+          "purpose": "Give leaders a concrete inspection question",
+          "text": "Ask what authorizes the sensitive action at the point where it executes, including when an API is called directly.",
+          "claim_ids": [
+            "CI-1"
+          ]
+        }
+      ],
+      "hypothetical_illustration": null
+    },
+    "claim_support": [
+      {
+        "claim_id": "CF-1",
+        "source_id": "CF2024",
+        "locator": "Opening and October18 timeline",
+        "reported_claim": "Stolen credentials were mistakenly considered unused, left unrotated and subsequently used to access Cloudflare’s Atlassian environment."
+      },
+      {
+        "claim_id": "CI-1",
+        "source_id": "CIAD-2026-0046",
+        "locator": "Description; Attack Vector; Key TTPs Observed",
+        "reported_claim": "Attackers used stolen API credentials from victims’ whitelisted infrastructure to invoke fund-transfer APIs, bypass application-level checks and transfer funds to mule accounts."
+      }
+    ],
+    "limitations": [
+      "Based exclusively on supplied material; source authenticity, completeness and underlying incident evidence were not independently verified.",
+      "Cloudflare provides a retrospective victim account; CERT-In describes an aggregated sector campaign rather than a matched individual incident.",
+      "The practical inspection question is an editorial inference, not measured evidence that a control would prevent losses."
+    ]
+  },
+  "draft": "An accepted request can still serve an unauthorized actor. A credential or an allowed network origin alone cannot establish that a business action is authorized.\n\nIn its February 2024 incident account, Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment. [CF2024]\n\nA separate CERT-In advisory from October 2026 brings the distinction directly to payments. It reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts. [CIAD-2026-0046]\n\nMy reading: accepted access signals have limits as evidence of legitimate action. These are different accounts, one a victim’s retrospective and the other an aggregated campaign advisory. They do not establish that a particular defense caused different outcomes or would have prevented the reported losses.\n\nFor business and IT leaders, that suggests inspecting one sensitive action where it actually executes. A payout is a concrete place to start.\n\nAt that final enforcement point, what requires a direct API call to satisfy the payout’s approvals and business checks, even when the account and network path are accepted?",
+  "human_preference": null
+}

@@ -1,0 +1,23 @@
+{
+  "request_id": "lig-codex-selected-revision-20261104",
+  "origin": "manual",
+  "topic": "A content workflow needs to agree on which draft is final",
+  "persona_key": "graham",
+  "audience": "People building or using AI tools at work",
+  "objective": "Share a practical lesson about reliable handoffs in plain language. Do not claim Graham personally wrote code, experienced a production incident, published a wrong post or measured any performance improvement.",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "opportunity_gate": true,
+  "publish_quality_gate": true,
+  "publish_quality_threshold": 90,
+  "visual_asset_plan": true,
+  "visual_asset_preference": "auto",
+  "evidence": [
+    {
+      "title": "P1 integration finding, verified source and fixture evidence",
+      "fact": "The LinkedIn generator could preserve its original draft in the top-level body while preparing a visual plan from a qualified rewrite. This made the selected version ambiguous for callers. A focused repair added an explicit selected candidate and bound the visual to that candidate's exact text hash. This was verified in source and automated tests; it is not evidence of a production incident or an incorrectly published post.",
+      "url": "https://github.com/GrahamArdent/LinkedIn_Generator/pull/24"
+    }
+  ],
+  "hashtags": []
+}

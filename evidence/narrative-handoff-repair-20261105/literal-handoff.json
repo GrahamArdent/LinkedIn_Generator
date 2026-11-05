@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "meaning": {
+    "thesis": "Accepted credentials or an allowed network origin do not, by themselves, establish that a particular business action is authorized.",
+    "reader_consequence": "Inspect one sensitive action at its final enforcement point: what evidence of authorization must accompany an accepted account or network path before the action proceeds? For a payout, examine whether direct API calls must satisfy the required approvals and business checks.",
+    "facts": [
+      {
+        "claim_id": "CF-1",
+        "text": "Cloudflare reports that credentials stolen in the October 2023 Okta compromise were mistakenly considered unused, left unrotated and later used by attackers to access its Atlassian environment.",
+        "source_ids": [
+          "CF2024"
+        ]
+      },
+      {
+        "claim_id": "CI-1",
+        "text": "CERT-In reports that attackers used stolen API credentials from victims’ own whitelisted infrastructure to invoke fund-transfer APIs directly, bypass application-level checks and transfer funds to mule accounts.",
+        "source_ids": [
+          "CIAD-2026-0046"
+        ]
+      }
+    ],
+    "qualification": "These different accounts support a conceptual distinction between accepted access and authorized action; they do not establish that a particular defense caused different outcomes or would have prevented the reported losses."
+  },
+  "narrative": {
+    "form": "literal",
+    "beats": [
+      "Explain the literal relationship through the two attributed facts.",
+      "Develop the bounded implication from the evidence.",
+      "Give the fixed inspection task.",
+      "State the necessary qualification."
+    ],
+    "symbol": null
+  },
+  "writing_plan": {
+    "beats": [
+      {
+        "index": 1,
+        "delivery": "Two compact, attributed fact fragments: Cloudflare—stolen, unrotated credentials enabled Atlassian access; CERT-In—stolen API credentials plus whitelisted infrastructure enabled direct transfers bypassing application checks."
+      },
+      {
+        "index": 2,
+        "delivery": "Direct, bounded reframing: accepted credentials or network origin insufficient to establish action authorization; conversational tone, restrained emphasis; no causal comparison."
+      },
+      {
+        "index": 3,
+        "delivery": "Concrete inspection task: one sensitive action at final enforcement point; authorization evidence required beyond accepted account or path; payout focus—required approvals and business checks on direct API calls."
+      },
+      {
+        "index": 4,
+        "delivery": "Brief, explicit qualification: different accounts; conceptual distinction only; no demonstrated defense-driven outcome difference or claim that a defense would have prevented reported losses."
+      }
+    ],
+    "attribution": [
+      {
+        "claim_id": "CF-1",
+        "source_name": "Cloudflare"
+      },
+      {
+        "claim_id": "CI-1",
+        "source_name": "CERT-In"
+      }
+    ]
+  }
+}

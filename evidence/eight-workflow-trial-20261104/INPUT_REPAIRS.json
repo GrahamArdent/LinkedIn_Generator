@@ -1,0 +1,11 @@
+{
+  "reason": "Mechanical prompt assembly failures, before prose/quality review",
+  "route4": "Explicitly allow hypothetical initial belief with GO; factual support reviewed only after evidence is revealed",
+  "route7": "Resolve cutoff placeholder to2026-10-09; later November report remains withheld until stage2",
+  "originals": [
+    "route-4-initial.json",
+    "route-7-initial.json"
+  ],
+  "budget": "Separate corrected-input batch per route, max7 calls/900sec each, API0",
+  "policy": "One corrected-input execution, no quality retries"
+}

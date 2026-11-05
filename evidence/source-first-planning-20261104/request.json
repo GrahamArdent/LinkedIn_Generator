@@ -1,0 +1,62 @@
+{
+  "request_id": "lig-source-first-planning-20261104",
+  "origin": "manual",
+  "topic": "CERT-In financial-sector campaign update",
+  "persona_key": "graham",
+  "audience": "Business and IT leaders responsible for payment systems",
+  "objective": "A payment API can accept valid credentials from trusted infrastructure while executing a transaction that never passed business approval. Examine whether the fund-moving endpoint independently verifies the approved transaction and its preceding validation stages. Proposed reader action: Ask the payment engineering owner and finance control owner to trace one disbursement path and one merchant settlement path. In an authorized test environment, verify that the execution endpoint rejects a request with valid credentials but no corresponding approved record, missing preceding validation, or an amount above the applicable limit. Record where each rejection is enforced, then extend the review to every fund-movement path. Treat cryptographic binding between validation and debit stages as a design requirement to assess, consistent with CERT-In's recommendation. Intended sharing: A CIO or business payments leader should forward the brief jointly to the payment API engineering lead and the finance operations control owner. Engineering can establish what the execution endpoint enforces; finance can establish which approval records and limits must govern the transfer. Format: Short technical editorial brief organized around the approval-to-execution dependency, with an attributed incident mechanism, supporting evidence from the update, and a concrete verification question. Use Graham Hill's individual, precise, restrained voice without claiming personal incident experience. Write140-180 words, with one main point and no sales CTA or generic engagement question.",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "opportunity_gate": false,
+  "publish_quality_gate": true,
+  "visual_asset_plan": false,
+  "services": [],
+  "targets": [
+    "Business leaders",
+    "IT leaders"
+  ],
+  "hashtags": [
+    "#AI",
+    "#PaymentSecurity",
+    "#CyberRisk"
+  ],
+  "voice_examples": [],
+  "evidence": [
+    {
+      "title": "CIAD-2026-0046 / evidence 1",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "fact": "CERT-In/CSIRT-Fin reports direct invocation of fund-transfer APIs from victims' whitelisted infrastructure after credential theft, bypassing application-level controls."
+    },
+    {
+      "title": "CIAD-2026-0046 / evidence 2",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "fact": "The advisory reports reference identifiers without corresponding records as an observed technique."
+    },
+    {
+      "title": "CIAD-2026-0046 / evidence 3",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "fact": "CERT-In recommends binding transaction stages so the debit API depends on preceding validation."
+    },
+    {
+      "title": "CIAD-2026-0046 / evidence 4",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "fact": "CERT-In recommends approval-record validation and limits at the API/payment stage."
+    },
+    {
+      "title": "CIAD-2026-0058 / evidence 5",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+      "fact": "The November update reports modified application packages defeating controls that assumed only legitimate clients would call APIs."
+    },
+    {
+      "title": "CIAD-2026-0058 / evidence 6",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+      "fact": "The update reports bypass of IP allow-listing through shared third-party fetcher services."
+    },
+    {
+      "title": "CIAD-2026-0058 / evidence 7",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+      "fact": "CERT-In extends transaction validation and approval recommendations explicitly to merchant settlement APIs."
+    }
+  ],
+  "writing_voice_id": "technical_explainer"
+}

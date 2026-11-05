@@ -1,0 +1,36 @@
+{
+  "request_id": "lig-controlled-voice-20261104",
+  "origin": "manual",
+  "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+  "persona_key": "graham",
+  "audience": "Business and IT leaders responsible for payment systems",
+  "objective": "Argue that a reassuring approval screen is insufficient evidence of payment authorization: leaders should trace one approval through to the point of transfer. Hold this central argument fixed. Write140\u2013180 words with one useful managerial takeaway; vary delivery through the selected writing voice only. Explain API as a software connection if used. Use at most one short factual anchor from each supplied source; most of the post should be original reasoning, framed as opinion. Do not invent anecdotes, personal experience, clients, statistics, quotations or outcomes. No sales CTA, generic engagement question, internal process language, or em dash. No need to force a provocative disagreement or vulnerability. End naturally.",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "opportunity_gate": false,
+  "publish_quality_gate": false,
+  "visual_asset_plan": false,
+  "services": [],
+  "targets": [
+    "Business leaders",
+    "IT leaders"
+  ],
+  "hashtags": [
+    "#AI",
+    "#PaymentSecurity",
+    "#CyberRisk"
+  ],
+  "voice_examples": [],
+  "evidence": [
+    {
+      "title": "S1 / C1: CERT-In update, November4,2026",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+      "fact": "CERT-In reports an AI-assisted campaign targeting Indian financial entities through their payment interfaces."
+    },
+    {
+      "title": "S2 / C2: CERT-In CIAD-2026-0046, October9,2026",
+      "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+      "fact": "The earlier advisory describes stolen credentials enabling direct payment calls that bypass application checks, and recommends binding transaction stages and validating payouts against approved records."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "resume_root": "/absolute/path/to/pinned/resume-creator-v6",
+  "python": "/absolute/path/to/qualified/resume-venv/bin/python",
+  "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+  "model": "gpt-6-astra",
+  "reasoning": "medium"
+}

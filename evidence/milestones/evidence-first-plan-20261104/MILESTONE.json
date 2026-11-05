@@ -1,0 +1,72 @@
+{
+  "milestone": "evidence-first-plan-20261104",
+  "started_utc": "2026-11-04T23:31:36.252184+00:00",
+  "finished_utc": "2026-11-04T23:32:14.810976+00:00",
+  "expected": {
+    "pytest": "142 passed",
+    "production_diff": "none",
+    "acceptance_objectives": "26 AT + 11 E2E definitions unchanged",
+    "runtime": "candidate checkout, no generation",
+    "integration": "draft PR24 unmerged"
+  },
+  "observed_checkout_head": "d715f078094032c10e778a8450f61329c1895fa8",
+  "observed_main": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "source_config_tests_sha256": "103a8d1ba382d4f506e74fec8635b23834ff6dcafa3946086c61b0ab1c6fef6d",
+  "production_diff_exit": 0,
+  "local_ci": {
+    "command": [
+      "/home/graham/work/linkedin-codex-trial-20261104/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit_code": 0,
+    "log": "pytest.log",
+    "log_sha256": "fd77971b8564f7eee4eaf827ed5166d439aceeae7e076aba37264288b5230a7d",
+    "summary": "........................................................................ [ 50%]\n......................................................................   [100%]\n142 passed in 1.28s\n"
+  },
+  "diff_check": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "acceptance": {
+    "missing_ids": [],
+    "unchanged_exit": 0,
+    "sha256": "3a0daffb3eaff391989257d5e03f95e3dd5570043858a42609d0d3e41b7b7c10"
+  },
+  "broken_relative_links": [],
+  "integration": {
+    "checked_via": "connected GitHub PR info",
+    "pr": 24,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "observed_head": "d715f078094032c10e778a8450f61329c1895fa8",
+    "required_reviews_and_checks": "not established by PR metadata; no hosted CI acceptance claimed"
+  },
+  "runtime": {
+    "state": "CANDIDATE_ONLY",
+    "checkout": "/home/graham/work/linkedin-codex-trial-20261104",
+    "launcher": "/home/graham/.local/bin/linkedin-codex",
+    "interpreter": "/usr/bin/python3.14",
+    "module": "/home/graham/work/linkedin-codex-trial-20261104/src/app/codex_trial.py",
+    "client_checkout": "/home/graham/work/linkedin-resume-client-20261104",
+    "client_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+    "show_exit": 0,
+    "show_log": "runtime-show.log",
+    "show_log_sha256": "4891c0ff3164be749abd0a6fdc7964cbe6499219389d12ca4f0f5b533c07f487",
+    "new_generation_launched": false
+  },
+  "disposition": "GO",
+  "content_acceptance": "HOLD",
+  "next_eligible_action": "Phase1 evidence brief; writer/scorer implementation remains planned",
+  "later_docs_commit": "May reuse this result only if production source/config/tests unchanged; observed checkout HEAD above is tested revision, not a claim of merged main.",
+  "initial_check": "initial-check.json",
+  "repair": "Removed trailing whitespace; no production/config/test changes. Reused green full suite because tested code unchanged."
+}

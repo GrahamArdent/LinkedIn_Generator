@@ -1,0 +1,109 @@
+F....................................................................... [ 72%]
+............................                                             [100%]
+=================================== FAILURES ===================================
+____________ test_run_generation_uses_explicit_orchestrator_context ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x710aad6256e0>
+
+    def test_run_generation_uses_explicit_orchestrator_context(monkeypatch):
+        captured = {}
+    
+        class FakePipeline:
+            def __init__(self, config):
+                captured["config"] = config
+    
+            def plan(self, _prompt, ctx):
+                captured["plan_ctx"] = ctx
+                return {"angle": "real-work lesson", "citations": []}
+    
+            def draft_variants(self, _prompt, ctx):
+                captured["draft_ctx"] = ctx
+                return ["draft"]
+    
+            def judge_select(self, _prompt, _persona_profile, drafts):
+                return drafts[0]
+    
+            def critic(self, _prompt, text):
+                return text
+    
+            def humanize(self, _prompt, text):
+                return text
+    
+            def finalize(self, persona_key, text, citations, hashtags):
+                captured["finalize"] = {
+                    "persona_key": persona_key,
+                    "text": text,
+                    "citations": citations,
+                    "hashtags": hashtags,
+                }
+                return {
+                    "body": text,
+                    "hashtags": hashtags,
+                    "sources": citations,
+                    "telemetry": {"persona": persona_key},
+                }
+    
+        def fake_load_yaml(path):
+            if path.endswith("prompt_kit.config.yaml"):
+                return {}
+            if path.endswith("prompts_packs.yaml"):
+                return {
+                    "plan_prompt": {},
+                    "draft_prompt": {},
+                    "judge_prompt": {},
+                    "critic_prompt": {},
+                    "humanize_prompt": {},
+                }
+            if path.endswith("personas.yaml"):
+                return {"personas": {"graham": {"tone": ["direct"]}}}
+            raise AssertionError(path)
+    
+        monkeypatch.setattr(api, "Pipeline", FakePipeline)
+        monkeypatch.setattr(api, "load_yaml", fake_load_yaml)
+    
+>       result = api.run_generation(
+            topic="What real buyer work taught us",
+            services=["discovery"],
+            persona_key="graham",
+            audience="AI founders",
+            objective="useful visibility from real work",
+            targets=["founders"],
+            allowed_sources=[
+                {
+                    "title": "Buyer note",
+                    "fact": "Reliability mattered more than novelty.",
+                    "url": "https://example.com/note",
+                }
+            ],
+            hashtags=["#AI"],
+        )
+
+tests/test_api_contract.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/api.py:161: in run_generation
+    cta_policies = load_yaml(os.path.join(base, "config/cta_policies.yaml"))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = '/home/spine-admin/workspaces/lig-v4-20261104/src/app/../../config/cta_policies.yaml'
+
+    def fake_load_yaml(path):
+        if path.endswith("prompt_kit.config.yaml"):
+            return {}
+        if path.endswith("prompts_packs.yaml"):
+            return {
+                "plan_prompt": {},
+                "draft_prompt": {},
+                "judge_prompt": {},
+                "critic_prompt": {},
+                "humanize_prompt": {},
+            }
+        if path.endswith("personas.yaml"):
+            return {"personas": {"graham": {"tone": ["direct"]}}}
+>       raise AssertionError(path)
+E       AssertionError: /home/spine-admin/workspaces/lig-v4-20261104/src/app/../../config/cta_policies.yaml
+
+tests/test_api_contract.py:57: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_api_contract.py::test_run_generation_uses_explicit_orchestrator_context
+1 failed, 99 passed in 1.83s

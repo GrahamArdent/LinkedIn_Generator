@@ -1,0 +1,93 @@
+{
+  "state": "completed",
+  "task": "Before seeing the evidence, state a competent reader's strongest plausible belief about [neutral question]. Give its rationale and the conditions under which it works. Treat it as hypothetical unless sourced.",
+  "inputs": {
+    "question": "When can previously trusted access stop being reliable evidence of legitimate action?",
+    "sources": [],
+    "prior": [],
+    "voice": {
+      "id": "relatable_provocateur",
+      "version": 1,
+      "label": "Relatable Provocateur",
+      "style_traits": {
+        "tone": [
+          "bold",
+          "witty",
+          "empathetic",
+          "direct",
+          "conversational",
+          "contrarian_without_being_performative"
+        ],
+        "rhythm": "Short hooks, varied sentence length, compact paragraphs and occasional one-line punches.",
+        "reasoning": "Challenge a supported assumption; connect the mechanism to earned practical or human stakes.",
+        "imagery": "Vivid but controlled; use analogy or dry humour only when useful. No invented incidents or dramatic outcomes.",
+        "preferred_structure": "concrete_observation_supported_reframing_practical_takeaway_earned_closer"
+      },
+      "content_sha256": "5d251d00725704e08f7ab98ebf0d4b0772976580d8f84832659f486fd19fdf93"
+    }
+  },
+  "output": {
+    "decision": "HOLD",
+    "artifact": {
+      "author": "Graham Hill",
+      "audience": "Business and IT leaders",
+      "status": "Hypothetical starting position; not an evidence-backed editorial or published post.",
+      "question": "When can previously trusted access stop being reliable evidence of legitimate action?",
+      "prior_belief": "A familiar key is a reason to trust, not a complete verdict. A competent reader might reasonably believe that previously trusted access remains useful evidence of legitimate action while the identity, authority and purpose behind it remain intact. That belief weakens when there is reason to doubt who controls the access, whether permission still applies, or whether the particular action falls within it.",
+      "rationale": "The hypothetical reasoning separates permission to enter from justification for a particular action. Past trust supports a present judgment only insofar as its underlying assumptions still hold.",
+      "conditions_under_which_it_works": [
+        "Access remains under the control of the intended person or service.",
+        "Authorization remains current and covers the particular action.",
+        "The action's context is consistent with the purpose for which access was granted."
+      ],
+      "reported_facts": [],
+      "inference": "As a provisional editorial position, access should be treated as one part of the case for legitimacy, with its weight depending on whether those assumptions remain credible.",
+      "hypothetical_illustration": "If a person's responsibilities changed while their old permissions remained, successful access alone would not establish that an action still belonged within their role."
+    },
+    "claim_support": [
+      {
+        "claim": "Previously trusted access is conditionally useful evidence of legitimate action.",
+        "classification": "Hypothetical prior belief",
+        "source_ids": [],
+        "support": "Proposed reasoning before evidence; not an empirical finding."
+      },
+      {
+        "claim": "Changed responsibilities with unchanged permissions could separate technical access from current authorization.",
+        "classification": "Hypothetical illustration",
+        "source_ids": [],
+        "support": "An explicitly imagined condition, not a reported event."
+      }
+    ],
+    "limitations": [
+      "No sources or prior evidence were supplied.",
+      "The requested pre-evidence belief can be stated hypothetically, but an evidence-backed editorial cannot yet be supported.",
+      "No claims about prevalence, actual incidents or specific organizations are established."
+    ]
+  },
+  "raw": "{\"decision\":\"HOLD\",\"artifact\":{\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"status\":\"Hypothetical starting position; not an evidence-backed editorial or published post.\",\"question\":\"When can previously trusted access stop being reliable evidence of legitimate action?\",\"prior_belief\":\"A familiar key is a reason to trust, not a complete verdict. A competent reader might reasonably believe that previously trusted access remains useful evidence of legitimate action while the identity, authority and purpose behind it remain intact. That belief weakens when there is reason to doubt who controls the access, whether permission still applies, or whether the particular action falls within it.\",\"rationale\":\"The hypothetical reasoning separates permission to enter from justification for a particular action. Past trust supports a present judgment only insofar as its underlying assumptions still hold.\",\"conditions_under_which_it_works\":[\"Access remains under the control of the intended person or service.\",\"Authorization remains current and covers the particular action.\",\"The action's context is consistent with the purpose for which access was granted.\"],\"reported_facts\":[],\"inference\":\"As a provisional editorial position, access should be treated as one part of the case for legitimacy, with its weight depending on whether those assumptions remain credible.\",\"hypothetical_illustration\":\"If a person's responsibilities changed while their old permissions remained, successful access alone would not establish that an action still belonged within their role.\"},\"claim_support\":[{\"claim\":\"Previously trusted access is conditionally useful evidence of legitimate action.\",\"classification\":\"Hypothetical prior belief\",\"source_ids\":[],\"support\":\"Proposed reasoning before evidence; not an empirical finding.\"},{\"claim\":\"Changed responsibilities with unchanged permissions could separate technical access from current authorization.\",\"classification\":\"Hypothetical illustration\",\"source_ids\":[],\"support\":\"An explicitly imagined condition, not a reported event.\"}],\"limitations\":[\"No sources or prior evidence were supplied.\",\"The requested pre-evidence belief can be stated hypothetically, but an evidence-backed editorial cannot yet be supported.\",\"No claims about prevalence, actual incidents or specific organizations are established.\"]}",
+  "receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"decision\":\"HOLD\",\"artifact\":{\"author\":\"Graham Hill\",\"audience\":\"Business and IT leaders\",\"status\":\"Hypothetical starting position; not an evidence-backed editorial or published post.\",\"question\":\"When can previously trusted access stop being reliable evidence of legitimate action?\",\"prior_belief\":\"A familiar key is a reason to trust, not a complete verdict. A competent reader might reasonably believe that previously trusted access remains useful evidence of legitimate action while the identity, authority and purpose behind it remain intact. That belief weakens when there is reason to doubt who controls the access, whether permission still applies, or whether the particular action falls within it.\",\"rationale\":\"The hypothetical reasoning separates permission to enter from justification for a particular action. Past trust supports a present judgment only insofar as its underlying assumptions still hold.\",\"conditions_under_which_it_works\":[\"Access remains under the control of the intended person or service.\",\"Authorization remains current and covers the particular action.\",\"The action's context is consistent with the purpose for which access was granted.\"],\"reported_facts\":[],\"inference\":\"As a provisional editorial position, access should be treated as one part of the case for legitimacy, with its weight depending on whether those assumptions remain credible.\",\"hypothetical_illustration\":\"If a person's responsibilities changed while their old permissions remained, successful access alone would not establish that an action still belonged within their role.\"},\"claim_support\":[{\"claim\":\"Previously trusted access is conditionally useful evidence of legitimate action.\",\"classification\":\"Hypothetical prior belief\",\"source_ids\":[],\"support\":\"Proposed reasoning before evidence; not an empirical finding.\"},{\"claim\":\"Changed responsibilities with unchanged permissions could separate technical access from current authorization.\",\"classification\":\"Hypothetical illustration\",\"source_ids\":[],\"support\":\"An explicitly imagined condition, not a reported event.\"}],\"limitations\":[\"No sources or prior evidence were supplied.\",\"The requested pre-evidence belief can be stated hypothetically, but an evidence-backed editorial cannot yet be supported.\",\"No claims about prevalence, actual incidents or specific organizations are established.\"]}"
+      },
+      "attempt_id": "attempt-6e239caa28cd4dc39b86847fd5f06ad9",
+      "result_sha256": "1c778127b7e43d7e3c9f9823ef625cf9ab24fc0950d6f767db384a51cf2a592b",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9256,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 493,
+        "reasoning_output_tokens": 34
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "finished_at": "2026-11-05T03:03:49.454977+00:00"
+}

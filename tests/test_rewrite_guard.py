@@ -131,3 +131,23 @@ def test_rewrite_stage_skips_provider_when_judge_has_no_concrete_issue():
     assert pipe.rewrite_reports[-1]["stage"] == "critic"
     assert pipe.rewrite_reports[-1]["skipped"] is True
     assert pipe.rewrite_reports[-1]["accepted"] is False
+
+@pytest.mark.parametrize("original,candidate",[
+    ("Advisory CIAD-2026-0046 describes the issue.", "Advisory CIAD-2026-0046, describes the issue."),
+    ("The recorded amount is 1,000 units", "The recorded amount is 1,000 units."),
+    ("The measured value is 1.25", "The measured value is 1.25, in the record."),
+])
+def test_numeric_guard_ignores_sentence_punctuation_without_changing_numeric_value(original,candidate):
+    report=evaluate_rewrite(original,candidate,{},RULES)
+    assert report["new_numbers"]==[]
+    assert report["accepted"] is True
+
+@pytest.mark.parametrize("original,candidate",[
+    ("Advisory CIAD-2026-0046 describes the issue.", "Advisory CIAD-2026-0058, describes the issue."),
+    ("The measured value is 1.25", "The measured value is 1.26, in the record."),
+    ("The recorded rate is 42%", "The recorded rate is 43%, in the record."),
+])
+def test_numeric_guard_still_blocks_changed_ids_decimals_and_percentages(original,candidate):
+    report=evaluate_rewrite(original,candidate,{},RULES)
+    assert report["accepted"] is False
+    assert "rewrite introduces a new number" in report["reasons"]

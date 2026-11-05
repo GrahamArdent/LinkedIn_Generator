@@ -1,0 +1,100 @@
+{
+  "versions": {
+    "graham": [
+      {
+        "id": 1,
+        "title": "Who can stop the payment?",
+        "angle": "The decision window",
+        "body": "A faster attack makes hesitation more expensive.\n\nCERT-In reports AI-assisted attacks on Indian financial entities through payment APIs.\n\nMy concern is the gap between spotting something suspicious and having the authority to interrupt it. AI acceleration could make that gap harder to tolerate.\n\nI could make this an argument for faster alerts. But an alert cannot settle an ownership dispute between finance, security and operations. It can only announce one at an inconvenient moment.\n\nWho can pause a suspicious payment, on what evidence, without waiting for a committee?\n\nThat is the management question I would put first. Then I would test the answer with the people expected to act, including whoever carries the consequences of stopping a legitimate transfer.\n\nThe aim is proportionate authority: clear thresholds, a named decision maker and a way to resume safely.\n\nBuying detection is a purchasing decision. Making intervention possible takes an operating decision.\n\n#AI #CyberRisk #FinancialServices",
+        "source_ids": [
+          "S1"
+        ],
+        "generated_body": "A faster attack makes hesitation more expensive.\n\nCERT-In reports AI-assisted attacks on Indian financial entities through payment APIs.\n\nMy concern is the gap between spotting something suspicious and having the authority to interrupt it. AI acceleration could make that gap harder to tolerate. The brief gives me no basis for putting a stopwatch on it.\n\nI could make this an argument for faster alerts. But an alert cannot settle an ownership dispute between finance, security and operations. It can only announce one at an inconvenient moment.\n\nWho can pause a suspicious payment, on what evidence, without waiting for a committee?\n\nThat is the management question I would put first. Then I would test the answer with the people expected to act, including whoever carries the consequences of stopping a legitimate transfer.\n\nThe aim is proportionate authority: clear thresholds, a named decision maker and a way to resume safely.\n\nBuying detection is a purchasing decision. Making intervention possible takes an operating decision.\n\n#AI #CyberRisk #FinancialServices",
+        "editorial_changes": [
+          {
+            "removed": "The brief gives me no basis for putting a stopwatch on it.",
+            "replaced_with": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "The screen is only part of the payment",
+        "angle": "Follow the money path",
+        "body": "The approval screen is a reassuring place to look.\n\nI would follow the payment further.\n\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, sidestepping checks in the application.\n\nThose interfaces, or APIs, are how software asks other software to do something. In this case, move money.\n\nMy reading is that a reassuring approval screen tells a leader less than they might think about the whole transaction. The question is whether authorization still holds at the point where the transfer can actually happen.\n\nThat does not mean every payment system has this weakness. It means I would want evidence connecting the approval people see with the instruction the payment system accepts.\n\nAsk finance and IT to trace one transfer together: the amount, the recipient, the approval and the final instruction. Then examine what happens if one changes after approval.\n\nIt is a useful management exercise because each team can have a sensible account of its own step while the connection remains unclear.\n\nA convincing screen is useful. A payment that can prove its permission is more useful.\n\n#PaymentSecurity #CyberRisk #AIGovernance",
+        "source_ids": [
+          "S2"
+        ],
+        "generated_body": "The approval screen is a reassuring place to look.\n\nI would follow the payment further.\n\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, sidestepping checks in the application.\n\nThose interfaces, or APIs, are how software asks other software to do something. In this case, move money.\n\nMy reading is that a reassuring approval screen tells a leader less than they might think about the whole transaction. The question is whether authorization still holds at the point where the transfer can actually happen.\n\nThat does not mean every payment system has this weakness. It means I would want evidence connecting the approval people see with the instruction the payment system accepts.\n\nAsk finance and IT to trace one transfer together: the amount, the recipient, the approval and the final instruction. Then examine what happens if one changes after approval.\n\nIt is a useful management exercise because each team can have a sensible account of its own step while the connection remains unclear.\n\nA convincing screen is useful. A payment that can prove its permission is more useful.\n\n#PaymentSecurity #CyberRisk #AIGovernance",
+        "editorial_changes": []
+      },
+      {
+        "id": 3,
+        "title": "What evidence lets us call it fixed?",
+        "angle": "What counts as fixed?",
+        "body": "A closed ticket is an administrative fact.\n\nI want to know what changed outside the ticket.\n\nCERT-In reports renewed targeting of some financial entities after incomplete remediation.\n\nThat detail makes me pause. It gives leaders a reason to examine what they accept as evidence of completion.\n\nMy instinct is to ask whether the fix was installed. The better follow-up is whether the unwanted action is now prevented. Those questions can produce different answers.\n\nFor a payment workflow, I would ask the responsible teams to demonstrate the repaired behaviour under controlled conditions, including an attempt that should be rejected. Finance should understand the result alongside security and IT.\n\nThis need not become an endless demand for certainty. Define the expected outcome, test it, record what remains uncertain and give someone ownership of the remainder.\n\nThat is how I would distinguish finishing the work from establishing confidence in it.\n\nWhat evidence would let the next person trust the word fixed?\n\n#CyberResilience #PaymentSecurity #RiskManagement",
+        "source_ids": [
+          "S1"
+        ],
+        "generated_body": "A closed ticket is an administrative fact.\n\nI want to know what changed outside the ticket.\n\nCERT-In reports renewed targeting of some financial entities after incomplete remediation.\n\nThat detail makes me pause. It does not establish that every repair failed, or that another attack succeeded. It does give leaders a reason to examine what they accept as evidence of completion.\n\nMy instinct is to ask whether the fix was installed. The better follow-up is whether the unwanted action is now prevented. Those questions can produce different answers.\n\nFor a payment workflow, I would ask the responsible teams to demonstrate the repaired behaviour under controlled conditions, including an attempt that should be rejected. Finance should understand the result alongside security and IT.\n\nThis need not become an endless demand for certainty. Define the expected outcome, test it, record what remains uncertain and give someone ownership of the remainder.\n\nThat is how I would distinguish finishing the work from establishing confidence in it.\n\nWhat evidence would let the next person trust the word fixed?\n\n#CyberResilience #PaymentSecurity #RiskManagement",
+        "editorial_changes": [
+          {
+            "removed": "It does not establish that every repair failed, or that another attack succeeded. It does give leaders a reason to examine what they accept as evidence of completion.",
+            "replaced_with": "It gives leaders a reason to examine what they accept as evidence of completion."
+          }
+        ]
+      }
+    ],
+    "ardent_v2": [
+      {
+        "id": 1,
+        "title": "Make the decision before the pressure arrives",
+        "angle": "The decision window",
+        "body": "A payment decision should not depend on finding the right person at the wrong moment.\n\nCERT-In reports AI-assisted attacks on financial organisations in India.\n\nOur view at Ardent Security: potential acceleration makes decision readiness worth examining alongside technical protection.\n\nWho has the authority to pause a suspicious payment when the evidence is incomplete?\n\nFor leaders, we think that question deserves a practical answer: a named role, an available backup and an understood threshold for intervention. A warning is like a smoke alarm. Its value depends partly on whether people know what to do when it sounds.\n\nThere is a commercial balance here. Stopping legitimate payments can disrupt customers and operations. Waiting for certainty can carry its own cost. Teams deserve clear guidance for navigating that tension, rather than having to invent policy under pressure.\n\nWe would start with a short rehearsal of the decision itself. Agree on who can act, what information they need and how normal processing resumes.\n\n#AIRisk #CyberSecurity #FinancialServices",
+        "source_ids": [
+          "S1"
+        ],
+        "generated_body": "A payment decision should not depend on finding the right person at the wrong moment.\n\nCERT-In reports AI-assisted attacks on financial organisations in India.\n\nOur view at Ardent Security: potential acceleration makes decision readiness worth examining alongside technical protection. That is a management consideration, not a measured response window from this advisory.\n\nWho has the authority to pause a suspicious payment when the evidence is incomplete?\n\nFor leaders, we think that question deserves a practical answer: a named role, an available backup and an understood threshold for intervention. A warning is like a smoke alarm. Its value depends partly on whether people know what to do when it sounds.\n\nThere is a commercial balance here. Stopping legitimate payments can disrupt customers and operations. Waiting for certainty can carry its own cost. Teams deserve clear guidance for navigating that tension, rather than having to invent policy under pressure.\n\nWe would start with a short rehearsal of the decision itself. Agree on who can act, what information they need and how normal processing resumes.\n\n#AIRisk #CyberSecurity #FinancialServices",
+        "editorial_changes": [
+          {
+            "removed": "That is a management consideration, not a measured response window from this advisory.",
+            "replaced_with": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Put approval where the money moves",
+        "angle": "Follow the money path",
+        "body": "The approval screen is only one part of a payment.\n\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, bypassing application checks.\n\nAn API is a connection that lets software ask another system to do something. In payments, that request can move money. Our interpretation: leaders should examine how approval reaches that connection, alongside what an employee sees on screen.\n\nThink of a signed purchase order and a loading dock. The signature matters, but the person releasing the goods still needs to establish that it covers this shipment.\n\nWe believe payment design deserves the same clarity. The amount, recipient and permission should belong to the same decision. If one changes, the organisation should have an explicit rule for whether the approval still holds.\n\nThis is a useful conversation for finance and IT together. Finance understands the authority being granted; IT understands how the request travels. Mapping those perspectives onto one payment journey can make assumptions visible.\n\nOur starting point would be simple: trace one approved payment all the way to release, and identify where its authority is checked.\n\n#PaymentSecurity #CyberRisk #FinancialControls",
+        "source_ids": [
+          "S2"
+        ],
+        "generated_body": "The approval screen is only one part of a payment.\n\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, bypassing application checks.\n\nAn API is a connection that lets software ask another system to do something. In payments, that request can move money. Our interpretation: leaders should examine how approval reaches that connection, alongside what an employee sees on screen.\n\nThink of a signed purchase order and a loading dock. The signature matters, but the person releasing the goods still needs to establish that it covers this shipment.\n\nWe believe payment design deserves the same clarity. The amount, recipient and permission should belong to the same decision. If one changes, the organisation should have an explicit rule for whether the approval still holds.\n\nThis is a useful conversation for finance and IT together. Finance understands the authority being granted; IT understands how the request travels. Mapping those perspectives onto one payment journey can make assumptions visible.\n\nOur starting point would be simple: trace one approved payment all the way to release, and identify where its authority is checked.\n\n#PaymentSecurity #CyberRisk #FinancialControls",
+        "editorial_changes": []
+      },
+      {
+        "id": 3,
+        "title": "A completed fix needs a checked outcome",
+        "angle": "What counts as fixed?",
+        "body": "Closing a remediation task is an achievement. Deciding what that closure proves takes another step.\n\nCERT-In reports repeat targeting after incomplete remediation at some financial entities.\n\nFor us at Ardent Security, the management lesson is to distinguish completed work from demonstrated results.\n\nA repaired door offers a useful analogy. Installing the new lock completes the job; checking that the door closes and locks establishes something about the outcome. Both steps matter.\n\nSecurity teams deserve that distinction in their objectives. A deadline can establish when work should finish. It cannot, by itself, establish whether the relevant weakness has been addressed.\n\nWe would ask for a clear description of the intended result, evidence from an appropriate check and ownership of anything still unresolved. The depth of that check should reflect the importance of the payment process and the change made.\n\nThat gives leaders a stronger basis for accepting remaining risk. Make closure an evidence-backed decision, with room to state what is still unknown.\n\n#CyberResilience #RiskManagement #PaymentSecurity",
+        "source_ids": [
+          "S1"
+        ],
+        "generated_body": "Closing a remediation task is an achievement. Deciding what that closure proves takes another step.\n\nCERT-In reports repeat targeting after incomplete remediation at some financial entities.\n\nFor us at Ardent Security, the management lesson is to distinguish completed work from demonstrated results. That is our recommendation, not a claim that every repair fails or every organisation faces the same exposure.\n\nA repaired door offers a useful analogy. Installing the new lock completes the job; checking that the door closes and locks establishes something about the outcome. Both steps matter.\n\nSecurity teams deserve that distinction in their objectives. A deadline can establish when work should finish. It cannot, by itself, establish whether the relevant weakness has been addressed.\n\nWe would ask for a clear description of the intended result, evidence from an appropriate check and ownership of anything still unresolved. The depth of that check should reflect the importance of the payment process and the change made.\n\nThat gives leaders a stronger basis for accepting remaining risk. Make closure an evidence-backed decision, with room to state what is still unknown.\n\n#CyberResilience #RiskManagement #PaymentSecurity",
+        "editorial_changes": [
+          {
+            "removed": "That is our recommendation, not a claim that every repair fails or every organisation faces the same exposure.",
+            "replaced_with": ""
+          }
+        ]
+      }
+    ]
+  },
+  "pdf_validation": {
+    "pages": 9,
+    "contents_links": 8,
+    "bookmarks": 9,
+    "visual_review": "All nine rendered pages inspected; no clipping/overlap found."
+  }
+}

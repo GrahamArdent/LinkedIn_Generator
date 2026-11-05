@@ -4,10 +4,12 @@ import os
 from typing import Any
 
 from .generation import Pipeline
+from .editorial_handoff import validate_handoff
 from .llm import LLMClient
 from .opportunity import assess_opportunity, ending_guidance
 from .publish_quality import assess_publish_quality, rewrite_for_publish_quality
 from .utils import load_yaml
+from .writing_voice import resolve_writing_voice
 
 
 LEGACY_TARGETS = ["CFO", "CISO", "Board"]
@@ -60,11 +62,27 @@ def _persona_profile(
     persona_key: str,
     *,
     author_pov: str,
+    writing_voice_id: str | None = None,
 ) -> dict[str, Any]:
     """Return persona configuration plus authorized voice and active POV context."""
 
     profile = dict(personas.get("personas", {}).get(persona_key, {}) or {})
     profile["active_author_pov"] = author_pov
+    if writing_voice_id is not None:
+        profile["writing_voice"] = resolve_writing_voice(writing_voice_id)
+        # Identity, POV and house boundaries survive selection; default rhetoric
+        # must not compete with an explicitly selected style at any consumer.
+        for key in ("tone", "rhythm", "devices"):
+            profile.pop(key, None)
+        if persona_key == "graham":
+            authority = load_yaml(os.path.join(base, "config/graham_voice_profile.yaml")) or {}
+            semantic = authority.get("semantic_quality", {})
+            profile["semantic_quality"] = {
+                key: semantic[key] for key in (
+                    "default_author_pov", "internal_terms_needing_translation", "generic_phrases"
+                ) if key in semantic
+            }
+        return profile
     if persona_key != "graham":
         return profile
 
@@ -140,6 +158,9 @@ def run_generation(
     llm_client: Any | None = None,
     opportunity_client: Any | None = None,
     publish_quality_client: Any | None = None,
+    editorial_brief: dict[str, Any] | None = None,
+    writing_voice_id: str | None = None,
+    editorial_handoff: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
@@ -154,6 +175,7 @@ def run_generation(
     bounded improvement candidate for human review.
     """
 
+    handoff = validate_handoff(editorial_handoff) if editorial_handoff is not None else None
     base = os.path.join(os.path.dirname(__file__), "../../")
     prompt_kit = load_yaml(os.path.join(base, "config/prompt_kit.config.yaml"))
     prompts = load_yaml(os.path.join(base, "config/prompts_packs.yaml"))
@@ -174,8 +196,9 @@ def run_generation(
             "forbidden_phrases": list(cta_policies.get("forbidden_phrases", []) or []),
         }
     }
+    persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov,
+                                       writing_voice_id=writing_voice_id)
     pipe = Pipeline(cfg, client=llm_client)
-    persona_profile = _persona_profile(base, personas, persona_key, author_pov=author_pov)
 
     plan_ctx = {
         "topic": topic,
@@ -190,6 +213,11 @@ def run_generation(
         for item in source_items
         if str(item.get("url", "")).startswith("http")
     ]
+
+    if handoff is not None:
+        allowed_facts = {str(item.get("fact") or item.get("one_liner") or "") for item in source_items}
+        if any(fact["text"] not in allowed_facts for fact in handoff["meaning"]["facts"]):
+            raise ValueError("HANDOFF_FACT_NOT_ALLOWED: frozen fact absent from allowed sources")
 
     if opportunity_gate:
         gate_client = opportunity_client or llm_client
@@ -210,11 +238,14 @@ def run_generation(
         resolved_goal = assessment.goal
         ending = ending_guidance(assessment)
         if assessment.decision != "draft":
-            return _terminal_opportunity_payload(
+            terminal = _terminal_opportunity_payload(
                 persona_key=persona_key,
                 citations=citations,
                 opportunity=opportunity,
             )
+            if "writing_voice" in persona_profile:
+                terminal["telemetry"]["writing_voice"] = persona_profile["writing_voice"]
+            return terminal
     else:
         resolved_goal, ending = _goal_without_gate(content_goal)
         opportunity = {
@@ -235,12 +266,22 @@ def run_generation(
 
     voice_items = list(voice_examples or [])[:3]
     prompt_voice_examples = [_voice_for_prompt(item) for item in voice_items]
-    angle_options = list(plan.get("angle_options") or [plan["angle"]])
     strongest_concrete_evidence = {
         "title": str(opportunity.get("strongest_evidence_title") or ""),
         "fact": str(opportunity.get("strongest_evidence_fact") or ""),
     }
+    if editorial_brief is not None:
+        central = next(c for c in editorial_brief["claims"] if c["claim_id"] == editorial_brief["central_claim_id"])
+        item = next(item for item in source_items if (item.get("fact") or item.get("one_liner")) == central["text"])
+        strongest_concrete_evidence = _source_for_prompt(item)
+    plan = pipe.plan(prompts.get("plan_prompt", {}), {
+        **plan_ctx, "audience": audience, "objective": objective,
+        "evidence": source_items, "strongest_concrete_evidence": strongest_concrete_evidence,
+        **({"editorial_handoff": handoff} if handoff is not None else {}),
+    })
+    angle_options = list(plan.get("angle_options") or [plan["angle"]])
     draft_ctx = {
+        "editorial_plan": plan["editorial_plan"],
         "persona_key": persona_key,
         "audience": audience,
         "objective": objective,
@@ -256,7 +297,25 @@ def run_generation(
         "allowed_sources": [_source_for_prompt(item) for item in source_items],
         "approved_voice_examples": prompt_voice_examples,
     }
-    drafts = pipe.draft_variants(prompts.get("draft_prompt", {}), draft_ctx)
+    persona_profile["editorial_context"] = {
+        "objective": objective, "topic": topic, "plan": plan["editorial_plan"],
+        "approved_voice_examples": prompt_voice_examples,
+        "source_bundle": editorial_brief,
+    }
+    if handoff is not None:
+        persona_profile["editorial_context"]["handoff"] = handoff
+        persona_profile["editorial_context"].pop("objective", None)
+        draft_ctx["objective"] = "Develop the supplied handoff meaning."
+    draft_prompt = dict(prompts.get("draft_prompt", {}))
+    if "writing_voice" in persona_profile:
+        # Keep one editorial authority, shared with editors and the evaluator.
+        # The planner's reasoning tasks must not prescribe a universal sequence.
+        persona_profile["editorial_context"]["plan"] = {
+            "reader": audience, "factual_anchor": strongest_concrete_evidence,
+        }
+        draft_prompt["system"] = draft_prompt["selected_voice_system"]
+        draft_prompt["user_template"] = draft_prompt["selected_voice_user_template"]
+    drafts = pipe.draft_variants(draft_prompt, draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
     crit = pipe.critic(
         prompts.get("critic_prompt", {}),
@@ -288,6 +347,8 @@ def run_generation(
     )
     primary_body = str(payload.get("body") or hum)
     telemetry = payload.setdefault("telemetry", {})
+    if "writing_voice" in persona_profile:
+        telemetry["writing_voice"] = persona_profile["writing_voice"]
     telemetry.update(
         {
             "strongest_evidence_title": strongest_concrete_evidence["title"],
@@ -313,6 +374,8 @@ def run_generation(
         original_score = original_assessment.score
         publish_review: dict[str, Any] = {
             "threshold": threshold,
+            "evaluation_context": persona_profile,
+            "calibration_status": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS",
             "rewrite_triggered": False,
             "publish_ready": original_score is not None and original_score >= threshold,
             "recommendation": "original" if original_score is not None else "assessment_unavailable",

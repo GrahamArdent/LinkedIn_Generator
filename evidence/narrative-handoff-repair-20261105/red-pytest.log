@@ -1,0 +1,207 @@
+FFFFFFFF.                                                                [100%]
+=================================== FAILURES ===================================
+___ test_selected_symbol_survives_freeze_without_reauthoring_and_is_detached ___
+
+    def test_selected_symbol_survives_freeze_without_reauthoring_and_is_detached():
+        m,n=meaning(),narrative()
+>       result=functions().freeze_handoff(m,n)
+               ^^^^^^^^^^^
+
+tests/test_editorial_handoff.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+____ test_public_copy_or_unbounded_text_is_rejected_before_next_stage[bad0] ____
+
+bad = {'editorial': {'body': 'A finished post.'}}
+
+    @pytest.mark.parametrize("bad",[
+        {"editorial":{"body":"A finished post."}},
+        {"beats":[{"index":1,"delivery":"outline","body":"A finished post."}],"attribution":[]},
+        {"beats":[{"index":1,"delivery":"x"*1000}],"attribution":[]},
+    ])
+    def test_public_copy_or_unbounded_text_is_rejected_before_next_stage(bad):
+        with pytest.raises(ValueError,match="PLANNING_CONTRACT"):
+>           functions().attach_writing_plan(frozen(),bad)
+            ^^^^^^^^^^^
+
+tests/test_editorial_handoff.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+____ test_public_copy_or_unbounded_text_is_rejected_before_next_stage[bad1] ____
+
+bad = {'beats': [{'index': 1, 'delivery': 'outline', 'body': 'A finished post.'}], 'attribution': []}
+
+    @pytest.mark.parametrize("bad",[
+        {"editorial":{"body":"A finished post."}},
+        {"beats":[{"index":1,"delivery":"outline","body":"A finished post."}],"attribution":[]},
+        {"beats":[{"index":1,"delivery":"x"*1000}],"attribution":[]},
+    ])
+    def test_public_copy_or_unbounded_text_is_rejected_before_next_stage(bad):
+        with pytest.raises(ValueError,match="PLANNING_CONTRACT"):
+>           functions().attach_writing_plan(frozen(),bad)
+            ^^^^^^^^^^^
+
+tests/test_editorial_handoff.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+____ test_public_copy_or_unbounded_text_is_rejected_before_next_stage[bad2] ____
+
+bad = {'beats': [{'index': 1, 'delivery': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}], 'attribution': []}
+
+    @pytest.mark.parametrize("bad",[
+        {"editorial":{"body":"A finished post."}},
+        {"beats":[{"index":1,"delivery":"outline","body":"A finished post."}],"attribution":[]},
+        {"beats":[{"index":1,"delivery":"x"*1000}],"attribution":[]},
+    ])
+    def test_public_copy_or_unbounded_text_is_rejected_before_next_stage(bad):
+        with pytest.raises(ValueError,match="PLANNING_CONTRACT"):
+>           functions().attach_writing_plan(frozen(),bad)
+            ^^^^^^^^^^^
+
+tests/test_editorial_handoff.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+___________ test_valid_plan_cannot_replace_selected_beats_or_meaning ___________
+
+    def test_valid_plan_cannot_replace_selected_beats_or_meaning():
+>       handoff=frozen()
+                ^^^^^^^^
+
+tests/test_editorial_handoff.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_editorial_handoff.py:34: in frozen
+    return functions().freeze_handoff(meaning(),narrative())
+           ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+_ test_actual_writer_and_evaluator_receive_same_selected_symbol_and_boundaries _
+
+    def test_actual_writer_and_evaluator_receive_same_selected_symbol_and_boundaries():
+>       client=Capture();generate(client,editorial_handoff=frozen())
+                                                           ^^^^^^^^
+
+tests/test_editorial_handoff.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_editorial_handoff.py:34: in frozen
+    return functions().freeze_handoff(meaning(),narrative())
+           ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+_______ test_unsupported_handoff_fact_rejected_before_any_provider_call ________
+
+    def test_unsupported_handoff_fact_rejected_before_any_provider_call():
+>       client=Capture();h=frozen();h["meaning"]["facts"][0]["text"]="An invented financial loss."
+                           ^^^^^^^^
+
+tests/test_editorial_handoff.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_editorial_handoff.py:34: in frozen
+    return functions().freeze_handoff(meaning(),narrative())
+           ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+_______ test_selected_plan_does_not_reintroduce_default_rhetorical_tasks _______
+
+    def test_selected_plan_does_not_reintroduce_default_rhetorical_tasks():
+        pipe=generation.Pipeline({"prompt_kit":{}},client=Capture())
+>       plan=pipe.plan({},{"topic":"Access","audience":"Leaders","editorial_handoff":frozen(),
+                                                                                     ^^^^^^^^
+                          "evidence":[{"fact":"The fixture account remained usable."}]})
+
+tests/test_editorial_handoff.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_editorial_handoff.py:34: in frozen
+    return functions().freeze_handoff(meaning(),narrative())
+           ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def functions():
+        import importlib.util
+>       assert importlib.util.find_spec("src.app.editorial_handoff") is not None, "narrative handoff contract is missing"
+E       AssertionError: narrative handoff contract is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x75902a9b8f60>('src.app.editorial_handoff')
+E        +    where <function find_spec at 0x75902a9b8f60> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = <module 'importlib' from '/usr/lib/python3.14/importlib/__init__.py'>.util
+
+tests/test_editorial_handoff.py:17: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_editorial_handoff.py::test_selected_symbol_survives_freeze_without_reauthoring_and_is_detached
+FAILED tests/test_editorial_handoff.py::test_public_copy_or_unbounded_text_is_rejected_before_next_stage[bad0]
+FAILED tests/test_editorial_handoff.py::test_public_copy_or_unbounded_text_is_rejected_before_next_stage[bad1]
+FAILED tests/test_editorial_handoff.py::test_public_copy_or_unbounded_text_is_rejected_before_next_stage[bad2]
+FAILED tests/test_editorial_handoff.py::test_valid_plan_cannot_replace_selected_beats_or_meaning
+FAILED tests/test_editorial_handoff.py::test_actual_writer_and_evaluator_receive_same_selected_symbol_and_boundaries
+FAILED tests/test_editorial_handoff.py::test_unsupported_handoff_fact_rejected_before_any_provider_call
+FAILED tests/test_editorial_handoff.py::test_selected_plan_does_not_reintroduce_default_rhetorical_tasks
+8 failed, 1 passed in 0.17s

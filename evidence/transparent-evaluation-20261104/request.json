@@ -1,0 +1,26 @@
+{
+  "request_id": "lig-codex-earn-the-steps-20261104",
+  "origin": "manual",
+  "topic": "Before adding more AI steps, show me what they improve",
+  "persona_key": "graham",
+  "audience": "Professionals deciding how to use AI in their work",
+  "objective": "Express Graham's practical skepticism about complexity and ask for observable usefulness. Make a clear, broadly relevant LinkedIn post, not a report about this software project or an explanation of tests. Use first-person judgment supported by the supplied conversation, without inventing a personal event, customer story, measurable saving or business result.",
+  "author_pov": "individual",
+  "content_goal": "authority",
+  "opportunity_gate": true,
+  "publish_quality_gate": true,
+  "publish_quality_threshold": 90,
+  "visual_asset_plan": true,
+  "visual_asset_preference": "auto",
+  "evidence": [
+    {
+      "title": "Graham's explicit direction in this conversation",
+      "fact": "Graham questioned a proposed paid-API trial because an existing Codex subscription environment could be reused. He requested a quick, economical solution with extra layers deferred. This supports a preference for reusing what works and requiring complexity to earn its place; no savings have been measured."
+    },
+    {
+      "title": "Graham's actual reaction to the first comparison",
+      "fact": "Graham said he preferred one draft, but called the test basic. He asked what had been used to generate it and what would be done with his answer. He requested an evaluation showing the brief, model context, changes made at each stage and final writing. Do not describe his preference as content approval or proof of superior quality."
+    }
+  ],
+  "hashtags": []
+}

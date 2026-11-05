@@ -1,0 +1,145 @@
+{
+  "state": "completed",
+  "system": "Write three distinct LinkedIn draft posts for the supplied author and audience. Use the configured voice and frozen source brief. Return JSON only with versions: an array of exactly3 objects, each with id, title, angle, body and source_ids. Do not evaluate, score or explain the posts. A recognizable human point of view matters more than reciting a report.",
+  "user": {
+    "author": "Ardent Security",
+    "pov": "company",
+    "audience": "business and IT leaders evaluating AI and cyber risk",
+    "voice": {
+      "tone": [
+        "empathetic",
+        "authoritative"
+      ],
+      "rhythm": [
+        "varied_sentences",
+        "short_paragraphs"
+      ],
+      "devices": [
+        "rhetorical_questions",
+        "analogy"
+      ],
+      "donts": [
+        "clichés",
+        "jargon",
+        "em_dashes"
+      ],
+      "emoji_max": 3,
+      "bullet_char": "🔹",
+      "active_author_pov": "company"
+    },
+    "brief": {
+      "date": "2026-11-04",
+      "title": "AI-assisted financial attacks: the decision window and the payment workflow",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Escalation of AI-Driven Attacks on BFSI Entities by Threat Actor CRAFTY FALCON",
+          "publisher": "CERT-In / CSIRT-Fin, Government of India",
+          "published": "2026-11-04",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+          "read_url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBWEL03",
+          "facts": [
+            "CERT-In's November4 update describes an active AI-assisted campaign against financial entities, using victims' own payment/disbursement APIs.",
+            "The agency reports some entities were targeted again following incomplete remediation."
+          ],
+          "limitations": "Agency-reported activity in the affected Indian financial entities, not proof of universal AI capability, Canadian incidents or losses at Ardent clients. No named AI vendor/model attribution and no claim that every attack is autonomous."
+        },
+        {
+          "id": "S2",
+          "title": "Threat Actors Exploiting Payment and Disbursement APIs for Unauthorized Fund Transfers in BFSI Entities",
+          "publisher": "CERT-In / CSIRT-Fin",
+          "published": "2026-10-09",
+          "url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0046&pageid=PUBVLNOTES02",
+          "facts": [
+            "The earlier advisory describes stolen payment credentials being used to invoke fund-transfer interfaces directly, bypassing application-level validation.",
+            "Recommended actions include binding transaction stages together, validating payout approvals and enforcing payment-stage limits."
+          ],
+          "limitations": "These are recommendations for the described financial campaign, not a guarantee, universal mandate or a claim that every control is absent everywhere."
+        }
+      ],
+      "angles": [
+        {
+          "id": 1,
+          "name": "The decision window",
+          "direction": "AI acceleration changes how much time a team has to intervene. Keep speed qualitative; no invented minutes, frequency or universal prediction. One pointed management question; practical opinion distinct from source facts."
+        },
+        {
+          "id": 2,
+          "name": "Follow the money path",
+          "direction": "A payment interface can matter more than the screen above it. Explain APIs in plain language. Use an original managerial inference about validating authorization where money moves, without claiming a specific system is vulnerable."
+        },
+        {
+          "id": 3,
+          "name": "What counts as fixed?",
+          "direction": "The re-targeting/incomplete-remediation detail should drive a thoughtful distinction between completing a fix and checking its outcome. Avoid pretending patches or controls always fail. Verification is an interpretation/recommendation."
+        }
+      ],
+      "format": "Each post150–200 words, distinct hook and closing, compact paragraphs,3 relevant hashtags. One coherent point each. No em dashes, quotes, invented anecdotes, statistics, loss estimates, personal/client incidents, Ardent service promises, calls to DM or manufactured urgency. Paraphrase only; at most18 source-derived factual words per post from S1 and25 from S2; the rest should be original reasoning clearly posed as interpretation/opinion. Avoid reproducing the source's wording. Don't name obscure tool products or repeat a report's title in every draft.",
+      "purpose": "Exploratory voice sampler directly generated with the existing Codex bridge and configured voice guidance. Not a full engine/publish-quality trial; no automatic scores, no editorial or publication approval inferred.",
+      "budget": {
+        "model_executions": 2,
+        "physical_starts": 6,
+        "cumulative_cli_seconds": 900,
+        "api_spend": 0
+      }
+    },
+    "voice_emphasis": "Ardent: empathetic, calm and authoritative company perspective. Human, concrete, commercially relevant without fear marketing or unsupported claims about company experience. No personal Graham persona and no invented client stories."
+  },
+  "result": {
+    "versions": [
+      {
+        "id": 1,
+        "title": "Make the decision before the pressure arrives",
+        "angle": "The decision window",
+        "body": "A payment decision should not depend on finding the right person at the wrong moment.\n\nCERT-In reports AI-assisted attacks on financial organisations in India.\n\nOur view at Ardent Security: potential acceleration makes decision readiness worth examining alongside technical protection. That is a management consideration, not a measured response window from this advisory.\n\nWho has the authority to pause a suspicious payment when the evidence is incomplete?\n\nFor leaders, we think that question deserves a practical answer: a named role, an available backup and an understood threshold for intervention. A warning is like a smoke alarm. Its value depends partly on whether people know what to do when it sounds.\n\nThere is a commercial balance here. Stopping legitimate payments can disrupt customers and operations. Waiting for certainty can carry its own cost. Teams deserve clear guidance for navigating that tension, rather than having to invent policy under pressure.\n\nWe would start with a short rehearsal of the decision itself. Agree on who can act, what information they need and how normal processing resumes.\n\n#AIRisk #CyberSecurity #FinancialServices",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Put approval where the money moves",
+        "angle": "Follow the money path",
+        "body": "The approval screen is only one part of a payment.\n\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, bypassing application checks.\n\nAn API is a connection that lets software ask another system to do something. In payments, that request can move money. Our interpretation: leaders should examine how approval reaches that connection, alongside what an employee sees on screen.\n\nThink of a signed purchase order and a loading dock. The signature matters, but the person releasing the goods still needs to establish that it covers this shipment.\n\nWe believe payment design deserves the same clarity. The amount, recipient and permission should belong to the same decision. If one changes, the organisation should have an explicit rule for whether the approval still holds.\n\nThis is a useful conversation for finance and IT together. Finance understands the authority being granted; IT understands how the request travels. Mapping those perspectives onto one payment journey can make assumptions visible.\n\nOur starting point would be simple: trace one approved payment all the way to release, and identify where its authority is checked.\n\n#PaymentSecurity #CyberRisk #FinancialControls",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "A completed fix needs a checked outcome",
+        "angle": "What counts as fixed?",
+        "body": "Closing a remediation task is an achievement. Deciding what that closure proves takes another step.\n\nCERT-In reports repeat targeting after incomplete remediation at some financial entities.\n\nFor us at Ardent Security, the management lesson is to distinguish completed work from demonstrated results. That is our recommendation, not a claim that every repair fails or every organisation faces the same exposure.\n\nA repaired door offers a useful analogy. Installing the new lock completes the job; checking that the door closes and locks establishes something about the outcome. Both steps matter.\n\nSecurity teams deserve that distinction in their objectives. A deadline can establish when work should finish. It cannot, by itself, establish whether the relevant weakness has been addressed.\n\nWe would ask for a clear description of the intended result, evidence from an appropriate check and ownership of anything still unresolved. The depth of that check should reflect the importance of the payment process and the change made.\n\nThat gives leaders a stronger basis for accepting remaining risk. Make closure an evidence-backed decision, with room to state what is still unknown.\n\n#CyberResilience #RiskManagement #PaymentSecurity",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ]
+  },
+  "raw": "{\"versions\":[{\"id\":1,\"title\":\"Make the decision before the pressure arrives\",\"angle\":\"The decision window\",\"body\":\"A payment decision should not depend on finding the right person at the wrong moment.\\n\\nCERT-In reports AI-assisted attacks on financial organisations in India.\\n\\nOur view at Ardent Security: potential acceleration makes decision readiness worth examining alongside technical protection. That is a management consideration, not a measured response window from this advisory.\\n\\nWho has the authority to pause a suspicious payment when the evidence is incomplete?\\n\\nFor leaders, we think that question deserves a practical answer: a named role, an available backup and an understood threshold for intervention. A warning is like a smoke alarm. Its value depends partly on whether people know what to do when it sounds.\\n\\nThere is a commercial balance here. Stopping legitimate payments can disrupt customers and operations. Waiting for certainty can carry its own cost. Teams deserve clear guidance for navigating that tension, rather than having to invent policy under pressure.\\n\\nWe would start with a short rehearsal of the decision itself. Agree on who can act, what information they need and how normal processing resumes.\\n\\n#AIRisk #CyberSecurity #FinancialServices\",\"source_ids\":[\"S1\"]},{\"id\":2,\"title\":\"Put approval where the money moves\",\"angle\":\"Follow the money path\",\"body\":\"The approval screen is only one part of a payment.\\n\\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, bypassing application checks.\\n\\nAn API is a connection that lets software ask another system to do something. In payments, that request can move money. Our interpretation: leaders should examine how approval reaches that connection, alongside what an employee sees on screen.\\n\\nThink of a signed purchase order and a loading dock. The signature matters, but the person releasing the goods still needs to establish that it covers this shipment.\\n\\nWe believe payment design deserves the same clarity. The amount, recipient and permission should belong to the same decision. If one changes, the organisation should have an explicit rule for whether the approval still holds.\\n\\nThis is a useful conversation for finance and IT together. Finance understands the authority being granted; IT understands how the request travels. Mapping those perspectives onto one payment journey can make assumptions visible.\\n\\nOur starting point would be simple: trace one approved payment all the way to release, and identify where its authority is checked.\\n\\n#PaymentSecurity #CyberRisk #FinancialControls\",\"source_ids\":[\"S2\"]},{\"id\":3,\"title\":\"A completed fix needs a checked outcome\",\"angle\":\"What counts as fixed?\",\"body\":\"Closing a remediation task is an achievement. Deciding what that closure proves takes another step.\\n\\nCERT-In reports repeat targeting after incomplete remediation at some financial entities.\\n\\nFor us at Ardent Security, the management lesson is to distinguish completed work from demonstrated results. That is our recommendation, not a claim that every repair fails or every organisation faces the same exposure.\\n\\nA repaired door offers a useful analogy. Installing the new lock completes the job; checking that the door closes and locks establishes something about the outcome. Both steps matter.\\n\\nSecurity teams deserve that distinction in their objectives. A deadline can establish when work should finish. It cannot, by itself, establish whether the relevant weakness has been addressed.\\n\\nWe would ask for a clear description of the intended result, evidence from an appropriate check and ownership of anything still unresolved. The depth of that check should reflect the importance of the payment process and the change made.\\n\\nThat gives leaders a stronger basis for accepting remaining risk. Make closure an evidence-backed decision, with room to state what is still unknown.\\n\\n#CyberResilience #RiskManagement #PaymentSecurity\",\"source_ids\":[\"S1\"]}]}",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"versions\":[{\"id\":1,\"title\":\"Make the decision before the pressure arrives\",\"angle\":\"The decision window\",\"body\":\"A payment decision should not depend on finding the right person at the wrong moment.\\n\\nCERT-In reports AI-assisted attacks on financial organisations in India.\\n\\nOur view at Ardent Security: potential acceleration makes decision readiness worth examining alongside technical protection. That is a management consideration, not a measured response window from this advisory.\\n\\nWho has the authority to pause a suspicious payment when the evidence is incomplete?\\n\\nFor leaders, we think that question deserves a practical answer: a named role, an available backup and an understood threshold for intervention. A warning is like a smoke alarm. Its value depends partly on whether people know what to do when it sounds.\\n\\nThere is a commercial balance here. Stopping legitimate payments can disrupt customers and operations. Waiting for certainty can carry its own cost. Teams deserve clear guidance for navigating that tension, rather than having to invent policy under pressure.\\n\\nWe would start with a short rehearsal of the decision itself. Agree on who can act, what information they need and how normal processing resumes.\\n\\n#AIRisk #CyberSecurity #FinancialServices\",\"source_ids\":[\"S1\"]},{\"id\":2,\"title\":\"Put approval where the money moves\",\"angle\":\"Follow the money path\",\"body\":\"The approval screen is only one part of a payment.\\n\\nCERT-In describes stolen credentials enabling direct transfers through payment interfaces, bypassing application checks.\\n\\nAn API is a connection that lets software ask another system to do something. In payments, that request can move money. Our interpretation: leaders should examine how approval reaches that connection, alongside what an employee sees on screen.\\n\\nThink of a signed purchase order and a loading dock. The signature matters, but the person releasing the goods still needs to establish that it covers this shipment.\\n\\nWe believe payment design deserves the same clarity. The amount, recipient and permission should belong to the same decision. If one changes, the organisation should have an explicit rule for whether the approval still holds.\\n\\nThis is a useful conversation for finance and IT together. Finance understands the authority being granted; IT understands how the request travels. Mapping those perspectives onto one payment journey can make assumptions visible.\\n\\nOur starting point would be simple: trace one approved payment all the way to release, and identify where its authority is checked.\\n\\n#PaymentSecurity #CyberRisk #FinancialControls\",\"source_ids\":[\"S2\"]},{\"id\":3,\"title\":\"A completed fix needs a checked outcome\",\"angle\":\"What counts as fixed?\",\"body\":\"Closing a remediation task is an achievement. Deciding what that closure proves takes another step.\\n\\nCERT-In reports repeat targeting after incomplete remediation at some financial entities.\\n\\nFor us at Ardent Security, the management lesson is to distinguish completed work from demonstrated results. That is our recommendation, not a claim that every repair fails or every organisation faces the same exposure.\\n\\nA repaired door offers a useful analogy. Installing the new lock completes the job; checking that the door closes and locks establishes something about the outcome. Both steps matter.\\n\\nSecurity teams deserve that distinction in their objectives. A deadline can establish when work should finish. It cannot, by itself, establish whether the relevant weakness has been addressed.\\n\\nWe would ask for a clear description of the intended result, evidence from an appropriate check and ownership of anything still unresolved. The depth of that check should reflect the importance of the payment process and the change made.\\n\\nThat gives leaders a stronger basis for accepting remaining risk. Make closure an evidence-backed decision, with room to state what is still unknown.\\n\\n#CyberResilience #RiskManagement #PaymentSecurity\",\"source_ids\":[\"S1\"]}]}"
+      },
+      "attempt_id": "attempt-048c8b684b114c0cab4e1294ca0d5225",
+      "result_sha256": "41697749c4d66c53b39aaedfcfcfff6a0741db28d4e57f40147afcc76b0b79e2",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 9965,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 919,
+        "reasoning_output_tokens": 78
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ],
+  "finished_at": "2026-11-05T00:12:27.408108+00:00"
+}

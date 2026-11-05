@@ -1,0 +1,175 @@
+{
+  "status": "GO after reproduced repairs",
+  "base": "a714d1ef355ade9ca47a52b301ea477bd0c14f34",
+  "reviewed_candidate": "ba4af210239e113790faf972e0dd15d822942fb5",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "d7a9523b57725d854219beb1b2d4665fa1d2babaff6a7cbd6a689c471264126f",
+      "review": "Local environment/config excluded; no credentials added."
+    },
+    {
+      "path": "config/codex_runtime.example.json",
+      "sha256": "600e8fda4fd93f3e48f4ba36fdbbcbfa50d925767191f482d1d2c12027b53998",
+      "review": "Non-secret pinned client/model paths; no API key or fallback."
+    },
+    {
+      "path": "config/prompts_packs.yaml",
+      "sha256": "b7d82d5fedc30de3045f133d815e67abd6b6d9e62a3e25f1600606b36507bcc0",
+      "review": "Explicit style and narrative precedence; source/POV/safety; bounded rewrite; defaults retained."
+    },
+    {
+      "path": "config/writing_voices.json",
+      "sha256": "41f1c5d3be6d4e4c92553336dab4a0fa68dabe5c62591859783fc76a76f968d2",
+      "review": "Nine versioned craft projections; historical aliases excluded from runtime identity/biography."
+    },
+    {
+      "path": "scripts/linkedin_codex_trial.py",
+      "sha256": "7d1360da57bdae080ff149dc7abac97286b39e073125b4d0d1e843e10a999bdf",
+      "review": "show is read-only; explicit config for generation; request admission and structured errors."
+    },
+    {
+      "path": "src/app/api.py",
+      "sha256": "7b224c81c1272b2af81c1c160dbd41152016b30130211df935c607f76ff7b2b2",
+      "review": "Writer/evaluator/editor share source-bound context and optional handoff; early fact validation."
+    },
+    {
+      "path": "src/app/codex_provider.py",
+      "sha256": "83dc8254a679f2ef0f18de9a214e2e47101b2071160ece43a1d3cf8249ef38ae",
+      "review": "Pinned clean shared-client source; ChatGPT-only auth; no API env; unknown effects block repeat."
+    },
+    {
+      "path": "src/app/codex_trial.py",
+      "sha256": "0a66dc6ada6326a369122aa65440af8c30ce9382a2b1a8f3fe43ca09a4062c1c",
+      "review": "Durable locking/input identity/reopen; retained failures; baseline parity; new handoff propagation."
+    },
+    {
+      "path": "src/app/contracts.py",
+      "sha256": "1005f37e1344cee8028f65921d153f23e22838f04bb8e35c0f5bdcd1d1b486cb",
+      "review": "Strict selected candidate score/hash; known voice admission; new handoff validation at JSON boundary."
+    },
+    {
+      "path": "src/app/editorial_handoff.py",
+      "sha256": "88d2fd9b5a069657a912e17e40b1ef656ef2271449c8e33e17fa186f86816be8",
+      "review": "Closed planning shapes and bounded annotations; selection preserved; attribution bound to fact."
+    },
+    {
+      "path": "src/app/generation.py",
+      "sha256": "6fe6495437aef583e7fa226394f083b0fc5e41269de615f5c2218aa5c1fbfc5f",
+      "review": "No-cost source-specific planning; explicit narrative replaces generic tasks; omitted defaults retained."
+    },
+    {
+      "path": "src/app/integration.py",
+      "sha256": "9969721f2b45256df8d01498a075d790d0d49a70d91c4a069a564914b9e37b79",
+      "review": "Exact selected UTF-8 candidate binds visuals; malformed/mismatched plan defers; handoff forwarded."
+    },
+    {
+      "path": "src/app/publish_quality.py",
+      "sha256": "20b4a76fa38a50faf1e7838b04e6b39f746965c48f3141b43572320c1b2b3494",
+      "review": "Complete0-5 dimensions and metadata required; same context; uncalibrated score explicit."
+    },
+    {
+      "path": "src/app/quality.py",
+      "sha256": "177e960941bfc332c300767201c4f54f8dee78b7afc620226470aae668faf28c",
+      "review": "Selected style avoids inherited rhetoric penalties while house/POV/public-language checks remain."
+    },
+    {
+      "path": "src/app/rewrite_guard.py",
+      "sha256": "ccace87403ed6e9f752b63843a4ea2df0f869edeb18b7e82768951636559e37a",
+      "review": "Observed trailing-punctuation false positive repaired; changed values remain rejected."
+    },
+    {
+      "path": "src/app/writing_voice.py",
+      "sha256": "90625b36720a029813e4ac167d5deb20df75811e684d13240efac8bd65400c31",
+      "review": "Alias/trait/version validation; stable projected hash; no biography in runtime projection."
+    },
+    {
+      "path": "tests/test_api_contract.py",
+      "sha256": "968f2f9e7260322296d5107954475d73b62cbdcc83df98e6254536fe58a9b8d9",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_codex_provider.py",
+      "sha256": "31c78269b7ae25326cd86fe7eb6eed3083c9bc441ee2a3a9b3f7e48ef782271f",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_codex_trial.py",
+      "sha256": "abd6e39679bc0e9f7b9b3c90bbdad0443759379b7ab580da6a9cf8b97d27f78f",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_editorial_handoff.py",
+      "sha256": "89e6cb5111f7e5a0833da4bb8b1a0a599009893acd837a60afddfb0b3da13abb",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_effective_writing_voice.py",
+      "sha256": "c22c42be7e495bd533b23d5e4f2ca47447673c3df8f53d9bd62897b40d6075b4",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_evidence_first.py",
+      "sha256": "a86fba66e611f04f9d28150643b9fda52c46d281b22815aaf6f0001245f1f44e",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_release_handoff_integration.py",
+      "sha256": "f3be3cff1193e123a8568d938ffd2e1a485e54a786ebfd742005091fc48deabf",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_rewrite_guard.py",
+      "sha256": "49665161430216af1bbc6c3388821500ea015dcfb4ffadcc785ad102b3a40cef",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_selected_candidate.py",
+      "sha256": "20d8a43b36d01e257c62c8adbcb03e24e92d8a2e3232a65b28c45a4851780938",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_topic_independent_voice.py",
+      "sha256": "994e855d63b0ed7e8d24958edf42c1790b3170958fbdbdf2585c7c10cfce7362",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    },
+    {
+      "path": "tests/test_writing_voice.py",
+      "sha256": "aa2edfa82890d03e2a46eadafbc73a51d1f1c780ad345eeeaee9a3a245385252",
+      "review": "Regression coverage reviewed for request/default behavior, factual guardrails, selected/visual identity, source context, voice delivery or durable no-call recovery; no assertion weakening."
+    }
+  ],
+  "findings": [
+    {
+      "issue": "JSON request silently discarded editorial_handoff",
+      "observed_red": "3 failed",
+      "repair": "Validate field, forward through generate_content, preserve baseline and evaluator parity",
+      "status": "FIXED"
+    },
+    {
+      "issue": "Numeric guard treated comma-suffixed unchanged ID/decimal as new number",
+      "observed_red": "2 failed,13 passed",
+      "repair": "Numeric token ends on a digit/optional percent, excluding trailing punctuation",
+      "status": "FIXED"
+    },
+    {
+      "issue": "Launcher follows mutable development checkout",
+      "status": "PROMOTION_STEP",
+      "repair": "Fixed detached merged release; frozen prior release and rollback launcher"
+    }
+  ],
+  "verification": {
+    "local_tests": 230,
+    "seconds": 3.09,
+    "new_assertions_not_replacing_old": true,
+    "api_spend": 0,
+    "new_model_calls": 0,
+    "hosted_workflows": "ci-full.yml.disabled and codeql.yml.disabled; no enabled workflow"
+  },
+  "remaining_not_release_blockers": [
+    "Human writing-quality and publication decisions",
+    "No universal workflow/voice winner",
+    "Only literal/symbolic narrative contract supported",
+    "Existing conservative factual guard is not a semantic proof system"
+  ]
+}

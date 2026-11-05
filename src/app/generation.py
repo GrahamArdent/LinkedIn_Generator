@@ -66,7 +66,38 @@ class Pipeline:
                 f"{subject} that the supplied evidence complicates."
             ),
         ]
+        evidence = list(ctx.get("evidence") or [])
+        anchor = dict(ctx.get("strongest_concrete_evidence") or {})
+        if not anchor.get("fact") and evidence:
+            first = evidence[0]
+            anchor = {"title": str(first.get("title", "")), "fact": str(first.get("fact") or first.get("one_liner") or "")}
+        editorial_plan = {
+            "reader": str(ctx.get("audience") or audience_lens),
+            "question": topic,
+            "factual_anchor": anchor,
+            "tension_task": "Identify a reasonable assumption this exact anchor complicates; do not force disagreement.",
+            "mechanism_task": "Explain how the documented event works, using only supplied support.",
+            "consequence_task": "Trace one supported practical or human consequence; mark interpretation and omit unearned cost claims.",
+            "takeaway": str(ctx.get("objective") or "One useful implication of the supplied evidence."),
+            "closer_task": "End with the takeaway naturally; no forced CTA, anecdote or signature phrase.",
+        }
+        if anchor.get("fact"):
+            angle_options = [
+                f"Ground {subject} for {audience_lens} in this exact anchor: {anchor['fact']}",
+                "Explain the mechanism behind that anchor, with its source limitations.",
+                "Challenge only an assumption that this anchor actually complicates.",
+            ]
+        if ctx.get("editorial_handoff") is not None:
+            from .editorial_handoff import validate_handoff
+            handoff = validate_handoff(ctx["editorial_handoff"])
+            editorial_plan = {
+                "reader": str(ctx.get("audience") or audience_lens),
+                "factual_anchor": anchor,
+                "narrative": handoff["narrative"],
+            }
+            angle_options = ["Develop the selected narrative without changing the frozen meaning."]
         return {
+            "editorial_plan": editorial_plan,
             "angle": angle_options[0],
             "angle_options": angle_options,
             "sections": ["hook", "context", "insight", "takeaway", "closer"],
