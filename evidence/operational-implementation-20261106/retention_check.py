@@ -30,6 +30,9 @@ ITEMS=[
  ('source_negatives','evidence/operational-implementation-20261106/r2-discovery/REPORT.md','These negative receipts remain'),
  ('source_proof_limit','evidence/operational-implementation-20261106/r2-discovery/REPORT.md','not general research coverage'),
  ('feed_not_facts','docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md','feed snippets are never facts'),
+ ('original_history_reconciled','CURRENT_WORK_PACKET.md','Original10trial chronology/gate IDs now agree'),
+ ('calibration_stays_unlabeled','CURRENT_WORK_PACKET.md','Frozen12example calibration remains unlabeled'),
+ ('deferred_editorial_checkpoint','CURRENT_WORK_PACKET.md','rewriting explicitly deferred'),
 ]
 def check(items):
  assert len(items)==len(ITEMS) and {i[0] for i in items}=={i[0] for i in ITEMS},'missing item'
