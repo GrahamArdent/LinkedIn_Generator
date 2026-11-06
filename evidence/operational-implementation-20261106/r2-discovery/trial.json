@@ -1,0 +1,69 @@
+{
+  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "topic": "artificial intelligence trust transparency",
+  "seconds": 2.1390074780210853,
+  "result": {
+    "sources": [],
+    "errors": [
+      {
+        "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+        "error": "SOURCE_REDIRECT_LIMIT"
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s13347-025-00916-2.pdf",
+        "error": "EVIDENCE_BUDGET_EXHAUSTED"
+      }
+    ],
+    "http_activity": [
+      {
+        "url": "https://api.crossref.org/works?query.title=artificial+intelligence+trust+transparency&rows=6&select=DOI%2Ctitle%2CURL%2Clink%2Cresource%2Cpublisher",
+        "status": 200,
+        "seconds": 0.28574584424495697,
+        "bytes": 3849
+      },
+      {
+        "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+        "status": 301,
+        "seconds": 0.29536345787346363,
+        "bytes": 166
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s13347-025-00916-2",
+        "status": 303,
+        "seconds": 0.3087002793326974,
+        "bytes": 0
+      },
+      {
+        "url": "https://idp.springer.com/authorize?response_type=cookie&client_id=springerlink&redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13347-025-00916-2",
+        "status": 302,
+        "seconds": 0.36788863968104124,
+        "bytes": 0
+      },
+      {
+        "url": "https://idp.springer.com/transit?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13347-025-00916-2&code=1251a392-049c-4dec-9088-3829c00f07fb",
+        "status": 302,
+        "seconds": 0.30646579153835773,
+        "bytes": 0
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s13347-025-00916-2.pdf",
+        "status": 303,
+        "seconds": 0.30134460143744946,
+        "bytes": 0
+      },
+      {
+        "url": "https://idp.springer.com/authorize?response_type=cookie&client_id=springerlink&redirect_uri=https%3A%2F%2Flink.springer.com%2Fcontent%2Fpdf%2F10.1007%2Fs13347-025-00916-2.pdf",
+        "status": 302,
+        "seconds": 0.2720990953966975,
+        "bytes": 0
+      }
+    ],
+    "discovery_requests": 1,
+    "source_fetches": 6
+  },
+  "full_local_receipt": {
+    "path": "/home/graham/.local/share/graham-linkedin-qualifications/r2-discovery-20261106/trial.json",
+    "sha256": "13f0a57ffce51e28fc61b54660d0d64a6baf64be2f364a7cceb739fa1bdb7732",
+    "scope": "Private qualification receipt; source passages retained locally, repository stores paragraph hashes and limits."
+  }
+}
