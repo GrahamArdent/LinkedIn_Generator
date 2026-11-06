@@ -1,0 +1,34 @@
+....F                                                                    [100%]
+=================================== FAILURES ===================================
+______________________ test_active_voice_survives_backup _______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-10/test_active_voice_survives_bac0')
+
+    def test_active_voice_survives_backup(tmp_path):
+        from src.app.operational import Application,text_hash
+        s=m.Store.initialize(tmp_path/'data');s.admit('one',{}, {})
+        text='A sufficiently long exact selected text for explicit approval.';h=text_hash(text)
+        s.finish('one','completed',{'selected_candidate':{'body':text,'content_sha256':h}})
+        a=Application(s,None);a.feedback('one',{'candidate_hash':h,'decision':'keep','approve_voice_example':True});v=a.activate_voice('one',h)
+        s.backup(tmp_path/'backup')
+>       assert Application(m.Store(tmp_path/'backup'),None).active_voice()==v
+E       AssertionError: assert {'version': 0, 'examples': []} == {'version': 1...33a2006de1'}]}
+E         
+E         Differing items:
+E         {'examples': []} != {'examples': [{'example_id': 'one', 'provenance': 'user_approved', 'text': 'A sufficiently long exact selected text for explicit approval.', 'source_ref': 'local:one:20b1fa9cf4ba43ec6d89231fd4a9944d14a86e3f8c6ecd6acd631133a2006de1'}]}
+E         {'version': 0} != {'version': 1}
+E         Use -v to get more diff
+
+tests/test_operational_store.py:55: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_store.py::test_active_voice_survives_backup - A...
+1 failed, 4 passed, 1 warning in 0.21s

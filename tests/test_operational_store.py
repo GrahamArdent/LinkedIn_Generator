@@ -43,3 +43,13 @@ def test_backup_relocation_preserves_original_identity(tmp_path):
     assert m.Store(tmp_path/'backup').get('one')==s.get('one')
     (tmp_path/'backup'/'registry.sqlite3').unlink()
     with pytest.raises(ValueError,match='STORE_CORRUPT'):m.Store(tmp_path/'backup')
+
+
+def test_active_voice_survives_backup(tmp_path):
+    from src.app.operational import Application,text_hash
+    s=m.Store.initialize(tmp_path/'data');s.admit('one',{}, {})
+    text='A sufficiently long exact selected text for explicit approval.';h=text_hash(text)
+    s.finish('one','completed',{'selected_candidate':{'body':text,'content_sha256':h}})
+    a=Application(s,None);a.feedback('one',{'candidate_hash':h,'decision':'keep','approve_voice_example':True});v=a.activate_voice('one',h)
+    s.backup(tmp_path/'backup')
+    assert Application(m.Store(tmp_path/'backup'),None).active_voice()==v

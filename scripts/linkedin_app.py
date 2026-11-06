@@ -40,7 +40,7 @@ def main():
     p.add_argument('--data-root',type=Path,default=Path(os.environ.get('LINKEDIN_DATA_ROOT',str(Path.home()/'.local/share/graham-linkedin'))))
     p.add_argument('--config',type=Path,default=Path(os.environ['LINKEDIN_CONFIG']) if os.environ.get('LINKEDIN_CONFIG') else None)
     p.add_argument('action',choices=['init','create','status','list','show','resume','feedback','edit','activate-voice','voices','export','backup','import','serve'])
-    p.add_argument('--id');p.add_argument('--topic');p.add_argument('--url',action='append',default=[]);p.add_argument('--notes',default='')
+    p.add_argument('--parent');p.add_argument('--id');p.add_argument('--topic');p.add_argument('--url',action='append',default=[]);p.add_argument('--notes',default='')
     p.add_argument('--voice',default='concise_challenger');p.add_argument('--narrative',choices=['literal','symbolic'],default='literal')
     p.add_argument('--path',type=Path);p.add_argument('--hash');p.add_argument('--port',type=int,default=8765)
     args=p.parse_args()
@@ -56,7 +56,7 @@ def main():
     elif args.action=='resume':result=app.resume(args.id)
     elif args.action=='create':
         if not args.topic:p.error('create needs --topic')
-        result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative)
+        result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative,parent=args.parent)
     elif args.action=='feedback':result=app.feedback(args.id,json.loads(args.path.read_bytes()))
     elif args.action=='edit':result=app.edit(args.id,args.path.read_text())
     elif args.action=='activate-voice':result=app.activate_voice(args.id,args.hash)

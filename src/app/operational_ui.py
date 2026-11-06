@@ -9,7 +9,7 @@ PAGE='''<!doctype html><html><head><meta name="viewport" content="width=device-w
 <body><h1>Graham authoring</h1><p>Prepare sourced writing, review exact candidates and export. Human judgment is required. This app does not publish.</p>
 <button id="history">History</button><button id="voices">Voices</button>
 <label>Request ID<input id="job" placeholder="A stable unique ID"></label>
-<label>Topic<input id="topic"></label><label>Source URLs (one per line, optional)<textarea id="urls"></textarea></label>
+<label>Parent request ID (optional revision link)<input id="parent"></label><label>Topic<input id="topic"></label><label>Source URLs (one per line, optional)<textarea id="urls"></textarea></label>
 <label>Notes<textarea id="notes"></textarea></label><label>Voice<input id="voice" value="concise_challenger"></label>
 <label>Narrative<select id="narrative"><option>literal</option><option>symbolic</option></select></label>
 <button id="create">Create once</button><button id="show">Review / status</button><button id="resume">Reconcile / resume original</button>
@@ -23,7 +23,7 @@ const token=TOKEN;const el=id=>document.getElementById(id);
 async function call(path,data){el('status').textContent='Working…';try{let r=await fetch(path,data?{method:'POST',headers:{'Content-Type':'application/json','X-Local-Token':token},body:JSON.stringify(data)}:{});let v=await r.json();el('output').textContent=JSON.stringify(v,null,2);el('status').textContent=r.ok?'Saved / read complete':'Action needs attention';return v}catch(e){el('status').textContent=String(e)}}
 function action(a,extra={}){return call('/api/action',{action:a,id:el('job').value,...extra})}
 el('history').onclick=()=>call('/api/list');el('voices').onclick=()=>call('/api/voices');
-el('create').onclick=()=>action('create',{topic:el('topic').value,urls:el('urls').value.split('\\n').filter(Boolean),notes:el('notes').value,voice:el('voice').value,narrative:el('narrative').value});
+el('create').onclick=()=>action('create',{topic:el('topic').value,urls:el('urls').value.split('\\n').filter(Boolean),notes:el('notes').value,voice:el('voice').value,narrative:el('narrative').value,parent:el('parent').value||null});
 el('show').onclick=()=>call('/api/job?id='+encodeURIComponent(el('job').value));el('resume').onclick=()=>action('resume');
 el('savefeedback').onclick=()=>{try{action('feedback',{data:{...JSON.parse(el('feedback').value),candidate_hash:el('hash').value}})}catch(e){el('status').textContent=String(e)}};
 el('saveedit').onclick=()=>action('edit',{text:el('edit').value});el('activate').onclick=()=>action('activate-voice',{hash:el('hash').value});
@@ -62,7 +62,7 @@ def handler(app,token):
                 length=int(self.headers.get('Content-Length','0'))
                 if self.path!='/api/action' or not 0<length<=32768:raise ValueError('INVALID_ACTION')
                 d=json.loads(self.rfile.read(length));a=d['action'];job=d['id']
-                if a=='create':result=app.create(job,d['topic'],urls=d.get('urls',[]),notes=d.get('notes',''),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative','literal'))
+                if a=='create':result=app.create(job,d['topic'],urls=d.get('urls',[]),notes=d.get('notes',''),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative','literal'),parent=d.get('parent'))
                 elif a=='resume':result=app.resume(job)
                 elif a=='feedback':result=app.feedback(job,d['data'])
                 elif a=='edit':result=app.edit(job,d['text'])

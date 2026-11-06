@@ -9,6 +9,7 @@ import time
 
 from .operational_store import Store, atomic, encoded, sha
 from .operational_evidence import Evidence, validate_meaning
+from .operational_runtime import qualify_model
 from .codex_provider import CodexConfig, CodexProvider
 from .contracts import LinkedInContentRequest, LinkedInContentFeedback
 from .feedback import voice_example_from_feedback
@@ -66,13 +67,12 @@ class Application:
     def __init__(self,store,config):self.store,self.config=store,config
 
     def active_voice(self):
-        path=self.store.root/'active-voice.json'
-        if not path.exists():return {'version':0,'examples':[]}
-        return self.store.read_blob(json.loads(path.read_bytes())['hash'])
+        with self.store.connection() as con:row=con.execute('SELECT value FROM metadata WHERE key="active_voice"').fetchone()
+        return self.store.read_blob(row['value']) if row else {'version':0,'examples':[]}
 
-    def create(self,job,topic,*,urls=(),notes='',voice='concise_challenger',narrative='literal'):
+    def create(self,job,topic,*,urls=(),notes='',voice='concise_challenger',narrative='literal',parent=None):
         if not topic.strip() or len(topic)>500 or len(notes)>3000 or len(urls)>6 or narrative not in ('literal','symbolic'):raise ValueError('INVALID_CREATE_INPUT')
-        normalized={'topic':topic.strip(),'urls':list(urls),'notes':notes,'voice':voice,'narrative':narrative}
+        normalized={'topic':topic.strip(),'urls':list(urls),'notes':notes,'voice':voice,'narrative':narrative,**({'parent':parent} if parent else {})}
         try:old=self.store.get(job)
         except ValueError as e:
             if str(e)!='JOB_NOT_FOUND':raise
@@ -80,10 +80,12 @@ class Application:
         if old:
             if old['input']!=normalized:raise ValueError('REQUEST_CONFLICT')
             return old
+        if parent:self.store.get(parent)
         if self.config is None:raise ValueError('CONFIG_REQUIRED')
+        model_qualification=qualify_model(self.config)
         voice_binding=resolve_writing_voice(voice)
         config={k:str(v) for k,v in asdict(self.config).items()}
-        binding={'config':config,'voice':voice_binding,'structure_sha256':_definition_hash(),'voice_examples':self.active_voice()}
+        binding={'model_qualification':model_qualification,'release':release_fingerprint(),'config':config,'voice':voice_binding,'structure_sha256':_definition_hash(),'voice_examples':self.active_voice()}
         self.store.admit(job,normalized,binding)
         return self.resume(job)
 
@@ -98,7 +100,7 @@ class Application:
             if record['state']=='completed':return record
             cfg=record['binding']['config']
             config=CodexConfig(**{**cfg,'resume_root':Path(cfg['resume_root']),'python':Path(cfg['python'])})
-            if resolve_writing_voice(record['input']['voice'])!=record['binding']['voice'] or _definition_hash()!=record['binding']['structure_sha256']:
+            if release_fingerprint()!=record['binding']['release'] or resolve_writing_voice(record['input']['voice'])!=record['binding']['voice'] or _definition_hash()!=record['binding']['structure_sha256']:
                 raise ValueError('BINDING_CHANGED_RESUME_REQUIRES_ORIGINAL_RELEASE')
             native=CodexProvider(config,directory/'codex-attempts',hashlib.sha256(job.encode()).hexdigest())
             native.deadline=record['created']+900
@@ -142,8 +144,7 @@ class Application:
                     bundle={'sources':source['sources'],'claims':claims,'central_claim_id':claims[0]['claim_id'],'request_sha256':sha(data)}
                     data,bundle=prepare_graham_request(data,bundle)
                     prepared={'request':data,'bundle':bundle,'assessment':assessment}
-                    self.store.reserve(job,'preparation',source)
-                    self.store.commit_stage(job,'preparation',prepared)
+                    commit_pure_stage(self.store,job,'preparation',source,prepared)
                 result=self.store.stage(job,'engine')
                 if result is None:
                     # Engine replay reuses exact prompt-keyed original stage receipts. It never dispatches a pending effect.
@@ -151,8 +152,7 @@ class Application:
                     result=generate_content(request,
                         generator=partial(run_generation,llm_client=client,opportunity_client=client,publish_quality_client=client,editorial_brief=prepared['bundle']),
                         visual_planner=partial(plan_visual_asset,client=client)).model_dump()
-                    self.store.reserve(job,'engine',prepared)
-                    self.store.commit_stage(job,'engine',result)
+                    commit_pure_stage(self.store,job,'engine',prepared,result)
                 state='completed' if result.get('selected_candidate') else ('needs_more_evidence' if result.get('status')=='needs_more_evidence' else 'unqualified')
                 return self.store.finish(job,state,result)
             except Exception as exc:
@@ -196,11 +196,14 @@ class Application:
         if not approved or not approved[-1].get('approve_voice_example') or approved[-1].get('decision') not in ('keep','light'):raise ValueError('VOICE_APPROVAL_REQUIRED')
         feedback=LinkedInContentFeedback(request_id=job,decision='keep',original_text=selected['body'],source_ref='local:'+job+':'+candidate_hash)
         example=voice_example_from_feedback(feedback).model_dump()
-        old=self.active_voice();examples=[e for e in old['examples'] if e.get('source_ref')!=example['source_ref']]+[example]
-        value={'version':old['version']+1,'examples':examples[-3:]}
-        key=self.store.blob(value)
-        atomic(self.store.root/'active-voice.json',encoded({'hash':key}))
-        self.store.event(job,'voice_activation',{'hash':key,'candidate_hash':candidate_hash})
+        with self.store.transaction() as con:
+            row=con.execute('SELECT value FROM metadata WHERE key="active_voice"').fetchone()
+            old=self.store.read_blob(row['value']) if row else {'version':0,'examples':[]}
+            examples=[e for e in old['examples'] if e.get('source_ref')!=example['source_ref']]+[example]
+            value={'version':old['version']+1,'examples':examples[-3:]}
+            key=self.store.blob(value)
+            con.execute('INSERT OR REPLACE INTO metadata VALUES (?,?)',('active_voice',key))
+            con.execute('INSERT INTO events(job,kind,payload_hash) VALUES (?,?,?)',(job,'voice_activation',self.store.blob({'hash':key,'candidate_hash':candidate_hash})))
         return value
 
     def export(self,job):
@@ -208,3 +211,18 @@ class Application:
         return {'text':selected['body'],'manifest':{'job':job,'selected_hash':selected['content_sha256'],
             'revision':selected['revision'],'review_status':selected['review_status'],'visual_asset':selected['visual_asset'],
             'binding':record['binding'],'preparation':self.store.stage(job,'preparation'),'publication_approved':False}}
+
+
+def release_fingerprint():
+    root=Path(__file__).resolve().parents[2]
+    return sha({str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest()
+                for directory in ('src','config','scripts') for p in sorted((root/directory).rglob('*'))
+                if p.is_file() and not p.is_symlink() and '__pycache__' not in p.parts and p.suffix in ('.py','.json','.yaml')})
+
+
+def commit_pure_stage(store,job,name,inputs,result):
+    # This stage commits deterministic assembly only. All model effects already have original receipts.
+    try:store.reserve(job,name,inputs)
+    except ValueError as exc:
+        if str(exc)!='RECONCILIATION_REQUIRED':raise
+    store.commit_stage(job,name,result)
