@@ -54,3 +54,10 @@ def test_interrupted_http_is_charged_and_completed_read_reuses_original(tmp_path
     assert e.source_fetches==2
     e=m.Evidence(store=Store(s.root),job='one');assert e.fetch(inputs['url'])[1]==b'A complete supported sentence.'
     assert len(calls)==1
+
+
+def test_source_chunking_never_turns_truncated_context_into_supported_fact():
+    raw=('The study disproved the following hypothesis: '+'x'*3955+'Treatment improved survival.').encode()
+    source=m.source_record('https://example.org','https://example.org',raw,'text/plain');source['source_id']='S1'
+    with pytest.raises(ValueError,match='UNSUPPORTED_MEANING'):
+        m.validate_meaning({'thesis':'A point','reader_consequence':'A consequence','qualification':'A limit','facts':[{'claim_id':'C1','text':'Treatment improved survival.','source_ids':['S1']}]},[source])

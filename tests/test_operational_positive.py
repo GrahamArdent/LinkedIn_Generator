@@ -9,6 +9,7 @@ from src.app.codex_provider import CodexConfig
 def test_public_create_progression_duplicate_and_shared_feedback_without_api(tmp_path,monkeypatch):
     import src.app.operational as m
     s=Store.initialize(tmp_path/'data');calls=[]
+    with s.transaction() as con:con.execute('UPDATE metadata SET value=? WHERE key="trial_history"',(json.dumps({'status':'unresolved','known_topics':['A useful ordinary topic']}),))
     monkeypatch.setattr(m,'qualify_model',lambda config:{'model':config.model})
     source={'source_id':'S1','status':'usable','title':'Study','publisher':'Publisher','url':'https://example.org/paper','checked_at':'2026-11-06','limitations':'Limited study.','passages':[{'locator':'Abstract','excerpt':'A study reported a limited observation.'}]}
     monkeypatch.setattr(m.Evidence,'acquire',lambda *a:{'sources':[source],'errors':[],'http_activity':[]})
@@ -31,3 +32,11 @@ def test_public_create_progression_duplicate_and_shared_feedback_without_api(tmp
     assert Application(Store(s.root),None).create('one','A useful ordinary topic')==first
     assert len(calls)==1
     with pytest.raises(ValueError,match='REQUEST_CONFLICT'):app.create('one','Changed same identity')
+
+
+def test_empty_store_cannot_reset_historical_admission(tmp_path,monkeypatch):
+    import src.app.operational as m
+    s=Store.initialize(tmp_path/'data')
+    monkeypatch.setattr(m,'qualify_model',lambda cfg:pytest.fail('history must be checked first'))
+    with pytest.raises(ValueError,match='SUBJECT_HISTORY_UNRESOLVED'):
+        Application(s,CodexConfig(tmp_path,Path('/python'),'sha','fixture')).create('new','Unreconciled topic')

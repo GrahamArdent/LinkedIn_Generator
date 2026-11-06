@@ -1,0 +1,40 @@
+.............F                                                           [100%]
+=================================== FAILURES ===================================
+______________ test_empty_store_cannot_reset_historical_admission ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-25/test_empty_store_cannot_reset_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc0059263c0>
+
+    def test_empty_store_cannot_reset_historical_admission(tmp_path,monkeypatch):
+        import src.app.operational as m
+        s=Store.initialize(tmp_path/'data')
+        monkeypatch.setattr(m,'qualify_model',lambda cfg:pytest.fail('history must be checked first'))
+        with pytest.raises(ValueError,match='SUBJECT_HISTORY_UNRESOLVED'):
+>           Application(s,CodexConfig(tmp_path,Path('/python'),'sha','fixture')).create('new','Unreconciled topic')
+
+tests/test_operational_positive.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/operational.py:94: in create
+    model_qualification=qualify_model(self.config)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cfg = CodexConfig(resume_root=PosixPath('/tmp/pytest-of-agent/pytest-25/test_empty_store_cannot_reset_0'), python=PosixPath('/python'), source_sha='sha', model='fixture', reasoning='medium')
+
+>   monkeypatch.setattr(m,'qualify_model',lambda cfg:pytest.fail('history must be checked first'))
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: history must be checked first
+
+tests/test_operational_positive.py:39: Failed
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_positive.py::test_empty_store_cannot_reset_historical_admission
+1 failed, 13 passed, 1 warning in 0.31s

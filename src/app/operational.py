@@ -32,7 +32,16 @@ class DurableProvider:
         self.store,self.job,self.native=store,job,native
         self.receipts=[];self.error=None
 
-    def generate(self,*,model,system,user,temperature):
+    def generate(self,**args):
+        job=self.store.get(self.job)
+        admission=job['binding'].get('admission',self.job)
+        path=self.store.directory(admission)/'.model-admission.lock'
+        with path.open('a+') as lock:
+            try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            except BlockingIOError:raise ValueError('ADMISSION_BUSY')
+            return self._generate(**args)
+
+    def _generate(self,*,model,system,user,temperature):
         args=dict(model=model,system=system,user=user,temperature=temperature)
         name='model:'+call_key(args)
         old=self.store.stage(self.job,name)
@@ -49,6 +58,7 @@ class DurableProvider:
             stages=[r for member in family for r in con.execute('SELECT * FROM stages WHERE job=? AND name LIKE "model:%"',(member,))]
             seconds=sum(self.store.read_blob(r['result_hash'])['seconds'] if r['state']=='completed' else 300 for r in stages)
             if not pending:
+                if any(r['state']!='completed' for r in stages):raise ValueError('RECONCILIATION_REQUIRED')
                 if len(stages)>=12 or seconds>=900:raise ValueError('MODEL_BUDGET_EXHAUSTED')
                 if time.time()-admitted['created']>=900:raise ValueError('WALL_BUDGET_EXHAUSTED')
                 con.execute('INSERT INTO stages VALUES (?,?,?,?,NULL)',(self.job,name,sha(args),'reserved'))
@@ -58,7 +68,7 @@ class DurableProvider:
             if pending:
                 # Reconciliation has no dispatch authority. Native bridge accepts original completed evidence only.
                 recovered=self.native.reconcile(**args)
-                result={'text':recovered['text'],'receipt':recovered['receipt'],'seconds':300,'reconciled':True}
+                result={'text':recovered['text'],'receipt':recovered['receipt'],'seconds':recovered['receipt'].get('active_seconds',900),'reconciled':True}
             else:
                 text=self.native.generate(**args)
                 result={'text':text,'receipt':self.native.receipts[-1],'seconds':time.monotonic()-began}
@@ -85,9 +95,10 @@ class Application:
             if old['input']!=normalized:raise ValueError('REQUEST_CONFLICT')
             return old
         with self.store.connection() as con:history_row=con.execute('SELECT value FROM metadata WHERE key="trial_history"').fetchone()
+        if not history_row:raise ValueError('SUBJECT_HISTORY_UNRESOLVED')
         if history_row:
             history=json.loads(history_row['value'])
-            if history['status']=='unresolved' and normalized['topic'] not in history['known_topics']:raise ValueError('SUBJECT_HISTORY_UNRESOLVED')
+            if history['status'] in ('unresolved','unreconciled') and normalized['topic'] not in history['known_topics']:raise ValueError('SUBJECT_HISTORY_UNRESOLVED')
         predecessor=self.store.get(parent) if parent else None
         admission=job if not parent or new_budget else predecessor['binding'].get('admission',parent)
         if self.config is None:raise ValueError('CONFIG_REQUIRED')

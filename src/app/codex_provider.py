@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
+from datetime import datetime
 
 @dataclass(frozen=True)
 class CodexConfig:
@@ -104,6 +105,13 @@ def bridge(payload):
             if not receipt.is_file():
                 return {"ok":False,"code":"CODEX_RECONCILIATION_REQUIRED"}
             result=reconcile_attempt(receipt,by="linkedin-operational-recovery",reason="Reconcile original exact prompt after local interruption; no redispatch")
+            retained=json.loads(receipt.read_bytes())
+            processes=retained.get("processes",[])
+            try:
+                seconds=sum(max(0,(datetime.fromisoformat(p["finished_at"])-datetime.fromisoformat(p["started_at"])).total_seconds()) for p in processes)
+                if not processes:raise ValueError()
+                result["active_seconds"]=seconds
+            except (ValueError,KeyError,TypeError):result["active_seconds"]=900
             return {"ok":True,**result,"source_sha":source,"auth":"chatgpt","execution_kind":"native_cli"}
         result=asyncio.run(client.execute_structured(request,schema,context))
         return {"ok":True,**result,"source_sha":source,"auth":"chatgpt","execution_kind":"native_cli"}

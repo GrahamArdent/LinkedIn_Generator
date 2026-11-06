@@ -22,11 +22,12 @@ def import_legacy(store,path):
         if str(exc)!='JOB_NOT_FOUND':raise
     if old:
         if old['input']!=trial['input'] or old['binding'].get('record_hash')!=sha(trial):raise ValueError('LEGACY_ID_COLLISION')
-        return old
+        if old['state']=='legacy':return old
     store.admit(job,trial['input'],binding)
     with store.transaction() as con:
         row=con.execute('SELECT value FROM metadata WHERE key="trial_history"').fetchone()
         history=json.loads(row['value']) if row else {'status':'unresolved','known_topics':[],'max_subjects':8,'first_six':'Unresolved; no invented judgments or exclusions'}
+        history['status']='unresolved'
         topic=trial['input'].get('topic')
         if topic and topic not in history['known_topics']:history['known_topics'].append(topic)
         con.execute('INSERT OR REPLACE INTO metadata VALUES (?,?)',('trial_history',json.dumps(history)))

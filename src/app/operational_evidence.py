@@ -50,7 +50,13 @@ def source_record(requested,final,raw,content_type):
     else:raise ValueError('UNSUPPORTED_SOURCE_FORMAT')
     if len(text.strip())<20:raise ValueError('SOURCE_TOO_THIN')
     # Bound prompt exposure; retain offsets and exact fetched byte identity.
-    passages=[{'locator':f'extracted characters {i}:{min(i+4000,len(text))}', 'excerpt':text[i:i+4000]} for i in range(0,min(len(text),24000),4000)]
+    passages=[];used=0
+    for index,line in enumerate(text.splitlines(),1):
+        if not line.strip() or len(line)>8000:continue
+        if used+len(line)>24000:break
+        passages.append({'locator':f'complete extracted paragraph {index}','excerpt':line})
+        used+=len(line)
+    if not passages:raise ValueError('SOURCE_TOO_THIN')
     return {'status':'usable','requested_url':requested,'url':final,'title':title,'publisher':urlsplit(final).hostname,
             'checked_at':datetime.now(timezone.utc).isoformat(),'content_sha256':hashlib.sha256(raw).hexdigest(),
             'content_type':content_type,'passages':passages,'limitations':'Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.'}

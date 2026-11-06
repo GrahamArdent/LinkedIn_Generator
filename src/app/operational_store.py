@@ -58,6 +58,7 @@ class Store:
             CREATE TABLE events(id INTEGER PRIMARY KEY,job TEXT NOT NULL,kind TEXT NOT NULL,payload_hash TEXT NOT NULL);
             ''')
             con.execute('INSERT INTO metadata VALUES (?,?)',('identity',identity))
+            con.execute('INSERT INTO metadata VALUES (?,?)',('trial_history',json.dumps({'status':'unreconciled','known_topics':[],'max_subjects':8,'first_six':'Import retained original history before new trials'})))
         atomic(root/'store.json',encoded({'identity':identity,'version':1}))
         return cls(root)
 
