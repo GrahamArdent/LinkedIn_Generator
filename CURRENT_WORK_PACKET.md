@@ -507,3 +507,11 @@ The prompt owns execution mechanics; the completion plan alone owns product Q1â€
 Older repeated M task lists were replaced by a mapping; calibration/later acceptance obligations retained.
 Current pair audit: evidence/prompt-plan-hardening-20261105/RESULTS.json. Q1 remains first unmet.
 No product implementation or installation occurred in this prompt-generation task.
+
+
+## Prompt-builder and Challenge readiness â€” November 5, 2026
+Current audit remains evidence/prompt-plan-hardening-20261105/RESULTS.json. Prompt4.2 now explicitly
+binds the reviewed plan/prompt hashes and invalidation rules. Fresh delegated independent complete-pair
+Challenge is SCOPED_CLEAR; retention65/65 known obligations,22 baseline files,both negative controls.
+Plan unchanged; all26 AT/11 E2E and existing human/release gates retained. Q1 remains first unmet.
+This request qualifies the prompt package only; no product implementation or new installation occurred.

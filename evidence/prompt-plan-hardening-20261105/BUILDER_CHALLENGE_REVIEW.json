@@ -1,0 +1,43 @@
+{
+  "reviewer": "Primary assistant, same context, opposition-framed corrected complete-pair review",
+  "scope": "Planning readiness for Q1; no implementation/release/human-content acceptance",
+  "gate_parts": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "selection_reason": "Material execution handoff, installed boundary and retained whole-product acceptance; relevant planning risks only, no claim of post-implementation proof",
+  "material_correction": [
+    {
+      "id": "PB01",
+      "finding": "Prompt did not directly require reviewed pair identity/current evidence binding",
+      "repair": "Prompt4.2 explicitly locates RESULTS.json, checks hashes and scope/invalidation, reconciles material mismatch before dependent execution",
+      "status": "Corrected; fresh complete-pair review follows"
+    }
+  ],
+  "counterexamples": [
+    {
+      "sequence": "Current prompt or plan changes after a historical CLEAR",
+      "result": "Explicit pair hash/basis check rejects reliance on label; affected fresh review required"
+    },
+    {
+      "sequence": "Provider times out after launch; resume mistakenly creates replacement attempt",
+      "result": "Original effect lookup and independent target readback precede any repeat; same-ID conflict and unknown tests remain plan-owned"
+    },
+    {
+      "sequence": "Technical install or four-essential pass reported as accepted Graham writing",
+      "result": "Q5 real separate human judgment and later26/11 acceptance remain explicit; stop is not overall completion"
+    },
+    {
+      "sequence": "Template tooling missing or routine CI wait treated as new human permission gate",
+      "result": "Owner-equivalent actual checks, admitted alternatives and bounded wait/resume required; no new operational permission requested"
+    }
+  ],
+  "corrected_pair_result": "No remaining material corrective finding in this fresh same-assistant semantic review",
+  "proof_limits": "No product tests, native generation, installation, source implementation or human acceptance performed. Independent review recorded separately."
+}
