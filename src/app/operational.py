@@ -162,6 +162,7 @@ class Application:
                         prepared['bundle'].pop('structure_preparation',None)
                         prepared['bundle']['sources']=source['sources']
                         prepared['bundle']['revision_context']=record['binding']['revision_context']
+                        prepared['bundle']['request_sha256']=sha(prepared['request'])
                         prepared['request'],prepared['bundle']=prepare_graham_request(prepared['request'],prepared['bundle'])
                         prepared['inherited_preparation_from']=parent['id']
                         commit_pure_stage(self.store,job,'preparation',source,prepared)
