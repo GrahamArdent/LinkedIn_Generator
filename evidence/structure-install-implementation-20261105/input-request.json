@@ -1,0 +1,51 @@
+{
+  "request_id": "graham-structured-black-box-20261106",
+  "origin": "manual",
+  "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+  "persona_key": "graham",
+  "audience": "Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.",
+  "objective": "Explore why a convincing AI answer and a sound reason to rely on it are different questions. Use the deliberately prepared structure; keep Graham curious, measured and broad, with no technical credentials or invented experience.",
+  "author_pov": "individual",
+  "content_goal": "auto",
+  "opportunity_gate": false,
+  "publish_quality_gate": true,
+  "visual_asset_plan": true,
+  "services": [],
+  "targets": [],
+  "hashtags": [],
+  "voice_examples": [],
+  "evidence": [
+    {
+      "title": "ANTHROPIC-2025",
+      "fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts."
+    },
+    {
+      "title": "BUCINCA-2021",
+      "fact": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably."
+    }
+  ],
+  "writing_voice_id": "concise_challenger",
+  "editorial_handoff": {
+    "meaning": {
+      "thesis": "A convincing AI answer and a sound reason to rely on it are different things.",
+      "reader_consequence": "Consider what would justify reliance when a fluent explanation is easier to get than understanding.",
+      "facts": [
+        {
+          "claim_id": "1",
+          "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+          "source_ids": [
+            "ANTHROPIC-2025"
+          ]
+        },
+        {
+          "claim_id": "2",
+          "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+          "source_ids": [
+            "BUCINCA-2021"
+          ]
+        }
+      ],
+      "qualification": "Partial interpretability is not total ignorance. The controlled decision-support experiment predates current chatbots; explanations can help in some conditions. Do not universalize trust, overreliance or opaque systems."
+    }
+  }
+}

@@ -25,7 +25,7 @@ ESSENTIAL_CHECKS = {
     "factual_integrity": "Claims and experiences are supported; preserve source limitations, author POV and safety rules. Missing support means needs_evidence; contradicted or unsafe claims mean revise.",
     "reader_relevance": "The specified audience understands the argument and why it matters without reconstructing specialist context.",
     "practical_value": "The reader gains a useful insight, question or action; a checklist is not mandatory.",
-    "argument_voice": "The intended meaning, selected narrative and selected writing voice are preserved, without invented identity or experience.",
+    "argument_voice": "The intended meaning and selected writing voice are preserved, with coherent development of the selected narrative: the evidence advances the thought, transitions connect it, and the landing follows from the argument. Strong voice cannot compensate for disordered or repetitive construction. No invented identity or experience.",
 }
 
 
@@ -148,7 +148,10 @@ def assess_publish_quality(
         "Apply the rating anchors to each dimension; never inflate scores to meet a threshold. "
         "Use the same brief and voice context as the writer. If writing_voice is present, assess voice fit against "
         "its selected style_traits over default persona style; approved examples supply compatible details only. "
-        "Preserve factual and author-POV boundaries. "
+        "Preserve factual and author-POV boundaries. For argument_voice, report voice fidelity and construction separately "
+        "within its concrete reason. Assess coherent development, not beat headings, keyword counts, a mandatory CTA "
+        "or one paragraph per beat. Identify actual disordered, repetitive or unsupported reasoning; a strong voice "
+        "does not compensate for broken construction. "
         "Identify the largest fixable defect first; "
         "missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only."
     )

@@ -1,0 +1,76 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+_ test_caller_writing_plan_cannot_misattribute_fact_before_dispatch[Invented prestigious publisher] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-477/test_caller_writing_plan_canno0')
+publisher = 'Invented prestigious publisher'
+
+    @pytest.mark.parametrize('publisher',['Invented prestigious publisher','Other provided source'])
+    def test_caller_writing_plan_cannot_misattribute_fact_before_dispatch(tmp_path,publisher):
+        data,bundle=fixture()
+        data['editorial_handoff'].update(version=1,narrative={'form':'literal','beats':['Set the question.'],'symbol':None},
+           writing_plan={'beats':[{'index':1,'delivery':'Place F1 and explain its limit.'}],
+                         'attribution':[{'claim_id':'F1','source_name':publisher}]})
+        # Merely supplying an unrelated source does not authorize attributing F1 to it.
+        other=copy.deepcopy(bundle['sources'][0]);other.update(source_id='OTHER',publisher='Other provided source')
+        bundle['sources'].append(other)
+        bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+        r=cli(tmp_path,'prepare',data,bundle)
+>       assert r.returncode==2 and 'attribution' in r.stderr.lower()
+E       assert (0 == 2)
+E        +  where 0 = CompletedProcess(args=['/home/graham/work/linkedin-structure-20261106/.venv/bin/python', '/home/graham/work/linkedin-s... "no_model", "review": "/tmp/pytest-of-graham/pytest-477/test_caller_writing_plan_canno0/out/review.md"}\n', stderr='').returncode
+
+tests/test_graham_structure.py:248: AssertionError
+_ test_caller_writing_plan_cannot_misattribute_fact_before_dispatch[Other provided source] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-477/test_caller_writing_plan_canno1')
+publisher = 'Other provided source'
+
+    @pytest.mark.parametrize('publisher',['Invented prestigious publisher','Other provided source'])
+    def test_caller_writing_plan_cannot_misattribute_fact_before_dispatch(tmp_path,publisher):
+        data,bundle=fixture()
+        data['editorial_handoff'].update(version=1,narrative={'form':'literal','beats':['Set the question.'],'symbol':None},
+           writing_plan={'beats':[{'index':1,'delivery':'Place F1 and explain its limit.'}],
+                         'attribution':[{'claim_id':'F1','source_name':publisher}]})
+        # Merely supplying an unrelated source does not authorize attributing F1 to it.
+        other=copy.deepcopy(bundle['sources'][0]);other.update(source_id='OTHER',publisher='Other provided source')
+        bundle['sources'].append(other)
+        bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+        r=cli(tmp_path,'prepare',data,bundle)
+>       assert r.returncode==2 and 'attribution' in r.stderr.lower()
+E       assert (0 == 2)
+E        +  where 0 = CompletedProcess(args=['/home/graham/work/linkedin-structure-20261106/.venv/bin/python', '/home/graham/work/linkedin-s... "no_model", "review": "/tmp/pytest-of-graham/pytest-477/test_caller_writing_plan_canno1/out/review.md"}\n', stderr='').returncode
+
+tests/test_graham_structure.py:248: AssertionError
+__ test_default_compilation_rejects_explicit_noninteger_handoff_version[True] __
+
+version = True
+
+    @pytest.mark.parametrize('version',[True,1.0])
+    def test_default_compilation_rejects_explicit_noninteger_handoff_version(version):
+        data,bundle=fixture();data['editorial_handoff']['version']=version
+        bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+>       with pytest.raises(ValueError,match='STRUCTURE_PREPARATION'):module().prepare_graham_request(data,bundle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_graham_structure.py:256: Failed
+__ test_default_compilation_rejects_explicit_noninteger_handoff_version[1.0] ___
+
+version = 1.0
+
+    @pytest.mark.parametrize('version',[True,1.0])
+    def test_default_compilation_rejects_explicit_noninteger_handoff_version(version):
+        data,bundle=fixture();data['editorial_handoff']['version']=version
+        bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+>       with pytest.raises(ValueError,match='STRUCTURE_PREPARATION'):module().prepare_graham_request(data,bundle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_graham_structure.py:256: Failed
+=========================== short test summary info ============================
+FAILED tests/test_graham_structure.py::test_caller_writing_plan_cannot_misattribute_fact_before_dispatch[Invented prestigious publisher]
+FAILED tests/test_graham_structure.py::test_caller_writing_plan_cannot_misattribute_fact_before_dispatch[Other provided source]
+FAILED tests/test_graham_structure.py::test_default_compilation_rejects_explicit_noninteger_handoff_version[True]
+FAILED tests/test_graham_structure.py::test_default_compilation_rejects_explicit_noninteger_handoff_version[1.0]
+4 failed, 18 deselected in 0.73s

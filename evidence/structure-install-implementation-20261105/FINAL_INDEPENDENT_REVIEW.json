@@ -1,0 +1,18 @@
+{
+  "status": "SCOPED_CLEAR",
+  "candidate": "300aeb7b30c20ac59a5496d826728a5a3eea3f9d",
+  "reviewer": "/root/review_candidate",
+  "scope": "Fresh postcorrection Gate2.2 review plus unchanged whole-branch review at base6a39025, actual changed provider/persistence boundary Gate2.1E/H",
+  "findings": [],
+  "checked": [
+    "Invented/unrelated publishers reject; actual fact publisher accepts",
+    "True/1.0 versions reject; integer1 accepts",
+    "Attribution validation in preparation and pre-dispatch prepared validation",
+    "Replay, unknown recovery, selected structure propagation and four-essential admission unchanged"
+  ],
+  "declined_to_judge": [],
+  "source_sha256": {
+    "src/app/editorial_structure.py": "c7fabb34683e55a803b1f18162197a134254b7c494244cbe87e5136cf6134128"
+  },
+  "limits": "Technical merge qualification only; native/install/human/render/publication gates remain"
+}

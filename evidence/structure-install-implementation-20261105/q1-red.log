@@ -1,0 +1,315 @@
+FFFFFFFFFFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+_ test_preparation_compiles_default_and_keeps_source_records_without_mutation __
+
+    def test_preparation_compiles_default_and_keeps_source_records_without_mutation():
+        data,bundle=fixture();before=copy.deepcopy((data,bundle))
+>       prepared,bound=module().prepare_graham_request(data,bundle)
+                       ^^^^^^^^
+
+tests/test_graham_structure.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+________________ test_explicit_alternate_narrative_is_preserved ________________
+
+    def test_explicit_alternate_narrative_is_preserved():
+        data,bundle=fixture();n={'form':'literal','beats':['Start with the implication.','Explore the uncertainty.'],'symbol':None}
+        data['editorial_handoff']['narrative']=n
+        bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+>       prepared,bound=module().prepare_graham_request(data,bundle)
+                       ^^^^^^^^
+
+tests/test_graham_structure.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+___________ test_invalid_preparation_stops_without_provider[meaning] ___________
+
+change = 'meaning'
+
+    @pytest.mark.parametrize('change',['meaning','evidence','persona','fact','source'])
+    def test_invalid_preparation_stops_without_provider(change):
+        data,bundle=fixture()
+        if change=='meaning':del data['editorial_handoff']['meaning']
+        elif change=='evidence':bundle=None
+        elif change=='persona':data['persona_key']='ardent'
+        elif change=='fact':data['editorial_handoff']['meaning']['facts'][0]['text']='Invented fact.'
+        else:data['editorial_handoff']['meaning']['facts'][0]['source_ids']=['OTHER']
+>       with pytest.raises(ValueError):module().prepare_graham_request(data,bundle)
+                                       ^^^^^^^^
+
+tests/test_graham_structure.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+__________ test_invalid_preparation_stops_without_provider[evidence] ___________
+
+change = 'evidence'
+
+    @pytest.mark.parametrize('change',['meaning','evidence','persona','fact','source'])
+    def test_invalid_preparation_stops_without_provider(change):
+        data,bundle=fixture()
+        if change=='meaning':del data['editorial_handoff']['meaning']
+        elif change=='evidence':bundle=None
+        elif change=='persona':data['persona_key']='ardent'
+        elif change=='fact':data['editorial_handoff']['meaning']['facts'][0]['text']='Invented fact.'
+        else:data['editorial_handoff']['meaning']['facts'][0]['source_ids']=['OTHER']
+>       with pytest.raises(ValueError):module().prepare_graham_request(data,bundle)
+                                       ^^^^^^^^
+
+tests/test_graham_structure.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+___________ test_invalid_preparation_stops_without_provider[persona] ___________
+
+change = 'persona'
+
+    @pytest.mark.parametrize('change',['meaning','evidence','persona','fact','source'])
+    def test_invalid_preparation_stops_without_provider(change):
+        data,bundle=fixture()
+        if change=='meaning':del data['editorial_handoff']['meaning']
+        elif change=='evidence':bundle=None
+        elif change=='persona':data['persona_key']='ardent'
+        elif change=='fact':data['editorial_handoff']['meaning']['facts'][0]['text']='Invented fact.'
+        else:data['editorial_handoff']['meaning']['facts'][0]['source_ids']=['OTHER']
+>       with pytest.raises(ValueError):module().prepare_graham_request(data,bundle)
+                                       ^^^^^^^^
+
+tests/test_graham_structure.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+____________ test_invalid_preparation_stops_without_provider[fact] _____________
+
+change = 'fact'
+
+    @pytest.mark.parametrize('change',['meaning','evidence','persona','fact','source'])
+    def test_invalid_preparation_stops_without_provider(change):
+        data,bundle=fixture()
+        if change=='meaning':del data['editorial_handoff']['meaning']
+        elif change=='evidence':bundle=None
+        elif change=='persona':data['persona_key']='ardent'
+        elif change=='fact':data['editorial_handoff']['meaning']['facts'][0]['text']='Invented fact.'
+        else:data['editorial_handoff']['meaning']['facts'][0]['source_ids']=['OTHER']
+>       with pytest.raises(ValueError):module().prepare_graham_request(data,bundle)
+                                       ^^^^^^^^
+
+tests/test_graham_structure.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+___________ test_invalid_preparation_stops_without_provider[source] ____________
+
+change = 'source'
+
+    @pytest.mark.parametrize('change',['meaning','evidence','persona','fact','source'])
+    def test_invalid_preparation_stops_without_provider(change):
+        data,bundle=fixture()
+        if change=='meaning':del data['editorial_handoff']['meaning']
+        elif change=='evidence':bundle=None
+        elif change=='persona':data['persona_key']='ardent'
+        elif change=='fact':data['editorial_handoff']['meaning']['facts'][0]['text']='Invented fact.'
+        else:data['editorial_handoff']['meaning']['facts'][0]['source_ids']=['OTHER']
+>       with pytest.raises(ValueError):module().prepare_graham_request(data,bundle)
+                                       ^^^^^^^^
+
+tests/test_graham_structure.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+_______ test_public_prepare_is_no_model_idempotent_and_rejects_overwrite _______
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_public_prepare_is_no_mode0')
+
+    def test_public_prepare_is_no_model_idempotent_and_rejects_overwrite(tmp_path):
+        data,bundle=fixture();r=cli(tmp_path,'prepare',data,bundle)
+>       assert r.returncode==0,r.stderr
+E       AssertionError: usage: linkedin_codex_trial.py [-h] --out OUT [--request REQUEST]
+E                                        [--config CONFIG]
+E                                        [--evidence-bundle EVIDENCE_BUNDLE]
+E                                        [--score-baseline]
+E                                        {generate,complete-comparison,show}
+E         linkedin_codex_trial.py: error: argument action: invalid choice: 'prepare' (choose from generate, complete-comparison, show)
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/home/graham/work/linkedin-structure-20261106/.venv/bin/python', '/home/graham/work/linkedin-s...codex_trial.py: error: argument action: invalid choice: 'prepare' (choose from generate, complete-comparison, show)\n").returncode
+
+tests/test_graham_structure.py:83: AssertionError
+_ test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[missing] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_normal_generate_rejects_m0')
+change = 'missing'
+
+    @pytest.mark.parametrize('change',['missing','beat','definition','version','bundle','request'])
+    def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tmp_path,change):
+>       data,bundle=module().prepare_graham_request(*fixture())
+                    ^^^^^^^^
+
+tests/test_graham_structure.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+_ test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[beat] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_normal_generate_rejects_m1')
+change = 'beat'
+
+    @pytest.mark.parametrize('change',['missing','beat','definition','version','bundle','request'])
+    def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tmp_path,change):
+>       data,bundle=module().prepare_graham_request(*fixture())
+                    ^^^^^^^^
+
+tests/test_graham_structure.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+_ test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[definition] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_normal_generate_rejects_m2')
+change = 'definition'
+
+    @pytest.mark.parametrize('change',['missing','beat','definition','version','bundle','request'])
+    def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tmp_path,change):
+>       data,bundle=module().prepare_graham_request(*fixture())
+                    ^^^^^^^^
+
+tests/test_graham_structure.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+_ test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[version] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_normal_generate_rejects_m3')
+change = 'version'
+
+    @pytest.mark.parametrize('change',['missing','beat','definition','version','bundle','request'])
+    def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tmp_path,change):
+>       data,bundle=module().prepare_graham_request(*fixture())
+                    ^^^^^^^^
+
+tests/test_graham_structure.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+_ test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[bundle] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_normal_generate_rejects_m4')
+change = 'bundle'
+
+    @pytest.mark.parametrize('change',['missing','beat','definition','version','bundle','request'])
+    def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tmp_path,change):
+>       data,bundle=module().prepare_graham_request(*fixture())
+                    ^^^^^^^^
+
+tests/test_graham_structure.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+_ test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[request] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_normal_generate_rejects_m5')
+change = 'request'
+
+    @pytest.mark.parametrize('change',['missing','beat','definition','version','bundle','request'])
+    def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tmp_path,change):
+>       data,bundle=module().prepare_graham_request(*fixture())
+                    ^^^^^^^^
+
+tests/test_graham_structure.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+__ test_historical_completed_cli_replay_after_definition_change_is_immutable ___
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-465/test_historical_completed_cli_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f076d9122c0>
+
+    def test_historical_completed_cli_replay_after_definition_change_is_immutable(tmp_path,monkeypatch):
+        from src.app.codex_trial import run_trial
+        data,_=fixture();data.pop('editorial_handoff')
+        out=tmp_path/'out';out.mkdir()
+        old={'state':'completed','input':data,'model':'fixture','mode':'native_codex',
+             'evidence_bundle_sha256':None,'score_baseline':False,'engine_gate':'HOLD_NO_QUALIFIED_CANDIDATE'}
+        raw=json.dumps(old).encode();(out/'trial.json').write_bytes(raw)
+>       monkeypatch.setattr(module(),'STRUCTURE_VERSION',999)
+                            ^^^^^^^^
+
+tests/test_graham_structure.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+>       from src.app import editorial_structure
+E       ImportError: cannot import name 'editorial_structure' from 'src.app' (/home/graham/work/linkedin-structure-20261106/src/app/__init__.py)
+
+tests/test_graham_structure.py:35: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_graham_structure.py::test_preparation_compiles_default_and_keeps_source_records_without_mutation
+FAILED tests/test_graham_structure.py::test_explicit_alternate_narrative_is_preserved
+FAILED tests/test_graham_structure.py::test_invalid_preparation_stops_without_provider[meaning]
+FAILED tests/test_graham_structure.py::test_invalid_preparation_stops_without_provider[evidence]
+FAILED tests/test_graham_structure.py::test_invalid_preparation_stops_without_provider[persona]
+FAILED tests/test_graham_structure.py::test_invalid_preparation_stops_without_provider[fact]
+FAILED tests/test_graham_structure.py::test_invalid_preparation_stops_without_provider[source]
+FAILED tests/test_graham_structure.py::test_public_prepare_is_no_model_idempotent_and_rejects_overwrite
+FAILED tests/test_graham_structure.py::test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[missing]
+FAILED tests/test_graham_structure.py::test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[beat]
+FAILED tests/test_graham_structure.py::test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[definition]
+FAILED tests/test_graham_structure.py::test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[version]
+FAILED tests/test_graham_structure.py::test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[bundle]
+FAILED tests/test_graham_structure.py::test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch[request]
+FAILED tests/test_graham_structure.py::test_historical_completed_cli_replay_after_definition_change_is_immutable
+15 failed in 0.48s

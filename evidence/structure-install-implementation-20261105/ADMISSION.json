@@ -1,0 +1,21 @@
+{
+  "scope": "One installed structured Graham black-box engine package and equal-context direct control; Q5 only after reviewed release",
+  "request_id": "graham-structured-black-box-20261106",
+  "max_model_executions": 12,
+  "max_cumulative_active_cli_seconds": 900,
+  "api_spend": 0,
+  "including": [
+    "preflight",
+    "draft",
+    "review",
+    "guarded rewrite if needed",
+    "optional planning",
+    "visual plan",
+    "control"
+  ],
+  "no_blind_retry": true,
+  "human_judgment": "PENDING; stop Q5 before further subject generation",
+  "source_reuse": "Three retained primary research records dated study2021,2023,2025; historical findings/limits unchanged, no current universal chatbot claim",
+  "writing_voice": "concise_challenger v2",
+  "structure": "default literal five semantic beats, compiled by installed prepare"
+}

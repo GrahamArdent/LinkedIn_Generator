@@ -1,0 +1,19 @@
+{
+  "candidate": "df39e122193b48504d36bfdf189374fbf2fd0f49",
+  "reviewer": "/root/review_candidate",
+  "status": "NOT_READY_TO_MERGE",
+  "findings": [
+    {
+      "severity": "Important",
+      "finding": "Caller writing_plan permits publisher not bound to fact source",
+      "status": "Corrected in300aeb7; four RED/GREEN regressions including explicitversion negatives"
+    },
+    {
+      "severity": "Minor",
+      "finding": "Default explicitversion True/1.0 silently normalized",
+      "status": "Corrected in same contract-validation fix"
+    }
+  ],
+  "declined_to_judge": [],
+  "native_model_calls": 0
+}

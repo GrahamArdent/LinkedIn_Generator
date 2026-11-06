@@ -27,6 +27,18 @@ def save(path,data):
 def show_trial(directory):
     return json.loads((Path(directory)/"trial.json").read_text())
 
+def reconcile_trial(data, directory, *, model, score_baseline=False, evidence_bundle=None):
+    """Read original identity before current-policy validation or provider construction."""
+    path = Path(directory)/"trial.json"
+    if not path.exists(): return None
+    old = show_trial(directory)
+    bundle_sha = digest(json.dumps(evidence_bundle, sort_keys=True, ensure_ascii=False)) if evidence_bundle is not None else None
+    if (old["input"] != data or old.get("model", model) != model
+            or old.get("evidence_bundle_sha256") != bundle_sha
+            or old.get("score_baseline", False) != score_baseline):
+        raise ValueError("REQUEST_CONFLICT")
+    return old
+
 def voice_context(request):
     return _persona_profile(str(ROOT),load_yaml(str(ROOT/"config/personas.yaml")),
                             request.persona_key,author_pov=request.author_pov,writing_voice_id=request.writing_voice_id)
