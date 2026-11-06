@@ -115,6 +115,14 @@ class Evidence:
                         result=self.store.read_blob(row['result_hash'])
                         self.activity.append({'url':url,'cache_hit':True,'status':result['status']})
                         return result
+                # Share only recent successful fetched bytes across canonical jobs. No new HTTP effect.
+                cached=con.execute('SELECT stages.result_hash,jobs.created FROM stages JOIN jobs ON jobs.id=stages.job WHERE stages.input_hash=? AND stages.state="completed" AND stages.name LIKE "http:%" ORDER BY jobs.created DESC',(sha(inputs),)).fetchall()
+                for row in cached:
+                    if time.time()-row['created']>86400:continue
+                    value=self.store.read_blob(row['result_hash'])
+                    if value.get('status')==200:
+                        self.activity.append({'url':url,'cache_hit':True,'status':200,'shared_cache':True,'source_result_hash':row['result_hash']})
+                        return value
                 if len(rows)>=limit:raise ValueError('EVIDENCE_BUDGET_EXHAUSTED')
                 name='http:'+field+':'+str(len(rows)+1)
                 con.execute('INSERT INTO stages VALUES (?,?,?,?,NULL)',(self.job,name,sha(inputs),'reserved'))
@@ -171,3 +179,15 @@ def validate_meaning(meaning,sources):
         # Exact quotation is a conservative first-release claim mapping. Interpretation is in thesis/limits.
         if not all(any(f['text'].strip() in [line.strip() for line in p['excerpt'].splitlines() if line.strip()] for p in indexed[ref]['passages']) for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
     return meaning
+
+
+def resolve_meaning(meaning,sources):
+    from copy import deepcopy
+    result=deepcopy(meaning);indexed={s['source_id']:s for s in sources}
+    for index,fact in enumerate(result.get('facts',[])):
+        if set(fact)!={'claim_id','source_id','locator'}:raise ValueError('UNSUPPORTED_MEANING')
+        source=indexed.get(fact['source_id'],{})
+        matches=[p['excerpt'] for p in source.get('passages',[]) if p['locator']==fact['locator']]
+        if len(matches)!=1 or not 1<=len(matches[0])<=600:raise ValueError('UNSUPPORTED_MEANING')
+        result['facts'][index]={'claim_id':fact['claim_id'],'text':matches[0],'source_ids':[fact['source_id']]}
+    return validate_meaning(result,sources)

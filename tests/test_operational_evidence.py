@@ -61,3 +61,25 @@ def test_source_chunking_never_turns_truncated_context_into_supported_fact():
     source=m.source_record('https://example.org','https://example.org',raw,'text/plain');source['source_id']='S1'
     with pytest.raises(ValueError,match='UNSUPPORTED_MEANING'):
         m.validate_meaning({'thesis':'A point','reader_consequence':'A consequence','qualification':'A limit','facts':[{'claim_id':'C1','text':'Treatment improved survival.','source_ids':['S1']}]},[source])
+
+
+def test_meaning_selection_copies_exact_bounded_original_paragraph():
+    sources=[{'source_id':'S1','passages':[{'locator':'p1','excerpt':'A complete supported factual paragraph.'},{'locator':'p2','excerpt':'x'*601}]}]
+    meaning={'thesis':'A point','reader_consequence':'A consequence','qualification':'A limit','facts':[{'claim_id':'C1','source_id':'S1','locator':'p1'}]}
+    assert m.resolve_meaning(meaning,sources)['facts'][0]['text']=='A complete supported factual paragraph.'
+    meaning['facts'][0]['locator']='p2'
+    with pytest.raises(ValueError,match='UNSUPPORTED_MEANING'):m.resolve_meaning(meaning,sources)
+
+
+def test_shared_successful_source_cache_preserves_exhausted_job_counters(tmp_path,monkeypatch):
+    import base64
+    from src.app.operational_store import Store
+    s=Store.initialize(tmp_path/'data');s.admit('spent',{},{});s.admit('source',{}, {})
+    for i in range(6):s.reserve('spent','http:source_fetches:'+str(i+1),{'url':'https://blocked.example/'+str(i),'kind':'source_fetches'})
+    args={'url':'https://example.org/paper','kind':'source_fetches'}
+    s.reserve('source','http:source_fetches:1',args)
+    s.commit_stage('source','http:source_fetches:1',{'status':200,'raw':base64.b64encode(b'A complete verified paragraph.').decode(),'content_type':'text/plain','location':''})
+    monkeypatch.setattr(m,'bounded_request',lambda *a:pytest.fail('cache reuse must not fetch'))
+    e=m.Evidence(store=s,job='spent');assert e.fetch(args['url'])[1]==b'A complete verified paragraph.'
+    assert e.activity[0]['shared_cache'] is True
+    with s.connection() as c:assert c.execute('SELECT count(*) FROM stages WHERE job="spent"').fetchone()[0]==6

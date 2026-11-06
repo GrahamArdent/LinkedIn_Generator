@@ -1,0 +1,24 @@
+............F                                                            [100%]
+=================================== FAILURES ===================================
+________ test_meaning_selection_copies_exact_bounded_original_paragraph ________
+
+    def test_meaning_selection_copies_exact_bounded_original_paragraph():
+        sources=[{'source_id':'S1','passages':[{'locator':'p1','excerpt':'A complete supported factual paragraph.'},{'locator':'p2','excerpt':'x'*601}]}]
+        meaning={'thesis':'A point','reader_consequence':'A consequence','qualification':'A limit','facts':[{'claim_id':'C1','source_id':'S1','locator':'p1'}]}
+>       assert m.resolve_meaning(meaning,sources)['facts'][0]['text']=='A complete supported factual paragraph.'
+               ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'src.app.operational_evidence' has no attribute 'resolve_meaning'
+
+tests/test_operational_evidence.py:69: AttributeError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_evidence.py::test_meaning_selection_copies_exact_bounded_original_paragraph
+1 failed, 12 passed, 1 warning in 0.23s
