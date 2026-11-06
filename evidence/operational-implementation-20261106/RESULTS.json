@@ -1,11 +1,11 @@
 {
-  "status": "QUALIFIED_CANDIDATE_PROMOTION_PENDING",
+  "status": "GO_SCOPED_INSTALLED_AUTHORING",
   "authority_status": "DERIVED_FROM_CURRENT_AUTHORITY",
   "scope": "Observed standalone local authoring: canonical request/recovery, bare-topic retained-source and URL-symbolic positives, shared review/export UI. Not general novel-topic research, editorial/corpus, render or publication acceptance.",
-  "tested_source_revision": "5201542d5e0e5ea8a7d7ee5726ca89098f24ea62",
+  "tested_source_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
   "qualified_product_manifest": "QUALIFIED_MANIFEST.json",
   "candidate_pair_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0238064948f1e2f5d9d9bf4b8541c388519e820be947f5be09662e396f2a0351",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "033521741fadb6aa2b68fe58c84386e0a8b93e56db844368a9e952531497f0a4",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "independent_review": "FINAL_REVIEW.json: SCOPED_TECHNICAL_RELEASE_CLEAR for exact qualified bytes and current pair",
@@ -21,15 +21,17 @@
   "actual_browser": "NATIVE_BROWSER_FINAL.json",
   "backup_relocation": "NATIVE_BACKUP_RELOCATION.json",
   "runtime_dependency_guard": "ISOLATED_RUNTIME_GUARD.json",
-  "installed_identity": "INSTALLATION.json; promotion pending",
+  "installed_identity": "INSTALLATION.json: exact qualified production bytes and preserved concurrent test composition; installed readback/replay/export0calls",
   "hosted_CI": "NOT_APPLICABLE: only ci-full.yml.disabled and codeql.yml.disabled; none reactivated",
   "lint": "NOT_AVAILABLE: no configured callable ruff on target; Python suites and source diff checks used",
   "all_26_AT_11_E2E": "ACCEPTANCE_AUDIT.json; all_marks_hit=false",
   "first_unmet": "R5 actual human-approved voice example and R7/Q5 human disposition; Q6 transfer/corpus/eligibility and R8 remain gated",
-  "next_action": "Qualify/promote exact reviewed bytes under existing authority; then collect actual human judgments against exact selected hashes, preserve B preference and do not generate filler subjects.",
+  "next_action": "Collect actual Graham judgments against exact selected hashes; preserve B preference; then Q6/eligibility/voice activation and laterR8 only under their real gates. No machine effect is running in background.",
   "reused_native_generation": {
     "source_revision": "78d888124f4542fe7f28cfb0c39ba3cb6d311941",
     "scope": "Production generation/evidence/runtime code unchanged; later changes affect UI rendering and tests. Fresh corrected UI browser/312-test proof retained separately."
   },
-  "corrected_ui_browser": "UI_FEEDBACK_GREEN.json"
+  "corrected_ui_browser": "UI_FEEDBACK_GREEN.json",
+  "merged_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d"
 }

@@ -17,6 +17,7 @@ ITEMS=[
  ('runtime','evidence/operational-implementation-20261106/ISOLATED_RUNTIME_GUARD.json','"status": "PASS"'),
  ('human_gate','CURRENT_WORK_PACKET.md','R5 actual human-approved example lifecycle'),
  ('full_acceptance','evidence/operational-implementation-20261106/ACCEPTANCE_AUDIT.json','"all_marks_hit": false'),
+ ('merged_composition','evidence/operational-implementation-20261106/MERGED_COMPOSITION.json','29dff9be405b568483d3f69da20e2831ca40190e'),
  ('render_publish_gate','CURRENT_WORK_PACKET.md','R8 rendering/Dedication publishing stays gated'),
 ]
 def check(items):

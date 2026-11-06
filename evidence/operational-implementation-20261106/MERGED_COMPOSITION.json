@@ -1,0 +1,10 @@
+{
+  "merged_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "reviewed_head": "b1de0739efa01876fda2fb95b41181aa5f469672",
+  "concurrent_main_parent": "29dff9be405b568483d3f69da20e2831ca40190e",
+  "only_changed_file": "tests/test_graham_structure.py",
+  "previous_sha256": "fb579c3e33d37a6dee27b4dfd3932154b49e1ba4f149181f605a8e3c9d72dece",
+  "merged_sha256": "f70ce0e79a756337cf1b8bab4e85500a8b19e10408be4890cc863545ca2f0b1c",
+  "change": "Existing test now applies structure-version mutation inside actual subprocess; production code unchanged. Preserved, not overwritten.",
+  "verification": "Merged312-test suite and fresh affected review required before activation"
+}

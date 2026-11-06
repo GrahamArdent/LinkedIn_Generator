@@ -16,7 +16,7 @@ Current owner evidence is `evidence/operational-implementation-20261106/RESULTS.
 | R4 | Two ordinary create paths returned selected text and exact-hash visual plans. The repaired bare-topic lineage used5 native executions/72.209 active CLI seconds; URL-symbolic lineage used6/124.858, including its rejected original preparation. Completed outcomes were observed within600/439 wall seconds; exact final commit latency was not instrumented. |
 | R5 | Feedback/revisions/explicit example activation/export implemented and tested; B preference imported without invented labels. Actual human-approved example activation and the full human voice-learning journey remain pending. |
 | R6 | Shared loopback UI/CLI state; real390x844 browser review, restored symbolic metadata, reload and exact selected Markdown download with0 added model stages. Remote phone access and universal legacy API parity are not claimed; legacy entries are explicitly deprecated for standalone use. |
-| R7 |312 local/isolated tests; fresh-context material-finding corrections; installed native positives, original failures, replay and backup retained. Final release receipts govern promotion. Q5 human disposition, Q6 transfer and first-six/corpus gates remain open. |
+| R7 |312 local/isolated tests; fresh-context material-finding corrections; installed native positives, original failures, replay and backup retained. Exact merged37508330862b35d385eb1977f84f210fec6d5c6d is installed;0-call installed replay/readback/export and previous5bd3478 rollback smoke passed. Q5 human disposition, Q6 transfer and first-six/corpus gates remain open. |
 | R8 | Actual rendered assets, human mobile visual-value judgment and Dedication publication remain gated. No publishing or paid rendering authority inferred. |
 
 The next genuinely gated operational evidence is Graham's exact-candidate keep/light/structural/reject and factual/voice/construction/usefulness/visual judgments, actual editing effort, and explicit example approval if desired. Historical first-six eligibility needs its owner adjudication before new genuine subjects. Optional numeric labels do not block other admitted work. Complete Q6 only after actual initial human disposition; do not fabricate ratings, activate a preferred draft as an example, launch a filler batch, reset admissions, or publish.
@@ -424,7 +424,7 @@ reload adds0calls, and unsupported/stale/unapproved actions fail visibly. Fixtur
   then the full suite/clean archive at the coherent release. Inspect actual workflow triggers; run applicable
   focused hostedCI after local pass within recorded authority. No current workflow means documented
   NOT_APPLICABLE, not fabricated pass or reactivation solely for ceremony. Lint availability is truthful.
-- [ ] Run risk-triggered post-implementation adversarial closure on registry/claims/URL trust, persistence,
+- [x] Run risk-triggered post-implementation adversarial closure on registry/claims/URL trust, persistence,
   concurrency, budget and release changes; obtain independent whole-candidate review, fix material findings
   and freshly review corrected interactions before release. Merge verified head, install exact qualified
   bytes, retain rollback and independently read back actual user outcomes.

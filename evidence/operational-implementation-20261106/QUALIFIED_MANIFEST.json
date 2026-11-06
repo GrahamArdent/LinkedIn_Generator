@@ -82,7 +82,7 @@
   "tests/test_feedback.py": "5e665a506380faf4d5c793110f056fcc83ac5a17f8dbf5e4a572480c86136046",
   "tests/test_generation.py": "b8cb42964cb846fffb048b4f28e7f959908af1bafbc7ffc7f35403ecd3ecc1e2",
   "tests/test_generation_efficiency.py": "4001da5613ae99bd6922bd6fd218084f62322e156c6404a78bf032c5de36259a",
-  "tests/test_graham_structure.py": "fb579c3e33d37a6dee27b4dfd3932154b49e1ba4f149181f605a8e3c9d72dece",
+  "tests/test_graham_structure.py": "f70ce0e79a756337cf1b8bab4e85500a8b19e10408be4890cc863545ca2f0b1c",
   "tests/test_integration.py": "baf3ce857c75b7c08ebf62c68e3d583e3db94fe11bd5c9c9eb68602836e755d8",
   "tests/test_llm.py": "1e4b184b51e4830a136091c73ce388909a660c9ac445122f36e3726ea82d5169",
   "tests/test_normalize.py": "5851063386f289c2d4f873bf2836ac1a0c4e34520a8bf65f8a1e2be5442b9891",
