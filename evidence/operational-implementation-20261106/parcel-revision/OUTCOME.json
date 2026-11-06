@@ -1,0 +1,13 @@
+{
+  "request_id": "graham-parcel-revision-20261106-r1",
+  "exit": 0,
+  "seconds": 95.3574628289789,
+  "state": "completed",
+  "result_hash": "246f176929c845f82703a112ef5c3d44f12af55efa36889f0c1c9bb3ca21ffdd",
+  "selected_hash": "766de5db2d284eb941a92d44de7be3df3a901b74475a83b706ec9833c43c095a",
+  "model_stages_before": 17,
+  "model_stages_after": 23,
+  "new_model_stage_reservations": 6,
+  "original_attempt_bytes_unchanged": true,
+  "qualification_path": "/home/graham/.local/share/graham-linkedin-qualifications/parcel-revision-20261106"
+}

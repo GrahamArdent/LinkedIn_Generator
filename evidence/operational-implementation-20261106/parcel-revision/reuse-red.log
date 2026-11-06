@@ -1,0 +1,89 @@
+F..                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_public_create_progression_duplicate_and_shared_feedback_without_api[False] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-544/test_public_create_progression0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x785539fd7360>
+revision = False
+
+    @pytest.mark.parametrize('revision',[False,True])
+    def test_public_create_progression_duplicate_and_shared_feedback_without_api(tmp_path,monkeypatch,revision):
+        import src.app.operational as m
+        s=Store.initialize(tmp_path/'data');calls=[]
+        with s.transaction() as con:con.execute('UPDATE metadata SET value=? WHERE key="trial_history"',(json.dumps({'status':'unresolved','known_topics':['A useful ordinary topic']}),))
+        monkeypatch.setattr(m,'qualify_model',lambda config:{'model':config.model})
+        source={'source_id':'S1','status':'usable','title':'Study','publisher':'Publisher','url':'https://example.org/paper','checked_at':'2026-11-06','limitations':'Limited study.','passages':[{'locator':'Abstract','excerpt':'A study reported a limited observation.'}]}
+        monkeypatch.setattr(m.Evidence,'acquire',lambda *a:{'sources':[source],'errors':[],'http_activity':[]})
+        class Provider:
+            mode='fixture';error=None
+            def __init__(self,*a):self.receipts=[]
+            def generate(self,**kw):
+                if revision:Application(s,None).edit('parent','Later parent edit must not replace the admitted reference.')
+                calls.append(kw);self.receipts.append({'ok':True,'attempt_id':str(len(calls))})
+                return json.dumps({'status':'ready','reason':'Supported scope.','meaning':{'thesis':'Limited claims need limits.','reader_consequence':'Check applicability.','facts':[{'claim_id':'C1','source_id':'S1','locator':'Abstract'}],'qualification':'One study only.'},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Full study sentence supports the limited observation.'}]})
+        monkeypatch.setattr(m,'CodexProvider',Provider)
+        def engine(req,**kw):
+            bundle=kw['generator'].keywords['editorial_brief']
+            if revision:
+                context=bundle['revision_context']
+                assert context['original_text']=='An original text needing fuller reasoning.'
+                assert context['candidate_hash']==text_hash(context['original_text'])
+                assert context['feedback']=='Develop the reasoning beyond the first comparison.'
+                assert context['parent_job']=='parent'
+                assert 'not factual evidence' in context['instruction']
+            else:assert 'revision_context' not in bundle
+            assert req.editorial_handoff['meaning']['facts'][0]['text'] in req.evidence[0].fact
+            return m.LinkedInContentRequest if False else Result()
+        class Result:
+            def model_dump(self):return {'selected_candidate':{'body':'A selected qualified body.','content_sha256':text_hash('A selected qualified body.')},'visual_asset':{'status':'deferred'}}
+        monkeypatch.setattr(m,'generate_content',engine)
+        app=Application(s,CodexConfig(tmp_path,Path('/python'),'sha','fixture'))
+        extra={}
+        if revision:
+            s.admit('parent',{},{});s.finish('parent','completed',{'selected_candidate':{'body':'An original text needing fuller reasoning.','content_sha256':text_hash('An original text needing fuller reasoning.')}})
+            extra={'parent':'parent','new_budget':True,'notes':'Develop the reasoning beyond the first comparison.'}
+        first=app.create('one','A useful ordinary topic',**extra)
+        assert first['state']=='completed' and len(calls)==1
+        assert Application(Store(s.root),None).create('one','A useful ordinary topic',**extra)==first
+        assert len(calls)==1
+        if not revision:
+            original_preparation=s.stage('one','preparation')
+            def revised_engine(req,**kw):
+                assert req.request_id=='two'
+                assert req.editorial_handoff==original_preparation['request']['editorial_handoff']
+                assert kw['generator'].keywords['editorial_brief']['revision_context']['parent_job']=='one'
+                return Result()
+            monkeypatch.setattr(m,'generate_content',revised_engine)
+            monkeypatch.setattr(Provider,'generate',lambda *a,**kw:pytest.fail('unchanged validated meaning must not invoke a new preparation model'))
+>           assert app.create('two','A useful ordinary topic',parent='one',notes='Develop the same argument further.')['state']=='completed'
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_operational_positive.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/operational.py:121: in create
+    return self.resume(job)
+           ^^^^^^^^^^^^^^^^
+src/app/operational.py:164: in resume
+    raw=client.call(system,json.dumps({'input':record['input'],'sources':source['sources']},ensure_ascii=False),response_json=True)['text']
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/app/llm.py:110: in call
+    content = self._resolve_provider().generate(
+src/app/operational.py:43: in generate
+    return self._generate(**args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+src/app/operational.py:79: in _generate
+    text=self.native.generate(**args)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = (<test_operational_positive.test_public_create_progression_duplicate_and_shared_feedback_without_api.<locals>.Provider object at 0x785539e03390>,)
+kw = {'model': 'fixture', 'system': 'You prepare sourced meaning for Graham, a business/IT audience, without inventing biog...", "passages": [{"locator": "Abstract", "excerpt": "A study reported a limited observation."}]}]}', 'temperature': 0.5}
+
+>   monkeypatch.setattr(Provider,'generate',lambda *a,**kw:pytest.fail('unchanged validated meaning must not invoke a new preparation model'))
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: unchanged validated meaning must not invoke a new preparation model
+
+tests/test_operational_positive.py:57: Failed
+=========================== short test summary info ============================
+FAILED tests/test_operational_positive.py::test_public_create_progression_duplicate_and_shared_feedback_without_api[False]
+1 failed, 2 passed in 0.30s

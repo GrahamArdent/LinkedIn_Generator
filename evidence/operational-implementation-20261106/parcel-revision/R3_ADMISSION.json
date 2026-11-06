@@ -1,0 +1,15 @@
+{
+  "request_id": "graham-parcel-revision-20261106-r3",
+  "parent": "graham-parcel-revision-20261106-r1",
+  "admission": "graham-parcel-revision-20261106-r1",
+  "new_budget_explicit": false,
+  "remaining_model_slots": 5,
+  "max_aggregate_slots": 12,
+  "original_admission_created": 1793992767.6907995,
+  "remaining_wall_at_dispatch": 96.31382989883423,
+  "api_spend_cap": 0,
+  "installed_revision": "855da306d9810f466ffa06d1756b8cd4d1583b02",
+  "authority": "Continuation of explicitly resumed revision after missing-feedback transport repair; original admission retained without renewal.",
+  "notes": "Graham explicitly requests fuller development of the parcel argument. He called the original short, bland and incomplete. The first attempted revision became even shorter and did not meet that request. Retain one parcel comparison, but develop the reasoning through the middle instead of only naming it at the start. Show how a fast first pass can leave work unfinished, what usable completion means for the reader, and why counting the whole task changes the decision. Give Graham a clear, qualified interpretation rather than letting two study summaries carry the post. Use evidence as support, and retain its scope. Do not claim that checking caused either study result. Write connected conversational paragraphs; roughly220words would be reasonable if each adds substance. This is an editorial direction, not a word-count gate: do not pad, repeat the thesis, add slogans or invent personal experience. The ending should follow from the developed argument. Keep the original topic, Graham-only authorship, selected voice and one parcel mapping; no extra metaphor, invented credential, new statistic or publication claim.",
+  "model_stages_before": 24
+}

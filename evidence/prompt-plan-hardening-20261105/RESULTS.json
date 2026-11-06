@@ -4,7 +4,7 @@
   "scope": "Current pair execution checkpoint; original109-obligation planning/source receipts retained. Actual operational outcomes owned by evidence/operational-implementation-20261106/RESULTS.json.",
   "base": "6b6b24352329c097e7eaec197d4d29581e315338",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "90a4cadcb58d72dcaf226eb9fe8a5a95cfc7f1490052d5f9123e2615f2e9ecd8",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "e6e6584e7c7e959fe9fb8eec0dd6cfbdf53d7bdff2eb4f5e1c3ba3d357c851bf",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "current_request": "OPERATIONAL_REQUEST.json",
@@ -14,7 +14,7 @@
     "OPERATIONAL_SOURCE_SET.json",
     "OPERATIONAL_PROTOCOL_SOURCES.json"
   ],
-  "review": "parcel-revision/REVIEW.json: independent exact feedback-transport code review and same-executor current complete-pair semantic review",
+  "review": "parcel-revision/{REVIEW,REUSE_REVIEW,FINAL_CHECKPOINT_REVIEW}.json and INDEPENDENT_INSTALLED_READBACK.json; source and current metadata scopes separate",
   "retention": {
     "covered": 109,
     "total": 109,
@@ -32,12 +32,12 @@
     "TechnicalauthoringGO, editorialreliability and full26AT/11E2E completion distinct"
   ],
   "actual_installed_outcome": "evidence/operational-implementation-20261106/RESULTS.json",
-  "installed_revision": "5bc9f142ff1634f3a968d401cb852e4510a4c76d",
+  "installed_revision": "855da306d9810f466ffa06d1756b8cd4d1583b02",
   "product_code_changed": true,
   "new_native_calls": 11,
   "api_spend": 0,
   "hosted_CI": "NOT_APPLICABLE: documentationonly/noactiveworkflow; no hostedpassclaimed",
-  "first_unmet": "Finish explicitly resumed parcel revision under same remaining12/900/API0admission after scoped feedback-handoff repair; human approval stays pending",
+  "first_unmet": "Actual Graham disposition of saved215word revisedparcel; R5approvedexample/corpus/effort/render/publication gates remain",
   "continuation_owner": "CURRENT_WORK_PACKET.md; same Library continuation points to this pair",
   "terminal_rule": "Execute to plan-defined actual technical and retained product outcomes; stop only specifically gatedeffects with exact resume/evidence, continue legitimate independentwork",
   "invalidation_conditions": [
@@ -50,7 +50,7 @@
     "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0f57af87a9c0106f6dcb4381db3fd26cbaf55af065a6d6d26c525b3a19e40b06",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
-  "next_action": "Preserve explicit editorial deferral; next dependent operation requires deliberate resumption/actual human judgment. No machine chronology, qualification or completed post replay.",
+  "next_action": "Present exact saved R3text; record only real feedback. Existing admission nowwall-expired; no replay orsilentrenewal.",
   "installed_independent_readback": "r2-discovery/INDEPENDENT_INSTALLED_READBACK.json",
   "history_reconciliation": "history-reconciliation/HISTORY.json:10originals canonical identity/order verified; eligible count unresolved,1exactpair preference,12frozenunlabeledexamples"
 }

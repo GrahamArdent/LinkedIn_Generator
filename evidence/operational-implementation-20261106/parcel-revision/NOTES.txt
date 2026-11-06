@@ -1,0 +1,10 @@
+Revision context: Graham explicitly resumed revision of the linked parcel draft after calling it too short, bland and incomplete. The current task is fuller development, not extra length for its own sake. Keep the original topic, Graham-only authorship and concise_challenger voice. Retain one parcel-packing versus usable-delivery comparison, with clear mapping and limits. Develop the distinction between a fast first output and genuinely finished usable work, the remaining checking/correction effort and the consequence for someone deciding whether AI helped. Make the supported evidence earn its place in that reasoning; avoid a detached list of study statistics or invented claims that checking caused a reported effect. Let Graham's qualified interpretation carry the argument and earn the landing. No invented experience, credentials or results. Original candidate for revision context, not a source of new factual claims:
+Packing a parcel faster doesn't mean it arrives sooner or in usable condition.
+
+AI's first output is the packed box. Review and correction are still part of the trip. What matters is the effort needed to deliver work someone can use.
+
+Stanford researchers studied 5,172 customer support agents. AI assistance increased issues resolved per hour by 15% on average. Less experienced agents improved in speed and quality. The most experienced saw small speed gains and small quality declines.
+
+METR separately reported that some developers described differences in final work quality when AI was allowed, including code, tests and documentation. Neither finding predicts the result for every task.
+
+Before calling a faster first pass a saving, how much work remains after it?

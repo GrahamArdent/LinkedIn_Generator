@@ -1,0 +1,11 @@
+{
+  "installed_revision": "855da306d9810f466ffa06d1756b8cd4d1583b02",
+  "installed_root": "/home/graham/work/linkedin-generator-releases/855da306d9810f466ffa06d1756b8cd4d1583b02",
+  "qualified_files": 117,
+  "suite": "325passed; /tmp/parcel-reuse-installed.log",
+  "clean_suite": "325passed; /tmp/parcel-reuse-final-green.log",
+  "launcher_sha256": "1aa9094fc6e99a73f25b71a925a25c0eeeaf5559212cdd9ad36d36c1e38b0fa4",
+  "rollback_launcher": "/home/graham/work/linkedin-generator-releases/rollback-parcel-reuse-20261106/previous-launcher.sh",
+  "previous_revision": "456999774ffd55ae232c1cf5e6664e712df78273",
+  "runtime_changed": false
+}

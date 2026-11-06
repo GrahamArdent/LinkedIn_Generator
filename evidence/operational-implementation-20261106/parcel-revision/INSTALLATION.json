@@ -1,0 +1,13 @@
+{
+  "installed_revision": "456999774ffd55ae232c1cf5e6664e712df78273",
+  "installed_root": "/home/graham/work/linkedin-generator-releases/456999774ffd55ae232c1cf5e6664e712df78273",
+  "qualified_files": 117,
+  "installed_suite": "325passed; /tmp/parcel-feedback-installed.log",
+  "native_suite": "325passed; /tmp/parcel-feedback-green.log",
+  "clean_archive_suite": "325passed; /tmp/parcel-feedback-clean.log",
+  "launcher_sha256": "030c10d73790430865affa7373910dee57538fec90ecff8ce8884d190842953b",
+  "previous_revision": "5bc9f142ff1634f3a968d401cb852e4510a4c76d",
+  "rollback_launcher": "/home/graham/work/linkedin-generator-releases/rollback-parcel-feedback-20261106/previous-launcher.sh",
+  "rollback_show_exit0": true,
+  "runtime_changed": false
+}
