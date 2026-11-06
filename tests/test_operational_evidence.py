@@ -167,3 +167,24 @@ def test_arxiv_api_slot_serializes_processes_and_spaces_start_times(tmp_path,mon
             child.join(timeout=5)
             if child.is_alive():child.kill();child.join()
         receive.close()
+
+@pytest.mark.parametrize('work',[{'resource':None,'link':[]},{'resource':{},'link':[None]},{'resource':{},'link':None}])
+def test_malformed_crossref_optional_shapes_do_not_prevent_author_route(monkeypatch,work):
+    import json
+    def fetch(self,url,**kwargs):
+        if url.startswith('https://api.crossref.org/'):
+            return url,json.dumps({'message':{'items':[work]}}).encode(),'application/json'
+        return url,b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/abs/2103.03610v1</id></entry></feed>','application/atom+xml'
+    monkeypatch.setattr(m.Evidence,'fetch',fetch)
+    assert m.Evidence().discover('trust transparency')==['https://arxiv.org/abs/2103.03610v1']
+
+
+def test_oversized_author_feed_cannot_crowd_out_publisher_navigation(monkeypatch):
+    import json
+    feed=('<feed xmlns="http://www.w3.org/2005/Atom">'+''.join(f'<entry><id>http://arxiv.org/abs/2103.0361{i}v1</id></entry>' for i in range(6))+'</feed>').encode()
+    def fetch(self,url,**kwargs):
+        if url.startswith('https://api.crossref.org/'):
+            return url,json.dumps({'message':{'items':[{'DOI':'10.1/a','URL':'https://publisher.example/a'}]}}).encode(),'application/json'
+        return url,feed,'application/atom+xml'
+    monkeypatch.setattr(m.Evidence,'fetch',fetch)
+    assert m.Evidence().discover('trust')==['https://arxiv.org/abs/2103.03610v1','https://arxiv.org/abs/2103.03611v1','https://arxiv.org/abs/2103.03612v1','https://publisher.example/a']

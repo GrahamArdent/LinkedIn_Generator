@@ -186,13 +186,16 @@ class Evidence:
         works=json.loads(raw)['message']['items']
         urls=[];seen_works=set()
         for w in works:
+            if not isinstance(w,dict):continue
             # One representation per work: inaccessible landing/PDF/DOI variants
             # must not crowd all other papers out of the six-fetch admission.
             doi=str(w.get('DOI') or '').strip().lower()
             if doi and doi in seen_works:continue
             if doi:seen_works.add(doi)
-            primary=w.get('resource',{}).get('primary',{}).get('URL')
-            links=w.get('link',[])
+            resource=w.get('resource');primary=resource.get('primary') if isinstance(resource,dict) else None
+            primary=primary.get('URL') if isinstance(primary,dict) else None
+            links=w.get('link')
+            links=[x for x in links if isinstance(x,dict)] if isinstance(links,list) else []
             typed=[(x.get('URL'),str(x.get('content-type') or '').split(';')[0].strip().lower()) for x in links]
             pdf_urls=[u for u,kind in typed if kind=='application/pdf']
             candidates=[primary]+[u for u,kind in typed if kind=='text/html']
@@ -223,7 +226,7 @@ class Evidence:
                     value=node.text or ''
                     if re.fullmatch(r'https?://arxiv\.org/abs/(?:[0-9]{4}\.[0-9]{4,5}|[a-z-]+(?:\.[A-Z]{2})?/[0-9]{7})(?:v[0-9]+)?',value):
                         target=value.replace('http://','https://',1)
-                        if target not in arxiv:arxiv.append(target)
+                        if target not in arxiv and len(arxiv)<3:arxiv.append(target)
             except (ValueError,OSError,http.client.HTTPException,ET.ParseError) as exc:
                 self.activity.append({'discovery_route':'arxiv','error':str(exc)})
         # Reserve room for both routes; an inaccessible first publisher cannot
