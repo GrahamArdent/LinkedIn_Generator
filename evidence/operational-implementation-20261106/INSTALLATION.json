@@ -1,0 +1,14 @@
+{
+  "status": "QUALIFIED_CANDIDATE_PROMOTION_PENDING",
+  "active_original_revision": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
+  "candidate_root": "/home/graham/work/linkedin-generator-releases/operational-candidate-v7-20261106",
+  "runtime_root": "/home/graham/.local/share/graham-linkedin-runtime/operational-v2-20261106",
+  "stable_data_root": "/home/graham/.local/share/graham-linkedin",
+  "backup": "/home/graham/.local/share/graham-linkedin-backups/operational-20261106",
+  "launcher": "/home/graham/.local/bin/linkedin-codex",
+  "promotion": "Pending current exact-head review/merge; installed source/readback receipts required before GO",
+  "model": "gpt-6-sol",
+  "reasoning": "medium",
+  "client_source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+  "candidate_source": "5201542d5e0e5ea8a7d7ee5726ca89098f24ea62"
+}

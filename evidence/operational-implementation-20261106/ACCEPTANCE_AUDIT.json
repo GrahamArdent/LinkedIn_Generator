@@ -1,0 +1,195 @@
+{
+  "scope": "All26 AT/11 E2E retained from sole canonical definitions; scoped operational proof is not full product acceptance.",
+  "acceptance_objectives": [
+    {
+      "id": "AT-01",
+      "status": "PASS_FIXTURE",
+      "finding": "Candidate identity and visual-byte parity exercised; full local suite."
+    },
+    {
+      "id": "AT-02",
+      "status": "PASS_FIXTURE",
+      "finding": "Essential admission, one rewrite, missing assessment, unsafe rewrite and call counts tested."
+    },
+    {
+      "id": "AT-03",
+      "status": "PASS_FIXTURE_HUMAN_PENDING",
+      "finding": "Terminal evidence gate retained; real-subject judgment remains human."
+    },
+    {
+      "id": "AT-04",
+      "status": "HOLD_HUMAN",
+      "finding": "No first-six keep/light denominator established."
+    },
+    {
+      "id": "AT-05",
+      "status": "HOLD_HUMAN",
+      "finding": "Real native trials exist; two exact human-accepted subjects not established."
+    },
+    {
+      "id": "AT-06",
+      "status": "PASS_SCOPED_NATIVE",
+      "finding": "Fresh subprocess cross-directory exact replays and browser selected-text download; NATIVE_REPLAY.json/NATIVE_BROWSER_FINAL.json."
+    },
+    {
+      "id": "AT-07",
+      "status": "PASS_SCOPED_NATIVE",
+      "finding": "Repeated exact IDs0calls; changed IDs conflict0calls; immutable attempt bytes; NATIVE_REPLAY.json."
+    },
+    {
+      "id": "AT-08",
+      "status": "PARTIAL_NATIVE_RECOVERY",
+      "finding": "Authentic original native attempt recovered0calls plus fault/reservation fixtures; no live process kill was performed."
+    },
+    {
+      "id": "AT-09",
+      "status": "IMPLEMENTED_HUMAN_PENDING",
+      "finding": "Explicit activation/version/max3/newrun bindings tested; actual human approval/example lifecycle pending."
+    },
+    {
+      "id": "AT-10",
+      "status": "PARTIAL_BROWSER_NATIVE",
+      "finding": "Actual CLI-created job in mobilebrowser, metadata/reload/download0calls; full changed-voice fresh-native-run journey not performed."
+    },
+    {
+      "id": "AT-11",
+      "status": "GATED",
+      "finding": "Actual rendered image/carousel and mobile review not performed."
+    },
+    {
+      "id": "AT-12",
+      "status": "GATED",
+      "finding": "No publishing authorized or performed."
+    },
+    {
+      "id": "AT-13",
+      "status": "HOLD",
+      "finding": "Selected visual provenance guards pass; full edit-after-approval journey remains unproved."
+    },
+    {
+      "id": "AT-14",
+      "status": "PARTIAL",
+      "finding": "Native unsupported company/universal claim explicitly held; exhaustive factual detection not proven."
+    },
+    {
+      "id": "AT-15",
+      "status": "PARTIAL_NATIVE_EXPORT",
+      "finding": "Exact selected Markdown/JSON and revision-invalidates-ready fixtures; real human-edit validation remains pending."
+    },
+    {
+      "id": "AT-16",
+      "status": "PASS_SCOPED_NATIVE_FIXTURE",
+      "finding": "Native traces and failed original inputs preserved; corrupt/unknown/error fixtures; exact runtime/source/selected hashes retained."
+    },
+    {
+      "id": "AT-17",
+      "status": "PARTIAL_LOCAL_BROWSER",
+      "finding": "Loopback/host/token checks, escaped DOM and real mobile reads; Dedication/publishing portion remains gated."
+    },
+    {
+      "id": "AT-18",
+      "status": "PARTIAL",
+      "finding": "Existing persona/voice isolation tests pass; human privacy review remains."
+    },
+    {
+      "id": "AT-19",
+      "status": "HOLD_HUMAN",
+      "finding": "No six-subject publish-worthiness verdict corpus."
+    },
+    {
+      "id": "AT-20",
+      "status": "HOLD_HUMAN",
+      "finding": "Human cross-domain voice ratings pending; model verdict is not a substitute."
+    },
+    {
+      "id": "AT-21",
+      "status": "PARTIAL",
+      "finding": "Source bundles/limits and semantic negative retained; all accepted-post claims require human adjudication."
+    },
+    {
+      "id": "AT-22",
+      "status": "HOLD_HUMAN",
+      "finding": "Narrative/voice repairs tested earlier; six-post non-repetition human audit pending."
+    },
+    {
+      "id": "AT-23",
+      "status": "HOLD_HUMAN",
+      "finding": "Saved direct controls exist; six blinded pair preferences not established."
+    },
+    {
+      "id": "AT-24",
+      "status": "HOLD_HUMAN",
+      "finding": "Actual comparative editing minutes missing."
+    },
+    {
+      "id": "AT-25",
+      "status": "HOLD_HUMAN",
+      "finding": "Plan structure/identity tests pass; human visual value and rendered evidence missing."
+    },
+    {
+      "id": "AT-26",
+      "status": "PASS_BOUNDED_NATIVE",
+      "finding": "Original+repair lineages5/6 native calls,72.209/124.858 activeCLIseconds, observed complete by600/439 wallseconds, API0; no hidden resets."
+    }
+  ],
+  "e2e_scenarios": [
+    {
+      "id": "E2E-01",
+      "status": "PASS_SCOPED_NATIVE",
+      "finding": "Ordinary installed CLI creates, saves, exits and fresh process reopens/exports; actualbrowser exactMarkdowndownload."
+    },
+    {
+      "id": "E2E-02",
+      "status": "PARTIAL_NATIVE_FIXTURE",
+      "finding": "Actual duplicates/conflicts and authentic original receipt recovery0calls; no actual live kill; fault tests retained."
+    },
+    {
+      "id": "E2E-03",
+      "status": "HOLD",
+      "finding": "Full authorized voice-example lifecycle pending."
+    },
+    {
+      "id": "E2E-04",
+      "status": "PARTIAL_BROWSER_NATIVE",
+      "finding": "Real browserCLI parity/reload/export; full newvoice livejourney pending."
+    },
+    {
+      "id": "E2E-05",
+      "status": "PASS_FIXTURE_HUMAN_PENDING",
+      "finding": "Material edit changes selected revision/invalidates stale readiness in fixture; actual human edit/revalidation pending."
+    },
+    {
+      "id": "E2E-06",
+      "status": "HOLD_HUMAN",
+      "finding": "Six eligible subjects, two live human accepts and visual review incomplete."
+    },
+    {
+      "id": "E2E-07",
+      "status": "GATED",
+      "finding": "Paid rendering and visual inspection not admitted/performed."
+    },
+    {
+      "id": "E2E-08",
+      "status": "GATED",
+      "finding": "Future Dedication approval/publisher composition; no real publishing inferred."
+    },
+    {
+      "id": "E2E-09",
+      "status": "GATED",
+      "finding": "Separate publishing authorization and actual URL/URN absent."
+    },
+    {
+      "id": "E2E-10",
+      "status": "HOLD_HUMAN",
+      "finding": "Six blinded paired preferences/effort remain missing."
+    },
+    {
+      "id": "E2E-11",
+      "status": "HOLD_HUMAN",
+      "finding": "Six-post human voice/originality review pending."
+    }
+  ],
+  "all_marks_hit": false,
+  "new_policy_installed": "See INSTALLATION.json; no unobserved promotion inferred",
+  "criterion_owner": "docs/implementation/v4/LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md"
+}

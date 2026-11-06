@@ -1,10 +1,10 @@
 {
-  "status": "GO_R1_PLANNING_PACKAGE_READY",
+  "status": "OPERATIONAL_PAIR_SCOPED_TECHNICAL_RELEASE_CLEAR",
   "authority_status": "DERIVED_FROM_CURRENT_AUTHORITY",
-  "scope": "Gameplan/prompt generation, canonicalbuilder/Challenge and retention only; R implementation NOT_RUN",
+  "scope": "Current pair execution checkpoint; original109-obligation planning/source receipts retained. Actual operational outcomes owned by evidence/operational-implementation-20261106/RESULTS.json.",
   "base": "6b6b24352329c097e7eaec197d4d29581e315338",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0f57af87a9c0106f6dcb4381db3fd26cbaf55af065a6d6d26c525b3a19e40b06",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0238064948f1e2f5d9d9bf4b8541c388519e820be947f5be09662e396f2a0351",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "current_request": "OPERATIONAL_REQUEST.json",
@@ -14,7 +14,7 @@
     "OPERATIONAL_SOURCE_SET.json",
     "OPERATIONAL_PROTOCOL_SOURCES.json"
   ],
-  "review": "FINAL_REVIEW.json: independent complete-pair SCOPED_PLANNING_CLEAR; no remaining material findings",
+  "review": "evidence/operational-implementation-20261106/FINAL_REVIEW.json: exact current pair and qualified product scope cleared; installation proof separately required",
   "retention": {
     "covered": 109,
     "total": 109,
@@ -31,13 +31,13 @@
     "Registry/data/recovery/budget persist acrossdirectory/adapter/restart/upgrade",
     "TechnicalauthoringGO, editorialreliability and full26AT/11E2E completion distinct"
   ],
-  "actual_installed_outcome": "evidence/structure-install-implementation-20261105/RESULTS.json remains historical/current actualfoundation proof with B preference; not newRimplementation",
+  "actual_installed_outcome": "evidence/operational-implementation-20261106/RESULTS.json",
   "installed_revision": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
-  "product_code_changed": false,
-  "new_native_calls": 0,
+  "product_code_changed": true,
+  "new_native_calls": 11,
   "api_spend": 0,
   "hosted_CI": "NOT_APPLICABLE: documentationonly/noactiveworkflow; no hostedpassclaimed",
-  "first_unmet": "R1 durable global request identity/store/recovery",
+  "first_unmet": "R5 actual human-approved voice example and R7/Q5 human disposition; Q6 transfer/corpus/eligibility and R8 remain gated",
   "continuation_owner": "CURRENT_WORK_PACKET.md; same Library continuation points to this pair",
   "terminal_rule": "Execute to plan-defined actual technical and retained product outcomes; stop only specifically gatedeffects with exact resume/evidence, continue legitimate independentwork",
   "invalidation_conditions": [
@@ -45,5 +45,9 @@
     "Material canonical protocol/source basis changes",
     "New relevant evidence contradicts a controlling premise",
     "Future implementation/release/render/publication needs its actual current qualification and consequence gates"
-  ]
+  ],
+  "prior_planning_candidate_sha256": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0f57af87a9c0106f6dcb4381db3fd26cbaf55af065a6d6d26c525b3a19e40b06",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
+  }
 }
