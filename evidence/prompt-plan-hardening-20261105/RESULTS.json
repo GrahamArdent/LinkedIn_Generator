@@ -14,7 +14,7 @@
     "OPERATIONAL_SOURCE_SET.json",
     "OPERATIONAL_PROTOCOL_SOURCES.json"
   ],
-  "review": "r2-discovery/REVIEW.json (new bounded source candidate; pending fresh review/install at preparation)",
+  "review": "evidence/operational-implementation-20261106/r2-discovery/REVIEW.json: current independent corrected source/complete-pair review; prior reviews historical",
   "retention": {
     "covered": 109,
     "total": 109,

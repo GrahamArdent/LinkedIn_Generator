@@ -1,0 +1,36 @@
+{
+  "status": "SCOPED_SOURCE_ADAPTER_REVIEW_CLEAR",
+  "reviewer": "Fresh-context reviewer /root/r2_source_review; independent of implementation context, same underlying assistant model; not human acceptance",
+  "reviewed_head": "62ce860c2e7f7fc374109ec01efd13c046e2f1b9",
+  "base": "6830cc8ce796c4bcbcc6d4cf2254be2157a129b0",
+  "pair_sha256": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "ef585bacdea64d971451f19e3bf47e5fb84cd9fcb8b197cafa1a9cba43cf70e8",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
+  },
+  "production_manifest_sha256": "2a787111c3d8805fe302f07a3fc1e0e5bbf3c901e165ed4df8df0f7a0adcbef2",
+  "protocol_blobs": {
+    "challenge_gate": "053d528d0b9f81e41c29276c9c082123842eea11",
+    "planning_model": "8baaa601008efde6c05342ba23e20c9d9abd3952",
+    "convergence_prompt": "49249725a54f16832ff1ca80fde3bac4934e0813"
+  },
+  "current_protocol_retrieval": "Connected GitHub default branch in this continuation; all unchanged",
+  "parts": "Proportionate implementation/release risk and complete corrected pair; malformed source metadata, duplicate/PDF crowding, forged feed authority, excessive feed, process rate/deadline, budget/cache/passage boundaries and deferred human gates",
+  "findings_fixed": [
+    "Null MIME crashes discovery",
+    "Explicit PDF primary hides HTML",
+    "Duplicate shared primary drops alternate",
+    "Malformed optional Crossref resource/link prevents author fallback",
+    "Untrusted oversized author feed crowds out Crossref"
+  ],
+  "fresh_corrected_review_material_findings": [],
+  "independently_rerun": "25 evidence tests passed; diff whitespace checks passed",
+  "scope": "Observed source acquisition and preserved evidence boundaries only. Does not establish suitable <=600-character factual passages, meaning acceptance, general coverage, usable post or whole-product acceptance.",
+  "release_conditions": [
+    "native whole suite",
+    "clean archive suite",
+    "exact installed bytes",
+    "rollback",
+    "independent installed readback"
+  ],
+  "human_gates": "Deferred parcel revision/acceptance, explicit voice-example lifecycle, corpus/edit-effort/rendered-value and publication remain."
+}

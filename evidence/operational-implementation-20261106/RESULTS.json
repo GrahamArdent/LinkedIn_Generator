@@ -47,6 +47,6 @@
   "clock_feedback": "q6-transfer/HUMAN_FEEDBACK.json: positive comparison reaction; no inferred acceptance scores/example activation/publication",
   "actual_native_model_executions_before_q6": 11,
   "actual_native_active_cli_seconds_before_q6": 197.06742054130882,
-  "review": "r2-discovery/REVIEW.json (new bounded source candidate; pending fresh review/install at preparation)",
+  "review": "evidence/operational-implementation-20261106/r2-discovery/REVIEW.json: current independent corrected source/complete-pair review; prior reviews historical",
   "r2_discovery": "r2-discovery/REPORT.md; scoped native acquisition, not general research or new post acceptance"
 }
