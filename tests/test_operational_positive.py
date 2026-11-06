@@ -46,6 +46,17 @@ def test_public_create_progression_duplicate_and_shared_feedback_without_api(tmp
     assert first['state']=='completed' and len(calls)==1
     assert Application(Store(s.root),None).create('one','A useful ordinary topic',**extra)==first
     assert len(calls)==1
+    if not revision:
+        original_preparation=s.stage('one','preparation')
+        def revised_engine(req,**kw):
+            assert req.request_id=='two'
+            assert req.editorial_handoff==original_preparation['request']['editorial_handoff']
+            assert kw['generator'].keywords['editorial_brief']['revision_context']['parent_job']=='one'
+            return Result()
+        monkeypatch.setattr(m,'generate_content',revised_engine)
+        monkeypatch.setattr(Provider,'generate',lambda *a,**kw:pytest.fail('unchanged validated meaning must not invoke a new preparation model'))
+        assert app.create('two','A useful ordinary topic',parent='one',notes='Develop the same argument further.')['state']=='completed'
+        assert s.stage('one','preparation')==original_preparation
     with pytest.raises(ValueError,match='REQUEST_CONFLICT'):app.create('one','Changed same identity')
 
 
