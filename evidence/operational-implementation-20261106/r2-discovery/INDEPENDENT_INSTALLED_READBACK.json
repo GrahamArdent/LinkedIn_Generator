@@ -1,0 +1,31 @@
+{
+  "status": "PASS_SCOPED_INDEPENDENT_INSTALLED_READBACK",
+  "reviewer": "Fresh-context /root/r2_source_review; actual read-only native verification",
+  "installed_revision": "5bc9f142ff1634f3a968d401cb852e4510a4c76d",
+  "launcher_sha256": "8c4fbb43416ddcfd67f0695d3523308be223fd9df0577bdd58e32b074d15e8b8",
+  "installed_manifest_matches_reviewed_files": 117,
+  "public_show_exit": 0,
+  "public_export_exit": 0,
+  "parcel_selected_export_hash": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+  "registry_tables_unchanged": true,
+  "job_files_verified_unchanged": 169,
+  "production_jobs": 15,
+  "model_stages": 17,
+  "new_model_effects": 0,
+  "parcel_feedback_count": 1,
+  "voice_examples": 0,
+  "publication_approved": false,
+  "source_completed_http_response_blobs_independently_verified": 8,
+  "source_byte_hashes_match_recorded_pages": 3,
+  "source_reservations": {
+    "discovery": 2,
+    "source_fetches": 6
+  },
+  "native_suite": "323 passed; independently read log",
+  "installed_suite": "323 passed; independently read log",
+  "rollback_launcher_sha256": "3112962704be6d9f32c4a0c52ce21c252c03306da3edd7d70177940b9b1af35e",
+  "rollback_promoted": false,
+  "effects_performed": "Read-only manifest/registry/file/receipt verification and publicshow/export. No create,resume,generation,HTTP orCI.",
+  "replay_limit": "Zero-new-HTTP claim read from original qualification receipt, not independently rerun.",
+  "proof_limit": "Installed identity and preserved outputs/recorded source-acquisition bytes only; no factual passage suitability, meaning/post acceptance, general coverage or human approval."
+}

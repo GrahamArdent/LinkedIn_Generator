@@ -50,5 +50,6 @@
     "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0f57af87a9c0106f6dcb4381db3fd26cbaf55af065a6d6d26c525b3a19e40b06",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
-  "next_action": "Preserve deferred parcel rewrite and current exact installed receipts; R5 explicit example approval and retained human/corpus/render/publication evidence remain. No completed job/source experiment replay or new model generation."
+  "next_action": "Preserve deferred parcel rewrite and current exact installed receipts; R5 explicit example approval and retained human/corpus/render/publication evidence remain. No completed job/source experiment replay or new model generation.",
+  "installed_independent_readback": "r2-discovery/INDEPENDENT_INSTALLED_READBACK.json"
 }

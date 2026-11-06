@@ -17,5 +17,6 @@
   ],
   "retention": "137/137 known enumerated obligations plus117qualifiedfile hashes; missing/altered negatives; original22+19source baselines",
   "gates": "Human-approved example, deferred editorial revision/acceptance, historical eligibility/corpus/effort/render/publishing remain controlling",
-  "scope": "Current installed checkpoint semantics only, not independent human/fullproduct acceptance."
+  "scope": "Current installed checkpoint semantics only, not independent human/fullproduct acceptance.",
+  "independent_installed_proof": "INDEPENDENT_INSTALLED_READBACK.json:117files,169jobfiles and unchanged registry, saved parcel/export,8rawHTTPresponseblobs,0model"
 }

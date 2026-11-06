@@ -49,5 +49,6 @@
   "actual_native_active_cli_seconds_before_q6": 197.06742054130882,
   "review": "r2-discovery/REVIEW.json (independent product/prior pair) and INSTALLED_CHECKPOINT_REVIEW.json (current installed metadata pair)",
   "r2_discovery": "r2-discovery/REPORT.md and INSTALLED_QUALIFICATION.json;3author pages;2discovery/6fetches;0model",
-  "new_model_calls_this_continuation": 0
+  "new_model_calls_this_continuation": 0,
+  "installed_independent_readback": "r2-discovery/INDEPENDENT_INSTALLED_READBACK.json"
 }
