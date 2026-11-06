@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "job": "graham-q6-usable-completion-20261106",
+  "source_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "fresh_process_cwd": "/tmp",
+  "identical_create_reads": 2,
+  "show_and_export_exact": true,
+  "changed_input_conflict": true,
+  "all_original_attempt_bytes_unchanged": true,
+  "model_count_before": 17,
+  "model_count_after": 17,
+  "new_calls": 0,
+  "selected": "original",
+  "essential_verdicts": {
+    "argument_voice": "pass",
+    "factual_integrity": "pass",
+    "practical_value": "pass",
+    "reader_relevance": "pass"
+  },
+  "selected_hash": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+  "captured_stdout_create_state": "completed"
+}

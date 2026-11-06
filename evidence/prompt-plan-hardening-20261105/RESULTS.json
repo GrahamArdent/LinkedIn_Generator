@@ -4,7 +4,7 @@
   "scope": "Current pair execution checkpoint; original109-obligation planning/source receipts retained. Actual operational outcomes owned by evidence/operational-implementation-20261106/RESULTS.json.",
   "base": "6b6b24352329c097e7eaec197d4d29581e315338",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "033521741fadb6aa2b68fe58c84386e0a8b93e56db844368a9e952531497f0a4",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "e841ae5d15a867a1e392eeb7dcb52015f269d2daf7297c6a9432dea4d3d143a7",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "current_request": "OPERATIONAL_REQUEST.json",
@@ -14,7 +14,7 @@
     "OPERATIONAL_SOURCE_SET.json",
     "OPERATIONAL_PROTOCOL_SOURCES.json"
   ],
-  "review": "evidence/operational-implementation-20261106/FINAL_REVIEW.json: exact current pair and qualified product scope cleared; installation proof separately required",
+  "review": "Latest metadata/complete-pair review: evidence/operational-implementation-20261106/q6-transfer/REVIEW.json; prior installed code review remains in FINAL_REVIEW.json",
   "retention": {
     "covered": 109,
     "total": 109,
@@ -37,7 +37,7 @@
   "new_native_calls": 11,
   "api_spend": 0,
   "hosted_CI": "NOT_APPLICABLE: documentationonly/noactiveworkflow; no hostedpassclaimed",
-  "first_unmet": "R5 actual human-approved voice example and R7/Q5 human disposition; Q6 transfer/corpus/eligibility and R8 remain gated",
+  "first_unmet": "R5 actual human-approved example lifecycle and R7/Q6 human disposition of parcel comparison; retained corpus/eligibility and R8 remain gated",
   "continuation_owner": "CURRENT_WORK_PACKET.md; same Library continuation points to this pair",
   "terminal_rule": "Execute to plan-defined actual technical and retained product outcomes; stop only specifically gatedeffects with exact resume/evidence, continue legitimate independentwork",
   "invalidation_conditions": [

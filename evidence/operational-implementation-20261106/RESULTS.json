@@ -5,15 +5,15 @@
   "tested_source_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
   "qualified_product_manifest": "QUALIFIED_MANIFEST.json",
   "candidate_pair_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "033521741fadb6aa2b68fe58c84386e0a8b93e56db844368a9e952531497f0a4",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "e841ae5d15a867a1e392eeb7dcb52015f269d2daf7297c6a9432dea4d3d143a7",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "independent_review": "FINAL_REVIEW.json: SCOPED_TECHNICAL_RELEASE_CLEAR for exact qualified bytes and current pair",
   "local_suite": "312 passed",
   "isolated_archive_suite": "312 passed",
   "native_outcomes": "NATIVE_POSITIVE_OUTCOMES.json",
-  "actual_native_model_executions": 11,
-  "actual_native_active_cli_seconds": 197.06742054130882,
+  "actual_native_model_executions": 17,
+  "actual_native_active_cli_seconds": 290.02150123752654,
   "api_spend": 0,
   "new_subjects": 0,
   "original_request_and_failed_results_preserved": true,
@@ -25,13 +25,26 @@
   "hosted_CI": "NOT_APPLICABLE: only ci-full.yml.disabled and codeql.yml.disabled; none reactivated",
   "lint": "NOT_AVAILABLE: no configured callable ruff on target; Python suites and source diff checks used",
   "all_26_AT_11_E2E": "ACCEPTANCE_AUDIT.json; all_marks_hit=false",
-  "first_unmet": "R5 actual human-approved voice example and R7/Q5 human disposition; Q6 transfer/corpus/eligibility and R8 remain gated",
-  "next_action": "Collect actual Graham judgments against exact selected hashes; preserve B preference; then Q6/eligibility/voice activation and laterR8 only under their real gates. No machine effect is running in background.",
+  "first_unmet": "R5 actual human-approved example lifecycle and R7/Q6 human disposition of parcel comparison; retained corpus/eligibility and R8 remain gated",
+  "next_action": "Review saved Q6 parcel candidate; record only actual supplied human judgments; preserve all earlier outputs and gates. No further automatic generation or publication.",
   "reused_native_generation": {
     "source_revision": "78d888124f4542fe7f28cfb0c39ba3cb6d311941",
     "scope": "Production generation/evidence/runtime code unchanged; later changes affect UI rendering and tests. Fresh corrected UI browser/312-test proof retained separately."
   },
   "corrected_ui_browser": "UI_FEEDBACK_GREEN.json",
   "merged_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
-  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d"
+  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "q6_transfer": {
+    "evidence": "q6-transfer/OUTCOME.json",
+    "request_id": "graham-q6-usable-completion-20261106",
+    "status": "GO_MACHINE_TRANSFER_HUMAN_REVIEW_PENDING",
+    "selected_hash": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+    "model_executions": 6,
+    "active_cli_seconds": 92.95408069621772,
+    "new_genuine_subjects": 0,
+    "human_disposition": null
+  },
+  "clock_feedback": "q6-transfer/HUMAN_FEEDBACK.json: positive comparison reaction; no inferred acceptance scores/example activation/publication",
+  "actual_native_model_executions_before_q6": 11,
+  "actual_native_active_cli_seconds_before_q6": 197.06742054130882
 }

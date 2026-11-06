@@ -1,0 +1,58 @@
+{
+  "status": "SCOPED_Q6_EXECUTION_CHECKPOINT_CLEAR_HUMAN_REVIEW_PENDING",
+  "authority_status": "DERIVED_FROM_CURRENT_AUTHORITY",
+  "reviewer": "Same assistant as executor; fresh scoped semantic pass after checkpoint correction; not an independent model or human acceptance",
+  "pair_sha256": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "e841ae5d15a867a1e392eeb7dcb52015f269d2daf7297c6a9432dea4d3d143a7",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
+  },
+  "qualified_production_files": 117,
+  "production_changes": false,
+  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "protocol_blobs": {
+    "challenge_gate": "053d528d0b9f81e41c29276c9c082123842eea11",
+    "planning_model": "8baaa601008efde6c05342ba23e20c9d9abd3952",
+    "convergence_prompt": "49249725a54f16832ff1ca80fde3bac4934e0813"
+  },
+  "parts": "A/B/C/D/E/F/H proportionate execution checkpoint; no implementation/release transition",
+  "counterexamples": [
+    {
+      "case": "Positive clock reaction silently becomes keep/voice/publish approval",
+      "disposition": "Rejected: preference/note only; active voice examples remain empty; publisher flag false."
+    },
+    {
+      "case": "Transfer adds another independent first-six subject or resets old8-call history",
+      "disposition": "Rejected: existing calibration group/parent retained, new explicitly admitted Q6 package; no new genuine subject or eligible first-six count."
+    },
+    {
+      "case": "Same AI umbrella makes the concept a repeated black-box variant",
+      "disposition": "Distinct protected question and evidence: full-work effort/usable completion versus explanation/reliability; no claim of independent subject count or human success."
+    },
+    {
+      "case": "Model essentials or saved visual-plan JSON substitute for human quality/rendered output",
+      "disposition": "Rejected: machine transfer only; all human/corpus and R8 gates remain open."
+    },
+    {
+      "case": "Restart/read causes a new model effect or changes original output",
+      "disposition": "Actual repeat/conflict/export added0calls; all attempt bytes retained."
+    },
+    {
+      "case": "Current metadata falsely makes an earlier source review certify new checkpoint",
+      "disposition": "Old FINAL_REVIEW remains historical for code/earlier pair; this explicit same-assistant review binds current pair; no new independent-review claim."
+    }
+  ],
+  "material_findings_remaining": [],
+  "human_required": "Graham review of saved parcel text, factual/voice/construction/usefulness/visual value and actual effort when supplied; separate explicit example approval if desired.",
+  "RESUME_AT": "Record actual parcel disposition; continue next admitted dependent plan step. Do not regenerate completed work or start filler trials.",
+  "backup_proof": {
+    "jobs": 15,
+    "path": "/home/graham/.local/share/graham-linkedin-backups/q6-transfer-20261106",
+    "q6_readback_equal": true,
+    "original_B_and_clock_hashes_unchanged": true
+  },
+  "invalidation": [
+    "Changed current pair or product/source/budget bindings",
+    "New conflicting owner feedback",
+    "Corrupt/missing original attempt or result"
+  ]
+}
