@@ -76,3 +76,11 @@ def test_pre_dispatch_failures_are_visible_to_swallowing_engine(tmp_path):
         try:p.generate(model='test',system='s',user='u',temperature=0)
         except ValueError:pass
         assert str(p.error)=='ADMISSION_BUSY'
+
+
+def test_older_legacy_binding_without_budget_cannot_reset_usage(tmp_path):
+    s=Store.initialize(tmp_path/'data');s.admit('old',{}, {'legacy':True});s.finish('old','legacy',{})
+    s.admit('child',{}, {'admission':'old'})
+    p=m.DurableProvider(s,'child',Native())
+    with pytest.raises(ValueError,match='LEGACY_BUDGET_UNRECONCILED'):p.generate(model='test',system='s',user='u',temperature=0)
+    assert p.native.calls==0 and str(p.error)=='LEGACY_BUDGET_UNRECONCILED'

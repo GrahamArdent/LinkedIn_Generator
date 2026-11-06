@@ -60,7 +60,7 @@ class DurableProvider:
             family=[r['id'] for r in con.execute('SELECT id,binding FROM jobs') if json.loads(r['binding']).get('admission',r['id'])==admission]
             admitted=self.store.get(admission)
             stages=[r for member in family for r in con.execute('SELECT * FROM stages WHERE job=? AND name LIKE "model:%"',(member,))]
-            historical=admitted['binding'].get('historical_budget',{})
+            historical=admitted['binding'].get('historical_budget',{'uncertain':True} if admitted['binding'].get('legacy') else {})
             if historical.get('uncertain') and not pending:raise ValueError('LEGACY_BUDGET_UNRECONCILED')
             seconds=historical.get('seconds',0)+sum(self.store.read_blob(r['result_hash'])['seconds'] if r['state']=='completed' else 300 for r in stages)
             if not pending:
