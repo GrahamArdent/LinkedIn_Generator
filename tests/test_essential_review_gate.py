@@ -190,3 +190,25 @@ def test_retired_score_environment_cannot_break_new_admission(monkeypatch):
         publish_quality_threshold=None,allowed_sources=[{"title":"Build note","fact":"A step reopened decisions."}],
         llm_client=Client(judgment()),hashtags=[])
     assert result["review"]["review_status"] == "reviewable"
+
+def test_actual_evaluator_requires_coherent_development_separately_from_voice_fidelity():
+    client=Client(judgment())
+    assess_publish_quality(text=ORIGINAL,audience='Business leaders',content_goal='authority',
+        evidence=[{'title':'Record','fact':'A step reopened settled decisions.'}],
+        persona_profile={'editorial_context':{'handoff':{'meaning':{'qualification':'One observation only.'}}}},client=client)
+    system,user=client.calls[0];data=json.loads(user)
+    definition=data['essential_check_definitions']['argument_voice'].lower()
+    assert 'coherent development' in definition
+    assert 'voice' in definition
+    assert 'construction' in system.lower() and 'voice' in system.lower()
+    assert len(data['essential_check_definitions'])==4
+    assert data['editorial_brief']['handoff']['meaning']['qualification']=='One observation only.'
+
+def test_construction_defect_with_high_voice_score_remains_unqualified_after_failed_rewrite():
+    bad=judgment(rating=5,failure='argument_voice')
+    bad['essential_checks']['argument_voice']['reason']='Voice fits, but repeated conclusions precede the evidence and the argument does not develop.'
+    result,calls=run(Client(bad,bad))
+    assert result.selected_candidate is None and calls==[]
+    assert result.review['original']['score']==100
+    assert result.review['original']['essential_checks']['argument_voice']['reason'].startswith('Voice fits')
+    assert result.review['rewrite_triggered'] is True

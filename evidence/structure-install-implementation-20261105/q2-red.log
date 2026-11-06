@@ -1,0 +1,18 @@
+.....................................F.                                  [100%]
+=================================== FAILURES ===================================
+_ test_actual_evaluator_requires_coherent_development_separately_from_voice_fidelity _
+
+    def test_actual_evaluator_requires_coherent_development_separately_from_voice_fidelity():
+        client=Client(judgment())
+        assess_publish_quality(text=ORIGINAL,audience='Business leaders',content_goal='authority',
+            evidence=[{'title':'Record','fact':'A step reopened settled decisions.'}],
+            persona_profile={'editorial_context':{'handoff':{'meaning':{'qualification':'One observation only.'}}}},client=client)
+        system,user=client.calls[0];data=json.loads(user)
+        definition=data['essential_check_definitions']['argument_voice'].lower()
+>       assert 'coherent development' in definition
+E       AssertionError: assert 'coherent development' in 'the intended meaning, selected narrative and selected writing voice are preserved, without invented identity or experience.'
+
+tests/test_essential_review_gate.py:201: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_essential_review_gate.py::test_actual_evaluator_requires_coherent_development_separately_from_voice_fidelity
+1 failed, 38 passed in 4.44s
