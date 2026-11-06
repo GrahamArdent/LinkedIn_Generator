@@ -1,3 +1,28 @@
+# Current LinkedIn Generator execution pointer
+
+Current plan: docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md, active R1–R8.
+Current prompt: docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md v4.3.
+Current plan/prompt evidence: evidence/prompt-plan-hardening-20261105/RESULTS.json.
+First unmet operational step: R1 durable cross-directory request identity and recovery.
+This request creates/reviews the package; R implementation has not begun. Existing merge/install/test/
+applicable-CI authorization persists for execution; actual human/render/publication gates remain.
+
+Installed foundation remains5bd3478709d98e5eb3ff5fd11168718aa3868cbd,275 local/archive/installed tests;
+its104 qualified files and61 trial artifacts matched during the latest read-only audit. Actual native
+package graham-structured-black-box-20261106 used6calls/106.016activeCLIseconds/API0; immutable reopen0calls.
+Graham prefers exact DraftB, then accepted one sustained comparison retaining its reasoning/scaffold.
+Preference is not publication approval or invented numeric/keep/edit labels. Q5 further editorial
+refinement and Q6 transfer remain; they do not block the independently admitted operational adapter work.
+All26AT/11E2E, historical eligibility, first-six/8-subject limits and later phases remain retained.
+
+Audit gaps adopted for planning: assistant-built inputs; directory-scoped deduplication; incomplete
+normal-entry coverage; stale quick-start; shared development/runtime dependencies and Astra default;
+feedback not integrated into activated versioned voice/export workflow. Freeze the writing engine and
+complete its operational layer. Technical independent authoring, human quality and full product closure
+are separate proof boundaries. A source-insufficient HOLD is not proof of a positive create workflow.
+
+## Historical execution log — superseded checkpoints below
+
 # CURRENT_WORK_PACKET.md
 
 PACKET_ID: LIG-CONTENT-VISUAL-ACCEPTANCE-2026-09-01

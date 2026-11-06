@@ -1,25 +1,48 @@
 {
-  "status": "SCOPED_CLEAR",
-  "reviewer": "/root/review_candidate",
-  "scope": "Fresh independent corrected status-pair and current execution/retention checkpoint; prior code/source review retained for matching bytes",
+  "status": "SCOPED_PLANNING_CLEAR",
+  "scope": "ActiveR1\u2013R8 completeplan/prompt readiness; no implementation acceptance",
+  "reviewer": "/root/review_candidate, delegated independent model",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0d66d1f02e00bc9a4d1f3898c3ca8e30ed76aff889016c20f4312262af459ceb",
-    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "9c80fe6c322296b4576e4fc1c2eba92a361a107b213b73b2c066a153cd325fef"
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0f57af87a9c0106f6dcb4381db3fd26cbaf55af065a6d6d26c525b3a19e40b06",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
-  "material_findings": [],
-  "actual_independent_checks": [
-    "All61 trial manifest hashes",
-    "Saved bundle equality and prepared handoff/control equality",
-    "Six provider receipts",
-    "Selected/visual hash parity",
-    "Human-decision fields null",
-    "Retention69/69 with22 baseline files and both rejected negative controls"
+  "gate_parts": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
   ],
-  "current_next_step": "Q5 actual Graham judgments of exact stored DraftA/B; Q6 waits",
-  "product_outcome": "Q1\u2013Q4 and Q5 machine portion complete, not whole26AT/11E2E",
-  "native_mutations_or_calls_in_review": 0,
+  "provenance": "Independent complete-pair semantic review, followed by affected exactfinal cleanup/retention check; unchanged semantic proof reused",
+  "counterexamples": [
+    "Cross-directory/adapter duplicate dispatch",
+    "Crash after result before database commit",
+    "Resetting exhausted budgets by changing output/revision",
+    "UnsafeURLfetch/prompt injection and metadata-as-evidence",
+    "Silent unsupported-model or costly fallback",
+    "Feedback/read/export triggering generation",
+    "Stale edited candidate retaining visual/approval",
+    "Source-insufficientHOLD mistaken for positive autonomouspath",
+    "Technicalinstall or preferred draft mistaken for wholeproductcompletion"
+  ],
+  "material_findings": [],
+  "nonmaterial_cleanup": "Inherited Q-only ownership/firstunmet wording and Q5 stop reconciled to activeR/retainedQ with independentwork allowed",
+  "retention_observed": {
+    "covered": 109,
+    "total": 109,
+    "original_baseline_files": 22,
+    "current_source_files": 19,
+    "negative_controls": "Missing item and same-length altered byte rejected"
+  },
   "invalidation_conditions": [
-    "Material instruction/candidate/owner basis changes require affected review",
-    "Status does not close human acceptance or later26/11 gates"
-  ]
+    "Material plan/prompt or owner authority changes",
+    "Material canonical protocol/source basis changes",
+    "New relevant evidence contradicts a controlling premise",
+    "Future implementation/release/render/publication needs its actual current qualification and consequence gates"
+  ],
+  "readiness": "R1 firstunmet technicalstep under subsequent execution instruction; future source/model/provider qualification remains plan-owned unfinishedwork",
+  "review_mutations_or_model_calls": 0
 }

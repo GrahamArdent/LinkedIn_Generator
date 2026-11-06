@@ -1,3 +1,16 @@
+# Current use versus historical quick-start
+
+Installed product:5bd3478709d98e5eb3ff5fd11168718aa3868cbd. Current installed prepare/generate usage and rollback:
+[evidence/structure-install-implementation-20261105/REPORT.md](../../../evidence/structure-install-implementation-20261105/REPORT.md)
+and INSTALLATION.json in that directory. New Graham generation requires validated prepare output and its source bundle.
+The ordinary self-operating create/feedback/export workflow in active R1–R8 is planned, not implemented.
+
+The older installation paths, raw generate example and optional-handoff wording below are historical for those releases;
+they are not current instructions for a new Graham job. Preserve them as historical receipts, not a second supported workflow.
+R7 will replace this legacy section with verified help for the installed operational interface.
+
+---
+
 # LinkedIn + Codex: quick local connection
 
 Ready on **execution-node**, account graham. Uses ChatGPT subscription authentication; no API key or paid API fallback.

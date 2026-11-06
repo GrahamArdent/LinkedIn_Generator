@@ -1,0 +1,120 @@
+{
+  "base": "6b6b24352329c097e7eaec197d4d29581e315338",
+  "files": [
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "CURRENT_WORK_PACKET.md",
+      "bytes": 60463,
+      "sha256": "69d3ac6419d6dcf78a221313423bf4603dc299ce55989361921a0bc0ae4d6e31"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+      "bytes": 20703,
+      "sha256": "0d66d1f02e00bc9a4d1f3898c3ca8e30ed76aff889016c20f4312262af459ceb"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+      "bytes": 6755,
+      "sha256": "9c80fe6c322296b4576e4fc1c2eba92a361a107b213b73b2c066a153cd325fef"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "docs/implementation/v4/LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md",
+      "bytes": 48557,
+      "sha256": "2f6827800c7c62bb4558b4bd894517784e91067e88bcaa4fa56958e0dae38bd3"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "docs/implementation/v4/LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md",
+      "bytes": 21644,
+      "sha256": "a2197262d14f5c585c0117bedaf5e73902c09b617c05602c79f9c90fba1f2aeb"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
+      "bytes": 8747,
+      "sha256": "c7a2da8144f07296abc27c3ac6cf96a74624844434f7beb48e3a54fe70fd98b3"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "docs/implementation/v4/LINKEDIN_CODEX_QUICKSTART.md",
+      "bytes": 5385,
+      "sha256": "bf51f2167299e1b4b2b25d7b495090cff9f467aec79c44aad6482191c0b2420c"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "src/app/editorial_structure.py",
+      "bytes": 7039,
+      "sha256": "c7fabb34683e55a803b1f18162197a134254b7c494244cbe87e5136cf6134128"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "src/app/codex_trial.py",
+      "bytes": 12891,
+      "sha256": "4c6e203e46780b62eaecb3dc3c5753d8c1b69c80939f258ad5243d729946b493"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "src/app/codex_provider.py",
+      "bytes": 4886,
+      "sha256": "83dc8254a679f2ef0f18de9a214e2e47101b2071160ece43a1d3cf8249ef38ae"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "src/app/feedback.py",
+      "bytes": 1800,
+      "sha256": "382d44c097b884f2e864a09479ab754029e3cc075740d6a40e2f33a3cbc4c491"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "src/app/research.py",
+      "bytes": 1331,
+      "sha256": "ba045e24c3a438125887e98b5d261c1887cbe581f1b2436ace0b8e04505f254c"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "src/app/rag.py",
+      "bytes": 1508,
+      "sha256": "e8699ab7b3a963690af71db2f735d12744ad08c981f382332cf67a8292565084"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "scripts/linkedin_codex_trial.py",
+      "bytes": 2975,
+      "sha256": "dc88e62fd251cd81aff392d3236b8ba02d94f52666468e38f2ae8a90f2791e12"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "evidence/structure-install-implementation-20261105/RESULTS.json",
+      "bytes": 3618,
+      "sha256": "32b2765a80ba4b27b047ab8cf697cd25ca81598a1a364f6620b344d4d08be2a0"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "evidence/structure-install-implementation-20261105/INSTALLATION.json",
+      "bytes": 2272,
+      "sha256": "8f7ee2f406ba4c724660acf19f58fe3124940640b915b31ddaedb4c3682dd569"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "evidence/structure-install-implementation-20261105/QUALIFICATION.json",
+      "bytes": 10867,
+      "sha256": "cc81af1ee92c5ddca05d7380f723160a4219a20944f7765a362d1903a5ebdcd7"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "evidence/structure-install-implementation-20261105/REPLAY.json",
+      "bytes": 13284,
+      "sha256": "7e88848ef9e6f2d166b19c77544e10af4721d4f9ec8e54cea47203ac81c79027"
+    },
+    {
+      "revision": "6b6b24352329c097e7eaec197d4d29581e315338",
+      "path": "evidence/structure-install-implementation-20261105/HUMAN_FEEDBACK.json",
+      "bytes": 1241,
+      "sha256": "7c11146f1b370e83b34f2434cf84a30f8fb782e33a684725956547c89d049be1"
+    }
+  ],
+  "scope": "Current full canonical pair/roadmap/acceptance/editorial/runtime/checkpoint source plus current available conversation and latest request; original22-file baseline remains separately verified"
+}

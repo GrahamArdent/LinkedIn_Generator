@@ -1,0 +1,22 @@
+{
+  "status": "SCOPED_CLEAR_Q5_HUMAN_PENDING",
+  "candidate_sha256": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0d66d1f02e00bc9a4d1f3898c3ca8e30ed76aff889016c20f4312262af459ceb",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "9c80fe6c322296b4576e4fc1c2eba92a361a107b213b73b2c066a153cd325fef"
+  },
+  "current_execution_evidence": "evidence/structure-install-implementation-20261105/RESULTS.json",
+  "scope": "Status-only plan reconciliation after actual Q1\u2013Q5 machine execution; operating instructions unchanged",
+  "review": "FINAL_REVIEW.json: fresh independent status-pair/retention review SCOPED_CLEAR, no material findings",
+  "invalidation_conditions": [
+    "Material instruction/candidate/owner basis changes require affected review",
+    "Status does not close human acceptance or later26/11 gates"
+  ],
+  "first_unmet": "Q5 human judgment",
+  "retention": {
+    "covered": 69,
+    "total": 69,
+    "baseline_files": 22,
+    "negative_controls": "Missing item and same-length altered byte rejected",
+    "proof_limit": "Enumerated known source/anchor retention plus separate semantic review; not universal completeness or product acceptance"
+  }
+}
