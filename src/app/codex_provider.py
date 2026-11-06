@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
+import types
 from datetime import datetime
 
 @dataclass(frozen=True)
@@ -83,7 +84,12 @@ def bridge(payload):
     dirty=subprocess.check_output(["git","-C",str(root),"status","--porcelain","--",*paths],text=True)
     if source != payload["source_sha"] or dirty:
         return {"ok":False,"code":"CODEX_SOURCE_MISMATCH"}
-    sys.path.insert(0,str(root/"v6_nextjs_migration/backend"))
+    # Import only the pinned text-client modules. The owner package initializer
+    # eagerly imports unrelated resume/cache/API services; those are not this bridge's dependencies.
+    backend=root/"v6_nextjs_migration/backend"
+    for name,directory in (("app",backend/"app"),("app.services",backend/"app/services")):
+        package=types.ModuleType(name);package.__path__=[str(directory)]
+        sys.modules[name]=package
     from app.services.codex_cli_client import CodexClient, CodexFailure, ExecutionContext, Limits
     schema={"type":"object","properties":{"text":{"type":"string"}},"required":["text"],"additionalProperties":False}
     # One shared invocation budget: each model request uses version/auth/exec.
