@@ -10,6 +10,11 @@ import multiprocessing
 import socket
 import ssl
 import time
+import re
+import xml.etree.ElementTree as ET
+import fcntl
+from pathlib import Path
+from contextlib import contextmanager
 from urllib.parse import urlsplit, urljoin, urlencode
 
 MAX_BYTES=2*1024*1024
@@ -59,10 +64,39 @@ def source_record(requested,final,raw,content_type):
     if not passages:raise ValueError('SOURCE_TOO_THIN')
     return {'status':'usable','requested_url':requested,'url':final,'title':title,'publisher':urlsplit(final).hostname,
             'checked_at':datetime.now(timezone.utc).isoformat(),'content_sha256':hashlib.sha256(raw).hexdigest(),
-            'content_type':content_type,'passages':passages,'limitations':'Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.'}
+            'content_type':content_type,'passages':passages,'limitations':('Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. ' if urlsplit(final).hostname=='arxiv.org' else '')+'Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.'}
+
+
+@contextmanager
+def discovery_rate_slot(url):
+    # One host-wide legacy arXiv API connection, at least three seconds apart.
+    # Content pages are not the legacy API. All product execution is on this host.
+    try:host=urlsplit(url).hostname
+    except ValueError:host=None
+    if host!='export.arxiv.org':
+        yield;return
+    directory=Path.home()/'.cache/graham-linkedin';directory.mkdir(parents=True,exist_ok=True)
+    with (directory/'arxiv-api.lock').open('a+') as guard:
+        fcntl.flock(guard,fcntl.LOCK_EX)
+        guard.seek(0)
+        try:last=float(guard.read() or '0')
+        except ValueError:last=0
+        delay=max(0,min(3,3-(time.time()-last)))
+        if delay:time.sleep(delay)
+        guard.seek(0);guard.truncate();guard.write(str(time.time()));guard.flush()
+        yield
 
 
 def _network_worker(pipe,url,timeout):
+    try:
+        with discovery_rate_slot(url):
+            _network_exchange(pipe,url,timeout)
+    except Exception as exc:
+        try:pipe.send({'error':str(exc)})
+        finally:pipe.close()
+
+
+def _network_exchange(pipe,url,timeout):
     connection=None
     try:
         u,address=public_address(url)
@@ -145,17 +179,59 @@ class Evidence:
             return url,base64.b64decode(r['raw']),r['content_type']
         raise ValueError('SOURCE_REDIRECT_LIMIT')
 
-    def discover(self,topic):
+    def discover_crossref(self,topic):
         # Metadata is navigation only; facts must come from separately fetched publisher/author text.
         url='https://api.crossref.org/works?'+urlencode({'query.title':topic,'rows':6,'select':'DOI,title,URL,link,resource,publisher'})
         _,raw,_=self.fetch(url,discovery=True)
         works=json.loads(raw)['message']['items']
-        urls=[]
+        urls=[];seen_works=set()
         for w in works:
-            primary=w.get('resource',{}).get('primary',{}).get('URL')
-            for u in [primary]+[x.get('URL') for x in w.get('link',[])]+[w.get('URL')]:
-                if u and u not in urls:urls.append(u)
+            if not isinstance(w,dict):continue
+            # One representation per work: inaccessible landing/PDF/DOI variants
+            # must not crowd all other papers out of the six-fetch admission.
+            doi=str(w.get('DOI') or '').strip().lower()
+            if doi and doi in seen_works:continue
+            if doi:seen_works.add(doi)
+            resource=w.get('resource');primary=resource.get('primary') if isinstance(resource,dict) else None
+            primary=primary.get('URL') if isinstance(primary,dict) else None
+            links=w.get('link')
+            links=[x for x in links if isinstance(x,dict)] if isinstance(links,list) else []
+            typed=[(x.get('URL'),str(x.get('content-type') or '').split(';')[0].strip().lower()) for x in links]
+            pdf_urls=[u for u,kind in typed if kind=='application/pdf']
+            candidates=[primary]+[u for u,kind in typed if kind=='text/html']
+            candidates += [u for u,kind in typed if kind not in ('application/pdf','text/html')]+[w.get('URL')]
+            for u in candidates:
+                if not isinstance(u,str) or not u or u in pdf_urls or u in urls:continue
+                try:
+                    if urlsplit(u).path.lower().endswith('.pdf'):continue
+                except ValueError:continue
+                urls.append(u);break
         return urls[:6]
+
+    def discover(self,topic):
+        # Both feeds are navigation only; source passages require a separate fetch.
+        routes=[]
+        try:routes=self.discover_crossref(topic)
+        except (ValueError,OSError,http.client.HTTPException,KeyError,TypeError) as exc:
+            self.activity.append({'discovery_route':'crossref','error':str(exc)})
+        arxiv=[]
+        terms=re.findall(r"[A-Za-z0-9]+",topic)[:16]
+        if terms:
+            query=' AND '.join('all:'+term for term in terms)
+            url='https://export.arxiv.org/api/query?'+urlencode({'search_query':query,'start':0,'max_results':3})
+            try:
+                _,raw,_=self.fetch(url,discovery=True)
+                root=ET.fromstring(raw)
+                for node in root.findall('{http://www.w3.org/2005/Atom}entry/{http://www.w3.org/2005/Atom}id'):
+                    value=node.text or ''
+                    if re.fullmatch(r'https?://arxiv\.org/abs/(?:[0-9]{4}\.[0-9]{4,5}|[a-z-]+(?:\.[A-Z]{2})?/[0-9]{7})(?:v[0-9]+)?',value):
+                        target=value.replace('http://','https://',1)
+                        if target not in arxiv and len(arxiv)<3:arxiv.append(target)
+            except (ValueError,OSError,http.client.HTTPException,ET.ParseError) as exc:
+                self.activity.append({'discovery_route':'arxiv','error':str(exc)})
+        # Reserve room for both routes; an inaccessible first publisher cannot
+        # consume the entire source budget before public author pages get a chance.
+        return list(dict.fromkeys(arxiv+routes))[:6]
 
     def acquire(self,topic,urls=()):
         targets=list(urls) if urls else self.discover(topic)

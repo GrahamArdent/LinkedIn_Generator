@@ -1,0 +1,72 @@
+{
+  "topic": "artificial intelligence trust transparency",
+  "seconds": 1.958608077839017,
+  "result": {
+    "sources": [],
+    "errors": [
+      {
+        "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+        "error": "SOURCE_REDIRECT_LIMIT"
+      },
+      {
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S2666389922000289",
+        "error": "SOURCE_TOO_THIN"
+      },
+      {
+        "url": "https://www.tandfonline.com/doi/full/10.1080/12460125.2020.1819094",
+        "error": "SOURCE_HTTP_403"
+      }
+    ],
+    "http_activity": [
+      {
+        "url": "https://api.crossref.org/works?query.title=artificial+intelligence+trust+transparency&rows=6&select=DOI%2Ctitle%2CURL%2Clink%2Cresource%2Cpublisher",
+        "status": 200,
+        "seconds": 0.5125772561877966,
+        "bytes": 3849
+      },
+      {
+        "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+        "status": 301,
+        "seconds": 0.09096122439950705,
+        "bytes": 166
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s13347-025-00916-2",
+        "status": 303,
+        "seconds": 0.31923386082053185,
+        "bytes": 0
+      },
+      {
+        "url": "https://idp.springer.com/authorize?response_type=cookie&client_id=springerlink&redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13347-025-00916-2",
+        "status": 302,
+        "seconds": 0.40787624660879374,
+        "bytes": 0
+      },
+      {
+        "url": "https://idp.springer.com/transit?redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13347-025-00916-2&code=93e33240-b84c-4d79-8c64-d96f9177826b",
+        "status": 302,
+        "seconds": 0.32669214624911547,
+        "bytes": 0
+      },
+      {
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S2666389922000289",
+        "status": 200,
+        "seconds": 0.18978905119001865,
+        "bytes": 2958
+      },
+      {
+        "url": "https://www.tandfonline.com/doi/full/10.1080/12460125.2020.1819094",
+        "status": 403,
+        "seconds": 0.1080056456848979,
+        "bytes": 5641
+      }
+    ],
+    "discovery_requests": 1,
+    "source_fetches": 6
+  },
+  "full_local_receipt": {
+    "path": "/home/graham/.local/share/graham-linkedin-qualifications/r2-discovery-20261106/candidate.json",
+    "sha256": "820fc4b6579e8db3a5b7051dfaf7baded241fed7ab6c53983fecd213d3194118",
+    "scope": "Private qualification receipt; source passages retained locally, repository stores paragraph hashes and limits."
+  }
+}
