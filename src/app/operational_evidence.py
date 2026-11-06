@@ -150,11 +150,21 @@ class Evidence:
         url='https://api.crossref.org/works?'+urlencode({'query.title':topic,'rows':6,'select':'DOI,title,URL,link,resource,publisher'})
         _,raw,_=self.fetch(url,discovery=True)
         works=json.loads(raw)['message']['items']
-        urls=[]
+        urls=[];seen_works=set()
         for w in works:
+            # One representation per work: inaccessible landing/PDF/DOI variants
+            # must not crowd all other papers out of the six-fetch admission.
+            doi=str(w.get('DOI') or '').strip().lower()
+            if doi and doi in seen_works:continue
+            if doi:seen_works.add(doi)
             primary=w.get('resource',{}).get('primary',{}).get('URL')
-            for u in [primary]+[x.get('URL') for x in w.get('link',[])]+[w.get('URL')]:
-                if u and u not in urls:urls.append(u)
+            links=w.get('link',[])
+            candidates=[primary]+[x.get('URL') for x in links if x.get('content-type','').split(';')[0].strip().lower()=='text/html']
+            candidates += [x.get('URL') for x in links if x.get('content-type','').split(';')[0].strip().lower() not in ('application/pdf','text/html')]+[w.get('URL')]
+            for u in candidates:
+                if not isinstance(u,str) or not u or urlsplit(u).path.lower().endswith('.pdf'):continue
+                if u in urls:break
+                urls.append(u);break
         return urls[:6]
 
     def acquire(self,topic,urls=()):
