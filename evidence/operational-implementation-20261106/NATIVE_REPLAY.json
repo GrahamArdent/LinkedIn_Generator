@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "new_calls": 0,
+  "all_attempt_artifact_bytes_unchanged": true,
+  "cross_directory": "fresh subprocess cwd=/tmp",
+  "readbacks": [
+    {
+      "job": "graham-operational-topic-20261106-r1",
+      "exact_selected_hash": "c3fd908432061f56b9df9778bc57f149aff77b8cf9da18a600e6f40376c2c64f",
+      "read_only_replays": 2,
+      "changed_same_id_conflict": true
+    },
+    {
+      "job": "graham-operational-url-symbolic-20261106-r1",
+      "exact_selected_hash": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+      "read_only_replays": 2,
+      "changed_same_id_conflict": true
+    }
+  ]
+}

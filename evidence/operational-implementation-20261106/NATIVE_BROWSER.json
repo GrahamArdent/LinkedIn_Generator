@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "viewport": [
+    390,
+    844
+  ],
+  "selected_hash": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+  "body_matches_clock": true,
+  "js_errors": [],
+  "horizontal_overflow": false,
+  "reload_generation_calls": 0,
+  "actual_browser": "Headless Chromium on installed Execution Node UI",
+  "limits": "Visual/mobile rendering and readback only; no human editorial ratings or publication action."
+}

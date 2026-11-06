@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "original_attempt_id": "attempt-ad57e622541645f7b705532cbe5bfee3",
+  "cache_hit": true,
+  "active_seconds": 23.569408,
+  "budget_bytes_unchanged": true,
+  "result_text_sha256": "0e8a173536025a14d34c781a8360c7986d8e6c8bf5d1e9ba959e4550b2a3ed2d",
+  "new_model_calls": 0
+}

@@ -1,0 +1,48 @@
+{
+  "scope": "R7 installed ordinary-input qualification; no editorial or publication acceptance",
+  "authorization": "Canonical R1-R7 execution and recorded merge/install/testing authority; user selected GPT-6 SOL medium in this session",
+  "model": "gpt-6-sol",
+  "reasoning": "medium",
+  "api_spend_cap": 0,
+  "per_package": {
+    "model_execution_cap": 12,
+    "cumulative_active_cli_seconds_cap": 900,
+    "whole_job_wall_seconds_cap": 900,
+    "http_discovery_cap": 8,
+    "http_source_fetch_cap": 6
+  },
+  "packages": [
+    {
+      "request_id": "graham-operational-topic-20261106",
+      "parent": "graham-structured-black-box-20261106",
+      "new_budget_explicit": true,
+      "input": "bare topic, no URLs or chat-built source bundle",
+      "narrative": "literal"
+    },
+    {
+      "request_id": "graham-operational-url-symbolic-20261106",
+      "parent": "graham-structured-black-box-20261106",
+      "new_budget_explicit": true,
+      "input": "same retained topic plus original primary-source URL",
+      "narrative": "symbolic",
+      "direction": "one sustained comparison"
+    }
+  ],
+  "subject_scope": "Both reuse the exact retained black-box topic. No new genuine subject or historical eligibility reset. Failed or unknown attempts retain original identities and admissions.",
+  "gates": "Human labels, visual usefulness, rendered assets and Dedication publication remain unapproved.",
+  "repair_lineages": [
+    {
+      "id": "graham-operational-topic-20261106-r1",
+      "parent": "graham-operational-topic-20261106",
+      "new_budget": false,
+      "reason": "Exact-topic retained URL lookup and canonical fresh source cache; original6fetches retained; no newHTTP required for cachedAnthropic bytes"
+    },
+    {
+      "id": "graham-operational-url-symbolic-20261106-r1",
+      "parent": "graham-operational-url-symbolic-20261106",
+      "new_budget": false,
+      "reason": "Use exact source locator selection after retained653character fact rejection; originalsuccessfulmodelcall and30seconds retained"
+    }
+  ],
+  "no_reset": "Children inherit originaladmission, original900second wall deadline and aggregate12call/900active caps. Earlierfailures remainimmutable."
+}

@@ -1,0 +1,82 @@
+{
+  "sources": [
+    {
+      "status": "usable",
+      "requested_url": "https://www.nature.com/articles/s41561-025-01639-x",
+      "url": "https://www.nature.com/articles/s41561-025-01639-x?error=cookies_not_supported&code=92864111-da1d-4a1d-b890-00ad83f482a3",
+      "title": "Explainability can foster trust in artificial intelligence in geoscience | Nature GeoscienceClose bannerClose banner",
+      "publisher": "www.nature.com",
+      "checked_at": "2026-11-06T11:03:52.005598+00:00",
+      "content_sha256": "c22441a81a6ec2445c537cdbd058446c2b848ab8bb0cc96f5245cbd1c37ecac5",
+      "content_type": "text/html; charset=utf-8",
+      "passages": [
+        {
+          "locator": "extracted characters 0:4000",
+          "excerpt": "Explainability can foster trust in artificial intelligence in geoscience | Nature Geoscience\nSkip to main content\nThank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain\nthe best experience, we recommend you use a more up to date browser (or turn off compatibility mode in\nInternet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles\nand JavaScript.\nAdvertisement\nView all journals\nSaved research\nSearch\nAccount\nLog in\nContent\nExplore content\nAbout the journal\nPublish with us\nSubscribe\nSign up for alerts\nRSS feed\nComment\nPublished: 05 February 2025\nExplainability can foster trust in artificial intelligence in geoscience\nJesper S\u00f6ren Dramsch\nORCID: orcid.org/0000-0001-8273-905X1, Monique M. Kuglitsch2, Miguel-\u00c1ngel Fern\u00e1ndez-Torres\nORCID: orcid.org/0000-0002-0801-199X3, Andrea Toreti\nORCID: orcid.org/0000-0002-1983-25234, Rustem Arif Albayrak5,6, Lorenzo Nava\nORCID: orcid.org/0000-0002-2327-87217,8,9, Saman Ghaffarian\nORCID: orcid.org/0000-0001-9882-460310, Ximeng Cheng\nORCID: orcid.org/0000-0001-9923-72402, Jackie Ma\nORCID: orcid.org/0000-0002-2268-16902, Wojciech Samek\nORCID: orcid.org/0000-0002-6283-32652,11,12, Rudy Venguswamy13, Anirudh Koul\nORCID: orcid.org/0000-0001-9786-922813, Raghavan Muthuregunathan\nORCID: orcid.org/0009-0003-9652-153914 & \u2026Arthur Hrast Essenfelder\nORCID: orcid.org/0000-0001-9396-69284 Show authors\nNature Geoscience\nvolume 18, pages 112\u2013114 (2025) Cite this article\nSave article\nView saved research\n5221 Accesses\n56 Citations\n37 Altmetric\nMetrics details\nUptake of explainable artificial intelligence (XAI) methods in geoscience is currently limited. We argue that such methods that reveal the decision processes of AI models can foster trust in their results and facilitate the broader adoption of AI.\nThis is a preview of subscription content, access via your institution\nAccess options\nAccess through your institution\nAccess Nature and 54 other Nature Portfolio journals\nGet Nature+, our best-value online-access subscription\n$39.99 / 30 days\ncancel any time\nLearn more\nSubscribe to this journal\nReceive 12 print issues and online access\n$259.00 per year\nonly $21.58 per issue\nLearn more\nBuy this article\nPurchase on SpringerLinkInstant access to the full article PDF.\nUSD 39.95\nPrices may be subject to local taxes which are calculated during checkout\nFig. 1: The value of explainable artificial intelligence (XAI).\nDesigned by Freepik www.freepik.com\nExplore related subjects\nDiscover the latest articles and news in related subjects.\nNatural hazards\nScientific community\nTechnology\nExplainable Artificial Intelligence in Machine Learning Systems\nReferences\nDramsch, J. S. Adv. Geophys. 61, 1\u201355 (2020).\nGoogle Scholar\nKuglitsch, M. M. et al. Environ. Res. Lett. 18, 093004 (2023).\nArticle\nGoogle Scholar\nMamalakis, A., Ebert-Uphoff, I. & Barnes, E. in xxAI \u2013 Beyond Explainable AI Vol. 13200 (eds Holzinger, A. et al.) 315\u2013339 (Springer, 2022).\nFleming, S. W., Watson, J. R., Ellenson, A., Cannon, A. J. & Vesselinov, V. C. Nat. Geosci. 14, 878\u2013880 (2021).\nArticle\nCAS\nGoogle Scholar\nGevaert, C. M. Int. J. Appl. Earth Obs. Geoinf. 112, 102869 (2022).\nGoogle Scholar\nGhaffarian, S., Taghikhah, F. R. & Maier, H. R. Int. J. Disaster Risk Reduct. 98, 104123 (2023).\nArticle\nGoogle Scholar\nToms, B. A., Barnes, E. A. & Ebert-Uphoff, I. J. Adv. Model. Earth Syst. 12, e2019MS002002 (2020).\nArticle\nGoogle Scholar\nRudin, C. Nat. Mach. Intell. 1, 206\u2013215 (2019).\nArticle\nGoogle Scholar\nGunning, D. & Aha, D. W. AI Magazine 40, 44\u201358 (2019).\nArticle\nGoogle Scholar\nCzaja, W., Fendley, N., Pekala, M., Ratto, C., & Wang, I. J. Adversarial examples in remote sensing. In Proc. 26th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems 408\u2013411 (Association for Computing Machinery, 2018).\nLapuschkin, S. et al. Nat. Commun. 10, 1096 (2019).\nArticle\nGoogle Scholar\nRoscher, R., Bohn, B., Duarte, M. F. & Garcke, J. IEEE Access 8,"
+        },
+        {
+          "locator": "extracted characters 4000:8000",
+          "excerpt": " 42200\u201342216 (2020).\nArticle\nGoogle Scholar\nDahal, A. & Lombardo, L. Comput. Geosci. 176, 105364 (2023).\nArticle\nGoogle Scholar\nDikshit, A. & Pradhan, B. Sci. Total Environ. 801, 149797 (2021).\nArticle\nCAS\nGoogle Scholar\nCheng, X. et al. in Handbook of Geospatial Artificial Intelligence (eds Gao, S. et al.) Ch. 9 (CRC Press, 2023).\nDownload references\nAcknowledgements\nWe are appreciative of Chelsea Shu\u2019s first investigations of the natural language processing tool for exploring the scientific literature and the collaboration and insight provided by use case proponents of the Focus Group on AI for Natural Disaster Management (https://www.itu.int/en/ITU-T/focusgroups/ai4ndm/Pages/default.aspx).\nAuthor information\nAuthors and Affiliations\nEuropean Centre for Medium-Range Weather Forecasts, Bonn, Germany\nJesper S\u00f6ren Dramsch\nFraunhofer Institute for Telecommunications, Heinrich Hertz Institute, Berlin, Germany\nMonique M. Kuglitsch, Ximeng Cheng, Jackie Ma & Wojciech Samek\nImage Processing Laboratory (IPL), Universitat de Val\u00e8ncia (UV), Paterna, (Val\u00e8ncia), Spain\nMiguel-\u00c1ngel Fern\u00e1ndez-Torres\nEuropean Commission Joint Research Centre, Ispra, Italy\nAndrea Toreti & Arthur Hrast Essenfelder\nNASA Goddard Space Flight Center, Greenbelt, MD, USA\nRustem Arif Albayrak\nUniversity of Maryland, Baltimore County, MD, USA\nRustem Arif Albayrak\nMachine Intelligence and Slope Stability Laboratory, Department of Geosciences, University of Padova, Padova, Italy\nLorenzo Nava\nDepartment of Earth Sciences, University of Cambridge, Cambridge, UK\nLorenzo Nava\nDepartment of Geography, University of Cambridge, Cambridge, UK\nLorenzo Nava\nDepartment of Risk and Disaster Reduction, University College London, London, UK\nSaman Ghaffarian\nTechnical University of Berlin, Berlin, Germany\nWojciech Samek\nBIFOLD \u2013 Berlin Institute for the Foundations of Learning and Data, Berlin, Germany\nWojciech Samek\nPinterest, San Francisco, CA, USA\nRudy Venguswamy & Anirudh Koul\nLinkedIn, Mountain View, CA, USA\nRaghavan Muthuregunathan\nAuthorsJesper S\u00f6ren Dramsch\nView author publications\nSearch author on:PubMed Google Scholar\nMonique M. Kuglitsch\nView author publications\nSearch author on:PubMed Google Scholar\nMiguel-\u00c1ngel Fern\u00e1ndez-Torres\nView author publications\nSearch author on:PubMed Google Scholar\nAndrea Toreti\nView author publications\nSearch author on:PubMed Google Scholar\nRustem Arif Albayrak\nView author publications\nSearch author on:PubMed Google Scholar\nLorenzo Nava\nView author publications\nSearch author on:PubMed Google Scholar\nSaman Ghaffarian\nView author publications\nSearch author on:PubMed Google Scholar\nXimeng Cheng\nView author publications\nSearch author on:PubMed Google Scholar\nJackie Ma\nView author publications\nSearch author on:PubMed Google Scholar\nWojciech Samek\nView author publications\nSearch author on:PubMed Google Scholar\nRudy Venguswamy\nView author publications\nSearch author on:PubMed Google Scholar\nAnirudh Koul\nView author publications\nSearch author on:PubMed Google Scholar\nRaghavan Muthuregunathan\nView author publications\nSearch author on:PubMed Google Scholar\nArthur Hrast Essenfelder\nView author publications\nSearch author on:PubMed Google Scholar\nCorresponding author\nCorrespondence to\nJesper S\u00f6ren Dramsch.\nEthics declarations\nCompeting interests\nThe authors declare no competing interests.\nRights and permissions\nReprints and permissions\nAbout this article\nCite this article\nDramsch, J.S., Kuglitsch, M.M., Fern\u00e1ndez-Torres, M\u00c1. et al. Explainability can foster trust in artificial intelligence in geoscience.\nNat. Geosci. 18, 112\u2013114 (2025). https://doi.org/10.1038/s41561-025-01639-x\nDownload citation\nPublished: 05 February 2025\nVersion of record: 05 February 2025\nIssue date: February 2025\nDOI: https://doi.org/10.1038/s41561-025-01639-x\nShare this article\nAnyone you share the following link with will be able to read this content:\nGet shareable link\nSorry, a shareable link is not currently available for this article.\nCopy shareable link to clipboard\nProvided by "
+        },
+        {
+          "locator": "extracted characters 8000:9684",
+          "excerpt": "the Springer Nature SharedIt content-sharing initiative\nAccess through your institution\nBuy or subscribe\nAdvertisement\nSearch\nSearch articles by subject, keyword or author\nShow results from\nAll journals\nThis journal\nSearch\nAdvanced search\nQuick links\nExplore articles by subject\nFind a job\nGuide to authors\nEditorial policies\nNature Geoscience\n(Nat. Geosci.)\nISSN 1752-0908 (online)\nISSN 1752-0894 (print)\nnature.com footer links\nAbout Nature Portfolio\nAbout us\nPress releases\nPress office\nContact us\nDiscover content\nJournals A-Z\nArticles by subject\nprotocols.io\nNature Index\nPublishing policies\nNature portfolio policies\nOpen access\nAuthor & Researcher services\nReprints & permissions\nResearch data\nLanguage editing\nScientific editing\nNature Masterclasses\nResearch Solutions\nLibraries & institutions\nLibrarian service & tools\nLibrarian portal\nOpen research\nRecommend to library\nAdvertising & partnerships\nAdvertising\nPartnerships & Services\nMedia kits\nBranded\ncontent\nProfessional development\nNature Awards\nNature Careers\nNature\nConferences\nRegional websites\nNature Africa\nNature China\nNature India\nNature Japan\nNature Middle East\nPrivacy\nPolicy\nUse\nof cookies\nYour privacy choices/Manage cookies\nLegal\nnotice\nAccessibility\nstatement\nTerms & Conditions\nYour US state privacy rights\n\u00a9 2026 Springer Nature Limited\nClose banner\nClose\nSign up for the Nature Briefing newsletter \u2014 what matters in science, free to your inbox daily.\nEmail address\nSign up\nI agree my information will be processed in accordance with the Nature and Springer Nature Limited Privacy Policy.\nClose banner\nClose\nGet the most important science stories of the day, free in your inbox.\nSign up for Nature Briefing"
+        }
+      ],
+      "limitations": "Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.",
+      "source_id": "S1"
+    }
+  ],
+  "errors": [
+    {
+      "url": "https://www.nature.com/articles/s41561-025-01639-x.pdf",
+      "error": "EVIDENCE_BUDGET_EXHAUSTED"
+    }
+  ],
+  "http_activity": [
+    {
+      "url": "https://api.crossref.org/works?query.title=Trust+in+artificial+intelligence+explainability&rows=6&select=DOI%2Ctitle%2CURL%2Clink%2Cresource%2Cpublisher",
+      "status": 200,
+      "seconds": 0.201888058334589,
+      "bytes": 3732
+    },
+    {
+      "url": "https://www.nature.com/articles/s41561-025-01639-x",
+      "status": 303,
+      "seconds": 0.23868223559111357,
+      "bytes": 150
+    },
+    {
+      "url": "https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41561-025-01639-x",
+      "status": 302,
+      "seconds": 0.24418798927217722,
+      "bytes": 0
+    },
+    {
+      "url": "https://idp.nature.com/transit?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41561-025-01639-x&code=92864111-da1d-4a1d-b890-00ad83f482a3",
+      "status": 302,
+      "seconds": 0.216426782310009,
+      "bytes": 0
+    },
+    {
+      "url": "https://www.nature.com/articles/s41561-025-01639-x?error=cookies_not_supported&code=92864111-da1d-4a1d-b890-00ad83f482a3",
+      "status": 200,
+      "seconds": 0.7426154743880033,
+      "bytes": 274831
+    },
+    {
+      "url": "https://www.nature.com/articles/s41561-025-01639-x.pdf",
+      "status": 303,
+      "seconds": 0.2320992723107338,
+      "bytes": 150
+    },
+    {
+      "url": "https://idp.nature.com/authorize?response_type=cookie&client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41561-025-01639-x.pdf",
+      "status": 302,
+      "seconds": 0.23361915815621614,
+      "bytes": 0
+    }
+  ],
+  "discovery_requests": 1,
+  "source_fetches": 6
+}
