@@ -1,0 +1,1852 @@
+{
+  "seconds": 1.461199413985014,
+  "result": {
+    "sources": [
+      {
+        "status": "usable",
+        "requested_url": "https://arxiv.org/abs/2103.03610v1",
+        "url": "https://arxiv.org/abs/2103.03610v1",
+        "title": "[2103.03610v1] A framework for fostering transparency in shared artificial intelligence models by increasing visibility of contributions",
+        "publisher": "arxiv.org",
+        "checked_at": "2026-11-06T15:10:42.663679+00:00",
+        "content_sha256": "f3fc6b595e9baeb561872be1d769c10a0a340df470dcde0b786845a67be017a0",
+        "content_type": "text/html; charset=utf-8",
+        "limitations": "Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.",
+        "source_id": "S1",
+        "passage_manifest": [
+          {
+            "locator": "complete extracted paragraph 1",
+            "characters": 136,
+            "sha256": "7af71e5b780e89fcc363acb1fe7bdd39b379de11a5fe728628b04ab81b324c32"
+          },
+          {
+            "locator": "complete extracted paragraph 2",
+            "characters": 20,
+            "sha256": "c887f134c26ea8310e1fb4bd6fbab7b640393bd1b556e62691c7a442be92ec2a"
+          },
+          {
+            "locator": "complete extracted paragraph 3",
+            "characters": 6,
+            "sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+          },
+          {
+            "locator": "complete extracted paragraph 4",
+            "characters": 12,
+            "sha256": "d257fc7ca7d83dcf62310d848c5eb3e6d1efeba91e8e434a98758a329e0812f1"
+          },
+          {
+            "locator": "complete extracted paragraph 5",
+            "characters": 39,
+            "sha256": "bfe01b91dca7504d646ad939970a0526a305344c579e6deb3e35899935895b45"
+          },
+          {
+            "locator": "complete extracted paragraph 6",
+            "characters": 42,
+            "sha256": "cd6f749fb5c4f3611a609a45cda9278c343827dd663b172a2ff29f5905144427"
+          },
+          {
+            "locator": "complete extracted paragraph 7",
+            "characters": 23,
+            "sha256": "e7824778138143b9defe0d0cad8f2db8d43097170addde6bb982c251acc3ca7a"
+          },
+          {
+            "locator": "complete extracted paragraph 8",
+            "characters": 25,
+            "sha256": "82f9b617e9146dc1db9f98abc175337f6b209c0385e38ae791a7bac184843740"
+          },
+          {
+            "locator": "complete extracted paragraph 9",
+            "characters": 127,
+            "sha256": "94c15dc61611c36ceddfcbb2dd341bc9a68a095a05b3f50d103bb40136c1cfd7"
+          },
+          {
+            "locator": "complete extracted paragraph 10",
+            "characters": 90,
+            "sha256": "79bbef6396e2f815f52c06d50eca0692d7d0462ff0bb4caa832fef7f5fcdef3c"
+          },
+          {
+            "locator": "complete extracted paragraph 11",
+            "characters": 189,
+            "sha256": "44357de877eae5a061db3a08de90b57d0fdf79925482ecb5c3353794505e08bb"
+          },
+          {
+            "locator": "complete extracted paragraph 12",
+            "characters": 8,
+            "sha256": "546f08fa7709508317522814b3de90efff81d2d1ec54d3df3345f5dd90fbd996"
+          },
+          {
+            "locator": "complete extracted paragraph 13",
+            "characters": 1353,
+            "sha256": "2583843de9cb60eefe2bdc3ed636ceb89d514e4609a9c07ac3ff792075169b42"
+          },
+          {
+            "locator": "complete extracted paragraph 14",
+            "characters": 9,
+            "sha256": "200d647d1164db13dd484eeb713c1b6623bafb879cdd7058546354ae552f805e"
+          },
+          {
+            "locator": "complete extracted paragraph 15",
+            "characters": 357,
+            "sha256": "1c92aefdc70b3c1daf30961a3e8ce6eacce551278d6d46b719d2f6d611eb821b"
+          },
+          {
+            "locator": "complete extracted paragraph 16",
+            "characters": 9,
+            "sha256": "17628fa9972e6adcf2cd8df3ab0a0bbb575c2ba778504a2a42d2d456b08ed1aa"
+          },
+          {
+            "locator": "complete extracted paragraph 17",
+            "characters": 31,
+            "sha256": "38fe5a103fbdcf7e6dbd9669e3efaea4588bf48f8b686ae87b9ad0a5f0fc700b"
+          },
+          {
+            "locator": "complete extracted paragraph 18",
+            "characters": 8,
+            "sha256": "01cbd5328ea33b9cbea990c6b68087399036df822187636c3ff50a37ac9b6100"
+          },
+          {
+            "locator": "complete extracted paragraph 19",
+            "characters": 24,
+            "sha256": "167861e34a84250436e2e652534e6249940c57dd265a6219020bf198b1703515"
+          },
+          {
+            "locator": "complete extracted paragraph 20",
+            "characters": 3,
+            "sha256": "b482e45229e19f5f7ba590b5ac81bdb25d5d24116ed961bfa0eb1a23c20a204c"
+          },
+          {
+            "locator": "complete extracted paragraph 21",
+            "characters": 44,
+            "sha256": "01ca47a9be9a87a52947b9adc79fec5289a90062de5eac85b48a7c0de80b9f57"
+          },
+          {
+            "locator": "complete extracted paragraph 22",
+            "characters": 41,
+            "sha256": "04f25938272cc4bc4614212889c94b39efe768c0ad8dfb393f7212814866349d"
+          },
+          {
+            "locator": "complete extracted paragraph 23",
+            "characters": 19,
+            "sha256": "1b063dc9439779b72e254833108613d53e707d1de19adebb88920459df5f5696"
+          },
+          {
+            "locator": "complete extracted paragraph 24",
+            "characters": 29,
+            "sha256": "491476425acd52b88528b545af8c0ad89e9a7dc28cd998c732e20a08839063d8"
+          },
+          {
+            "locator": "complete extracted paragraph 25",
+            "characters": 12,
+            "sha256": "a033f60f5442bf2a8406ae4249d0a50f6324b04e7979133ee648cd067f3401c4"
+          },
+          {
+            "locator": "complete extracted paragraph 26",
+            "characters": 32,
+            "sha256": "1ebf07e4b78402411d8a7d4af1c41f4e64bc0005a5b67b06de5bb7f7e53a5871"
+          },
+          {
+            "locator": "complete extracted paragraph 27",
+            "characters": 19,
+            "sha256": "1b063dc9439779b72e254833108613d53e707d1de19adebb88920459df5f5696"
+          },
+          {
+            "locator": "complete extracted paragraph 28",
+            "characters": 35,
+            "sha256": "24c35f2b74b9ea0690aa3775f4ef24af015153cfb65e5a99e44e671b5fb011b7"
+          },
+          {
+            "locator": "complete extracted paragraph 29",
+            "characters": 18,
+            "sha256": "6d428c5fdf9621f665af1c80c7c1388629af415347b583a22aaa8f10c4ef5fb6"
+          },
+          {
+            "locator": "complete extracted paragraph 30",
+            "characters": 31,
+            "sha256": "939f79bbc59f7a5e6438e544c34c4c5710b7a8dccba410a8f7414b18a91b0198"
+          },
+          {
+            "locator": "complete extracted paragraph 31",
+            "characters": 4,
+            "sha256": "99ab581576106c9e01cf4ba2d2f5bb721ec414b7ffd0bb3934f64ed48333215a"
+          },
+          {
+            "locator": "complete extracted paragraph 32",
+            "characters": 37,
+            "sha256": "8bb1ba02e3e1bd4124d6e6f9615bb49fcd40157d2226d29ec21e982c8a83504f"
+          },
+          {
+            "locator": "complete extracted paragraph 33",
+            "characters": 16,
+            "sha256": "c0f251b217996152db8725b8f4bb1ab51d91a13a62f0710975cffd74b1842159"
+          },
+          {
+            "locator": "complete extracted paragraph 34",
+            "characters": 13,
+            "sha256": "54f397049250eeb9769eeea70821a81dfa1c3b86b33e3316fd9d7d16fd9d0aa7"
+          },
+          {
+            "locator": "complete extracted paragraph 35",
+            "characters": 189,
+            "sha256": "44357de877eae5a061db3a08de90b57d0fdf79925482ecb5c3353794505e08bb"
+          },
+          {
+            "locator": "complete extracted paragraph 36",
+            "characters": 8,
+            "sha256": "546f08fa7709508317522814b3de90efff81d2d1ec54d3df3345f5dd90fbd996"
+          },
+          {
+            "locator": "complete extracted paragraph 37",
+            "characters": 12,
+            "sha256": "a03ac823dc4814f87a46e1f1e92e9986577dffd5e20bf7139814f74f6a15fa73"
+          },
+          {
+            "locator": "complete extracted paragraph 38",
+            "characters": 19,
+            "sha256": "7c51c8126422013273317d9d7eeb1922fbd6f67416cc3f840c1e08be8eb174d5"
+          },
+          {
+            "locator": "complete extracted paragraph 39",
+            "characters": 13,
+            "sha256": "2fc30e6468109af021fc6f6385569049b0696fde7ea6c4fe2c56120e6eae2fa4"
+          },
+          {
+            "locator": "complete extracted paragraph 40",
+            "characters": 23,
+            "sha256": "4b02d8028343b5371962a11c930d15729c5ff4f1bcc7d8c35de792205737da6b"
+          },
+          {
+            "locator": "complete extracted paragraph 41",
+            "characters": 5,
+            "sha256": "c7b4d883a0df69fe51a238ee27cf4ed76c35f706ceb8f294f21c7e421eafdb3f"
+          },
+          {
+            "locator": "complete extracted paragraph 42",
+            "characters": 6,
+            "sha256": "6f88f79b9f3cee8e55baa9b98475561d49d8bf9273121a6d7b716cace8d72d1d"
+          },
+          {
+            "locator": "complete extracted paragraph 43",
+            "characters": 1,
+            "sha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7"
+          },
+          {
+            "locator": "complete extracted paragraph 44",
+            "characters": 6,
+            "sha256": "0da6e90b695e0eb12650d86aace26c6b0a6d7706d1521641f1b948df09253f94"
+          },
+          {
+            "locator": "complete extracted paragraph 45",
+            "characters": 3,
+            "sha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+          },
+          {
+            "locator": "complete extracted paragraph 46",
+            "characters": 1,
+            "sha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7"
+          },
+          {
+            "locator": "complete extracted paragraph 47",
+            "characters": 6,
+            "sha256": "034a7e52c5c9534b709dc1dba403868399b0949f7c1933a67325c22077ffc221"
+          },
+          {
+            "locator": "complete extracted paragraph 48",
+            "characters": 9,
+            "sha256": "28bec27423301df1c2599f3351ff40473b23d5ed4ab00738e1a640a00e7fe060"
+          },
+          {
+            "locator": "complete extracted paragraph 49",
+            "characters": 20,
+            "sha256": "3c0f440a1650465ae78e15ea1ffd75558d68a0da2c1950563deb27a04ffd1ed8"
+          },
+          {
+            "locator": "complete extracted paragraph 50",
+            "characters": 2,
+            "sha256": "3b8b91c75627bee566dcb88f4805901b20a3eab2520bcff8d26c87157a035026"
+          },
+          {
+            "locator": "complete extracted paragraph 51",
+            "characters": 22,
+            "sha256": "54fd59f5c42bdfe5daae19c357999a98856aba130bd541660d9de8850822cddd"
+          },
+          {
+            "locator": "complete extracted paragraph 52",
+            "characters": 18,
+            "sha256": "525a6647b96d627d84981a95dd43e062f7bf7f0aaebaf4104bb897f5b96c5de2"
+          },
+          {
+            "locator": "complete extracted paragraph 53",
+            "characters": 16,
+            "sha256": "e0da427360932477c85cb6483b3b07fec49056eef818073983a1a0260e68d2fe"
+          },
+          {
+            "locator": "complete extracted paragraph 54",
+            "characters": 22,
+            "sha256": "dc90602a17df7162571eed7b64905ea93d57beb1ba624a8c59d48a80ff78b547"
+          },
+          {
+            "locator": "complete extracted paragraph 55",
+            "characters": 16,
+            "sha256": "a72b808e9a64726aaf3b353b7cbbd5f8062978038cdfe2ba45e889095f4a7fd4"
+          },
+          {
+            "locator": "complete extracted paragraph 56",
+            "characters": 12,
+            "sha256": "58f3f6df0886fc9914ad40b141f0b0d4f7528f6d80922a19326be51360992976"
+          },
+          {
+            "locator": "complete extracted paragraph 57",
+            "characters": 14,
+            "sha256": "dad1b10e4a83cfba2c92a06034359781e26af0f3dfc694a4c998977862967ed6"
+          },
+          {
+            "locator": "complete extracted paragraph 58",
+            "characters": 13,
+            "sha256": "1c67b0f27871a8ca5f861aa2583339073c3ddb1738c12ee60e0cc6856037172f"
+          },
+          {
+            "locator": "complete extracted paragraph 59",
+            "characters": 15,
+            "sha256": "65ff970b71546e000c4f76ed232b813fb5f940f4cb7a392eafdb38a7c0bb8a75"
+          },
+          {
+            "locator": "complete extracted paragraph 60",
+            "characters": 12,
+            "sha256": "5ad851e8251011497c170c583a6b235e6cb36425fe825f105c9e866a6ca39b67"
+          },
+          {
+            "locator": "complete extracted paragraph 61",
+            "characters": 22,
+            "sha256": "a19ad9c26487f2a8b6125bb3cf2c102976f300945a852dca576d1fc776b44798"
+          },
+          {
+            "locator": "complete extracted paragraph 62",
+            "characters": 10,
+            "sha256": "47d2a515ef2f05b87d688656286a61e4f743da4b878684c7654969db17711c40"
+          },
+          {
+            "locator": "complete extracted paragraph 63",
+            "characters": 25,
+            "sha256": "1e6ba92e11a6d01d1c54cfe2497ea1095f32d3c3c3b53c6bba07e2be322811b5"
+          },
+          {
+            "locator": "complete extracted paragraph 64",
+            "characters": 1,
+            "sha256": "8db71ed28b0f2f1432561e8d8a0dc3878f2da540c53a2ab82335b6f716da2ef3"
+          },
+          {
+            "locator": "complete extracted paragraph 65",
+            "characters": 10,
+            "sha256": "1bcf7347466c8db9d8e1aa1fb24a7fd7186d61a6a09a18c92d757be7b1e4ff64"
+          },
+          {
+            "locator": "complete extracted paragraph 66",
+            "characters": 17,
+            "sha256": "a904aa320f80ed8440a8e1af8ffaeba2f7b98eaebb0f7efaa116d87ed3fb8314"
+          },
+          {
+            "locator": "complete extracted paragraph 67",
+            "characters": 8,
+            "sha256": "1bac4007880ba12995a974e315751b4f5e70829c753ec57326f7101772abe5a6"
+          },
+          {
+            "locator": "complete extracted paragraph 68",
+            "characters": 19,
+            "sha256": "5eddfb7f557bc5282105a8c17c6951b331475ba61f37869d123ab60d9b76efeb"
+          },
+          {
+            "locator": "complete extracted paragraph 69",
+            "characters": 32,
+            "sha256": "6dfa6ebb407d4010f423e2e4623d74a619e0740dc456877004df753beddc463c"
+          },
+          {
+            "locator": "complete extracted paragraph 70",
+            "characters": 29,
+            "sha256": "04166a6c4def9d36739a4b6a990e21e0af2cd5fbb398d76b4314f273db544a92"
+          },
+          {
+            "locator": "complete extracted paragraph 71",
+            "characters": 46,
+            "sha256": "bdf590e387a15f0db73425b732674debe0ebf8e3eed3d60a351d882f2dc2c0a5"
+          },
+          {
+            "locator": "complete extracted paragraph 72",
+            "characters": 23,
+            "sha256": "93cd5b4ab2e760202d8f36a03ff2a0fff89a2fe1990b24a60610466e35d64af8"
+          },
+          {
+            "locator": "complete extracted paragraph 73",
+            "characters": 44,
+            "sha256": "47ffc0ea0952aa8ab50b273e9f31453eb63479601d59ce32dd2bd5cb9e7575c0"
+          },
+          {
+            "locator": "complete extracted paragraph 74",
+            "characters": 14,
+            "sha256": "a5d3dd607af5d83c5bd3856722da60546dc479a77204172e2391b94683fe1c49"
+          },
+          {
+            "locator": "complete extracted paragraph 75",
+            "characters": 26,
+            "sha256": "b4da84bd5a6fcd039485cd7ec7a7805500cf11eb52e6d7cf8d3a0b65a707c26d"
+          },
+          {
+            "locator": "complete extracted paragraph 76",
+            "characters": 15,
+            "sha256": "bdc83e493721a4bc6670552e9164a1bcfc355589c9414f9ba2a99111b7d22df4"
+          },
+          {
+            "locator": "complete extracted paragraph 77",
+            "characters": 49,
+            "sha256": "185b5d48b12c852fd86c52ef763fe54047419bb67ba6b3aecbc16607d6d281fb"
+          },
+          {
+            "locator": "complete extracted paragraph 78",
+            "characters": 17,
+            "sha256": "a289c087c048ec91092f81457a96ad3a031d0e1c050261d1629af4312efb0320"
+          },
+          {
+            "locator": "complete extracted paragraph 79",
+            "characters": 49,
+            "sha256": "9eaa4ed5f4b3033e661f6df1c60bd22e328fc7c23643d98c8cb254dbc2b7e8ee"
+          },
+          {
+            "locator": "complete extracted paragraph 80",
+            "characters": 15,
+            "sha256": "73f6645b1fce8e306f3a43ce5ba8ce95aeb796e443f73144ecadf3e0b5647ae1"
+          },
+          {
+            "locator": "complete extracted paragraph 81",
+            "characters": 28,
+            "sha256": "51a32c15a9e6ce9fccb46eac2ef3d84085d3a2cecdd8316d514d31e57a4c3616"
+          },
+          {
+            "locator": "complete extracted paragraph 82",
+            "characters": 20,
+            "sha256": "7cbb9e16a1e68ff829ac0b101634b28a3d824b2387a7646588c967e034d2cdb1"
+          },
+          {
+            "locator": "complete extracted paragraph 83",
+            "characters": 53,
+            "sha256": "adcadacbefc4a11543c54fe9e46b333ffb2007d78c20c66bdc1e3ef3a4ed0b21"
+          },
+          {
+            "locator": "complete extracted paragraph 84",
+            "characters": 14,
+            "sha256": "171d550cb45e76176b6808955f7ccd236562737d9fa41dd828db8d8ced805b5f"
+          },
+          {
+            "locator": "complete extracted paragraph 85",
+            "characters": 26,
+            "sha256": "9dcb9b896a60b496a595305c8d16f7800b160e2014d531da102cacb8792888c3"
+          },
+          {
+            "locator": "complete extracted paragraph 86",
+            "characters": 15,
+            "sha256": "bbee8f1708d6de3f52e7579494a68f0edccd6269de889e16bb71a9294a0b724a"
+          },
+          {
+            "locator": "complete extracted paragraph 87",
+            "characters": 29,
+            "sha256": "a8cb4c3f57230beb642c53ad49e72d3bc411bd5f4d67c59551aa0687a0e287f8"
+          },
+          {
+            "locator": "complete extracted paragraph 88",
+            "characters": 18,
+            "sha256": "375ed04207a2d8f4ea88b5bb4ba43eead548a9b391f25d1e0d91f24f450ded11"
+          },
+          {
+            "locator": "complete extracted paragraph 89",
+            "characters": 35,
+            "sha256": "0b17f45e29aec9c20753874ea61825957276992f4a89709d771e333009e5ac88"
+          },
+          {
+            "locator": "complete extracted paragraph 90",
+            "characters": 18,
+            "sha256": "3344a73159d2d7c6344111b80252852c026bad215fae50279c0b0ba0cd678425"
+          },
+          {
+            "locator": "complete extracted paragraph 91",
+            "characters": 34,
+            "sha256": "af0d550b6ffa91e69988373fbeafafc781a35ee991600352d2ccff1ac3bdd5f1"
+          },
+          {
+            "locator": "complete extracted paragraph 92",
+            "characters": 5,
+            "sha256": "f61ec10d1385dcc0c473a56fc3691fa9a2fd26105932eb1e10ae0ca7d5f3426a"
+          },
+          {
+            "locator": "complete extracted paragraph 93",
+            "characters": 5,
+            "sha256": "f61ec10d1385dcc0c473a56fc3691fa9a2fd26105932eb1e10ae0ca7d5f3426a"
+          },
+          {
+            "locator": "complete extracted paragraph 94",
+            "characters": 16,
+            "sha256": "38aa7355975302746146b925c1a427e57c07f837c0f97531da16c79e88ce2ce9"
+          },
+          {
+            "locator": "complete extracted paragraph 95",
+            "characters": 30,
+            "sha256": "c084de3b58811937310b760c9ff3b7ecf6b930793da932d953780a5613b3c83a"
+          },
+          {
+            "locator": "complete extracted paragraph 96",
+            "characters": 13,
+            "sha256": "ff82b4b7cf94441155d1dffa36594b348732b9f52b7475b657fe0bda95a7dda1"
+          },
+          {
+            "locator": "complete extracted paragraph 97",
+            "characters": 37,
+            "sha256": "86f24f359eda723fdb666a7649afa58eb97bbbb00ca85814f0e682037c94b0dd"
+          },
+          {
+            "locator": "complete extracted paragraph 98",
+            "characters": 13,
+            "sha256": "ff82b4b7cf94441155d1dffa36594b348732b9f52b7475b657fe0bda95a7dda1"
+          },
+          {
+            "locator": "complete extracted paragraph 99",
+            "characters": 26,
+            "sha256": "cdef19a88d731548894e72b5ee74e2d938e0eb63028e9cbc3539d6c3f8cc5dc3"
+          },
+          {
+            "locator": "complete extracted paragraph 100",
+            "characters": 14,
+            "sha256": "8c5e7268c7f433490d9fe7e99b972f2399f89933ff1a0a424120573773c9cfb8"
+          },
+          {
+            "locator": "complete extracted paragraph 101",
+            "characters": 29,
+            "sha256": "dfe8db688c334b0e37919f7eb9be911cf5d0a71c7f9c4be97ec4997922af6694"
+          },
+          {
+            "locator": "complete extracted paragraph 102",
+            "characters": 24,
+            "sha256": "7b85b97c79f1ddb655f2a3ef578b5b6743baef8c530a1c93743c304c05d4db02"
+          },
+          {
+            "locator": "complete extracted paragraph 103",
+            "characters": 46,
+            "sha256": "e4645d093d4c00ecc7e7cdb804f731640289d344a81cbb1191bfc66824907a7f"
+          },
+          {
+            "locator": "complete extracted paragraph 104",
+            "characters": 23,
+            "sha256": "a44ce1f20a2aa9d4f605838b2383fd03fe188d57b3f6408436dd2bf3f11acd61"
+          },
+          {
+            "locator": "complete extracted paragraph 105",
+            "characters": 32,
+            "sha256": "41443e59a096573d4ee301078f50db8a45519efa2fb550edb61bcee4ae65909f"
+          },
+          {
+            "locator": "complete extracted paragraph 106",
+            "characters": 6,
+            "sha256": "d95082a2ee57f3e40e3050662a346e26a872fd4d0baf57d293ac5a883f0f4ff5"
+          },
+          {
+            "locator": "complete extracted paragraph 107",
+            "characters": 5,
+            "sha256": "aea1b15df626f337de5eb359dd6f7651b9f25a39ddb515b6ab765e1167456d87"
+          },
+          {
+            "locator": "complete extracted paragraph 108",
+            "characters": 11,
+            "sha256": "65a1553729e30faf7ed329a80f1f3d6999751d84f49a117d1d8be87f25175fb3"
+          },
+          {
+            "locator": "complete extracted paragraph 109",
+            "characters": 5,
+            "sha256": "7e61847d61d65d9e3ac15c6281f7bfe0d80b8d79d3b53125e9fc2bfc25bb81e8"
+          },
+          {
+            "locator": "complete extracted paragraph 110",
+            "characters": 15,
+            "sha256": "a85e4d81cf793fe5408b5ded24b1e7bd77f66107abe75cb8ea558938c8070bcf"
+          },
+          {
+            "locator": "complete extracted paragraph 111",
+            "characters": 61,
+            "sha256": "5eb3ea56d42dc20c88c002639d1d487f5b6b87694a7553441895f9b20911b5b8"
+          },
+          {
+            "locator": "complete extracted paragraph 112",
+            "characters": 115,
+            "sha256": "5872313eb67217c822adad62fa81b6b7b4371a3777d8c2d95296eb7110dc584a"
+          },
+          {
+            "locator": "complete extracted paragraph 113",
+            "characters": 241,
+            "sha256": "950e21f6d81c4ab26a3a69bd29310e7e590d3502e74e397bf28e122d23b06951"
+          },
+          {
+            "locator": "complete extracted paragraph 114",
+            "characters": 97,
+            "sha256": "1c8562b040684d8825934655ce2b17423baf50be3ab7bf133b2269a824d5e2b3"
+          },
+          {
+            "locator": "complete extracted paragraph 115",
+            "characters": 44,
+            "sha256": "d632fdc00648366b4818c01954c63900a074f4f2951fc854405cc9d1c9693120"
+          },
+          {
+            "locator": "complete extracted paragraph 116",
+            "characters": 34,
+            "sha256": "15f1286860a4dd2b098d0c803d626c2837b62e9e1b743e26fe04b93ccb63bcd5"
+          },
+          {
+            "locator": "complete extracted paragraph 117",
+            "characters": 57,
+            "sha256": "39b80187504487480cc432cbc3ec560c0147ce061e68caac072f1ba1cf9ae5b6"
+          },
+          {
+            "locator": "complete extracted paragraph 118",
+            "characters": 22,
+            "sha256": "d6ea4d9d4f76e38a9b5dc12721565927128fe757bdf61f05c68f9da47b9c46cd"
+          },
+          {
+            "locator": "complete extracted paragraph 119",
+            "characters": 21,
+            "sha256": "f2cf5b88511e1e512f0ce5304aee64941c32a337922b2262a9c9c7c3949b0e13"
+          }
+        ]
+      },
+      {
+        "status": "usable",
+        "requested_url": "https://arxiv.org/abs/2108.04770v1",
+        "url": "https://arxiv.org/abs/2108.04770v1",
+        "title": "[2108.04770v1] Examining correlation between trust and transparency with explainable artificial intelligence",
+        "publisher": "arxiv.org",
+        "checked_at": "2026-11-06T15:10:42.705514+00:00",
+        "content_sha256": "6b00852edcba44eb90e4b07a455df53a6ab9feaf3e2a60b2c5a6e105b3093154",
+        "content_type": "text/html; charset=utf-8",
+        "limitations": "Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.",
+        "source_id": "S2",
+        "passage_manifest": [
+          {
+            "locator": "complete extracted paragraph 1",
+            "characters": 108,
+            "sha256": "5809c748afaf4bd8b6a13ab9c08fcb336ec51f74fc563afc1c202df49651dacd"
+          },
+          {
+            "locator": "complete extracted paragraph 2",
+            "characters": 20,
+            "sha256": "c887f134c26ea8310e1fb4bd6fbab7b640393bd1b556e62691c7a442be92ec2a"
+          },
+          {
+            "locator": "complete extracted paragraph 3",
+            "characters": 6,
+            "sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+          },
+          {
+            "locator": "complete extracted paragraph 4",
+            "characters": 12,
+            "sha256": "d257fc7ca7d83dcf62310d848c5eb3e6d1efeba91e8e434a98758a329e0812f1"
+          },
+          {
+            "locator": "complete extracted paragraph 5",
+            "characters": 39,
+            "sha256": "bfe01b91dca7504d646ad939970a0526a305344c579e6deb3e35899935895b45"
+          },
+          {
+            "locator": "complete extracted paragraph 6",
+            "characters": 45,
+            "sha256": "3b0a362d02df3a7aa651a877b3b195fa7b50008e507a9d9f9e845deaaa1dc0a4"
+          },
+          {
+            "locator": "complete extracted paragraph 7",
+            "characters": 23,
+            "sha256": "6407cf8b95308bdaf7e6782a4e47c6d2c8fd052883e0f2c5462c7513df166449"
+          },
+          {
+            "locator": "complete extracted paragraph 8",
+            "characters": 26,
+            "sha256": "35659c5f537334c6f2714eb2f58c8fa05cd1eb1df714a48388a3fcc99f7ec3d2"
+          },
+          {
+            "locator": "complete extracted paragraph 9",
+            "characters": 99,
+            "sha256": "afa86929cfd12d8291c23353bf68e7dddcd2d16a0715c677d88d0572eba51eb2"
+          },
+          {
+            "locator": "complete extracted paragraph 10",
+            "characters": 23,
+            "sha256": "7e8216f4f907c33d6f0c3cf673820190a7351523e271e9cb7766f15423a2058f"
+          },
+          {
+            "locator": "complete extracted paragraph 11",
+            "characters": 144,
+            "sha256": "446464f780e35f34b272709b3330692e3e2a9593d62927332bc104219428a4aa"
+          },
+          {
+            "locator": "complete extracted paragraph 12",
+            "characters": 8,
+            "sha256": "546f08fa7709508317522814b3de90efff81d2d1ec54d3df3345f5dd90fbd996"
+          },
+          {
+            "locator": "complete extracted paragraph 13",
+            "characters": 19,
+            "sha256": "97f49364e0ca3f0a4e179329940346d95072cdf25ecfe61e1a87832a3f010c2f"
+          },
+          {
+            "locator": "complete extracted paragraph 14",
+            "characters": 793,
+            "sha256": "371951cffb27264a9ad46dba8e641a48539ed63adbd76ad5812e4b7fd29b890b"
+          },
+          {
+            "locator": "complete extracted paragraph 15",
+            "characters": 9,
+            "sha256": "200d647d1164db13dd484eeb713c1b6623bafb879cdd7058546354ae552f805e"
+          },
+          {
+            "locator": "complete extracted paragraph 16",
+            "characters": 26,
+            "sha256": "732192514e609f384043773d20de218909bb122cacf1ca6e5d0e0a4a0bb63c03"
+          },
+          {
+            "locator": "complete extracted paragraph 17",
+            "characters": 9,
+            "sha256": "17628fa9972e6adcf2cd8df3ab0a0bbb575c2ba778504a2a42d2d456b08ed1aa"
+          },
+          {
+            "locator": "complete extracted paragraph 18",
+            "characters": 34,
+            "sha256": "40db0a911de5e4674351a951f6e2b3c316295f954b284f035078c24e299dbdad"
+          },
+          {
+            "locator": "complete extracted paragraph 19",
+            "characters": 8,
+            "sha256": "01cbd5328ea33b9cbea990c6b68087399036df822187636c3ff50a37ac9b6100"
+          },
+          {
+            "locator": "complete extracted paragraph 20",
+            "characters": 24,
+            "sha256": "3e0d988ea27d0d5c4baa005bf601b7de8e8a7aed97aed67e8a50a9a948cdfb6e"
+          },
+          {
+            "locator": "complete extracted paragraph 21",
+            "characters": 3,
+            "sha256": "b482e45229e19f5f7ba590b5ac81bdb25d5d24116ed961bfa0eb1a23c20a204c"
+          },
+          {
+            "locator": "complete extracted paragraph 22",
+            "characters": 44,
+            "sha256": "9c69ac637fd96025e54b4c2baa231c6d27b6acf1b54e237843aebc4e61aa33fa"
+          },
+          {
+            "locator": "complete extracted paragraph 23",
+            "characters": 41,
+            "sha256": "e4ef057d1e7adc0b43ffcd3d8be239ca2be5a71439dbc64e64cff40cd26b120c"
+          },
+          {
+            "locator": "complete extracted paragraph 24",
+            "characters": 19,
+            "sha256": "1b063dc9439779b72e254833108613d53e707d1de19adebb88920459df5f5696"
+          },
+          {
+            "locator": "complete extracted paragraph 25",
+            "characters": 29,
+            "sha256": "491476425acd52b88528b545af8c0ad89e9a7dc28cd998c732e20a08839063d8"
+          },
+          {
+            "locator": "complete extracted paragraph 26",
+            "characters": 18,
+            "sha256": "6d428c5fdf9621f665af1c80c7c1388629af415347b583a22aaa8f10c4ef5fb6"
+          },
+          {
+            "locator": "complete extracted paragraph 27",
+            "characters": 34,
+            "sha256": "03b5351d8f8aa15a6781a2c00e92b95fe9a3de6aff5953b295db897511e6a8b8"
+          },
+          {
+            "locator": "complete extracted paragraph 28",
+            "characters": 4,
+            "sha256": "99ab581576106c9e01cf4ba2d2f5bb721ec414b7ffd0bb3934f64ed48333215a"
+          },
+          {
+            "locator": "complete extracted paragraph 29",
+            "characters": 40,
+            "sha256": "65264c7dd65a5381f0379ee59aba7347bce8cf8ab09525f00d74dd22b3c18b59"
+          },
+          {
+            "locator": "complete extracted paragraph 30",
+            "characters": 16,
+            "sha256": "c0f251b217996152db8725b8f4bb1ab51d91a13a62f0710975cffd74b1842159"
+          },
+          {
+            "locator": "complete extracted paragraph 31",
+            "characters": 13,
+            "sha256": "54f397049250eeb9769eeea70821a81dfa1c3b86b33e3316fd9d7d16fd9d0aa7"
+          },
+          {
+            "locator": "complete extracted paragraph 32",
+            "characters": 144,
+            "sha256": "446464f780e35f34b272709b3330692e3e2a9593d62927332bc104219428a4aa"
+          },
+          {
+            "locator": "complete extracted paragraph 33",
+            "characters": 37,
+            "sha256": "b89cb57071965afdd71240e79d790c4a5e72accfb1c280a3e6b02543b355c65c"
+          },
+          {
+            "locator": "complete extracted paragraph 34",
+            "characters": 12,
+            "sha256": "a03ac823dc4814f87a46e1f1e92e9986577dffd5e20bf7139814f74f6a15fa73"
+          },
+          {
+            "locator": "complete extracted paragraph 35",
+            "characters": 19,
+            "sha256": "7c51c8126422013273317d9d7eeb1922fbd6f67416cc3f840c1e08be8eb174d5"
+          },
+          {
+            "locator": "complete extracted paragraph 36",
+            "characters": 13,
+            "sha256": "2fc30e6468109af021fc6f6385569049b0696fde7ea6c4fe2c56120e6eae2fa4"
+          },
+          {
+            "locator": "complete extracted paragraph 37",
+            "characters": 23,
+            "sha256": "4b02d8028343b5371962a11c930d15729c5ff4f1bcc7d8c35de792205737da6b"
+          },
+          {
+            "locator": "complete extracted paragraph 38",
+            "characters": 5,
+            "sha256": "a073452b29b402c3c5a01e0b385243e85a459c9bcf7ab5aa113db85cc689cab9"
+          },
+          {
+            "locator": "complete extracted paragraph 39",
+            "characters": 6,
+            "sha256": "6f88f79b9f3cee8e55baa9b98475561d49d8bf9273121a6d7b716cace8d72d1d"
+          },
+          {
+            "locator": "complete extracted paragraph 40",
+            "characters": 1,
+            "sha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7"
+          },
+          {
+            "locator": "complete extracted paragraph 41",
+            "characters": 6,
+            "sha256": "0da6e90b695e0eb12650d86aace26c6b0a6d7706d1521641f1b948df09253f94"
+          },
+          {
+            "locator": "complete extracted paragraph 42",
+            "characters": 3,
+            "sha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+          },
+          {
+            "locator": "complete extracted paragraph 43",
+            "characters": 1,
+            "sha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7"
+          },
+          {
+            "locator": "complete extracted paragraph 44",
+            "characters": 6,
+            "sha256": "034a7e52c5c9534b709dc1dba403868399b0949f7c1933a67325c22077ffc221"
+          },
+          {
+            "locator": "complete extracted paragraph 45",
+            "characters": 9,
+            "sha256": "4a2c9cf4a80954797fa5a5db75f720eacf0a46b0c45c50bdc6849c1fe7951fdd"
+          },
+          {
+            "locator": "complete extracted paragraph 46",
+            "characters": 20,
+            "sha256": "3c0f440a1650465ae78e15ea1ffd75558d68a0da2c1950563deb27a04ffd1ed8"
+          },
+          {
+            "locator": "complete extracted paragraph 47",
+            "characters": 2,
+            "sha256": "3b8b91c75627bee566dcb88f4805901b20a3eab2520bcff8d26c87157a035026"
+          },
+          {
+            "locator": "complete extracted paragraph 48",
+            "characters": 22,
+            "sha256": "54fd59f5c42bdfe5daae19c357999a98856aba130bd541660d9de8850822cddd"
+          },
+          {
+            "locator": "complete extracted paragraph 49",
+            "characters": 18,
+            "sha256": "525a6647b96d627d84981a95dd43e062f7bf7f0aaebaf4104bb897f5b96c5de2"
+          },
+          {
+            "locator": "complete extracted paragraph 50",
+            "characters": 16,
+            "sha256": "e0da427360932477c85cb6483b3b07fec49056eef818073983a1a0260e68d2fe"
+          },
+          {
+            "locator": "complete extracted paragraph 51",
+            "characters": 22,
+            "sha256": "dc90602a17df7162571eed7b64905ea93d57beb1ba624a8c59d48a80ff78b547"
+          },
+          {
+            "locator": "complete extracted paragraph 52",
+            "characters": 16,
+            "sha256": "a72b808e9a64726aaf3b353b7cbbd5f8062978038cdfe2ba45e889095f4a7fd4"
+          },
+          {
+            "locator": "complete extracted paragraph 53",
+            "characters": 22,
+            "sha256": "a19ad9c26487f2a8b6125bb3cf2c102976f300945a852dca576d1fc776b44798"
+          },
+          {
+            "locator": "complete extracted paragraph 54",
+            "characters": 10,
+            "sha256": "47d2a515ef2f05b87d688656286a61e4f743da4b878684c7654969db17711c40"
+          },
+          {
+            "locator": "complete extracted paragraph 55",
+            "characters": 25,
+            "sha256": "1e6ba92e11a6d01d1c54cfe2497ea1095f32d3c3c3b53c6bba07e2be322811b5"
+          },
+          {
+            "locator": "complete extracted paragraph 56",
+            "characters": 1,
+            "sha256": "8db71ed28b0f2f1432561e8d8a0dc3878f2da540c53a2ab82335b6f716da2ef3"
+          },
+          {
+            "locator": "complete extracted paragraph 57",
+            "characters": 10,
+            "sha256": "1bcf7347466c8db9d8e1aa1fb24a7fd7186d61a6a09a18c92d757be7b1e4ff64"
+          },
+          {
+            "locator": "complete extracted paragraph 58",
+            "characters": 17,
+            "sha256": "a904aa320f80ed8440a8e1af8ffaeba2f7b98eaebb0f7efaa116d87ed3fb8314"
+          },
+          {
+            "locator": "complete extracted paragraph 59",
+            "characters": 8,
+            "sha256": "1bac4007880ba12995a974e315751b4f5e70829c753ec57326f7101772abe5a6"
+          },
+          {
+            "locator": "complete extracted paragraph 60",
+            "characters": 19,
+            "sha256": "5eddfb7f557bc5282105a8c17c6951b331475ba61f37869d123ab60d9b76efeb"
+          },
+          {
+            "locator": "complete extracted paragraph 61",
+            "characters": 32,
+            "sha256": "6dfa6ebb407d4010f423e2e4623d74a619e0740dc456877004df753beddc463c"
+          },
+          {
+            "locator": "complete extracted paragraph 62",
+            "characters": 29,
+            "sha256": "04166a6c4def9d36739a4b6a990e21e0af2cd5fbb398d76b4314f273db544a92"
+          },
+          {
+            "locator": "complete extracted paragraph 63",
+            "characters": 46,
+            "sha256": "bdf590e387a15f0db73425b732674debe0ebf8e3eed3d60a351d882f2dc2c0a5"
+          },
+          {
+            "locator": "complete extracted paragraph 64",
+            "characters": 23,
+            "sha256": "93cd5b4ab2e760202d8f36a03ff2a0fff89a2fe1990b24a60610466e35d64af8"
+          },
+          {
+            "locator": "complete extracted paragraph 65",
+            "characters": 44,
+            "sha256": "47ffc0ea0952aa8ab50b273e9f31453eb63479601d59ce32dd2bd5cb9e7575c0"
+          },
+          {
+            "locator": "complete extracted paragraph 66",
+            "characters": 14,
+            "sha256": "a5d3dd607af5d83c5bd3856722da60546dc479a77204172e2391b94683fe1c49"
+          },
+          {
+            "locator": "complete extracted paragraph 67",
+            "characters": 26,
+            "sha256": "b4da84bd5a6fcd039485cd7ec7a7805500cf11eb52e6d7cf8d3a0b65a707c26d"
+          },
+          {
+            "locator": "complete extracted paragraph 68",
+            "characters": 15,
+            "sha256": "bdc83e493721a4bc6670552e9164a1bcfc355589c9414f9ba2a99111b7d22df4"
+          },
+          {
+            "locator": "complete extracted paragraph 69",
+            "characters": 49,
+            "sha256": "185b5d48b12c852fd86c52ef763fe54047419bb67ba6b3aecbc16607d6d281fb"
+          },
+          {
+            "locator": "complete extracted paragraph 70",
+            "characters": 17,
+            "sha256": "a289c087c048ec91092f81457a96ad3a031d0e1c050261d1629af4312efb0320"
+          },
+          {
+            "locator": "complete extracted paragraph 71",
+            "characters": 49,
+            "sha256": "9eaa4ed5f4b3033e661f6df1c60bd22e328fc7c23643d98c8cb254dbc2b7e8ee"
+          },
+          {
+            "locator": "complete extracted paragraph 72",
+            "characters": 15,
+            "sha256": "73f6645b1fce8e306f3a43ce5ba8ce95aeb796e443f73144ecadf3e0b5647ae1"
+          },
+          {
+            "locator": "complete extracted paragraph 73",
+            "characters": 28,
+            "sha256": "51a32c15a9e6ce9fccb46eac2ef3d84085d3a2cecdd8316d514d31e57a4c3616"
+          },
+          {
+            "locator": "complete extracted paragraph 74",
+            "characters": 20,
+            "sha256": "7cbb9e16a1e68ff829ac0b101634b28a3d824b2387a7646588c967e034d2cdb1"
+          },
+          {
+            "locator": "complete extracted paragraph 75",
+            "characters": 53,
+            "sha256": "adcadacbefc4a11543c54fe9e46b333ffb2007d78c20c66bdc1e3ef3a4ed0b21"
+          },
+          {
+            "locator": "complete extracted paragraph 76",
+            "characters": 14,
+            "sha256": "171d550cb45e76176b6808955f7ccd236562737d9fa41dd828db8d8ced805b5f"
+          },
+          {
+            "locator": "complete extracted paragraph 77",
+            "characters": 26,
+            "sha256": "9dcb9b896a60b496a595305c8d16f7800b160e2014d531da102cacb8792888c3"
+          },
+          {
+            "locator": "complete extracted paragraph 78",
+            "characters": 15,
+            "sha256": "bbee8f1708d6de3f52e7579494a68f0edccd6269de889e16bb71a9294a0b724a"
+          },
+          {
+            "locator": "complete extracted paragraph 79",
+            "characters": 29,
+            "sha256": "a8cb4c3f57230beb642c53ad49e72d3bc411bd5f4d67c59551aa0687a0e287f8"
+          },
+          {
+            "locator": "complete extracted paragraph 80",
+            "characters": 18,
+            "sha256": "375ed04207a2d8f4ea88b5bb4ba43eead548a9b391f25d1e0d91f24f450ded11"
+          },
+          {
+            "locator": "complete extracted paragraph 81",
+            "characters": 35,
+            "sha256": "0b17f45e29aec9c20753874ea61825957276992f4a89709d771e333009e5ac88"
+          },
+          {
+            "locator": "complete extracted paragraph 82",
+            "characters": 18,
+            "sha256": "3344a73159d2d7c6344111b80252852c026bad215fae50279c0b0ba0cd678425"
+          },
+          {
+            "locator": "complete extracted paragraph 83",
+            "characters": 34,
+            "sha256": "af0d550b6ffa91e69988373fbeafafc781a35ee991600352d2ccff1ac3bdd5f1"
+          },
+          {
+            "locator": "complete extracted paragraph 84",
+            "characters": 5,
+            "sha256": "f61ec10d1385dcc0c473a56fc3691fa9a2fd26105932eb1e10ae0ca7d5f3426a"
+          },
+          {
+            "locator": "complete extracted paragraph 85",
+            "characters": 5,
+            "sha256": "f61ec10d1385dcc0c473a56fc3691fa9a2fd26105932eb1e10ae0ca7d5f3426a"
+          },
+          {
+            "locator": "complete extracted paragraph 86",
+            "characters": 16,
+            "sha256": "38aa7355975302746146b925c1a427e57c07f837c0f97531da16c79e88ce2ce9"
+          },
+          {
+            "locator": "complete extracted paragraph 87",
+            "characters": 30,
+            "sha256": "c084de3b58811937310b760c9ff3b7ecf6b930793da932d953780a5613b3c83a"
+          },
+          {
+            "locator": "complete extracted paragraph 88",
+            "characters": 13,
+            "sha256": "ff82b4b7cf94441155d1dffa36594b348732b9f52b7475b657fe0bda95a7dda1"
+          },
+          {
+            "locator": "complete extracted paragraph 89",
+            "characters": 37,
+            "sha256": "86f24f359eda723fdb666a7649afa58eb97bbbb00ca85814f0e682037c94b0dd"
+          },
+          {
+            "locator": "complete extracted paragraph 90",
+            "characters": 13,
+            "sha256": "ff82b4b7cf94441155d1dffa36594b348732b9f52b7475b657fe0bda95a7dda1"
+          },
+          {
+            "locator": "complete extracted paragraph 91",
+            "characters": 26,
+            "sha256": "cdef19a88d731548894e72b5ee74e2d938e0eb63028e9cbc3539d6c3f8cc5dc3"
+          },
+          {
+            "locator": "complete extracted paragraph 92",
+            "characters": 14,
+            "sha256": "8c5e7268c7f433490d9fe7e99b972f2399f89933ff1a0a424120573773c9cfb8"
+          },
+          {
+            "locator": "complete extracted paragraph 93",
+            "characters": 29,
+            "sha256": "dfe8db688c334b0e37919f7eb9be911cf5d0a71c7f9c4be97ec4997922af6694"
+          },
+          {
+            "locator": "complete extracted paragraph 94",
+            "characters": 24,
+            "sha256": "7b85b97c79f1ddb655f2a3ef578b5b6743baef8c530a1c93743c304c05d4db02"
+          },
+          {
+            "locator": "complete extracted paragraph 95",
+            "characters": 46,
+            "sha256": "e4645d093d4c00ecc7e7cdb804f731640289d344a81cbb1191bfc66824907a7f"
+          },
+          {
+            "locator": "complete extracted paragraph 96",
+            "characters": 23,
+            "sha256": "a44ce1f20a2aa9d4f605838b2383fd03fe188d57b3f6408436dd2bf3f11acd61"
+          },
+          {
+            "locator": "complete extracted paragraph 97",
+            "characters": 32,
+            "sha256": "41443e59a096573d4ee301078f50db8a45519efa2fb550edb61bcee4ae65909f"
+          },
+          {
+            "locator": "complete extracted paragraph 98",
+            "characters": 6,
+            "sha256": "d95082a2ee57f3e40e3050662a346e26a872fd4d0baf57d293ac5a883f0f4ff5"
+          },
+          {
+            "locator": "complete extracted paragraph 99",
+            "characters": 5,
+            "sha256": "aea1b15df626f337de5eb359dd6f7651b9f25a39ddb515b6ab765e1167456d87"
+          },
+          {
+            "locator": "complete extracted paragraph 100",
+            "characters": 11,
+            "sha256": "65a1553729e30faf7ed329a80f1f3d6999751d84f49a117d1d8be87f25175fb3"
+          },
+          {
+            "locator": "complete extracted paragraph 101",
+            "characters": 5,
+            "sha256": "7e61847d61d65d9e3ac15c6281f7bfe0d80b8d79d3b53125e9fc2bfc25bb81e8"
+          },
+          {
+            "locator": "complete extracted paragraph 102",
+            "characters": 15,
+            "sha256": "a85e4d81cf793fe5408b5ded24b1e7bd77f66107abe75cb8ea558938c8070bcf"
+          },
+          {
+            "locator": "complete extracted paragraph 103",
+            "characters": 61,
+            "sha256": "5eb3ea56d42dc20c88c002639d1d487f5b6b87694a7553441895f9b20911b5b8"
+          },
+          {
+            "locator": "complete extracted paragraph 104",
+            "characters": 115,
+            "sha256": "5872313eb67217c822adad62fa81b6b7b4371a3777d8c2d95296eb7110dc584a"
+          },
+          {
+            "locator": "complete extracted paragraph 105",
+            "characters": 241,
+            "sha256": "950e21f6d81c4ab26a3a69bd29310e7e590d3502e74e397bf28e122d23b06951"
+          },
+          {
+            "locator": "complete extracted paragraph 106",
+            "characters": 97,
+            "sha256": "1c8562b040684d8825934655ce2b17423baf50be3ab7bf133b2269a824d5e2b3"
+          },
+          {
+            "locator": "complete extracted paragraph 107",
+            "characters": 44,
+            "sha256": "d632fdc00648366b4818c01954c63900a074f4f2951fc854405cc9d1c9693120"
+          },
+          {
+            "locator": "complete extracted paragraph 108",
+            "characters": 34,
+            "sha256": "15f1286860a4dd2b098d0c803d626c2837b62e9e1b743e26fe04b93ccb63bcd5"
+          },
+          {
+            "locator": "complete extracted paragraph 109",
+            "characters": 57,
+            "sha256": "39b80187504487480cc432cbc3ec560c0147ce061e68caac072f1ba1cf9ae5b6"
+          },
+          {
+            "locator": "complete extracted paragraph 110",
+            "characters": 22,
+            "sha256": "d6ea4d9d4f76e38a9b5dc12721565927128fe757bdf61f05c68f9da47b9c46cd"
+          },
+          {
+            "locator": "complete extracted paragraph 111",
+            "characters": 21,
+            "sha256": "f2cf5b88511e1e512f0ce5304aee64941c32a337922b2262a9c9c7c3949b0e13"
+          },
+          {
+            "locator": "complete extracted paragraph 112",
+            "characters": 26,
+            "sha256": "f8e8b02ad60a0b4da7b588579c34ac4889b26f1f1b7c71a7d175a5ae5b3ef92a"
+          },
+          {
+            "locator": "complete extracted paragraph 113",
+            "characters": 18,
+            "sha256": "32cf938ba30d6f4b4e7d18f9f5f75023a60450747b7b64f934d91231063fff80"
+          },
+          {
+            "locator": "complete extracted paragraph 114",
+            "characters": 18,
+            "sha256": "32cf938ba30d6f4b4e7d18f9f5f75023a60450747b7b64f934d91231063fff80"
+          },
+          {
+            "locator": "complete extracted paragraph 115",
+            "characters": 18,
+            "sha256": "32cf938ba30d6f4b4e7d18f9f5f75023a60450747b7b64f934d91231063fff80"
+          }
+        ]
+      },
+      {
+        "status": "usable",
+        "requested_url": "https://arxiv.org/abs/2203.12318v1",
+        "url": "https://arxiv.org/abs/2203.12318v1",
+        "title": "[2203.12318v1] Trust and Reliance in XAI -- Distinguishing Between Attitudinal and Behavioral Measures",
+        "publisher": "arxiv.org",
+        "checked_at": "2026-11-06T15:10:42.762839+00:00",
+        "content_sha256": "84665297fd108d515011376999635f6191066af9af684ec8c84d2b0d51e44f6d",
+        "content_type": "text/html; charset=utf-8",
+        "limitations": "Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.",
+        "source_id": "S3",
+        "passage_manifest": [
+          {
+            "locator": "complete extracted paragraph 1",
+            "characters": 102,
+            "sha256": "237a64f1beb01252f78860b401e01fba2363c4698f90164687964e45f695485a"
+          },
+          {
+            "locator": "complete extracted paragraph 2",
+            "characters": 20,
+            "sha256": "c887f134c26ea8310e1fb4bd6fbab7b640393bd1b556e62691c7a442be92ec2a"
+          },
+          {
+            "locator": "complete extracted paragraph 3",
+            "characters": 6,
+            "sha256": "49c266baaaa70981ea188fa714d5c40cf13830d786a861c9943ae0d26a7f3fe9"
+          },
+          {
+            "locator": "complete extracted paragraph 4",
+            "characters": 12,
+            "sha256": "d257fc7ca7d83dcf62310d848c5eb3e6d1efeba91e8e434a98758a329e0812f1"
+          },
+          {
+            "locator": "complete extracted paragraph 5",
+            "characters": 39,
+            "sha256": "bfe01b91dca7504d646ad939970a0526a305344c579e6deb3e35899935895b45"
+          },
+          {
+            "locator": "complete extracted paragraph 6",
+            "characters": 45,
+            "sha256": "3b0a362d02df3a7aa651a877b3b195fa7b50008e507a9d9f9e845deaaa1dc0a4"
+          },
+          {
+            "locator": "complete extracted paragraph 7",
+            "characters": 23,
+            "sha256": "2f6a63d7c7af6eb372fb0bb6602a97050feafa58496ed661385e61c6583ecd41"
+          },
+          {
+            "locator": "complete extracted paragraph 8",
+            "characters": 26,
+            "sha256": "549d442569c4aef69c57a44af2e5f097cab31071e8cdd5806704f1f918ed7c5a"
+          },
+          {
+            "locator": "complete extracted paragraph 9",
+            "characters": 93,
+            "sha256": "4f65c1594addadfc2f8accbc04e7385ddfbc17ac86577f8955f2550049eb9899"
+          },
+          {
+            "locator": "complete extracted paragraph 10",
+            "characters": 86,
+            "sha256": "e6f88612c9835f40b156136bb08b29f04de6d7c6b7ef2fc8a656b77e2905d27a"
+          },
+          {
+            "locator": "complete extracted paragraph 11",
+            "characters": 161,
+            "sha256": "878d75b5ec057eb77b75c9a4671286b8d9e489fe0c634c6a401d6138a7474658"
+          },
+          {
+            "locator": "complete extracted paragraph 12",
+            "characters": 8,
+            "sha256": "546f08fa7709508317522814b3de90efff81d2d1ec54d3df3345f5dd90fbd996"
+          },
+          {
+            "locator": "complete extracted paragraph 13",
+            "characters": 19,
+            "sha256": "97f49364e0ca3f0a4e179329940346d95072cdf25ecfe61e1a87832a3f010c2f"
+          },
+          {
+            "locator": "complete extracted paragraph 14",
+            "characters": 1036,
+            "sha256": "e962bd4b83536510d5fd2cf6ff239b187c81f0aeccab97c56a85e1bf6582a7d1"
+          },
+          {
+            "locator": "complete extracted paragraph 15",
+            "characters": 9,
+            "sha256": "200d647d1164db13dd484eeb713c1b6623bafb879cdd7058546354ae552f805e"
+          },
+          {
+            "locator": "complete extracted paragraph 16",
+            "characters": 153,
+            "sha256": "9648469d192301acf1fe16d89f3b19e4ddb84020d6556984fb71244acbaca038"
+          },
+          {
+            "locator": "complete extracted paragraph 17",
+            "characters": 9,
+            "sha256": "17628fa9972e6adcf2cd8df3ab0a0bbb575c2ba778504a2a42d2d456b08ed1aa"
+          },
+          {
+            "locator": "complete extracted paragraph 18",
+            "characters": 67,
+            "sha256": "50eb4fffd6ac3b2a5e13865580b4389919a66d1975ce2182139b7d81ee227a9b"
+          },
+          {
+            "locator": "complete extracted paragraph 19",
+            "characters": 12,
+            "sha256": "29f9c616778099690deccc74fab2cc922a8aa9c9cc550eb075ed814157caad70"
+          },
+          {
+            "locator": "complete extracted paragraph 20",
+            "characters": 12,
+            "sha256": "581a4a69f00abc5243543622af41bc90cd909ef86b97558a4e5e97f6b5ed800a"
+          },
+          {
+            "locator": "complete extracted paragraph 21",
+            "characters": 8,
+            "sha256": "01cbd5328ea33b9cbea990c6b68087399036df822187636c3ff50a37ac9b6100"
+          },
+          {
+            "locator": "complete extracted paragraph 22",
+            "characters": 24,
+            "sha256": "dbbae76a08b74140a74df1754a9265bd140b1c3ad70f8ebc1d7198f14007277d"
+          },
+          {
+            "locator": "complete extracted paragraph 23",
+            "characters": 3,
+            "sha256": "b482e45229e19f5f7ba590b5ac81bdb25d5d24116ed961bfa0eb1a23c20a204c"
+          },
+          {
+            "locator": "complete extracted paragraph 24",
+            "characters": 44,
+            "sha256": "470ec9e00ca6b98614efb44915cffcc656d22e7e0ba11da0a48a0bb633e991ca"
+          },
+          {
+            "locator": "complete extracted paragraph 25",
+            "characters": 41,
+            "sha256": "bf6a131d16d50d7629132332d575730dec8c8fa7581d602cc2b2aab0ec2604a0"
+          },
+          {
+            "locator": "complete extracted paragraph 26",
+            "characters": 19,
+            "sha256": "1b063dc9439779b72e254833108613d53e707d1de19adebb88920459df5f5696"
+          },
+          {
+            "locator": "complete extracted paragraph 27",
+            "characters": 29,
+            "sha256": "491476425acd52b88528b545af8c0ad89e9a7dc28cd998c732e20a08839063d8"
+          },
+          {
+            "locator": "complete extracted paragraph 28",
+            "characters": 18,
+            "sha256": "291de81660a5131ff23035d718cf8df94e8484f04c6120a855dc24b72d06cc05"
+          },
+          {
+            "locator": "complete extracted paragraph 29",
+            "characters": 63,
+            "sha256": "b635fb870dcc3ac557d54d4acc1c63851f13216a1227965d620b3f2b374784c1"
+          },
+          {
+            "locator": "complete extracted paragraph 30",
+            "characters": 18,
+            "sha256": "6d428c5fdf9621f665af1c80c7c1388629af415347b583a22aaa8f10c4ef5fb6"
+          },
+          {
+            "locator": "complete extracted paragraph 31",
+            "characters": 37,
+            "sha256": "f835bc0898eb548a5f1f4f3079c5d2180f40ae3f7003225546a7c15ac23cfaf7"
+          },
+          {
+            "locator": "complete extracted paragraph 32",
+            "characters": 4,
+            "sha256": "99ab581576106c9e01cf4ba2d2f5bb721ec414b7ffd0bb3934f64ed48333215a"
+          },
+          {
+            "locator": "complete extracted paragraph 33",
+            "characters": 38,
+            "sha256": "c38d399748b804cf8cf041e0f3ebedc07bc11816d7bfc4d7710168509dd19b5e"
+          },
+          {
+            "locator": "complete extracted paragraph 34",
+            "characters": 16,
+            "sha256": "c0f251b217996152db8725b8f4bb1ab51d91a13a62f0710975cffd74b1842159"
+          },
+          {
+            "locator": "complete extracted paragraph 35",
+            "characters": 13,
+            "sha256": "54f397049250eeb9769eeea70821a81dfa1c3b86b33e3316fd9d7d16fd9d0aa7"
+          },
+          {
+            "locator": "complete extracted paragraph 36",
+            "characters": 161,
+            "sha256": "878d75b5ec057eb77b75c9a4671286b8d9e489fe0c634c6a401d6138a7474658"
+          },
+          {
+            "locator": "complete extracted paragraph 37",
+            "characters": 37,
+            "sha256": "b89cb57071965afdd71240e79d790c4a5e72accfb1c280a3e6b02543b355c65c"
+          },
+          {
+            "locator": "complete extracted paragraph 38",
+            "characters": 12,
+            "sha256": "a03ac823dc4814f87a46e1f1e92e9986577dffd5e20bf7139814f74f6a15fa73"
+          },
+          {
+            "locator": "complete extracted paragraph 39",
+            "characters": 19,
+            "sha256": "7c51c8126422013273317d9d7eeb1922fbd6f67416cc3f840c1e08be8eb174d5"
+          },
+          {
+            "locator": "complete extracted paragraph 40",
+            "characters": 13,
+            "sha256": "2fc30e6468109af021fc6f6385569049b0696fde7ea6c4fe2c56120e6eae2fa4"
+          },
+          {
+            "locator": "complete extracted paragraph 41",
+            "characters": 23,
+            "sha256": "4b02d8028343b5371962a11c930d15729c5ff4f1bcc7d8c35de792205737da6b"
+          },
+          {
+            "locator": "complete extracted paragraph 42",
+            "characters": 5,
+            "sha256": "a073452b29b402c3c5a01e0b385243e85a459c9bcf7ab5aa113db85cc689cab9"
+          },
+          {
+            "locator": "complete extracted paragraph 43",
+            "characters": 6,
+            "sha256": "6f88f79b9f3cee8e55baa9b98475561d49d8bf9273121a6d7b716cace8d72d1d"
+          },
+          {
+            "locator": "complete extracted paragraph 44",
+            "characters": 1,
+            "sha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7"
+          },
+          {
+            "locator": "complete extracted paragraph 45",
+            "characters": 6,
+            "sha256": "0da6e90b695e0eb12650d86aace26c6b0a6d7706d1521641f1b948df09253f94"
+          },
+          {
+            "locator": "complete extracted paragraph 46",
+            "characters": 3,
+            "sha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+          },
+          {
+            "locator": "complete extracted paragraph 47",
+            "characters": 1,
+            "sha256": "cbe5cfdf7c2118a9c3d78ef1d684f3afa089201352886449a06a6511cfef74a7"
+          },
+          {
+            "locator": "complete extracted paragraph 48",
+            "characters": 6,
+            "sha256": "034a7e52c5c9534b709dc1dba403868399b0949f7c1933a67325c22077ffc221"
+          },
+          {
+            "locator": "complete extracted paragraph 49",
+            "characters": 9,
+            "sha256": "574a24b38e1163c1a658096c7aea79d57e47309a1f091b36ab3ec8add6344d38"
+          },
+          {
+            "locator": "complete extracted paragraph 50",
+            "characters": 20,
+            "sha256": "3c0f440a1650465ae78e15ea1ffd75558d68a0da2c1950563deb27a04ffd1ed8"
+          },
+          {
+            "locator": "complete extracted paragraph 51",
+            "characters": 2,
+            "sha256": "3b8b91c75627bee566dcb88f4805901b20a3eab2520bcff8d26c87157a035026"
+          },
+          {
+            "locator": "complete extracted paragraph 52",
+            "characters": 5,
+            "sha256": "c7b4d883a0df69fe51a238ee27cf4ed76c35f706ceb8f294f21c7e421eafdb3f"
+          },
+          {
+            "locator": "complete extracted paragraph 53",
+            "characters": 22,
+            "sha256": "54fd59f5c42bdfe5daae19c357999a98856aba130bd541660d9de8850822cddd"
+          },
+          {
+            "locator": "complete extracted paragraph 54",
+            "characters": 18,
+            "sha256": "525a6647b96d627d84981a95dd43e062f7bf7f0aaebaf4104bb897f5b96c5de2"
+          },
+          {
+            "locator": "complete extracted paragraph 55",
+            "characters": 16,
+            "sha256": "e0da427360932477c85cb6483b3b07fec49056eef818073983a1a0260e68d2fe"
+          },
+          {
+            "locator": "complete extracted paragraph 56",
+            "characters": 22,
+            "sha256": "a19ad9c26487f2a8b6125bb3cf2c102976f300945a852dca576d1fc776b44798"
+          },
+          {
+            "locator": "complete extracted paragraph 57",
+            "characters": 10,
+            "sha256": "47d2a515ef2f05b87d688656286a61e4f743da4b878684c7654969db17711c40"
+          },
+          {
+            "locator": "complete extracted paragraph 58",
+            "characters": 25,
+            "sha256": "1e6ba92e11a6d01d1c54cfe2497ea1095f32d3c3c3b53c6bba07e2be322811b5"
+          },
+          {
+            "locator": "complete extracted paragraph 59",
+            "characters": 1,
+            "sha256": "8db71ed28b0f2f1432561e8d8a0dc3878f2da540c53a2ab82335b6f716da2ef3"
+          },
+          {
+            "locator": "complete extracted paragraph 60",
+            "characters": 10,
+            "sha256": "1bcf7347466c8db9d8e1aa1fb24a7fd7186d61a6a09a18c92d757be7b1e4ff64"
+          },
+          {
+            "locator": "complete extracted paragraph 61",
+            "characters": 17,
+            "sha256": "a904aa320f80ed8440a8e1af8ffaeba2f7b98eaebb0f7efaa116d87ed3fb8314"
+          },
+          {
+            "locator": "complete extracted paragraph 62",
+            "characters": 8,
+            "sha256": "1bac4007880ba12995a974e315751b4f5e70829c753ec57326f7101772abe5a6"
+          },
+          {
+            "locator": "complete extracted paragraph 63",
+            "characters": 19,
+            "sha256": "5eddfb7f557bc5282105a8c17c6951b331475ba61f37869d123ab60d9b76efeb"
+          },
+          {
+            "locator": "complete extracted paragraph 64",
+            "characters": 32,
+            "sha256": "6dfa6ebb407d4010f423e2e4623d74a619e0740dc456877004df753beddc463c"
+          },
+          {
+            "locator": "complete extracted paragraph 65",
+            "characters": 29,
+            "sha256": "04166a6c4def9d36739a4b6a990e21e0af2cd5fbb398d76b4314f273db544a92"
+          },
+          {
+            "locator": "complete extracted paragraph 66",
+            "characters": 46,
+            "sha256": "bdf590e387a15f0db73425b732674debe0ebf8e3eed3d60a351d882f2dc2c0a5"
+          },
+          {
+            "locator": "complete extracted paragraph 67",
+            "characters": 23,
+            "sha256": "93cd5b4ab2e760202d8f36a03ff2a0fff89a2fe1990b24a60610466e35d64af8"
+          },
+          {
+            "locator": "complete extracted paragraph 68",
+            "characters": 44,
+            "sha256": "47ffc0ea0952aa8ab50b273e9f31453eb63479601d59ce32dd2bd5cb9e7575c0"
+          },
+          {
+            "locator": "complete extracted paragraph 69",
+            "characters": 14,
+            "sha256": "a5d3dd607af5d83c5bd3856722da60546dc479a77204172e2391b94683fe1c49"
+          },
+          {
+            "locator": "complete extracted paragraph 70",
+            "characters": 26,
+            "sha256": "b4da84bd5a6fcd039485cd7ec7a7805500cf11eb52e6d7cf8d3a0b65a707c26d"
+          },
+          {
+            "locator": "complete extracted paragraph 71",
+            "characters": 15,
+            "sha256": "bdc83e493721a4bc6670552e9164a1bcfc355589c9414f9ba2a99111b7d22df4"
+          },
+          {
+            "locator": "complete extracted paragraph 72",
+            "characters": 49,
+            "sha256": "185b5d48b12c852fd86c52ef763fe54047419bb67ba6b3aecbc16607d6d281fb"
+          },
+          {
+            "locator": "complete extracted paragraph 73",
+            "characters": 17,
+            "sha256": "a289c087c048ec91092f81457a96ad3a031d0e1c050261d1629af4312efb0320"
+          },
+          {
+            "locator": "complete extracted paragraph 74",
+            "characters": 49,
+            "sha256": "9eaa4ed5f4b3033e661f6df1c60bd22e328fc7c23643d98c8cb254dbc2b7e8ee"
+          },
+          {
+            "locator": "complete extracted paragraph 75",
+            "characters": 15,
+            "sha256": "73f6645b1fce8e306f3a43ce5ba8ce95aeb796e443f73144ecadf3e0b5647ae1"
+          },
+          {
+            "locator": "complete extracted paragraph 76",
+            "characters": 28,
+            "sha256": "51a32c15a9e6ce9fccb46eac2ef3d84085d3a2cecdd8316d514d31e57a4c3616"
+          },
+          {
+            "locator": "complete extracted paragraph 77",
+            "characters": 20,
+            "sha256": "7cbb9e16a1e68ff829ac0b101634b28a3d824b2387a7646588c967e034d2cdb1"
+          },
+          {
+            "locator": "complete extracted paragraph 78",
+            "characters": 53,
+            "sha256": "adcadacbefc4a11543c54fe9e46b333ffb2007d78c20c66bdc1e3ef3a4ed0b21"
+          },
+          {
+            "locator": "complete extracted paragraph 79",
+            "characters": 14,
+            "sha256": "171d550cb45e76176b6808955f7ccd236562737d9fa41dd828db8d8ced805b5f"
+          },
+          {
+            "locator": "complete extracted paragraph 80",
+            "characters": 26,
+            "sha256": "9dcb9b896a60b496a595305c8d16f7800b160e2014d531da102cacb8792888c3"
+          },
+          {
+            "locator": "complete extracted paragraph 81",
+            "characters": 15,
+            "sha256": "bbee8f1708d6de3f52e7579494a68f0edccd6269de889e16bb71a9294a0b724a"
+          },
+          {
+            "locator": "complete extracted paragraph 82",
+            "characters": 29,
+            "sha256": "a8cb4c3f57230beb642c53ad49e72d3bc411bd5f4d67c59551aa0687a0e287f8"
+          },
+          {
+            "locator": "complete extracted paragraph 83",
+            "characters": 18,
+            "sha256": "375ed04207a2d8f4ea88b5bb4ba43eead548a9b391f25d1e0d91f24f450ded11"
+          },
+          {
+            "locator": "complete extracted paragraph 84",
+            "characters": 35,
+            "sha256": "0b17f45e29aec9c20753874ea61825957276992f4a89709d771e333009e5ac88"
+          },
+          {
+            "locator": "complete extracted paragraph 85",
+            "characters": 18,
+            "sha256": "3344a73159d2d7c6344111b80252852c026bad215fae50279c0b0ba0cd678425"
+          },
+          {
+            "locator": "complete extracted paragraph 86",
+            "characters": 34,
+            "sha256": "af0d550b6ffa91e69988373fbeafafc781a35ee991600352d2ccff1ac3bdd5f1"
+          },
+          {
+            "locator": "complete extracted paragraph 87",
+            "characters": 5,
+            "sha256": "f61ec10d1385dcc0c473a56fc3691fa9a2fd26105932eb1e10ae0ca7d5f3426a"
+          },
+          {
+            "locator": "complete extracted paragraph 88",
+            "characters": 5,
+            "sha256": "f61ec10d1385dcc0c473a56fc3691fa9a2fd26105932eb1e10ae0ca7d5f3426a"
+          },
+          {
+            "locator": "complete extracted paragraph 89",
+            "characters": 16,
+            "sha256": "38aa7355975302746146b925c1a427e57c07f837c0f97531da16c79e88ce2ce9"
+          },
+          {
+            "locator": "complete extracted paragraph 90",
+            "characters": 30,
+            "sha256": "c084de3b58811937310b760c9ff3b7ecf6b930793da932d953780a5613b3c83a"
+          },
+          {
+            "locator": "complete extracted paragraph 91",
+            "characters": 13,
+            "sha256": "ff82b4b7cf94441155d1dffa36594b348732b9f52b7475b657fe0bda95a7dda1"
+          },
+          {
+            "locator": "complete extracted paragraph 92",
+            "characters": 37,
+            "sha256": "86f24f359eda723fdb666a7649afa58eb97bbbb00ca85814f0e682037c94b0dd"
+          },
+          {
+            "locator": "complete extracted paragraph 93",
+            "characters": 13,
+            "sha256": "ff82b4b7cf94441155d1dffa36594b348732b9f52b7475b657fe0bda95a7dda1"
+          },
+          {
+            "locator": "complete extracted paragraph 94",
+            "characters": 26,
+            "sha256": "cdef19a88d731548894e72b5ee74e2d938e0eb63028e9cbc3539d6c3f8cc5dc3"
+          },
+          {
+            "locator": "complete extracted paragraph 95",
+            "characters": 14,
+            "sha256": "8c5e7268c7f433490d9fe7e99b972f2399f89933ff1a0a424120573773c9cfb8"
+          },
+          {
+            "locator": "complete extracted paragraph 96",
+            "characters": 29,
+            "sha256": "dfe8db688c334b0e37919f7eb9be911cf5d0a71c7f9c4be97ec4997922af6694"
+          },
+          {
+            "locator": "complete extracted paragraph 97",
+            "characters": 24,
+            "sha256": "7b85b97c79f1ddb655f2a3ef578b5b6743baef8c530a1c93743c304c05d4db02"
+          },
+          {
+            "locator": "complete extracted paragraph 98",
+            "characters": 46,
+            "sha256": "e4645d093d4c00ecc7e7cdb804f731640289d344a81cbb1191bfc66824907a7f"
+          },
+          {
+            "locator": "complete extracted paragraph 99",
+            "characters": 23,
+            "sha256": "a44ce1f20a2aa9d4f605838b2383fd03fe188d57b3f6408436dd2bf3f11acd61"
+          },
+          {
+            "locator": "complete extracted paragraph 100",
+            "characters": 32,
+            "sha256": "41443e59a096573d4ee301078f50db8a45519efa2fb550edb61bcee4ae65909f"
+          },
+          {
+            "locator": "complete extracted paragraph 101",
+            "characters": 6,
+            "sha256": "d95082a2ee57f3e40e3050662a346e26a872fd4d0baf57d293ac5a883f0f4ff5"
+          },
+          {
+            "locator": "complete extracted paragraph 102",
+            "characters": 5,
+            "sha256": "aea1b15df626f337de5eb359dd6f7651b9f25a39ddb515b6ab765e1167456d87"
+          },
+          {
+            "locator": "complete extracted paragraph 103",
+            "characters": 11,
+            "sha256": "65a1553729e30faf7ed329a80f1f3d6999751d84f49a117d1d8be87f25175fb3"
+          },
+          {
+            "locator": "complete extracted paragraph 104",
+            "characters": 5,
+            "sha256": "7e61847d61d65d9e3ac15c6281f7bfe0d80b8d79d3b53125e9fc2bfc25bb81e8"
+          },
+          {
+            "locator": "complete extracted paragraph 105",
+            "characters": 15,
+            "sha256": "a85e4d81cf793fe5408b5ded24b1e7bd77f66107abe75cb8ea558938c8070bcf"
+          },
+          {
+            "locator": "complete extracted paragraph 106",
+            "characters": 61,
+            "sha256": "5eb3ea56d42dc20c88c002639d1d487f5b6b87694a7553441895f9b20911b5b8"
+          },
+          {
+            "locator": "complete extracted paragraph 107",
+            "characters": 115,
+            "sha256": "5872313eb67217c822adad62fa81b6b7b4371a3777d8c2d95296eb7110dc584a"
+          },
+          {
+            "locator": "complete extracted paragraph 108",
+            "characters": 241,
+            "sha256": "950e21f6d81c4ab26a3a69bd29310e7e590d3502e74e397bf28e122d23b06951"
+          },
+          {
+            "locator": "complete extracted paragraph 109",
+            "characters": 97,
+            "sha256": "1c8562b040684d8825934655ce2b17423baf50be3ab7bf133b2269a824d5e2b3"
+          },
+          {
+            "locator": "complete extracted paragraph 110",
+            "characters": 44,
+            "sha256": "d632fdc00648366b4818c01954c63900a074f4f2951fc854405cc9d1c9693120"
+          },
+          {
+            "locator": "complete extracted paragraph 111",
+            "characters": 34,
+            "sha256": "15f1286860a4dd2b098d0c803d626c2837b62e9e1b743e26fe04b93ccb63bcd5"
+          },
+          {
+            "locator": "complete extracted paragraph 112",
+            "characters": 57,
+            "sha256": "39b80187504487480cc432cbc3ec560c0147ce061e68caac072f1ba1cf9ae5b6"
+          },
+          {
+            "locator": "complete extracted paragraph 113",
+            "characters": 22,
+            "sha256": "d6ea4d9d4f76e38a9b5dc12721565927128fe757bdf61f05c68f9da47b9c46cd"
+          },
+          {
+            "locator": "complete extracted paragraph 114",
+            "characters": 21,
+            "sha256": "f2cf5b88511e1e512f0ce5304aee64941c32a337922b2262a9c9c7c3949b0e13"
+          }
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+        "error": "EVIDENCE_BUDGET_EXHAUSTED"
+      }
+    ],
+    "http_activity": [
+      {
+        "url": "https://api.crossref.org/works?query.title=artificial+intelligence+trust+transparency&rows=6&select=DOI%2Ctitle%2CURL%2Clink%2Cresource%2Cpublisher",
+        "status": 200,
+        "seconds": 0.17060114815831184,
+        "bytes": 3808
+      },
+      {
+        "url": "https://export.arxiv.org/api/query?search_query=all%3Aartificial+AND+all%3Aintelligence+AND+all%3Atrust+AND+all%3Atransparency&start=0&max_results=3",
+        "status": 200,
+        "seconds": 0.1874810168519616,
+        "bytes": 7406
+      },
+      {
+        "url": "https://arxiv.org/abs/2103.03610v1",
+        "status": 200,
+        "seconds": 0.14784849900752306,
+        "bytes": 44702
+      },
+      {
+        "url": "https://arxiv.org/abs/2108.04770v1",
+        "status": 200,
+        "seconds": 0.03423532657325268,
+        "bytes": 40809
+      },
+      {
+        "url": "https://arxiv.org/abs/2203.12318v1",
+        "status": 200,
+        "seconds": 0.05145281087607145,
+        "bytes": 41254
+      },
+      {
+        "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+        "status": 301,
+        "seconds": 0.27212604880332947,
+        "bytes": 166
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s13347-025-00916-2",
+        "status": 303,
+        "seconds": 0.26893852185457945,
+        "bytes": 0
+      },
+      {
+        "url": "https://idp.springer.com/authorize?response_type=cookie&client_id=springerlink&redirect_uri=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2Fs13347-025-00916-2",
+        "status": 302,
+        "seconds": 0.306472722440958,
+        "bytes": 0
+      }
+    ],
+    "discovery_requests": 2,
+    "source_fetches": 6
+  },
+  "full_local_receipt": {
+    "path": "/home/graham/.local/share/graham-linkedin-qualifications/r2-discovery-20261106/integrated.json",
+    "sha256": "37aa1c3d70eb625abe216cbc2f617f050a9bbabcfcc8b41e4270d18529b7ca2f",
+    "scope": "Private qualification receipt; source passages retained locally, repository stores paragraph hashes and limits."
+  }
+}
