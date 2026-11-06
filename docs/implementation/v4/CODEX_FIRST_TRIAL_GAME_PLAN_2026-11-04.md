@@ -434,7 +434,7 @@ reload adds0calls, and unsupported/stale/unapproved actions fail visibly. Fixtur
   path without chat-built JSON/bundles/helpers; use retained genuine concepts where valid to avoid padding
   the corpus. Source-only admission fixtures do not count as generated/human-accepted posts. Verify restart,
   duplicate/cross-directory/read/export/feedback0calls, original UNKNOWN reconciliation and all bindings.
-- [ ] Incorporate the accepted one-comparison direction into one explicit symbolic treatment, preserving
+- [x] Incorporate the accepted one-comparison direction into one explicit symbolic treatment, preserving
   B unchanged. Reuse earlier literal/symbolic evidence as scoped history, not installed current qualification.
   Complete Q6's genuinely different-concept transfer after actual initial human disposition; other admitted
   operational work must not wait for optional numerical labels. Use recorded judgments; never invent them.
