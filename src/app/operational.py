@@ -1,5 +1,6 @@
 """Shared local authoring service. Human judgments and publishing remain explicit."""
 from dataclasses import asdict
+from copy import deepcopy
 from functools import partial
 import fcntl
 import hashlib
@@ -147,6 +148,24 @@ class Application:
                     commit_pure_stage(self.store,job,'evidence',record['input'],source)
                 if not source['sources']:return self.store.finish(job,'needs_more_evidence',source)
                 prepared=self.store.stage(job,'preparation')
+                if prepared is None and 'revision_context' in record['binding']:
+                    parent=self.store.get(record['input']['parent'])
+                    inherited=self.store.stage(parent['id'],'preparation')
+                    signature=lambda items:{x['source_id']:(x.get('url'),x.get('publisher'),x.get('content_sha256'),x.get('passages')) for x in items}
+                    same_intent=all(parent['input'].get(k)==record['input'].get(k) for k in ('topic','voice','narrative'))
+                    if (inherited and same_intent and parent['binding'].get('voice')==record['binding']['voice']
+                        and signature(inherited['bundle']['sources'])==signature(source['sources'])):
+                        prepare_graham_request(inherited['request'],inherited['bundle'])
+                        prepared=deepcopy(inherited)
+                        prepared['request']['request_id']=job
+                        prepared['request']['voice_examples']=record['binding']['voice_examples']['examples']
+                        prepared['bundle'].pop('structure_preparation',None)
+                        prepared['bundle']['sources']=source['sources']
+                        prepared['bundle']['revision_context']=record['binding']['revision_context']
+                        prepared['bundle']['request_sha256']=sha(prepared['request'])
+                        prepared['request'],prepared['bundle']=prepare_graham_request(prepared['request'],prepared['bundle'])
+                        prepared['inherited_preparation_from']=parent['id']
+                        commit_pure_stage(self.store,job,'preparation',source,prepared)
                 if prepared is None:
                     # Explicit typed structured assessment; no assistant-built factual bundle.
                     system=('You prepare sourced meaning for Graham, a business/IT audience, without inventing biography. '
