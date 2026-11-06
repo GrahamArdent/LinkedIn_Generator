@@ -1,0 +1,11 @@
+{
+  "exact_candidate_id": "graham-operational-url-symbolic-20261106-r1",
+  "payload": {
+    "candidate_hash": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+    "preference": "Liked the clock comparison; found it fun",
+    "note": "Graham: \u201cI like the clock comparison. It was fun.\u201d Positive exact-candidate feedback; follow-up instruction is to execute the existing prompt/plan."
+  },
+  "new_model_calls": 0,
+  "scope": "Positive exact comparison/reader reaction. Does not supply keep/edit/rating/effort/voice-example activation/publication authorization.",
+  "initial_disposition_for_Q6": "Satisfied only for proceeding with the already planned bounded transfer; final acceptance metrics remain pending."
+}

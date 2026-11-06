@@ -16,10 +16,12 @@ Current owner evidence is `evidence/operational-implementation-20261106/RESULTS.
 | R4 | Two ordinary create paths returned selected text and exact-hash visual plans. The repaired bare-topic lineage used5 native executions/72.209 active CLI seconds; URL-symbolic lineage used6/124.858, including its rejected original preparation. Completed outcomes were observed within600/439 wall seconds; exact final commit latency was not instrumented. |
 | R5 | Feedback/revisions/explicit example activation/export implemented and tested; B preference imported without invented labels. Actual human-approved example activation and the full human voice-learning journey remain pending. |
 | R6 | Shared loopback UI/CLI state; real390x844 browser review, restored symbolic metadata, reload and exact selected Markdown download with0 added model stages. Remote phone access and universal legacy API parity are not claimed; legacy entries are explicitly deprecated for standalone use. |
-| R7 |312 local/isolated tests; fresh-context material-finding corrections; installed native positives, original failures, replay and backup retained. Exact merged37508330862b35d385eb1977f84f210fec6d5c6d is installed;0-call installed replay/readback/export and previous5bd3478 rollback smoke passed. Q5 human disposition, Q6 transfer and first-six/corpus gates remain open. |
+| R7 |312 local/isolated tests; fresh-context material-finding corrections; installed native positives, original failures, replay and backup retained. Exact merged37508330862b35d385eb1977f84f210fec6d5c6d is installed;0-call installed replay/readback/export and previous5bd3478 rollback smoke passed. Clock initial disposition is recorded and Q6 machine transfer completed; new transfer human disposition and first-six/corpus gates remain open. |
 | R8 | Actual rendered assets, human mobile visual-value judgment and Dedication publication remain gated. No publishing or paid rendering authority inferred. |
 
-The next genuinely gated operational evidence is Graham's exact-candidate keep/light/structural/reject and factual/voice/construction/usefulness/visual judgments, actual editing effort, and explicit example approval if desired. Historical first-six eligibility needs its owner adjudication before new genuine subjects. Optional numeric labels do not block other admitted work. Complete Q6 only after actual initial human disposition; do not fabricate ratings, activate a preferred draft as an example, launch a filler batch, reset admissions, or publish.
+Graham's November6 positive exact-clock feedback (liked the comparison; found it fun) supplies the initial disposition for Q6. The installed Q6 transfer on the already retained AI-time-to-usable-completion concept is now saved: parcel comparison,6calls/92.954activeCLIseconds/API0, exact text/visual hash and0-call reopens. Evidence: `evidence/operational-implementation-20261106/q6-transfer/{HUMAN_FEEDBACK,ADMISSION,OUTCOME,REPLAY}.json` and POST.md. This is a performed machine transfer, not human acceptance of the new post.
+
+The next genuinely gated evidence is Graham's disposition of that exact parcel candidate: what lands or needs changing, factual limits, voice/construction/usefulness, visual-plan value and actual editing effort when supplied. R5 explicit example activation and retained first-six/8-subject/corpus/six-pair gates remain open. The positive clock reaction is not a keep/light rating, voice-example approval or publication approval. Optional numerical labels do not block legitimate independent work. Do not fabricate metrics, reset eligibility, launch filler subjects or publish.
 
 The original bare-topic source HOLD and653-character preparation rejection remain saved. Corrected child IDs inherited their original admissions; no budget was renewed. Shared source reuse came from a real ordinary URL workflow's fetched bytes, not a chat-built bundle. The accepted clock comparison is new machine output for human review, not an approved replacement for B.
 
@@ -168,7 +170,7 @@ Expected: real installed review package or precise nonterminal failure, with no 
 until human disposition. This remains the next editorial milestone; missing judgment gates the dependent editorial action, while independently admitted R work continues.
 
 ### Q6 — transfer, bounded acceptance and closure (M5)
-- [ ] After initial human disposition, test useful delivery traits on one genuinely different concept,
+- [x] After initial human disposition, test useful delivery traits on one genuinely different concept,
   using the same path and another separately declared12/900/API0 cap. A retained candidate is AI time to
   usable completion (existing Stanford/METR evidence, including its limits); confirm genuine distinctness
   and historical eligibility before launch. Repeated variants do not create new subjects. Do not exceed
@@ -176,7 +178,7 @@ until human disposition. This remains the next editorial milestone; missing judg
 - [ ] Keep first-six history,>=5 genuine subjects,>=4/6 keep/light,>=2 live-provider human-accepted
   subjects and six-pair control/voice/claim/visual/edit-effort requirements. A two-concept slice does not
   close these gates; fewer eligible observations remain NOT_YET_EVALUABLE. Later P3–P7 stays in its roadmap.
-- [ ] At each material update and before handoff/closure, rerun the retained-information inventory and
+- [x] At each material update and before handoff/closure, rerun the retained-information inventory and
   semantic complete-pair challenge. Save covered/total for the enumerated source set, exact candidate
   hashes, omissions and proof limits. A missing-item/altered-byte negative control must fail. Mechanical
   coverage does not establish semantic completeness or implementation success.
@@ -432,7 +434,7 @@ reload adds0calls, and unsupported/stale/unapproved actions fail visibly. Fixtur
   path without chat-built JSON/bundles/helpers; use retained genuine concepts where valid to avoid padding
   the corpus. Source-only admission fixtures do not count as generated/human-accepted posts. Verify restart,
   duplicate/cross-directory/read/export/feedback0calls, original UNKNOWN reconciliation and all bindings.
-- [ ] Incorporate the accepted one-comparison direction into one explicit symbolic treatment, preserving
+- [x] Incorporate the accepted one-comparison direction into one explicit symbolic treatment, preserving
   B unchanged. Reuse earlier literal/symbolic evidence as scoped history, not installed current qualification.
   Complete Q6's genuinely different-concept transfer after actual initial human disposition; other admitted
   operational work must not wait for optional numerical labels. Use recorded judgments; never invent them.

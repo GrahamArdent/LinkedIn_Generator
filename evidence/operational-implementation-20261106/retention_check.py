@@ -17,6 +17,12 @@ ITEMS=[
  ('runtime','evidence/operational-implementation-20261106/ISOLATED_RUNTIME_GUARD.json','"status": "PASS"'),
  ('human_gate','CURRENT_WORK_PACKET.md','R5 actual human-approved example lifecycle'),
  ('full_acceptance','evidence/operational-implementation-20261106/ACCEPTANCE_AUDIT.json','"all_marks_hit": false'),
+ ('clock_feedback_received','evidence/operational-implementation-20261106/q6-transfer/HUMAN_FEEDBACK.json','Liked the clock comparison; found it fun'),
+ ('q6_existing_group','evidence/operational-implementation-20261106/q6-transfer/ADMISSION.json','ai-time-to-usable-completion'),
+ ('q6_budget_declared','evidence/operational-implementation-20261106/q6-transfer/ADMISSION.json','"max_model_executions": 12'),
+ ('q6_native_outcome','evidence/operational-implementation-20261106/q6-transfer/OUTCOME.json','GO_MACHINE_TRANSFER_HUMAN_REVIEW_PENDING'),
+ ('q6_immutable_replay','evidence/operational-implementation-20261106/q6-transfer/REPLAY.json','"all_original_attempt_bytes_unchanged": true'),
+ ('q6_human_remaining','CURRENT_WORK_PACKET.md','Graham disposition of the saved parcel candidate'),
  ('merged_composition','evidence/operational-implementation-20261106/MERGED_COMPOSITION.json','29dff9be405b568483d3f69da20e2831ca40190e'),
  ('render_publish_gate','CURRENT_WORK_PACKET.md','R8 rendering/Dedication publishing stays gated'),
 ]

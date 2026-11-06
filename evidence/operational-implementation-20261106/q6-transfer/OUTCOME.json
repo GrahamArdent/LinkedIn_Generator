@@ -1,0 +1,127 @@
+{
+  "status": "GO_MACHINE_TRANSFER_HUMAN_REVIEW_PENDING",
+  "job": "graham-q6-usable-completion-20261106",
+  "source_parent": "six-blocks-ai-20261105",
+  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "model": "gpt-6-sol",
+  "reasoning": "medium",
+  "selected_hash": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+  "selected_revision": 0,
+  "visual_hash": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+  "visual_status": "planned",
+  "source_origin": "retained_exact_topic_sources",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://digitaleconomy.stanford.edu/publication/generative-ai-at-work/",
+      "checked_at": "2026-11-06T12:49:15.023904+00:00",
+      "content_sha256": "417169d74f2978f3f4632a9d78f68416ad74b7e88b108a0596b05026c750e795"
+    },
+    {
+      "id": "S2",
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "checked_at": "2026-11-06T12:49:15.608018+00:00",
+      "content_sha256": "46d65b917c2c4beea579db884f52a25fa0a9537e22eadd87e2d3a4059890d963"
+    },
+    {
+      "id": "S3",
+      "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+      "checked_at": "2026-11-06T12:49:16.044387+00:00",
+      "content_sha256": "e5bd8ee1fc6099aa3cdcc972a53e8e05d3170419935c25b360b5df663156d49a"
+    }
+  ],
+  "model_executions": 6,
+  "active_cli_seconds": 92.95408069621772,
+  "active_model_seconds": 90.7623410737142,
+  "api_spend": 0,
+  "attempts": [
+    {
+      "id": "attempt-88118a188d274942a89799b247199639",
+      "state": "succeeded",
+      "model": "gpt-6-sol",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 26043,
+        "output_tokens": 602,
+        "reasoning_output_tokens": 281
+      }
+    },
+    {
+      "id": "attempt-2fecb1b7529f49eb8a1cec47b1959244",
+      "state": "succeeded",
+      "model": "gpt-6-sol",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 10040,
+        "output_tokens": 695,
+        "reasoning_output_tokens": 328
+      }
+    },
+    {
+      "id": "attempt-c21fd0b2a761495494649ccf585d2f95",
+      "state": "succeeded",
+      "model": "gpt-6-sol",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 23392,
+        "output_tokens": 998,
+        "reasoning_output_tokens": 444
+      }
+    },
+    {
+      "id": "attempt-b6bff7878df34ae48750a3e2d5901b13",
+      "state": "succeeded",
+      "model": "gpt-6-sol",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 25650,
+        "output_tokens": 562,
+        "reasoning_output_tokens": 379
+      }
+    },
+    {
+      "id": "attempt-4d2b866ed2024536a22a6844c5450641",
+      "state": "succeeded",
+      "model": "gpt-6-sol",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 25474,
+        "output_tokens": 887,
+        "reasoning_output_tokens": 720
+      }
+    },
+    {
+      "id": "attempt-c1d3cd3812aa4dfb8205712af75642f2",
+      "state": "succeeded",
+      "model": "gpt-6-sol",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 9373,
+        "output_tokens": 219,
+        "reasoning_output_tokens": 92
+      }
+    }
+  ],
+  "human_disposition": null,
+  "voice_example_activated": false,
+  "publishing_approved": false,
+  "new_genuine_subjects": 0,
+  "proof_limit": "New treatment of existing retained different concept. Does not close first-six, corpus, keep/light, six-pair, edit-effort, human voice/visual or publishing acceptance.",
+  "whole_job_wall_observed_complete_by_seconds": 108.24,
+  "wall_proof_limit": "Observed complete in a read-only state query at this admission age; exact commit latency not instrumented.",
+  "essential_verdicts": {
+    "argument_voice": "pass",
+    "factual_integrity": "pass",
+    "practical_value": "pass",
+    "reader_relevance": "pass"
+  },
+  "selected": "original",
+  "public_cli_process_elapsed_seconds": 97.29,
+  "public_cli_process_receipt": "Original DesktopCommander PID957496: exit0/runtime97.29s"
+}

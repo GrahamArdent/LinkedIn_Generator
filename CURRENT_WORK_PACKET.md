@@ -1,5 +1,19 @@
 # Current LinkedIn Generator execution pointer
 
+Canonical prompt remains v4.3; same completion plan R1–R8/Q1–Q6. Owner evidence remains `evidence/operational-implementation-20261106/RESULTS.json`; latest bounded result is q6-transfer/{REPORT.md,OUTCOME.json,REPLAY.json}. Installed37508330862b35d385eb1977f84f210fec6d5c6d and rollback unchanged; no product code/config changed.
+
+Graham liked the exact clock comparison and called it fun, then explicitly resumed execution. Recorded against clock hashc9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad through installed feedback0calls. This permits the planned next concept test; no keep/edit/score/minutes, voice-example activation or publishing permission was inferred. Preserve original B and all previous native outcomes.
+
+Q6 machine transfer completed for retained `ai-time-to-usable-completion`, parent six-blocks-ai-20261105, current job graham-q6-usable-completion-20261106. New parcel comparison exact selected/visual hashc35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127.6nativecalls/92.954activeCLIseconds/API0, publicCLI exit0/97.29seconds; all4essentials pass, original selected. Exact reopens/export/conflict checks added0calls and preserved all attempt bytes. New Q6 admission was declared before dispatch; old8-call historical attempt and eligibility remain unchanged. No new genuine subject was added.
+
+First unmet owner evidence: R5 actual human-approved example lifecycle and R7/Q6 Graham disposition of the saved parcel candidate. Then retained corpus/first-six/six-pair/actual-edit-effort gates; all26AT/11E2E remain unclosed as a whole. Clock initial disposition is satisfied; do not ask for it again or rerun a finished package. Source-independent tasks may proceed within the plan, but no filler batch or silent admission reset is allowed. Actual rendering and Dedication publication remain gated.
+
+RESUME_AT: read current owner receipts; record only missing real judgments against the parcel hash; continue the next admitted dependent step. If the next request merely repeats execute without supplying a required judgment, reconcile this exact boundary rather than launching another trial. Same canonical prompt is sufficient; no new prompt generation is needed. No background execution continues after the turn.
+
+---
+
+# Previous installed-authoring checkpoint — superseded by Q6 update
+
 Plan: `docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md`, active R1–R8; prompt remains v4.3 in its canonical file. Current execution evidence: `evidence/operational-implementation-20261106/RESULTS.json`; release identities/rollback: INSTALLATION.json there. Planning/review bindings remain in `evidence/prompt-plan-hardening-20261105/RESULTS.json`.
 
 Installed exact merged revision37508330862b35d385eb1977f84f210fec6d5c6d; previous5bd3478 rollback retained and smoke-checked. R1–R6 operational adapters are implemented; scoped installed bare-topic retained-source and URL-symbolic create paths completed, with312 local/isolated tests and0-call replay/browser/export. Broad novel-topic research, full approved-example lifecycle and all human/corpus gates are not claimed complete. Human/publishing gates remain controlling. Continued merge/install/testing/applicable-CI authority persists; Graham selected GPT-6 SOL medium in this session.
