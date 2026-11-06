@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "covered": 63,
+  "total": 63,
+  "baseline_files_verified": 22,
+  "missing_item_rejected": true,
+  "same_length_altered_byte_rejected": true,
+  "scope": "SOURCE_SET.json, TEMPLATE_SOURCES.json and the explicit current request; scoped known requirements, not unknown future/all centralruntime obligations",
+  "proof_limit": "Deterministic source/anchor retention only; semantic review required separately; not implementation or universal coverage"
+}

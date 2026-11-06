@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "covered": 63,
-  "total": 63,
+  "covered": 65,
+  "total": 65,
   "baseline_files_verified": 22,
   "missing_item_rejected": true,
   "same_length_altered_byte_rejected": true,
-  "scope": "SOURCE_SET.json, TEMPLATE_SOURCES.json and the explicit current request; scoped known requirements, not unknown future/all centralruntime obligations",
+  "scope": "Original SOURCE_SET.json 22 baseline files and TEMPLATE_SOURCES.json; current full pair at fd701e9 plus prompt4.2 correction; REQUEST.json; current canonical identities in CURRENT_PROTOCOL_SOURCES.json. Enumerated known obligations only.",
   "proof_limit": "Deterministic source/anchor retention only; semantic review required separately; not implementation or universal coverage"
 }

@@ -1,0 +1,6 @@
+{
+  "request": "Run the prompt builder skill and do the program start cycle challenge. Make sure everything's good to go",
+  "scope": "Prompt/game-plan review and necessary repair; no product implementation",
+  "prior_authorization": "Existing user merge/install/test/applicable-CI approval retained; human content/render/publication gates unchanged",
+  "base": "fd701e943e6ec861d082a1d7f4a632e8e390bcda"
+}

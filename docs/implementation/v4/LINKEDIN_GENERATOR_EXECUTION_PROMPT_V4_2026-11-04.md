@@ -3,7 +3,7 @@ description: "Execute the current Graham structured-writing game plan through ve
 name: "Execute Graham LinkedIn Generator"
 argument-hint: "Continue from the current owner checkpoint; optionally identify returned gate evidence."
 agent: "agent"
-version: "4.1"
+version: "4.2"
 ---
 
 # Execute Graham LinkedIn Generator
@@ -32,6 +32,10 @@ Read CURRENT_WORK_PACKET.md, then the current checkpoint and active Q1–Q6 slic
  docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md. Resolve its linked editorial and
 acceptance owners. Load only the current step's relevant source/evidence; widen on material uncertainty,
 convergence or release. Reuse valid proof until its stated invalidator fires. Do not preload the portfolio.
+Bind both files to the reviewed SHA-256 identities in
+ evidence/prompt-plan-hardening-20261105/RESULTS.json, and read that record's current review scope,
+findings and invalidation conditions. A material candidate/basis mismatch requires reconciliation and
+fresh affected review before dependent execution; a title or CLEAR label is insufficient.
 If current records conflict, reconcile actual state and owner intent before dependent effects.
 
 ## Scope Guard

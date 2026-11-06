@@ -1,5 +1,5 @@
 {
-  "audited_source_set": "SOURCE_SET.json, TEMPLATE_SOURCES.json and the explicit current request; scoped known requirements, not unknown future/all centralruntime obligations",
+  "audited_source_set": "Original SOURCE_SET.json 22 baseline files and TEMPLATE_SOURCES.json; current full pair at fd701e9 plus prompt4.2 correction; REQUEST.json; current canonical identities in CURRENT_PROTOCOL_SOURCES.json. Enumerated known obligations only.",
   "items": [
     {
       "id": "objective",
@@ -60,7 +60,7 @@
       "required_information": "Adopted default progression",
       "location": {
         "path": "docs/implementation/v4/GRAHAM_CONTENT_DIRECTION_2026-11-05.md",
-        "literal": "hook → tension → relevant evidence"
+        "literal": "hook \u2192 tension \u2192 relevant evidence"
       },
       "disposition": "retained in active complete pair or canonical referenced owner"
     },
@@ -84,10 +84,10 @@
     },
     {
       "id": "contract_bounds",
-      "required_information": "Existing1–2facts/1–8beats, no replacement schema",
+      "required_information": "Existing1\u20132facts/1\u20138beats, no replacement schema",
       "location": {
         "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
-        "literal": "literal/symbolic narratives,1–8 beats and1–2"
+        "literal": "literal/symbolic narratives,1\u20138 beats and1\u20132"
       },
       "disposition": "retained in active complete pair or canonical referenced owner"
     },
@@ -537,16 +537,16 @@
       "required_information": "Productstepsonlyinplan executionmechanicsonlyinprompt",
       "location": {
         "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
-        "literal": "This completion game plan alone owns product steps Q1–Q6"
+        "literal": "This completion game plan alone owns product steps Q1\u2013Q6"
       },
       "disposition": "retained scoped autonomy adaptation; not central runtime enforcement"
     },
     {
       "id": "later_calibration",
-      "required_information": "Retained8–12heldoutnot lostwithdeduplication",
+      "required_information": "Retained8\u201312heldoutnot lostwithdeduplication",
       "location": {
         "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
-        "literal": "Use8–12 retained exact-text examples"
+        "literal": "Use8\u201312 retained exact-text examples"
       },
       "disposition": "retained scoped autonomy adaptation; not central runtime enforcement"
     },
@@ -567,6 +567,24 @@
         "literal": "Do not imply background work"
       },
       "disposition": "retained scoped autonomy adaptation; not central runtime enforcement"
+    },
+    {
+      "id": "review_binding",
+      "required_information": "Bind exact reviewed plan/prompt and reconcile material mismatch before dependent execution",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "Bind both files to the reviewed SHA-256 identities"
+      },
+      "disposition": "corrected in prompt4.2; current exact hashes recorded in RESULTS.json"
+    },
+    {
+      "id": "current_builder_challenge_request",
+      "required_information": "Run builder and canonical Challenge; readiness only, no Q1 implementation dispatched",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/REQUEST.json",
+        "literal": "Run the prompt builder skill and do the program start cycle challenge."
+      },
+      "disposition": "executed as bounded complete-pair review, not product execution"
     }
   ]
 }

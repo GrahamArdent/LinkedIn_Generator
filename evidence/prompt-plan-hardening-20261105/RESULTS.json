@@ -1,29 +1,39 @@
 {
   "status": "GO_EXECUTION_PROMPT_READY",
-  "scope": "Prompt/game-plan generation and hardening only",
-  "canonical_template": "Orchestrate PROGRAMSTART Work v2.11,86692ba72f0ad779506acfe0e871473e5e20d523",
-  "adaptation": "Scoped project execution protocol; not full canonical runtime enforcement or registered PROGRAMSTART operator prompt",
+  "authority_status": "DERIVED_FROM_CURRENT_AUTHORITY",
+  "scope": "Prompt-builder and PROGRAMSTART Challenge readiness for Q1 execution; product implementation not dispatched",
+  "base": "fd701e943e6ec861d082a1d7f4a632e8e390bcda",
   "candidate_sha256": {
     "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "3dc12da81e1eb07843c0b53e445b1f6c607d62da053ee8dd274c7226b010a23b",
-    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "2d425c8a3542ebdeac70e0844979d65cdaeeed014cdbd9d4e8cc67bafadf36d9"
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "9c80fe6c322296b4576e4fc1c2eba92a361a107b213b73b2c066a153cd325fef"
   },
-  "review": "Fresh independent complete-pair semantic review: no material finding",
-  "retention": {
-    "covered": 63,
-    "total": 63,
-    "baseline_files": 22,
-    "negative_controls": "missing item and altered-byte rejected"
-  },
-  "resolved_confusion": [
-    "Prompt does not repeat product Q steps, numerical budget, selected voice/topic or release checklist",
-    "One Q1\u2013Q6 product sequence; M1\u2013M5 reduced to mapping",
-    "Later calibration8\u201312, held-out subjects, six-pair4of6 and26/11 obligations preserved",
-    "Recorded authority continues, operator evidence resumes without redundant proceed",
-    "Plan-only request is not implementation; current next action Q1 under execution instruction"
+  "protocol_sources": "CURRENT_PROTOCOL_SOURCES.json",
+  "material_findings": [
+    {
+      "id": "PB01",
+      "status": "CORRECTED_AND_FRESHLY_REVIEWED",
+      "repair": "Prompt4.2 directly requires exact pair binding, review scope/invalidation and mismatch reconciliation"
+    }
   ],
-  "installation": "unchanged2c2daf39398a993b698d1f225008a06217b14a7c",
+  "review": "FINAL_REVIEW.json: delegated independent complete-pair SCOPED_CLEAR, no remaining material findings",
+  "retention": {
+    "covered": 65,
+    "total": 65,
+    "baseline_files": 22,
+    "negative_controls": "missing item and same-length altered byte rejected",
+    "proof_limit": "Enumerated source/anchor coverage; separate semantic review; not universal completeness or implementation success"
+  },
+  "acceptance_definitions": "ACCEPTANCE_DEFINITIONS.json confirms unchanged26AT/11E2E definitions",
+  "invalidation_conditions": [
+    "Material plan/prompt bytes or controlling owner authority change",
+    "Material canonical protocol or instruction basis change",
+    "New evidence contradicts a controlling premise or relevant unresolved blocker",
+    "Implementation/release requires its actual independent proofs; planning review cannot supply them"
+  ],
+  "installed_product": "2c2daf39398a993b698d1f225008a06217b14a7c, unchanged by this task",
   "model_calls": 0,
   "product_code_changed": false,
-  "hosted_CI": "NOT_RUN: no active workflow; planning checks only",
-  "next_action": "Execute current repository prompt from first unmet Q step, carrying existing authority and actual owner stop conditions"
+  "hosted_CI": "NOT_APPLICABLE: documentation-only, no active workflow; no hosted pass claimed",
+  "continuation_owner": "CURRENT_WORK_PACKET.md; same Library continuation points to canonical pair",
+  "next_action": "On execution instruction, resume Q1 under current plan/prompt, carry existing authorization; later native/release/human/render/publication gates remain"
 }
