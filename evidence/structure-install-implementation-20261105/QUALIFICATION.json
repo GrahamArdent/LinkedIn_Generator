@@ -1,0 +1,18 @@
+{
+  "source_candidate": "df39e122193b48504d36bfdf189374fbf2fd0f49",
+  "base": "6a390250c754b78d84c3e420cd72fba43fbcb425",
+  "clean_archive_exit": 0,
+  "files": {
+    "src/app/editorial_structure.py": "f0d9edbf68948a334ef0325f825415e8b3f35f209fcd6fcbeccaf3d7c287bdd5",
+    "src/app/codex_trial.py": "4c6e203e46780b62eaecb3dc3c5753d8c1b69c80939f258ad5243d729946b493",
+    "src/app/publish_quality.py": "af1b269b2cc5ecf966516b4eb6fe112d069a7576780711fb91b1303a4658c9e8",
+    "scripts/linkedin_codex_trial.py": "dc88e62fd251cd81aff392d3236b8ba02d94f52666468e38f2ae8a90f2791e12",
+    "tests/test_graham_structure.py": "13bfd02fc829b1008762375bc84a61640e4981491eee8bb1d77804acafcc6a3e",
+    "tests/test_essential_review_gate.py": "3f890bf72da89a681e5943002477c85e07a21dc51a8a3502fa1e308dd656ee99"
+  },
+  "lint": {
+    "ruff": false,
+    "flake8": false
+  },
+  "active_workflows": []
+}

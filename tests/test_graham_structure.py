@@ -233,3 +233,24 @@ runpy.run_path(sys.argv[0],run_name='__main__')
     r=subprocess.run([sys.executable,'-c',bootstrap,json.dumps(args)],cwd=ROOT,text=True,capture_output=True)
     assert r.returncode==0,r.stderr
     assert (out/'trial.json').read_bytes()==raw
+
+@pytest.mark.parametrize('publisher',['Invented prestigious publisher','Other provided source'])
+def test_caller_writing_plan_cannot_misattribute_fact_before_dispatch(tmp_path,publisher):
+    data,bundle=fixture()
+    data['editorial_handoff'].update(version=1,narrative={'form':'literal','beats':['Set the question.'],'symbol':None},
+       writing_plan={'beats':[{'index':1,'delivery':'Place F1 and explain its limit.'}],
+                     'attribution':[{'claim_id':'F1','source_name':publisher}]})
+    # Merely supplying an unrelated source does not authorize attributing F1 to it.
+    other=copy.deepcopy(bundle['sources'][0]);other.update(source_id='OTHER',publisher='Other provided source')
+    bundle['sources'].append(other)
+    bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    r=cli(tmp_path,'prepare',data,bundle)
+    assert r.returncode==2 and 'attribution' in r.stderr.lower()
+    assert not (tmp_path/'out'/'request.json').exists()
+    assert not (tmp_path/'out'/'trial.json').exists()
+
+@pytest.mark.parametrize('version',[True,1.0])
+def test_default_compilation_rejects_explicit_noninteger_handoff_version(version):
+    data,bundle=fixture();data['editorial_handoff']['version']=version
+    bundle['request_sha256']=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
+    with pytest.raises(ValueError,match='STRUCTURE_PREPARATION'):module().prepare_graham_request(data,bundle)

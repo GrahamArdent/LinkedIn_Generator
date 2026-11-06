@@ -41,6 +41,13 @@ def _supported_handoff(data, bundle):
         if (c.get('kind') not in ('fact', 'observation') or c.get('text') != fact['text']
                 or not set(fact['source_ids']).issubset(c.get('source_ids', []))):
             raise ValueError('STRUCTURE_PREPARATION_INVALID: unsupported handoff fact/source')
+    if 'writing_plan' in h:
+        publishers = {s['source_id']: str(s.get('publisher') or s.get('title') or '') for s in bundle['sources']}
+        facts = {f['claim_id']:f for f in h['meaning']['facts']}
+        for attribution in h['writing_plan']['attribution']:
+            names = {publishers.get(ref) for ref in facts[attribution['claim_id']]['source_ids']}
+            if attribution['source_name'] not in names:
+                raise ValueError('STRUCTURE_PREPARATION_INVALID: attribution not bound to the fact source')
     LinkedInContentRequest.model_validate(data)
 
 def prepare_graham_request(data: dict, bundle: dict):
@@ -60,7 +67,7 @@ def prepare_graham_request(data: dict, bundle: dict):
         raise ValueError('STRUCTURE_PREPARATION_INVALID: unexpected handoff fields')
     provenance = 'caller-selected' if 'narrative' in h else 'default'
     if 'narrative' not in h:
-        if 'writing_plan' in h or ('version' in h and h['version'] != 1):
+        if 'writing_plan' in h or ('version' in h and (type(h['version']) is not int or h['version'] != 1)):
             raise ValueError('STRUCTURE_PREPARATION_INVALID: incomplete selected plan')
         data['editorial_handoff'] = freeze_handoff(h['meaning'],
             {'form': 'literal', 'beats': DEFAULT_BEATS, 'symbol': None})

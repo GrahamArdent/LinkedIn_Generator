@@ -1,0 +1,90 @@
+{
+  "request_sha256": "2cf079deb08c521847f98adae4f6c4b8408779adac173db3a1016325f01aabc0",
+  "sources": [
+    {
+      "source_id": "ANTHROPIC-2025",
+      "title": "Tracing the thoughts of a large language model",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "passages": [
+        {
+          "locator": "Limitations paragraph",
+          "excerpt": "our method only captures a fraction of the total computation performed by Claude"
+        }
+      ],
+      "limitations": "First-party research on specific model/task case studies, not evidence that every AI is wholly unknowable or that all explanations are false.",
+      "retrieval": "Primary source retrieved in this conversation, turn3search0."
+    },
+    {
+      "source_id": "BUCINCA-2021",
+      "title": "To Trust or to Think",
+      "publisher": "Buçinca, Malaya and Gajos; ACM CSCW, authors’ Harvard page",
+      "url": "https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "passages": [
+        {
+          "locator": "Abstract, lines19-20",
+          "excerpt": "cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches"
+        }
+      ],
+      "limitations": "Controlled experiment predating current generative chatbots. Do not generalize to all AI users or claim every explanation increases trust.",
+      "retrieval": "Primary author page opened in this conversation, turn3view0."
+    },
+    {
+      "source_id": "VASCONCELOS-2023",
+      "title": "Explanations Can Reduce Overreliance on AI Systems During Decision-Making",
+      "publisher": "Vasconcelos et al.; CSCW2023 author paper",
+      "url": "https://arxiv.org/abs/2212.06823",
+      "status": "usable",
+      "checked_at": "2026-11-05",
+      "passages": [
+        {
+          "locator": "Abstract, lines17-19",
+          "excerpt": "there are scenarios where AI explanations reduce overreliance"
+        }
+      ],
+      "limitations": "Five controlled maze-task studies with simulated AI; not direct evidence about current workplace LLM adoption. Counterbalances blanket claims that explanations never help.",
+      "retrieval": "Primary paper abstract opened in this conversation, turn3view2."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "1",
+      "kind": "fact",
+      "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+      "source_ids": [
+        "ANTHROPIC-2025"
+      ]
+    },
+    {
+      "claim_id": "2",
+      "kind": "fact",
+      "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+      "source_ids": [
+        "BUCINCA-2021"
+      ]
+    }
+  ],
+  "central_claim_id": "1",
+  "interpretive_limits": [
+    "Incomplete understanding is not total ignorance.",
+    "Distinguish the reliability of an answer from full access to internal computations.",
+    "First-person opinions/recommendations may be proposed; do not invent lived experience, professional credentials, deployments, customers or experiments.",
+    "Evidence may be selected/reordered to fit each treatment; same underlying facts and limits remain available to both.",
+    "No assertion that people universally trust AI or that AI explanations are always misleading.",
+    "VASCONCELOS-2023 remains counterbalancing context only; two load-bearing facts chosen, not an extra unsupported universal claim."
+  ],
+  "context_claims": [
+    {
+      "claim_id": "3",
+      "kind": "fact",
+      "text": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.",
+      "source_ids": [
+        "VASCONCELOS-2023"
+      ]
+    }
+  ]
+}

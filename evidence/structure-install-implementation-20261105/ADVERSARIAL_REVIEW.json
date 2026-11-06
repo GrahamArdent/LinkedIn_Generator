@@ -1,0 +1,28 @@
+{
+  "candidate": "df39e122193b48504d36bfdf189374fbf2fd0f49",
+  "reviewer": "primary assistant, opposition framing; independent whole-candidate review pending separately",
+  "trigger": "Actual changed preparation persistence/CLI provider boundary; Gate2.1 PartE/H with relevantA/B/C/D/F/G",
+  "invariants": [
+    {
+      "failure_sequence": "Timeout after native dispatch then exact restart, then changed beat under same ID",
+      "proof": "test_cli_unknown_result_reconciles_original_without_another_dispatch: state unknown retained, dispatchcount1, restart reconciliation required, changed request conflicts, raw trial bytes unchanged"
+    },
+    {
+      "failure_sequence": "Active structure/version changes after completed result; reopen under new policy",
+      "proof": "test_prepared_completed_cli_replays_even_after_current_structure_definition_changes: actual subprocess policy changed999, constructor tripwire never reached, raw result bytes unchanged"
+    },
+    {
+      "failure_sequence": "Missing/stale definition/version/input/source binding attempts normal generate",
+      "proof": "Six subprocess negatives reject before trial/attempt directory; actual CLI validates before provider construction"
+    },
+    {
+      "failure_sequence": "Selected alternate or beat changes lost between prepare and writer/rewrite/evaluator/control",
+      "proof": "Actual subprocess consumers receive same selected handoff; changed beat changes actual writer prompt"
+    },
+    {
+      "failure_sequence": "High voice score masks broken construction",
+      "proof": "Existing4essential flow rejects100score argument_voice revise, at mostone guarded rewrite; new actual evaluator definition requests coherent development"
+    }
+  ],
+  "limits": "Source records/support binding are provenance checks, not entailment or authenticity signatures. DirectAPI/UI legacy consumers remain outside GrahamCLI qualification. Partial prepare output fails closed and must be reconciled; no overwrite/relaunch."
+}
