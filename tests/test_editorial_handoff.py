@@ -139,3 +139,14 @@ def test_planner_cannot_attribute_a_fact_to_an_unrelated_supplied_source():
     with pytest.raises(ValueError,match="PLANNING_CONTRACT"):
         h.plan_writing(frozen(),{},[{"source_id":"S1","publisher":"Fixture source"},
                                    {"source_id":"S2","publisher":"Other source"}],WrongAttribution())
+
+
+def test_original_revision_feedback_reaches_actual_writer_and_essential_evaluator():
+    context={'parent_job':'old','candidate_hash':'parent-hash','original_text':'Original brief text.','feedback':'Develop the argument rather than compress it.','instruction':'Revision context, not factual evidence.'}
+    brief={'claims':[{'claim_id':'F1','text':'The fixture account remained usable.'}],'central_claim_id':'F1','revision_context':context}
+    client=Capture();generate(client,editorial_handoff=frozen(),editorial_brief=brief)
+    writer=next(c for c in client.calls if 'Write a LinkedIn post as' in c['system'])
+    profile=json.loads(next(x for x in writer['user'].splitlines() if x.startswith('Persona Profile: ')).split(': ',1)[1])
+    judge=json.loads(next(c['user'] for c in client.calls if 'strict LinkedIn publish-quality evaluator' in c['system']))
+    assert profile['editorial_context']['source_bundle']['revision_context']==context
+    assert judge['editorial_brief']['source_bundle']['revision_context']==context
