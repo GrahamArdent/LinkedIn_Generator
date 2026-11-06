@@ -4,7 +4,7 @@
   "scope": "Current pair execution checkpoint; original109-obligation planning/source receipts retained. Actual operational outcomes owned by evidence/operational-implementation-20261106/RESULTS.json.",
   "base": "6b6b24352329c097e7eaec197d4d29581e315338",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "ef585bacdea64d971451f19e3bf47e5fb84cd9fcb8b197cafa1a9cba43cf70e8",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "c8cd45c31e4d9af4733cce9202d4235fb90758216d6db474f36fce800e23af7a",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "current_request": "OPERATIONAL_REQUEST.json",
@@ -14,7 +14,7 @@
     "OPERATIONAL_SOURCE_SET.json",
     "OPERATIONAL_PROTOCOL_SOURCES.json"
   ],
-  "review": "evidence/operational-implementation-20261106/r2-discovery/REVIEW.json: current independent corrected source/complete-pair review; prior reviews historical",
+  "review": "r2-discovery/REVIEW.json (independent product/prior pair) and INSTALLED_CHECKPOINT_REVIEW.json (current installed metadata pair)",
   "retention": {
     "covered": 109,
     "total": 109,
@@ -32,7 +32,7 @@
     "TechnicalauthoringGO, editorialreliability and full26AT/11E2E completion distinct"
   ],
   "actual_installed_outcome": "evidence/operational-implementation-20261106/RESULTS.json",
-  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
+  "installed_revision": "5bc9f142ff1634f3a968d401cb852e4510a4c76d",
   "product_code_changed": true,
   "new_native_calls": 11,
   "api_spend": 0,
@@ -50,5 +50,6 @@
     "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0f57af87a9c0106f6dcb4381db3fd26cbaf55af065a6d6d26c525b3a19e40b06",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
-  "next_action": "Complete exact-source R2 qualification/install, then retain deferred editorial checkpoint; no automatic new post or inferred approval."
+  "next_action": "Preserve deferred parcel rewrite and current exact installed receipts; R5 explicit example approval and retained human/corpus/render/publication evidence remain. No completed job/source experiment replay or new model generation.",
+  "installed_independent_readback": "r2-discovery/INDEPENDENT_INSTALLED_READBACK.json"
 }

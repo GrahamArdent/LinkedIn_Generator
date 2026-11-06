@@ -1,0 +1,103 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+__ test_malformed_crossref_optional_shapes_do_not_prevent_author_route[work0] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fefc400e360>
+work = {'resource': None, 'link': []}
+
+    @pytest.mark.parametrize('work',[{'resource':None,'link':[]},{'resource':{},'link':[None]},{'resource':{},'link':None}])
+    def test_malformed_crossref_optional_shapes_do_not_prevent_author_route(monkeypatch,work):
+        import json
+        def fetch(self,url,**kwargs):
+            if url.startswith('https://api.crossref.org/'):
+                return url,json.dumps({'message':{'items':[work]}}).encode(),'application/json'
+            return url,b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/abs/2103.03610v1</id></entry></feed>','application/atom+xml'
+        monkeypatch.setattr(m.Evidence,'fetch',fetch)
+>       assert m.Evidence().discover('trust transparency')==['https://arxiv.org/abs/2103.03610v1']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_operational_evidence.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/operational_evidence.py:211: in discover
+    try:routes=self.discover_crossref(topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.operational_evidence.Evidence object at 0x7fefc400e330>
+topic = 'trust transparency'
+
+    def discover_crossref(self,topic):
+        # Metadata is navigation only; facts must come from separately fetched publisher/author text.
+        url='https://api.crossref.org/works?'+urlencode({'query.title':topic,'rows':6,'select':'DOI,title,URL,link,resource,publisher'})
+        _,raw,_=self.fetch(url,discovery=True)
+        works=json.loads(raw)['message']['items']
+        urls=[];seen_works=set()
+        for w in works:
+            # One representation per work: inaccessible landing/PDF/DOI variants
+            # must not crowd all other papers out of the six-fetch admission.
+            doi=str(w.get('DOI') or '').strip().lower()
+            if doi and doi in seen_works:continue
+            if doi:seen_works.add(doi)
+>           primary=w.get('resource',{}).get('primary',{}).get('URL')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+E           AttributeError: 'NoneType' object has no attribute 'get'
+
+src/app/operational_evidence.py:194: AttributeError
+__ test_malformed_crossref_optional_shapes_do_not_prevent_author_route[work1] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fefc400c560>
+work = {'resource': {}, 'link': [None]}
+
+    @pytest.mark.parametrize('work',[{'resource':None,'link':[]},{'resource':{},'link':[None]},{'resource':{},'link':None}])
+    def test_malformed_crossref_optional_shapes_do_not_prevent_author_route(monkeypatch,work):
+        import json
+        def fetch(self,url,**kwargs):
+            if url.startswith('https://api.crossref.org/'):
+                return url,json.dumps({'message':{'items':[work]}}).encode(),'application/json'
+            return url,b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/abs/2103.03610v1</id></entry></feed>','application/atom+xml'
+        monkeypatch.setattr(m.Evidence,'fetch',fetch)
+>       assert m.Evidence().discover('trust transparency')==['https://arxiv.org/abs/2103.03610v1']
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_operational_evidence.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/operational_evidence.py:211: in discover
+    try:routes=self.discover_crossref(topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.operational_evidence.Evidence object at 0x7fefc400c200>
+topic = 'trust transparency'
+
+    def discover_crossref(self,topic):
+        # Metadata is navigation only; facts must come from separately fetched publisher/author text.
+        url='https://api.crossref.org/works?'+urlencode({'query.title':topic,'rows':6,'select':'DOI,title,URL,link,resource,publisher'})
+        _,raw,_=self.fetch(url,discovery=True)
+        works=json.loads(raw)['message']['items']
+        urls=[];seen_works=set()
+        for w in works:
+            # One representation per work: inaccessible landing/PDF/DOI variants
+            # must not crowd all other papers out of the six-fetch admission.
+            doi=str(w.get('DOI') or '').strip().lower()
+            if doi and doi in seen_works:continue
+            if doi:seen_works.add(doi)
+            primary=w.get('resource',{}).get('primary',{}).get('URL')
+            links=w.get('link',[])
+>           typed=[(x.get('URL'),str(x.get('content-type') or '').split(';')[0].strip().lower()) for x in links]
+                    ^^^^^
+E           AttributeError: 'NoneType' object has no attribute 'get'
+
+src/app/operational_evidence.py:196: AttributeError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_evidence.py::test_malformed_crossref_optional_shapes_do_not_prevent_author_route[work0]
+FAILED tests/test_operational_evidence.py::test_malformed_crossref_optional_shapes_do_not_prevent_author_route[work1]
+2 failed, 1 passed, 21 deselected, 1 warning in 0.07s

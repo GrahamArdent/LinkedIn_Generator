@@ -1,0 +1,69 @@
+{
+  "status": "PASS_SCOPED_INSTALLED_SOURCE_ADAPTER",
+  "installed_revision": "5bc9f142ff1634f3a968d401cb852e4510a4c76d",
+  "qualified_files": 117,
+  "installed_suite": "323 passed; /tmp/linkedin-r2-installed-323.log",
+  "native_suite": "323 passed; /tmp/linkedin-r2-native-323.log",
+  "new_model_calls": 0,
+  "model_stages_before": 17,
+  "model_stages_after": 17,
+  "all_original_attempt_bytes_unchanged": true,
+  "saved_selected_hashes": {
+    "graham-q6-usable-completion-20261106": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+    "graham-operational-url-symbolic-20261106-r1": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+    "graham-structured-black-box-20261106": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884"
+  },
+  "same_id_create_reopen": "same original result hash",
+  "changed_same_id": "REQUEST_CONFLICT, exit2",
+  "feedback_recorded_once": true,
+  "voice_examples_activated": 0,
+  "publication_approved": false,
+  "production_jobs": 15,
+  "backup_jobs": 15,
+  "source_fixture": "/home/graham/.local/share/graham-linkedin-qualifications/r2-discovery-20261106/installed-source-fixture",
+  "source_query": "artificial intelligence trust transparency",
+  "source_acquisition_seconds": 1.723454674705863,
+  "source_counts_before_replay": {
+    "discovery_requests": 2,
+    "source_fetches": 6
+  },
+  "source_counts_after_replay": {
+    "discovery_requests": 2,
+    "source_fetches": 6
+  },
+  "new_http_reservations_on_replay": 0,
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2103.03610v1",
+      "title": "[2103.03610v1] A framework for fostering transparency in shared artificial intelligence models by increasing visibility of contributions",
+      "checked_at": "2026-11-06T15:19:10.488482+00:00",
+      "content_sha256": "f3fc6b595e9baeb561872be1d769c10a0a340df470dcde0b786845a67be017a0",
+      "passage_count": 119,
+      "limitations": "Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied."
+    },
+    {
+      "url": "https://arxiv.org/abs/2108.04770v1",
+      "title": "[2108.04770v1] Examining correlation between trust and transparency with explainable artificial intelligence",
+      "checked_at": "2026-11-06T15:19:10.565794+00:00",
+      "content_sha256": "6b00852edcba44eb90e4b07a455df53a6ab9feaf3e2a60b2c5a6e105b3093154",
+      "passage_count": 115,
+      "limitations": "Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied."
+    },
+    {
+      "url": "https://arxiv.org/abs/2203.12318v1",
+      "title": "[2203.12318v1] Trust and Reliance in XAI -- Distinguishing Between Attitudinal and Behavioral Measures",
+      "checked_at": "2026-11-06T15:19:10.634603+00:00",
+      "content_sha256": "84665297fd108d515011376999635f6191066af9af684ec8c84d2b0d51e44f6d",
+      "passage_count": 114,
+      "limitations": "Author-submitted preprint abstract page only; peer review is not established. Abstracts cannot support unstated methods or results. Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied."
+    }
+  ],
+  "source_errors": [
+    {
+      "url": "https://link.springer.com/10.1007/s13347-025-00916-2",
+      "error": "EVIDENCE_BUDGET_EXHAUSTED"
+    }
+  ],
+  "api_spend": 0,
+  "proof_limit": "Observed topic-only source acquisition and zero-effect existing-job replay. Not suitable short factual passages, meaning/new post acceptance, general coverage, human approval or full product completion."
+}

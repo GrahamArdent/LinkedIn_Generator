@@ -1,0 +1,39 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___ test_arxiv_navigation_finds_author_pages_without_promoting_feed_snippets ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc5c2d77aa0>
+
+    def test_arxiv_navigation_finds_author_pages_without_promoting_feed_snippets(monkeypatch):
+        import base64,json
+        feed=b'''<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/abs/2103.03610v1</id><summary>Do not treat this metadata as evidence.</summary></entry><entry><id>http://127.0.0.1/private</id></entry></feed>'''
+        def network(url,timeout):
+            if url.startswith('https://api.crossref.org/'):
+                raw=json.dumps({'message':{'items':[]}}).encode();kind='application/json'
+            elif url.startswith('https://export.arxiv.org/api/query?'):
+                raw=feed;kind='application/atom+xml'
+            elif url=='https://arxiv.org/abs/2103.03610v1':
+                raw=b'<p>The authors describe a framework for making contributions visible.</p>';kind='text/html'
+            else:pytest.fail('unexpected destination '+url)
+            return {'status':200,'raw':base64.b64encode(raw).decode(),'content_type':kind,'location':''}
+        monkeypatch.setattr(m,'bounded_request',network)
+        result=m.Evidence().acquire('artificial intelligence trust transparency')
+>       assert [s['url'] for s in result['sources']]==['https://arxiv.org/abs/2103.03610v1']
+E       AssertionError: assert [] == ['https://arx...2103.03610v1']
+E         
+E         Right contains one more item: 'https://arxiv.org/abs/2103.03610v1'
+E         Use -v to get more diff
+
+tests/test_operational_evidence.py:147: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_evidence.py::test_arxiv_navigation_finds_author_pages_without_promoting_feed_snippets
+1 failed, 19 deselected, 1 warning in 0.05s

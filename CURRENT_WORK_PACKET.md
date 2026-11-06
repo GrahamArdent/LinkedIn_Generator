@@ -1,5 +1,7 @@
 # Current continuation — R2 source discovery and deferred editorial revision
 
+Installed exact5bc9f142ff1634f3a968d401cb852e4510a4c76d,323tests/117qualifiedfiles, original15jobs/17modelstages retained,0newmodelcalls. Source fixture retrieved3authorpages with2discovery/6fetches; replay0newHTTP. Rollback3750833 retained and smoke-checked.
+
 Canonical prompt v4.3 and R1–R8/Q1–Q6 plan continue; same owner index evidence/operational-implementation-20261106/RESULTS.json.
 
 Graham disposition of the saved parcel candidate: too short, bland, does not capture enough. Explicit request: continue operational work and address the draft later. Installed feedback records only that note against c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127; no acceptance/ratings/voice activation/publication inferred. Preserve original B, clock and parcel bytes; no completed model job replay.
@@ -8,7 +10,7 @@ R2 current bounded source work: fix Crossref variant starvation and metadata edg
 
 R5 actual human-approved example lifecycle remains unmet. Deferred parcel revision/acceptance, first-six eligibility, corpus/six-pair thresholds, actual editing effort, rendered visual value and Dedication publication remain gated. R8 rendering/Dedication publishing stays gated. Continued merge/install/testing/applicable-CI authority persists.
 
-RESUME_AT: reconcile current R2 install receipts before any action; do not repeat completed source experiments or any model trial. If R2 exact install qualifies, retain editorial deferral and continue only independently admitted remaining steps. No new permission is inferred from “fine.” No background execution after the turn.
+RESUME_AT: reconcile current R2 install receipts before any action; do not repeat completed source experiments or any model trial. R2 exact install qualified; retain editorial deferral and continue only independently admitted remaining steps. No new permission is inferred from “fine.” No background execution after the turn.
 
 ---
 
