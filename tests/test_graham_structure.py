@@ -66,7 +66,7 @@ def test_invalid_preparation_stops_without_provider(change):
     else:data['editorial_handoff']['meaning']['facts'][0]['source_ids']=['OTHER']
     with pytest.raises(ValueError):module().prepare_graham_request(data,bundle)
 
-def cli(tmp_path,action,data=None,bundle=None,out=None):
+def cli(tmp_path,action,data=None,bundle=None,out=None,bootstrap=None):
     argv=[sys.executable,str(ROOT/'scripts/linkedin_codex_trial.py'),action,'--out',str(out or tmp_path/'out')]
     if data is not None:
         (tmp_path/'input.json').write_text(json.dumps(data));argv+=['--request',str(tmp_path/'input.json')]
@@ -76,6 +76,8 @@ def cli(tmp_path,action,data=None,bundle=None,out=None):
     cfg={'resume_root':'/nonexistent-resume','python':'/nonexistent-python','source_sha':'none','model':'fixture'}
     (tmp_path/'config.json').write_text(json.dumps(cfg))
     if action!='prepare':argv+=['--config',str(tmp_path/'config.json')]
+    if bootstrap is not None:
+        argv=[sys.executable,'-c',bootstrap,json.dumps(argv[1:])]
     return subprocess.run(argv,text=True,capture_output=True,cwd=ROOT)
 
 def test_public_prepare_is_no_model_idempotent_and_rejects_overwrite(tmp_path):
@@ -104,20 +106,20 @@ def test_normal_generate_rejects_missing_or_stale_preparation_before_dispatch(tm
     assert not (tmp_path/'out'/'codex-attempts').exists()
     assert not (tmp_path/'out'/'trial.json').exists()
 
-def test_historical_completed_cli_replay_after_definition_change_is_immutable(tmp_path,monkeypatch):
-    from src.app.codex_trial import run_trial
+def test_historical_completed_cli_replay_after_definition_change_is_immutable(tmp_path):
     data,_=fixture();data.pop('editorial_handoff')
     out=tmp_path/'out';out.mkdir()
     old={'state':'completed','input':data,'model':'fixture','mode':'native_codex',
          'evidence_bundle_sha256':None,'score_baseline':False,'engine_gate':'HOLD_NO_QUALIFIED_CANDIDATE'}
     raw=json.dumps(old).encode();(out/'trial.json').write_bytes(raw)
-    monkeypatch.setattr(module(),'STRUCTURE_VERSION',999)
-    r=cli(tmp_path,'generate',data,out=out)
+    bootstrap="import json,runpy,sys\nfrom src.app import editorial_structure as s\ns.STRUCTURE_VERSION=999\nprint('CHILD_STRUCTURE_VERSION='+str(s.STRUCTURE_VERSION))\nsys.argv=json.loads(sys.argv[1])\nrunpy.run_path(sys.argv[0],run_name='__main__')\n"
+    r=cli(tmp_path,'generate',data,out=out,bootstrap=bootstrap)
     assert r.returncode==0,r.stderr
+    assert 'CHILD_STRUCTURE_VERSION=999' in r.stdout
     assert (out/'trial.json').read_bytes()==raw
     assert cli(tmp_path,'show',out=out).returncode==0
     data['topic']='Changed'
-    r=cli(tmp_path,'generate',data,out=out)
+    r=cli(tmp_path,'generate',data,out=out,bootstrap=bootstrap)
     assert r.returncode==2 and 'REQUEST_CONFLICT' in r.stderr
     assert (out/'trial.json').read_bytes()==raw
 
