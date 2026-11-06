@@ -1,0 +1,1046 @@
+{
+  "schema_version": "1",
+  "state": "completed",
+  "input": {
+    "request_id": "graham-structured-black-box-20261106",
+    "origin": "manual",
+    "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+    "persona_key": "graham",
+    "audience": "Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.",
+    "objective": "Explore why a convincing AI answer and a sound reason to rely on it are different questions. Use the deliberately prepared structure; keep Graham curious, measured and broad, with no technical credentials or invented experience.",
+    "author_pov": "individual",
+    "content_goal": "auto",
+    "opportunity_gate": false,
+    "publish_quality_gate": true,
+    "visual_asset_plan": true,
+    "services": [],
+    "targets": [],
+    "hashtags": [],
+    "voice_examples": [],
+    "evidence": [
+      {
+        "title": "ANTHROPIC-2025",
+        "fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts."
+      },
+      {
+        "title": "BUCINCA-2021",
+        "fact": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably."
+      }
+    ],
+    "writing_voice_id": "concise_challenger",
+    "editorial_handoff": {
+      "version": 1,
+      "meaning": {
+        "thesis": "A convincing AI answer and a sound reason to rely on it are different things.",
+        "reader_consequence": "Consider what would justify reliance when a fluent explanation is easier to get than understanding.",
+        "facts": [
+          {
+            "claim_id": "1",
+            "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+            "source_ids": [
+              "ANTHROPIC-2025"
+            ]
+          },
+          {
+            "claim_id": "2",
+            "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+            "source_ids": [
+              "BUCINCA-2021"
+            ]
+          }
+        ],
+        "qualification": "Partial interpretability is not total ignorance. The controlled decision-support experiment predates current chatbots; explanations can help in some conditions. Do not universalize trust, overreliance or opaque systems."
+      },
+      "narrative": {
+        "form": "literal",
+        "beats": [
+          "Hook: introduce the central question.",
+          "Tension: develop why the question matters.",
+          "Evidence: place the relevant sourced facts.",
+          "Interpretation: develop Graham's reading and its limits.",
+          "Landing: earn the closing thought from the argument."
+        ],
+        "symbol": null
+      }
+    }
+  },
+  "model": "gpt-6-astra",
+  "mode": "native_codex",
+  "started_at_utc": "2026-11-06T03:55:13.165768+00:00",
+  "api_spend": 0,
+  "human_decision": null,
+  "evidence_bundle_sha256": "9e3f6ea996fb500b90a2de9d7027065037af3ff3d0d716b75f1b053e8fbc72cf",
+  "evidence_bundle": {
+    "request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+    "sources": [
+      {
+        "source_id": "ANTHROPIC-2025",
+        "title": "Tracing the thoughts of a large language model",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+        "status": "usable",
+        "checked_at": "2026-11-05",
+        "passages": [
+          {
+            "locator": "Limitations paragraph",
+            "excerpt": "our method only captures a fraction of the total computation performed by Claude"
+          }
+        ],
+        "limitations": "First-party research on specific model/task case studies, not evidence that every AI is wholly unknowable or that all explanations are false.",
+        "retrieval": "Primary source retrieved in this conversation, turn3search0."
+      },
+      {
+        "source_id": "BUCINCA-2021",
+        "title": "To Trust or to Think",
+        "publisher": "Buçinca, Malaya and Gajos; ACM CSCW, authors’ Harvard page",
+        "url": "https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml",
+        "status": "usable",
+        "checked_at": "2026-11-05",
+        "passages": [
+          {
+            "locator": "Abstract, lines19-20",
+            "excerpt": "cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches"
+          }
+        ],
+        "limitations": "Controlled experiment predating current generative chatbots. Do not generalize to all AI users or claim every explanation increases trust.",
+        "retrieval": "Primary author page opened in this conversation, turn3view0."
+      },
+      {
+        "source_id": "VASCONCELOS-2023",
+        "title": "Explanations Can Reduce Overreliance on AI Systems During Decision-Making",
+        "publisher": "Vasconcelos et al.; CSCW2023 author paper",
+        "url": "https://arxiv.org/abs/2212.06823",
+        "status": "usable",
+        "checked_at": "2026-11-05",
+        "passages": [
+          {
+            "locator": "Abstract, lines17-19",
+            "excerpt": "there are scenarios where AI explanations reduce overreliance"
+          }
+        ],
+        "limitations": "Five controlled maze-task studies with simulated AI; not direct evidence about current workplace LLM adoption. Counterbalances blanket claims that explanations never help.",
+        "retrieval": "Primary paper abstract opened in this conversation, turn3view2."
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "1",
+        "kind": "fact",
+        "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+        "source_ids": [
+          "ANTHROPIC-2025"
+        ]
+      },
+      {
+        "claim_id": "2",
+        "kind": "fact",
+        "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+        "source_ids": [
+          "BUCINCA-2021"
+        ]
+      }
+    ],
+    "central_claim_id": "1",
+    "interpretive_limits": [
+      "Incomplete understanding is not total ignorance.",
+      "Distinguish the reliability of an answer from full access to internal computations.",
+      "First-person opinions/recommendations may be proposed; do not invent lived experience, professional credentials, deployments, customers or experiments.",
+      "Evidence may be selected/reordered to fit each treatment; same underlying facts and limits remain available to both.",
+      "No assertion that people universally trust AI or that AI explanations are always misleading.",
+      "VASCONCELOS-2023 remains counterbalancing context only; two load-bearing facts chosen, not an extra unsupported universal claim."
+    ],
+    "context_claims": [
+      {
+        "claim_id": "3",
+        "kind": "fact",
+        "text": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.",
+        "source_ids": [
+          "VASCONCELOS-2023"
+        ]
+      }
+    ],
+    "structure_preparation": {
+      "id": "graham-structured-v1",
+      "version": 1,
+      "definition_sha256": "cf466c25d7d95dbe92b9d59d89268403de2ce057d1bcd8cba60086bd76e342ea",
+      "input_sha256": "0b0009deffba2b17b5a783172c97d0b336e39b71a61a5c7e5008aacd4bf0e50f",
+      "prepared_request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+      "provenance": "default",
+      "writing_voice_id": "concise_challenger"
+    }
+  },
+  "score_baseline": true,
+  "writing_voice": {
+    "id": "concise_challenger",
+    "version": 2,
+    "label": "Concise Challenger",
+    "style_traits": {
+      "tone": [
+        "spare",
+        "conversational",
+        "challenging"
+      ],
+      "avg_sentence_length": 12.0,
+      "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+      "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+      "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+      "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
+    },
+    "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007"
+  },
+  "engine": {
+    "request_id": "graham-structured-black-box-20261106",
+    "origin": "manual",
+    "persona_key": "graham",
+    "status": "drafted",
+    "body": "What makes an AI answer worth relying on?\n\nA convincing answer and a sound reason to trust it are different things. Asking for an explanation can produce more words without closing that gap.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal calculations. Its method captured only a fraction of the total computation, even on short prompts.\n\nPartial understanding doesn’t establish that a particular answer is wrong. Nor does it make the model’s explanation a complete account of how it reached that answer.\n\nThere’s a separate question: does an explanation help someone judge the answer?\n\nIn a 199-participant study by Buçinca and colleagues, interventions prompting deliberate thought reduced overreliance more than the simple explanations tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. Explanations can help in some conditions. Still, I take the finding as a reason to distinguish assistance that feels helpful from assistance that helps me judge.\n\nMy standard would be evidence suited to the decision: check the cited source, test the calculation, examine the assumption that could change the conclusion. The greater the consequence of an error, the stronger the check should be.\n\nI don’t need a complete account of an AI’s internal workings to use its answer. I do need a reason to rely on it beyond how well it explains itself.",
+    "hashtags": [],
+    "sources": [],
+    "telemetry": {
+      "emoji_count": 0,
+      "bullet_char": "🔹",
+      "persona": "graham",
+      "score": 100,
+      "voice_reference_count": 0,
+      "voice_reference_ids": [],
+      "opportunity_score": null,
+      "opportunity_decision": "draft",
+      "opportunity_reason": "Opportunity preflight disabled for this caller.",
+      "opportunity_dimensions": {},
+      "opportunity_warnings": [
+        "opportunity_gate_disabled"
+      ],
+      "strongest_evidence_title": "ANTHROPIC-2025",
+      "strongest_evidence_fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+      "missing_evidence_question": "",
+      "content_goal": "authority",
+      "earned_question": false,
+      "writing_voice": {
+        "id": "concise_challenger",
+        "version": 2,
+        "label": "Concise Challenger",
+        "style_traits": {
+          "tone": [
+            "spare",
+            "conversational",
+            "challenging"
+          ],
+          "avg_sentence_length": 12.0,
+          "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+          "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+          "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+          "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
+        },
+        "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007"
+      },
+      "publish_quality_score": 77,
+      "publish_quality_threshold": 90,
+      "review_policy_version": "essential-checks-v1",
+      "publish_quality_threshold_enforced": false,
+      "review_status": "reviewable",
+      "publish_rewrite_triggered": false,
+      "publish_rewrite_score": null,
+      "publish_ready": true
+    },
+    "review": {
+      "threshold": 90,
+      "threshold_enforced": false,
+      "policy_version": "essential-checks-v1",
+      "human_approval": "pending",
+      "review_status": "reviewable",
+      "evaluation_context": {
+        "donts": [
+          "clichés",
+          "em_dashes"
+        ],
+        "emoji_max": 3,
+        "bullet_char": "🔹",
+        "active_author_pov": "individual",
+        "writing_voice": {
+          "id": "concise_challenger",
+          "version": 2,
+          "label": "Concise Challenger",
+          "style_traits": {
+            "tone": [
+              "spare",
+              "conversational",
+              "challenging"
+            ],
+            "avg_sentence_length": 12.0,
+            "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+            "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+            "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+            "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
+          },
+          "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007"
+        },
+        "semantic_quality": {
+          "default_author_pov": "individual",
+          "internal_terms_needing_translation": [
+            "mode c",
+            "stage 0",
+            "execution spine",
+            "canonical intake",
+            "canonical authority",
+            "regression coverage",
+            "work packet",
+            "kill signal"
+          ],
+          "generic_phrases": [
+            "in today's fast-paced world",
+            "game changer",
+            "the future is here",
+            "unlock the power",
+            "revolutionize",
+            "here's the thing",
+            "in the ever-evolving landscape",
+            "now more than ever",
+            "let that sink in"
+          ]
+        },
+        "active_content_goal": "authority",
+        "earned_question": false,
+        "editorial_context": {
+          "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+          "plan": {
+            "reader": "Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.",
+            "factual_anchor": {
+              "title": "ANTHROPIC-2025",
+              "fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts."
+            }
+          },
+          "approved_voice_examples": [],
+          "source_bundle": {
+            "request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+            "sources": [
+              {
+                "source_id": "ANTHROPIC-2025",
+                "title": "Tracing the thoughts of a large language model",
+                "publisher": "Anthropic",
+                "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+                "status": "usable",
+                "checked_at": "2026-11-05",
+                "passages": [
+                  {
+                    "locator": "Limitations paragraph",
+                    "excerpt": "our method only captures a fraction of the total computation performed by Claude"
+                  }
+                ],
+                "limitations": "First-party research on specific model/task case studies, not evidence that every AI is wholly unknowable or that all explanations are false.",
+                "retrieval": "Primary source retrieved in this conversation, turn3search0."
+              },
+              {
+                "source_id": "BUCINCA-2021",
+                "title": "To Trust or to Think",
+                "publisher": "Buçinca, Malaya and Gajos; ACM CSCW, authors’ Harvard page",
+                "url": "https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml",
+                "status": "usable",
+                "checked_at": "2026-11-05",
+                "passages": [
+                  {
+                    "locator": "Abstract, lines19-20",
+                    "excerpt": "cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches"
+                  }
+                ],
+                "limitations": "Controlled experiment predating current generative chatbots. Do not generalize to all AI users or claim every explanation increases trust.",
+                "retrieval": "Primary author page opened in this conversation, turn3view0."
+              },
+              {
+                "source_id": "VASCONCELOS-2023",
+                "title": "Explanations Can Reduce Overreliance on AI Systems During Decision-Making",
+                "publisher": "Vasconcelos et al.; CSCW2023 author paper",
+                "url": "https://arxiv.org/abs/2212.06823",
+                "status": "usable",
+                "checked_at": "2026-11-05",
+                "passages": [
+                  {
+                    "locator": "Abstract, lines17-19",
+                    "excerpt": "there are scenarios where AI explanations reduce overreliance"
+                  }
+                ],
+                "limitations": "Five controlled maze-task studies with simulated AI; not direct evidence about current workplace LLM adoption. Counterbalances blanket claims that explanations never help.",
+                "retrieval": "Primary paper abstract opened in this conversation, turn3view2."
+              }
+            ],
+            "claims": [
+              {
+                "claim_id": "1",
+                "kind": "fact",
+                "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+                "source_ids": [
+                  "ANTHROPIC-2025"
+                ]
+              },
+              {
+                "claim_id": "2",
+                "kind": "fact",
+                "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+                "source_ids": [
+                  "BUCINCA-2021"
+                ]
+              }
+            ],
+            "central_claim_id": "1",
+            "interpretive_limits": [
+              "Incomplete understanding is not total ignorance.",
+              "Distinguish the reliability of an answer from full access to internal computations.",
+              "First-person opinions/recommendations may be proposed; do not invent lived experience, professional credentials, deployments, customers or experiments.",
+              "Evidence may be selected/reordered to fit each treatment; same underlying facts and limits remain available to both.",
+              "No assertion that people universally trust AI or that AI explanations are always misleading.",
+              "VASCONCELOS-2023 remains counterbalancing context only; two load-bearing facts chosen, not an extra unsupported universal claim."
+            ],
+            "context_claims": [
+              {
+                "claim_id": "3",
+                "kind": "fact",
+                "text": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.",
+                "source_ids": [
+                  "VASCONCELOS-2023"
+                ]
+              }
+            ],
+            "structure_preparation": {
+              "id": "graham-structured-v1",
+              "version": 1,
+              "definition_sha256": "cf466c25d7d95dbe92b9d59d89268403de2ce057d1bcd8cba60086bd76e342ea",
+              "input_sha256": "0b0009deffba2b17b5a783172c97d0b336e39b71a61a5c7e5008aacd4bf0e50f",
+              "prepared_request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+              "provenance": "default",
+              "writing_voice_id": "concise_challenger"
+            }
+          },
+          "handoff": {
+            "version": 1,
+            "meaning": {
+              "thesis": "A convincing AI answer and a sound reason to rely on it are different things.",
+              "reader_consequence": "Consider what would justify reliance when a fluent explanation is easier to get than understanding.",
+              "facts": [
+                {
+                  "claim_id": "1",
+                  "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+                  "source_ids": [
+                    "ANTHROPIC-2025"
+                  ]
+                },
+                {
+                  "claim_id": "2",
+                  "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+                  "source_ids": [
+                    "BUCINCA-2021"
+                  ]
+                }
+              ],
+              "qualification": "Partial interpretability is not total ignorance. The controlled decision-support experiment predates current chatbots; explanations can help in some conditions. Do not universalize trust, overreliance or opaque systems."
+            },
+            "narrative": {
+              "form": "literal",
+              "beats": [
+                "Hook: introduce the central question.",
+                "Tension: develop why the question matters.",
+                "Evidence: place the relevant sourced facts.",
+                "Interpretation: develop Graham's reading and its limits.",
+                "Landing: earn the closing thought from the argument."
+              ],
+              "symbol": null
+            }
+          }
+        }
+      },
+      "calibration_status": "NOT_CALIBRATED_TO_HUMAN_JUDGMENTS",
+      "rewrite_triggered": false,
+      "publish_ready": true,
+      "review_eligible": true,
+      "recommendation": "original",
+      "original": {
+        "body": "What makes an AI answer worth relying on?\n\nA convincing answer and a sound reason to trust it are different things. Asking for an explanation can produce more words without closing that gap.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal calculations. Its method captured only a fraction of the total computation, even on short prompts.\n\nPartial understanding doesn’t establish that a particular answer is wrong. Nor does it make the model’s explanation a complete account of how it reached that answer.\n\nThere’s a separate question: does an explanation help someone judge the answer?\n\nIn a 199-participant study by Buçinca and colleagues, interventions prompting deliberate thought reduced overreliance more than the simple explanations tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. Explanations can help in some conditions. Still, I take the finding as a reason to distinguish assistance that feels helpful from assistance that helps me judge.\n\nMy standard would be evidence suited to the decision: check the cited source, test the calculation, examine the assumption that could change the conclusion. The greater the consequence of an error, the stronger the check should be.\n\nI don’t need a complete account of an AI’s internal workings to use its answer. I do need a reason to rely on it beyond how well it explains itself.",
+        "policy_version": "essential-checks-v1",
+        "review_status": "reviewable",
+        "essential_checks": {
+          "factual_integrity": {
+            "verdict": "pass",
+            "reason": "Anthropic’s partial tracing claim and the 199-participant Buçinca findings match the supplied evidence. The post preserves the experiment’s age, allows that explanations can help, and presents its reliance standard as personal judgment."
+          },
+          "reader_relevance": {
+            "verdict": "pass",
+            "reason": "The distinction between a convincing explanation and justified reliance is understandable without specialist knowledge; source, calculation and assumption checks connect it to professional decisions."
+          },
+          "practical_value": {
+            "verdict": "pass",
+            "reason": "Readers receive a usable standard: check evidence appropriate to the decision and strengthen verification as the consequences of error increase."
+          },
+          "argument_voice": {
+            "verdict": "pass",
+            "reason": "Voice fidelity: spare, conversational wording and individual POV fit Concise Challenger without invented experience. Construction: the post connects partial interpretability to a separate question about human judgment, qualifies the study, and earns its practical conclusion; repeated statements of the central distinction slightly dilute its compactness."
+          }
+        },
+        "score": 77,
+        "dimensions": {
+          "outsider_clarity": 4,
+          "professional_relevance": 4,
+          "specificity": 4,
+          "novel_insight": 4,
+          "practical_usefulness": 4,
+          "emotional_tension": 3,
+          "conversation_potential": 4,
+          "shareability": 3,
+          "voice_authenticity": 4
+        },
+        "gaps": [
+          "The opening distinction, interpretation paragraphs and closing return to similar ground; compressing one restatement would sharpen the argument.",
+          "The verification advice lacks a worked professional example showing how a check could change a decision.",
+          "The finding that participants disliked the most effective interventions supplies a strong human tension, but its practical implication remains lightly developed."
+        ],
+        "rationale": "Grounded evidence, careful limits and useful verification advice make this a strong candidate for human review, with repetition and limited concrete application keeping it below exceptional.",
+        "warnings": []
+      },
+      "rewrite": null
+    },
+    "selected_candidate": {
+      "candidate_id": "original:2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+      "source": "original",
+      "body": "What makes an AI answer worth relying on?\n\nA convincing answer and a sound reason to trust it are different things. Asking for an explanation can produce more words without closing that gap.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal calculations. Its method captured only a fraction of the total computation, even on short prompts.\n\nPartial understanding doesn’t establish that a particular answer is wrong. Nor does it make the model’s explanation a complete account of how it reached that answer.\n\nThere’s a separate question: does an explanation help someone judge the answer?\n\nIn a 199-participant study by Buçinca and colleagues, interventions prompting deliberate thought reduced overreliance more than the simple explanations tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. Explanations can help in some conditions. Still, I take the finding as a reason to distinguish assistance that feels helpful from assistance that helps me judge.\n\nMy standard would be evidence suited to the decision: check the cited source, test the calculation, examine the assumption that could change the conclusion. The greater the consequence of an error, the stronger the check should be.\n\nI don’t need a complete account of an AI’s internal workings to use its answer. I do need a reason to rely on it beyond how well it explains itself.",
+      "score": 77,
+      "content_sha256": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884"
+    },
+    "visual_asset": {
+      "status": "planned",
+      "source_candidate": "original",
+      "source_content_sha256": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+      "asset_type": "single_image",
+      "rationale": "The post centers on one distinction: a convincing explanation and evidence that supports reliance. A single physical metaphor makes that distinction visible without compressing the studies into unsupported visual claims.",
+      "creative_goal": "Make readers notice that inspecting the support for an answer is a separate activity from admiring its presentation.",
+      "aspect_ratio": "4:5",
+      "single_image": {
+        "concept": "A beautifully finished wooden shelf viewed from below, with a small inspection light illuminating the bracket and wall connection that support it. The scene directs attention from the polished surface to the support that needs checking.",
+        "overlay_text": "Check what supports the answer.",
+        "composition": "Place the shelf and its visible supporting bracket in the lower two-thirds of a portrait frame. Use a close, uncluttered view with the illuminated connection as the focal point. Reserve the upper quarter as quiet negative space for separately applied typography. Keep the bracket large enough to read on mobile.",
+        "style": "Clean editorial still life with realistic materials, warm wood, a matte neutral wall, and restrained directional lighting. Calm, practical, modern, and professional.",
+        "generation_prompt": "Create a vertical 4:5 editorial still-life photograph of a beautifully finished wooden shelf mounted on a matte neutral wall, viewed slightly from below so its simple metal supporting bracket and wall connection are clearly visible. A small inspection light at the lower edge casts a restrained pool of warm light onto the bracket and mounting connection. The shelf is empty. Make the illuminated support the single focal point, with realistic materials and a calm, grounded atmosphere. Place the scene in the lower two-thirds and leave the upper quarter as clean negative space for later layout. Show an ordinary intact installation without suggesting a certified safety result. No text, lettering, numbers, logos, watermarks, or pseudo-typography anywhere in the image. No embedded text, lettering, logos, watermarks, fake interface labels, or pseudo-typography.",
+        "negative_guidance": [
+          "Cracks, collapse, precarious loads, or dramatic danger",
+          "Checkmarks, certification seals, or symbols implying proven reliability",
+          "Multiple scenes or competing metaphors",
+          "Tiny hardware details that become illegible on mobile",
+          "Robots, glowing brains, circuits, dashboards, or software interfaces",
+          "Embedded text, lettering, logos, watermarks, or pseudo-typography"
+        ],
+        "alt_text": "An inspection light illuminates the bracket and wall connection beneath a polished wooden shelf. Overlay: Check what supports the answer."
+      },
+      "carousel": null,
+      "review_required": true,
+      "warnings": []
+    }
+  },
+  "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+  "baseline": {
+    "body": "When is a convincing AI answer enough to act on?\n\nA clear explanation can make an answer easier to follow. That still leaves the question of whether it deserves our reliance.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal computations. Its method captured only a fraction of the computation, even on short prompts.\n\nPartial understanding still gives us something to work with. But an answer’s reliability and our access to how it was produced are separate questions.\n\nThere is also a tradeoff in checking answers. In a 199-participant study by Buçinca and colleagues, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. It cannot settle how professionals should use them today. And explanations can help: separate controlled maze-task studies found reduced overreliance in some conditions.\n\nMy takeaway: I would judge an AI answer by what supports it, including evidence I can check and the consequences of being wrong.\n\nFor everyday work, that means deciding what needs verification before letting fluency settle the decision.\n\nBefore acting on the next convincing answer, what would you need to check?\n\n#AI #CriticalThinking #FutureOfWork",
+    "content_sha256": "42190319840dcf9ea55c6c41e79e657cfb30b36177caebbb050a8f8679b716fb",
+    "system": "Write one useful LinkedIn post in the supplied author's voice. Use only supplied facts; never invent experience, quotes, statistics or biography. When voice.writing_voice is present, its style_traits govern wording, rhythm and structure over default voice traits; approved examples supply compatible details only. Preserve the author POV, facts and constraints. Return only the finished post. Follow editorial_handoff.meaning and its selected narrative form, beats, symbol mapping and boundary. Voice governs expression within that narrative, never replaces it. Imagery is illustration, not evidence.",
+    "user": {
+      "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+      "audience": "Professionals curious about how AI changes everyday work and judgment; no specialist knowledge assumed.",
+      "author_pov": "individual",
+      "content_goal": "authority",
+      "source_bundle": {
+        "request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+        "sources": [
+          {
+            "source_id": "ANTHROPIC-2025",
+            "title": "Tracing the thoughts of a large language model",
+            "publisher": "Anthropic",
+            "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+            "status": "usable",
+            "checked_at": "2026-11-05",
+            "passages": [
+              {
+                "locator": "Limitations paragraph",
+                "excerpt": "our method only captures a fraction of the total computation performed by Claude"
+              }
+            ],
+            "limitations": "First-party research on specific model/task case studies, not evidence that every AI is wholly unknowable or that all explanations are false.",
+            "retrieval": "Primary source retrieved in this conversation, turn3search0."
+          },
+          {
+            "source_id": "BUCINCA-2021",
+            "title": "To Trust or to Think",
+            "publisher": "Buçinca, Malaya and Gajos; ACM CSCW, authors’ Harvard page",
+            "url": "https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml",
+            "status": "usable",
+            "checked_at": "2026-11-05",
+            "passages": [
+              {
+                "locator": "Abstract, lines19-20",
+                "excerpt": "cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches"
+              }
+            ],
+            "limitations": "Controlled experiment predating current generative chatbots. Do not generalize to all AI users or claim every explanation increases trust.",
+            "retrieval": "Primary author page opened in this conversation, turn3view0."
+          },
+          {
+            "source_id": "VASCONCELOS-2023",
+            "title": "Explanations Can Reduce Overreliance on AI Systems During Decision-Making",
+            "publisher": "Vasconcelos et al.; CSCW2023 author paper",
+            "url": "https://arxiv.org/abs/2212.06823",
+            "status": "usable",
+            "checked_at": "2026-11-05",
+            "passages": [
+              {
+                "locator": "Abstract, lines17-19",
+                "excerpt": "there are scenarios where AI explanations reduce overreliance"
+              }
+            ],
+            "limitations": "Five controlled maze-task studies with simulated AI; not direct evidence about current workplace LLM adoption. Counterbalances blanket claims that explanations never help.",
+            "retrieval": "Primary paper abstract opened in this conversation, turn3view2."
+          }
+        ],
+        "claims": [
+          {
+            "claim_id": "1",
+            "kind": "fact",
+            "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+            "source_ids": [
+              "ANTHROPIC-2025"
+            ]
+          },
+          {
+            "claim_id": "2",
+            "kind": "fact",
+            "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+            "source_ids": [
+              "BUCINCA-2021"
+            ]
+          }
+        ],
+        "central_claim_id": "1",
+        "interpretive_limits": [
+          "Incomplete understanding is not total ignorance.",
+          "Distinguish the reliability of an answer from full access to internal computations.",
+          "First-person opinions/recommendations may be proposed; do not invent lived experience, professional credentials, deployments, customers or experiments.",
+          "Evidence may be selected/reordered to fit each treatment; same underlying facts and limits remain available to both.",
+          "No assertion that people universally trust AI or that AI explanations are always misleading.",
+          "VASCONCELOS-2023 remains counterbalancing context only; two load-bearing facts chosen, not an extra unsupported universal claim."
+        ],
+        "context_claims": [
+          {
+            "claim_id": "3",
+            "kind": "fact",
+            "text": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.",
+            "source_ids": [
+              "VASCONCELOS-2023"
+            ]
+          }
+        ],
+        "structure_preparation": {
+          "id": "graham-structured-v1",
+          "version": 1,
+          "definition_sha256": "cf466c25d7d95dbe92b9d59d89268403de2ce057d1bcd8cba60086bd76e342ea",
+          "input_sha256": "0b0009deffba2b17b5a783172c97d0b336e39b71a61a5c7e5008aacd4bf0e50f",
+          "prepared_request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+          "provenance": "default",
+          "writing_voice_id": "concise_challenger"
+        }
+      },
+      "services": [],
+      "targets": [],
+      "hashtags": [],
+      "evidence": [
+        {
+          "title": "ANTHROPIC-2025",
+          "fact": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+          "url": null
+        },
+        {
+          "title": "BUCINCA-2021",
+          "fact": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+          "url": null
+        }
+      ],
+      "voice": {
+        "donts": [
+          "clichés",
+          "em_dashes"
+        ],
+        "emoji_max": 3,
+        "bullet_char": "🔹",
+        "active_author_pov": "individual",
+        "writing_voice": {
+          "id": "concise_challenger",
+          "version": 2,
+          "label": "Concise Challenger",
+          "style_traits": {
+            "tone": [
+              "spare",
+              "conversational",
+              "challenging"
+            ],
+            "avg_sentence_length": 12.0,
+            "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+            "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+            "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+            "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph."
+          },
+          "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007"
+        },
+        "semantic_quality": {
+          "default_author_pov": "individual",
+          "internal_terms_needing_translation": [
+            "mode c",
+            "stage 0",
+            "execution spine",
+            "canonical intake",
+            "canonical authority",
+            "regression coverage",
+            "work packet",
+            "kill signal"
+          ],
+          "generic_phrases": [
+            "in today's fast-paced world",
+            "game changer",
+            "the future is here",
+            "unlock the power",
+            "revolutionize",
+            "here's the thing",
+            "in the ever-evolving landscape",
+            "now more than ever",
+            "let that sink in"
+          ]
+        }
+      },
+      "approved_voice_examples": [],
+      "format_rules": {
+        "emoji_max": 3,
+        "bullet_char": "🔹",
+        "hashtag_min": 3,
+        "hashtag_max": 5,
+        "strip_links_in_body": true,
+        "append_sources_block": false,
+        "allow_em_dash": false
+      },
+      "editorial_handoff": {
+        "version": 1,
+        "meaning": {
+          "thesis": "A convincing AI answer and a sound reason to rely on it are different things.",
+          "reader_consequence": "Consider what would justify reliance when a fluent explanation is easier to get than understanding.",
+          "facts": [
+            {
+              "claim_id": "1",
+              "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+              "source_ids": [
+                "ANTHROPIC-2025"
+              ]
+            },
+            {
+              "claim_id": "2",
+              "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+              "source_ids": [
+                "BUCINCA-2021"
+              ]
+            }
+          ],
+          "qualification": "Partial interpretability is not total ignorance. The controlled decision-support experiment predates current chatbots; explanations can help in some conditions. Do not universalize trust, overreliance or opaque systems."
+        },
+        "narrative": {
+          "form": "literal",
+          "beats": [
+            "Hook: introduce the central question.",
+            "Tension: develop why the question matters.",
+            "Evidence: place the relevant sourced facts.",
+            "Interpretation: develop Graham's reading and its limits.",
+            "Landing: earn the closing thought from the argument."
+          ],
+          "symbol": null
+        }
+      }
+    },
+    "quality": {
+      "policy_version": "essential-checks-v1",
+      "review_status": "reviewable",
+      "essential_checks": {
+        "factual_integrity": {
+          "verdict": "pass",
+          "reason": "The Anthropic scope limitation and Buçinca study's participant count, findings and preference tradeoff match the supplied evidence. The post preserves the experiment's age, qualifies the maze-task findings and frames recommendations as personal judgment."
+        },
+        "reader_relevance": {
+          "verdict": "pass",
+          "reason": "The distinction between a convincing answer and justified reliance is understandable without specialist context and connects directly to verifying AI output at work."
+        },
+        "practical_value": {
+          "verdict": "pass",
+          "reason": "The reader gains a usable decision principle: consider checkable evidence and the consequences of error before acting on fluent output."
+        },
+        "argument_voice": {
+          "verdict": "pass",
+          "reason": "Voice fidelity: restrained, conversational wording and individual POV fit Concise Challenger, though repeated explanations soften its economy. Construction: the argument coherently separates internal understanding from reliability, introduces the cost of checking, qualifies the evidence and lands on verification; the final three paragraphs partially repeat that landing."
+        }
+      },
+      "score": 72,
+      "dimensions": {
+        "outsider_clarity": 4,
+        "professional_relevance": 4,
+        "specificity": 4,
+        "novel_insight": 3,
+        "practical_usefulness": 3,
+        "emotional_tension": 3,
+        "conversation_potential": 4,
+        "shareability": 3,
+        "voice_authenticity": 4
+      },
+      "gaps": [
+        "The final three paragraphs repeat the verification takeaway; one tighter landing would give the challenge more force.",
+        "The advice names evidence and consequences but leaves the reader to translate them into a concrete workplace verification decision.",
+        "The strongest tension, that more effective safeguards were liked less, is reported but only lightly connected to the reader's own checking habits."
+      ],
+      "rationale": "The post is grounded, clear and coherent, but a repetitive landing and abstract application limit its practical force and distinctiveness.",
+      "warnings": []
+    }
+  },
+  "review": {
+    "candidates": {
+      "A": {
+        "body": "When is a convincing AI answer enough to act on?\n\nA clear explanation can make an answer easier to follow. That still leaves the question of whether it deserves our reliance.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal computations. Its method captured only a fraction of the computation, even on short prompts.\n\nPartial understanding still gives us something to work with. But an answer’s reliability and our access to how it was produced are separate questions.\n\nThere is also a tradeoff in checking answers. In a 199-participant study by Buçinca and colleagues, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. It cannot settle how professionals should use them today. And explanations can help: separate controlled maze-task studies found reduced overreliance in some conditions.\n\nMy takeaway: I would judge an AI answer by what supports it, including evidence I can check and the consequences of being wrong.\n\nFor everyday work, that means deciding what needs verification before letting fluency settle the decision.\n\nBefore acting on the next convincing answer, what would you need to check?\n\n#AI #CriticalThinking #FutureOfWork",
+        "content_sha256": "42190319840dcf9ea55c6c41e79e657cfb30b36177caebbb050a8f8679b716fb"
+      },
+      "B": {
+        "body": "What makes an AI answer worth relying on?\n\nA convincing answer and a sound reason to trust it are different things. Asking for an explanation can produce more words without closing that gap.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal calculations. Its method captured only a fraction of the total computation, even on short prompts.\n\nPartial understanding doesn’t establish that a particular answer is wrong. Nor does it make the model’s explanation a complete account of how it reached that answer.\n\nThere’s a separate question: does an explanation help someone judge the answer?\n\nIn a 199-participant study by Buçinca and colleagues, interventions prompting deliberate thought reduced overreliance more than the simple explanations tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. Explanations can help in some conditions. Still, I take the finding as a reason to distinguish assistance that feels helpful from assistance that helps me judge.\n\nMy standard would be evidence suited to the decision: check the cited source, test the calculation, examine the assumption that could change the conclusion. The greater the consequence of an error, the stronger the check should be.\n\nI don’t need a complete account of an AI’s internal workings to use its answer. I do need a reason to rely on it beyond how well it explains itself.",
+        "content_sha256": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884"
+      }
+    },
+    "human_decision": null,
+    "evidence_bundle_sha256": "9e3f6ea996fb500b90a2de9d7027065037af3ff3d0d716b75f1b053e8fbc72cf",
+    "evidence_bundle": {
+      "request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+      "sources": [
+        {
+          "source_id": "ANTHROPIC-2025",
+          "title": "Tracing the thoughts of a large language model",
+          "publisher": "Anthropic",
+          "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+          "status": "usable",
+          "checked_at": "2026-11-05",
+          "passages": [
+            {
+              "locator": "Limitations paragraph",
+              "excerpt": "our method only captures a fraction of the total computation performed by Claude"
+            }
+          ],
+          "limitations": "First-party research on specific model/task case studies, not evidence that every AI is wholly unknowable or that all explanations are false.",
+          "retrieval": "Primary source retrieved in this conversation, turn3search0."
+        },
+        {
+          "source_id": "BUCINCA-2021",
+          "title": "To Trust or to Think",
+          "publisher": "Buçinca, Malaya and Gajos; ACM CSCW, authors’ Harvard page",
+          "url": "https://www.eecs.harvard.edu/~kgajos/papers/2021/bucinca2021trust.shtml",
+          "status": "usable",
+          "checked_at": "2026-11-05",
+          "passages": [
+            {
+              "locator": "Abstract, lines19-20",
+              "excerpt": "cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches"
+            }
+          ],
+          "limitations": "Controlled experiment predating current generative chatbots. Do not generalize to all AI users or claim every explanation increases trust.",
+          "retrieval": "Primary author page opened in this conversation, turn3view0."
+        },
+        {
+          "source_id": "VASCONCELOS-2023",
+          "title": "Explanations Can Reduce Overreliance on AI Systems During Decision-Making",
+          "publisher": "Vasconcelos et al.; CSCW2023 author paper",
+          "url": "https://arxiv.org/abs/2212.06823",
+          "status": "usable",
+          "checked_at": "2026-11-05",
+          "passages": [
+            {
+              "locator": "Abstract, lines17-19",
+              "excerpt": "there are scenarios where AI explanations reduce overreliance"
+            }
+          ],
+          "limitations": "Five controlled maze-task studies with simulated AI; not direct evidence about current workplace LLM adoption. Counterbalances blanket claims that explanations never help.",
+          "retrieval": "Primary paper abstract opened in this conversation, turn3view2."
+        }
+      ],
+      "claims": [
+        {
+          "claim_id": "1",
+          "kind": "fact",
+          "text": "In its March 2025 interpretability report, Anthropic traced parts of Claude 3.5 Haiku’s internal computations and explicitly said its method captured only a fraction of the total computation, even on short prompts.",
+          "source_ids": [
+            "ANTHROPIC-2025"
+          ]
+        },
+        {
+          "claim_id": "2",
+          "kind": "fact",
+          "text": "In a 199-participant AI-assisted decision-making experiment, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested; participants rated the most effective interventions less favorably.",
+          "source_ids": [
+            "BUCINCA-2021"
+          ]
+        }
+      ],
+      "central_claim_id": "1",
+      "interpretive_limits": [
+        "Incomplete understanding is not total ignorance.",
+        "Distinguish the reliability of an answer from full access to internal computations.",
+        "First-person opinions/recommendations may be proposed; do not invent lived experience, professional credentials, deployments, customers or experiments.",
+        "Evidence may be selected/reordered to fit each treatment; same underlying facts and limits remain available to both.",
+        "No assertion that people universally trust AI or that AI explanations are always misleading.",
+        "VASCONCELOS-2023 remains counterbalancing context only; two load-bearing facts chosen, not an extra unsupported universal claim."
+      ],
+      "context_claims": [
+        {
+          "claim_id": "3",
+          "kind": "fact",
+          "text": "Across five studies using a maze task and simulated AI, Vasconcelos and colleagues found that task/explanation difficulty and incentives influenced overreliance, and that explanations could reduce overreliance in some conditions.",
+          "source_ids": [
+            "VASCONCELOS-2023"
+          ]
+        }
+      ],
+      "structure_preparation": {
+        "id": "graham-structured-v1",
+        "version": 1,
+        "definition_sha256": "cf466c25d7d95dbe92b9d59d89268403de2ce057d1bcd8cba60086bd76e342ea",
+        "input_sha256": "0b0009deffba2b17b5a783172c97d0b336e39b71a61a5c7e5008aacd4bf0e50f",
+        "prepared_request_sha256": "716ba93464564b9b18b4dd37ff970a1292c43ea863879258178f791c7b63cf3e",
+        "provenance": "default",
+        "writing_voice_id": "concise_challenger"
+      }
+    },
+    "score_baseline": true
+  },
+  "finished_at_utc": "2026-11-06T03:57:05.683765+00:00",
+  "provider_receipts": [
+    {
+      "ok": true,
+      "data": {
+        "text": "What makes an AI answer worth relying on?\n\nA convincing answer and a sound reason to trust it are different things. Asking for an explanation can produce more words without settling that difference.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal calculations. Its method captured only a fraction of the total computation, even on short prompts.\n\nThat is partial understanding. It doesn’t tell us that a particular answer is wrong. It also doesn’t make the model’s explanation a complete account of how it reached that answer.\n\nThere’s a separate problem: whether an explanation helps someone judge the answer.\n\nIn a 199-participant study by Buçinca and colleagues, interventions prompting deliberate thought reduced overreliance more than the simple explanations tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. It isn’t a verdict on every explanation; explanations can help in some conditions. But I take its finding as a reason to distinguish comfortable assistance from useful scrutiny.\n\nMy standard would be evidence suited to the decision: check the cited source, test the calculation, examine the assumption that could change the conclusion. The greater the consequence of an error, the stronger that check should be.\n\nI don’t need a complete account of an AI’s internal workings to find its answer useful. I do need a reason to rely on it beyond how well it explains itself."
+      },
+      "attempt_id": "attempt-d0fe8e02feff4b05a3cbfe13a3ca3c0e",
+      "result_sha256": "1735a08f62016352f84a6b2db2bd91a8a1d45e948f100f1429b31070d6307327",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11646,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 359,
+        "reasoning_output_tokens": 43
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "What makes an AI answer worth relying on?\n\nA convincing answer and a sound reason to trust it are different things. Asking for an explanation can produce more words without closing that gap.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal calculations. Its method captured only a fraction of the total computation, even on short prompts.\n\nPartial understanding doesn’t establish that a particular answer is wrong. Nor does it make the model’s explanation a complete account of how it reached that answer.\n\nThere’s a separate question: does an explanation help someone judge the answer?\n\nIn a 199-participant study by Buçinca and colleagues, interventions prompting deliberate thought reduced overreliance more than the simple explanations tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. Explanations can help in some conditions. Still, I take the finding as a reason to distinguish assistance that feels helpful from assistance that helps me judge.\n\nMy standard would be evidence suited to the decision: check the cited source, test the calculation, examine the assumption that could change the conclusion. The greater the consequence of an error, the stronger the check should be.\n\nI don’t need a complete account of an AI’s internal workings to use its answer. I do need a reason to rely on it beyond how well it explains itself."
+      },
+      "attempt_id": "attempt-30d53a7132234e75975222c776b0d147",
+      "result_sha256": "7588cd0822250733addf1f66bfe794946f63db8f5a9405302d3b9115d7f04635",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11648,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 306,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"essential_checks\":{\"factual_integrity\":{\"verdict\":\"pass\",\"reason\":\"Anthropic’s partial tracing claim and the 199-participant Buçinca findings match the supplied evidence. The post preserves the experiment’s age, allows that explanations can help, and presents its reliance standard as personal judgment.\"},\"reader_relevance\":{\"verdict\":\"pass\",\"reason\":\"The distinction between a convincing explanation and justified reliance is understandable without specialist knowledge; source, calculation and assumption checks connect it to professional decisions.\"},\"practical_value\":{\"verdict\":\"pass\",\"reason\":\"Readers receive a usable standard: check evidence appropriate to the decision and strengthen verification as the consequences of error increase.\"},\"argument_voice\":{\"verdict\":\"pass\",\"reason\":\"Voice fidelity: spare, conversational wording and individual POV fit Concise Challenger without invented experience. Construction: the post connects partial interpretability to a separate question about human judgment, qualifies the study, and earns its practical conclusion; repeated statements of the central distinction slightly dilute its compactness.\"}},\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":4,\"practical_usefulness\":4,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":4,\"gaps\":[\"The opening distinction, interpretation paragraphs and closing return to similar ground; compressing one restatement would sharpen the argument.\",\"The verification advice lacks a worked professional example showing how a check could change a decision.\",\"The finding that participants disliked the most effective interventions supplies a strong human tension, but its practical implication remains lightly developed.\"],\"rationale\":\"Grounded evidence, careful limits and useful verification advice make this a strong candidate for human review, with repetition and limited concrete application keeping it below exceptional.\"}"
+      },
+      "attempt_id": "attempt-8e9e3afe8ecc4bcf8a6bf70fddc98d7e",
+      "result_sha256": "dd4cc675d9d1a7142303fcd2dd8b46925fb6844db86330ae1903a447f2d79c4d",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 12481,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 384,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"asset_type\":\"single_image\",\"rationale\":\"The post centers on one distinction: a convincing explanation and evidence that supports reliance. A single physical metaphor makes that distinction visible without compressing the studies into unsupported visual claims.\",\"creative_goal\":\"Make readers notice that inspecting the support for an answer is a separate activity from admiring its presentation.\",\"aspect_ratio\":\"4:5\",\"single_image\":{\"concept\":\"A beautifully finished wooden shelf viewed from below, with a small inspection light illuminating the bracket and wall connection that support it. The scene directs attention from the polished surface to the support that needs checking.\",\"overlay_text\":\"Check what supports the answer.\",\"composition\":\"Place the shelf and its visible supporting bracket in the lower two-thirds of a portrait frame. Use a close, uncluttered view with the illuminated connection as the focal point. Reserve the upper quarter as quiet negative space for separately applied typography. Keep the bracket large enough to read on mobile.\",\"style\":\"Clean editorial still life with realistic materials, warm wood, a matte neutral wall, and restrained directional lighting. Calm, practical, modern, and professional.\",\"generation_prompt\":\"Create a vertical 4:5 editorial still-life photograph of a beautifully finished wooden shelf mounted on a matte neutral wall, viewed slightly from below so its simple metal supporting bracket and wall connection are clearly visible. A small inspection light at the lower edge casts a restrained pool of warm light onto the bracket and mounting connection. The shelf is empty. Make the illuminated support the single focal point, with realistic materials and a calm, grounded atmosphere. Place the scene in the lower two-thirds and leave the upper quarter as clean negative space for later layout. Show an ordinary intact installation without suggesting a certified safety result. No text, lettering, numbers, logos, watermarks, or pseudo-typography anywhere in the image.\",\"negative_guidance\":[\"Cracks, collapse, precarious loads, or dramatic danger\",\"Checkmarks, certification seals, or symbols implying proven reliability\",\"Multiple scenes or competing metaphors\",\"Tiny hardware details that become illegible on mobile\",\"Robots, glowing brains, circuits, dashboards, or software interfaces\",\"Embedded text, lettering, logos, watermarks, or pseudo-typography\"],\"alt_text\":\"An inspection light illuminates the bracket and wall connection beneath a polished wooden shelf. Overlay: Check what supports the answer.\"},\"carousel\":null}"
+      },
+      "attempt_id": "attempt-ad57e622541645f7b705532cbe5bfee3",
+      "result_sha256": "87e491b0e4701fd104c825b10e2fd6509634d0ed706b288b7aaf936fcf7094b0",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 10468,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 505,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "When is a convincing AI answer enough to act on?\n\nA clear explanation can make an answer easier to follow. That still leaves the question of whether it deserves our reliance.\n\nIn March 2025, Anthropic reported tracing parts of Claude 3.5 Haiku’s internal computations. Its method captured only a fraction of the computation, even on short prompts.\n\nPartial understanding still gives us something to work with. But an answer’s reliability and our access to how it was produced are separate questions.\n\nThere is also a tradeoff in checking answers. In a 199-participant study by Buçinca and colleagues, interventions encouraging deliberate engagement reduced overreliance more than the simple explanation approaches tested. Participants rated the most effective interventions less favorably.\n\nThat experiment predates current chatbots. It cannot settle how professionals should use them today. And explanations can help: separate controlled maze-task studies found reduced overreliance in some conditions.\n\nMy takeaway: I would judge an AI answer by what supports it, including evidence I can check and the consequences of being wrong.\n\nFor everyday work, that means deciding what needs verification before letting fluency settle the decision.\n\nBefore acting on the next convincing answer, what would you need to check?\n\n#AI #CriticalThinking #FutureOfWork"
+      },
+      "attempt_id": "attempt-ab9d6d0494984e109ad80de9656df7a1",
+      "result_sha256": "70d2142d981cca4f994c9cb8c7a3b579859fcab7b9d85137c67b833490c29db7",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 11125,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 288,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    },
+    {
+      "ok": true,
+      "data": {
+        "text": "{\"essential_checks\":{\"factual_integrity\":{\"verdict\":\"pass\",\"reason\":\"The Anthropic scope limitation and Buçinca study's participant count, findings and preference tradeoff match the supplied evidence. The post preserves the experiment's age, qualifies the maze-task findings and frames recommendations as personal judgment.\"},\"reader_relevance\":{\"verdict\":\"pass\",\"reason\":\"The distinction between a convincing answer and justified reliance is understandable without specialist context and connects directly to verifying AI output at work.\"},\"practical_value\":{\"verdict\":\"pass\",\"reason\":\"The reader gains a usable decision principle: consider checkable evidence and the consequences of error before acting on fluent output.\"},\"argument_voice\":{\"verdict\":\"pass\",\"reason\":\"Voice fidelity: restrained, conversational wording and individual POV fit Concise Challenger, though repeated explanations soften its economy. Construction: the argument coherently separates internal understanding from reliability, introduces the cost of checking, qualifies the evidence and lands on verification; the final three paragraphs partially repeat that landing.\"}},\"outsider_clarity\":4,\"professional_relevance\":4,\"specificity\":4,\"novel_insight\":3,\"practical_usefulness\":3,\"emotional_tension\":3,\"conversation_potential\":4,\"shareability\":3,\"voice_authenticity\":4,\"gaps\":[\"The final three paragraphs repeat the verification takeaway; one tighter landing would give the challenge more force.\",\"The advice names evidence and consequences but leaves the reader to translate them into a concrete workplace verification decision.\",\"The strongest tension, that more effective safeguards were liked less, is reported but only lightly connected to the reader's own checking habits.\"],\"rationale\":\"The post is grounded, clear and coherent, but a repetitive landing and abstract application limit its practical force and distinctiveness.\"}"
+      },
+      "attempt_id": "attempt-5f2a15b05eeb48b3b69098fa299b644a",
+      "result_sha256": "7f2702a2f2e5f4efde166159a508906181f2f96834fc651b7735754f4f2593c8",
+      "cache_hit": false,
+      "model": "gpt-6-astra",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 12465,
+        "cached_input_tokens": 7424,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 379,
+        "reasoning_output_tokens": 0
+      },
+      "cost": null,
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+      "auth": "chatgpt",
+      "execution_kind": "native_cli"
+    }
+  ]
+}

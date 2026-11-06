@@ -1,0 +1,60 @@
+{
+  "status": "TECHNICAL_INSTALL_GO_HUMAN_REVIEW_PENDING",
+  "scope": "Graham structured CLI Q1\u2013Q5 package; not complete26AT/11E2E acceptance",
+  "user_execution": "Execute LinkedIn_Generator_Current_Continuation.md; resume first unmet step with recorded authority and existing gates",
+  "source_candidate": "300aeb7b30c20ac59a5496d826728a5a3eea3f9d",
+  "merged_installed_revision": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
+  "installation": "INSTALLATION.json",
+  "verification": {
+    "local_tests": 275,
+    "clean_archive_tests": 275,
+    "installed_tests": 275,
+    "independent_review": "FINAL_INDEPENDENT_REVIEW.json SCOPED_CLEAR after reproduced/fixed attribution and version issues",
+    "hosted_CI": "NOT_APPLICABLE no activeworkflow",
+    "lint": "Unavailable; not claimed passed",
+    "replay": "REPLAY.json: all saved trial bytes unchanged, repeated identical generate/show0calls, changed sameID conflict0calls"
+  },
+  "native": {
+    "request_id": "graham-structured-black-box-20261106",
+    "state": "completed",
+    "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+    "selected_source": "original",
+    "essential_checks": "All four PASS; original selected, no essential rewrite",
+    "visual_type": "single_image",
+    "visual_status": "planned; not rendered or human-approved",
+    "visual_hash_parity": true,
+    "calls": 6,
+    "active_native_cli_seconds": 106.01562878768891,
+    "native_cli_starts": 18,
+    "readiness_cli_starts": 2,
+    "readiness_cli_seconds": 0.5132022816687822,
+    "strict_command_wall_envelope_seconds": 113.48158537782729,
+    "api_spend": 0,
+    "tokens_and_subscription_billing": "UNKNOWN where not reported; original receipts retained",
+    "source_bundle": "prepared/source-bundle.json",
+    "selected_voice": "concise_challenger v2",
+    "structure": "graham-structured-v1 v1 default literal progression",
+    "blind_review": "trial/review.md",
+    "human_judgments": null
+  },
+  "completed_steps": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4",
+    "Q5 machine portion"
+  ],
+  "first_unmet_step": "Q5 actual Graham human quality/voice/construction/usefulness/edit-effort judgment",
+  "blocked_dependency": "Q6 distinct concept requires initial human disposition; no new subject launched",
+  "gate_owner": "Graham",
+  "required_action": "Review blind DraftA/B; give preference and keep/light/structural/reject, voice/insight/usefulness and actual editing effort when available",
+  "return_evidence": "Graham judgments tied to exact DraftA/B hashes in trial/review.json; no inferred numeric labels or publication approval",
+  "RESUME_AT": "Q5 record actual judgments, then admit Q6 only under plan and separate declared trial cap",
+  "preserved_future_gates": "All26AT/11E2E, historical eligibility, calibration, real visuals/mobile inspection, UI/API parity and separately approved publication remain open",
+  "rollback_command": "install -m 755 /home/graham/work/linkedin-generator-releases/rollback-structure-20261106/previous-launcher.sh /home/graham/.local/bin/linkedin-codex",
+  "invalidation_conditions": [
+    "Material draft/meaning/structure/source edit invalidates affected review/visual/approval",
+    "Different source/config/runtime bytes need affected qualification",
+    "Unknown effects must reconcile original attempt; no rerun/reset"
+  ]
+}

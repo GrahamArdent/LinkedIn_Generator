@@ -1,0 +1,52 @@
+{
+  "status": "GO",
+  "merged_revision": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
+  "installed_revision": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
+  "qualified_source_candidate": "300aeb7b30c20ac59a5496d826728a5a3eea3f9d",
+  "installed_root": "/home/graham/work/linkedin-generator-releases/5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
+  "launcher": "/home/graham/.local/bin/linkedin-codex",
+  "launcher_sha256": "18b0043cf8edcc436672028ca2f499752eb3434478061a9f301f1d1350763273",
+  "rollback_launcher": "/home/graham/work/linkedin-generator-releases/rollback-structure-20261106/previous-launcher.sh",
+  "rollback_command": "install -m 755 /home/graham/work/linkedin-generator-releases/rollback-structure-20261106/previous-launcher.sh /home/graham/.local/bin/linkedin-codex",
+  "installed_suite": "275 passed",
+  "module_imports": {
+    "src.app.api": "/home/graham/work/linkedin-generator-releases/5bd3478709d98e5eb3ff5fd11168718aa3868cbd/src/app/api.py",
+    "src.app.editorial_structure": "/home/graham/work/linkedin-generator-releases/5bd3478709d98e5eb3ff5fd11168718aa3868cbd/src/app/editorial_structure.py",
+    "src.app.codex_trial": "/home/graham/work/linkedin-generator-releases/5bd3478709d98e5eb3ff5fd11168718aa3868cbd/src/app/codex_trial.py",
+    "src.app.publish_quality": "/home/graham/work/linkedin-generator-releases/5bd3478709d98e5eb3ff5fd11168718aa3868cbd/src/app/publish_quality.py"
+  },
+  "product_config_script_test_hashes_match": true,
+  "client_binding": {
+    "resume_root": "/home/graham/work/linkedin-resume-client-20261104",
+    "python": "/home/graham/work/resume-v6-smoke-venv/bin/python",
+    "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00",
+    "model": "gpt-6-astra",
+    "reasoning": "medium"
+  },
+  "preflight": [
+    {
+      "argv": [
+        "codex",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2408312950283289,
+      "output": "codex-cli 0.158.0"
+    },
+    {
+      "argv": [
+        "codex",
+        "login",
+        "status"
+      ],
+      "exit_code": 0,
+      "seconds": 0.27237098664045334,
+      "output": "Logged in using ChatGPT"
+    }
+  ],
+  "historical_show_zero_calls": true,
+  "historical_hash_unchanged": true,
+  "rollback_show_smoke": true,
+  "new_model_calls": 0,
+  "api_spend": 0
+}
