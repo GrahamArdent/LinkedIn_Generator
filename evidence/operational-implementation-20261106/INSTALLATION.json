@@ -2,7 +2,7 @@
   "status": "GO_SCOPED_INSTALLED_AUTHORING",
   "merged_revision": "855da306d9810f466ffa06d1756b8cd4d1583b02",
   "installed_revision": "855da306d9810f466ffa06d1756b8cd4d1583b02",
-  "qualified_candidate": "62ce860c2e7f7fc374109ec01efd13c046e2f1b9; product identical to exact merged5bc9f14",
+  "qualified_candidate": "bc6aca18f737761ee9cc5d6de28828f56b7c8816 plus prior reviewedf4d23b7 feedback transport; exact merged855da306 matches current117-file manifest",
   "installed_root": "/home/graham/work/linkedin-generator-releases/855da306d9810f466ffa06d1756b8cd4d1583b02",
   "runtime_root": "/home/graham/.local/share/graham-linkedin-runtime/operational-v2-20261106",
   "stable_data_root": "/home/graham/.local/share/graham-linkedin",
@@ -25,8 +25,8 @@
   "historical_show_compatible": true,
   "api_spend": 0,
   "limits": "Scoped local authoring; broad novel-topic discovery/human/corpus/render/publication remain unaccepted. Current owner metadata lives on default branch; immutable release embeds pre-promotion receipts.",
-  "installed_suite_log_owner_path": "evidence/operational-implementation-20261106/r2-discovery/installed-suite-323.log",
-  "installed_suite_log_absolute": "/home/graham/work/linkedin-r2-discovery-20261106/evidence/operational-implementation-20261106/r2-discovery/installed-suite-323.log",
+  "installed_suite_log_owner_path": "evidence/operational-implementation-20261106/parcel-revision/installed-325.log",
+  "installed_suite_log_absolute": "/home/graham/work/linkedin-feedback-repair-20261106/evidence/operational-implementation-20261106/parcel-revision/installed-325.log",
   "source_qualification": "parcel-revision/FINAL_OUTCOME.json",
   "backup": "/home/graham/.local/share/graham-linkedin-backups/parcel-revision-20261106"
 }

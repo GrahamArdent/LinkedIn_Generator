@@ -13,7 +13,7 @@
   "isolated_archive_suite": "325passed; parcel-revision/reuse-clean-325.log",
   "native_outcomes": "NATIVE_POSITIVE_OUTCOMES.json",
   "actual_native_model_executions": 28,
-  "actual_native_active_cli_seconds": 464.4489829391241,
+  "actual_native_active_cli_seconds": 290.02150123752654,
   "api_spend": 0,
   "new_subjects": 0,
   "original_request_and_failed_results_preserved": true,
@@ -52,5 +52,7 @@
   "new_model_calls_this_continuation": 11,
   "installed_independent_readback": "parcel-revision/INDEPENDENT_INSTALLED_READBACK.json",
   "history_reconciliation": "history-reconciliation/HISTORY.json:10originals canonical identity/order verified; eligible count unresolved,1exactpair preference,12frozenunlabeledexamples",
-  "parcel_revision": "parcel-revision/FINAL_OUTCOME.json; currentselected215words; humanpending"
+  "parcel_revision": "parcel-revision/FINAL_OUTCOME.json; currentselected215words; humanpending",
+  "actual_native_active_cli_seconds_scope": "Historical throughQ6; new revision provider-stage seconds are recorded separately rather than conflated with exactCLI active timing",
+  "parcel_revision_provider_stage_seconds": 174.42748170159757
 }
