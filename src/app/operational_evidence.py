@@ -5,6 +5,8 @@ from html.parser import HTMLParser
 import http.client
 import ipaddress
 import json
+import base64
+import multiprocessing
 import socket
 import ssl
 import time
@@ -54,35 +56,79 @@ def source_record(requested,final,raw,content_type):
             'content_type':content_type,'passages':passages,'limitations':'Extracted page text only; verify relevance, study scope and contradictions. Not evidence of personal experience; no universal or causal claim is implied.'}
 
 
-class Evidence:
-    def __init__(self, deadline=None):
-        self.deadline=deadline or time.time()+900;self.discovery_requests=0;self.source_fetches=0;self.activity=[]
+def _network_worker(pipe,url,timeout):
+    connection=None
+    try:
+        u,address=public_address(url)
+        port=u.port or (443 if u.scheme=='https' else 80)
+        connection=http.client.HTTPConnection(u.hostname,port,timeout=timeout)
+        sock=socket.create_connection((address,port),timeout=timeout)
+        if u.scheme=='https':sock=ssl.create_default_context().wrap_socket(sock,server_hostname=u.hostname)
+        connection.sock=sock
+        connection.request('GET',(u.path or '/')+('?' + u.query if u.query else ''),headers={'User-Agent':'GrahamResearch/1.0 public-source qualification','Accept':'text/html,application/xml,application/json,text/plain','Accept-Encoding':'identity'})
+        r=connection.getresponse();raw=r.read(MAX_BYTES+1)
+        if len(raw)>MAX_BYTES:raise ValueError('SOURCE_SIZE_LIMIT')
+        pipe.send({'status':r.status,'raw':base64.b64encode(raw).decode(),'content_type':r.getheader('Content-Type',''),'location':r.getheader('Location','')})
+    except Exception as exc:pipe.send({'error':str(exc)})
+    finally:
+        if connection:connection.close()
+        pipe.close()
 
-    def fetch(self,url,*,discovery=False):
-        original=url
-        for _ in range(4):
-            if time.time()>=self.deadline:raise ValueError('WALL_BUDGET_EXHAUSTED')
-            field='discovery_requests' if discovery else 'source_fetches';limit=8 if discovery else 6
+
+def bounded_request(url,timeout):
+    # A child process bounds DNS, TLS, headers and slow trickle bodies together.
+    ctx=multiprocessing.get_context('fork')
+    parent,child=ctx.Pipe(duplex=False)
+    process=ctx.Process(target=_network_worker,args=(child,url,timeout),daemon=True);process.start();child.close()
+    try:
+        if not parent.poll(timeout):raise ValueError('SOURCE_TOTAL_TIMEOUT')
+        result=parent.recv()
+        if 'error' in result:raise ValueError(result['error'])
+        return result
+    finally:
+        parent.close()
+        if process.is_alive():process.terminate()
+        process.join(timeout=1)
+        if process.is_alive():process.kill();process.join()
+
+
+class Evidence:
+    def __init__(self, deadline=None, *, store=None, job=None):
+        self.deadline=deadline or time.time()+900;self.discovery_requests=0;self.source_fetches=0;self.activity=[]
+        self.store,self.job=store,job
+
+    def once(self,url,discovery):
+        field='discovery_requests' if discovery else 'source_fetches';limit=8 if discovery else 6
+        inputs={'url':url,'kind':field}
+        if self.store is not None:
+            from .operational_store import sha
+            with self.store.transaction() as con:
+                rows=con.execute('SELECT * FROM stages WHERE job=? AND name LIKE ?',(self.job,'http:'+field+':%')).fetchall()
+                for row in rows:
+                    if row['input_hash']==sha(inputs) and row['state']=='completed':
+                        result=self.store.read_blob(row['result_hash'])
+                        self.activity.append({'url':url,'cache_hit':True,'status':result['status']})
+                        return result
+                if len(rows)>=limit:raise ValueError('EVIDENCE_BUDGET_EXHAUSTED')
+                name='http:'+field+':'+str(len(rows)+1)
+                con.execute('INSERT INTO stages VALUES (?,?,?,?,NULL)',(self.job,name,sha(inputs),'reserved'))
+                setattr(self,field,len(rows)+1)
+        else:
             if getattr(self,field)>=limit:raise ValueError('EVIDENCE_BUDGET_EXHAUSTED')
             setattr(self,field,getattr(self,field)+1)
-            u,address=public_address(url)
-            port=u.port or (443 if u.scheme=='https' else 80)
-            connection=http.client.HTTPConnection(u.hostname,port,timeout=min(15,max(0.1,self.deadline-time.time())))
-            # Pin the connection to the validated address, preserving TLS SNI/hostname validation.
-            sock=socket.create_connection((address,port),timeout=connection.timeout)
-            if u.scheme=='https':sock=ssl.create_default_context().wrap_socket(sock,server_hostname=u.hostname)
-            connection.sock=sock
-            began=time.monotonic()
-            try:
-                connection.request('GET',(u.path or '/')+('?' + u.query if u.query else ''),headers={'User-Agent':'GrahamResearch/1.0 public-source qualification','Accept':'text/html,application/xml,application/json,text/plain','Accept-Encoding':'identity'})
-                r=connection.getresponse();raw=r.read(MAX_BYTES+1)
-                self.activity.append({'url':url,'status':r.status,'seconds':time.monotonic()-began,'bytes':len(raw)})
-                if len(raw)>MAX_BYTES:raise ValueError('SOURCE_SIZE_LIMIT')
-                if r.status in (301,302,303,307,308):
-                    url=urljoin(url,r.getheader('Location') or '');continue
-                if r.status!=200:raise ValueError('SOURCE_HTTP_'+str(r.status))
-                return url,raw,r.getheader('Content-Type','')
-            finally:connection.close()
+        remaining=self.deadline-time.time()
+        if remaining<=0:raise ValueError('WALL_BUDGET_EXHAUSTED')
+        began=time.monotonic();result=bounded_request(url,min(15,remaining))
+        self.activity.append({'url':url,'status':result['status'],'seconds':time.monotonic()-began,'bytes':len(base64.b64decode(result['raw']))})
+        if self.store is not None:self.store.commit_stage(self.job,name,result)
+        return result
+
+    def fetch(self,url,*,discovery=False):
+        for _ in range(4):
+            r=self.once(url,discovery)
+            if r['status'] in (301,302,303,307,308):url=urljoin(url,r['location']);continue
+            if r['status']!=200:raise ValueError('SOURCE_HTTP_'+str(r['status']))
+            return url,base64.b64decode(r['raw']),r['content_type']
         raise ValueError('SOURCE_REDIRECT_LIMIT')
 
     def discover(self,topic):
@@ -117,5 +163,5 @@ def validate_meaning(meaning,sources):
     for f in meaning['facts']:
         if any(ref not in indexed for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
         # Exact quotation is a conservative first-release claim mapping. Interpretation is in thesis/limits.
-        if not all(any(f['text'] in p['excerpt'] for p in indexed[ref]['passages']) for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
+        if not all(any(f['text'].strip() in [line.strip() for line in p['excerpt'].splitlines() if line.strip()] for p in indexed[ref]['passages']) for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
     return meaning

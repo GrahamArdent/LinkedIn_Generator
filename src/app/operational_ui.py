@@ -46,8 +46,8 @@ def handler(app,token):
             parsed=urlsplit(self.path);query=parse_qs(parsed.query)
             try:
                 if parsed.path=='/':return self.send(PAGE.replace('TOKEN',json.dumps(token)),html=True)
-                if parsed.path=='/api/list':return self.send(app.store.list())
-                if parsed.path=='/api/job':return self.send(app.store.get(query.get('id',[''])[0]))
+                if parsed.path=='/api/list':return self.send([app.show(r['id']) for r in app.store.list()])
+                if parsed.path=='/api/job':return self.send(app.show(query.get('id',[''])[0]))
                 if parsed.path=='/api/export':return self.send(app.export(query.get('id',[''])[0]))
                 if parsed.path=='/api/voices':
                     from .writing_voice import CATALOG_PATH
@@ -62,7 +62,7 @@ def handler(app,token):
                 length=int(self.headers.get('Content-Length','0'))
                 if self.path!='/api/action' or not 0<length<=32768:raise ValueError('INVALID_ACTION')
                 d=json.loads(self.rfile.read(length));a=d['action'];job=d['id']
-                if a=='create':result=app.create(job,d['topic'],urls=d.get('urls',[]),notes=d.get('notes',''),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative','literal'),parent=d.get('parent'))
+                if a=='create':result=app.create(job,d['topic'],urls=d.get('urls',[]),notes=d.get('notes',''),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative','literal'),parent=d.get('parent'),new_budget=d.get('new_budget',False))
                 elif a=='resume':result=app.resume(job)
                 elif a=='feedback':result=app.feedback(job,d['data'])
                 elif a=='edit':result=app.edit(job,d['text'])

@@ -22,7 +22,7 @@ def main():
     target.mkdir(parents=True,mode=0o700)
     run('git','clone','--no-hardlinks','--no-checkout',str(a.client_source),str(target/'client'))
     run('git','-C',str(target/'client'),'checkout','--detach',a.client_sha)
-    run('uv','venv','--copies','--python',a.python,str(target/'venv'))
+    run(a.python,'-m','venv','--copies',str(target/'venv'))
     run('uv','pip','install','--python',str(target/'venv/bin/python'),'-r',str(source/'requirements-operational.lock'))
     config={'resume_root':str(target/'client'),'python':str(target/'venv/bin/python'),'source_sha':a.client_sha,
             'model':'gpt-6-sol','reasoning':'medium'}

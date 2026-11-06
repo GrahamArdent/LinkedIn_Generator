@@ -17,7 +17,7 @@ def test_public_create_progression_duplicate_and_shared_feedback_without_api(tmp
         def __init__(self,*a):self.receipts=[]
         def generate(self,**kw):
             calls.append(kw);self.receipts.append({'ok':True,'attempt_id':str(len(calls))})
-            return json.dumps({'status':'ready','reason':'Supported scope.','meaning':{'thesis':'Limited claims need limits.','reader_consequence':'Check applicability.','facts':[{'claim_id':'C1','text':'A study reported a limited observation.','source_ids':['S1']}],'qualification':'One study only.'},'narrative':None})
+            return json.dumps({'status':'ready','reason':'Supported scope.','meaning':{'thesis':'Limited claims need limits.','reader_consequence':'Check applicability.','facts':[{'claim_id':'C1','text':'A study reported a limited observation.','source_ids':['S1']}],'qualification':'One study only.'},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Full study sentence supports the limited observation.'}]})
     monkeypatch.setattr(m,'CodexProvider',Provider)
     def engine(req,**kw):
         assert req.editorial_handoff['meaning']['facts'][0]['text'] in req.evidence[0].fact

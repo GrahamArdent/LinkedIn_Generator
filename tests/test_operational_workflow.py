@@ -55,3 +55,13 @@ def test_explicit_voice_activation_new_version_is_frozen(tmp_path):
     v=a.activate_voice('one',h)
     assert v['examples'][0]['text']==text and v['version']==1
     assert a.active_voice()==v
+
+
+def test_linked_revision_cannot_reset_shared_budget(tmp_path):
+    s=Store.initialize(tmp_path/'data');s.admit('parent',{}, {'admission':'parent'})
+    n=Native()
+    for i in range(12):m.DurableProvider(s,'parent',n).generate(model='test',system=str(i),user='u',temperature=0)
+    s.admit('child',{}, {'admission':'parent'})
+    with pytest.raises(ValueError,match='MODEL_BUDGET_EXHAUSTED'):
+        m.DurableProvider(s,'child',n).generate(model='test',system='extra',user='u',temperature=0)
+    assert n.calls==12

@@ -26,3 +26,15 @@ def test_legacy_import_keeps_original_failed_receipt_and_conflicts(tmp_path):
     assert cli(root,'import','--path',str(old)).returncode==0
     (old/'trial.json').write_text(json.dumps({'input':{'request_id':'old','topic':'changed'},'state':'completed'}))
     assert cli(root,'import','--path',str(old)).returncode==2
+
+
+def test_imported_unresolved_history_blocks_new_subject_before_model(tmp_path):
+    from scripts.linkedin_app import import_legacy
+    from src.app.operational_store import Store
+    from src.app.operational import Application
+    root=tmp_path/'data';s=Store.initialize(root)
+    old=tmp_path/'old';old.mkdir();(old/'trial.json').write_text(json.dumps({'input':{'request_id':'old','topic':'Known original subject'},'state':'failed'}))
+    import_legacy(s,old)
+    import pytest
+    with pytest.raises(ValueError,match='SUBJECT_HISTORY_UNRESOLVED'):
+        Application(s,None).create('new','A genuinely new subject')

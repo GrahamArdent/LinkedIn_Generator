@@ -46,7 +46,7 @@ class CodexProvider:
         payload = {**{k:str(v) for k,v in asdict(self.config).items()},
                    "directory":str(self.directory),"run_id":self.run_id,
                    "system":system,"user":user,"requested_temperature":temperature,"operation":operation,
-                   "remaining_wall_seconds":max(0.1,getattr(self,"deadline",time.time()+920)-time.time())}
+                   "remaining_wall_seconds":30 if operation=="recover_only" else max(0.1,getattr(self,"deadline",time.time()+920)-time.time())}
         # Credentials stay in Codex's own authentication store.
         env = {k:os.environ[k] for k in ("HOME","PATH","CODEX_HOME","LANG","SSL_CERT_FILE") if k in os.environ}
         argv = [str(self.config.python),str(Path(__file__).resolve()),"--bridge"]
