@@ -6,7 +6,7 @@ November6,2026 (Toronto). Owner: GrahamArdent/LinkedIn_Generator. This is derive
 
 The standalone application completed two actual installed ordinary-input paths without chat-built request JSON, evidence bundles or post-editing helpers: a bare retained topic and a primary-source URL with one clock comparison. Both selected text hashes match their visual plans. Original B and its preference remain unchanged. New text is human-review material, never publication approval.
 
-Release promotion is pending in this candidate receipt; INSTALLATION.json owns actual merged/installed identities and rollback. Technical scope is the observed local authoring paths, not universal research or complete editorial/render/publish acceptance.
+Exact merged37508330862b35d385eb1977f84f210fec6d5c6d is installed. Installed replay/readback/export added0calls; previous5bd3478 rollback is retained and smoke-checked. INSTALLATION.json owns actual identities and rollback. Technical scope is the observed local authoring paths, not universal research or complete editorial/render/publish acceptance.
 
 ## Evidence
 
@@ -33,3 +33,7 @@ The next owner action is actual Graham judgment against the saved exact candidat
 - [Literal retained-topic output](graham-operational-topic-20261106-r1.md)
 - [Clock comparison output](graham-operational-url-symbolic-20261106-r1.md)
 - [Current quick-start](../../docs/implementation/v4/LINKEDIN_CODEX_QUICKSTART.md)
+
+## Composed release currentness
+
+Concurrent main PR41 strengthened one historical CLI replay test after the candidate review. Activation initially held on the changed test hash. The change was preserved, the actual merged312-test suite passed, and a fresh affected review cleared3750833. Production bytes were unchanged; MERGED_COMPOSITION.json preserves both source identities. Current owner metadata is on default branch; immutable installed source may embed pre-promotion historical receipts.

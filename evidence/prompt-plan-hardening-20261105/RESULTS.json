@@ -1,10 +1,10 @@
 {
-  "status": "OPERATIONAL_PAIR_SCOPED_TECHNICAL_RELEASE_CLEAR",
+  "status": "GO_SCOPED_INSTALLED_AUTHORING_CURRENT_PAIR",
   "authority_status": "DERIVED_FROM_CURRENT_AUTHORITY",
   "scope": "Current pair execution checkpoint; original109-obligation planning/source receipts retained. Actual operational outcomes owned by evidence/operational-implementation-20261106/RESULTS.json.",
   "base": "6b6b24352329c097e7eaec197d4d29581e315338",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0238064948f1e2f5d9d9bf4b8541c388519e820be947f5be09662e396f2a0351",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "033521741fadb6aa2b68fe58c84386e0a8b93e56db844368a9e952531497f0a4",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "current_request": "OPERATIONAL_REQUEST.json",
@@ -32,7 +32,7 @@
     "TechnicalauthoringGO, editorialreliability and full26AT/11E2E completion distinct"
   ],
   "actual_installed_outcome": "evidence/operational-implementation-20261106/RESULTS.json",
-  "installed_revision": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd",
+  "installed_revision": "37508330862b35d385eb1977f84f210fec6d5c6d",
   "product_code_changed": true,
   "new_native_calls": 11,
   "api_spend": 0,

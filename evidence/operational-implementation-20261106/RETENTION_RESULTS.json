@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "known_original_requirements": 109,
-  "execution_checkpoint_requirements": 16,
-  "declared_total": 125,
-  "declared_covered": 125,
+  "execution_checkpoint_requirements": 17,
+  "declared_total": 126,
+  "declared_covered": 126,
   "qualified_files": 117,
   "original_baseline_files": 22,
   "original_current_source_files": 19,

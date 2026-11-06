@@ -48,6 +48,24 @@
       "status": "SCOPED_NATIVE_QUALIFICATION_CLEAR",
       "findings": [],
       "tests": "34 targeted tests; shared-source cache with network forbidden retained6 original reservations"
+    },
+    {
+      "candidate": "739fc52 UI correction / native5201542 equivalent productbytes",
+      "status": "SCOPED_TECHNICAL_RELEASE_CLEAR",
+      "findings": [],
+      "proof": "Actual browser RED/GREEN; no real judgments written;312 independent tests"
+    },
+    {
+      "candidate": "3750833 merged composition",
+      "status": "SCOPED_ACTIVATION_CLEAR",
+      "findings": [],
+      "proof": "Preserved concurrent test-only PR41;22 independent affected tests;312 native merged tests"
+    },
+    {
+      "candidate": "3750833 installed / current completepair",
+      "status": "SCOPED_INSTALLED_AUTHORING_CLOSURE_CLEAR",
+      "findings": [],
+      "proof": "Independent actual launcher117hashes/selectedreadback/modeland_eventcounts11/11; durable logpath confirmed"
     }
   ],
   "proof_limit": "Code/adversarial review does not establish installed workflow, human prose acceptance, rendered assets or publishing. Later UI/release/docs composition separately reviewed."
