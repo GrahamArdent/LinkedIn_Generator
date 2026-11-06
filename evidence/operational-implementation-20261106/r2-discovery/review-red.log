@@ -1,0 +1,103 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata[works0-wanted0] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f87a215fa70>
+works = [{'DOI': '10.1/a', 'resource': {}, 'link': [{'URL': 'https://author.example/a', 'content-type': None}]}]
+wanted = ['https://author.example/a']
+
+    @pytest.mark.parametrize('works,wanted',[
+        ([{'DOI':'10.1/a','resource':{},'link':[{'URL':'https://author.example/a','content-type':None}]}],['https://author.example/a']),
+        ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/doi/pdf/10.1/a'}},'link':[{'URL':'https://publisher.example/doi/pdf/10.1/a','content-type':'application/pdf'},{'URL':'https://author.example/a','content-type':'text/html'}]}],['https://author.example/a']),
+        ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[]},
+          {'DOI':'10.1/b','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[{'URL':'https://author.example/b','content-type':'text/html'}]}],['https://publisher.example/shared','https://author.example/b'])
+    ])
+    def test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata(monkeypatch,works,wanted):
+        import json
+        monkeypatch.setattr(m.Evidence,'fetch',lambda *a,**kw:('https://api.crossref.org/works',json.dumps({'message':{'items':works}}).encode(),'application/json'))
+>       assert m.Evidence().discover('topic')==wanted
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_operational_evidence.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.operational_evidence.Evidence object at 0x7f87a215fe00>
+topic = 'topic'
+
+    def discover(self,topic):
+        # Metadata is navigation only; facts must come from separately fetched publisher/author text.
+        url='https://api.crossref.org/works?'+urlencode({'query.title':topic,'rows':6,'select':'DOI,title,URL,link,resource,publisher'})
+        _,raw,_=self.fetch(url,discovery=True)
+        works=json.loads(raw)['message']['items']
+        urls=[];seen_works=set()
+        for w in works:
+            # One representation per work: inaccessible landing/PDF/DOI variants
+            # must not crowd all other papers out of the six-fetch admission.
+            doi=str(w.get('DOI') or '').strip().lower()
+            if doi and doi in seen_works:continue
+            if doi:seen_works.add(doi)
+            primary=w.get('resource',{}).get('primary',{}).get('URL')
+            links=w.get('link',[])
+>           candidates=[primary]+[x.get('URL') for x in links if x.get('content-type','').split(';')[0].strip().lower()=='text/html']
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AttributeError: 'NoneType' object has no attribute 'split'
+
+src/app/operational_evidence.py:162: AttributeError
+_ test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata[works1-wanted1] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f87a1d12c30>
+works = [{'DOI': '10.1/a', 'resource': {'primary': {'URL': 'https://publisher.example/doi/pdf/10.1/a'}}, 'link': [{'URL': 'htt...oi/pdf/10.1/a', 'content-type': 'application/pdf'}, {'URL': 'https://author.example/a', 'content-type': 'text/html'}]}]
+wanted = ['https://author.example/a']
+
+    @pytest.mark.parametrize('works,wanted',[
+        ([{'DOI':'10.1/a','resource':{},'link':[{'URL':'https://author.example/a','content-type':None}]}],['https://author.example/a']),
+        ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/doi/pdf/10.1/a'}},'link':[{'URL':'https://publisher.example/doi/pdf/10.1/a','content-type':'application/pdf'},{'URL':'https://author.example/a','content-type':'text/html'}]}],['https://author.example/a']),
+        ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[]},
+          {'DOI':'10.1/b','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[{'URL':'https://author.example/b','content-type':'text/html'}]}],['https://publisher.example/shared','https://author.example/b'])
+    ])
+    def test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata(monkeypatch,works,wanted):
+        import json
+        monkeypatch.setattr(m.Evidence,'fetch',lambda *a,**kw:('https://api.crossref.org/works',json.dumps({'message':{'items':works}}).encode(),'application/json'))
+>       assert m.Evidence().discover('topic')==wanted
+E       AssertionError: assert ['https://pub...i/pdf/10.1/a'] == ['https://author.example/a']
+E         
+E         At index 0 diff: 'https://publisher.example/doi/pdf/10.1/a' != 'https://author.example/a'
+E         Use -v to get more diff
+
+tests/test_operational_evidence.py:130: AssertionError
+_ test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata[works2-wanted2] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f87a1d119d0>
+works = [{'DOI': '10.1/a', 'resource': {'primary': {'URL': 'https://publisher.example/shared'}}, 'link': []}, {'DOI': '10.1/b'...RL': 'https://publisher.example/shared'}}, 'link': [{'URL': 'https://author.example/b', 'content-type': 'text/html'}]}]
+wanted = ['https://publisher.example/shared', 'https://author.example/b']
+
+    @pytest.mark.parametrize('works,wanted',[
+        ([{'DOI':'10.1/a','resource':{},'link':[{'URL':'https://author.example/a','content-type':None}]}],['https://author.example/a']),
+        ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/doi/pdf/10.1/a'}},'link':[{'URL':'https://publisher.example/doi/pdf/10.1/a','content-type':'application/pdf'},{'URL':'https://author.example/a','content-type':'text/html'}]}],['https://author.example/a']),
+        ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[]},
+          {'DOI':'10.1/b','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[{'URL':'https://author.example/b','content-type':'text/html'}]}],['https://publisher.example/shared','https://author.example/b'])
+    ])
+    def test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata(monkeypatch,works,wanted):
+        import json
+        monkeypatch.setattr(m.Evidence,'fetch',lambda *a,**kw:('https://api.crossref.org/works',json.dumps({'message':{'items':works}}).encode(),'application/json'))
+>       assert m.Evidence().discover('topic')==wanted
+E       AssertionError: assert ['https://pub...ample/shared'] == ['https://pub...or.example/b']
+E         
+E         Right contains one more item: 'https://author.example/b'
+E         Use -v to get more diff
+
+tests/test_operational_evidence.py:130: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_evidence.py::test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata[works0-wanted0]
+FAILED tests/test_operational_evidence.py::test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata[works1-wanted1]
+FAILED tests/test_operational_evidence.py::test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata[works2-wanted2]
+3 failed, 16 deselected, 1 warning in 0.08s
