@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "http_job_id": "graham-structured-black-box-20261106",
+  "selected_hash": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+  "feedback_visible": true,
+  "mobile_viewport": true,
+  "escaped_rendering": true,
+  "html_sha256": "9f0d45e3aca836ef7b6f9e5be2968d8db267b8169732ced488dac322df8d0fac",
+  "new_calls": 0
+}

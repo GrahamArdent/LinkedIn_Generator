@@ -1,0 +1,41 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+________ test_fresh_process_init_list_missing_store_and_cross_directory ________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-6/test_fresh_process_init_list_m0')
+
+    def test_fresh_process_init_list_missing_store_and_cross_directory(tmp_path):
+        root=tmp_path/'data'
+        assert cli(root,'list').returncode==2
+        assert not root.exists()
+>       assert cli(root,'init').returncode==0
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '/workspace/scratch...t open file '/workspace/scratch/e46e01593e9e/linkedin/scripts/linkedin_app.py': [Errno 2] No such file or directory\n").returncode
+E        +    where CompletedProcess(args=['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '/workspace/scratch...t open file '/workspace/scratch/e46e01593e9e/linkedin/scripts/linkedin_app.py': [Errno 2] No such file or directory\n") = cli(PosixPath('/tmp/pytest-of-agent/pytest-6/test_fresh_process_init_list_m0/data'), 'init')
+
+tests/test_operational_cli.py:11: AssertionError
+________ test_legacy_import_keeps_original_failed_receipt_and_conflicts ________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-6/test_legacy_import_keeps_origi0')
+
+    def test_legacy_import_keeps_original_failed_receipt_and_conflicts(tmp_path):
+>       root=tmp_path/'data';assert cli(root,'init').returncode==0
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '/workspace/scratch...t open file '/workspace/scratch/e46e01593e9e/linkedin/scripts/linkedin_app.py': [Errno 2] No such file or directory\n").returncode
+E        +    where CompletedProcess(args=['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '/workspace/scratch...t open file '/workspace/scratch/e46e01593e9e/linkedin/scripts/linkedin_app.py': [Errno 2] No such file or directory\n") = cli(PosixPath('/tmp/pytest-of-agent/pytest-6/test_legacy_import_keeps_origi0/data'), 'init')
+
+tests/test_operational_cli.py:20: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_cli.py::test_fresh_process_init_list_missing_store_and_cross_directory
+FAILED tests/test_operational_cli.py::test_legacy_import_keeps_original_failed_receipt_and_conflicts
+2 failed, 1 warning in 0.09s

@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_recovery_is_explicit_no_dispatch_and_preserves_receipt __________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-4/test_recovery_is_explicit_no_d0')
+
+    def test_recovery_is_explicit_no_dispatch_and_preserves_receipt(tmp_path):
+        seen=[]
+        def runner(argv,**kw):
+            seen.append(json.loads(kw['input']))
+            return subprocess.CompletedProcess(argv,0,json.dumps({'ok':True,'data':{'text':'original'},'attempt_id':'original','cache_hit':True}),'')
+        p=CodexProvider(CodexConfig(tmp_path,Path('/python'),'sha','sol'),tmp_path/'attempts','one',runner=runner)
+>       r=p.reconcile(model='sol',system='s',user='u',temperature=0)
+          ^^^^^^^^^^^
+E       AttributeError: 'CodexProvider' object has no attribute 'reconcile'
+
+tests/test_operational_bridge.py:14: AttributeError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_bridge.py::test_recovery_is_explicit_no_dispatch_and_preserves_receipt
+1 failed, 1 warning in 0.04s

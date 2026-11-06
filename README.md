@@ -46,20 +46,11 @@ PROGRAMSTART is adopted in **Mode C** as methodology only. LinkedIn Generator re
 
 `CURRENT_WORK_PACKET.md` is the current bounded execution packet. Do not create a competing Master Game Plan merely to continue an in-flight slice.
 
-## Live generation provider
+## Current Graham workflow
 
-Live draft generation uses an injectable provider boundary. The default adapter uses the OpenAI Responses API; tests can inject a fake provider and never require network access.
+The supported standalone entry is the installed `linkedin-codex create/status/show/resume/feedback/export/serve` application, using a canonical local store and the ChatGPT subscription. See [the current quick-start](docs/implementation/v4/LINKEDIN_CODEX_QUICKSTART.md) and [operational evidence](evidence/operational-implementation-20261106/REPORT.md). Four essential checks admit text for human review; scores do not approve publishing.
 
-1. Install runtime requirements.
-2. Use `.env.example` as the reference for required/optional variables.
-3. Export `OPENAI_API_KEY` through the process environment or your runtime secret manager for live generation.
-4. Optionally set `LLM_MODEL`, `LLM_TIMEOUT_S`, and specialized planner model variables.
-
-The current settings loader reads process environment directly; it does not parse `.env` files itself.
-
-If no live provider credential is configured, a real generation call fails clearly instead of returning placeholder content. Provider responses are requested with API-side response storage disabled by the adapter.
-
-Never commit `.env` or API keys.
+The generic direct API and old prototype adapters remain legacy/development surfaces. Their API-key behavior is not the current Graham workflow. Do not restore legacy scheduling or treat old UI/provider instructions as standalone qualification.
 
 ## Tests
 

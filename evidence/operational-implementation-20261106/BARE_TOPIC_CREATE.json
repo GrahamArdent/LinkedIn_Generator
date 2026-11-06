@@ -1,0 +1,174 @@
+{
+  "id": "graham-operational-topic-20261106",
+  "input": {
+    "narrative": "literal",
+    "new_budget": true,
+    "notes": "",
+    "parent": "graham-structured-black-box-20261106",
+    "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+    "urls": [],
+    "voice": "concise_challenger"
+  },
+  "binding": {
+    "admission": "graham-operational-topic-20261106",
+    "config": {
+      "model": "gpt-6-sol",
+      "python": "/home/graham/.local/share/graham-linkedin-runtime/operational-v2-20261106/venv/bin/python",
+      "reasoning": "medium",
+      "resume_root": "/home/graham/.local/share/graham-linkedin-runtime/operational-v2-20261106/client",
+      "source_sha": "a609c6d344037152c24cb81baabdb0fd9a6e9b00"
+    },
+    "model_qualification": {
+      "model": "gpt-6-sol",
+      "reasoning": "medium",
+      "supported_models": [
+        "gpt-6-astra",
+        "gpt-6-sol",
+        "gpt-reserve",
+        "gpt-6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna",
+        "codex-auto-review"
+      ]
+    },
+    "new_budget_explicit": true,
+    "release": "91dbb76128131004dd2cb84b14b69bfd64ed2c42142b9262d354f78653db1230",
+    "structure_sha256": "cf466c25d7d95dbe92b9d59d89268403de2ce057d1bcd8cba60086bd76e342ea",
+    "voice": {
+      "content_sha256": "33d429249362c0ede67eb662f9f97b2bd36e57f046b698d05ae7f544349f6007",
+      "id": "concise_challenger",
+      "label": "Concise Challenger",
+      "style_traits": {
+        "avg_sentence_length": 12.0,
+        "imagery": "One economical concrete comparison may help; ornament and dramatic scenes are unnecessary.",
+        "preferred_structure": "A compact question or claim, a tightly reasoned implication, and an earned challenge. Place the factual anchor where the reasoning needs it; do not default to a news-summary paragraph.",
+        "reasoning": "Expose one questionable assumption with a precise question or compact claim. Let the implication do the persuading; avoid explaining the same point twice.",
+        "rhythm": "Mostly brief declarative sentences and compact paragraphs. Use a deliberate pause or a longer sentence only when it earns its space.",
+        "tone": [
+          "spare",
+          "conversational",
+          "challenging"
+        ]
+      },
+      "version": 2
+    },
+    "voice_examples": {
+      "examples": [],
+      "version": 0
+    }
+  },
+  "state": "needs_more_evidence",
+  "created": 1793964718.1489384,
+  "result_hash": "d710728f66ae9a67cc7fb9bc2f550aa38ebdaf56ecd91fa9b70af1e4c277e8d4",
+  "result": {
+    "discovery_requests": 1,
+    "errors": [
+      {
+        "error": "SOURCE_HTTP_403",
+        "url": "https://academic.oup.com/book/63302/chapter/573019502"
+      },
+      {
+        "error": "SOURCE_HTTP_403",
+        "url": "https://academic.oup.com/book/chapter-pdf/70887719/workid-ukac0034817-book-part-14.pdf"
+      },
+      {
+        "error": "SOURCE_HTTP_403",
+        "url": "https://doi.org/10.1093/9780191998317.003.0014"
+      },
+      {
+        "error": "SOURCE_REDIRECT_LIMIT",
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "error": "SOURCE_REDIRECT_LIMIT",
+        "url": "https://doi.org/10.5204/thesis.eprints.263955"
+      },
+      {
+        "error": "SOURCE_HTTP_403",
+        "url": "https://journals.sagepub.com/doi/10.1177/01672533261490154"
+      }
+    ],
+    "http_activity": [
+      {
+        "bytes": 3268,
+        "seconds": 0.7372733037918806,
+        "status": 200,
+        "url": "https://api.crossref.org/works?query.title=Trusting+useful+AI+answers+while+only+partly+understanding+how+they+are+produced.&rows=6&select=DOI%2Ctitle%2CURL%2Clink%2Cresource%2Cpublisher"
+      },
+      {
+        "bytes": 5565,
+        "seconds": 0.11213524825870991,
+        "status": 403,
+        "url": "https://academic.oup.com/book/63302/chapter/573019502"
+      },
+      {
+        "bytes": 5707,
+        "seconds": 0.09654504805803299,
+        "status": 403,
+        "url": "https://academic.oup.com/book/chapter-pdf/70887719/workid-ukac0034817-book-part-14.pdf"
+      },
+      {
+        "bytes": 191,
+        "seconds": 0.17655584309250116,
+        "status": 302,
+        "url": "https://doi.org/10.1093/9780191998317.003.0014"
+      },
+      {
+        "cache_hit": true,
+        "status": 403,
+        "url": "https://academic.oup.com/book/63302/chapter/573019502"
+      },
+      {
+        "bytes": 0,
+        "seconds": 1.7802757443860173,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "cache_hit": true,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "cache_hit": true,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "cache_hit": true,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "bytes": 153,
+        "seconds": 0.18854719959199429,
+        "status": 302,
+        "url": "https://doi.org/10.5204/thesis.eprints.263955"
+      },
+      {
+        "cache_hit": true,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "cache_hit": true,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "cache_hit": true,
+        "status": 301,
+        "url": "https://eprints.qut.edu.au/263955/"
+      },
+      {
+        "bytes": 5615,
+        "seconds": 0.09980942960828543,
+        "status": 403,
+        "url": "https://journals.sagepub.com/doi/10.1177/01672533261490154"
+      }
+    ],
+    "source_fetches": 6,
+    "sources": []
+  }
+}

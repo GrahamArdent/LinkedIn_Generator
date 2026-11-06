@@ -1,0 +1,8 @@
+# Exact direct dependencies of the existing qualified environment; no API use implied.
+pandas==3.1.1
+PyYAML==6.0.3
+pydantic==2.14.2
+python-docx==1.2.0
+openai==2.54.0
+jsonschema==4.26.0
+pytest==9.2.0

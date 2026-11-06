@@ -1,0 +1,54 @@
+{
+  "reviewer": "fresh-context operational_review agent; same model family, no author implementation context",
+  "scope": "Complete operational implementation and material correction interactions",
+  "cycles": [
+    {
+      "candidate": "a6362ec6",
+      "status": "HOLD",
+      "findings": [
+        "provider errors swallowed",
+        "recovery deadline",
+        "slow source/DNS deadline",
+        "misleading fact substrings",
+        "evidence reservation recovery",
+        "revision readback"
+      ]
+    },
+    {
+      "candidate": "22ebbf8c",
+      "status": "HOLD",
+      "findings": [
+        "admission-wide active allocation",
+        "missing initial history",
+        "paragraph truncation"
+      ]
+    },
+    {
+      "candidate": "d905b096",
+      "status": "HOLD",
+      "findings": [
+        "guard errors outside provider error capture",
+        "upgrade history repair"
+      ]
+    },
+    {
+      "candidate": "30b153d6",
+      "status": "HOLD",
+      "findings": [
+        "older legacy usage absent treated as zero"
+      ]
+    },
+    {
+      "candidate": "101277b4",
+      "status": "SCOPED_NATIVE_QUALIFICATION_CLEAR",
+      "findings": []
+    },
+    {
+      "candidate": "75ab65c and reviewed working corrections",
+      "status": "SCOPED_NATIVE_QUALIFICATION_CLEAR",
+      "findings": [],
+      "tests": "34 targeted tests; shared-source cache with network forbidden retained6 original reservations"
+    }
+  ],
+  "proof_limit": "Code/adversarial review does not establish installed workflow, human prose acceptance, rendered assets or publishing. Later UI/release/docs composition separately reviewed."
+}

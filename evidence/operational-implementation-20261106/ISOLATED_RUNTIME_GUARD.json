@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "runtime_python": "/home/graham/.local/share/graham-linkedin-runtime/operational-v2-20261106/venv/bin/python",
+  "base_prefix": "/home/graham/.local/share/uv/python/cpython-3.13-linux-x86_64-gnu",
+  "blocked_development_paths": [
+    "/home/graham/work/linkedin-codex-trial-20261104",
+    "/home/graham/work/linkedin-resume-client-20261104",
+    "/home/graham/work/resume-v6-smoke-venv"
+  ],
+  "pinned_client_import": "/home/graham/.local/share/graham-linkedin-runtime/operational-v2-20261106/client/v6_nextjs_migration/backend/app/services/codex_cli_client.py",
+  "original_attempt_id": "attempt-ad57e622541645f7b705532cbe5bfee3",
+  "new_calls": 0,
+  "scope": "Current Python runtime/recovery import with filesystem audit rejecting development-path opens; not an OS-wide sandbox claim."
+}

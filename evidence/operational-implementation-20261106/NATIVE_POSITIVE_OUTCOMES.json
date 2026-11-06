@@ -1,0 +1,54 @@
+[
+  {
+    "job": "graham-operational-topic-20261106-r1",
+    "state": "completed",
+    "selected_hash": "c3fd908432061f56b9df9778bc57f149aff77b8cf9da18a600e6f40376c2c64f",
+    "visual_hash": "c3fd908432061f56b9df9778bc57f149aff77b8cf9da18a600e6f40376c2c64f",
+    "visual_status": "planned",
+    "admission": "graham-operational-topic-20261106",
+    "aggregate_calls": 5,
+    "aggregate_active_wrapper_seconds": 73.51453558914363,
+    "structure_form": "literal",
+    "source_origin": "retained_exact_topic_sources",
+    "source_activity": [
+      {
+        "cache_hit": true,
+        "shared_cache": true,
+        "source_result_hash": "6a67311c3361ce2a37372db03eeb4ec7a68ae1a6fedb42fa12021051a1657ceb",
+        "status": 200,
+        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model"
+      }
+    ],
+    "api_spend": 0,
+    "whole_job_wall_observed_complete_by_seconds": 599.7578065395355,
+    "wall_proof_limit": "Upper bound from admission start to completed result observation, including repair/review; exact commit latency not instrumented.",
+    "native_cli_model_execution_slots": 5,
+    "native_cli_active_seconds": 72.20936558954418,
+    "native_cli_model_seconds": 70.37396417930722
+  },
+  {
+    "job": "graham-operational-url-symbolic-20261106-r1",
+    "state": "completed",
+    "selected_hash": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+    "visual_hash": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+    "visual_status": "planned",
+    "admission": "graham-operational-url-symbolic-20261106",
+    "aggregate_calls": 6,
+    "aggregate_active_wrapper_seconds": 126.45739308558404,
+    "structure_form": "symbolic",
+    "source_origin": "caller_urls",
+    "source_activity": [
+      {
+        "cache_hit": true,
+        "status": 200,
+        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model"
+      }
+    ],
+    "api_spend": 0,
+    "whole_job_wall_observed_complete_by_seconds": 438.66100454330444,
+    "wall_proof_limit": "Upper bound from admission start to completed result observation, including repair/review; exact commit latency not instrumented.",
+    "native_cli_model_execution_slots": 6,
+    "native_cli_active_seconds": 124.85805495176464,
+    "native_cli_model_seconds": 122.62595959287137
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "jobs": 14,
+  "root": "/home/graham/.local/share/graham-linkedin",
+  "backup": "/home/graham/.local/share/graham-linkedin-backups/operational-20261106",
+  "all_identity_result_revision_feedback_and_metadata_readback_equal": true,
+  "new_calls": 0
+}

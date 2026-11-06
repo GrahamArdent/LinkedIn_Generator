@@ -1,5 +1,19 @@
 # Current LinkedIn Generator execution pointer
 
+Plan: `docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md`, active R1–R8; prompt remains v4.3 in its canonical file. Current execution evidence: `evidence/operational-implementation-20261106/RESULTS.json`; release identities/rollback: INSTALLATION.json there. Planning/review bindings remain in `evidence/prompt-plan-hardening-20261105/RESULTS.json`.
+
+R1–R6 operational adapters are implemented; scoped installed bare-topic retained-source and URL-symbolic create paths completed, with312 local/isolated tests and0-call replay/browser/export. Broad novel-topic research, full approved-example lifecycle and all human/corpus gates are not claimed complete. Human/publishing gates remain controlling. Continued merge/install/testing/applicable-CI authority persists; Graham selected GPT-6 SOL medium in this session.
+
+First unmet owner evidence: R5 actual human-approved example lifecycle and R7/Q5 human disposition, then Q6 genuine transfer and retained corpus/eligibility gates. Preserve original B; do not ask again for its recorded relative preference. New source outputs are review material, not keep/edit ratings or publication approval. The new clock comparison has exact selected hash c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad.
+
+Native job IDs: graham-operational-topic-20261106-r1 and graham-operational-url-symbolic-20261106-r1. Each is linked to its preserved failed original and shares its original admission/start/budget. They used5/6 native executions,72.209/124.858 active nativeCLI seconds, API0. Source-store backup preserves14 jobs and imported B feedback. Missing/unknown effects must reconcile original receipts; new labels/directories cannot renew budgets.
+
+Next: verify current installation receipts, collect only missing real Graham judgments against exact hashes, reconcile historical eligibility, then resume the next admitted dependent step. R8 rendering/Dedication publishing stays gated. No background execution or remote mobile access is implied.
+
+---
+
+# Historical planning/execution pointer
+
 Current plan: docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md, active R1–R8.
 Current prompt: docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md v4.3.
 Current plan/prompt evidence: evidence/prompt-plan-hardening-20261105/RESULTS.json.

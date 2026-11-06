@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "known_original_requirements": 109,
+  "execution_checkpoint_requirements": 16,
+  "declared_total": 125,
+  "declared_covered": 125,
+  "qualified_files": 117,
+  "original_baseline_files": 22,
+  "original_current_source_files": 19,
+  "missing_item_rejected": true,
+  "altered_byte_rejected": true,
+  "proof_limit": "Enumerated known obligations, original source snapshots and exact qualified files only. Not universal completeness, human acceptance, or release execution."
+}

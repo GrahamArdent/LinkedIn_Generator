@@ -1,0 +1,9 @@
+{
+  "status": "REPRODUCED_BEFORE_FIX",
+  "candidateB_hash": "c9d9b9c56fb55b51b001e4b575624dd6f8326f11329a4e2311d20d2baaa5afad",
+  "carried_decision": "keep",
+  "carried_voice_approval": true,
+  "carried_note": "CandidateA only",
+  "feedback_submitted": false,
+  "new_model_calls": 0
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "candidate_feedback_controls_cleared": true,
+  "captured_feedback_has_no_inherited_approval_or_rating": true,
+  "edit_response_refreshes_hash": true,
+  "mutation_responses": "Browser interception fixtures; no real feedback/approval/edit written",
+  "real_candidate_readback_restored": true,
+  "model_and_event_counts_before": [
+    11,
+    11
+  ],
+  "model_and_event_counts_after": [
+    11,
+    11
+  ],
+  "new_model_calls": 0,
+  "horizontal_overflow": false,
+  "js_errors": []
+}
