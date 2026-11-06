@@ -12,3 +12,7 @@ Ruling: source-only diagnostics are independent of the deferred editorial revisi
 Pre-flight interfaces: discovery feeds acquire; reserve/fetch/cache/model/meaning contracts unchanged. Existing four essentials and all human/render/publication gates remain controlling.
 
 Review correction:3P2counterexamples reproduced RED (null MIME, declared PDF primary without.pdf suffix, shared primary hiding unique HTML alternate). Normalize optional MIME, exclude all declared PDF URLs, continue on duplicates. Source-only candidate reached3distinctworks versus1, but0usable sources; broad research remains unqualified rather than inferred from target diversity.
+
+Additional route qualification: installed existing bounded transport retrieved arXiv API navigation and2separate author-submitted abstract pages for the exact failed Crossref query. Integrated navigation uses no feed text as facts and preserves preprint/abstract limitations. No new package dependency, model call, post subject or paid fallback. Official docs: https://info.arxiv.org/help/api/user-manual.html and https://info.arxiv.org/help/api/tou.html (retrieved2026-11-06). API starts serialized host-wide with3second spacing; concurrent-process control added. Crossref-only failure remains retained.
+
+Whole baseline execution overlapped addition of the two RED tests:312preexisting passed plus2expected new failures. Corrected local suite319passed; environment emits existing anyio/pytest deprecation warning, not suppressed. Native exact-byte suite and installation qualification still required.

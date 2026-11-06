@@ -6,6 +6,10 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
 
 ## Operational execution checkpoint — November 6, 2026
 
+Latest continuation: Graham finds the parcel draft too short/bland and incomplete, and explicitly defers rewriting. His feedback is recorded against the exact selected hash, without acceptance, ratings, voice-example activation or publication. Do not ask for that initial disposition again. Continue independent operational qualification; future text revision requires resuming the deferred editorial step.
+
+R2 continuation corrects source-target starvation: one non-PDF representation per distinct Crossref work, optional MIME/duplicate handling, plus a bounded public arXiv navigation route. Author-page text is fetched separately; feed snippets are never facts. The arXiv legacy API uses one host-wide connection and at least3seconds between starts; limits remain8discovery/6fetches/900wall/API0. Preprint abstracts are limited evidence; no peer review, full-text access, factual entailment or general topic coverage is inferred. Actual native and installed results are owned by r2-discovery receipts; a source-only qualification never counts as a generated subject or renews an old admission.
+
 Current owner evidence is `evidence/operational-implementation-20261106/RESULTS.json`; Q history below remains immutable context. The implementation is qualified for the observed installed local authoring paths, separately from editorial/corpus and whole-product acceptance. Release/main/installed identities are in that evidence and INSTALLATION.json; no release identity is inferred from this status text.
 
 | Active step | Current disposition |
@@ -21,7 +25,7 @@ Current owner evidence is `evidence/operational-implementation-20261106/RESULTS.
 
 Graham's November6 positive exact-clock feedback (liked the comparison; found it fun) supplies the initial disposition for Q6. The installed Q6 transfer on the already retained AI-time-to-usable-completion concept is now saved: parcel comparison,6calls/92.954activeCLIseconds/API0, exact text/visual hash and0-call reopens. Evidence: `evidence/operational-implementation-20261106/q6-transfer/{HUMAN_FEEDBACK,ADMISSION,OUTCOME,REPLAY}.json` and POST.md. This is a performed machine transfer, not human acceptance of the new post.
 
-The next genuinely gated evidence is Graham's disposition of that exact parcel candidate: what lands or needs changing, factual limits, voice/construction/usefulness, visual-plan value and actual editing effort when supplied. R5 explicit example activation and retained first-six/8-subject/corpus/six-pair gates remain open. The positive clock reaction is not a keep/light rating, voice-example approval or publication approval. Optional numerical labels do not block legitimate independent work. Do not fabricate metrics, reset eligibility, launch filler subjects or publish.
+Graham supplied an initial critical disposition and deferred the rewrite. Still-gated editorial evidence is acceptance after any deliberately resumed revision: what lands or needs changing, factual limits, voice/construction/usefulness, visual-plan value and actual editing effort when supplied. R5 explicit example activation and retained first-six/8-subject/corpus/six-pair gates remain open. The positive clock reaction is not a keep/light rating, voice-example approval or publication approval. Optional numerical labels do not block legitimate independent work. Do not fabricate metrics, reset eligibility, launch filler subjects or publish.
 
 The original bare-topic source HOLD and653-character preparation rejection remain saved. Corrected child IDs inherited their original admissions; no budget was renewed. Shared source reuse came from a real ordinary URL workflow's fetched bytes, not a chat-built bundle. The accepted clock comparison is new machine output for human review, not an approved replacement for B.
 

@@ -128,3 +128,42 @@ def test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata(monke
     import json
     monkeypatch.setattr(m.Evidence,'fetch',lambda *a,**kw:('https://api.crossref.org/works',json.dumps({'message':{'items':works}}).encode(),'application/json'))
     assert m.Evidence().discover('topic')==wanted
+
+
+def test_arxiv_navigation_finds_author_pages_without_promoting_feed_snippets(monkeypatch):
+    import base64,json
+    feed=b'''<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>http://arxiv.org/abs/2103.03610v1</id><summary>Do not treat this metadata as evidence.</summary></entry><entry><id>http://127.0.0.1/private</id></entry></feed>'''
+    def network(url,timeout):
+        if url.startswith('https://api.crossref.org/'):
+            raw=json.dumps({'message':{'items':[]}}).encode();kind='application/json'
+        elif url.startswith('https://export.arxiv.org/api/query?'):
+            raw=feed;kind='application/atom+xml'
+        elif url=='https://arxiv.org/abs/2103.03610v1':
+            raw=b'<p>The authors describe a framework for making contributions visible.</p>';kind='text/html'
+        else:pytest.fail('unexpected destination '+url)
+        return {'status':200,'raw':base64.b64encode(raw).decode(),'content_type':kind,'location':''}
+    monkeypatch.setattr(m,'bounded_request',network)
+    result=m.Evidence().acquire('artificial intelligence trust transparency')
+    assert [s['url'] for s in result['sources']]==['https://arxiv.org/abs/2103.03610v1']
+    assert result['sources'][0]['passages']==[{'locator':'complete extracted paragraph 1','excerpt':'The authors describe a framework for making contributions visible.'}]
+    assert 'preprint' in result['sources'][0]['limitations'].lower()
+    assert result['source_fetches']==1 and result['discovery_requests']==2
+
+
+def test_arxiv_api_slot_serializes_processes_and_spaces_start_times(tmp_path,monkeypatch):
+    import multiprocessing,time
+    monkeypatch.setattr(m.Path,'home',classmethod(lambda cls:tmp_path))
+    ctx=multiprocessing.get_context('fork');receive,send=ctx.Pipe(duplex=False)
+    def request():
+        with m.discovery_rate_slot('https://export.arxiv.org/api/query'):
+            send.send(time.time());time.sleep(0.05)
+    first=ctx.Process(target=request);second=ctx.Process(target=request)
+    first.start();second.start();send.close()
+    try:
+        starts=sorted([receive.recv(),receive.recv()])
+        assert starts[1]-starts[0]>=2.9
+    finally:
+        for child in (first,second):
+            child.join(timeout=5)
+            if child.is_alive():child.kill();child.join()
+        receive.close()

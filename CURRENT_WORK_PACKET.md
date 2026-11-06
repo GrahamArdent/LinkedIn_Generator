@@ -1,3 +1,19 @@
+# Current continuation — R2 source discovery and deferred editorial revision
+
+Canonical prompt v4.3 and R1–R8/Q1–Q6 plan continue; same owner index evidence/operational-implementation-20261106/RESULTS.json.
+
+Graham disposition of the saved parcel candidate: too short, bland, does not capture enough. Explicit request: continue operational work and address the draft later. Installed feedback records only that note against c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127; no acceptance/ratings/voice activation/publication inferred. Preserve original B, clock and parcel bytes; no completed model job replay.
+
+R2 current bounded source work: fix Crossref variant starvation and metadata edge cases; qualify an additional public arXiv discovery route using separately fetched author pages, explicit preprint/abstract limits and one host-wide API rate slot.8discovery/6source fetches/900wall/API0 and existing durable admissions remain controlling. Source-only experiments add no generated subject or model call. Source outcome, review, exact installation/rollback and original negatives: r2-discovery/ receipts in the same owner evidence directory. Broad arbitrary-topic research and full-text/entailment are not promised from this narrow route.
+
+R5 actual human-approved example lifecycle remains unmet. Deferred parcel revision/acceptance, first-six eligibility, corpus/six-pair thresholds, actual editing effort, rendered visual value and Dedication publication remain gated. R8 rendering/Dedication publishing stays gated. Continued merge/install/testing/applicable-CI authority persists.
+
+RESUME_AT: reconcile current R2 install receipts before any action; do not repeat completed source experiments or any model trial. If R2 exact install qualifies, retain editorial deferral and continue only independently admitted remaining steps. No new permission is inferred from “fine.” No background execution after the turn.
+
+---
+
+# Previous Q6 checkpoint — superseded by recorded critique and R2 qualification
+
 # Current LinkedIn Generator execution pointer
 
 Canonical prompt remains v4.3; same completion plan R1–R8/Q1–Q6. Owner evidence remains `evidence/operational-implementation-20261106/RESULTS.json`; latest bounded result is q6-transfer/{REPORT.md,OUTCOME.json,REPLAY.json}. Installed37508330862b35d385eb1977f84f210fec6d5c6d and rollback unchanged; no product code/config changed.
