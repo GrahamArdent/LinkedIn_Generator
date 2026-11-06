@@ -1,0 +1,12 @@
+{
+  "request_id": "graham-structured-black-box-20261106",
+  "user_statement": "Draft b. Why aren't we using more comparisons? Maybe some symbolism",
+  "preferred_blind_label": "B",
+  "preferred_content_sha256": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+  "preference_scope": "Relative draft preference only; no invented keep/edit classification, numeric judgment, measured editing effort or publication approval",
+  "editorial_suggestion": "More rhetorical comparisons/analogy or symbolism; record as requested exploration, not mandatory metaphor in every post or authorization for bulk regeneration",
+  "diagnosis": "This installed run deliberately selected the literal default narrative; the template already permits an explicitly selected symbolic narrative. Structure does not require literal exposition.",
+  "next_recommendation": "Keep B as baseline; consider one sustained comparison under the same five-part structure and source limits. Symbol illustrates a relationship, never supplies factual evidence. Avoid mixed metaphors, inflated technical authority or implying explanation equals internal transparency.",
+  "native_generation_this_feedback": false,
+  "original_trial_bytes": "Preserved unchanged"
+}

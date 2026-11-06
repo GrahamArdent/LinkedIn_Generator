@@ -530,3 +530,12 @@ First unmet: Q5 actual Graham judgments of blind DraftA/B in trial/review.md (sa
 Do not relaunch/rewrite this completed package. Q6 distinct subject waits for initial human disposition.
 All26AT/11E2E, first-six eligibility/calibration/laterUI/API/render/publication gates retained. Historical
 Q1-first-unmet/install2c2daf3 statements above are superseded by this exact verified checkpoint.
+
+
+## Latest Graham feedback — November 5, 2026
+Graham prefers blind DraftB (hash2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884)
+and asks about more rhetorical comparisons/symbolism. Exact feedback/disposition: evidence/structure-install-implementation-20261105/HUMAN_FEEDBACK.json.
+Relative preference recorded; keep/edit labels, numeric ratings, editing minutes and publication approval
+are not inferred. The trial stays immutable. Current question is a deliberate symbolic treatment of B,
+not a bulk trial or a mandate to add metaphors to every post. Existing literal/symbolic contract and
+five-part scaffold already support this. No further model calls or new subject launched for this feedback.
