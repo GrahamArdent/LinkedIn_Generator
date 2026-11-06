@@ -1,0 +1,69 @@
+.F..............                                                         [100%]
+=================================== FAILURES ===================================
+_ test_public_create_progression_duplicate_and_shared_feedback_without_api[True] _
+
+tmp_path = PosixPath('/tmp/pytest-of-graham/pytest-535/test_public_create_progression1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7de26a98ce90>
+revision = True
+
+    @pytest.mark.parametrize('revision',[False,True])
+    def test_public_create_progression_duplicate_and_shared_feedback_without_api(tmp_path,monkeypatch,revision):
+        import src.app.operational as m
+        s=Store.initialize(tmp_path/'data');calls=[]
+        with s.transaction() as con:con.execute('UPDATE metadata SET value=? WHERE key="trial_history"',(json.dumps({'status':'unresolved','known_topics':['A useful ordinary topic']}),))
+        monkeypatch.setattr(m,'qualify_model',lambda config:{'model':config.model})
+        source={'source_id':'S1','status':'usable','title':'Study','publisher':'Publisher','url':'https://example.org/paper','checked_at':'2026-11-06','limitations':'Limited study.','passages':[{'locator':'Abstract','excerpt':'A study reported a limited observation.'}]}
+        monkeypatch.setattr(m.Evidence,'acquire',lambda *a:{'sources':[source],'errors':[],'http_activity':[]})
+        class Provider:
+            mode='fixture';error=None
+            def __init__(self,*a):self.receipts=[]
+            def generate(self,**kw):
+                calls.append(kw);self.receipts.append({'ok':True,'attempt_id':str(len(calls))})
+                return json.dumps({'status':'ready','reason':'Supported scope.','meaning':{'thesis':'Limited claims need limits.','reader_consequence':'Check applicability.','facts':[{'claim_id':'C1','source_id':'S1','locator':'Abstract'}],'qualification':'One study only.'},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Full study sentence supports the limited observation.'}]})
+        monkeypatch.setattr(m,'CodexProvider',Provider)
+        def engine(req,**kw):
+            bundle=kw['generator'].keywords['editorial_brief']
+            if revision:
+                context=bundle['revision_context']
+                assert context['original_text']=='An original text needing fuller reasoning.'
+                assert context['candidate_hash']==text_hash(context['original_text'])
+                assert context['feedback']=='Develop the reasoning beyond the first comparison.'
+                assert context['parent_job']=='parent'
+                assert 'not factual evidence' in context['instruction']
+            else:assert 'revision_context' not in bundle
+            assert req.editorial_handoff['meaning']['facts'][0]['text'] in req.evidence[0].fact
+            return m.LinkedInContentRequest if False else Result()
+        class Result:
+            def model_dump(self):return {'selected_candidate':{'body':'A selected qualified body.','content_sha256':text_hash('A selected qualified body.')},'visual_asset':{'status':'deferred'}}
+        monkeypatch.setattr(m,'generate_content',engine)
+        app=Application(s,CodexConfig(tmp_path,Path('/python'),'sha','fixture'))
+        extra={}
+        if revision:
+            s.admit('parent',{},{});s.finish('parent','completed',{'selected_candidate':{'body':'An original text needing fuller reasoning.','content_sha256':text_hash('An original text needing fuller reasoning.')}})
+            extra={'parent':'parent','new_budget':True,'notes':'Develop the reasoning beyond the first comparison.'}
+>       first=app.create('one','A useful ordinary topic',**extra)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_operational_positive.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/operational.py:116: in create
+    return self.resume(job)
+           ^^^^^^^^^^^^^^^^
+src/app/operational.py:189: in resume
+    result=generate_content(request,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = LinkedInContentRequest(request_id='one', origin='manual', topic='A useful ordinary topic', persona_key='graham', writi...dy', fact='A study reported a limited observation.', url='https://example.org/paper')], voice_examples=[], hashtags=[])
+kw = {'generator': functools.partial(<function run_generation at 0x7de269c03420>, llm_client=<src.app.llm.LLMClient object ...tools.partial(<function plan_visual_asset at 0x7de269c03d80>, client=<src.app.llm.LLMClient object at 0x7de269ef7890>)}
+
+    def engine(req,**kw):
+        bundle=kw['generator'].keywords['editorial_brief']
+        if revision:
+>           context=bundle['revision_context']
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'revision_context'
+
+tests/test_operational_positive.py:27: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_operational_positive.py::test_public_create_progression_duplicate_and_shared_feedback_without_api[True]
+1 failed, 15 passed in 0.33s

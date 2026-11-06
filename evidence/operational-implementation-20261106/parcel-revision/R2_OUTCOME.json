@@ -1,0 +1,15 @@
+{
+  "request_id": "graham-parcel-revision-20261106-r2",
+  "exit": 2,
+  "state": "failed",
+  "seconds": 25.15112400241196,
+  "admission": "graham-parcel-revision-20261106-r1",
+  "new_budget_explicit": false,
+  "model_stages_before": 23,
+  "model_stages_after": 24,
+  "new_model_stage_reservations": 1,
+  "selected_hash": null,
+  "original_attempt_bytes_unchanged": true,
+  "result_hash": "a39138c8a9ce5acca3670da37203b027e69e28b8ce6abdc07bca20d1061bed37",
+  "original_admission_age_at_completion": 508.126008272171
+}

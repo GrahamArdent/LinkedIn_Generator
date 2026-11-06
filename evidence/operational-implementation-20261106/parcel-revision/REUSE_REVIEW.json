@@ -1,0 +1,9 @@
+{
+  "status": "SCOPED_CORRECTED_REUSE_SOURCE_CLEAR",
+  "reviewer": "Fresh-context /root/revision_handoff_review; source review only, no tests run",
+  "candidate": "bc6aca18f737761ee9cc5d6de28828f56b7c8816",
+  "corrected_finding": "EVIDENCE_REQUEST_MISMATCH reproduced and fixed by recomputing updated request hash before compile",
+  "fresh_findings": [],
+  "preserved": "Strict parent validation, deepcopy, identical intent/voice/source predicate, revalidation, no budget or dispatch rule changes",
+  "proof_limit": "Transport/validation code scope only; actual prose quality and human acceptance separate"
+}

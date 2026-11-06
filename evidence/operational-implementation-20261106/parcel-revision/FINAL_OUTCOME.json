@@ -1,0 +1,233 @@
+{
+  "status": "GO_REVISED_PACKAGE_HUMAN_REVIEW_PENDING",
+  "request_id": "graham-parcel-revision-20261106-r3",
+  "installed_revision": "855da306d9810f466ffa06d1756b8cd4d1583b02",
+  "admission": "graham-parcel-revision-20261106-r1",
+  "new_budget_explicit": false,
+  "aggregate_model_executions": 11,
+  "aggregate_active_bridge_seconds": 174.42748170159757,
+  "actual_api_spend": 0,
+  "model": "gpt-6-sol",
+  "reasoning": "medium",
+  "whole_admission_age_at_completion": 862.9430959224701,
+  "selected_hash": "1e347567ab4d5217a4c757a1546c9013525825463138a3f4480db2202a1e82b7",
+  "visual_hash": "1e347567ab4d5217a4c757a1546c9013525825463138a3f4480db2202a1e82b7",
+  "visual_status": "planned",
+  "word_counts": {
+    "graham-q6-usable-completion-20261106": 121,
+    "graham-parcel-revision-20261106-r1": 126,
+    "graham-parcel-revision-20261106-r3": 215
+  },
+  "word_count_correction": "Firstattempt126 versusoriginal121; earlier shorter claim was incorrect. Length alone is not acceptance.",
+  "essential_checks": {
+    "argument_voice": {
+      "reason": "Voice fidelity: spare, conversational wording fits the selected style. Construction: the parcel comparison develops through first output, remaining work and delivery; the evidence supports the distinction, and the ending follows from it.",
+      "verdict": "pass"
+    },
+    "factual_integrity": {
+      "reason": "Stanford\u2019s 5,172 agents, 15% average gain and worker differences match the supplied source. METR\u2019s developer reports and unreliable later estimate are attributed and qualified; the post does not claim checking caused either result.",
+      "verdict": "pass"
+    },
+    "practical_value": {
+      "reason": "The post gives readers a decision criterion: count checking, correction and completion before deciding whether AI saves effort.",
+      "verdict": "pass"
+    },
+    "reader_relevance": {
+      "reason": "Business and IT leaders can follow the distinction between fast output and usable finished work, and see why it matters when judging AI savings.",
+      "verdict": "pass"
+    }
+  },
+  "inherited_preparation_from": "graham-parcel-revision-20261106-r1",
+  "original_parent_hash": "c35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127",
+  "replay_model_count_before": 28,
+  "replay_model_count_after": 28,
+  "replay_new_calls": 0,
+  "same_id_create_same_result": true,
+  "changed_input_conflict": true,
+  "all_attempt_bytes_unchanged_on_replay": true,
+  "original_attempt_bytes_unchanged_during_revision": true,
+  "jobs": 18,
+  "voice_examples": 0,
+  "publication_approved": false,
+  "human_acceptance": null,
+  "new_genuine_subjects": 0,
+  "receipts": [
+    {
+      "job": "graham-parcel-revision-20261106-r1",
+      "attempt_id": "attempt-2be95f57fc4943e4aa76b37719e108ab",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 7.372365556657314,
+      "result_sha256": "37c453739335642d0691ec1f59fca536d83ce357e063417de9da8cb0a6a5eb1c",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 9378,
+        "output_tokens": 186,
+        "reasoning_output_tokens": 60
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r1",
+      "attempt_id": "attempt-06c427fe37e04bf9913cd0245dfd9823",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 16.044756665825844,
+      "result_sha256": "40af7f723087795bd93ad36f87f7e342ba624360f922fc2f0438c2d7b7dd3556",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 25534,
+        "output_tokens": 692,
+        "reasoning_output_tokens": 516
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r1",
+      "attempt_id": "attempt-214d496c9e7a491d947b4c304bf06cda",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 11.788563360460103,
+      "result_sha256": "256b0c6c6b6ec2490cc6086abaecca49a6abb904d46a6916d6c1505544a8b089",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 25710,
+        "output_tokens": 440,
+        "reasoning_output_tokens": 241
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r1",
+      "attempt_id": "attempt-037bccf13edc44dab7a4e7435efacbfa",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 22.55023950524628,
+      "result_sha256": "748478dd32da4aa32d95ea430e8c7bcab433837cf1245ce18bf5dc1720f43480",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 23702,
+        "output_tokens": 995,
+        "reasoning_output_tokens": 373
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r1",
+      "attempt_id": "attempt-176e73e9edc74485bf5d8ea00efd0d24",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 15.062031437642872,
+      "result_sha256": "01b918f1d91498e42063974510e358a4e50ef57fab73b2de016d015835f48c7e",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 26100,
+        "output_tokens": 616,
+        "reasoning_output_tokens": 305
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r1",
+      "attempt_id": "attempt-a3742576bf0f4003b2c842de8e4e5656",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 20.270768139511347,
+      "result_sha256": "cc2488e65ea66d49c2cff47c13544d83e6e1ff5bc224abe952bbde06a1494bcd",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 10057,
+        "output_tokens": 856,
+        "reasoning_output_tokens": 516
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r2",
+      "attempt_id": "attempt-3626ecfc0a074ded96e82199b98117b9",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 23.978259381838143,
+      "result_sha256": "701ca7f4c771d9a5e125f88d470742a1d35650a523e68e06ff1d264590b7588c",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 23593,
+        "output_tokens": 1089,
+        "reasoning_output_tokens": 416
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r3",
+      "attempt_id": "attempt-9bbe37fc2f7d42aab60d9db5d0196017",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 7.7136987671256065,
+      "result_sha256": "cdfcc2e83962978eb9e657b3fa2083f26990a659ec99a1f8faa377e5560f92d1",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 9370,
+        "output_tokens": 208,
+        "reasoning_output_tokens": 86
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r3",
+      "attempt_id": "attempt-fb7e739acccc4f4daf02c4db11e32975",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 16.790674487128854,
+      "result_sha256": "a0ae1bb8a2a7b180b2fa27151f0760f4debebabb325ec733c88ea459b5c2351f",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 26199,
+        "output_tokens": 736,
+        "reasoning_output_tokens": 461
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r3",
+      "attempt_id": "attempt-b4e392850b8f4fc784e876b79b14f967",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 14.307284135371447,
+      "result_sha256": "44a1949156d58aa526b978b4993233ed4e709c5046a749dc665f757e1c04dd79",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 26716,
+        "output_tokens": 512,
+        "reasoning_output_tokens": 168
+      }
+    },
+    {
+      "job": "graham-parcel-revision-20261106-r3",
+      "attempt_id": "attempt-b634233f329f421ea235464e23675612",
+      "model": "gpt-6-sol",
+      "auth": "chatgpt",
+      "stage_state": "completed",
+      "seconds": 18.54884026478976,
+      "result_sha256": "a2e7ad51cfc27de0a883c314f5d72f05e8afafd632984bb809259fea84e5d169",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7040,
+        "input_tokens": 10150,
+        "output_tokens": 782,
+        "reasoning_output_tokens": 455
+      }
+    }
+  ],
+  "proof_limit": "Installed revision/feedback transport, guarded unchanged-meaning reuse and saved reviewable package. Actual human quality/corpus/effort/visual-value/render/publishing gates remain."
+}

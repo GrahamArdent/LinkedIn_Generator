@@ -1,3 +1,17 @@
+# Current continuation — revised parcel ready for actual human review
+
+Graham explicitly resumed R5/R7 revision. Current candidate graham-parcel-revision-20261106-r3 is saved:215words, all4essentials pass, selected/export/plannedvisual hash1e347567ab4d5217a4c757a1546c9013525825463138a3f4480db2202a1e82b7. Same r1admission11/12calls, completeby862.94wallseconds/API0; original r1complete and r2malformed-preparation failure preserved. No new subject or budget reset.
+
+Original parcel c35ee0... remains121words; firstattempt r1was126, so the initial shorter description was incorrect. The actual gap was similarly compressed development and missing original/feedback writer context. Both operational handoff/reuse fixes merged/installed at855da306d9810f466ffa06d1756b8cd4d1583b02;325native/clean/installedtests,117files and actual writer/export readback verified. Runtime unchanged; previous4569997rollback saved. Latest owner evidence is parcel-revision/{REPORT.md,FINAL_OUTCOME.json,INDEPENDENT_INSTALLED_READBACK.json}.
+
+Preserve original B, clock and parcel, all old failures/subjects/calibration and admissions. R5 actual human-approved example lifecycle remains unmet; no keep/light, actual editingeffort, humanquality orvoiceapproval inferred. R8 rendering/Dedication publishing stays gated. Continued merge/install/testing/applicable-CI authority persists.
+
+RESUME_AT: present and retain actual Graham feedback on exact R3text. Reopen/export is0calls; do not regenerate completed work. Original revision admission wallcap has expired; a further deliberate model operation needs its own actual admission, never silent renewal. No background work after turn.
+
+---
+
+# Prior repair checkpoint — historical
+
 # Current continuation — parcel revision explicitly resumed
 
 Graham explicitly authorized the next substantive parcel revision under the existing R5/R7prompt/plan. Earlier editorial deferral is lifted for this bounded revision; no voice-example/render/publication approval. Original parcel hashc35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127 stays immutable.
