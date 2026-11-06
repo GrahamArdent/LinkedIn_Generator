@@ -35,7 +35,13 @@
     "selected_voice": "concise_challenger v2",
     "structure": "graham-structured-v1 v1 default literal progression",
     "blind_review": "trial/review.md",
-    "human_judgments": null
+    "human_judgments": {
+      "preferred_blind_label": "B",
+      "feedback_record": "HUMAN_FEEDBACK.json",
+      "keep_edit_classification": null,
+      "numeric_ratings": null,
+      "measured_editing_minutes": null
+    }
   },
   "completed_steps": [
     "Q1",
@@ -44,7 +50,7 @@
     "Q4",
     "Q5 machine portion"
   ],
-  "first_unmet_step": "Q5 actual Graham human quality/voice/construction/usefulness/edit-effort judgment",
+  "first_unmet_step": "Q5 editorial follow-up: B preferred; operator asks about comparisons/symbolism. Preserve exact baseline and consider one deliberate symbolic treatment; no new subject or regeneration inferred.",
   "blocked_dependency": "Q6 distinct concept requires initial human disposition; no new subject launched",
   "gate_owner": "Graham",
   "required_action": "Review blind DraftA/B; give preference and keep/light/structural/reject, voice/insight/usefulness and actual editing effort when available",
