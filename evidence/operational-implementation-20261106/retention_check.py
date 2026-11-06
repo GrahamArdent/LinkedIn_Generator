@@ -25,6 +25,11 @@ ITEMS=[
  ('q6_human_remaining','CURRENT_WORK_PACKET.md','Graham disposition of the saved parcel candidate'),
  ('merged_composition','evidence/operational-implementation-20261106/MERGED_COMPOSITION.json','29dff9be405b568483d3f69da20e2831ca40190e'),
  ('render_publish_gate','CURRENT_WORK_PACKET.md','R8 rendering/Dedication publishing stays gated'),
+ ('parcel_critique','CURRENT_WORK_PACKET.md','too short, bland, does not capture enough'),
+ ('editorial_deferral','CURRENT_WORK_PACKET.md','address the draft later'),
+ ('source_negatives','evidence/operational-implementation-20261106/r2-discovery/REPORT.md','These negative receipts remain'),
+ ('source_proof_limit','evidence/operational-implementation-20261106/r2-discovery/REPORT.md','not general research coverage'),
+ ('feed_not_facts','docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md','feed snippets are never facts'),
 ]
 def check(items):
  assert len(items)==len(ITEMS) and {i[0] for i in items}=={i[0] for i in ITEMS},'missing item'
