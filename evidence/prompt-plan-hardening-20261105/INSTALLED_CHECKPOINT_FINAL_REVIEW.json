@@ -1,0 +1,25 @@
+{
+  "status": "SCOPED_CLEAR",
+  "reviewer": "/root/review_candidate",
+  "scope": "Fresh independent corrected status-pair and current execution/retention checkpoint; prior code/source review retained for matching bytes",
+  "candidate_sha256": {
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0d66d1f02e00bc9a4d1f3898c3ca8e30ed76aff889016c20f4312262af459ceb",
+    "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "9c80fe6c322296b4576e4fc1c2eba92a361a107b213b73b2c066a153cd325fef"
+  },
+  "material_findings": [],
+  "actual_independent_checks": [
+    "All61 trial manifest hashes",
+    "Saved bundle equality and prepared handoff/control equality",
+    "Six provider receipts",
+    "Selected/visual hash parity",
+    "Human-decision fields null",
+    "Retention69/69 with22 baseline files and both rejected negative controls"
+  ],
+  "current_next_step": "Q5 actual Graham judgments of exact stored DraftA/B; Q6 waits",
+  "product_outcome": "Q1\u2013Q4 and Q5 machine portion complete, not whole26AT/11E2E",
+  "native_mutations_or_calls_in_review": 0,
+  "invalidation_conditions": [
+    "Material instruction/candidate/owner basis changes require affected review",
+    "Status does not close human acceptance or later26/11 gates"
+  ]
+}

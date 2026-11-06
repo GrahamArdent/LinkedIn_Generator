@@ -1,5 +1,5 @@
 {
-  "audited_source_set": "Original SOURCE_SET.json 22 baseline files and TEMPLATE_SOURCES.json; current full pair at fd701e9 plus prompt4.2 correction; REQUEST.json; current canonical identities in CURRENT_PROTOCOL_SOURCES.json. Enumerated known obligations only. Current execution instruction and structure-install-implementation-20261105/{PROGRESS,QUALIFICATION,INSTALLATION,RESULTS,REPLAY,EXECUTION_REQUEST} records; product/source manifest and original native receipts remain with that owner. Current plan status reconciliation is bound by the current RESULTS.json pair hashes; original bindings remain historical PR35 receipts.",
+  "audited_source_set": "Original22 immutable baseline files plus OPERATIONAL_SOURCE_SET.json19 exact current source files at6b6b243; current available conversation decisions/audit and OPERATIONAL_REQUEST.json; current canonical protocol identities; all items below mapped to activepair/retrievableowner/explicit historical disposition. Known declared source set only.",
   "items": [
     {
       "id": "objective",
@@ -15,9 +15,9 @@
       "required_information": "Preserve existing ModeC execution spine",
       "location": {
         "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
-        "literal": "not another master plan"
+        "literal": "same completion plan"
       },
-      "disposition": "retained in active complete pair or canonical referenced owner"
+      "disposition": "Existing spine preserved; retained Q and new active R are phases of this same canonical plan"
     },
     {
       "id": "planning_boundary",
@@ -537,9 +537,9 @@
       "required_information": "Productstepsonlyinplan executionmechanicsonlyinprompt",
       "location": {
         "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
-        "literal": "This completion game plan alone owns product steps Q1\u2013Q6"
+        "literal": "This completion game plan alone owns active R1\u2013R8 and retained Q1\u2013Q6"
       },
-      "disposition": "retained scoped autonomy adaptation; not central runtime enforcement"
+      "disposition": "Single owner expanded for adopted operationalphase; no parallel product checklist in prompt"
     },
     {
       "id": "later_calibration",
@@ -621,6 +621,366 @@
         "literal": "TECHNICAL_INSTALL_GO_HUMAN_REVIEW_PENDING"
       },
       "disposition": "Current proved execution checkpoint; former planning/installed statements retained historically, not new authority"
+    },
+    {
+      "id": "self_operating_request",
+      "required_information": "Latest request and independent installed product goal",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_REQUEST.json",
+        "literal": "a final working product that works by itself"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "audit_inputs",
+      "required_information": "Assistant-built evidence/meaning is a real workflow gap",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_AUDIT.md",
+        "literal": "Input preparation remains assistant-assisted"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "audit_registry",
+      "required_information": "Directory-scoped deduplication and manual unknown recovery gap",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_AUDIT.md",
+        "literal": "Changing directories can evade lookup"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "audit_legacy",
+      "required_information": "QualifiedCLI does not qualify legacy/directAPI/UI",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_AUDIT.md",
+        "literal": "does not automatically upgrade legacy"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "audit_docs",
+      "required_information": "Oldquickstart/roadmap drift preserved and flagged",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_AUDIT.md",
+        "literal": "Quick-start advertises old0c099d7"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "audit_dependencies",
+      "required_information": "Current runtime coupled to development/client paths and Astra",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_AUDIT.md",
+        "literal": "Runtime model remains gpt-6-astra/medium"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "audit_feedback",
+      "required_information": "Feedback helpers are not integrated persistent voice learning",
+      "location": {
+        "path": "evidence/prompt-plan-hardening-20261105/OPERATIONAL_AUDIT.md",
+        "literal": "do not persist/activate them"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "draft_b_preference",
+      "required_information": "Exact B preference preserved without inventedlabels",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "symbolism_adopted",
+      "required_information": "One sustained analogy accepted; narrative separate fromvoice/facts",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Graham adopted the recommendation to try one sustained"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "engine_frozen",
+      "required_information": "Freeze existing engine; operationaladapters only",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "freezing the existing writing engine architecture"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "positive_self_operation",
+      "required_information": "Ordinary positive input must really finish withoutchatbundles",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "A known positive topic must actually"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "truthful_insufficient",
+      "required_information": "Source-insufficientHOLD is not positiveworkflow success",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "cannot masquerade as a successful generated post"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "sequencing_correction",
+      "required_information": "Independent operationalwork no longerblockedbyoptionalP2labels",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "prior sequencing that made all operational work wait"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "registry_global",
+      "required_information": "Logical request identity across directories/adapters",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "irrespective of caller/output directory"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "stable_data_backup",
+      "required_information": "Persistent userstore outside release with explicitrestore",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Back up/restore registry"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "stage_original_recovery",
+      "required_information": "Crash/reservation/result/commit reconciliation no relaunch",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "reconstruct accepted\n  state without redispatch"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "legacy_import",
+      "required_information": "Preserve oldrecords/policies/collisions/eligibility",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Import/index retained records non-destructively"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "research_outsidechat",
+      "required_information": "Research capability must really execute outsideChatGPT",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "ChatGPT-only search tools are not an installed route"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "research_positive_admission",
+      "required_information": "Route qualification from topic andURLs exactpassages",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "bare-topic discovery and URL-based"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "url_source_safety",
+      "required_information": "Finite publicURLfetch and promptinjection protection",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "unsafe redirects/DNS changes"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "meaning_autonomous",
+      "required_information": "Application structured meaning/evidence withinbudget",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "not unrecorded assistant authorship"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "runtime_reproducible",
+      "required_information": "Remove dependency on disposabledevelopmentenv",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Release runtime must not depend on the old development"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "economical_model",
+      "required_information": "Qualify actual6.1SOLmedium id no silentAstrafallback",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Qualify the requested economical default,6.1 SOL"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "budget_total",
+      "required_information": "AllLLMstages persisted cap12/900/API0 +wall bound",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "same900-second wall deadline"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "normal_entry",
+      "required_information": "One installedcreate/status/list/show/resumesharedservice",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "one ordinary installed create/resume workflow"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "typed_status",
+      "required_information": "Distinct truthfulstatusfailureandqualifiedoutcomes",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "different truthful outcomes"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "feedback_persistence",
+      "required_information": "Actual exactcandidatefeedback reads0calls",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Persist feedback through the same application"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "edit_invalidation",
+      "required_information": "Edits create linkedrevisions andinvalidate staleapproval",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Human edits create linked candidate revisions"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "explicit_voice_activation",
+      "required_information": "Versioned max3 examples activatedonlyexplicitapproval",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "An explicit activation"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "selected_export",
+      "required_information": "Exact selectedJSON/MD notrevertedoriginal",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "never the legacy top-level original by accident"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "shared_ui",
+      "required_information": "Same serviceandID actualmobilebrowserparity",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "No independent UI prompts, generator, registry, budget"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "entry_coverage",
+      "required_information": "Route/deprecatelegacy preserveotherpersona",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Legacy\n  routes must be explicitly deprecated or routed compatibly"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "real_independent_acceptance",
+      "required_information": "Installedpositivepaths withouthelpers plusfailures",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "without chat-built JSON/bundles/helpers"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "quality_transfer",
+      "required_information": "RetainedQ6andfirstsix corpus gates no padding",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Complete Q6's genuinely different-concept transfer"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "real_docs_handoff",
+      "required_information": "One topcheckpoint andverifiedhelp",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "one current checkpoint at the top"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "renderer_boundary",
+      "required_information": "Actualrenderedimages/carousel andpaidexceptiongate",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "API0 remains controlling until a concrete paid exception"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "publisher_boundary",
+      "required_information": "Dedication exactapprovedexternalpublishURLreadback",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "independent URL/URN readback"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "completion_levels",
+      "required_information": "TechnicaloperationalGO vswhole26/11product",
+      "location": {
+        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "literal": "Technical self-operation GO requires R1\u2013R6"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "prompt_standalone_proof",
+      "required_information": "Chat-onlyroutes/manualbundles cannotproveselfoperation",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "a chat-only search route, manually built bundle"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
+    },
+    {
+      "id": "prompt_continue_independent",
+      "required_information": "Continueindependentwork acrossrealgates",
+      "location": {
+        "path": "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md",
+        "literal": "Continue all admitted independent work"
+      },
+      "disposition": "Active R phase, prompt mechanism or retrievable current audit/source; no productimplementation claimed"
     }
   ]
 }

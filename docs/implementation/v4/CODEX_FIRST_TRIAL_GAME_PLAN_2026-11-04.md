@@ -1,5 +1,5 @@
 # LinkedIn Generator — completion game plan
-Updated November 5, 2026. Current authority pointer: CURRENT_WORK_PACKET.md (repository root).
+Updated November 5, 2026. Current resume pointer: CURRENT_WORK_PACKET.md (repository root).
 Execution entry: LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md.
 Broader P0–P7 roadmap: LINKEDIN_GENERATOR_GAME_PLAN_V4_2026-11-04.md.
 Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTIVES_AND_SUCCESS_CRITERIA_V4_2026-11-04.md.
@@ -8,10 +8,10 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
 
 | Concern | Observed state |
 |---|---|
-| Active scope | Graham-only Q1–Q4 complete; Q5 machine package complete, actual human judgment first unmet |
+| Active scope | Self-operating authoring phase R1–R8 below; R1 first unmet technical step. Q1–Q4 complete, Q5 machine package complete; B preferred, symbolic refinement requested |
 | Installed product |5bd3478709d98e5eb3ff5fd11168718aa3868cbd;275 installed tests; previous2c2daf3 rollback |
 | Current technical proof | evidence/structure-install-implementation-20261105/{QUALIFICATION,INSTALLATION,RESULTS}.json;275 local/archive/installed tests and actual installed package; earlier receipts historical for unchanged bytes |
-| Editorial feedback | Version1 voice preferred, construction rejected; structured chat72946 positively reviewed; installed structured pair now awaits actual Graham judgment |
+| Editorial feedback | Version1 voice preferred, construction rejected; structured chat72946 positively reviewed; Graham prefers installed DraftB and adopted the one-comparison recommendation; keep/edit ratings, actual effort and publication approval remain unasserted |
 | Scope/research/references | GRAHAM_CONTENT_DIRECTION_2026-11-05.md and evidence/graham-black-box-voices-20261105/STRUCTURE_FEEDBACK.json |
 | Prior Challenge | evidence/structure-install-challenge-20261105/CONVERGENCE.md cleared its exact earlier pair for planning; later edits require current review |
 | Current pair audit | evidence/prompt-plan-hardening-20261105/RESULTS.json; not a new implementation/release proof |
@@ -19,21 +19,21 @@ Detailed acceptance definitions remain solely in LINKEDIN_GENERATOR_TEST_OBJECTI
 
 ## One owner per concern
 - GRAHAM_CONTENT_DIRECTION_2026-11-05.md owns editorial intent, the scaffold and recorded feedback.
-- This completion game plan alone owns product steps Q1–Q6, dependencies, budgets, tests, release
+- This completion game plan alone owns active R1–R8 and retained Q1–Q6, dependencies, budgets, tests, release
   sequence, stop conditions and technical/editorial completion boundaries. It remains within M1–M5.
 - LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md owns execution mechanics: discovery,
   bounded autonomous continuation, receipt recovery, safe handoff and final reporting. It points here
   instead of maintaining a second product checklist.
 - The acceptance document alone defines detailed AT/E2E success criteria; the broader P0–P7 roadmap
   owns later dependencies. Referenced criteria remain binding without duplicating all their text here.
-- CURRENT_WORK_PACKET.md is a derived resume pointer to the first unmet Q step and evidence.
+- CURRENT_WORK_PACKET.md is a derived resume pointer to the first unmet active step and evidence.
   It cannot override the plan, accepted user decisions or current factual runtime state.
 - Audit/Challenge receipts certify their exact reviewed snapshots, not later changes. Historical
   security/style diagnostics remain immutable evidence, not the current generation target.
 
-## Active structure-to-install slice — first unmet Q step
+## Retained structure-to-install slice — Q1–Q6 status and obligations
 
-This is the current bounded work inside the existing M1–M5 spine, not another master plan.
+This retained slice records the completed foundation and still-open editorial obligations inside M1–M5. The R sequence below owns the next operational work; do not restart completed Q steps.
 Goal: make the Graham workflow deliberately prepare structure, carry it through actual writing/review,
 and run from a verified fixed release. “Reliable” means repeatable preparation, traceable execution,
 coherent reviewed output and safe read/recovery behavior; deterministic prose is not promised.
@@ -146,7 +146,7 @@ Technical install GO is not approval of the new post or the complete26/11 produc
   construction separately, keep/light/structural/reject, usefulness and actual editing effort. Ask only for
   missing judgments; already recorded feedback is retained. Model scores/review never substitute for this.
 Expected: real installed review package or precise nonterminal failure, with no claim of accepted prose
-until human disposition. This is the next meaningful operator milestone; stop here for missing judgment.
+until human disposition. This remains the next editorial milestone; missing judgment gates the dependent editorial action, while independently admitted R work continues.
 
 ### Q6 — transfer, bounded acceptance and closure (M5)
 - [ ] After initial human disposition, test useful delivery traits on one genuinely different concept,
@@ -171,7 +171,7 @@ active; its completed proof and exact Q5 human checkpoint are in evidence/struct
 checks, API0, budget, human editorial/render/publish gates and privacy boundaries remain. Use directly
 callable routes first, exact selectors, original receipt lookup for unknown effects, Paths diagnostics on
 real failure and independently verified target readback. Never infer authority or global outage from lookup.
-Q5 is technical completion with human review pending, not overall product acceptance. Final editorial
+The retained Q5 package is a technical milestone with human review pending, not operational or overall product acceptance. Final editorial
 reliability requires actual human-supported transfer and retained later acceptance obligations. At a
 machine-solvable blocker continue legitimate independent work; stop only at a precise budget, judgment,
 external or owner gate. Preserve rollback and active work; never reset the project to Stage0.
@@ -232,3 +232,223 @@ Before material handoff/closure, run known-information retention and semantic co
 including a missing-item/altered-byte negative control. Scope covered/total to the enumerated source set;
 retain omissions and unproved future work. Product/source changes require new affected proof; a new
 chat alone does not invalidate unchanged evidence.
+
+
+## Active self-operating authoring completion — R1–R8
+
+This is the next phase of this same completion plan. It implements the accepted read-only audit
+recommendation, freezing the existing writing engine architecture while completing its operational
+adapters. Planning/authoring/review is this invocation's scope; product implementation starts under
+an execution instruction. Existing merge/install/testing/applicable-CI authority persists. This does
+not reopen completed Q1–Q4 or reinterpret past trials as successful product acceptance.
+
+### Outcome, workflow and boundary
+A single installed local command, and later the thin UI using the same application service, accepts
+an ordinary topic, optional public source URLs or supplied notes, and optional voice/narrative selection.
+It discovers/qualifies evidence, prepares supported meaning and a deliberate structure, runs the
+existing draft/review/bounded-rewrite path, and saves an exact text/source/voice/visual-plan review
+package. It lists, reopens, exports and accepts actual feedback without a new model call. No hand-made
+request/source JSON, chat-only tool, evidence-driver script or silent assistant tailoring is needed.
+A source-insufficient input may truthfully return needs_more_evidence with one specific information
+request; it cannot masquerade as a successful generated post. A known positive topic must actually
+reach a reviewable saved package through the ordinary installed entry point.
+
+Keep Graham only, broad subjects, proportionate claims and no invented biography/credentials. Retain
+B (2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884) as a preferred baseline,
+not a publish approval or active voice example. Graham adopted the recommendation to try one sustained
+analogy while retaining its reasoning/scaffold. Select literal or symbolic deliberately; one comparison
+must have an explicit mapping and limit, illustrate rather than prove, and avoid mixed metaphors.
+Do not force symbolism into every post or confuse draft preference with a keep/light verdict.
+
+Workflow: topic/intent → evidence and limits → supported meaning + voice/narrative → no-model
+preparation → existing draft/four-essential review/at most one targeted rewrite → saved text and
+candidate-bound visual plan → actual human review. Later rendering and Dedication-owned publication
+retain their separate gates. Technical self-operation is distinct from human editorial acceptance,
+qualified visuals and the complete26-AT/11-E2E product.
+
+The prior sequencing that made all operational work wait on P2 human labels is superseded for these
+explicitly adopted, independently testable adapters. Human content/render/publish decisions remain
+gates on their own effects. Continue safe admitted R work while such decisions are pending; never
+fabricate labels or weaken P2 to make operational progress appear complete. This is a sequencing
+correction, not new publication authority or a new scheduler/service.
+
+### R1 — one durable request registry and truthful resume (first unmet)
+- [ ] Reuse typed requests/results, codex_trial receipts and the existing Codex client. Add the smallest
+  shared local application/store boundary; stdlib SQLite is the default for atomic unique job identity,
+  stage reservations and feedback references, with raw prompts/results as immutable files. No distributed
+  queue, second writing engine or ecosystem-wide controller. Keep user data/registry/raw artifacts in
+  an explicit stable data root outside release/development directories. Missing/misconfigured existing
+  storage must not silently initialize an empty store and relaunch old jobs. Back up/restore registry
+  plus immutable artifacts consistently; verify reopen by original IDs after relocation and upgrade.
+- [ ] Resolve request_id to one canonical job irrespective of caller/output directory. Freeze normalized
+  input plus resolved source/voice/structure/model/config identities before dispatch. Exact duplicate
+  returns the original receipt0calls; changed same-ID conflicts0calls, including from another directory
+  or adapter. Completed reads use original bindings despite current policy changes. New deliberate
+  revisions link the original and require explicit new identity; they do not reset budgets/history.
+- [ ] Reserve durable stage/attempt intent before model launch. On crash between provider result and
+  local commit, reconcile the original client attempt and hash-bound raw result; reconstruct accepted
+  state without redispatch. UNKNOWN/PENDING cannot be solved with a replacement job or retry. A proven
+  nondispatch may retry only under the original consumer contract, remaining budget and identities.
+- [ ] Import/index retained records non-destructively; preserve policy versions, native IDs, failed and
+  unqualified results, source limits and human sidecar feedback. Same-ID collisions or ambiguous old
+  subject eligibility remain explicit, never silently merged. Resolve first-six/8-subject accounting from
+  actual history before launching new genuine subjects; source-only/offline checks can proceed meanwhile.
+Proof: real subprocess cross-directory/CLI-adapter duplicates and conflicts, concurrent starts, crash
+at reservation/result/commit boundaries, corrupt records and resume with original client receipts.
+Only one dispatch occurs where admitted; unsuccessful work is never falsely suppressed as complete.
+
+### R2 — evidence and meaning preparation executable outside chat
+- [ ] Existing research.py/RAG are local CSV/citation helpers, not an online research service. Implement
+  a bounded evidence adapter in the same application for public source URLs and topic discovery. Reuse
+  any actually executable existing admitted route; ChatGPT-only search tools are not an installed route.
+  A no-key public primary-source discovery/metadata route (for example current Crossref/publisher/author
+  pages where suitable) is a candidate, to be selected and proven on the target, not asserted available.
+- [ ] Protect the current decision with a small route qualification: bare-topic discovery and URL-based
+  extraction must actually run from the installed/headless environment without a paid API or pasted
+  search results. Record query/URL, redirect/final identity, fetch time, content hash, exact supporting
+  passages, publisher, claim mapping, limits and material freshness. Cache/reuse valid source records;
+  snippets/metadata alone do not prove a factual claim. Primary-source coverage must fit the subject;
+  do not narrow Graham's interests to topics one provider happens to index.
+- [ ] Bound each job to at most8 discovery requests and6 source fetches, finite response sizes/timeouts,
+  within the shared900-second envelope. Admit only public HTTP(S) destinations; reject credentials,
+  private/loopback/link-local destinations and unsafe redirects/DNS changes. Treat fetched instructions
+  as untrusted data. No credential creation, authenticated scraping or paid fallback is implied.
+- [ ] Derive the explicit thesis, reader consequence,1–2 supported load-bearing facts and qualification
+  through strict structured output and existing handoff validators. This is application preparation,
+  not unrecorded assistant authorship. Every preparation/evidence-assessment model call consumes the
+  same12-call cap. Missing/private facts cause truthful needs_more_evidence, never invented experience.
+  Validate source attribution, contradictions and limits; hashing alone does not establish entailment.
+Proof: topic-only and URL-seeded source preparation, actual cited passage retrieval, irrelevant/thin/
+contradictory/unavailable sources, prompt injection and unsafe-URL negatives. If the discovery route is
+not qualified, R2 remains unfinished; do not label a manual source bundle autonomous research.
+
+### R3 — durable runtime, efficient model qualification and repairable installation
+- [ ] Package a reproducible app environment with pinned/tested dependencies, source/config manifests
+  and a bounded install/update/rollback command. Release runtime must not depend on the old development
+  .venv or disposable trial checkout. Retain a qualified immutable client dependency in an explicit runtime
+  location or dependency package, with its owner/version/hash; do not rewrite Resume Creator or use its
+  mutable working tree. Reuse the thin subscription bridge and existing secure ChatGPT authentication.
+- [ ] Expose model/reasoning in app configuration. Qualify the requested economical default,6.1 SOL
+  medium, against the target's actual supported model identifier and response/usage contract; do not
+  guess an alias or silently fall back to Astra/paid API. Existing Astra/medium receipts remain historical
+  and usable for their own outputs. If unsupported, preserve the exact compatibility gap and continue
+  independent work; a model-selection decision is narrower than an installation failure.
+- [ ] Count preparation, generation, review, optional rewrite/planning, visual plan and any admitted
+  comparison in one persisted per-package cap12 subscription executions/900 cumulative active CLI seconds,
+  API0. Record whole-job wall time and HTTP activity separately; the same900-second wall deadline also
+  bounds a standalone job. A comparison mode is explicit, not hidden routine generation cost.
+  Enforce aggregate caps across process restart, adapter/output changes and interrupted effects. Never
+  reset an existing exhausted admission by changing directories or revision labels.
+Proof: reconstruct the app on a clean designated local install path, verify hashes/imports/client binding,
+run with old development paths unavailable in a controlled environment, exercise rollback, bad config,
+unsupported model and budget-edge cases. Avoid moving or deleting working checkouts merely to test this.
+
+### R4 — one ordinary installed create/resume workflow
+- [ ] Extend the existing public CLI/application with create(topic/optionalURLs/notes/voice/narrative),
+  status/list/show/resume using R1–R3. Choose compatible command names once and use them consistently
+  in help/docs/UI. Existing prepare/generate/show and immutable historical replay remain compatible.
+- [ ] One create call owns the complete bounded stage progression: source acquisition → meaning and
+  narrative selection → existing preparation → original engine → four essentials → at most one targeted
+  rewrite if warranted → saved candidate/visual plan. Stages persist before and after effects; no helper
+  script manually drives internal steps or rewrites finished output to manufacture success.
+- [ ] Resolve voice separately from meaning/credentials, choose narrative deliberately (explicit caller
+  selection wins), preserve alternate beats/symbol mapping and the five-part default where appropriate.
+  Keep argument_voice findings distinct for voice and construction. No fifth check, numeric gate or
+  compulsory CTA/paragraph/headings. Keep original/rewrite/control histories separate and immutable.
+- [ ] Emit actionable typed statuses and a review package location; missing evidence, model failure,
+  unqualified text, budget exhaustion and unknown completion have different truthful outcomes. A visual
+  plan cannot be called an image. Automation ends at the actual required human judgment, not generic
+  permission or an unverified 'done' message. Known viable inputs must complete without chat intervention.
+Proof: fresh-process installed bare-topic create, URL-seeded create, explicit symbolic selection, same-ID
+reopen/resume/conflict, model outage/unknown and insufficient-evidence paths, with exact consumer prompts.
+
+### R5 — feedback, revisions, authorized voice updates and usable exports
+- [ ] Persist feedback through the same application, tied to exact candidate hashes; accept preference,
+  keep/light/structural/reject, reasons, factual/voice/construction/usefulness judgments and actual effort
+  when supplied. Missing labels stay pending. Import B's existing preference rather than ask again.
+  Read/review/feedback/export cannot invoke a model or external publisher.
+- [ ] Preserve original generated bytes. Human edits create linked candidate revisions and invalidate
+  stale factual/essential review, visuals, export readiness and approval until required revalidation.
+  Model-assisted revision is an explicit admitted operation with linked identity and remaining/newly
+  admitted budget, not a side effect of recording feedback or opening a page.
+- [ ] Reuse feedback.py helpers and versioned voice catalogue; only actual approval-bearing examples
+  are eligible, rejected/private facts do not leak into style, max3 examples injected. An explicit activation
+  creates a version/hash and preserves old runs. Preference alone never activates an example. Verify this
+  across the actual writer and new headless runs, not solely helper fixtures.
+- [ ] Add exact selected-text JSON/Markdown export and source/voice/structure/revision manifest, plus
+  list/history/readback. Export the selected revision, never the legacy top-level original by accident.
+  Block stale approved/export-ready claims after a material edit, preserve earlier artifacts as historical.
+Proof: feedback→explicit approved example→version activation→new run→old immutable reopening;
+reject/preference-only negatives, exact selected exports and edit-invalidates-review/visual/handoff.
+
+### R6 — thin review UI and one coherent supported entry path
+- [ ] Reuse the smallest maintainable existing UI surface if suitable; otherwise select a thin local
+  adapter when this phase is reached. No independent UI prompts, generator, registry, budget or scheduler.
+  Provide Voices/Create/Review/history/export over the same application and canonical IDs.
+- [ ] Make the normal Graham entry paths use the qualified preparation/state/budget service. Legacy
+  routes must be explicitly deprecated or routed compatibly; retain old results/persona separation, do
+  not delete historical Ardent code. DirectAPI/UI parity must be proved before claiming universal coverage.
+- [ ] Verify mobile viewport usability, escaped model/user HTML, safe links, loopback default, and no
+  generation or publication on reload/read/preview/export. Public/remote exposure requires its actual
+  authentication decision; the local app does not need Supabase/Vercel or public hosting to work.
+Proof: actual browser/HTTP session sees the same CLI-created job/hash, new voice/revision is isolated,
+reload adds0calls, and unsupported/stale/unapproved actions fail visibly. Fixtures alone cannot pass P5.
+
+### R7 — installed self-operation, quality transfer and clean operational handoff
+- [ ] For every actual implementation boundary reproduce the defect first, run affected regressions,
+  then the full suite/clean archive at the coherent release. Inspect actual workflow triggers; run applicable
+  focused hostedCI after local pass within recorded authority. No current workflow means documented
+  NOT_APPLICABLE, not fabricated pass or reactivation solely for ceremony. Lint availability is truthful.
+- [ ] Run risk-triggered post-implementation adversarial closure on registry/claims/URL trust, persistence,
+  concurrency, budget and release changes; obtain independent whole-candidate review, fix material findings
+  and freshly review corrected interactions before release. Merge verified head, install exact qualified
+  bytes, retain rollback and independently read back actual user outcomes.
+- [ ] Demonstrate an installed complete positive create path using a bare topic and a separate URL-seeded
+  path without chat-built JSON/bundles/helpers; use retained genuine concepts where valid to avoid padding
+  the corpus. Source-only admission fixtures do not count as generated/human-accepted posts. Verify restart,
+  duplicate/cross-directory/read/export/feedback0calls, original UNKNOWN reconciliation and all bindings.
+- [ ] Incorporate the accepted one-comparison direction into one explicit symbolic treatment, preserving
+  B unchanged. Reuse earlier literal/symbolic evidence as scoped history, not installed current qualification.
+  Complete Q6's genuinely different-concept transfer after actual initial human disposition; other admitted
+  operational work must not wait for optional numerical labels. Use recorded judgments; never invent them.
+- [ ] Reconcile first-six history and perform the retained P2/calibration/six-pair/voice/originality/effort
+  gates within the existing8-subject envelope and individual12/900/API0 admissions. No new batch merely
+  fills counts, variants do not become new subjects, and insufficient eligible observations stay
+  NOT_YET_EVALUABLE. Actual human preference is evidence; green transport/model checks cannot replace it.
+- [ ] Rewrite the single quick-start/help around the actual installed revision and ordinary workflow,
+  finish correcting obsolete generate-without-prepare directions and historical90-gate statements
+  (planning banners now identify those old instructions as historical), and mark old
+  entry points/status appendices historical. Leave one current checkpoint at the top of CURRENT_WORK_PACKET,
+  retain history with owner references and avoid competing continuations. Keep this plan/prompt/evidence
+  synchronized by exact identities without reinstalling solely for documentation changes.
+Proof: a receiving fresh process/operator can follow help from the designated install, create a package,
+record feedback, export and reopen it without this chat. Report real session independence honestly.
+
+### R8 — finish retained visual/publication phases without bypassing approval
+- [ ] After accepted text/visual-planning prerequisites, implement/qualify P6 real single-image and
+  carousel rendering from exact approved candidate plans, human mobile inspection/alt text/value,
+  and bounded current provider cost. API0 remains controlling until a concrete paid exception is approved;
+  use an admitted existing included route only if it actually satisfies the renderer contract. If no route
+  is currently admitted, retain the exact provider/budget boundary; technical authoring work continues.
+- [ ] Complete P7 through current Dedication owner contracts, exact human-approved candidate/media
+  bindings, duplicate/stale/unknown negatives and separately authorized real LinkedIn publication with
+  independent URL/URN readback. No restoration of legacy scheduling or comments; no new publication
+  authority is inferred from merges, installation, a preferred draft or this planning request.
+Proof: AT11/12/13/17/25/26 and E2E07/08/09 actual owner-required evidence. Mock receipt or a JSON visual
+plan cannot close real render/publish acceptance. Preserve all other26AT/11E2E definitions unchanged.
+
+### Completion, gates and evidence ownership
+Technical self-operation GO requires R1–R6 plus R7's installed positive/negative workflow, docs and
+release proofs. Editorial reliability requires the actual retained human/corpus gates; whole-product
+completion additionally requires R8 and every applicable26AT/11E2E outcome. These are separate claims,
+not permission to quietly shrink the final target. A working local authoring product can be delivered
+while a separately authorized publishing effect remains pending, with the exact boundary disclosed.
+
+Use evidence/prompt-plan-hardening-20261105/RESULTS.json for current pair/review/retention bindings;
+evidence/structure-install-implementation-20261105/RESULTS.json retains the actual installed Q outcome.
+Extend the existing owner evidence index for R milestones, keeping historical raw receipts retrievable.
+One current continuation remains CURRENT_WORK_PACKET.md and its Library pointer. At material updates
+and before handoff/closure run the known-information inventory, missing-item/altered-byte controls and
+semantic complete-pair Challenge; report covered/total only for its declared source set. A source save,
+review or required readback failure remains nonterminal. Never claim all information anywhere, all future
+requirements, fresh-session success or a final product from mechanical retention or planning CLEAR.

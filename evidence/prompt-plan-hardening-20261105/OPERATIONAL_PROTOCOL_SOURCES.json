@@ -1,0 +1,28 @@
+{
+  "retrieval": "Actual current-default connectedGitHub in this invocation; both repository defaultbranches resolved main",
+  "sources": [
+    {
+      "repository": "GrahamArdent/PROGRAMSTART",
+      "path": ".github/prompts/start-programstart-project.prompt.md",
+      "blob_sha": "86692ba72f0ad779506acfe0e871473e5e20d523"
+    },
+    {
+      "repository": "GrahamArdent/PROGRAMSTART",
+      "path": "PROGRAMBUILD/PROGRAMBUILD_CHALLENGE_GATE.md",
+      "blob_sha": "053d528d0b9f81e41c29276c9c082123842eea11"
+    },
+    {
+      "repository": "GrahamArdent/PROGRAMSTART",
+      "path": ".github/prompts/programstart-convergence-packet.prompt.md",
+      "blob_sha": "49249725a54f16832ff1ca80fde3bac4934e0813"
+    },
+    {
+      "repository": "GrahamArdent/PROGRAMSTART",
+      "path": "PROGRAMBUILD/PROGRAMBUILD_PLANNING_OPERATING_MODEL.md",
+      "blob_sha": "8baaa601008efde6c05342ba23e20c9d9abd3952"
+    }
+  ],
+  "paths_entry_blob": "ba7463b91398ae9378a4ad09eba4974dedd5df40",
+  "skills": "Current installed autonomy-prompt-builder SKILL plus outputcontract; programstart-cycle-challenge SKILL; exact resource paths recorded in tool retrieval",
+  "reuse": "Canonical template/gate/convergence/operating identities unchanged from prior current owner proof; no central runtime enforcement claimed"
+}
