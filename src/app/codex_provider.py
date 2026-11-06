@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import time
 
 @dataclass(frozen=True)
 class CodexConfig:
@@ -28,20 +29,30 @@ class CodexProvider:
         self.runner = runner or subprocess.run
         self.receipts, self.error = [], None
 
-    def generate(self, *, model, system, user, temperature):
+    def reconcile(self, **args):
+        text=self._invoke(operation="recover_only",**args)
+        if not self.receipts[-1].get("cache_hit"):
+            raise CodexError("CODEX_RECONCILIATION_REQUIRED")
+        return {"text":text,"receipt":self.receipts[-1]}
+
+    def generate(self, **args):
+        return self._invoke(operation="execute",**args)
+
+    def _invoke(self, *, operation, model, system, user, temperature):
         if self.error:
             raise self.error
         if model != self.config.model:
             raise CodexError("CODEX_MODEL_MISMATCH")
         payload = {**{k:str(v) for k,v in asdict(self.config).items()},
                    "directory":str(self.directory),"run_id":self.run_id,
-                   "system":system,"user":user,"requested_temperature":temperature}
+                   "system":system,"user":user,"requested_temperature":temperature,"operation":operation,
+                   "remaining_wall_seconds":max(0.1,getattr(self,"deadline",time.time()+920)-time.time())}
         # Credentials stay in Codex's own authentication store.
         env = {k:os.environ[k] for k in ("HOME","PATH","CODEX_HOME","LANG","SSL_CERT_FILE") if k in os.environ}
         argv = [str(self.config.python),str(Path(__file__).resolve()),"--bridge"]
         try:
             completed = self.runner(argv,input=json.dumps(payload),text=True,capture_output=True,
-                                    timeout=920,env=env)
+                                    timeout=min(920,payload["remaining_wall_seconds"]),env=env)
             result = json.loads(completed.stdout)
             if not isinstance(result,dict) or type(result.get("ok")) is not bool:
                 raise CodexError("CODEX_COMPLETION_UNKNOWN")
@@ -76,13 +87,24 @@ def bridge(payload):
     schema={"type":"object","properties":{"text":{"type":"string"}},"required":["text"],"additionalProperties":False}
     # One shared invocation budget: each model request uses version/auth/exec.
     client=CodexClient(model=payload["model"],reasoning=payload["reasoning"],
-                       limits=Limits(max_launches=36,max_seconds=900,process_timeout=300))
+                       limits=Limits(max_launches=36,max_seconds=900,process_timeout=min(300,payload.get("remaining_wall_seconds",300))))
     request={"task":payload["system"],
              "input":payload["user"],
              "output_instruction":"Perform the task using the input. Put the exact requested output in the text field. If the task requests JSON, text must contain that JSON, not commentary.",
              "temperature_note":"Codex uses the pinned model/reasoning configuration; API temperature is not applied."}
     context=ExecutionContext(Path(payload["directory"]),payload["run_id"],"linkedin")
     try:
+        if payload.get("operation")=="recover_only":
+            from app.services.codex_cli_client import CONTRACT, CONFIG, INSTRUCTION, DISABLED, digest, reconcile_attempt
+            from app.services.run_records import json_bytes
+            binding={"contract":CONTRACT,"request":request,"schema":schema,"instruction":INSTRUCTION,
+                     "model":client.model,"reasoning":client.reasoning,"config":CONFIG,"disabled":DISABLED,
+                     "executable_sha256":digest(Path(client.executable).read_bytes())}
+            receipt=context.folder()/digest(json_bytes(binding))/"attempt.json"
+            if not receipt.is_file():
+                return {"ok":False,"code":"CODEX_RECONCILIATION_REQUIRED"}
+            result=reconcile_attempt(receipt,by="linkedin-operational-recovery",reason="Reconcile original exact prompt after local interruption; no redispatch")
+            return {"ok":True,**result,"source_sha":source,"auth":"chatgpt","execution_kind":"native_cli"}
         result=asyncio.run(client.execute_structured(request,schema,context))
         return {"ok":True,**result,"source_sha":source,"auth":"chatgpt","execution_kind":"native_cli"}
     except CodexFailure as exc:
