@@ -10,3 +10,5 @@ Hypothesis: discovery flattens all variants per work before applying the6target 
 Ruling: source-only diagnostics are independent of the deferred editorial revision and do not add a genuine generated subject or model attempt. Scope is improved target diversity, not guaranteed public access.
 
 Pre-flight interfaces: discovery feeds acquire; reserve/fetch/cache/model/meaning contracts unchanged. Existing four essentials and all human/render/publication gates remain controlling.
+
+Review correction:3P2counterexamples reproduced RED (null MIME, declared PDF primary without.pdf suffix, shared primary hiding unique HTML alternate). Normalize optional MIME, exclude all declared PDF URLs, continue on duplicates. Source-only candidate reached3distinctworks versus1, but0usable sources; broad research remains unqualified rather than inferred from target diversity.

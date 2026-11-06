@@ -117,3 +117,14 @@ def test_discovery_skips_unsupported_pdf_and_repeated_work_variants(monkeypatch)
            {'DOI':'10.1/b','resource':{},'link':[],'URL':'https://doi.org/10.1/b'}]
     monkeypatch.setattr(m.Evidence,'fetch',lambda *a,**kw:('https://api.crossref.org/works',json.dumps({'message':{'items':works}}).encode(),'application/json'))
     assert m.Evidence().discover('topic')==['https://publisher.example/a-html','https://doi.org/10.1/b']
+
+@pytest.mark.parametrize('works,wanted',[
+    ([{'DOI':'10.1/a','resource':{},'link':[{'URL':'https://author.example/a','content-type':None}]}],['https://author.example/a']),
+    ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/doi/pdf/10.1/a'}},'link':[{'URL':'https://publisher.example/doi/pdf/10.1/a','content-type':'application/pdf'},{'URL':'https://author.example/a','content-type':'text/html'}]}],['https://author.example/a']),
+    ([{'DOI':'10.1/a','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[]},
+      {'DOI':'10.1/b','resource':{'primary':{'URL':'https://publisher.example/shared'}},'link':[{'URL':'https://author.example/b','content-type':'text/html'}]}],['https://publisher.example/shared','https://author.example/b'])
+])
+def test_discovery_preserves_usable_alternates_in_mixed_publisher_metadata(monkeypatch,works,wanted):
+    import json
+    monkeypatch.setattr(m.Evidence,'fetch',lambda *a,**kw:('https://api.crossref.org/works',json.dumps({'message':{'items':works}}).encode(),'application/json'))
+    assert m.Evidence().discover('topic')==wanted

@@ -159,11 +159,15 @@ class Evidence:
             if doi:seen_works.add(doi)
             primary=w.get('resource',{}).get('primary',{}).get('URL')
             links=w.get('link',[])
-            candidates=[primary]+[x.get('URL') for x in links if x.get('content-type','').split(';')[0].strip().lower()=='text/html']
-            candidates += [x.get('URL') for x in links if x.get('content-type','').split(';')[0].strip().lower() not in ('application/pdf','text/html')]+[w.get('URL')]
+            typed=[(x.get('URL'),str(x.get('content-type') or '').split(';')[0].strip().lower()) for x in links]
+            pdf_urls=[u for u,kind in typed if kind=='application/pdf']
+            candidates=[primary]+[u for u,kind in typed if kind=='text/html']
+            candidates += [u for u,kind in typed if kind not in ('application/pdf','text/html')]+[w.get('URL')]
             for u in candidates:
-                if not isinstance(u,str) or not u or urlsplit(u).path.lower().endswith('.pdf'):continue
-                if u in urls:break
+                if not isinstance(u,str) or not u or u in pdf_urls or u in urls:continue
+                try:
+                    if urlsplit(u).path.lower().endswith('.pdf'):continue
+                except ValueError:continue
                 urls.append(u);break
         return urls[:6]
 
