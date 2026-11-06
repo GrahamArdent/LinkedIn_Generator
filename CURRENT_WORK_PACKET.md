@@ -515,3 +515,18 @@ binds the reviewed plan/prompt hashes and invalidation rules. Fresh delegated in
 Challenge is SCOPED_CLEAR; retention65/65 known obligations,22 baseline files,both negative controls.
 Plan unchanged; all26 AT/11 E2E and existing human/release gates retained. Q1 remains first unmet.
 This request qualifies the prompt package only; no product implementation or new installation occurred.
+
+
+## Current installed structured package — November 5, 2026
+Q1–Q4 complete. PR36 merged and fixed-release launcher installed5bd3478709d98e5eb3ff5fd11168718aa3868cbd;
+275 local,275 clean-archive,275 installed tests PASS. Independent source review found publisher-attribution
+bypass; reproduced/fixed with strict version typing and freshly reviewed CLEAR. Rollback2c2daf3 usable.
+Current execution evidence: evidence/structure-install-implementation-20261105/RESULTS.json.
+Q5 graham-structured-black-box-20261106 completed via installed prepare→normal generate: four essentials
+PASS, original selected, single-image plan exact selectedhash, directcontrol saved.6 subscription calls,
+18nativeCLI starts,106.016activeCLIseconds/API0. Show/two identical generate replays0calls; changed sameID
+conflicts0calls; all trial bytes unchanged. No rendering, publishing or automatic voice-example activation.
+First unmet: Q5 actual Graham judgments of blind DraftA/B in trial/review.md (same evidence directory).
+Do not relaunch/rewrite this completed package. Q6 distinct subject waits for initial human disposition.
+All26AT/11E2E, first-six eligibility/calibration/laterUI/API/render/publication gates retained. Historical
+Q1-first-unmet/install2c2daf3 statements above are superseded by this exact verified checkpoint.

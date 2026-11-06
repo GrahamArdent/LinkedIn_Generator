@@ -1,29 +1,25 @@
 {
   "status": "SCOPED_CLEAR",
-  "review": "Fresh delegated-model independent read-only corrected complete-pair semantic Challenge",
   "reviewer": "/root/review_candidate",
+  "scope": "Fresh independent corrected status-pair and current execution/retention checkpoint; prior code/source review retained for matching bytes",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "3dc12da81e1eb07843c0b53e445b1f6c607d62da053ee8dd274c7226b010a23b",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "0d66d1f02e00bc9a4d1f3898c3ca8e30ed76aff889016c20f4312262af459ceb",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "9c80fe6c322296b4576e4fc1c2eba92a361a107b213b73b2c066a153cd325fef"
   },
-  "reviewed_sources": "CURRENT_PROTOCOL_SOURCES.json, current installed builder/challenge skills, full corrected pair and linked current owners; still-valid historical evidence reused",
-  "counterexamples": [
-    "stale review bindings",
-    "CLI preparation bypass",
-    "changed structure under same ID",
-    "unknown outcomes/retries",
-    "replay after policy changes",
-    "resource exhaustion",
-    "premature human/release acceptance"
-  ],
   "material_findings": [],
-  "retention_observed": "65/65 enumerated obligations,22 baseline files,both negative controls rejected",
-  "invalidation_conditions": [
-    "Material plan/prompt bytes or controlling owner authority change",
-    "Material canonical protocol or instruction basis change",
-    "New evidence contradicts a controlling premise or relevant unresolved blocker",
-    "Implementation/release requires its actual independent proofs; planning review cannot supply them"
+  "actual_independent_checks": [
+    "All61 trial manifest hashes",
+    "Saved bundle equality and prepared handoff/control equality",
+    "Six provider receipts",
+    "Selected/visual hash parity",
+    "Human-decision fields null",
+    "Retention69/69 with22 baseline files and both rejected negative controls"
   ],
-  "implementation": "NOT_RUN",
-  "proof_limits": "Delegated model review, no product implementation/native generation/installation acceptance; save binding/readback required before handoff"
+  "current_next_step": "Q5 actual Graham judgments of exact stored DraftA/B; Q6 waits",
+  "product_outcome": "Q1\u2013Q4 and Q5 machine portion complete, not whole26AT/11E2E",
+  "native_mutations_or_calls_in_review": 0,
+  "invalidation_conditions": [
+    "Material instruction/candidate/owner basis changes require affected review",
+    "Status does not close human acceptance or later26/11 gates"
+  ]
 }

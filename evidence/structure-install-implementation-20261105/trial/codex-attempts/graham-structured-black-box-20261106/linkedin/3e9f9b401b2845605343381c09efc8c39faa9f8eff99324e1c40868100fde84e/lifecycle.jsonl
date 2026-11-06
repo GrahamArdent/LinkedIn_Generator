@@ -1,0 +1,5 @@
+{"thread_id": "01a1af00-785e-77d0-8263-383cc7cf2bb1", "type": "thread.started"}
+{"diagnostic_code": "CODE_MODE_HOST_DISABLED", "item_id": "item_0", "item_type": "error", "type": "item.completed"}
+{"type": "turn.started"}
+{"agent_message_sha256": "a75aa3729aa8ccd9371826c6574ce01fe7d06f42bdf042606b9ff1065eabf018", "item_id": "item_1", "item_type": "agent_message", "type": "item.completed"}
+{"type": "turn.completed", "usage": {"cache_write_input_tokens": 0, "cached_input_tokens": 7424, "input_tokens": 12465, "output_tokens": 379, "reasoning_output_tokens": 0}}

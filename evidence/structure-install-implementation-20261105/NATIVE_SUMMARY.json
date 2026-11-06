@@ -1,0 +1,37 @@
+{
+  "state": "completed",
+  "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+  "original_checks": {
+    "factual_integrity": {
+      "verdict": "pass",
+      "reason": "Anthropic\u2019s partial tracing claim and the 199-participant Bu\u00e7inca findings match the supplied evidence. The post preserves the experiment\u2019s age, allows that explanations can help, and presents its reliance standard as personal judgment."
+    },
+    "reader_relevance": {
+      "verdict": "pass",
+      "reason": "The distinction between a convincing explanation and justified reliance is understandable without specialist knowledge; source, calculation and assumption checks connect it to professional decisions."
+    },
+    "practical_value": {
+      "verdict": "pass",
+      "reason": "Readers receive a usable standard: check evidence appropriate to the decision and strengthen verification as the consequences of error increase."
+    },
+    "argument_voice": {
+      "verdict": "pass",
+      "reason": "Voice fidelity: spare, conversational wording and individual POV fit Concise Challenger without invented experience. Construction: the post connects partial interpretability to a separate question about human judgment, qualifies the study, and earns its practical conclusion; repeated statements of the central distinction slightly dilute its compactness."
+    }
+  },
+  "rewrite_triggered": false,
+  "selected": "original",
+  "visual_status": "planned",
+  "native_budget": {
+    "active_seconds": 106.01562878768891,
+    "in_flight": null,
+    "launches": 18,
+    "model_execution_slots": 6,
+    "model_seconds": 103.8818506365642,
+    "schema_version": "2.0",
+    "started": 1793937313.9920766
+  },
+  "provider_receipts": 6,
+  "human_decision": null,
+  "replay_added_calls": 0
+}

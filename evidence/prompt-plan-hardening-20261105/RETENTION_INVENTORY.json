@@ -1,5 +1,5 @@
 {
-  "audited_source_set": "Original SOURCE_SET.json 22 baseline files and TEMPLATE_SOURCES.json; current full pair at fd701e9 plus prompt4.2 correction; REQUEST.json; current canonical identities in CURRENT_PROTOCOL_SOURCES.json. Enumerated known obligations only.",
+  "audited_source_set": "Original SOURCE_SET.json 22 baseline files and TEMPLATE_SOURCES.json; current full pair at fd701e9 plus prompt4.2 correction; REQUEST.json; current canonical identities in CURRENT_PROTOCOL_SOURCES.json. Enumerated known obligations only. Current execution instruction and structure-install-implementation-20261105/{PROGRESS,QUALIFICATION,INSTALLATION,RESULTS,REPLAY,EXECUTION_REQUEST} records; product/source manifest and original native receipts remain with that owner. Current plan status reconciliation is bound by the current RESULTS.json pair hashes; original bindings remain historical PR35 receipts.",
   "items": [
     {
       "id": "objective",
@@ -192,12 +192,12 @@
     },
     {
       "id": "installed_identity",
-      "required_information": "Exact current installed baseline",
+      "required_information": "Historical2c2daf3 exact installed baseline retained with original release receipt; new installed outcome separately enumerated",
       "location": {
-        "path": "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md",
+        "path": "evidence/release-essential-20261105/INSTALLATION.json",
         "literal": "2c2daf39398a993b698d1f225008a06217b14a7c"
       },
-      "disposition": "retained in active complete pair or canonical referenced owner"
+      "disposition": "Historical/superseded as current target; immutable original receipt preserved. Current target is installed_target_outcome."
     },
     {
       "id": "reuse",
@@ -585,6 +585,42 @@
         "literal": "Run the prompt builder skill and do the program start cycle challenge."
       },
       "disposition": "executed as bounded complete-pair review, not product execution"
+    },
+    {
+      "id": "execution_request",
+      "required_information": "Current execution instruction activates admitted work without new operational permission",
+      "location": {
+        "path": "evidence/structure-install-implementation-20261105/EXECUTION_REQUEST.json",
+        "literal": "resume first unmet"
+      },
+      "disposition": "Current proved execution checkpoint; former planning/installed statements retained historically, not new authority"
+    },
+    {
+      "id": "qualified_source_outcome",
+      "required_information": "Actual corrected source275tests and exact source identity",
+      "location": {
+        "path": "evidence/structure-install-implementation-20261105/QUALIFICATION.json",
+        "literal": "275 passed"
+      },
+      "disposition": "Current proved execution checkpoint; former planning/installed statements retained historically, not new authority"
+    },
+    {
+      "id": "installed_target_outcome",
+      "required_information": "Installed exact qualified revision and rollback",
+      "location": {
+        "path": "evidence/structure-install-implementation-20261105/INSTALLATION.json",
+        "literal": "5bd3478709d98e5eb3ff5fd11168718aa3868cbd"
+      },
+      "disposition": "Current proved execution checkpoint; former planning/installed statements retained historically, not new authority"
+    },
+    {
+      "id": "native_human_checkpoint",
+      "required_information": "Actual native package, usage,0callreplay and humanpending checkpoint",
+      "location": {
+        "path": "evidence/structure-install-implementation-20261105/RESULTS.json",
+        "literal": "TECHNICAL_INSTALL_GO_HUMAN_REVIEW_PENDING"
+      },
+      "disposition": "Current proved execution checkpoint; former planning/installed statements retained historically, not new authority"
     }
   ]
 }

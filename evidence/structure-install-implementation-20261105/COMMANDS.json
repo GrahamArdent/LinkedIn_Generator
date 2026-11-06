@@ -1,0 +1,32 @@
+{
+  "commands": [
+    {
+      "args": [
+        "prepare",
+        "--request",
+        "/home/graham/work/linkedin-structure-20261106/evidence/structure-install-implementation-20261105/input-request.json",
+        "--evidence-bundle",
+        "/home/graham/work/linkedin-structure-20261106/evidence/structure-install-implementation-20261105/input-source-bundle.json",
+        "--out",
+        "/home/graham/work/linkedin-structure-20261106/evidence/structure-install-implementation-20261105/prepared"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.22485751006752253
+    },
+    {
+      "args": [
+        "generate",
+        "--request",
+        "/home/graham/work/linkedin-structure-20261106/evidence/structure-install-implementation-20261105/prepared/request.json",
+        "--evidence-bundle",
+        "/home/graham/work/linkedin-structure-20261106/evidence/structure-install-implementation-20261105/prepared/source-bundle.json",
+        "--out",
+        "/home/graham/work/linkedin-structure-20261106/evidence/structure-install-implementation-20261105/trial",
+        "--score-baseline"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 112.74352558609098
+    }
+  ],
+  "active_wall_envelope_seconds": 113.48158537782729
+}
