@@ -1,0 +1,33 @@
+.....F                                                                   [100%]
+=================================== FAILURES ===================================
+_________ test_pre_dispatch_failures_are_visible_to_swallowing_engine __________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-29/test_pre_dispatch_failures_are0')
+
+    def test_pre_dispatch_failures_are_visible_to_swallowing_engine(tmp_path):
+        import fcntl
+        s=Store.initialize(tmp_path/'data');s.admit('one',{}, {})
+        p=m.DurableProvider(s,'one',Native())
+        with (s.directory('one')/'.model-admission.lock').open('a+') as lock:
+            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            try:p.generate(model='test',system='s',user='u',temperature=0)
+            except ValueError:pass
+>           assert str(p.error)=='ADMISSION_BUSY'
+E           AssertionError: assert 'None' == 'ADMISSION_BUSY'
+E             
+E             - ADMISSION_BUSY
+E             + None
+
+tests/test_operational_workflow.py:78: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_operational_workflow.py::test_pre_dispatch_failures_are_visible_to_swallowing_engine
+1 failed, 5 passed, 1 warning in 0.20s

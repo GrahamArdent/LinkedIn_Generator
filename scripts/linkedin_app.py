@@ -15,14 +15,19 @@ from src.app.codex_provider import CodexConfig
 def import_legacy(store,path):
     path=path.resolve();trial=json.loads((path/'trial.json').read_bytes())
     job=trial['input']['request_id']
-    binding={'legacy':True,'record_hash':sha(trial),'policy':'original','source_path':str(path)}
+    budgets=[json.loads(p.read_bytes()) for p in path.rglob('budget.json')]
+    from datetime import datetime
+    spent={'uncertain':True}
+    if len(budgets)==1 and budgets[0].get('schema_version')=='2.0' and budgets[0].get('in_flight') is None:
+        spent={'uncertain':False,'calls':budgets[0]['model_execution_slots'],'seconds':budgets[0]['active_seconds'],
+               'started':datetime.fromisoformat(trial['started_at_utc']).timestamp()}
+    binding={'historical_budget':spent,'legacy':True,'record_hash':sha(trial),'policy':'original','source_path':str(path)}
     old=None
     try:old=store.get(job)
     except ValueError as exc:
         if str(exc)!='JOB_NOT_FOUND':raise
     if old:
         if old['input']!=trial['input'] or old['binding'].get('record_hash')!=sha(trial):raise ValueError('LEGACY_ID_COLLISION')
-        if old['state']=='legacy':return old
     store.admit(job,trial['input'],binding)
     with store.transaction() as con:
         row=con.execute('SELECT value FROM metadata WHERE key="trial_history"').fetchone()
@@ -31,6 +36,7 @@ def import_legacy(store,path):
         topic=trial['input'].get('topic')
         if topic and topic not in history['known_topics']:history['known_topics'].append(topic)
         con.execute('INSERT OR REPLACE INTO metadata VALUES (?,?)',('trial_history',json.dumps(history)))
+    if old and old['state']=='legacy':return old
     # Retain original raw receipts without rewriting policy, subject eligibility or human labels.
     files=[]
     for item in sorted(path.rglob('*')):

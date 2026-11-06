@@ -38,3 +38,15 @@ def test_imported_unresolved_history_blocks_new_subject_before_model(tmp_path):
     import pytest
     with pytest.raises(ValueError,match='SUBJECT_HISTORY_UNRESOLVED'):
         Application(s,None).create('new','A genuinely new subject')
+
+
+def test_completed_import_repairs_missing_history_on_upgrade(tmp_path):
+    from scripts.linkedin_app import import_legacy
+    from src.app.operational_store import Store
+    s=Store.initialize(tmp_path/'data');old=tmp_path/'old';old.mkdir()
+    (old/'trial.json').write_text(json.dumps({'input':{'request_id':'old','topic':'Retained exact topic'},'state':'completed'}))
+    original=import_legacy(s,old)
+    with s.transaction() as con:con.execute('DELETE FROM metadata WHERE key="trial_history"')
+    assert import_legacy(s,old)==original
+    with s.connection() as con:history=json.loads(con.execute('SELECT value FROM metadata WHERE key="trial_history"').fetchone()[0])
+    assert history['known_topics']==['Retained exact topic']

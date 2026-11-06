@@ -65,3 +65,14 @@ def test_linked_revision_cannot_reset_shared_budget(tmp_path):
     with pytest.raises(ValueError,match='MODEL_BUDGET_EXHAUSTED'):
         m.DurableProvider(s,'child',n).generate(model='test',system='extra',user='u',temperature=0)
     assert n.calls==12
+
+
+def test_pre_dispatch_failures_are_visible_to_swallowing_engine(tmp_path):
+    import fcntl
+    s=Store.initialize(tmp_path/'data');s.admit('one',{}, {})
+    p=m.DurableProvider(s,'one',Native())
+    with (s.directory('one')/'.model-admission.lock').open('a+') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        try:p.generate(model='test',system='s',user='u',temperature=0)
+        except ValueError:pass
+        assert str(p.error)=='ADMISSION_BUSY'

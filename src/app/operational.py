@@ -33,13 +33,17 @@ class DurableProvider:
         self.receipts=[];self.error=None
 
     def generate(self,**args):
-        job=self.store.get(self.job)
-        admission=job['binding'].get('admission',self.job)
-        path=self.store.directory(admission)/'.model-admission.lock'
-        with path.open('a+') as lock:
-            try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-            except BlockingIOError:raise ValueError('ADMISSION_BUSY')
-            return self._generate(**args)
+        try:
+            job=self.store.get(self.job)
+            admission=job['binding'].get('admission',self.job)
+            path=self.store.directory(admission)/'.model-admission.lock'
+            with path.open('a+') as lock:
+                try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+                except BlockingIOError:raise ValueError('ADMISSION_BUSY')
+                return self._generate(**args)
+        except Exception as exc:
+            self.error=exc
+            raise
 
     def _generate(self,*,model,system,user,temperature):
         args=dict(model=model,system=system,user=user,temperature=temperature)
@@ -56,13 +60,15 @@ class DurableProvider:
             family=[r['id'] for r in con.execute('SELECT id,binding FROM jobs') if json.loads(r['binding']).get('admission',r['id'])==admission]
             admitted=self.store.get(admission)
             stages=[r for member in family for r in con.execute('SELECT * FROM stages WHERE job=? AND name LIKE "model:%"',(member,))]
-            seconds=sum(self.store.read_blob(r['result_hash'])['seconds'] if r['state']=='completed' else 300 for r in stages)
+            historical=admitted['binding'].get('historical_budget',{})
+            if historical.get('uncertain') and not pending:raise ValueError('LEGACY_BUDGET_UNRECONCILED')
+            seconds=historical.get('seconds',0)+sum(self.store.read_blob(r['result_hash'])['seconds'] if r['state']=='completed' else 300 for r in stages)
             if not pending:
                 if any(r['state']!='completed' for r in stages):raise ValueError('RECONCILIATION_REQUIRED')
-                if len(stages)>=12 or seconds>=900:raise ValueError('MODEL_BUDGET_EXHAUSTED')
-                if time.time()-admitted['created']>=900:raise ValueError('WALL_BUDGET_EXHAUSTED')
+                if len(stages)+historical.get('calls',0)>=12 or seconds>=900:raise ValueError('MODEL_BUDGET_EXHAUSTED')
+                if time.time()-historical.get('started',admitted['created'])>=900:raise ValueError('WALL_BUDGET_EXHAUSTED')
                 con.execute('INSERT INTO stages VALUES (?,?,?,?,NULL)',(self.job,name,sha(args),'reserved'))
-        if not pending:self.native.deadline=min(admitted['created']+900,time.time()+max(0.1,900-seconds))
+        if not pending:self.native.deadline=min(historical.get('started',admitted['created'])+900,time.time()+max(0.1,900-seconds))
         began=time.monotonic()
         try:
             if pending:
