@@ -1,0 +1,206 @@
+{
+  "status": "MACHINE_CHRONOLOGY_RECONCILED_ACCEPTANCE_NOT_YET_EVALUABLE",
+  "scope": "10 canonical imported original trials, their5 operational descendants, retained exact feedback and12-example frozen calibration; no claim to all historical conversations/artifacts",
+  "rows": [
+    {
+      "request_id": "lig-codex-selected-revision-20261104",
+      "source": "evidence/codex-first-20261104/trial/trial.json",
+      "started_at_utc": "2026-11-04T22:37:32.644016+00:00",
+      "topic": "A content workflow needs to agree on which draft is final",
+      "candidate_subject_group": "which-draft-is-final",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "lig-codex-earn-the-steps-20261104",
+      "source": "evidence/transparent-evaluation-20261104/trial/trial.json",
+      "started_at_utc": "2026-11-04T23:02:39.874770+00:00",
+      "topic": "Before adding more AI steps, show me what they improve",
+      "candidate_subject_group": "complexity-must-earn-its-place",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "lig-evidence-first-mfa-recovery-20261104",
+      "source": "evidence/evidence-first-20261104/trial/trial.json",
+      "started_at_utc": "2026-11-04T23:51:52.620456+00:00",
+      "topic": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+      "candidate_subject_group": "mfa-helpdesk-recovery",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "lig-equal-input-engine-baseline-20261104",
+      "source": "evidence/equal-input-engine-baseline-20261104/trial/trial.json",
+      "started_at_utc": "2026-11-05T02:08:42.905844+00:00",
+      "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+      "candidate_subject_group": "payment-approval-to-execution",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "lig-source-first-planning-20261104",
+      "source": "evidence/source-first-planning-20261104/trial/trial.json",
+      "started_at_utc": "2026-11-05T02:32:47.655486+00:00",
+      "topic": "CERT-In financial-sector campaign update",
+      "candidate_subject_group": "payment-approval-to-execution",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "installed-acceptance-20261105",
+      "source": "evidence/installed-acceptance-20261105/trial/trial.json",
+      "started_at_utc": "2026-11-05T04:09:51.040102+00:00",
+      "topic": "Accepted credentials or an allowed network origin do not, by themselves, establish that a particular business action is authorized.",
+      "candidate_subject_group": "recognized-access-vs-specific-permission",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "six-blocks-security-20261105",
+      "source": "evidence/six-building-blocks-20261105/security/trial/trial.json",
+      "started_at_utc": "2026-11-05T04:24:01.898921+00:00",
+      "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "candidate_subject_group": "recognized-access-vs-specific-permission",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "six-blocks-ai-20261105",
+      "source": "evidence/six-building-blocks-20261105/ai/trial/trial.json",
+      "started_at_utc": "2026-11-05T04:25:35.313209+00:00",
+      "topic": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+      "candidate_subject_group": "ai-time-to-usable-completion",
+      "engine_gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "selected_hash": null,
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "installed-essential-security-20261105",
+      "source": "evidence/installed-essential-trial-20261105/trial/trial.json",
+      "started_at_utc": "2026-11-05T05:36:05.356747+00:00",
+      "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "candidate_subject_group": "recognized-access-vs-specific-permission",
+      "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+      "selected_hash": "25d0ef52e75cd2dab79a8f7a4e00971154686b640a677cbde85c843238025d91",
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    },
+    {
+      "request_id": "graham-structured-black-box-20261106",
+      "source": "evidence/structure-install-implementation-20261105/trial/trial.json",
+      "started_at_utc": "2026-11-06T03:55:13.165768+00:00",
+      "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+      "candidate_subject_group": "ai-answer-reliance",
+      "engine_gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+      "selected_hash": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+      "has_control": true,
+      "human_decision_in_original": null,
+      "eligibility": "UNRESOLVED; no historical gate failure silently excluded"
+    }
+  ],
+  "candidate_first_seen_group_order": [
+    "which-draft-is-final",
+    "complexity-must-earn-its-place",
+    "mfa-helpdesk-recovery",
+    "payment-approval-to-execution",
+    "recognized-access-vs-specific-permission",
+    "ai-time-to-usable-completion",
+    "ai-answer-reliance"
+  ],
+  "candidate_group_count": 7,
+  "overlapping_group_boundary": {
+    "groups": [
+      "payment-approval-to-execution",
+      "recognized-access-vs-specific-permission"
+    ],
+    "reason": "Both examine credentials/approval versus a permitted business action; shared CERT-In evidence. Separating or merging for pilot eligibility requires explicit owner rule. Neither choice is silently adopted.",
+    "possible_group_count_for_this_scope": [
+      6,
+      7
+    ]
+  },
+  "eligibility_disposition": "No reset, exclusion, new-subject admission or first-six selection is applied. Original failed gates remain in chronology; imported SQLite creation times are not original trial ordering.",
+  "feedback": {
+    "exact_engine_control_preference_records": 1,
+    "preferred_pair": "graham-structured-black-box-20261106",
+    "preferred_engine_hash": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+    "keep_light_labels": 0,
+    "actual_editing_minutes": null,
+    "human_approved_voice_examples": 0,
+    "clock": "Positive comparison feedback, not keep/light or example approval",
+    "parcel": "Short/bland/incomplete; rewrite explicitly deferred",
+    "security_example": "Rejected subject suitability; no invented per-draft score"
+  },
+  "calibration": {
+    "frozen_examples": 12,
+    "partitions": {
+      "calibration": [
+        "which-draft-is-final",
+        "mfa-helpdesk-recovery",
+        "recognized-access-vs-specific-permission"
+      ],
+      "holdout": [
+        "ai-time-to-usable-completion"
+      ]
+    },
+    "human_labels": 0,
+    "rubric_changes": false,
+    "calibration_success": false
+  },
+  "acceptance": {
+    "four_of_first_six": "NOT_YET_EVALUABLE",
+    "four_of_six_engine_preference": "NOT_YET_EVALUABLE; only1known exact preference, eligibility unresolved",
+    "five_genuine_subjects": "NOT_ESTABLISHED by this chronology alone",
+    "two_live_provider_human_accepted_subjects": "NOT_ESTABLISHED",
+    "six_post_originality_and_effort": "NOT_YET_EVALUABLE",
+    "all_26_AT_11_E2E": false
+  },
+  "new_model_calls": 0,
+  "new_subjects": 0,
+  "production_history_metadata_modified": false,
+  "source_sha256": {
+    "evidence/equal-input-engine-baseline-20261104/trial/trial.json": "e4c66a520dba37f5e5cbb9079e85a09abaf9333a3ec4b5960c79e8cfe23e24b6",
+    "evidence/transparent-evaluation-20261104/trial/trial.json": "c689a070a655435875084221ea741a6d535c405e7ca393af921261e84c19ee05",
+    "evidence/codex-first-20261104/trial/trial.json": "02603fc2ac9fb5a55c512e3e2c8a9bb8c56a937922a345173a83c281c89caacf",
+    "evidence/structure-install-implementation-20261105/trial/trial.json": "7e3b6cc9c067eccb097d8796776e46344b1cc9ed8961aa3e1701cbab2c39a020",
+    "evidence/evidence-first-20261104/trial/trial.json": "51c12fdb8501b35b0ca5cc7d3b7efde2cec4ae49888a36f9ef3413b926976461",
+    "evidence/source-first-planning-20261104/trial/trial.json": "51ead798d259b1c1a6b01e8171829e265e18dff0b760eaa84d79ed9d3bfc932c",
+    "evidence/installed-acceptance-20261105/trial/trial.json": "cb666dfc9df6f021322feb55933197866b6aa18fb8e30613b6948bf35d788ff2",
+    "evidence/installed-essential-trial-20261105/trial/trial.json": "dbfd1c3d29766347b43a01ba93e53ff6816646bc48051d4c6cf7e301abdbf0b7",
+    "evidence/six-building-blocks-20261105/security/trial/trial.json": "64f3c7674ccaf97003983c4a19eca4cbd9bf8dc02806e858797056dc313b0c94",
+    "evidence/six-building-blocks-20261105/ai/trial/trial.json": "8824136f24c49f89985282ae62b625df7f3ee8b73fee00d17d9a652ec9fe024f",
+    "evidence/installed-essential-trial-20261105/CALIBRATION_FREEZE.json": "154fdb0b3e1be7519fc87ebb20f94c0571b9f04465a84a1d208bc4b8ac78bb02",
+    "evidence/installed-essential-trial-20261105/RETAINED_SUBJECT_INVENTORY.json": "b253c8d170ae4c2710437b4f15e410751aaed1d470e079757239a7cd92bd39fd",
+    "evidence/structure-install-implementation-20261105/HUMAN_FEEDBACK.json": "7c11146f1b370e83b34f2434cf84a30f8fb782e33a684725956547c89d049be1",
+    "evidence/structure-install-implementation-20261105/trial/blind-mapping.json": "ed991b43910358dc517b8436f3ab11d00f5e9ae475d7d047d6bdf3a36fef060b",
+    "evidence/graham-black-box-voices-20261105/DECISIONS.json": "c70c0add18fd309181282aa487ed8aca2a8cc6c602a33d41bfb0335f1305def8",
+    "evidence/operational-implementation-20261106/q6-transfer/HUMAN_FEEDBACK.json": "03252bd0a15d86929fbf0894bbca210a663041c7bc350ab679d1d5bffe3c3c52",
+    "evidence/operational-implementation-20261106/r2-discovery/PARCEL_FEEDBACK.json": "8a54fd19787a019fbb045164eb4a3327eef159ee9f64867a7ad6eb455874b750"
+  },
+  "next": "The chronology and variant links are machine-reconciled. Preserve actual gates: owner eligibility rule, genuine keep/edit/effort judgments, explicit voice-example approval and deliberately resumed deferred editorial revision; no filler batch."
+}

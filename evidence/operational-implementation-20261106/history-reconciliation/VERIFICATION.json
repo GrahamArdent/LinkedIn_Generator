@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_trials": 10,
+  "exact_source_files": 17,
+  "original_canonical_bindings_verified": 10,
+  "missing_trial_rejected": true,
+  "altered_source_rejected": true,
+  "no_model_dispatch": true,
+  "scope": "Declared original record/source chronology and bytes; not eligible subject count or human acceptance"
+}

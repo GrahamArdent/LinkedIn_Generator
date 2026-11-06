@@ -1,3 +1,19 @@
+# Current continuation — R7 retained-history machine reconciliation
+
+Same v4.3 execution prompt and R1–R8/Q1–Q6 plan. Owner index: evidence/operational-implementation-20261106/RESULTS.json; latest bounded result: history-reconciliation/{REPORT.md,HISTORY.json,CANONICAL_READBACK.json,VERIFICATION.json}.
+
+Original10trial chronology/gate IDs now agree with canonical imported records. Source timestamps, not import order, govern history. Repeated drafts/failed originals remain linked and included. Candidate group overlap and first-six eligibility are explicit; no reset, silent exclusion or new subject allowance. Exact original DraftB maps to engine preference; clock positive feedback and parcel critique are separate, with no invented keep/light/effort/example approval. Frozen12example calibration remains unlabeled and unchanged.
+
+Installed exact5bc9f142ff1634f3a968d401cb852e4510a4c76d,323tests/117qualifiedfiles and rollback are reused: no product/config/runtime change. Production15jobs/17modelstages and all original outcomes retained,0newmodelcalls, no pending canonical model stage. Preserve original B, clock and parcel. Continued merge/install/testing/applicable-CI authority persists.
+
+R5 actual human-approved example lifecycle and human/corpus/effort evidence remain unmet. Graham disposition of the saved parcel candidate is recorded: short/bland/incomplete, with rewriting explicitly deferred. R8 rendering/Dedication publishing stays gated. No generic execute is treated as voice-example or publication approval.
+
+RESUME_AT: machine chronology is reconciled; do not rerun it or any completed model/source qualification. Next substantive editorial operation is deliberately resuming the deferred parcel revision/review, or an explicitly approved example lifecycle. Preserve original candidate and use linked identity/budget only when actually admitted. Original pilot eligibility policy/labels remain unresolved; do not launch filler subjects to satisfy counts. No background work after the turn.
+
+---
+
+# Previous R2 installed checkpoint — historical
+
 # Current continuation — R2 source discovery and deferred editorial revision
 
 Installed exact5bc9f142ff1634f3a968d401cb852e4510a4c76d,323tests/117qualifiedfiles, original15jobs/17modelstages retained,0newmodelcalls. Source fixture retrieved3authorpages with2discovery/6fetches; replay0newHTTP. Rollback3750833 retained and smoke-checked.

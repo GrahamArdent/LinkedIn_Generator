@@ -1,0 +1,196 @@
+{
+  "status": "PASS_READ_ONLY_CANONICAL_HISTORY",
+  "rows": [
+    {
+      "id": "lig-codex-selected-revision-20261104",
+      "started": "2026-11-04T22:37:32.644016+00:00",
+      "record_hash": "6c1b4c5988757310230b9bba0fd4aa4a7a481cc5afe45b47bac795a491e16f4d",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "A content workflow needs to agree on which draft is final",
+      "result_hash": "4e56ee3b7227062f8fd85c87315f5e6f2f31c506dc5cc9585eb9fce811e6663f",
+      "selected_hash": null,
+      "original_body_hash": "4998b459b8574d1c8cba5cafe8a7c929ffe06769a8758d31e2fffb87f072fa04",
+      "baseline_hash": "85987b5239e64bdd7794ded69ad98c4ca8779dd52fe0650c685d0e141eb49105",
+      "human_decision": null,
+      "budget": {
+        "calls": 5,
+        "seconds": 49.23177855927497,
+        "started": 1793831852.644016,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "lig-codex-earn-the-steps-20261104",
+      "started": "2026-11-04T23:02:39.874770+00:00",
+      "record_hash": "97fc96b9b4ebb469bdf9a14a30caa1cbf46733bd1196f951611070bde4c3ca3b",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "Before adding more AI steps, show me what they improve",
+      "result_hash": "059f55d92d316b464a335c5e3507981829100a4f5f575f4414a07429a3941f8d",
+      "selected_hash": null,
+      "original_body_hash": "1268f95c982ab66227e84dfc814ae07dcc3b1809cba83eceae795814913e7dde",
+      "baseline_hash": "6662249ab3eb740d80436bc8772b40d02bbe73f7ad0c8dfd8908a223bac32d7d",
+      "human_decision": null,
+      "budget": {
+        "calls": 6,
+        "seconds": 57.392304660752416,
+        "started": 1793833359.87477,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "lig-evidence-first-mfa-recovery-20261104",
+      "started": "2026-11-04T23:51:52.620456+00:00",
+      "record_hash": "4b5b855ff5e44bd33a7de33d16086b06bf334fa534e1199407aaf51e85a44754",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "An MFA review should include the help-desk account recovery path, not just the sign-in screen",
+      "result_hash": "c0a060f683a5833e89b054d909aa53cb14b7289060f970430fc83fe82df0cae4",
+      "selected_hash": null,
+      "original_body_hash": "a3454852cdbe14fc96e9370d5d94ff14df4f3e6aba1cf3f029978ed1b95c916e",
+      "baseline_hash": "4c34af21eb7063aa06dbbb9f51115cb2a2888c377d1db6b2279cedaa2c8fdb69",
+      "human_decision": null,
+      "budget": {
+        "calls": 10,
+        "seconds": 77.28359172679484,
+        "started": 1793836312.620456,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "lig-equal-input-engine-baseline-20261104",
+      "started": "2026-11-05T02:08:42.905844+00:00",
+      "record_hash": "23a4f3fb21dd4c3682515708cfc1549044485b46e40ddcc822345548c2250203",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "AI-assisted payment attacks: verify authorization where money actually moves",
+      "result_hash": "f1b3b11ba315c31523c5efd11a01f65c6cd054aa045d5bdcc2cb4e53543f2a68",
+      "selected_hash": null,
+      "original_body_hash": "3a4ef554d711b414467ee1eafa2a85d580376b92e5ecdba9ee13cae447324065",
+      "baseline_hash": "68b92a5b7c8f2c8bd7ec48c92baef909ccb299bd300753aa8e7fa22bd70b8388",
+      "human_decision": null,
+      "budget": {
+        "uncertain": true
+      }
+    },
+    {
+      "id": "lig-source-first-planning-20261104",
+      "started": "2026-11-05T02:32:47.655486+00:00",
+      "record_hash": "67a499b43d5ec21827fe797cc5ac64ebdd5aa1429f446f13c1d2df6db54942f6",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "CERT-In financial-sector campaign update",
+      "result_hash": "9ac786e2bfe00fd54863caf2c6b7cb6ba9c0a62a096f79c8bdc2e04d7816e863",
+      "selected_hash": null,
+      "original_body_hash": "5eb47c66037910b1a05c5c40d36a82ccd7e87e1fb9af1efdbdfebd3a60a8ddf2",
+      "baseline_hash": "8f7c7b33ee218bcb26c0a47115ce13f5d64ecd174a06d49a93e6a03b9d78b17c",
+      "human_decision": null,
+      "budget": {
+        "uncertain": true
+      }
+    },
+    {
+      "id": "installed-acceptance-20261105",
+      "started": "2026-11-05T04:09:51.040102+00:00",
+      "record_hash": "45baaac80b7fd09a4543bd0ebe4ef6125cc7e4bfe0be21f993c29d995b93dc81",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "Accepted credentials or an allowed network origin do not, by themselves, establish that a particular business action is authorized.",
+      "result_hash": "32b352c3f4d5ea189055f5eb59365269d9376e370be6404119f1145db094a0a7",
+      "selected_hash": null,
+      "original_body_hash": "39494681f66a24ed79e4fdac35f091c38955288ec142c1e8e6bcfca1c95b1026",
+      "baseline_hash": "e60e0379ac1e6b2d5cba60b59c7f5e2ef95343a8be4b7df2d416eb1165169b92",
+      "human_decision": null,
+      "budget": {
+        "calls": 6,
+        "seconds": 74.31599625386298,
+        "started": 1793851791.040102,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "six-blocks-security-20261105",
+      "started": "2026-11-05T04:24:01.898921+00:00",
+      "record_hash": "7dec530c054db0f701d86fa7e585e6613ac296b11a97778db3294ff1333481da",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "result_hash": "3ee28a90defd920d718b042e7a5cdce3a67f25ed1a9a7a13c3546b9d7f24255e",
+      "selected_hash": null,
+      "original_body_hash": "d74144dbd62dd2d06c22e835d72083211a598c4f27785b50ac2312310c5b120c",
+      "baseline_hash": "0d03d5344cca00bfcdfca32e0e83425a4886e7aaab7f6de036d73365b66dd34f",
+      "human_decision": null,
+      "budget": {
+        "calls": 7,
+        "seconds": 88.62036643084139,
+        "started": 1793852641.898921,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "six-blocks-ai-20261105",
+      "started": "2026-11-05T04:25:35.313209+00:00",
+      "record_hash": "887a323c7102baab51127de800c342fc0e5913c584ae4dfede0b80fc6bd01287",
+      "state": "completed",
+      "gate": "HOLD_NO_QUALIFIED_CANDIDATE",
+      "topic": "AI saves work only when it helps produce usable finished work, not merely faster first output.",
+      "result_hash": "75f0864ddf98eb8644af0a3cb1f34cee7c564399e0d2789424d773a6ceb2a629",
+      "selected_hash": null,
+      "original_body_hash": "79575fb40d46baf3f6fcd0381a35643cfa9581c93b24227b3e5289051b4034a0",
+      "baseline_hash": "3f9defb76ac1361d3b50d72c11f217f194afa05cfac473af28d95789cb1bc9f4",
+      "human_decision": null,
+      "budget": {
+        "calls": 8,
+        "seconds": 175.49088143836707,
+        "started": 1793852735.313209,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "installed-essential-security-20261105",
+      "started": "2026-11-05T05:36:05.356747+00:00",
+      "record_hash": "49ce15a26d2e80f68f8947175d5558da659fa22f77a401bff6ea91e72d685a02",
+      "state": "completed",
+      "gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+      "topic": "Recognizing an account or company is not the same as knowing this particular request is permitted.",
+      "result_hash": "f82f48502e905bdbe6aa8accc3336c5e2a5af724274341a0a4ade6b6127a1380",
+      "selected_hash": "25d0ef52e75cd2dab79a8f7a4e00971154686b640a677cbde85c843238025d91",
+      "original_body_hash": "25d0ef52e75cd2dab79a8f7a4e00971154686b640a677cbde85c843238025d91",
+      "baseline_hash": "aab0773611b1a877ef41d1d4c464ce487e9483120db84793a9a412c874e54520",
+      "human_decision": null,
+      "budget": {
+        "calls": 6,
+        "seconds": 97.17145485151559,
+        "started": 1793856965.356747,
+        "uncertain": false
+      }
+    },
+    {
+      "id": "graham-structured-black-box-20261106",
+      "started": "2026-11-06T03:55:13.165768+00:00",
+      "record_hash": "473dec0c019d7cb99d3cd9782e1e790b0c5c317a1b3b238779df658909506569",
+      "state": "completed",
+      "gate": "QUALIFIED_FOR_HUMAN_REVIEW",
+      "topic": "Trusting useful AI answers while only partly understanding how they are produced.",
+      "result_hash": "06e32459935e00cce92191af685b99fa6b0d8d47ba2c12baeaab727a6382c19d",
+      "selected_hash": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+      "original_body_hash": "2225be5c1d67ecebf41aad1e2a96b7060b531e7aff5bb267747eb56462913884",
+      "baseline_hash": "42190319840dcf9ea55c6c41e79e657cfb30b36177caebbb050a8f8679b716fb",
+      "human_decision": null,
+      "budget": {
+        "calls": 6,
+        "seconds": 106.01562878768891,
+        "started": 1793937313.165768,
+        "uncertain": false
+      }
+    }
+  ],
+  "legacy_records_verified": 10,
+  "production_jobs": 15,
+  "model_stages_before": 17,
+  "model_stages_after": 17,
+  "new_model_effects": 0,
+  "jobs_unchanged": true,
+  "pending_stages": []
+}
