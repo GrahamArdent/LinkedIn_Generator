@@ -5,7 +5,7 @@
   "tested_source_revision": "5bc9f142ff1634f3a968d401cb852e4510a4c76d",
   "qualified_product_manifest": "QUALIFIED_MANIFEST.json",
   "candidate_pair_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "ec4915400a44ef8f1df8eb0e4e87edc3e20f7d1266d17a6775d63f996161482a",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "90a4cadcb58d72dcaf226eb9fe8a5a95cfc7f1490052d5f9123e2615f2e9ecd8",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "independent_review": "r2-discovery/REVIEW.json; corrected code cleared for scoped source adapter; current installed proof retained separately",
@@ -25,7 +25,7 @@
   "hosted_CI": "NOT_APPLICABLE: only ci-full.yml.disabled and codeql.yml.disabled; none reactivated",
   "lint": "NOT_AVAILABLE: no configured callable ruff on target; Python suites and source diff checks used",
   "all_26_AT_11_E2E": "ACCEPTANCE_AUDIT.json; all_marks_hit=false",
-  "first_unmet": "R5 actual approved example lifecycle; deliberately resume deferred parcel revision for further quality acceptance; retained eligibility/labels/effort/render/publication outcomes pending",
+  "first_unmet": "Finish explicitly resumed parcel revision under same remaining12/900/API0admission after scoped feedback-handoff repair; human approval stays pending",
   "next_action": "Preserve explicit editorial deferral; next dependent operation requires deliberate resumption/actual human judgment. No machine chronology, qualification or completed post replay.",
   "reused_native_generation": {
     "source_revision": "78d888124f4542fe7f28cfb0c39ba3cb6d311941",
@@ -47,7 +47,7 @@
   "clock_feedback": "q6-transfer/HUMAN_FEEDBACK.json: positive comparison reaction; no inferred acceptance scores/example activation/publication",
   "actual_native_model_executions_before_q6": 11,
   "actual_native_active_cli_seconds_before_q6": 197.06742054130882,
-  "review": "history-reconciliation/REVIEW.json (current metadata pair); r2-discovery independent product/installed proof remains historical for unchanged117files",
+  "review": "parcel-revision/REVIEW.json: independent exact feedback-transport code review and same-executor current complete-pair semantic review",
   "r2_discovery": "r2-discovery/REPORT.md and INSTALLED_QUALIFICATION.json;3author pages;2discovery/6fetches;0model",
   "new_model_calls_this_continuation": 0,
   "installed_independent_readback": "r2-discovery/INDEPENDENT_INSTALLED_READBACK.json",

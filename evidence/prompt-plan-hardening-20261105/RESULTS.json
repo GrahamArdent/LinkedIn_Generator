@@ -4,7 +4,7 @@
   "scope": "Current pair execution checkpoint; original109-obligation planning/source receipts retained. Actual operational outcomes owned by evidence/operational-implementation-20261106/RESULTS.json.",
   "base": "6b6b24352329c097e7eaec197d4d29581e315338",
   "candidate_sha256": {
-    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "ec4915400a44ef8f1df8eb0e4e87edc3e20f7d1266d17a6775d63f996161482a",
+    "docs/implementation/v4/CODEX_FIRST_TRIAL_GAME_PLAN_2026-11-04.md": "90a4cadcb58d72dcaf226eb9fe8a5a95cfc7f1490052d5f9123e2615f2e9ecd8",
     "docs/implementation/v4/LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md": "5ad6e4cffe3e354d05b3db84c05babc376f3fc73b79072b832327c6b4dc63933"
   },
   "current_request": "OPERATIONAL_REQUEST.json",
@@ -14,7 +14,7 @@
     "OPERATIONAL_SOURCE_SET.json",
     "OPERATIONAL_PROTOCOL_SOURCES.json"
   ],
-  "review": "history-reconciliation/REVIEW.json (current metadata pair); r2-discovery independent product/installed proof remains historical for unchanged117files",
+  "review": "parcel-revision/REVIEW.json: independent exact feedback-transport code review and same-executor current complete-pair semantic review",
   "retention": {
     "covered": 109,
     "total": 109,
@@ -37,7 +37,7 @@
   "new_native_calls": 11,
   "api_spend": 0,
   "hosted_CI": "NOT_APPLICABLE: documentationonly/noactiveworkflow; no hostedpassclaimed",
-  "first_unmet": "R5 actual approved example lifecycle; deliberately resume deferred parcel revision for further quality acceptance; retained eligibility/labels/effort/render/publication outcomes pending",
+  "first_unmet": "Finish explicitly resumed parcel revision under same remaining12/900/API0admission after scoped feedback-handoff repair; human approval stays pending",
   "continuation_owner": "CURRENT_WORK_PACKET.md; same Library continuation points to this pair",
   "terminal_rule": "Execute to plan-defined actual technical and retained product outcomes; stop only specifically gatedeffects with exact resume/evidence, continue legitimate independentwork",
   "invalidation_conditions": [

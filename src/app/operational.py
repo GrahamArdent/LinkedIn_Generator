@@ -112,6 +112,11 @@ class Application:
         voice_binding=resolve_writing_voice(voice)
         config={k:str(v) for k,v in asdict(self.config).items()}
         binding={'admission':admission,'new_budget_explicit':bool(new_budget),'model_qualification':model_qualification,'release':release_fingerprint(),'config':config,'voice':voice_binding,'structure_sha256':_definition_hash(),'voice_examples':self.active_voice()}
+        if parent and notes:
+            selected=self.selected(parent)
+            binding['revision_context']={'parent_job':parent,'candidate_hash':selected['content_sha256'],
+                'original_text':selected['body'],'feedback':notes,
+                'instruction':'Revise this unapproved reference draft using the supplied editorial feedback. Develop the requested reasoning rather than merely shortening it. This context is not factual evidence, an approved voice example, or authority to override the sourced handoff and four essential checks.'}
         self.store.admit(job,normalized,binding)
         return self.resume(job)
 
@@ -179,6 +184,7 @@ class Application:
                           'evidence':[{'title':by_id[f['source_ids'][0]]['title'],'fact':f['text'],'url':by_id[f['source_ids'][0]]['url']} for f in meaning['facts']],
                           'editorial_handoff':handoff,'voice_examples':record['binding']['voice_examples']['examples']}
                     bundle={'sources':source['sources'],'claims':claims,'central_claim_id':claims[0]['claim_id'],'request_sha256':sha(data)}
+                    if 'revision_context' in record['binding']:bundle['revision_context']=record['binding']['revision_context']
                     data,bundle=prepare_graham_request(data,bundle)
                     prepared={'request':data,'bundle':bundle,'assessment':assessment}
                     commit_pure_stage(self.store,job,'preparation',source,prepared)

@@ -1,3 +1,15 @@
+# Current continuation — parcel revision explicitly resumed
+
+Graham explicitly authorized the next substantive parcel revision under the existing R5/R7prompt/plan. Earlier editorial deferral is lifted for this bounded revision; no voice-example/render/publication approval. Original parcel hashc35ee0c3c514f2d822926a8386b8e2765d285bb43d19ce0d6c52d61310ac9127 stays immutable.
+
+Original admitted revision graham-parcel-revision-20261106-r1 completed6modelcalls within95.36seconds but returned a shorter post; four-essential admission is not fulfillment of Graham's requested development. Its completed identity/results remain retained. Root cause: notes/original only reached meaning preparation, not actual writer context. Scoped R5adapter repair freezes parent selected body/hash + editorialfeedback in admission binding and passes it through existing writer/evaluator sourcebundle metadata. It is unapproved reference context, never factual evidence or voice approval.
+
+RESUME_AT: qualify/release exact handoff repair, then linked child graham-parcel-revision-20261106-r2 under the original r1admission's remaining6calls/900wall/API0. No new budget, original rerun or filler subject. If cap expires/exhausts, retain exact outcome rather than renewing. Human quality/example/corpus/effort/render/Dedication publishing gates remain. Same owner index; latest proof parcel-revision/. Continued merge/install/testing/applicable-CI authority persists. Preserve original B, clock and every historical failure. No background work after turn.
+
+---
+
+# Previous history checkpoint — historical
+
 # Current continuation — R7 retained-history machine reconciliation
 
 Same v4.3 execution prompt and R1–R8/Q1–Q6 plan. Owner index: evidence/operational-implementation-20261106/RESULTS.json; latest bounded result: history-reconciliation/{REPORT.md,HISTORY.json,CANONICAL_READBACK.json,VERIFICATION.json}.

@@ -1,0 +1,14 @@
+{
+  "src/app/operational.py": {
+    "before": "ec24f50b30c40cc0b1aeae2cb36639b74601f0b6affaf163688eccfe45f2817e",
+    "after": "a264829e441c6a072be87fae819fceee5b76489ec8b164f1ad1ede29731286e0"
+  },
+  "tests/test_editorial_handoff.py": {
+    "before": "e3906eb09ada8962943eefdc290b22df559bf1a783cb176acebafe6c33b2a52d",
+    "after": "472f4ffc630dbbcac6c66529113a56bccf4ec0a30a6ac1d212b01cae9ee3f3b1"
+  },
+  "tests/test_operational_positive.py": {
+    "before": "da03b157ef36cd411db63f6c04c1fea40d398901ff53c07948276e3f313e6883",
+    "after": "fa7ecd132f20c499beb8cc219b36a0a9fbc9506d6ddbacf69c962a37936f07af"
+  }
+}
