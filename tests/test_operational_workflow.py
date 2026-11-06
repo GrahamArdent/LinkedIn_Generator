@@ -84,3 +84,33 @@ def test_older_legacy_binding_without_budget_cannot_reset_usage(tmp_path):
     p=m.DurableProvider(s,'child',Native())
     with pytest.raises(ValueError,match='LEGACY_BUDGET_UNRECONCILED'):p.generate(model='test',system='s',user='u',temperature=0)
     assert p.native.calls==0 and str(p.error)=='LEGACY_BUDGET_UNRECONCILED'
+
+
+def test_real_process_concurrency_dispatches_only_one_original_effect(tmp_path):
+    import subprocess,sys
+    from pathlib import Path
+    s=Store.initialize(tmp_path/'data');s.admit('one',{}, {})
+    count=tmp_path/'calls'
+    program='''
+import sys,time
+from pathlib import Path
+from src.app.operational_store import Store
+from src.app.operational import DurableProvider
+class Native:
+ error=None
+ def __init__(self):self.receipts=[]
+ def generate(self,**kw):
+  with Path(sys.argv[2]).open('a') as f:f.write('dispatch\\n')
+  time.sleep(.3);self.receipts.append({'attempt_id':'original'});return 'saved'
+try:
+ print(DurableProvider(Store(sys.argv[1]),'one',Native()).generate(model='test',system='s',user='u',temperature=0))
+except ValueError as exc:print(str(exc))
+'''
+    root=Path(__file__).resolve().parents[1]
+    args=[sys.executable,'-c',program,str(s.root),str(count)]
+    processes=[subprocess.Popen(args,cwd=root,stdout=subprocess.PIPE,text=True) for _ in range(4)]
+    outcomes=[p.communicate(timeout=10)[0].strip() for p in processes]
+    assert count.read_text().splitlines()==['dispatch']
+    assert outcomes.count('saved')>=1 and set(outcomes)<={'saved','ADMISSION_BUSY'}
+    assert subprocess.check_output(args,cwd=root,text=True).strip()=='saved'
+    assert count.read_text().splitlines()==['dispatch']
