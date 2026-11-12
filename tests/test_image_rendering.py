@@ -318,3 +318,20 @@ def test_arbitrary_version_cannot_masquerade_as_qualified_model(tmp_path):
     app = setup(tmp_path)
     with pytest.raises(ValueError, match="IMAGE_UNQUALIFIED_VERSION"):
         app.prepare_image("post", {**MODEL, "version": "a"*64}, font_path=FONT)
+
+
+def test_original_pending_request_recovers_after_post_edit_without_new_approval(tmp_path):
+    app = setup(tmp_path); value = intent(app)
+    class Pending(Provider):
+        def get(self, prediction_id):
+            return {"id": prediction_id, "status": "processing"}
+    provider = Pending()
+    assert app.render_image("post", value, approval(value), provider=provider)["state"] == "pending"
+    changed = app.edit("post", "A newer unapproved post")
+    provider = Provider()
+    result = app.render_image("post", value, None, provider=provider)
+    assert result["candidate_sha256"] == value["candidate_sha256"]
+    assert app.selected("post")["content_sha256"] == changed["content_sha256"]
+    assert provider.submissions == 0
+    assert provider.reads == 1
+    assert app.render_image("post", value, None, provider=None) == result

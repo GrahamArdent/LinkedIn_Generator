@@ -183,7 +183,18 @@ def render(app, job, value, approval, *, provider=None):
     key = value["intent_sha256"]
     stage = "image:" + key
     with locked(app.store, job):
-        validate_intent(app, job, value)
+        raw = {k: v for k, v in value.items() if k != "intent_sha256"}
+        if sha(raw) != key or value.get("job") != job:
+            raise ValueError("IMAGE_INTENT_MISMATCH")
+        admissions = [e["payload"] for e in app.store.events(job)
+                      if e["kind"] == "image_admission" and e["payload"]["intent_sha256"] == key]
+        if admissions:
+            # Recover only the original admitted work, even when a newer post is selected.
+            if admissions[-1]["intent"] != value:
+                raise ValueError("IMAGE_INTENT_MISMATCH")
+            approval = admissions[-1]["approval"]
+        else:
+            validate_intent(app, job, value)
         completed = app.store.stage(job, stage)
         if completed:
             image_bytes(app, job, key)

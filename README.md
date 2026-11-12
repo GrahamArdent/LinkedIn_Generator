@@ -92,6 +92,9 @@ pinned local DejaVu Sans Bold font hash. Pillow is included in the operational
 lock. The final graphic is1080x1350PNG with alt text and asset/source checksums.
 The store retains the original request ID and downloaded bytes outside releases.
 Repeat the same command to read an existing result or poll that original ID.
+An already admitted request recovers under its original saved intent/approval even
+if the post has since been edited; its asset remains bound to the historical
+candidate hash and never becomes approval of the newer selected post.
 No automatic provider submission retry occurs. An uncertain submission without
 a durable ID stays held for owner reconciliation; do not create a new intent to
 bypass it. Provider failure, cancellation, unsafe output or expired download is
