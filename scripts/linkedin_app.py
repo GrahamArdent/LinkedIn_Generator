@@ -52,17 +52,18 @@ def main():
     p=argparse.ArgumentParser(description='Graham local authoring: create → review → feedback → export. No publication command.')
     p.add_argument('--data-root',type=Path,default=Path(os.environ.get('LINKEDIN_DATA_ROOT',str(Path.home()/'.local/share/graham-linkedin'))))
     p.add_argument('--config',type=Path,default=Path(os.environ['LINKEDIN_CONFIG']) if os.environ.get('LINKEDIN_CONFIG') else None)
-    p.add_argument('action',choices=['init','create','status','list','show','resume','feedback','edit','activate-voice','voices','export','backup','import','serve'])
+    p.add_argument('action',choices=['init','create','status','list','show','resume','feedback','edit','activate-voice','voices','export','backup','import','serve','image-prepare','image-render','image-export'])
     p.add_argument('--new-budget',action='store_true');p.add_argument('--parent');p.add_argument('--id');p.add_argument('--topic');p.add_argument('--url',action='append',default=[]);p.add_argument('--notes',default='')
     p.add_argument('--voice',default='concise_challenger');p.add_argument('--narrative',choices=['literal','symbolic'],default='literal')
     p.add_argument('--path',type=Path);p.add_argument('--hash');p.add_argument('--port',type=int,default=8765)
+    p.add_argument('--intent',type=Path);p.add_argument('--approval',type=Path);p.add_argument('--model-config',type=Path);p.add_argument('--brief',type=Path)
     args=p.parse_args()
     store=Store.initialize(args.data_root) if args.action=='init' else Store(args.data_root)
     cfg=None
     if args.config:
         d=json.loads(args.config.read_bytes());cfg=CodexConfig(**{**d,'resume_root':Path(d['resume_root']),'python':Path(d['python'])})
     app=Application(store,cfg)
-    if args.action in ('status','show','resume','feedback','edit','activate-voice','export','create') and not args.id:p.error('action needs --id')
+    if args.action in ('status','show','resume','feedback','edit','activate-voice','export','create','image-prepare','image-render','image-export') and not args.id:p.error('action needs --id')
     if args.action=='init':result={'status':'initialized','data_root':str(store.root)}
     elif args.action=='list':result=[app.show(r['id']) for r in store.list()]
     elif args.action in ('show','status'):result=app.show(args.id)
@@ -86,6 +87,24 @@ def main():
                 if target.exists() and target.read_bytes()!=raw:raise ValueError('EXPORT_CONFLICT')
                 if not target.exists():atomic(target,raw)
             result={'files':[str(args.path/n) for n in outputs],**result}
+    elif args.action=='image-prepare':
+        if not args.model_config:p.error('image-prepare needs --model-config')
+        result=app.prepare_image(args.id,json.loads(args.model_config.read_bytes()),
+            brief=json.loads(args.brief.read_bytes()) if args.brief else None)
+        if args.path:
+            raw=encoded(result)
+            if args.path.exists() and args.path.read_bytes()!=raw:raise ValueError('EXPORT_CONFLICT')
+            if not args.path.exists():atomic(args.path,raw)
+    elif args.action=='image-render':
+        if not args.intent:p.error('image-render needs --intent')
+        result=app.render_image(args.id,json.loads(args.intent.read_bytes()),
+            json.loads(args.approval.read_bytes()) if args.approval else None)
+    elif args.action=='image-export':
+        if not args.hash or not args.path:p.error('image-export needs --hash and --path')
+        raw=app.image_bytes(args.id,args.hash)
+        if args.path.exists() and args.path.read_bytes()!=raw:raise ValueError('EXPORT_CONFLICT')
+        if not args.path.exists():atomic(args.path,raw)
+        result={'file':str(args.path),'mime_type':'image/png','sha256':__import__('hashlib').sha256(raw).hexdigest()}
     elif args.action=='backup':store.backup(args.path);result={'backup':str(args.path)}
     elif args.action=='import':result=import_legacy(store,args.path)
     elif args.action=='serve':
