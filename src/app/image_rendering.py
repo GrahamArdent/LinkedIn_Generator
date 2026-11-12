@@ -1,6 +1,7 @@
 """One bounded image intent in the existing store; never automatically re-submit."""
 from contextlib import contextmanager
 from decimal import Decimal, InvalidOperation
+import base64
 import fcntl
 import hashlib
 import io
@@ -14,6 +15,7 @@ from .operational_store import atomic, sha
 
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 LAYOUT = "single-image-header-v1"
+MODEL_VERSION = "bf53bdb93d739c9c915091cfa5f49ca662d11273a5eb30e7a2ec1939bcf27a00"
 
 
 def digest(raw):
@@ -56,6 +58,8 @@ def prepare(app, job, model, *, font_path=FONT, brief=None):
         raise ValueError("IMAGE_UNQUALIFIED_MODEL")
     if not re.fullmatch("[0-9a-f]{64}", model.get("version", "")):
         raise ValueError("IMAGE_PINNED_VERSION_REQUIRED")
+    if model["version"] != MODEL_VERSION:
+        raise ValueError("IMAGE_UNQUALIFIED_VERSION")
     money(model.get("estimated_cost_usd"))
     if not isinstance(model.get("price_checked_at"), str) or not model["price_checked_at"]:
         raise ValueError("IMAGE_PRICE_REFERENCE_REQUIRED")
@@ -63,6 +67,7 @@ def prepare(app, job, model, *, font_path=FONT, brief=None):
     value = {"schema_version": 1, "job": job, "candidate_sha256": selected["content_sha256"],
              "brief": item, "model": dict(model), "layout": LAYOUT, "dimensions": [1080, 1350],
              "font_path": str(font), "font_sha256": digest(font.read_bytes())}
+    text_layout(value)  # Reject typography/font failures before approval or paid admission.
     value["intent_sha256"] = sha(value)
     return value
 
@@ -104,8 +109,35 @@ def locked(store, job):
             fcntl.flock(handle, fcntl.LOCK_UN)
 
 
+def text_layout(value):
+    from PIL import ImageFont
+    raw = Path(value["font_path"]).read_bytes()
+    if digest(raw) != value["font_sha256"]:
+        raise ValueError("IMAGE_FONT_CHANGED")
+    for size in range(62, 25, -2):
+        # Load verified in-memory bytes, never reopen mutable font data after validation.
+        font = ImageFont.truetype(io.BytesIO(raw), size)
+        lines = []
+        line = ""
+        for word in value["brief"]["overlay_text"].split():
+            candidate = (line + " " + word).strip()
+            if font.getlength(candidate) <= 952:
+                line = candidate
+            else:
+                if line:
+                    lines.append(line)
+                line = word
+        if line:
+            lines.append(line)
+        if (len(lines) <= 3 and all(font.getlength(x) <= 952 for x in lines)
+                and len(lines) * (size + 16) <= 230):
+            return font, lines, size
+    raise ValueError("IMAGE_OVERLAY_DOES_NOT_FIT")
+
+
 def compose(raw, value):
-    from PIL import Image, ImageDraw, ImageFont, ImageOps
+    from PIL import Image, ImageDraw, ImageOps
+    font, lines, size = text_layout(value)
     try:
         if len(raw) > 20_000_000:
             raise ValueError()
@@ -118,26 +150,6 @@ def compose(raw, value):
     except Exception:
         raise ValueError("IMAGE_UNSUPPORTED_ASSET") from None
     draw = ImageDraw.Draw(canvas)
-    text = value["brief"]["overlay_text"]
-    for size in range(62, 25, -2):
-        font = ImageFont.truetype(value["font_path"], size)
-        lines = []
-        line = ""
-        for word in text.split():
-            candidate = (line + " " + word).strip()
-            if draw.textlength(candidate, font=font) <= 952:
-                line = candidate
-            else:
-                if line:
-                    lines.append(line)
-                line = word
-        if line:
-            lines.append(line)
-        if (len(lines) <= 3 and all(draw.textlength(x, font=font) <= 952 for x in lines)
-                and len(lines) * (size + 16) <= 230):
-            break
-    else:
-        raise ValueError("IMAGE_OVERLAY_DOES_NOT_FIT")
     y = (300 - len(lines) * (size + 16)) // 2
     for line in lines:
         draw.text((64, y), line, font=font, fill="white", anchor="lt")
@@ -168,10 +180,10 @@ def image_bytes(app, job, intent_sha256):
 
 
 def render(app, job, value, approval, *, provider=None):
-    validate_intent(app, job, value)
     key = value["intent_sha256"]
     stage = "image:" + key
     with locked(app.store, job):
+        validate_intent(app, job, value)
         completed = app.store.stage(job, stage)
         if completed:
             image_bytes(app, job, key)
@@ -233,17 +245,24 @@ def render(app, job, value, approval, *, provider=None):
         outputs = response.get("output")
         if not isinstance(outputs, list) or len(outputs) != 1 or not delivery_url(outputs[0]):
             raise ValueError("IMAGE_UNSAFE_OUTPUT")
-        source_path = app.store.directory(job) / ("image-" + key + ".source")
-        if source_path.exists():
-            raw = source_path.read_bytes()
-        else:
+        source_stage = stage + ":source"
+        source = app.store.stage(job, source_stage)
+        if source is None:
             try:
                 raw = provider.download(outputs[0])
             except Exception:
                 raise ValueError("IMAGE_DOWNLOAD_PENDING") from None
-            # Validate before retaining arbitrary upstream bytes.
             compose(raw, value)
-            atomic(source_path, raw)
+            source = {"sha256": digest(raw), "base64": base64.b64encode(raw).decode()}
+            try:
+                app.store.reserve(job, source_stage, {"request_id": request_id})
+            except ValueError as exc:
+                if str(exc) != "RECONCILIATION_REQUIRED":
+                    raise
+            app.store.commit_stage(job, source_stage, source)
+        raw = base64.b64decode(source["base64"], validate=True)
+        if digest(raw) != source["sha256"]:
+            raise ValueError("IMAGE_ASSET_CORRUPT")
         asset = compose(raw, value)
         filename = "image-" + key + ".png"
         atomic(app.store.directory(job) / filename, asset)

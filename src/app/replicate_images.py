@@ -34,7 +34,12 @@ class ReplicateImages:
     def submit(self, value):
         brief = value["brief"]
         return self._api("predictions", {"version": value["model"]["version"], "input": {
-            "prompt": brief["generation_prompt"] + " No text, lettering, logos or watermarks.",
+            "prompt": "\n".join([brief["generation_prompt"],
+                "Concept: " + brief.get("concept", ""),
+                "Composition: " + brief.get("composition", ""),
+                "Style: " + brief.get("style", ""),
+                "Avoid: " + "; ".join(brief.get("negative_guidance", [])),
+                "No text, lettering, logos or watermarks."]),
             "aspect_ratio": "4:5", "num_outputs": 1, "output_format": "png",
             "disable_safety_checker": False}})
 

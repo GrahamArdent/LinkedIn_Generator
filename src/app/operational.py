@@ -264,6 +264,11 @@ class Application:
         return self.store.event(job,'feedback',data)
 
     def edit(self,job,text):
+        from .image_rendering import locked
+        with locked(self.store,job):
+            return self._edit_locked(job,text)
+
+    def _edit_locked(self,job,text):
         if not isinstance(text,str) or not 1<=len(text)<=3500:raise ValueError('INVALID_EDIT')
         old=self.selected(job)
         if old['body']==text:return old

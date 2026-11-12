@@ -53,3 +53,19 @@ def test_missing_credential_fails_before_any_request(monkeypatch):
     monkeypatch.delenv("REPLICATE_API_TOKEN", raising=False)
     with pytest.raises(ValueError, match="IMAGE_CREDENTIAL_REQUIRED"):
         ReplicateImages()
+
+
+def test_structured_visual_constraints_reach_provider_prompt(monkeypatch):
+    monkeypatch.setenv("REPLICATE_API_TOKEN", "synthetic-test-only")
+    provider = ReplicateImages()
+    class Transport:
+        def open(self, request, timeout):
+            prompt = json.loads(request.data)["input"]["prompt"]
+            for part in ("Open parcel", "Clear space above", "Natural light", "No robots"):
+                assert part in prompt
+            return Response(b'{"id":"fixture","status":"starting"}')
+    provider.opener = Transport()
+    provider.submit({"model":{"version":"a"*64}, "brief":{
+        "generation_prompt":"A parcel.", "concept":"Open parcel",
+        "composition":"Clear space above", "style":"Natural light",
+        "negative_guidance":["No robots"]}})

@@ -25,7 +25,7 @@ def setup(tmp_path):
 
 
 MODEL = {"provider": "replicate", "model": "black-forest-labs/flux-schnell",
-         "version": "b" * 64, "estimated_cost_usd": "0.003", "price_checked_at": "2026-11-12"}
+         "version": "bf53bdb93d739c9c915091cfa5f49ca662d11273a5eb30e7a2ec1939bcf27a00", "estimated_cost_usd": "0.003", "price_checked_at": "2026-11-12"}
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 
@@ -249,3 +249,72 @@ def test_layout_honours_upper_text_space_in_saved_brief(tmp_path):
     image = Image.open(io.BytesIO(app.image_bytes("post", value["intent_sha256"])))
     assert image.getpixel((10, 10)) == (20, 34, 43)
     assert image.getpixel((10, 1340)) == (202, 185, 159)
+
+
+def test_edit_waits_for_inflight_render_lock(tmp_path):
+    import threading
+    app = setup(tmp_path); value = intent(app)
+    entered = threading.Event(); edited = threading.Event()
+    def edit():
+        entered.set()
+        app.edit("post", "Changed while rendering")
+        edited.set()
+    threads = []
+    class Editing(Provider):
+        def get(self, prediction_id):
+            t = threading.Thread(target=edit); threads.append(t); t.start()
+            assert entered.wait(2)
+            assert not edited.wait(0.15), "edit crossed an in-flight render"
+            return super().get(prediction_id)
+    try:
+        result = app.render_image("post", value, approval(value), provider=Editing())
+        assert result["candidate_sha256"] == value["candidate_sha256"]
+    finally:
+        for thread in threads: thread.join(3)
+    assert edited.is_set()
+
+
+def test_font_change_during_provider_wait_is_rejected(tmp_path):
+    from pathlib import Path
+    app = setup(tmp_path)
+    font = tmp_path / "font.ttf"; font.write_bytes(Path(FONT).read_bytes())
+    value = app.prepare_image("post", MODEL, font_path=font)
+    class Changed(Provider):
+        def get(self, prediction_id):
+            font.write_bytes(Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf").read_bytes())
+            return super().get(prediction_id)
+    with pytest.raises(ValueError, match="IMAGE_FONT_CHANGED"):
+        app.render_image("post", value, approval(value), provider=Changed())
+
+
+def test_unbound_source_file_cannot_replace_downloaded_bytes(tmp_path, monkeypatch):
+    from src.app import image_rendering as module
+    app = setup(tmp_path); value = intent(app); provider = Provider()
+    original = module.atomic
+    def interrupted(path, raw):
+        if str(path).endswith(".png"): raise KeyboardInterrupt()
+        return original(path, raw)
+    monkeypatch.setattr(module, "atomic", interrupted)
+    with pytest.raises(KeyboardInterrupt):
+        app.render_image("post", value, approval(value), provider=provider)
+    blue = io.BytesIO(); Image.new("RGB", (800, 1000), "blue").save(blue, format="PNG")
+    (app.store.directory("post") / ("image-" + value["intent_sha256"] + ".source")).write_bytes(blue.getvalue())
+    monkeypatch.setattr(module, "atomic", original)
+    result = app.render_image("post", value, approval(value), provider=provider)
+    assert result["source_sha256"] == hashlib.sha256(Provider().download("fixture")).hexdigest()
+    assert provider.submissions == 1
+
+
+def test_impossible_overlay_is_rejected_before_any_paid_admission(tmp_path):
+    app = setup(tmp_path); value = intent(app)
+    brief = {**value["brief"], "overlay_text": "W"*160}
+    with pytest.raises(ValueError, match="IMAGE_OVERLAY_DOES_NOT_FIT"):
+        app.prepare_image("post", MODEL, font_path=FONT, brief=brief)
+    with app.store.connection() as con:
+        assert con.execute("SELECT count(*) FROM stages WHERE name LIKE 'image:%'").fetchone()[0] == 0
+
+
+def test_arbitrary_version_cannot_masquerade_as_qualified_model(tmp_path):
+    app = setup(tmp_path)
+    with pytest.raises(ValueError, match="IMAGE_UNQUALIFIED_VERSION"):
+        app.prepare_image("post", {**MODEL, "version": "a"*64}, font_path=FONT)
