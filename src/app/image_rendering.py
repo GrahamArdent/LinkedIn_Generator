@@ -13,7 +13,7 @@ from .operational_store import atomic, sha
 
 
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-LAYOUT = "single-image-caption-v1"
+LAYOUT = "single-image-header-v1"
 
 
 def digest(raw):
@@ -114,7 +114,7 @@ def compose(raw, value):
                 raise ValueError()
             source.load()
             canvas = Image.new("RGB", (1080, 1350), "#14222b")
-            canvas.paste(ImageOps.fit(source.convert("RGB"), (1080, 1050)), (0, 0))
+            canvas.paste(ImageOps.fit(source.convert("RGB"), (1080, 1050)), (0, 300))
     except Exception:
         raise ValueError("IMAGE_UNSUPPORTED_ASSET") from None
     draw = ImageDraw.Draw(canvas)
@@ -138,7 +138,7 @@ def compose(raw, value):
             break
     else:
         raise ValueError("IMAGE_OVERLAY_DOES_NOT_FIT")
-    y = 1050 + (300 - len(lines) * (size + 16)) // 2
+    y = (300 - len(lines) * (size + 16)) // 2
     for line in lines:
         draw.text((64, y), line, font=font, fill="white", anchor="lt")
         y += size + 16

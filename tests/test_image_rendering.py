@@ -211,3 +211,41 @@ def test_provider_receipt_commit_interruption_is_read_only_recoverable(tmp_path,
     recovered = Application(Store(app.store.root), None)
     assert recovered.render_image("post", value, approval(value), provider=provider)["state"] == "completed"
     assert provider.submissions == 1
+
+
+def test_normal_cli_prepares_gates_and_exports_saved_asset(tmp_path):
+    import json
+    import os
+    from pathlib import Path
+    import subprocess
+    import sys
+    app = setup(tmp_path); value = intent(app)
+    script = Path(__file__).resolve().parents[1] / "scripts/linkedin_app.py"
+    model_file = tmp_path / "model.json"; model_file.write_text(json.dumps(MODEL))
+    intent_file = tmp_path / "intent.json"
+    env = {k: v for k, v in os.environ.items() if k not in ("LINKEDIN_CONFIG", "REPLICATE_API_TOKEN")}
+    def cli(*args):
+        return subprocess.run([sys.executable, str(script), "--data-root", str(app.store.root), *args],
+                              env=env, capture_output=True, text=True)
+    prepared = cli("image-prepare", "--id", "post", "--model-config", str(model_file),
+                   "--path", str(intent_file))
+    assert prepared.returncode == 0, prepared.stderr
+    assert json.loads(prepared.stdout) == value
+    held = cli("image-render", "--id", "post", "--intent", str(intent_file))
+    assert held.returncode == 2
+    assert json.loads(held.stderr)["error_code"] == "IMAGE_APPROVAL_REQUIRED"
+    app.render_image("post", value, approval(value), provider=Provider())
+    reopened = cli("image-render", "--id", "post", "--intent", str(intent_file))
+    assert reopened.returncode == 0, reopened.stderr
+    exported = tmp_path / "export.png"
+    result = cli("image-export", "--id", "post", "--hash", value["intent_sha256"], "--path", str(exported))
+    assert result.returncode == 0, result.stderr
+    assert exported.read_bytes() == app.image_bytes("post", value["intent_sha256"])
+
+
+def test_layout_honours_upper_text_space_in_saved_brief(tmp_path):
+    app = setup(tmp_path); value = intent(app)
+    app.render_image("post", value, approval(value), provider=Provider())
+    image = Image.open(io.BytesIO(app.image_bytes("post", value["intent_sha256"])))
+    assert image.getpixel((10, 10)) == (20, 34, 43)
+    assert image.getpixel((10, 1340)) == (202, 185, 159)
