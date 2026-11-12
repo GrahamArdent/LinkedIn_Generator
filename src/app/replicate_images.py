@@ -21,7 +21,7 @@ class ReplicateImages:
     def _api(self, path, data=None):
         raw = None if data is None else json.dumps(data).encode()
         request = Request("https://api.replicate.com/v1/" + path, data=raw,
-            headers={"Authorization": "Bearer " + self.token, "Content-Type": "application/json"})
+            headers={"Authorization": "Bearer " + self.token, "Content-Type": "application/json", "User-Agent": "LinkedInGenerator/1.0"})
         with self.opener.open(request, timeout=40) as response:
             raw = response.read(2_000_001)
         if len(raw) > 2_000_000:
@@ -53,7 +53,7 @@ class ReplicateImages:
         if not delivery_url(url):
             raise ValueError("IMAGE_UNSAFE_OUTPUT")
         # Never forward the API token to an asset host or follow a redirect.
-        with self.opener.open(Request(url), timeout=40) as response:
+        with self.opener.open(Request(url, headers={"User-Agent": "LinkedInGenerator/1.0"}), timeout=40) as response:
             raw = response.read(20_000_001)
         if len(raw) > 20_000_000:
             raise ValueError("IMAGE_UNSUPPORTED_ASSET")

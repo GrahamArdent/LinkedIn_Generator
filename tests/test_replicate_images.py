@@ -69,3 +69,15 @@ def test_structured_visual_constraints_reach_provider_prompt(monkeypatch):
         "generation_prompt":"A parcel.", "concept":"Open parcel",
         "composition":"Clear space above", "style":"Natural light",
         "negative_guidance":["No robots"]}})
+
+
+def test_api_and_asset_requests_identify_the_real_application(monkeypatch):
+    monkeypatch.setenv("REPLICATE_API_TOKEN", "synthetic-test-only")
+    provider = ReplicateImages()
+    class Transport:
+        def open(self, request, timeout):
+            assert request.get_header("User-agent") == "LinkedInGenerator/1.0"
+            return Response(b'{"id":"fixture","status":"processing"}' if request.has_header("Authorization") else b"image")
+    provider.opener = Transport()
+    assert provider.get("fixture")["id"] == "fixture"
+    assert provider.download("https://replicate.delivery/fixture.png") == b"image"
