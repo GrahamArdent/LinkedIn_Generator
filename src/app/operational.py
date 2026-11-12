@@ -288,10 +288,23 @@ class Application:
             con.execute('INSERT INTO events(job,kind,payload_hash) VALUES (?,?,?)',(job,'voice_activation',self.store.blob({'hash':key,'candidate_hash':candidate_hash})))
         return value
 
+    def prepare_image(self,job,model,**kwargs):
+        from .image_rendering import prepare
+        return prepare(self,job,model,**kwargs)
+
+    def render_image(self,job,intent,approval,*,provider=None):
+        from .image_rendering import render
+        return render(self,job,intent,approval,provider=provider)
+
+    def image_bytes(self,job,intent_sha256):
+        from .image_rendering import image_bytes
+        return image_bytes(self,job,intent_sha256)
+
     def export(self,job):
         selected=self.selected(job);record=self.store.get(job)
         return {'text':selected['body'],'manifest':{'job':job,'selected_hash':selected['content_sha256'],
             'revision':selected['revision'],'review_status':selected['review_status'],'visual_asset':selected['visual_asset'],
+            'rendered_images':__import__('src.app.image_rendering',fromlist=['image_records']).image_records(self,job),
             'binding':record['binding'],'preparation':self.store.stage(job,'preparation'),'publication_approved':False}}
 
 
