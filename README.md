@@ -108,3 +108,25 @@ enforce a provider-side billing ceiling. Carousel rendering, human acceptance an
 Dedication publication remain separate. The single current rendering evidence
 and continuation are in `LinkedIn_Image_Rendering_Evidence.md` in the LinkedIn
 posts document packet; repository receipts and assets are raw proof only.
+
+
+#### Permanent credential custody on the Execution Node
+
+The operator selected EN-local custody for Replicate. The administrative helper
+`scripts/replicate_credential.py` uses real user-scoped systemd credential
+encryption with the host key. It is installed as `linkedin-replicate`.
+In an interactive EN terminal run `linkedin-replicate set` and enter the token
+at the hidden prompt. Never place the token in a command argument or chat.
+Existing stored credentials are not overwritten.
+
+Encrypted credential: `~/.local/share/graham-linkedin-credentials/replicate.cred`
+(directory0700, file0600). `linkedin-replicate status` checks decryption without
+showing the token. `linkedin-replicate render --id JOB --intent intent.json
+--approval approval.json` loads it only into the existing renderer subprocess.
+The normal app's exact approval, spending and original-result recovery gates
+still apply; persistent custody does not authorize extra paid calls.
+
+This ciphertext depends on this host's systemd credential key and user identity.
+On loss/rebuild, replace the provider token through Replicate rather than
+assuming ciphertext alone is a portable backup. No Infisical identity, secret
+sync, custom encryption algorithm or background service is added.
