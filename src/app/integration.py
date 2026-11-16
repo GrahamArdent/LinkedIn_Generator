@@ -120,10 +120,10 @@ def generate_content(
                 warnings=["publish_ready_candidate_required"],
             )
         else:
-            style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
             telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
             resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
             try:
+                style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
                 planned = visual_planner(
                     post_text=selected.body,
                     source_candidate=selected.source,

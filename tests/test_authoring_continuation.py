@@ -180,3 +180,51 @@ if(get('voiceapproval').checked||get('minutes').value!=='')throw Error('inherite
 '''
     result=subprocess.run([node,'-e',harness],input=json.dumps(script),capture_output=True,text=True)
     assert result.returncode==0,result.stderr
+
+
+def test_optional_visual_config_failure_does_not_discard_qualified_text(monkeypatch):
+    import src.app.integration as m
+    monkeypatch.setattr(m,'load_yaml',lambda *a:(_ for _ in ()).throw(FileNotFoundError('optional visual config absent')))
+    result=m.generate_content(LinkedInContentRequest(topic='My point'),generator=lambda **kw:qualified_payload(80))
+    assert result.body=='A complete supported draft.' and result.selected_candidate is not None
+    assert result.visual_asset.status=='deferred'
+
+
+def test_durable_visual_unknown_retains_selected_text_and_original_stage(tmp_path,monkeypatch):
+    from src.app import operational as m
+    from src.app.codex_provider import CodexConfig
+    from src.app.operational_store import sha
+    app=Application(Store.initialize(tmp_path/'data'),CodexConfig(tmp_path,Path('/python'),'sha','fixture'))
+    monkeypatch.setattr(m,'qualify_model',lambda c:{'model':c.model})
+    source={'source_id':'S1','status':'usable','title':'Study','publisher':'Publisher','url':'https://example.org/study','checked_at':'2026-11-16','limitations':'Limited study.','passages':[{'locator':'paragraph1','excerpt':'A limited published observation.'}]}
+    monkeypatch.setattr(m.Evidence,'acquire',lambda *a,**kw:{'sources':[source],'errors':[]})
+    dispatches=[];recoveries=[]
+    class Provider:
+        def __init__(self,*a):self.receipts=[]
+        def reconcile(self,**kw):
+            recoveries.append(kw['system'])
+            return {'text':'Retained original visual reply','receipt':{'attempt_id':'original-visual','active_seconds':1,'cache_hit':True}}
+        def generate(self,**kw):
+            dispatches.append(kw['system'])
+            if kw['system']=='optional visual':raise ValueError('CODEX_COMPLETION_UNKNOWN')
+            self.receipts.append({'attempt_id':'preparation'})
+            return json.dumps({'status':'ready','reason':'Supported.','meaning':{'thesis':'A limited point.','reader_consequence':'Check applicability.','qualification':'Limited study.','facts':[{'claim_id':'C1','source_id':'S1','locator':'paragraph1'}]},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Exact study sentence.'}]})
+    monkeypatch.setattr(m,'CodexProvider',Provider)
+    from src.app.integration import generate_content as integrated
+    def engine(request,**kw):
+        client=kw['generator'].keywords['publish_quality_client']
+        def visual(**args):return client.call('optional visual','exact visual input',response_json=True)
+        return integrated(request,generator=lambda **args:qualified_payload(80),visual_planner=visual)
+    monkeypatch.setattr(m,'generate_content',engine)
+    with pytest.raises(ValueError,match='CODEX_COMPLETION_UNKNOWN'):app.create('original','A supported topic',urls=['https://example.org/study'])
+    record=app.store.get('original');assert record['state']=='unknown'
+    assert app.export('original')['text']=='A complete supported draft.'
+    assert record['result']['selected_candidate']['content_sha256']==text_hash('A complete supported draft.')
+    with app.store.connection() as con:pending=con.execute('SELECT input_hash,state FROM stages WHERE job="original" AND state<>"completed"').fetchall()
+    assert len(pending)==1 and pending[0]['state']=='reserved'
+    assert pending[0]['input_hash']==sha({'model':'fixture','system':'optional visual','user':'exact visual input','temperature':0.5})
+    before=list(dispatches)
+    resumed=app.resume('original')
+    assert resumed['state']=='completed' and app.export('original')['text']=='A complete supported draft.'
+    assert dispatches==before and recoveries==['optional visual']
+    with app.store.connection() as con:assert not con.execute('SELECT 1 FROM stages WHERE job="original" AND state<>"completed"').fetchone()

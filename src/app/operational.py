@@ -146,6 +146,7 @@ class Application:
             native.deadline=record['created']+900
             provider=DurableProvider(self.store,job,native)
             client=LLMClient(model=config.model,provider=provider)
+            partial_result=None
             try:
                 if record['input'].get('operation')=='recheck':return self._recheck(record,client,provider)
                 source=self.store.stage(job,'evidence')
@@ -235,6 +236,7 @@ class Application:
                     result=generate_content(request,
                         generator=partial(run_generation,llm_client=client,opportunity_client=client,publish_quality_client=client,editorial_brief=prepared['bundle'],**({'working_text_sink':sink} if sink else {})),
                         visual_planner=partial(plan_visual_asset,client=client)).model_dump()
+                    if result.get('body'):partial_result=result
                     if provider.error:raise provider.error
                     if sink and result.get('body'):
                         saved=sink((result.get('selected_candidate') or {}).get('body') or result['body'],'final')
@@ -245,7 +247,7 @@ class Application:
             except Exception as exc:
                 code=getattr(exc,'code',str(exc))
                 state='budget_exhausted' if 'BUDGET' in code else 'unknown' if any(k in code for k in ('UNKNOWN','RECONCILIATION','BUSY')) else 'failed'
-                self.store.finish(job,state,{'error_code':code,'provider_receipts':provider.receipts})
+                self.store.finish(job,state,{**(partial_result or {}),'error_code':code,'provider_receipts':provider.receipts})
                 raise
 
     def save_idea(self,item,topic,*,notes='',urls=(),voice='concise_challenger',narrative='literal',expected_brief=None):

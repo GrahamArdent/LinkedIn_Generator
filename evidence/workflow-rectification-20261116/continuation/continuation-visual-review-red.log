@@ -1,0 +1,40 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____ test_optional_visual_config_failure_does_not_discard_qualified_text ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f64cab3f560>
+
+    def test_optional_visual_config_failure_does_not_discard_qualified_text(monkeypatch):
+        import src.app.integration as m
+        monkeypatch.setattr(m,'load_yaml',lambda *a:(_ for _ in ()).throw(FileNotFoundError('optional visual config absent')))
+>       result=m.generate_content(LinkedInContentRequest(topic='My point'),generator=lambda **kw:qualified_payload(80))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_authoring_continuation.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/integration.py:123: in generate_content
+    style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_authoring_continuation.py:187: in <lambda>
+    monkeypatch.setattr(m,'load_yaml',lambda *a:(_ for _ in ()).throw(FileNotFoundError('optional visual config absent')))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <tuple_iterator object at 0x7f64cb59d660>
+
+>   monkeypatch.setattr(m,'load_yaml',lambda *a:(_ for _ in ()).throw(FileNotFoundError('optional visual config absent')))
+E   FileNotFoundError: optional visual config absent
+
+tests/test_authoring_continuation.py:187: FileNotFoundError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_authoring_continuation.py::test_optional_visual_config_failure_does_not_discard_qualified_text
+1 failed, 1 warning in 1.24s
