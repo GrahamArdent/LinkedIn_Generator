@@ -197,7 +197,7 @@ class SelectedCandidate(BaseModel):
     candidate_id: str
     source: Literal["original", "rewrite"]
     body: str = Field(min_length=1)
-    score: int = Field(ge=0, le=100, strict=True)
+    score: int | None = Field(ge=0, le=100, strict=True)
     content_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
 
 

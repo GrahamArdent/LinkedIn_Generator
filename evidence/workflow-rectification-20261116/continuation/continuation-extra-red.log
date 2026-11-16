@@ -1,0 +1,41 @@
+......FF..                                                               [100%]
+=================================== FAILURES ===================================
+_ test_partial_essential_findings_survive_without_qualifying_incomplete_review _
+
+    def test_partial_essential_findings_survive_without_qualifying_incomplete_review():
+        from src.app.publish_quality import assess_publish_quality
+        class Client:
+            def call(self,*a,**kw):return {'text':json.dumps({'essential_checks':{'factual_integrity':{'verdict':'needs_evidence','reason':'A number lacks support.'}}})}
+        result=assess_publish_quality(text='Saved text.',audience='readers',content_goal='reach',evidence=[],persona_profile={},client=Client())
+        assert result.review_status=='assessment_unavailable'
+>       assert result.essential_checks['factual_integrity']['verdict']=='needs_evidence'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'factual_integrity'
+
+tests/test_authoring_continuation.py:96: KeyError
+______ test_failed_start_is_observed_without_trial_enrollment_or_dispatch ______
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-2/test_failed_start_is_observed_0')
+
+    def test_failed_start_is_observed_without_trial_enrollment_or_dispatch(tmp_path):
+        app,text=writing(tmp_path)
+        with app.store.connection() as con:history=con.execute('SELECT value FROM metadata WHERE key="trial_history"').fetchone()[0]
+        with pytest.raises(ValueError,match='CONFIG_REQUIRED'):app.draft_item('item','not-started',expected_brief=1,expected_text=text['version'])
+>       record=app.show('item');failure=record['events'][-1]
+                                        ^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests/test_authoring_continuation.py:103: IndexError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_authoring_continuation.py::test_partial_essential_findings_survive_without_qualifying_incomplete_review
+FAILED tests/test_authoring_continuation.py::test_failed_start_is_observed_without_trial_enrollment_or_dispatch
+2 failed, 8 passed, 1 warning in 0.58s

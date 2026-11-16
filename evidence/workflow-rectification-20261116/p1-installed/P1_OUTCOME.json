@@ -1,0 +1,31 @@
+{
+  "result": "P1_INSTALLED_ORDINARY_LOOP_PASS",
+  "item": "graham-workflow-personal-20261116",
+  "attempt": "graham-workflow-personal-pilot-20261116-a1",
+  "attempt_state": "completed",
+  "working_hash": "15dca80a645465d08782e38ffbc12be070da20980f59e1052f8546d9a62aec96",
+  "current_version": 5,
+  "text_history_versions": 5,
+  "review_status": "revalidation_required",
+  "generated_review_status": "reviewable",
+  "qualified_selection": true,
+  "usage": {
+    "calls": 3,
+    "states": [
+      "completed",
+      "completed",
+      "completed"
+    ],
+    "active_wrapper_seconds": 39.97150911297649
+  },
+  "zero_call_read_edit_feedback_replay_export": true,
+  "fresh_process_exact_export": true,
+  "historical_jobs_preserved": 18,
+  "after_backup": "/home/graham/.local/share/graham-linkedin-backups/workflow-rectification-20261116-after-p1",
+  "rollback_old_jobs_read": true,
+  "forward_new_work_recovery": true,
+  "human_judgment": "PENDING",
+  "voice_examples_activated": 0,
+  "published": false
+}
+

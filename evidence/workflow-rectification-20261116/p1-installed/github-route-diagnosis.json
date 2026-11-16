@@ -1,0 +1,38 @@
+{
+  "authorizes_effect": false,
+  "automatic_chat_tool_interception": false,
+  "entrypoint": "chatgpt_paths_diagnose",
+  "executes_effect": false,
+  "gate": {
+    "access_blocker_proven": false,
+    "actor_ref": "actor:chatgpt-connected-github",
+    "authority": "none",
+    "authorization_inferred": false,
+    "direct_actor_admission_state": "missing",
+    "direct_candidate_refs": [],
+    "direct_classification": "GENUINELY_NEW_PATH_REQUIRED",
+    "direct_constituent_refs": [],
+    "direct_evidence_refs": [],
+    "direct_owner_refs": [],
+    "direct_reason_code": "NO_REGISTERED_EFFECT_TARGET_EDGE",
+    "disposition": "ESCALATION_NOT_PRECLUDED_BY_PATHS",
+    "effect_ref": "effect:github-contents",
+    "escalation_allowed": true,
+    "failure_kind": "unspecified",
+    "jit_owner_currentness_collision_required": false,
+    "lookup_preflight_obligations": [],
+    "operator_retry_required": false,
+    "reason_code": "NO_CURRENT_DIRECT_OR_KNOWN_RECOVERY_REALIZATION",
+    "recovery_matches": [],
+    "registered_capability_ids": [
+      "github_contents"
+    ],
+    "registered_route_lookup_required": false,
+    "related_diagnostic_capability_ids": [],
+    "related_diagnostic_is_effect_equivalent": false,
+    "schema_version": "1.0.0",
+    "target_ref": "GrahamArdent/LinkedIn_Generator"
+  },
+  "mode": "read_only_diagnostic"
+}
+

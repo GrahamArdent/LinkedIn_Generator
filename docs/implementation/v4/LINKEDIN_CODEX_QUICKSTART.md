@@ -1,3 +1,21 @@
+# Current text feedback, examples and review
+
+The installed P1 loop has an actual ordinary topic→draft→edit/export/reopen receipt. Native pilot and test edits do not establish human acceptance. Current release/proof is selected in CURRENT_WORK_PACKET.md and the same evidence owner.
+
+The shared UI records actual supplied preference, editing effort and explicit reusable-example approval against the current brief/text version. Approval does not activate an example. **Activate explicitly approved voice example** is a separate action; selecting another text/context clears inherited approval fields. Machine test feedback cannot activate a real example. CLI activation of writing items also requires exact versions:
+
+```sh
+linkedin-codex activate-voice --id WRITING_ITEM_ID --hash TEXT_SHA256 --expected-brief BRIEF_REVISION --expected-text TEXT_VERSION
+```
+
+No score is invented when advisory ratings are unavailable. Complete valid essentials govern qualified selection; incomplete essentials preserve available findings while remaining unavailable. A supplied personal viewpoint is an attributed observation of that statement, not proof of an external event, measured gain or credential. Mixed inputs retain their exact public source support. No arbitrary evidence-free factual route is claimed.
+
+Optional visual-planning failure is deferred independently of saved qualified text. Paid image requests, exact post/image approval and original UNKNOWN provider recovery remain with the existing rendering owner. Failed pre-dispatch authoring starts are retained as item observations, never automatically enrolled in the historical experiment.
+
+---
+
+## P1 ordinary authoring help
+
 # Current ordinary writing workflow — November 16, 2026
 
 Ordinary authoring is separate from the unresolved historical experiment. Its subject-history restriction applies only to explicitly enrolled trials. The prior quick-start below describes historical release behavior; it must not block this ordinary loop.

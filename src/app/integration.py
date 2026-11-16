@@ -44,7 +44,9 @@ def _publish_candidate(
     body, score = candidate.get("body"), candidate.get("score")
     if not isinstance(body, str) or not body.strip():
         return None
-    if type(score) is not int or not 0 <= score <= 100:
+    if score is not None and (type(score) is not int or not 0 <= score <= 100):
+        return None
+    if score is None and policy != REVIEW_POLICY_VERSION:
         return None
     if policy == REVIEW_POLICY_VERSION:
         if (review.get("review_eligible") is not True or review.get("review_status") != "reviewable"
@@ -118,25 +120,31 @@ def generate_content(
                 warnings=["publish_ready_candidate_required"],
             )
         else:
-            style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
             telemetry = payload.get("telemetry") if isinstance(payload.get("telemetry"), dict) else {}
             resolved_goal = str(telemetry.get("content_goal") or "").strip() or request.content_goal
-            planned = visual_planner(
-                post_text=selected.body,
-                source_candidate=selected.source,
-                audience=request.audience,
-                content_goal=resolved_goal,
-                evidence=evidence,
-                preference=request.visual_asset_preference,
-                style_profile=style_profile,
-            )
             try:
+                style_profile = load_yaml(str(CONFIG_DIR / "visual_style.yaml"))
+                planned = visual_planner(
+                    post_text=selected.body,
+                    source_candidate=selected.source,
+                    audience=request.audience,
+                    content_goal=resolved_goal,
+                    evidence=evidence,
+                    preference=request.visual_asset_preference,
+                    style_profile=style_profile,
+                )
                 visual_asset = planned if isinstance(planned, VisualAssetPlan) else VisualAssetPlan.model_validate(planned)
             except ValidationError:
                 visual_asset = VisualAssetPlan(
                     status="deferred",
                     rationale="The visual planner returned an invalid plan.",
                     warnings=["invalid_visual_plan"],
+                )
+            except Exception as exc:
+                visual_asset = VisualAssetPlan(
+                    status="deferred",
+                    rationale="Text is saved; optional visual planning is unavailable.",
+                    warnings=["visual_planner_unavailable:"+type(exc).__name__],
                 )
             if visual_asset.status == "planned":
                 if (
