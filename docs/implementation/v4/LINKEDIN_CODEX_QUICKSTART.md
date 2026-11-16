@@ -1,3 +1,29 @@
+# Current ordinary writing workflow — November 16, 2026
+
+Ordinary authoring is separate from the unresolved historical experiment. Its subject-history restriction applies only to explicitly enrolled trials. The prior quick-start below describes historical release behavior; it must not block this ordinary loop.
+
+Use the shared loopback UI: enter a topic and notes, then **Save idea** (no model) or **Draft this / revise**. IDs and version guards are automatic. Current text stays editable/exportable when assessment is unavailable. A conflict retains the unsaved edit; compare before saving against the new current version. **Check current text** assesses without rewriting. Feedback never activates a voice example implicitly.
+
+CLI uses the same application/store:
+
+```sh
+linkedin-codex save-idea --topic 'My intended point' --notes 'My supplied account'
+linkedin-codex draft --topic 'My intended point' --notes 'My supplied account'
+linkedin-codex show --id WRITING_ITEM_ID
+linkedin-codex export --id WRITING_ITEM_ID --path EXPORT_DIRECTORY
+linkedin-codex edit --id WRITING_ITEM_ID --path EDITED_TEXT_FILE --expected-brief BRIEF_REVISION --expected-text TEXT_VERSION
+linkedin-codex recheck --id WRITING_ITEM_ID
+linkedin-codex draft --id WRITING_ITEM_ID
+```
+
+`save-idea` without an ID returns a new saved item. A separate new `draft --topic` starts a new item; use the saved ID to continue one item. Deliberate draft/recheck actions generate an attempt ID and capture expected versions automatically; automation can supply explicit `--attempt`, `--expected-brief`, `--expected-text` for idempotent retries. Uncertain existing attempts must reconcile via their original `resume --id ATTEMPT_ID`, not a new attempt. Each deliberate action retains its declared finite allowance; consumed/expired historical requests are unchanged. Capture and read/edit/export need no provider configuration.
+
+Working exports carry exact current bytes/status, not qualified/approved/visual-ready/published claims. Human content/voice/image approval and actual publication remain distinct. Candidate behavior is not installed until exact release receipts establish it. Current results and one RESUME_AT remain in the existing evidence item linked by CURRENT_WORK_PACKET.md.
+
+---
+
+## Prior release quick-start — historical
+
 # Graham authoring — current local workflow
 
 Current release and rollback identities are recorded in `evidence/operational-implementation-20261106/INSTALLATION.json` and `CURRENT_WORK_PACKET.md`. The supported entry is `/home/graham/.local/bin/linkedin-codex` on the Execution Node, account graham. It uses GPT-6 SOL medium through the existing ChatGPT subscription; no API fallback. Graham chose this available default after the live model list did not offer6.1 SOL.

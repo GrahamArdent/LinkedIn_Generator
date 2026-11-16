@@ -64,6 +64,7 @@ def main():
     if args.config:
         d=json.loads(args.config.read_bytes());cfg=CodexConfig(**{**d,'resume_root':Path(d['resume_root']),'python':Path(d['python'])})
     app=Application(store,cfg)
+    if args.action in ('save-idea','draft') and not args.id and args.topic:args.id='graham-'+__import__('uuid').uuid4().hex
     if args.action in ('save-idea','draft','recheck','status','show','resume','feedback','edit','activate-voice','export','create','image-prepare','image-render','image-export') and not args.id:p.error('action needs --id')
     if args.action=='init':result={'status':'initialized','data_root':str(store.root)}
     elif args.action=='list':result=store.writing_list()+[app.show(r['id']) for r in store.list()]
@@ -73,7 +74,13 @@ def main():
         if not args.topic:p.error('save-idea needs --topic')
         result=app.save_idea(args.id,args.topic,notes=args.notes,urls=args.url,voice=args.voice,narrative=args.narrative,expected_brief=args.expected_brief)
     elif args.action in ('draft','recheck'):
-        if not args.attempt or args.expected_brief is None:p.error('action needs --attempt and --expected-brief; --expected-text if text exists')
+        if args.topic:
+            app.save_idea(args.id,args.topic,notes=args.notes,urls=args.url,voice=args.voice,narrative=args.narrative,expected_brief=args.expected_brief)
+        item=app.show(args.id)
+        if item.get('kind')!='writing_item':p.error('draft/recheck needs a writing item')
+        if args.expected_brief is None:
+            args.expected_brief=item['brief_revision'];args.expected_text=item['current_text']['version'] if item['current_text'] else None
+        if not args.attempt:args.attempt='writing-'+__import__('uuid').uuid4().hex
         result=getattr(app,'draft_item' if args.action=='draft' else 'recheck_item')(args.id,args.attempt,expected_brief=args.expected_brief,expected_text=args.expected_text)
     elif args.action=='create':
         if not args.topic:p.error('create needs --topic')

@@ -288,6 +288,12 @@ class Application:
         brief=writing['brief']
         return self.create(attempt,**brief,writing_snapshot=snapshot,operation=operation)
 
+    def resume_writing(self,item):
+        attempts=[r for r in self.show(item)['attempts'] if r['state'] in ('unknown','prepared')]
+        if not attempts:return self.show(item)
+        if len(attempts)!=1:raise ValueError('MULTIPLE_ORIGINAL_ATTEMPTS_REQUIRE_RECONCILIATION')
+        return self.resume(attempts[0]['id'])
+
     def recheck_item(self,item,attempt,*,expected_brief,expected_text):
         return self.draft_item(item,attempt,expected_brief=expected_brief,expected_text=expected_text,operation='recheck')
 
@@ -299,10 +305,18 @@ class Application:
         from .utils import load_yaml
         root=Path(__file__).resolve().parents[2]
         profile=_persona_profile(str(root),load_yaml(str(root/'config/personas.yaml')),'graham',author_pov='individual',writing_voice_id=record['input']['voice'])
-        profile['editorial_context']={'brief':snapshot['brief'],'limits':'User testimony/viewpoint only; no independent measured outcomes. Source assertions need evidence.'}
+        preparation=None;ancestor=current
+        history={t['version']:t for t in self.store.writing(snapshot['item'])['text_history']}
+        while ancestor:
+            if ancestor.get('attempt'):preparation=self.store.stage(ancestor['attempt'],'preparation')
+            if preparation:break
+            ancestor=history.get(ancestor.get('parent'))
+        evidence=list(preparation['request']['evidence']) if preparation else []
+        evidence.append({'title':'Graham supplied account; not independently verified','fact':snapshot['brief']['notes'] or snapshot['brief']['topic']})
+        profile['editorial_context']={'brief':snapshot['brief'],'source_bundle':preparation['bundle'] if preparation else None,
+            'limits':'User testimony/viewpoint only; no independent measured outcomes. Public assertions require their retained exact support; old support cannot substantiate new claims.'}
         review=assess_publish_quality(text=current['body'],audience='business and IT leaders',content_goal='conversation',
-            evidence=[{'title':'Graham supplied account; not independently verified','fact':snapshot['brief']['notes'] or snapshot['brief']['topic']}],
-            persona_profile=profile,client=client).as_dict()
+            evidence=evidence,persona_profile=profile,client=client).as_dict()
         if provider.error:raise provider.error
         self.store.writing_review(snapshot['item'],current['version'],snapshot['brief_revision'],review)
         return self.store.finish(record['id'],'completed',{'review':review,'text_version':current['version'],'brief_revision':snapshot['brief_revision'],'content_sha256':current['content_sha256']})
@@ -328,7 +342,11 @@ class Application:
         return urls[:6]
 
     def show(self,job):
-        if self.store.writing_exists(job):return self.store.writing(job)
+        if self.store.writing_exists(job):
+            item=self.store.writing(job)
+            item['attempts']=[{'id':r['id'],'state':r['state'],'input_digest':sha(r['input']),'created':r['created']} for r in self.store.list() if r['input'].get('writing_snapshot',{}).get('item')==job]
+            item['state']=item['attempts'][-1]['state'] if item['attempts'] else 'idea_saved'
+            return item
         record=self.store.get(job)
         record['events']=self.store.events(job)
         try:record['current_selected']=self.selected(job)

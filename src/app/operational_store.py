@@ -93,8 +93,8 @@ class Store:
 
     def admit(self,job,inputs,binding):
         if not isinstance(job,str) or not job.strip() or len(job)>100:raise ValueError('INVALID_JOB_ID')
-        if self.writing_exists(job):raise ValueError('IDENTITY_COLLISION')
         with self.transaction() as con:
+            if con.execute("SELECT 1 FROM sqlite_master WHERE name='writing_items'").fetchone() and con.execute('SELECT 1 FROM writing_items WHERE id=?',(job,)).fetchone():raise ValueError('IDENTITY_COLLISION')
             old=con.execute('SELECT * FROM jobs WHERE id=?',(job,)).fetchone()
             if old:
                 if json.loads(old['input'])!=inputs:raise ValueError('REQUEST_CONFLICT')
@@ -225,13 +225,13 @@ class Store:
         row['text_history']=[{**dict(t),**self.read_blob(t['blob'])} for t in texts]
         row['events']=[{'kind':e['kind'],'payload':self.read_blob(e['blob'])} for e in events]
         row['current_text']=next((t for t in row['text_history'] if t['version']==row['current_text']),None)
+        if row['current_text'] and row['current_text']['brief_revision']!=row['brief_revision']:
+            row['current_text']={**row['current_text'],'review_status':'revalidation_required'}
         if row['current_text']:
             for event in row['events']:
                 value=event['payload']
                 if event['kind']=='review' and value['version']==row['current_text']['version'] and value['brief_revision']==row['brief_revision'] and not value['conflict']:
                     row['current_text']={**row['current_text'],'review_status':value['review'].get('review_status','assessment_unavailable'),'review':value['review']}
-        if row['current_text'] and row['current_text']['brief_revision']!=row['brief_revision']:
-            row['current_text']={**row['current_text'],'review_status':'revalidation_required'}
         return row
 
     def save_text(self,item,text,expected_brief,expected_parent,*,attempt=None,stage=None):
