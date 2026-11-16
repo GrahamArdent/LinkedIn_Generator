@@ -13,7 +13,7 @@ Governing v1.2plan/prompt copies reconcile completed P1/accepted approval withou
 
 # Current continuation — execute scoped workflow rectification
 
-Graham explicitly authorized the bound package on November 16, 2026: P0 owner reconciliation, then P1 complete ordinary authoring loop before later authorized phases. The saved plan/prompt SHA-256 values are 5b61bb12d9196de9c9231e61ddce31c624603295ab0de8143bb7cafe0b043ed3 / 025b41159595be041fda5201d3621c07cf844584f4f51db0d19fa59679a2e971. Their repository copies are in docs/implementation/v4/.
+Graham explicitly authorized the bound package on November 16, 2026: P0 owner reconciliation, then P1 complete ordinary authoring loop before later authorized phases. The saved plan/prompt SHA-256 values are 56d1e56bc4350516dcf2a6d10e914a7ce8afcff95d7705e1a0f37c2a56da021f / 025b41159595be041fda5201d3621c07cf844584f4f51db0d19fa59679a2e971. Their repository copies are in docs/implementation/v4/.
 
 Revision1.1 continuation/test-reuse amendment is reconciled in this documentation-only successor. Reuse exact qualified code/tests; see scoped plan§2A and current evidence E8. The prior rejected public GitHub push remains gated; no review-only update clears it.
 
