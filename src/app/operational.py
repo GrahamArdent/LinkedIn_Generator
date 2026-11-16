@@ -214,7 +214,7 @@ class Application:
                     narrative=assessment['narrative'] if record['input']['narrative']=='symbolic' else {'form':'literal','beats':DEFAULT_BEATS,'symbol':None}
                     if record['input']['narrative']=='symbolic' and (not isinstance(narrative,dict) or narrative.get('form')!='symbolic'):raise ValueError('NARRATIVE_SELECTION_CHANGED')
                     handoff=freeze_handoff(meaning,narrative)
-                    claims=[{'claim_id':f['claim_id'],'kind':'fact',**{k:f[k] for k in ('text','source_ids')}} for f in meaning['facts']]
+                    claims=[{'claim_id':f['claim_id'],'kind':'observation' if any(s.get('record') for s in source['sources'] if s['source_id'] in f['source_ids']) else 'fact',**{k:f[k] for k in ('text','source_ids')}} for f in meaning['facts']]
                     by_id={s['source_id']:s for s in source['sources']}
                     data={'request_id':job,'origin':'manual','persona_key':'graham','topic':record['input']['topic'],
                           'audience':'business and IT leaders','objective':meaning['reader_consequence'],'writing_voice_id':record['binding']['voice']['id'],
@@ -259,8 +259,18 @@ class Application:
     def draft_item(self,item,attempt,*,expected_brief,expected_text,operation='draft'):
         with (self.store.root/('.writing-'+text_hash(item)+'.lock')).open('a+') as lock:
             try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-            except BlockingIOError:raise ValueError('WRITING_ACTION_BUSY')
-            return self._draft_item(item,attempt,expected_brief=expected_brief,expected_text=expected_text,operation=operation)
+            except BlockingIOError:
+                if self.store.writing_exists(item):self.store.observe_writing(item,'action_not_admitted',{'attempt':attempt,'operation':operation,'brief_revision':expected_brief,'text_version':expected_text,'error_code':'WRITING_ACTION_BUSY','dispatched':False,'trial_enrolled':False})
+                raise ValueError('WRITING_ACTION_BUSY')
+            try:return self._draft_item(item,attempt,expected_brief=expected_brief,expected_text=expected_text,operation=operation)
+            except Exception as exc:
+                if self.store.writing_exists(item):
+                    with self.store.connection() as con:admitted=con.execute('SELECT 1 FROM jobs WHERE id=?',(attempt,)).fetchone()
+                    if not admitted:
+                        self.store.observe_writing(item,'action_not_admitted',{'attempt':attempt,'operation':operation,
+                            'brief_revision':expected_brief,'text_version':expected_text,'error_code':str(getattr(exc,'code',str(exc)))[:256],
+                            'dispatched':False,'trial_enrolled':False})
+                raise
 
     def _draft_item(self,item,attempt,*,expected_brief,expected_text,operation='draft'):
         # Freeze exact input versions before dispatch. Replays never refresh the
@@ -368,8 +378,16 @@ class Application:
         if self.store.writing_exists(job):
             item=self.store.writing(job);current=item['current_text']
             if not current or data.get('candidate_hash')!=current['content_sha256']:raise ValueError('STALE_CANDIDATE')
-            if set(data)-{'candidate_hash','note','decision','test_only'} or data.get('decision') not in (None,'keep','light','structural','reject'):raise ValueError('INVALID_FEEDBACK')
-            return self.store.writing_event(job,'feedback',data,item['brief_revision'],current['version'])
+            allowed={'candidate_hash','preference','decision','reasons','note','voice','construction','usefulness','factual_limits','editing_minutes','approve_voice_example','test_only','brief_revision','text_version'}
+            if set(data)-allowed or data.get('decision') not in (None,'keep','light','structural','reject'):raise ValueError('INVALID_FEEDBACK')
+            if data.get('approve_voice_example') not in (None,True,False) or type(data.get('approve_voice_example',False)) is not bool:raise ValueError('INVALID_FEEDBACK')
+            if data.get('editing_minutes') is not None and (type(data['editing_minutes']) not in (int,float) or not 0<=data['editing_minutes']<10000):raise ValueError('INVALID_FEEDBACK')
+            if 'brief_revision' in data and data['brief_revision']!=item['brief_revision'] or 'text_version' in data and data['text_version']!=current['version']:raise ValueError('STALE_WRITING_VERSION')
+            if data.get('approve_voice_example'):
+                if data.get('decision') not in ('keep','light'):raise ValueError('VOICE_APPROVAL_REQUIRED')
+                if type(data.get('brief_revision')) is not int or type(data.get('text_version')) is not int:raise ValueError('EXPECTED_WRITING_VERSION_REQUIRED')
+            value={**data,'brief_revision':item['brief_revision'],'text_version':current['version']}
+            return self.store.writing_event(job,'feedback',value,item['brief_revision'],current['version'])
         selected=self.selected(job)
         if data.get('candidate_hash')!=selected['content_sha256']:raise ValueError('STALE_CANDIDATE')
         allowed={'candidate_hash','preference','decision','reasons','note','voice','construction','usefulness','factual_limits','editing_minutes','approve_voice_example'}
@@ -396,7 +414,8 @@ class Application:
                  'revision':old['revision']+1,'review_status':'revalidation_required','visual_asset':None,'publication_approved':False}
         return self.store.event(job,'revision',revised)
 
-    def activate_voice(self,job,candidate_hash):
+    def activate_voice(self,job,candidate_hash,*,expected_brief=None,expected_text=None):
+        if self.store.writing_exists(job):return self._activate_writing_voice(job,candidate_hash,expected_brief,expected_text)
         selected=self.selected(job)
         if selected['content_sha256']!=candidate_hash:raise ValueError('STALE_CANDIDATE')
         approved=[e['payload'] for e in self.store.events(job) if e['kind']=='feedback' and e['payload'].get('candidate_hash')==candidate_hash]
@@ -411,6 +430,30 @@ class Application:
             key=self.store.blob(value)
             con.execute('INSERT OR REPLACE INTO metadata VALUES (?,?)',('active_voice',key))
             con.execute('INSERT INTO events(job,kind,payload_hash) VALUES (?,?,?)',(job,'voice_activation',self.store.blob({'hash':key,'candidate_hash':candidate_hash})))
+        return value
+
+    def _activate_writing_voice(self,item,candidate_hash,expected_brief,expected_text):
+        # Approval and activation are separate effects. Bind both to the exact
+        # brief/text version, not merely matching text bytes after an edit.
+        with self.store.transaction() as con:
+            row=con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone()
+            if type(expected_brief) is not int or type(expected_text) is not int or row['brief_revision']!=expected_brief or row['current_text']!=expected_text:raise ValueError('STALE_WRITING_VERSION')
+            textrow=con.execute('SELECT * FROM writing_texts WHERE item=? AND version=?',(item,expected_text)).fetchone()
+            current=self.store.read_blob(textrow['blob'])
+            if current['content_sha256']!=candidate_hash:raise ValueError('STALE_CANDIDATE')
+            feedback=[self.store.read_blob(e['blob']) for e in con.execute('SELECT blob FROM writing_events WHERE item=? AND kind="feedback" ORDER BY id',(item,))]
+            matching=[e for e in feedback if e.get('brief_revision')==expected_brief and e.get('text_version')==expected_text and e.get('candidate_hash')==candidate_hash]
+            if not matching or matching[-1].get('approve_voice_example') is not True or matching[-1].get('test_only') or matching[-1].get('decision') not in ('keep','light'):raise ValueError('VOICE_APPROVAL_REQUIRED')
+            source='local:'+item+':'+str(expected_brief)+':'+str(expected_text)+':'+candidate_hash
+            approved=LinkedInContentFeedback(request_id=item,decision='keep',original_text=current['body'],source_ref=source)
+            example=voice_example_from_feedback(approved).model_dump()
+            active=con.execute('SELECT value FROM metadata WHERE key="active_voice"').fetchone()
+            old=self.store.read_blob(active['value']) if active else {'version':0,'examples':[]}
+            if any(e.get('source_ref')==source for e in old['examples']):return old
+            value={'version':old['version']+1,'examples':(old['examples']+[example])[-3:]}
+            key=self.store.blob(value)
+            con.execute('INSERT OR REPLACE INTO metadata VALUES (?,?)',('active_voice',key))
+            con.execute('INSERT INTO writing_events(item,kind,blob) VALUES (?,?,?)',(item,'voice_activation',self.store.blob({'hash':key,'candidate_hash':candidate_hash,'brief_revision':expected_brief,'text_version':expected_text})))
         return value
 
     def prepare_image(self,job,model,**kwargs):

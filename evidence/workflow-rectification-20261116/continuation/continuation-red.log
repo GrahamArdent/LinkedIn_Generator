@@ -1,0 +1,108 @@
+FFFFF.                                                                   [100%]
+=================================== FAILURES ===================================
+_ test_valid_essentials_qualify_without_optional_score_and_failed_essentials_stay_closed _
+
+    def test_valid_essentials_qualify_without_optional_score_and_failed_essentials_stay_closed():
+        request=LinkedInContentRequest(topic='My point',visual_asset_plan=False)
+        payload=qualified_payload()
+        result=generate_content(request,generator=lambda **kw:payload)
+>       assert result.selected_candidate and result.selected_candidate.score is None
+E       AssertionError: assert (None)
+E        +  where None = LinkedInContentResult(request_id=None, origin='dedication', persona_key='graham', status='drafted', body='A complete s...ment_voice': {'verdict': 'pass', 'reason': 'Supported supplied point.'}}}}, selected_candidate=None, visual_asset=None).selected_candidate
+
+tests/test_authoring_continuation.py:20: AssertionError
+__________ test_visual_planning_failure_retains_exact_qualified_text ___________
+
+    def test_visual_planning_failure_retains_exact_qualified_text():
+        def fail(**kw):raise RuntimeError('optional provider failed')
+>       result=generate_content(LinkedInContentRequest(topic='My point'),generator=lambda **kw:qualified_payload(80),visual_planner=fail)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_authoring_continuation.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/integration.py:124: in generate_content
+    planned = visual_planner(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+kw = {'post_text': 'A complete supported draft.', 'source_candidate': 'original', 'audience': 'professional network', 'content_goal': 'auto', ...}
+
+>   def fail(**kw):raise RuntimeError('optional provider failed')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   RuntimeError: optional provider failed
+
+tests/test_authoring_continuation.py:28: RuntimeError
+_ test_writing_voice_approval_and_activation_are_separate_exact_version_effects _
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-0/test_writing_voice_approval_an0')
+
+    def test_writing_voice_approval_and_activation_are_separate_exact_version_effects(tmp_path):
+        app,text=writing(tmp_path)
+        payload={'candidate_hash':text['content_sha256'],'decision':'keep','approve_voice_example':True,'brief_revision':1,'text_version':text['version'],'preference':'B','editing_minutes':3}
+>       app.feedback('item',payload)
+
+tests/test_authoring_continuation.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.operational.Application object at 0x7f1aacfebe90>, job = 'item'
+data = {'candidate_hash': 'abc34ab3cc8bb69b34bf55a8ca87b4c1d3ac1daf879167e40f015e248b7a6da2', 'decision': 'keep', 'approve_voice_example': True, 'brief_revision': 1, ...}
+
+    def feedback(self,job,data):
+        if self.store.writing_exists(job):
+            item=self.store.writing(job);current=item['current_text']
+            if not current or data.get('candidate_hash')!=current['content_sha256']:raise ValueError('STALE_CANDIDATE')
+>           if set(data)-{'candidate_hash','note','decision','test_only'} or data.get('decision') not in (None,'keep','light','structural','reject'):raise ValueError('INVALID_FEEDBACK')
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           ValueError: INVALID_FEEDBACK
+
+src/app/operational.py:371: ValueError
+____________ test_missing_or_machine_approval_never_activates_voice ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-0/test_missing_or_machine_approv0')
+
+    def test_missing_or_machine_approval_never_activates_voice(tmp_path):
+        app,text=writing(tmp_path)
+        app.feedback('item',{'candidate_hash':text['content_sha256'],'decision':'keep'})
+>       with pytest.raises(ValueError,match='VOICE_APPROVAL_REQUIRED'):app.activate_voice('item',text['content_sha256'],expected_brief=1,expected_text=text['version'])
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: Application.activate_voice() got an unexpected keyword argument 'expected_brief'
+
+tests/test_authoring_continuation.py:58: TypeError
+______ test_feedback_approval_cannot_certify_a_new_version_with_same_text ______
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-0/test_feedback_approval_cannot_0')
+
+    def test_feedback_approval_cannot_certify_a_new_version_with_same_text(tmp_path):
+        app,text=writing(tmp_path)
+>       app.feedback('item',{'candidate_hash':text['content_sha256'],'decision':'keep','approve_voice_example':True,'brief_revision':1,'text_version':text['version']})
+
+tests/test_authoring_continuation.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <src.app.operational.Application object at 0x7f1aac7a87a0>, job = 'item'
+data = {'candidate_hash': 'abc34ab3cc8bb69b34bf55a8ca87b4c1d3ac1daf879167e40f015e248b7a6da2', 'decision': 'keep', 'approve_voice_example': True, 'brief_revision': 1, ...}
+
+    def feedback(self,job,data):
+        if self.store.writing_exists(job):
+            item=self.store.writing(job);current=item['current_text']
+            if not current or data.get('candidate_hash')!=current['content_sha256']:raise ValueError('STALE_CANDIDATE')
+>           if set(data)-{'candidate_hash','note','decision','test_only'} or data.get('decision') not in (None,'keep','light','structural','reject'):raise ValueError('INVALID_FEEDBACK')
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           ValueError: INVALID_FEEDBACK
+
+src/app/operational.py:371: ValueError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_authoring_continuation.py::test_valid_essentials_qualify_without_optional_score_and_failed_essentials_stay_closed
+FAILED tests/test_authoring_continuation.py::test_visual_planning_failure_retains_exact_qualified_text
+FAILED tests/test_authoring_continuation.py::test_writing_voice_approval_and_activation_are_separate_exact_version_effects
+FAILED tests/test_authoring_continuation.py::test_missing_or_machine_approval_never_activates_voice
+FAILED tests/test_authoring_continuation.py::test_feedback_approval_cannot_certify_a_new_version_with_same_text
+5 failed, 1 passed, 1 warning in 0.52s

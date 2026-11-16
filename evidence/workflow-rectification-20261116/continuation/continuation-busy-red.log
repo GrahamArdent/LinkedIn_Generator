@@ -1,0 +1,29 @@
+...........F.                                                            [100%]
+=================================== FAILURES ===================================
+_______________ test_busy_start_is_observed_without_new_attempt ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-4/test_busy_start_is_observed_wi0')
+
+    def test_busy_start_is_observed_without_new_attempt(tmp_path):
+        import fcntl
+        app,text=writing(tmp_path)
+        with (app.store.root/('.writing-'+text_hash('item')+'.lock')).open('a+') as lock:
+            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            with pytest.raises(ValueError,match='WRITING_ACTION_BUSY'):app.draft_item('item','busy-start',expected_brief=1,expected_text=text['version'])
+>       assert app.show('item')['events'][-1]['payload']['error_code']=='WRITING_ACTION_BUSY' and app.store.list()==[]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+tests/test_authoring_continuation.py:163: IndexError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_authoring_continuation.py::test_busy_start_is_observed_without_new_attempt
+1 failed, 12 passed, 1 warning in 1.15s

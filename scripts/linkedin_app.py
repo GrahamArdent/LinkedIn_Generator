@@ -87,7 +87,7 @@ def main():
         result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative,parent=args.parent,new_budget=args.new_budget,experiment=args.experiment)
     elif args.action=='feedback':result=app.feedback(args.id,json.loads(args.path.read_bytes()))
     elif args.action=='edit':result=app.edit(args.id,args.path.read_text(),expected_brief=args.expected_brief,expected_text=args.expected_text)
-    elif args.action=='activate-voice':result=app.activate_voice(args.id,args.hash)
+    elif args.action=='activate-voice':result=app.activate_voice(args.id,args.hash,expected_brief=args.expected_brief,expected_text=args.expected_text)
     elif args.action=='voices':
         result={'catalogue':json.loads((Path(__file__).resolve().parents[1]/'config/writing_voices.json').read_bytes()),'active_examples':app.active_voice()}
     elif args.action=='export':

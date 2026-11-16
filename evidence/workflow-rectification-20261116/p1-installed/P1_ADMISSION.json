@@ -1,0 +1,15 @@
+{
+  "item": "graham-workflow-personal-20261116",
+  "attempt": "graham-workflow-personal-pilot-20261116-a1",
+  "operation": "one ordinary authoring pilot",
+  "maximum_native_model_executions": 12,
+  "cumulative_active_cli_seconds": 900,
+  "execution_wall_seconds": 900,
+  "api_spend": 0,
+  "paid_fallback": false,
+  "brief_origin": "plan section6 provisional brief; notes distinguish actual supplied statements from intended editorial point",
+  "notes_sha256": "db585e0f004769fea75797da30cf0a7487456f28bd89e3105eb21d30d3934f04",
+  "publication_approved": false,
+  "human_acceptance": "PENDING"
+}
+

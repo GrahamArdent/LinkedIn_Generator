@@ -266,6 +266,14 @@ class Store:
             con.execute('INSERT INTO writing_events(item,kind,blob) VALUES (?,?,?)',(item,'review',self.blob(value)))
         return value
 
+    def observe_writing(self,item,kind,value):
+        # Operational attempted-request experience, not controlled-trial
+        # enrollment or an executable job. Do not move brief/text pointers.
+        with self.transaction() as con:
+            if not con.execute('SELECT 1 FROM writing_items WHERE id=?',(item,)).fetchone():raise ValueError('WRITING_ITEM_NOT_FOUND')
+            con.execute('INSERT INTO writing_events(item,kind,blob) VALUES (?,?,?)',(item,kind,self.blob(value)))
+        return value
+
     def writing_event(self,item,kind,value,expected_brief,expected_text):
         with self.transaction() as con:
             row=con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone()

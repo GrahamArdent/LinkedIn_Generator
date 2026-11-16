@@ -1,3 +1,16 @@
+# Current continuation — installed P1 complete; bounded P2–P4 continuation
+
+PR53 merged/installed28e7619dfb619fbbd19827f122c214e00150fd75. Actual P1 ordinary pilot completed3included native executions,40wrapper-active seconds/API0; exact saved text15dca80a645465d08782e38ffbc12be070da20980f59e1052f8546d9a62aec96. Read/edit/test-feedback/original-attempt replay/export added0calls;18historical jobs and post-upgrade new work are preserved. Human writing acceptance remains pending. This is technical authoring proof, not publication or a winning trial.
+
+Selected next engineering scope: complete P2 current-text feedback/example controls and optional-score qualification; isolate optional visual-planning exceptions (P3); retain pre-dispatch failure observations separately from experiments and dispose F01–F17 with evidence (P4). Exact current results and one RESUME_AT remain solely in the existing evidence item below. Do not rerun P1 or reset its original admission. No new paid render, trial batch, voice activation or publication is inferred.
+
+Evidence owner: https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal
+Governing v1.1plan/prompt copies and hashes below remain unchanged. Candidate-source tests, release tests, actual installed outcomes and human judgment remain distinct. Raw P1 proof:evidence/workflow-rectification-20261116/p1-installed/. Current raw continuation proof:same directory/continuation/.
+
+---
+
+## Previous P1 release pointer — historical
+
 # Current continuation — execute scoped workflow rectification
 
 Graham explicitly authorized the bound package on November 16, 2026: P0 owner reconciliation, then P1 complete ordinary authoring loop before later authorized phases. The saved plan/prompt SHA-256 values are fc1323e4ba38de7660e33476f1f364ee14534f65179b1e779580069ce758584e / c4ba5a41cad089026daa7f02a154320abb730cf147c3f9f143d7b2f21c26cf66. Their repository copies are in docs/implementation/v4/.

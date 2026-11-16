@@ -1,0 +1,20 @@
+{
+  "merged": "28e7619dfb619fbbd19827f122c214e00150fd75",
+  "source_candidate": "96bbc4de211fabdebda878e50cddf26310a9129c",
+  "release": "/home/graham/work/linkedin-generator-releases/28e7619dfb619fbbd19827f122c214e00150fd75",
+  "runtime": "/home/graham/.local/share/graham-linkedin-runtime/image-rendering-20261112",
+  "fingerprint": "f4d3bd9cce7d8abb0e2b492138414c29c4ddb840ba0cde0e1310fc10781e7c06",
+  "qualified_files": 126,
+  "archive_sha256": "baacad540178874597d944ef1a4a45fc0a48f777d010a2131a902274eb48bbf5",
+  "backup": "/home/graham/.local/share/graham-linkedin-backups/workflow-rectification-20261116-before",
+  "rollback_launcher": "/home/graham/work/linkedin-generator-releases/rollback-workflow-rectification-20261116/previous-launcher.sh",
+  "launcher_sha256": "4a81df67a2185d7178569a48269bf35b581d1a8768ff39ffb04029d86af90630",
+  "historical_jobs": 18,
+  "original_jobs_digest": "8ef299f8a1a72d359d4a323cb3f4ffc029748ad00a0049ece4da283db2d922f4",
+  "historical_read_id": "lig-codex-selected-revision-20261104",
+  "original_readback": "PASS",
+  "model_calls": 0,
+  "pilot": "NOT_YET_DISPATCHED",
+  "clean_archive_suite": "377 passed in 19.73s; prior source377 reused"
+}
+

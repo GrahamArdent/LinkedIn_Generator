@@ -58,16 +58,18 @@ class PublishQualityAssessment:
     rationale: str
     warnings: tuple[str, ...] = ()
     essential_checks: dict[str, dict[str, str]] = field(default_factory=dict)
+    assessment_complete: bool = True
 
     @property
     def review_status(self) -> str:
-        return essential_review_status(self.essential_checks)
+        return essential_review_status(self.essential_checks) if self.assessment_complete else "assessment_unavailable"
 
     def as_dict(self) -> dict[str, Any]:
         return {
             "policy_version": REVIEW_POLICY_VERSION,
             "review_status": self.review_status,
             "essential_checks": self.essential_checks,
+            "assessment_complete": self.assessment_complete,
             "score": self.score,
             "dimensions": dict(self.dimensions),
             "gaps": list(self.gaps),
@@ -204,8 +206,14 @@ def assess_publish_quality(
         raw = str(out.get("text", "") if isinstance(out, dict) else out)
         payload = _parse_payload(raw)
         checks = payload.get("essential_checks")
-        if essential_review_status(checks) == "assessment_unavailable":
-            raise ValueError("missing_or_invalid_essential_checks")
+        complete=essential_review_status(checks)!="assessment_unavailable"
+        if not complete:
+            # Retain individually valid findings while the incomplete review
+            # remains unavailable; advisory scores cannot fill missing verdicts.
+            checks={k:v for k,v in (checks.items() if isinstance(checks,dict) else [])
+                    if k in ESSENTIAL_CHECKS and isinstance(v,dict)
+                    and v.get('verdict') in ('pass','revise','needs_evidence')
+                    and isinstance(v.get('reason'),str) and v['reason'].strip()}
         valid_dimensions=all(type(payload.get(key)) is int and 0<=payload[key]<=5 for key in _DIMENSION_KEYS)
         dimensions={key:payload[key] for key in _DIMENSION_KEYS} if valid_dimensions else {}
         gaps_raw=payload.get("gaps")
@@ -214,7 +222,8 @@ def assess_publish_quality(
         rationale=rationale[:500] if isinstance(rationale,str) and rationale.strip() else "Advisory rationale unavailable; essential findings retained."
         return PublishQualityAssessment(
             score=_weighted_score(dimensions) if valid_dimensions else None,
-            warnings=() if valid_dimensions else ("advisory_dimensions_unavailable",),
+            warnings=(() if valid_dimensions else ("advisory_dimensions_unavailable",)) + (() if complete else ("essential_assessment_incomplete",)),
+            assessment_complete=complete,
             dimensions=dimensions,
             essential_checks=checks,
             gaps=gaps,
