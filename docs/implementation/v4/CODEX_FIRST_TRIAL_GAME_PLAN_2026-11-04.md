@@ -1,3 +1,19 @@
+# Active scoped workflow rectification — November 16, 2026
+
+Graham explicitly instructed execution of the bound Workflow Rectification package. The scoped amendment is `LinkedIn_Generator_Workflow_Rectification_Game_Plan.md` (SHA-256 fc1323e4ba38de7660e33476f1f364ee14534f65179b1e779580069ce758584e) and its execution prompt (c4ba5a41cad089026daa7f02a154320abb730cf147c3f9f143d7b2f21c26cf66).
+
+P0 adopts the prospective R1/R2/R3/R4/R5/R6/R7/R8 decisions in amendment §5. Ordinary writing is not membership of the unresolved historical experiment. Trial enrollment is explicit; `origin` and a new budget never bypass original-effect restrictions. Historical trials, old admissions, B/clock/parcel and original test results remain immutable. Author intent and attributed local account support are admitted without a compulsory public URL; external assertions still require appropriate support.
+
+Working text can be saved, edited and exported independently of qualified `SelectedCandidate`. Opportunity advice for a manual writing item is advisory, while autonomous selection and indispensable evidence limits remain binding. A new deliberate operation has its own bounded admission; old consumed/expired/UNKNOWN requests remain unchanged. Capture/read/feedback/edit/export dispatch nothing. AT-02 remains strict; AT-03/AT-15 are prospectively reconciled in the acceptance owner. R5 human-approved voice examples, corpus/first-six/effort, rendering and publication remain open.
+
+Storage decision: additive `writing_items`, immutable `writing_briefs`/`writing_texts`, and `writing_events` in the current SQLite registry, not prepared jobs. Execution remains in existing jobs/stages under a frozen writing snapshot. Atomic expected brief/current-text guards preserve late alternatives without displacing current work. Migration is explicit on first save; reads do not initialize a missing store. Rollback preserves the complete upgraded store including post-backup work; never restore an old snapshot over new work. Old release reads only its historical jobs; restore the qualified forward release to access writing records. Consistent whole-store backup verifies this path.
+
+Current step/results: use `CURRENT_WORK_PACKET.md`, which points to the sole current evidence item, not the historical parcel gate below. Raw verification belongs in `evidence/workflow-rectification-20261116/`; this header is an authority amendment, not a second progress journal.
+
+---
+
+## Preserved prior completion plan
+
 # LinkedIn Generator — completion game plan
 Updated November 5, 2026. Current resume pointer: CURRENT_WORK_PACKET.md (repository root).
 Execution entry: LINKEDIN_GENERATOR_EXECUTION_PROMPT_V4_2026-11-04.md.

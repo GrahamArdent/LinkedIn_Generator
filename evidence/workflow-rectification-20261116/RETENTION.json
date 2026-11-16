@@ -1,0 +1,10 @@
+{
+  "scope": "Declared E3/E6 source inventory only; K03 remains historical preparation authority. Execution activation is separately recorded, not a rewrite of historical facts.",
+  "coverage": "64/64",
+  "missing_K31": "REJECTED",
+  "baseline_bytes": 27268,
+  "baseline_sha256": "253ff92800cd5e6d5b91ac7d2be136caf11023608a431df86c57f6a363f30467",
+  "altered_byte": "REJECTED",
+  "plan_sha256": "664ca5cb381ab6879f64a88ec7264f2c715f6449f04bcdf1404c8d4ae95a6810",
+  "prompt_sha256": "97987e322cad74d316cbc2fb169900f8663fdef2a9c9e3700777b5b4ed367ca2"
+}

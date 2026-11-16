@@ -52,7 +52,8 @@ def main():
     p=argparse.ArgumentParser(description='Graham local authoring: create → review → feedback → export. No publication command.')
     p.add_argument('--data-root',type=Path,default=Path(os.environ.get('LINKEDIN_DATA_ROOT',str(Path.home()/'.local/share/graham-linkedin'))))
     p.add_argument('--config',type=Path,default=Path(os.environ['LINKEDIN_CONFIG']) if os.environ.get('LINKEDIN_CONFIG') else None)
-    p.add_argument('action',choices=['init','create','status','list','show','resume','feedback','edit','activate-voice','voices','export','backup','import','serve','image-prepare','image-render','image-export'])
+    p.add_argument('action',choices=['init','save-idea','draft','recheck','create','status','list','show','resume','feedback','edit','activate-voice','voices','export','backup','import','serve','image-prepare','image-render','image-export'])
+    p.add_argument('--expected-brief',type=int);p.add_argument('--expected-text',type=int);p.add_argument('--attempt');p.add_argument('--experiment')
     p.add_argument('--new-budget',action='store_true');p.add_argument('--parent');p.add_argument('--id');p.add_argument('--topic');p.add_argument('--url',action='append',default=[]);p.add_argument('--notes',default='')
     p.add_argument('--voice',default='concise_challenger');p.add_argument('--narrative',choices=['literal','symbolic'],default='literal')
     p.add_argument('--path',type=Path);p.add_argument('--hash');p.add_argument('--port',type=int,default=8765)
@@ -63,16 +64,29 @@ def main():
     if args.config:
         d=json.loads(args.config.read_bytes());cfg=CodexConfig(**{**d,'resume_root':Path(d['resume_root']),'python':Path(d['python'])})
     app=Application(store,cfg)
-    if args.action in ('status','show','resume','feedback','edit','activate-voice','export','create','image-prepare','image-render','image-export') and not args.id:p.error('action needs --id')
+    if args.action in ('save-idea','draft') and not args.id and args.topic:args.id='graham-'+__import__('uuid').uuid4().hex
+    if args.action in ('save-idea','draft','recheck','status','show','resume','feedback','edit','activate-voice','export','create','image-prepare','image-render','image-export') and not args.id:p.error('action needs --id')
     if args.action=='init':result={'status':'initialized','data_root':str(store.root)}
-    elif args.action=='list':result=[app.show(r['id']) for r in store.list()]
+    elif args.action=='list':result=store.writing_list()+[app.show(r['id']) for r in store.list()]
     elif args.action in ('show','status'):result=app.show(args.id)
     elif args.action=='resume':result=app.resume(args.id)
+    elif args.action=='save-idea':
+        if not args.topic:p.error('save-idea needs --topic')
+        result=app.save_idea(args.id,args.topic,notes=args.notes,urls=args.url,voice=args.voice,narrative=args.narrative,expected_brief=args.expected_brief)
+    elif args.action in ('draft','recheck'):
+        if args.topic:
+            app.save_idea(args.id,args.topic,notes=args.notes,urls=args.url,voice=args.voice,narrative=args.narrative,expected_brief=args.expected_brief)
+        item=app.show(args.id)
+        if item.get('kind')!='writing_item':p.error('draft/recheck needs a writing item')
+        if args.expected_brief is None:
+            args.expected_brief=item['brief_revision'];args.expected_text=item['current_text']['version'] if item['current_text'] else None
+        if not args.attempt:args.attempt='writing-'+__import__('uuid').uuid4().hex
+        result=getattr(app,'draft_item' if args.action=='draft' else 'recheck_item')(args.id,args.attempt,expected_brief=args.expected_brief,expected_text=args.expected_text)
     elif args.action=='create':
         if not args.topic:p.error('create needs --topic')
-        result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative,parent=args.parent,new_budget=args.new_budget)
+        result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative,parent=args.parent,new_budget=args.new_budget,experiment=args.experiment)
     elif args.action=='feedback':result=app.feedback(args.id,json.loads(args.path.read_bytes()))
-    elif args.action=='edit':result=app.edit(args.id,args.path.read_text())
+    elif args.action=='edit':result=app.edit(args.id,args.path.read_text(),expected_brief=args.expected_brief,expected_text=args.expected_text)
     elif args.action=='activate-voice':result=app.activate_voice(args.id,args.hash)
     elif args.action=='voices':
         result={'catalogue':json.loads((Path(__file__).resolve().parents[1]/'config/writing_voices.json').read_bytes()),'active_examples':app.active_voice()}

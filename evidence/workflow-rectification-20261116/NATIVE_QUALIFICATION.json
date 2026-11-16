@@ -1,0 +1,21 @@
+{
+  "candidate": "0d1d63b21a3bc7c4cc6aee0a8bcf320a6fe357aa",
+  "target": "execution-node",
+  "mode": "fresh isolated base plus exact source/script/test candidate patch; existing locked runtime; not production install",
+  "result": "377 passed in 19.86s",
+  "release_fingerprint": "f4d3bd9cce7d8abb0e2b492138414c29c4ddb840ba0cde0e1310fc10781e7c06",
+  "raw_tool_result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 10 new lines (total: 10 lines)]\n\nPreparing worktree (detached HEAD 0f67257)\nHEAD is now at 0f67257 Merge pull request #52 from GrahamArdent/fix/replicate-client-header-20261112\n........................................................................ [ 19%]\n........................................................................ [ 38%]\n........................................................................ [ 57%]\n........................................................................ [ 76%]\n........................................................................ [ 95%]\n.................                                                        [100%]\n377 passed in 19.86s\nf4d3bd9cce7d8abb0e2b492138414c29c4ddb840ba0cde0e1310fc10781e7c06\n✅ Process completed with exit code 0 (runtime: 21.30s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: execution-node (f06c7cdc-f670-49c4-9af8-64b2043a000a)]"
+      }
+    ],
+    "structuredContent": null,
+    "isError": false
+  }
+}

@@ -1,0 +1,31 @@
+.............F                                                           [100%]
+=================================== FAILURES ===================================
+_____ test_writing_recovery_resolves_original_attempt_without_replacement ______
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-15/test_writing_recovery_resolves0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f11067d4260>
+
+    def test_writing_recovery_resolves_original_attempt_without_replacement(tmp_path,monkeypatch):
+        app=Application(Store.initialize(tmp_path/'data'),None)
+        app.save_idea('idea','My account')
+        app.store.admit('original',{'writing_snapshot':{'item':'idea'}},{})
+        app.store.finish('original','unknown',{'error_code':'RECONCILIATION_REQUIRED'})
+        called=[]
+        monkeypatch.setattr(app,'resume',lambda job:called.append(job) or {'id':job,'state':'unknown'})
+>       assert app.show('idea')['attempts'][0]['id']=='original'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'attempts'
+
+tests/test_writing_loop.py:217: KeyError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_writing_loop.py::test_writing_recovery_resolves_original_attempt_without_replacement
+1 failed, 13 passed, 1 warning in 0.53s

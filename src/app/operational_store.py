@@ -94,6 +94,7 @@ class Store:
     def admit(self,job,inputs,binding):
         if not isinstance(job,str) or not job.strip() or len(job)>100:raise ValueError('INVALID_JOB_ID')
         with self.transaction() as con:
+            if con.execute("SELECT 1 FROM sqlite_master WHERE name='writing_items'").fetchone() and con.execute('SELECT 1 FROM writing_items WHERE id=?',(job,)).fetchone():raise ValueError('IDENTITY_COLLISION')
             old=con.execute('SELECT * FROM jobs WHERE id=?',(job,)).fetchone()
             if old:
                 if json.loads(old['input'])!=inputs:raise ValueError('REQUEST_CONFLICT')
@@ -174,3 +175,100 @@ class Store:
             shutil.copytree(self.root/'jobs',destination/'jobs')
             shutil.copy2(self.root/'store.json',destination/'store.json')
         Store(destination)
+
+    def enable_writing(self):
+        # Additive migration: old jobs/stages/blobs remain byte-identical. Old
+        # releases ignore these tables; rollback must retain the entire store.
+        with self.transaction() as con:
+            con.execute('CREATE TABLE IF NOT EXISTS writing_items(id TEXT PRIMARY KEY, brief_revision INTEGER NOT NULL, brief_hash TEXT NOT NULL, current_text INTEGER, created REAL NOT NULL)')
+            con.execute('CREATE TABLE IF NOT EXISTS writing_briefs(item TEXT NOT NULL, revision INTEGER NOT NULL, blob TEXT NOT NULL, PRIMARY KEY(item,revision))')
+            con.execute('CREATE TABLE IF NOT EXISTS writing_texts(version INTEGER PRIMARY KEY, item TEXT NOT NULL, brief_revision INTEGER NOT NULL, parent INTEGER, blob TEXT NOT NULL, attempt TEXT, stage TEXT, conflict INTEGER NOT NULL, UNIQUE(item,attempt,stage))')
+            con.execute('CREATE TABLE IF NOT EXISTS writing_events(id INTEGER PRIMARY KEY, item TEXT NOT NULL, kind TEXT NOT NULL, blob TEXT NOT NULL)')
+
+    def writing_list(self):
+        with self.connection() as con:
+            if not con.execute("SELECT 1 FROM sqlite_master WHERE name='writing_items'").fetchone():return []
+            ids=[r[0] for r in con.execute('SELECT id FROM writing_items ORDER BY created')]
+        return [self.writing(i) for i in ids]
+
+    def writing_exists(self,item):
+        with self.connection() as con:
+            if not con.execute("SELECT 1 FROM sqlite_master WHERE name='writing_items'").fetchone():return False
+            return con.execute('SELECT 1 FROM writing_items WHERE id=?',(item,)).fetchone() is not None
+
+    def save_brief(self,item,brief,expected=None):
+        if not isinstance(item,str) or not item.strip() or len(item)>100:raise ValueError('INVALID_ITEM_ID')
+        self.enable_writing()
+        with self.transaction() as con:
+            if con.execute('SELECT 1 FROM jobs WHERE id=?',(item,)).fetchone():raise ValueError('IDENTITY_COLLISION')
+            row=con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone()
+            key=self.blob(brief)
+            if row:
+                if row['brief_hash']==key:return self.writing(item)
+                if type(expected) is not int or expected!=row['brief_revision']:raise ValueError('STALE_WRITING_VERSION')
+                revision=row['brief_revision']+1
+                con.execute('UPDATE writing_items SET brief_revision=?,brief_hash=? WHERE id=?',(revision,key,item))
+            else:
+                if expected is not None:raise ValueError('STALE_WRITING_VERSION')
+                revision=1
+                con.execute('INSERT INTO writing_items VALUES (?,?,?,NULL,?)',(item,revision,key,time.time()))
+            con.execute('INSERT INTO writing_briefs VALUES (?,?,?)',(item,revision,key))
+        return self.writing(item)
+
+    def writing(self,item):
+        if not self.writing_exists(item):raise ValueError('WRITING_ITEM_NOT_FOUND')
+        with self.connection() as con:
+            row=dict(con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone())
+            texts=con.execute('SELECT * FROM writing_texts WHERE item=? ORDER BY version',(item,)).fetchall()
+            events=con.execute('SELECT kind,blob FROM writing_events WHERE item=? ORDER BY id',(item,)).fetchall()
+        row['kind']='writing_item';row['brief']=self.read_blob(row['brief_hash'])
+        row['text_history']=[{**dict(t),**self.read_blob(t['blob'])} for t in texts]
+        row['events']=[{'kind':e['kind'],'payload':self.read_blob(e['blob'])} for e in events]
+        row['current_text']=next((t for t in row['text_history'] if t['version']==row['current_text']),None)
+        if row['current_text'] and row['current_text']['brief_revision']!=row['brief_revision']:
+            row['current_text']={**row['current_text'],'review_status':'revalidation_required'}
+        if row['current_text']:
+            for event in row['events']:
+                value=event['payload']
+                if event['kind']=='review' and value['version']==row['current_text']['version'] and value['brief_revision']==row['brief_revision'] and not value['conflict']:
+                    row['current_text']={**row['current_text'],'review_status':value['review'].get('review_status','assessment_unavailable'),'review':value['review']}
+        return row
+
+    def save_text(self,item,text,expected_brief,expected_parent,*,attempt=None,stage=None):
+        if not isinstance(text,str) or not text.strip() or len(text)>3500:raise ValueError('INVALID_EDIT')
+        with self.transaction() as con:
+            row=con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone()
+            if row is None:raise ValueError('WRITING_ITEM_NOT_FOUND')
+            if attempt:
+                old=con.execute('SELECT * FROM writing_texts WHERE item=? AND attempt=? AND stage=?',(item,attempt,stage)).fetchone()
+                if old:
+                    value=self.read_blob(old['blob'])
+                    if value['body']!=text:raise ValueError('IMMUTABLE_RESULT')
+                    return {**dict(old),**value}
+            conflict=row['brief_revision']!=expected_brief or row['current_text']!=expected_parent
+            if conflict and not attempt:raise ValueError('STALE_WRITING_VERSION')
+            value={'body':text,'content_sha256':hashlib.sha256(text.encode()).hexdigest(),
+                   'review_status':'assessment_unavailable' if attempt else 'revalidation_required',
+                   'publication_approved':False,'visual_asset':None}
+            key=self.blob(value)
+            cursor=con.execute('INSERT INTO writing_texts(item,brief_revision,parent,blob,attempt,stage,conflict) VALUES (?,?,?,?,?,?,?)',
+                (item,expected_brief,expected_parent,key,attempt,stage,int(conflict)))
+            version=cursor.lastrowid
+            if not conflict:con.execute('UPDATE writing_items SET current_text=? WHERE id=?',(version,item))
+        return {'version':version,'brief_revision':expected_brief,'parent':expected_parent,'conflict':bool(conflict),**value}
+
+    def writing_review(self,item,version,brief_revision,review):
+        with self.transaction() as con:
+            row=con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone()
+            if row is None:raise ValueError('WRITING_ITEM_NOT_FOUND')
+            value={'version':version,'brief_revision':brief_revision,'review':review,
+                   'conflict':row['current_text']!=version or row['brief_revision']!=brief_revision}
+            con.execute('INSERT INTO writing_events(item,kind,blob) VALUES (?,?,?)',(item,'review',self.blob(value)))
+        return value
+
+    def writing_event(self,item,kind,value,expected_brief,expected_text):
+        with self.transaction() as con:
+            row=con.execute('SELECT * FROM writing_items WHERE id=?',(item,)).fetchone()
+            if row is None or row['brief_revision']!=expected_brief or row['current_text']!=expected_text:raise ValueError('STALE_WRITING_VERSION')
+            con.execute('INSERT INTO writing_events(item,kind,blob) VALUES (?,?,?)',(item,kind,self.blob(value)))
+        return value

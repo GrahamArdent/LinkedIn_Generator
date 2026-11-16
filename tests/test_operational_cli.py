@@ -37,7 +37,7 @@ def test_imported_unresolved_history_blocks_new_subject_before_model(tmp_path):
     import_legacy(s,old)
     import pytest
     with pytest.raises(ValueError,match='SUBJECT_HISTORY_UNRESOLVED'):
-        Application(s,None).create('new','A genuinely new subject')
+        Application(s,None).create('new','A genuinely new subject',experiment='retained-original-trial')
 
 
 def test_completed_import_repairs_missing_history_on_upgrade(tmp_path):

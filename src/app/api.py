@@ -161,6 +161,7 @@ def run_generation(
     editorial_brief: dict[str, Any] | None = None,
     writing_voice_id: str | None = None,
     editorial_handoff: dict[str, Any] | None = None,
+    working_text_sink: Any | None = None,
 ) -> dict[str, Any]:
     """Run the generation pipeline with explicit caller context.
 
@@ -317,6 +318,8 @@ def run_generation(
         draft_prompt["user_template"] = draft_prompt["selected_voice_user_template"]
     drafts = pipe.draft_variants(draft_prompt, draft_ctx)
     best = pipe.judge_select(prompts.get("judge_prompt", {}), persona_profile, drafts)
+    if working_text_sink and isinstance(best,str) and best.strip() and len(best)<=3500:
+        working_text_sink(best,'draft')
     crit = pipe.critic(
         prompts.get("critic_prompt", {}),
         best,
@@ -356,6 +359,9 @@ def run_generation(
             "missing_evidence_question": "",
         }
     )
+
+    if working_text_sink and isinstance(primary_body,str) and primary_body.strip() and len(primary_body)<=3500:
+        working_text_sink(primary_body,'review_input')
 
     if publish_quality_gate:
         threshold = publish_quality_threshold

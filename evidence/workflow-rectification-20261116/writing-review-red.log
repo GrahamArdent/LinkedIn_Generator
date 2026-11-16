@@ -1,0 +1,109 @@
+.........FF                                                              [100%]
+=================================== FAILURES ===================================
+_______ test_identity_collision_is_checked_inside_admission_transaction ________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-10/test_identity_collision_is_che0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc4b8ed6540>
+
+    def test_identity_collision_is_checked_inside_admission_transaction(tmp_path,monkeypatch):
+        from contextlib import contextmanager
+        store=Store.initialize(tmp_path/'data')
+        original=store.transaction;inserted=False
+        @contextmanager
+        def interleave():
+            nonlocal inserted
+            if not inserted:
+                inserted=True
+                store.save_brief('same',{'topic':'Saved concurrently'},None)
+            with original() as con:yield con
+        monkeypatch.setattr(store,'transaction',interleave)
+>       with pytest.raises(ValueError,match='IDENTITY_COLLISION'):store.admit('same',{}, {})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_writing_loop.py:163: Failed
+________ test_recheck_retains_original_public_support_after_manual_edit ________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-10/test_recheck_retains_original_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fc4b90be3c0>
+
+    def test_recheck_retains_original_public_support_after_manual_edit(tmp_path,monkeypatch):
+        from src.app import operational as m
+        from src.app.codex_provider import CodexConfig
+        from src.app.publish_quality import ESSENTIAL_CHECKS
+        store=Store.initialize(tmp_path/'data');app=Application(store,CodexConfig(tmp_path,Path('/python'),'sha','fixture'))
+        app.save_idea('idea','A supported mixed point',notes='My supplied perspective')
+        store.admit('source-attempt',{}, {})
+        store.reserve('source-attempt','preparation',{})
+        store.commit_stage('source-attempt','preparation',{'request':{'evidence':[{'title':'Original public source','fact':'A supported external observation.','url':'https://example.org/paper'}]},'bundle':{'sources':[{'source_id':'S1','url':'https://example.org/paper','limitations':'One study only'}]}})
+        original=store.save_text('idea','Mixed draft.',1,None,attempt='source-attempt',stage='draft')
+        edited=app.edit('idea','Manually edited mixed draft.',expected_brief=1,expected_text=original['version'])
+        monkeypatch.setattr(m,'qualify_model',lambda c:{'model':c.model})
+        class Provider:
+            def __init__(self,*a):self.receipts=[]
+            def generate(self,**kw):
+                data=json.loads(kw['user'])
+                assert any(e['fact']=='A supported external observation.' for e in data['grounded_evidence'])
+                assert data['editorial_brief']['source_bundle']['sources'][0]['url']=='https://example.org/paper'
+                self.receipts.append({'attempt_id':'review'})
+                return json.dumps({'essential_checks':{k:{'verdict':'pass','reason':'Supported'} for k in ESSENTIAL_CHECKS}})
+        monkeypatch.setattr(m,'CodexProvider',Provider)
+>       assert app.recheck_item('idea','check',expected_brief=1,expected_text=edited['version'])['state']=='completed'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_writing_loop.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/app/operational.py:292: in recheck_item
+    return self.draft_item(item,attempt,expected_brief=expected_brief,expected_text=expected_text,operation='recheck')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/app/operational.py:263: in draft_item
+    return self._draft_item(item,attempt,expected_brief=expected_brief,expected_text=expected_text,operation=operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/app/operational.py:289: in _draft_item
+    return self.create(attempt,**brief,writing_snapshot=snapshot,operation=operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/app/operational.py:129: in create
+    return self.resume(job)
+           ^^^^^^^^^^^^^^^^
+src/app/operational.py:150: in resume
+    if record['input'].get('operation')=='recheck':return self._recheck(record,client,provider)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/app/operational.py:306: in _recheck
+    if provider.error:raise provider.error
+                      ^^^^^^^^^^^^^^^^^^^^
+src/app/publish_quality.py:203: in assess_publish_quality
+    out = client.call(system, user, response_json=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/app/llm.py:110: in call
+    content = self._resolve_provider().generate(
+src/app/operational.py:44: in generate
+    return self._generate(**args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+src/app/operational.py:80: in _generate
+    text=self.native.generate(**args)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_writing_loop.test_recheck_retains_original_public_support_after_manual_edit.<locals>.Provider object at 0x7fc4b90bfbc0>
+kw = {'model': 'fixture', 'system': 'You are a strict LinkedIn publish-quality evaluator. Score the finished post, not the ...t most limit publish quality", "rationale": "one concise sentence explaining the overall score"}}', 'temperature': 0.5}
+
+    def generate(self,**kw):
+        data=json.loads(kw['user'])
+>       assert any(e['fact']=='A supported external observation.' for e in data['grounded_evidence'])
+E       assert False
+E        +  where False = any(<generator object test_recheck_retains_original_public_support_after_manual_edit.<locals>.Provider.generate.<locals>.<genexpr> at 0x7fc4b90b6b50>)
+
+tests/test_writing_loop.py:183: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_writing_loop.py::test_identity_collision_is_checked_inside_admission_transaction
+FAILED tests/test_writing_loop.py::test_recheck_retains_original_public_support_after_manual_edit
+2 failed, 9 passed, 1 warning in 0.27s

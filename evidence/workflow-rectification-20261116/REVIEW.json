@@ -1,0 +1,23 @@
+{
+  "candidate_commit": "0d1d63b21a3bc7c4cc6aee0a8bcf320a6fe357aa",
+  "scope": "P1 source/release preparation; not installed behavior, live pilot or whole product",
+  "protocol_blob": "053d528d0b9f81e41c29276c9c082123842eea11",
+  "provenance": "fresh reviewer context, inherited model; not independent-model or human acceptance",
+  "initial_verdict": "REVISE",
+  "material_findings": [
+    "Atomic cross-type identity collision in admission transaction",
+    "Retain original public evidence during exact-text recheck",
+    "Clear writing-item UI state when selecting a historical record",
+    "Apply current-context review after stale-default status",
+    "Preserve unsaved UI text after stale-save conflict",
+    "Recover original pending attempt through writing-item UI",
+    "Reconcile quickstart with prospective ordinary authoring policy"
+  ],
+  "corrections": "All seven corrected; concrete RED/GREEN regressions and actual UI script execution retained",
+  "fresh_corrected_verdict": "SCOPED_CLEAR",
+  "remaining_P2_debt": [
+    "Optional-score essentials are preserved but score=None is not accepted by qualified selection consumer",
+    "Complete writing-item feedback and explicit voice-example lifecycle before claiming that lifecycle"
+  ],
+  "invalidators": "Material code, owner basis, candidate composition or release premise change; affected re-review required"
+}

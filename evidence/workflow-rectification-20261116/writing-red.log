@@ -1,0 +1,65 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_____________ test_capture_without_provider_and_atomic_stale_edits _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-1/test_capture_without_provider_0')
+
+    def test_capture_without_provider_and_atomic_stale_edits(tmp_path):
+        app=Application(Store.initialize(tmp_path/'data'),None)
+>       item=app.save_idea('idea','Testing rules obstructed starting with a topic.',notes='This is my supplied account.')
+             ^^^^^^^^^^^^^
+E       AttributeError: 'Application' object has no attribute 'save_idea'
+
+tests/test_writing_loop.py:10: AttributeError
+____________ test_capture_updates_guard_brief_and_invalidate_review ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-1/test_capture_updates_guard_bri0')
+
+    def test_capture_updates_guard_brief_and_invalidate_review(tmp_path):
+        app=Application(Store.initialize(tmp_path/'data'),None)
+>       app.save_idea('idea','Original point')
+        ^^^^^^^^^^^^^
+E       AttributeError: 'Application' object has no attribute 'save_idea'
+
+tests/test_writing_loop.py:28: AttributeError
+_________ test_personal_draft_survives_later_engine_failure_and_reopen _________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-1/test_personal_draft_survives_l0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7efea269bc50>
+
+    def test_personal_draft_survives_later_engine_failure_and_reopen(tmp_path,monkeypatch):
+        from src.app import operational as m
+        from src.app.codex_provider import CodexConfig
+        app=Application(Store.initialize(tmp_path/'data'),CodexConfig(tmp_path,Path('/python'),'sha','fixture'))
+        monkeypatch.setattr(m,'qualify_model',lambda c:{'model':c.model})
+        class Provider:
+            def __init__(self,*a):self.receipts=[]
+            def generate(self,**kw):
+                assert 'supplied account' in kw['user']
+                self.receipts.append({'attempt_id':'meaning','active_seconds':0})
+                return json.dumps({'status':'ready','reason':'Attributed account only.','meaning':{'thesis':'Start from the intended writing.','reader_consequence':'Separate experiments from drafting.','qualification':'Graham supplied this account; no independent outcome claim.','facts':[{'claim_id':'C1','source_id':'U1','locator':'supplied account 1'}]},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Direct account of the author, not measured results.'}]})
+        monkeypatch.setattr(m,'CodexProvider',Provider)
+        def engine(req,**kw):
+            assert req.opportunity_gate is False and req.evidence[0].url is None
+            kw['generator'].keywords['working_text_sink']('Complete draft saved before later review fails.','draft')
+            raise ValueError('ASSESSMENT_FAILURE')
+        monkeypatch.setattr(m,'generate_content',engine)
+>       app.save_idea('idea','Why testing rules got in the way',notes='Testing rules blocked starting from a topic.')
+        ^^^^^^^^^^^^^
+E       AttributeError: 'Application' object has no attribute 'save_idea'
+
+tests/test_writing_loop.py:54: AttributeError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_writing_loop.py::test_capture_without_provider_and_atomic_stale_edits
+FAILED tests/test_writing_loop.py::test_capture_updates_guard_brief_and_invalidate_review
+FAILED tests/test_writing_loop.py::test_personal_draft_survives_later_engine_failure_and_reopen
+3 failed, 1 warning in 0.12s

@@ -1,0 +1,32 @@
+...........F                                                             [100%]
+=================================== FAILURES ===================================
+__ test_successful_recheck_of_same_text_under_new_brief_clears_stale_default ___
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-12/test_successful_recheck_of_sam0')
+
+    def test_successful_recheck_of_same_text_under_new_brief_clears_stale_default(tmp_path):
+        store=Store.initialize(tmp_path/'data');app=Application(store,None)
+        app.save_idea('idea','Old context')
+        current=app.edit('idea','Unchanged text.',expected_brief=1,expected_text=None)
+        app.save_idea('idea','Revised context',expected_brief=1)
+        assert app.export('idea')['manifest']['review_status']=='revalidation_required'
+        store.writing_review('idea',current['version'],2,{'review_status':'reviewable'})
+>       assert app.export('idea')['manifest']['review_status']=='reviewable'
+E       AssertionError: assert 'revalidation_required' == 'reviewable'
+E         
+E         - reviewable
+E         + revalidation_required
+
+tests/test_writing_loop.py:198: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_writing_loop.py::test_successful_recheck_of_same_text_under_new_brief_clears_stale_default
+1 failed, 11 passed, 1 warning in 0.28s

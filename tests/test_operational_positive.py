@@ -65,4 +65,4 @@ def test_empty_store_cannot_reset_historical_admission(tmp_path,monkeypatch):
     s=Store.initialize(tmp_path/'data')
     monkeypatch.setattr(m,'qualify_model',lambda cfg:pytest.fail('history must be checked first'))
     with pytest.raises(ValueError,match='SUBJECT_HISTORY_UNRESOLVED'):
-        Application(s,CodexConfig(tmp_path,Path('/python'),'sha','fixture')).create('new','Unreconciled topic')
+        Application(s,CodexConfig(tmp_path,Path('/python'),'sha','fixture')).create('new','Unreconciled topic',experiment='retained-original-trial')
