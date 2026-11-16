@@ -1,3 +1,11 @@
+# Current execution routing — workflow rectification
+
+For the November 16 explicit execution instruction, execute `LinkedIn_Generator_Workflow_Rectification_Execution_Prompt.md` and its bound scoped game plan. Verify their pair hashes in the existing `LinkedIn_Generator_Current_Continuation.md` (libfile_097a4d86d13481919f4da713ac1b8723). Resume its single current step. The v4.3 protocol below is retained historical context and is not a simultaneous first-unmet-step executor. Existing valid technical release authority persists; no voice/image/publication approval is inferred.
+
+---
+
+## Preserved v4.3 protocol
+
 ---
 description: "Complete and qualify the existing Graham authoring workflow for independent installed use, preserving remaining product and human gates."
 name: "Execute Graham LinkedIn Generator"

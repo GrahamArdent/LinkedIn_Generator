@@ -1,0 +1,162 @@
+........................................................................ [ 19%]
+........................................................................ [ 39%]
+........................................................................ [ 59%]
+...........................FFFF..F...................................... [ 79%]
+........................................................................ [ 99%]
+..                                                                       [100%]
+=================================== FAILURES ===================================
+___________ test_real_encryption_roundtrip_permissions_no_plaintext ____________
+
+isolated = PosixPath('/tmp/pytest-of-agent/pytest-0/test_real_encryption_roundtrip0/credentials/replicate.cred')
+
+    def test_real_encryption_roundtrip_permissions_no_plaintext(isolated):
+>       result = module.store_token(CANARY)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_replicate_credential.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/replicate_credential.py:50: in store_token
+    ciphertext = crypt("encrypt", raw)
+                 ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action = 'encrypt'
+raw = b'r8_synthetic_not_a_real_token_synthetic_not_a_real_token_'
+
+    def crypt(action, raw):
+        args = [CREDS, action, "--user", "--name=" + NAME]
+        if action == "encrypt":
+            args.append("--with-key=host")
+        result = subprocess.run(args + ["-", "-"], input=raw, capture_output=True)
+        if result.returncode:
+>           raise ValueError("CREDENTIAL_" + action.upper() + "_FAILED")
+E           ValueError: CREDENTIAL_ENCRYPT_FAILED
+
+scripts/replicate_credential.py:27: ValueError
+____________________ test_existing_token_is_not_overwritten ____________________
+
+isolated = PosixPath('/tmp/pytest-of-agent/pytest-0/test_existing_token_is_not_ove0/credentials/replicate.cred')
+
+    def test_existing_token_is_not_overwritten(isolated):
+>       module.store_token(CANARY)
+
+tests/test_replicate_credential.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/replicate_credential.py:50: in store_token
+    ciphertext = crypt("encrypt", raw)
+                 ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action = 'encrypt'
+raw = b'r8_synthetic_not_a_real_token_synthetic_not_a_real_token_'
+
+    def crypt(action, raw):
+        args = [CREDS, action, "--user", "--name=" + NAME]
+        if action == "encrypt":
+            args.append("--with-key=host")
+        result = subprocess.run(args + ["-", "-"], input=raw, capture_output=True)
+        if result.returncode:
+>           raise ValueError("CREDENTIAL_" + action.upper() + "_FAILED")
+E           ValueError: CREDENTIAL_ENCRYPT_FAILED
+
+scripts/replicate_credential.py:27: ValueError
+_______________ test_corruption_is_rejected_without_token_output _______________
+
+isolated = PosixPath('/tmp/pytest-of-agent/pytest-0/test_corruption_is_rejected_wi0/credentials/replicate.cred')
+
+    def test_corruption_is_rejected_without_token_output(isolated):
+>       module.store_token(CANARY)
+
+tests/test_replicate_credential.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/replicate_credential.py:50: in store_token
+    ciphertext = crypt("encrypt", raw)
+                 ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action = 'encrypt'
+raw = b'r8_synthetic_not_a_real_token_synthetic_not_a_real_token_'
+
+    def crypt(action, raw):
+        args = [CREDS, action, "--user", "--name=" + NAME]
+        if action == "encrypt":
+            args.append("--with-key=host")
+        result = subprocess.run(args + ["-", "-"], input=raw, capture_output=True)
+        if result.returncode:
+>           raise ValueError("CREDENTIAL_" + action.upper() + "_FAILED")
+E           ValueError: CREDENTIAL_ENCRYPT_FAILED
+
+scripts/replicate_credential.py:27: ValueError
+______________ test_unsafe_permissions_and_symlinks_are_rejected _______________
+
+isolated = PosixPath('/tmp/pytest-of-agent/pytest-0/test_unsafe_permissions_and_sy0/credentials/replicate.cred')
+
+    def test_unsafe_permissions_and_symlinks_are_rejected(isolated):
+>       module.store_token(CANARY)
+
+tests/test_replicate_credential.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/replicate_credential.py:50: in store_token
+    ciphertext = crypt("encrypt", raw)
+                 ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action = 'encrypt'
+raw = b'r8_synthetic_not_a_real_token_synthetic_not_a_real_token_'
+
+    def crypt(action, raw):
+        args = [CREDS, action, "--user", "--name=" + NAME]
+        if action == "encrypt":
+            args.append("--with-key=host")
+        result = subprocess.run(args + ["-", "-"], input=raw, capture_output=True)
+        if result.returncode:
+>           raise ValueError("CREDENTIAL_" + action.upper() + "_FAILED")
+E           ValueError: CREDENTIAL_ENCRYPT_FAILED
+
+scripts/replicate_credential.py:27: ValueError
+_______ test_render_passes_token_only_in_environment_to_existing_command _______
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-0/test_render_passes_token_only_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f0c4e3f6900>
+
+    def test_render_passes_token_only_in_environment_to_existing_command(tmp_path, monkeypatch):
+        path = tmp_path / ".local/share/graham-linkedin-credentials/replicate.cred"
+        monkeypatch.setattr(module, "credential_path", lambda: path)
+>       module.store_token(CANARY)
+
+tests/test_replicate_credential.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/replicate_credential.py:50: in store_token
+    ciphertext = crypt("encrypt", raw)
+                 ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action = 'encrypt'
+raw = b'r8_synthetic_not_a_real_token_synthetic_not_a_real_token_'
+
+    def crypt(action, raw):
+        args = [CREDS, action, "--user", "--name=" + NAME]
+        if action == "encrypt":
+            args.append("--with-key=host")
+        result = subprocess.run(args + ["-", "-"], input=raw, capture_output=True)
+        if result.returncode:
+>           raise ValueError("CREDENTIAL_" + action.upper() + "_FAILED")
+E           ValueError: CREDENTIAL_ENCRYPT_FAILED
+
+scripts/replicate_credential.py:27: ValueError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_replicate_credential.py::test_real_encryption_roundtrip_permissions_no_plaintext
+FAILED tests/test_replicate_credential.py::test_existing_token_is_not_overwritten
+FAILED tests/test_replicate_credential.py::test_corruption_is_rejected_without_token_output
+FAILED tests/test_replicate_credential.py::test_unsafe_permissions_and_symlinks_are_rejected
+FAILED tests/test_replicate_credential.py::test_render_passes_token_only_in_environment_to_existing_command
+5 failed, 357 passed, 1 warning in 13.70s

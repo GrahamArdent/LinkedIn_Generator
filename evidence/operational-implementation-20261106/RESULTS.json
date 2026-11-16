@@ -54,5 +54,10 @@
   "history_reconciliation": "history-reconciliation/HISTORY.json:10originals canonical identity/order verified; eligible count unresolved,1exactpair preference,12frozenunlabeledexamples",
   "parcel_revision": "parcel-revision/FINAL_OUTCOME.json; currentselected215words; humanpending",
   "actual_native_active_cli_seconds_scope": "Historical throughQ6; new revision provider-stage seconds are recorded separately rather than conflated with exactCLI active timing",
-  "parcel_revision_provider_stage_seconds": 174.42748170159757
+  "parcel_revision_provider_stage_seconds": 174.42748170159757,
+  "workflow_rectification": {
+    "evidence_owner": "https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal",
+    "raw_proof": "evidence/workflow-rectification-20261116/",
+    "historical_receipts": "preserved; prior acceptance not promoted"
+  }
 }

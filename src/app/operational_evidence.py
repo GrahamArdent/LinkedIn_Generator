@@ -267,3 +267,16 @@ def resolve_meaning(meaning,sources):
         if len(matches)!=1 or not 1<=len(matches[0])<=600:raise ValueError('UNSUPPORTED_MEANING')
         result['facts'][index]={'claim_id':fact['claim_id'],'text':matches[0],'source_ids':[fact['source_id']]}
     return validate_meaning(result,sources)
+
+
+def personal_source(brief,brief_hash):
+    """Explicit local testimony, never a fetch or independent achievement proof."""
+    text=brief['notes'] or brief['topic']
+    # Preserve every supplied byte in the source. Bound exact fact locators so
+    # consumers need not invent a public source or truncate a factual passage.
+    passages=[{'locator':'supplied account '+str(i//600+1),'excerpt':text[i:i+600]} for i in range(0,len(text),600)]
+    return {'sources':[{'source_id':'U1','status':'usable','title':'Graham Hill — supplied account (not independently verified)',
+        'publisher':'Graham Hill','record':'writing-brief:'+brief_hash,'checked_at':datetime.now(timezone.utc).isoformat(),
+        'content_sha256':hashlib.sha256(text.encode()).hexdigest(),'passages':passages,
+        'limitations':'Attributed user testimony or viewpoint only. Not independent proof of achievements, dates, statistics, causation or business results. Omit unsupported external assertions.'}],
+        'errors':[],'http_activity':[],'candidate_origin':'supplied_local_account'}

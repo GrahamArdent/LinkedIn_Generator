@@ -203,25 +203,18 @@ def assess_publish_quality(
         out = client.call(system, user, response_json=True)
         raw = str(out.get("text", "") if isinstance(out, dict) else out)
         payload = _parse_payload(raw)
-        if any(type(payload.get(key)) is not int or not 0 <= payload[key] <= 5 for key in _DIMENSION_KEYS):
-            raise ValueError("missing_or_invalid_publish_quality_dimension")
         checks = payload.get("essential_checks")
         if essential_review_status(checks) == "assessment_unavailable":
             raise ValueError("missing_or_invalid_essential_checks")
-        dimensions = {key: payload[key] for key in _DIMENSION_KEYS}
-        gaps_raw = payload.get("gaps")
-        if (not isinstance(gaps_raw, list) or len(gaps_raw) > 3
-                or any(not isinstance(g, str) or not g.strip() for g in gaps_raw)
-                or not isinstance(payload.get("rationale"), str) or not payload["rationale"].strip()):
-            raise ValueError("missing_or_invalid_publish_quality_judgment")
-        gaps = tuple(
-            str(item).strip()[:300]
-            for item in (gaps_raw if isinstance(gaps_raw, list) else [])
-            if str(item).strip()
-        )[:3]
-        rationale = str(payload.get("rationale") or "Publish quality scored from the finished post.").strip()[:500]
+        valid_dimensions=all(type(payload.get(key)) is int and 0<=payload[key]<=5 for key in _DIMENSION_KEYS)
+        dimensions={key:payload[key] for key in _DIMENSION_KEYS} if valid_dimensions else {}
+        gaps_raw=payload.get("gaps")
+        gaps=tuple(g[:300] for g in gaps_raw[:3] if isinstance(g,str) and g.strip()) if isinstance(gaps_raw,list) else ()
+        rationale=payload.get("rationale")
+        rationale=rationale[:500] if isinstance(rationale,str) and rationale.strip() else "Advisory rationale unavailable; essential findings retained."
         return PublishQualityAssessment(
-            score=_weighted_score(dimensions),
+            score=_weighted_score(dimensions) if valid_dimensions else None,
+            warnings=() if valid_dimensions else ("advisory_dimensions_unavailable",),
             dimensions=dimensions,
             essential_checks=checks,
             gaps=gaps,

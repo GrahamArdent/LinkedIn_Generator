@@ -1,0 +1,79 @@
+...FF                                                                    [100%]
+=================================== FAILURES ===================================
+_________ test_http_writing_actions_share_cli_state_and_require_parent _________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-3/test_http_writing_actions_shar0')
+
+    def test_http_writing_actions_share_cli_state_and_require_parent(tmp_path):
+        import threading,urllib.request
+        from http.server import HTTPServer
+        from src.app.operational_ui import handler
+        app=Application(Store.initialize(tmp_path/'data'),None)
+        server=HTTPServer(('127.0.0.1',0),handler(app,'secret'))
+        thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+        base='http://127.0.0.1:'+str(server.server_port)
+        def post(data):
+            request=urllib.request.Request(base+'/api/action',data=json.dumps(data).encode(),headers={'X-Local-Token':'secret','Content-Type':'application/json'})
+            with urllib.request.urlopen(request) as response:return json.load(response)
+        try:
+>           item=post({'action':'save-idea','id':'idea','topic':'My actual point','notes':'Supplied account.'})
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_writing_loop.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_writing_loop.py:76: in post
+    with urllib.request.urlopen(request) as response:return json.load(response)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py:215: in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py:521: in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py:630: in http_response
+    response = self.parent.error(
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py:559: in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py:492: in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <urllib.request.HTTPDefaultErrorHandler object at 0x7f5e24f02900>
+req = <urllib.request.Request object at 0x7f5e24f01490>
+fp = <http.client.HTTPResponse object at 0x7f5e256adea0>, code = 400
+msg = 'Bad Request', hdrs = <http.client.HTTPMessage object at 0x7f5e24f03080>
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+>       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 400: Bad Request
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/urllib/request.py:639: HTTPError
+____________ test_advisory_dimensions_do_not_erase_valid_essentials ____________
+
+    def test_advisory_dimensions_do_not_erase_valid_essentials():
+        from src.app.publish_quality import assess_publish_quality,ESSENTIAL_CHECKS
+        class Client:
+            def call(self,*a,**kw):return {'text':json.dumps({'essential_checks':{k:{'verdict':'pass','reason':'Supported'} for k in ESSENTIAL_CHECKS},'outsider_clarity':'bad'})}
+        result=assess_publish_quality(text='Saved exact text.',audience='readers',content_goal='reach',evidence=[],persona_profile={},client=Client())
+>       assert result.review_status=='reviewable' and result.score is None
+E       AssertionError: assert ('assessment_unavailable' == 'reviewable'
+E         
+E         - reviewable
+E         + assessment_unavailable)
+
+tests/test_writing_loop.py:90: AssertionError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_writing_loop.py::test_http_writing_actions_share_cli_state_and_require_parent
+FAILED tests/test_writing_loop.py::test_advisory_dimensions_do_not_erase_valid_essentials
+2 failed, 3 passed, 1 warning in 0.21s

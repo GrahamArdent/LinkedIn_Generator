@@ -1,0 +1,58 @@
+.......FF                                                                [100%]
+=================================== FAILURES ===================================
+___________ test_unknown_attempt_blocks_replacement_but_not_capture ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-6/test_unknown_attempt_blocks_re0')
+
+    def test_unknown_attempt_blocks_replacement_but_not_capture(tmp_path):
+        app=Application(Store.initialize(tmp_path/'data'),None)
+        app.save_idea('idea','An account')
+        app.store.admit('unknown',{'writing_snapshot':{'item':'idea'}},{})
+        app.store.finish('unknown','unknown',{'error_code':'RECONCILIATION_REQUIRED'})
+        app.save_idea('idea','New notes still save',expected_brief=1)
+>       with pytest.raises(ValueError,match='RECONCILIATION_REQUIRED'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'RECONCILIATION_REQUIRED'
+E         Actual message: 'CONFIG_REQUIRED'
+
+tests/test_writing_loop.py:122: AssertionError
+___ test_recheck_exact_bytes_does_not_rewrite_and_late_review_is_not_current ___
+
+tmp_path = PosixPath('/tmp/pytest-of-agent/pytest-6/test_recheck_exact_bytes_does_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f95d98676e0>
+
+    def test_recheck_exact_bytes_does_not_rewrite_and_late_review_is_not_current(tmp_path,monkeypatch):
+        from src.app import operational as m
+        from src.app.codex_provider import CodexConfig
+        from src.app.publish_quality import ESSENTIAL_CHECKS
+        app=Application(Store.initialize(tmp_path/'data'),CodexConfig(tmp_path,Path('/python'),'sha','fixture'))
+        app.save_idea('idea','My point')
+        current=app.edit('idea','Exact current text.',expected_brief=1,expected_text=None)
+        monkeypatch.setattr(m,'qualify_model',lambda c:{'model':c.model})
+        class Provider:
+            def __init__(self,*a):self.receipts=[]
+            def generate(self,**kw):
+                assert json.loads(kw['user'])['post']=='Exact current text.'
+                app.edit('idea','Newer text while checking.',expected_brief=1,expected_text=current['version'])
+                self.receipts.append({'attempt_id':'recheck','active_seconds':0})
+                return json.dumps({'essential_checks':{k:{'verdict':'pass','reason':'Supported'} for k in ESSENTIAL_CHECKS}})
+        monkeypatch.setattr(m,'CodexProvider',Provider)
+>       result=app.recheck_item('idea','review-attempt',expected_brief=1,expected_text=current['version'])
+               ^^^^^^^^^^^^^^^^
+E       AttributeError: 'Application' object has no attribute 'recheck_item'
+
+tests/test_writing_loop.py:143: AttributeError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_writing_loop.py::test_unknown_attempt_blocks_replacement_but_not_capture
+FAILED tests/test_writing_loop.py::test_recheck_exact_bytes_does_not_rewrite_and_late_review_is_not_current
+2 failed, 7 passed, 1 warning in 0.29s
