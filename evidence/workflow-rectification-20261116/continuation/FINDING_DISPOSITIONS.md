@@ -4,11 +4,11 @@ The governing scope/acceptance remains the bound workflow plan, not this raw rev
 
 | Finding | Disposition and proof scope |
 |---|---|
-| F01 trial history veto | REPAIRED: ordinary writing is unenrolled; explicit historical experiment still retains restriction. P1 installed new-topic pilot and prospective legacy tests. |
-| F02 opportunity authority | REPAIRED for manual writing: author topic retained; opportunity advice cannot veto its ordinary request. Autonomous/indispensable support restrictions retained. |
+| F01 no durable idea before admission | REPAIRED: provider-free capture creates an explicit writing item before model admission. Actual installed capture/P1 proof and no-config failed-start tests. |
+| F02 historical trial veto | REPAIRED: ordinary writing is unenrolled; explicit historical experiment retains its restriction. P1 installed new-topic pilot and prospective experiment tests. |
 | F03 research-led meaning | REPAIRED within qualified personal/mixed shapes: actual brief/notes frozen into preparation and writer context. No claim of universal semantic quality. |
-| F04 public-only source assumptions | REPAIRED: explicit local account/attributed viewpoint record plus optional public records; source/meaning/request/structure/API consumers exercised together. No invented external proof or arbitrary zero-anchor factual route. |
-| F05 complete text withheld after later failure | REPAIRED: exact draft persisted before later stages; injected critic/assessment failure and P1 installed text/export proof. |
+| F04 factual/paragraph limits treated universally | SCOPED_REPAIR: provider-free capture is independent of fact count; bounded supplied viewpoint is a documented observation of that statement rather than an invented external event, optionally mixed with public support. All actual preparation consumers exercised together. Legacy trial paragraph/count bounds are retained; arbitrary long-form/zero-anchor factual input is not claimed. Further shapes require an actual accepted case, not a universal intake veto or invented evidence. |
+| F05 opportunity veto of chosen topic | REPAIRED for ordinary manual writing: author topic retained and opportunity novelty advice does not veto it. Indispensable factual support and autonomous selection controls remain strict. Text persistence before later failure is separately proved in F06/F10. |
 | F06 unqualified text inaccessible | REPAIRED: working text/version/export distinct from SelectedCandidate, never promoted merely to become editable. |
 | F07 score parsing erases essentials | REPAIRED: missing advisory scores no longer block complete valid essentials; partial essential findings retained but incomplete review unavailable. Failed/legacy gates remain strict. |
 | F08 terminal attempt stops writing | REPAIRED: immutable old attempts, deliberate new linked current-text operations, manual edit and exact-text recheck. Late results stay alternative; UNKNOWN originals never relabeled. |
