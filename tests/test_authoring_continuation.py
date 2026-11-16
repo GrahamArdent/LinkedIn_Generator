@@ -88,11 +88,11 @@ def test_later_deliberate_action_has_new_finite_window_without_mutating_expired_
 
 
 def test_partial_essential_findings_survive_without_qualifying_incomplete_review():
-    from src.app.publish_quality import assess_publish_quality
+    from src.app.publish_quality import assess_publish_quality,WEIGHTS
     class Client:
-        def call(self,*a,**kw):return {'text':json.dumps({'essential_checks':{'factual_integrity':{'verdict':'needs_evidence','reason':'A number lacks support.'}}})}
+        def call(self,*a,**kw):return {'text':json.dumps({**{k:5 for k in WEIGHTS},'essential_checks':{'factual_integrity':{'verdict':'needs_evidence','reason':'A number lacks support.'}}})}
     result=assess_publish_quality(text='Saved text.',audience='readers',content_goal='reach',evidence=[],persona_profile={},client=Client())
-    assert result.review_status=='assessment_unavailable'
+    assert result.review_status=='assessment_unavailable' and result.score is None
     assert result.essential_checks['factual_integrity']['verdict']=='needs_evidence'
 
 

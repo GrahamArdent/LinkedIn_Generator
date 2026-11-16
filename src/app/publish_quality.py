@@ -221,7 +221,7 @@ def assess_publish_quality(
         rationale=payload.get("rationale")
         rationale=rationale[:500] if isinstance(rationale,str) and rationale.strip() else "Advisory rationale unavailable; essential findings retained."
         return PublishQualityAssessment(
-            score=_weighted_score(dimensions) if valid_dimensions else None,
+            score=_weighted_score(dimensions) if valid_dimensions and complete else None,
             warnings=(() if valid_dimensions else ("advisory_dimensions_unavailable",)) + (() if complete else ("essential_assessment_incomplete",)),
             assessment_complete=complete,
             dimensions=dimensions,
