@@ -1,14 +1,14 @@
 # LinkedIn Generator — Workflow Rectification Game Plan
-Version: 1.0 · Prepared: November 16, 2026 (America/Toronto)
+Version: 1.1 · Updated: November 16, 2026 (America/Toronto)
 Owner: GrahamArdent/LinkedIn_Generator · Mode C
-Disposition: REFERENCE_PLAN; owner reconciliation required before implementation
+Disposition: ACTIVE_SCOPED_AMENDMENT; P0 reconciled in candidate, P1 source qualified, release/push boundary pending
 Scope: a bounded amendment to the existing R1–R8 completion plan, retaining Q1–Q6 and the wider product objectives.
 
 ## 1. Outcome, authority and first useful result
 
 Make Graham's topic or summary the governing input to a continuous writing process. The ordinary outcome is a saved, editable piece of writing with truthful evidence limits, useful review findings and a natural revision loop. Generator evaluation observes that process and governs its own experiments; unresolved historical trial accounting does not become a universal authoring prerequisite.
 
-The current request authorizes creating, reviewing and saving this game plan, its execution prompt and the evidence/continuation record. It does not dispatch product implementation, model generation, installation, rendering or publication. A later explicit instruction to execute this reviewed package activates the scoped rectification work subject to current owner permissions and applicable release/provider boundaries. Record that instruction in the existing evidence record; do not ask again for authority already supplied.
+The original preparation request authorized this package only. Graham subsequently explicitly instructed execution; P0 and authorized P1 dependencies have begun under that instruction. His current request authorizes challenging the next step and reconciling these existing artifacts, not a fresh product run or approval of the previously rejected public GitHub push. Reuse existing technical merge/install/test permissions within scope; preserve that exact unresolved push boundary and the separate paid-render, publication and human-judgment boundaries. Record returned authorization once; do not ask again after its actual conditions are satisfied.
 
 First useful result: one actual personal topic/summary travels through the supported shared application to a bounded generation, visible saved working text, feedback or manual edit, and zero-generation reopen/export of the exact current version. Deliver that coherent slice before completing every later improvement. One authoring loop does not certify editorial reliability, a six-subject experiment, image acceptance or the whole product.
 
@@ -39,7 +39,7 @@ Canonical repository paths:
 - `evidence/prompt-plan-hardening-20261105/RESULTS.json`
 - `evidence/operational-implementation-20261106/RESULTS.json`
 
-On later activation, use `reconcile_authority_then_execute`: incorporate this bounded amendment and its prospective decision reversals into the existing completion plan and affected acceptance definitions before or atomically with dependent code. Update the existing execution protocol/pair binding and derived repository pointer to select the rectification step. Keep the old v4.3/parcel continuation as historical context, not a second executor. The repository pointer and evidence indexes link the same current record/raw receipts; they do not become duplicate progress journals.
+On first activation, use `reconcile_authority_then_execute`; that adoption is now present in the reviewed local candidate. On continuation, verify and reuse it rather than repeating P0. The adoption contract remains: incorporate this bounded amendment and its prospective decision reversals into the existing completion plan and affected acceptance definitions before or atomically with dependent code. Update the existing execution protocol/pair binding and derived repository pointer to select the rectification step. Keep the old v4.3/parcel continuation as historical context, not a second executor. The repository pointer and evidence indexes link the same current record/raw receipts; they do not become duplicate progress journals.
 
 Affected owner mapping:
 - R1/R4/R6: provider-free idea capture, immutable attempts, ordinary request admission and shared interface.
@@ -51,6 +51,37 @@ Affected owner mapping:
 - R3/R7: compatible migration, release, rollback and installed proof.
 
 Retain unrelated roadmap obligations with their owners. Scope a missing human judgment or provider permission to its own consequence. Historical parcel review is not a prerequisite to independently authorized workflow engineering.
+
+## 2A. Current continuation and verification reuse
+
+The next product step is **reconcile the exact qualified candidate and outstanding push authorization, then finish the existing P1 release and installed authoring proof**. A push alone is not the protected outcome. Current review work may reconcile documents and evidence while the push remains gated; it must not turn that denial into a test rerun, another product implementation or a transport workaround.
+
+The existing evidence E0/E2 records the selected source commit, documentation successor, full pair hashes, actual approval state, original receipts and one RESUME_AT. At this revision the reviewed code is `0d1d63b21a3bc7c4cc6aee0a8bcf320a6fe357aa`, with receipt-only checkpoint `ee3f898c125287d65c780f69c72b8c8194622138`, based on `0f672572719bb142881f2b08ddb835160ff06ac3`. The existing target result is 377 PASS in 19.86 seconds; product fingerprint is `f4d3bd9cce7d8abb0e2b492138414c29c4ddb840ba0cde0e1310fc10781e7c06`. Source, scripts, config and tests comprise 126 retained files with SHA-256 manifest `c52c95d49a52122ef55511de36ad39ed83110c1bc2c608d7f912e2fdff5446c1`; these were compared between local candidate and actual qualification worktree without rerunning tests. These are scoped source/test-target results, not installed/live/human acceptance.
+
+### Resume and release order
+
+1. Read current E0/E2 before historical material. Recover the exact candidate using its recorded local EN ref/bundle if necessary; compare the relevant current default head and candidate composition. Reuse already completed P0/source work. No force reset, source reconstruction from summaries or old parcel restart.
+2. Synchronize the revised plan/prompt copies, completion-plan/protocol pointers, quickstart and existing evidence index in a **documentation-only successor** under the same branch. Retain original raw receipts and reviewed code. Record the successor head and reviewed diff; verify unchanged product and test/config/source manifest. Do not silently push the older v1.0 document bindings after updating the saved pair.
+3. Retain the actual automatic-review rejection of the push to public `GrahamArdent/LinkedIn_Generator`, branch `feat/workflow-rectification-20261116`. The current review request does not clear it. Accept explicit destination/branch authorization covering the selected candidate and disclosed documentation-only successor; re-reconcile if scope, destination, product bytes or exposure changed. Once that return evidence is accepted, continue the already authorized dependencies without another generic proceed. Never bypass the rejection through another publishing route or repository.
+4. Under actual admitted authority, push and review/merge the selected composed candidate through existing R3/R7 controls, comparing the base and merge result. If the composed product/test/config bytes match, reuse the qualified 377-test run and the seven-finding source Challenge. Material composition changes invalidate their affected scope. A Git commit hash changing solely for documents or merge metadata is not itself a product-behavior invalidator.
+5. Complete only the outstanding coherent-release evidence required by R3/R7, then exact installation/data-aware rollback and target readback. The existing fresh target worktree is not claimed to be a committed clean archive. Perform the still-unproved clean-artifact qualification required by the owner once, keeping its source/environment/result explicit; do not repeat earlier native/local/installed suites merely to fill named slots. Do not waive an independently required owner release check.
+6. Run the single already bounded P1 ordinary-authoring pilot through the actual installed application using the plan §6 brief. Prove saved complete working text, feedback or labeled test edit, and fresh-process exact current reopen/export with zero additional model dispatch. Keep the 12 included executions/900 active and wall seconds/API0 admission and original-effect recovery. No generation is needed to recheck a saved document or test receipt.
+7. Only after that installed outcome is proved, mark P1 satisfied and continue the next admitted P2 dependency. Keep P2's score=None selection issue, remaining supported input/example lifecycle, P3/P4, original experiment and human/render/publication outcomes visible with their owners; do not front-load them as universal P1 prerequisites.
+
+### Reuse and invalidation matrix
+
+| Evidence or action | Reuse rule | Required work when its premise changes |
+|---|---|---|
+| Bound pair and current owner documents | Reuse after exact saved hashes and source-binding reconciliation | Reconcile changed instructions and freshly review affected plan/prompt/evidence interactions; no automatic product-test run |
+| 377 target tests and 15 writing-loop regressions | Retain exact receipt, source/test/config manifest and target context; time or a new chat does not invalidate | Product, test, dependency/runtime or material composition change: explain risk, run affected checks plus owner-required coherent-release suite; stop repetition after the risk is resolved |
+| Seven-finding fresh source review | Reuse for unchanged reviewed implementation and relevant authority | New behavior-controlling code/authority/release premise: fresh affected Challenge; documentation wording changes receive pair review rather than invented new code-review provenance |
+| Documentation-only successor | Verify diff scope, pair hashes, pointers and unchanged qualified product/test files | Any accidental executable/config/test change exits this lane and needs impact review; never call it documentation-only based just on a commit message |
+| Clean-artifact release qualification | Not yet proved for this release; preserve the owner requirement | Do the outstanding qualification once on the actual artifact; reuse afterward unless artifact/runtime assumptions materially change |
+| Installation, backup, rollback and actual readback | Pending evidence cannot be substituted by the existing test run | On this first install, prove exact installed bytes and retained old/new work with current production state; subsequent repetition needs a material invalidator |
+| P1 ordinary model pilot | Not yet dispatched; historical parcel/trial effects are not this pilot | Admit once at actual dispatch, reconcile UNKNOWN originals before any retry, stop after the planned observation; duplicate reopen/export adds zero calls |
+| Historical samples, admissions, raw model/render effects and human gates | Preserve original identities/results and existing scope | Resolve only the actual owner-specific missing evidence; no reset, retroactive enrollment, fabricated rating or paid allowance |
+
+A changed merge/runtime is a reason to inspect impact, not an excuse to either repeat everything or skip required release work. Before any repeated test, identify the specific invalidator or still-unproved owner check, the protected outcome and the smallest sufficient verification. Record actual reuse and new proof separately in the same evidence record.
 
 ## 3. Target workflow and controlling contracts
 
@@ -172,7 +203,7 @@ Every row must have an evidence-backed final disposition. Deferred rows remain v
 
 ## 5. P0 — Adopt the bounded owner amendment
 
-Dependency: a later instruction to execute this reviewed package. No product execution was requested during preparation.
+Dependency: the recorded explicit execution instruction, already supplied. P0 is reconciled in the qualified candidate; apply §2A and the current evidence rather than restarting these completed source-adoption steps. The original preparation-only boundary remains historical.
 
 1. Resolve the current source, worktree/PR context, active owner record and installed identity through existing admitted routes. Inspect only changed premises; preserve concurrent work. Reuse valid historical proof.
 2. Record the actual execution instruction, scope and current consequence permissions. Reconcile this amendment into the existing completion plan and prompt; select P1 in the one current pointer. Do not restart Q1–Q6 or demand old parcel feedback to repair independent authoring.
@@ -265,7 +296,7 @@ Exit: evaluation entry conditions and observations no longer obstruct ordinary a
 
 ## 10. Verification and release checkpoints
 
-Use the following as an outcome map, not a demand to run every test before P1. Add the smallest meaningful regression for each actual changed invariant. Reuse valid unaffected proof. Existing R7 requires affected regressions plus the full suite/clean archive at a coherent release, applicable CI, actual changed-surface adversarial review, exact installation and independent target readback. Preserve those gates; do not run them for this document-authoring task.
+Use the following as an outcome map, not a demand to run every test before P1. Apply §2A’s evidence reuse/invalidation matrix and current exact receipts before selecting any repeated test. Add the smallest meaningful regression for each actual changed invariant. Reuse valid unaffected proof. Existing R7 requires affected regressions plus the full suite/clean archive at a coherent release, applicable CI, actual changed-surface adversarial review, exact installation and independent target readback. Preserve those gates; do not run them for this document-authoring task.
 
 | Check | Stimulus and expected result | First relevant phase |
 |---|---|---|
@@ -321,7 +352,7 @@ Record exact candidate identities, methodology/owner source versions, material f
 
 ## 13. Source basis and current proof limits
 
-The audited repository source is `0f672572719bb142881f2b08ddb835160ff06ac3`. The evidence file records exact file/blob identities, protocol sources, current user authority, review provenance and source-read limits.
+The original audited repository source is `0f672572719bb142881f2b08ddb835160ff06ac3`; current reviewed source and documentation successor are recorded in §2A and evidence E0/E2. The original preparation proof limits below are historical and must not erase later qualified source work or imply installation. The evidence file records exact file/blob identities, protocol sources, current user authority, review provenance and source-read limits.
 
 Source inspection establishes the workflow coupling. No product test, generation, runtime probe, deployment, render or publication was performed to prepare this package. Historical authoring proof at855da306 and newer rendering proof atdffffafb are retained as recorded scoped evidence, not a live assertion of current installation.
 

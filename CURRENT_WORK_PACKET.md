@@ -1,6 +1,8 @@
 # Current continuation — execute scoped workflow rectification
 
-Graham explicitly authorized the bound package on November 16, 2026: P0 owner reconciliation, then P1 complete ordinary authoring loop before later authorized phases. The saved plan/prompt SHA-256 values are 664ca5cb381ab6879f64a88ec7264f2c715f6449f04bcdf1404c8d4ae95a6810 / 97987e322cad74d316cbc2fb169900f8663fdef2a9c9e3700777b5b4ed367ca2. Their repository copies are in docs/implementation/v4/.
+Graham explicitly authorized the bound package on November 16, 2026: P0 owner reconciliation, then P1 complete ordinary authoring loop before later authorized phases. The saved plan/prompt SHA-256 values are fc1323e4ba38de7660e33476f1f364ee14534f65179b1e779580069ce758584e / c4ba5a41cad089026daa7f02a154320abb730cf147c3f9f143d7b2f21c26cf66. Their repository copies are in docs/implementation/v4/.
+
+Revision1.1 continuation/test-reuse amendment is reconciled in this documentation-only successor. Reuse exact qualified code/tests; see scoped plan§2A and current evidence E8. The prior rejected public GitHub push remains gated; no review-only update clears it.
 
 Sole mutable evidence/RESUME_AT: https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal
 Raw proof: evidence/workflow-rectification-20261116/. Existing operational RESULTS.json links that same owner. P0 adopts the completion/acceptance amendments and additive writing-item/immutable-attempt storage decision. Do not execute the old parcel continuation or v4.3 first-unmet routing in parallel. Preserve all original records, admissions, historical trials, actual human boundaries and separately owned rendering results. No paid image or publication authority is added.

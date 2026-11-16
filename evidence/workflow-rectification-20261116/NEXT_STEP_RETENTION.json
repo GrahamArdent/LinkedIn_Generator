@@ -1,0 +1,15 @@
+{
+  "kind": "artifact and evidence-identity verification; no product tests run",
+  "source_set": "prior E3/E6 K01-K64 plus current user review/next-step reconciliation K65-K74; no universal completeness claim",
+  "coverage": "74/74",
+  "missing_K71": "REJECTED",
+  "baseline_bytes": 27268,
+  "altered_baseline_byte": "REJECTED",
+  "unchanged_source_test_config_manifest": "c52c95d49a52122ef55511de36ad39ed83110c1bc2c608d7f912e2fdff5446c1",
+  "files": 126,
+  "product_test_runs_this_review": 0,
+  "reused_target_tests": 377,
+  "plan_sha256": "fc1323e4ba38de7660e33476f1f364ee14534f65179b1e779580069ce758584e",
+  "prompt_sha256": "c4ba5a41cad089026daa7f02a154320abb730cf147c3f9f143d7b2f21c26cf66",
+  "repository_pair_and_pointer_bindings": "MATCH"
+}
