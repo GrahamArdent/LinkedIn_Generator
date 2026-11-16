@@ -1,3 +1,20 @@
+# Current continuation — scoped workflow rectification installed
+
+P0–P4 applicable authoring rectification is implemented, qualified and installed at2e14ae8b58ea3bd6c6d328f6146bb492dc754dbe (PR54), after the first complete installed P1 loop at28e7619 (PR53). Corrected clean archive392testsPASS; exact127-file installed manifest/readback matches; no additional model generation was used for P2–P4.
+
+One actual ordinary pilot used3included native model calls and41.721dispatchwallseconds/API0. Saved working text hash15dca80a645465d08782e38ffbc12be070da20980f59e1052f8546d9a62aec96/currentversion5 survives fresh-process export, original-attempt replay and the actual installed shared HTTP service.18historical jobs plus the pilot and all original stages remain intact. Rollback/forward new-work recovery and machine-approval rejection passed; production voice state unchanged. No paid image or publication occurred.
+
+Next owner outcome is Graham's editorial disposition of this exact working draft; do not regenerate it, repeat unchanged tests, silently activate a style example or claim whole-product acceptance. Human voice/example/corpus/first-six/effort, separately owned rendering and actual publication obligations remain open. F01–F17 dispositions, proof modes and bounded supported input shapes are retained in the existing evidence.
+
+Sole current evidence/RESUME_AT: https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal
+Governing v1.2 pair remains docs/implementation/v4/LinkedIn_Generator_Workflow_Rectification_{Game_Plan,Execution_Prompt}.md; hashes56d1e56bc4350516dcf2a6d10e914a7ce8afcff95d7705e1a0f37c2a56da021f /025b41159595be041fda5201d3621c07cf844584f4f51db0d19fa59679a2e971.
+
+Raw current proof:evidence/workflow-rectification-20261116/continuation/CONTINUATION_INSTALLATION.json. Older raw reports/pointers below are historical snapshots and never a second executor. Documentation/evidence-only successors need no reinstall or repeated product suite while product bytes remain unchanged.
+
+---
+
+## Previous continuation implementation pointer — historical
+
 # Current continuation — installed P1 complete; bounded P2–P4 continuation
 
 PR53 merged/installed28e7619dfb619fbbd19827f122c214e00150fd75. Actual P1 ordinary pilot completed3included native executions,40wrapper-active seconds/API0; exact saved text15dca80a645465d08782e38ffbc12be070da20980f59e1052f8546d9a62aec96. Read/edit/test-feedback/original-attempt replay/export added0calls;18historical jobs and post-upgrade new work are preserved. Human writing acceptance remains pending. This is technical authoring proof, not publication or a winning trial.
