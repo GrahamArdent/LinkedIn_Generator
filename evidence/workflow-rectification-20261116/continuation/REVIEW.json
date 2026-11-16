@@ -1,1 +1,28 @@
-{"code_candidate":"e79968c1d7b5af333accab73e9bb8a8ee3548650","base":"28e7619dfb619fbbd19827f122c214e00150fd75","initial_review":"REVISE","material_findings":["optional visual configuration loaded outside guarded boundary","Application discarded selected text when optional visual provider set error/UNKNOWN"],"corrections":"Config load guarded; typed partial result retained while original unresolved job/model stage stays reconcilable; RED/GREEN regressions include original-ID recovery and zero new dispatch","fresh_corrected_review":"SCOPED_CLEAR","provenance":"fresh reviewer context, inherited model; not independent-model or human acceptance","review_scope":"P2/P3/P4 changed code interactions; source only","focused_tests":"62 passed; /tmp/continuation-final-focused.log","release_status":"Clean-artifact/full suite and exact installation/readback remain separate pending proofs","invalidators":"Relevant source/authority/environment/material composition changes; documents-only successor receives affected pair review without invented new code review"}
+{
+  "code_candidate": "e79968c1d7b5af333accab73e9bb8a8ee3548650",
+  "base": "28e7619dfb619fbbd19827f122c214e00150fd75",
+  "initial_review": "REVISE",
+  "material_findings": [
+    "optional visual configuration loaded outside guarded boundary",
+    "Application discarded selected text when optional visual provider set error/UNKNOWN"
+  ],
+  "corrections": "Config load guarded; typed partial result retained while original unresolved job/model stage stays reconcilable; RED/GREEN regressions include original-ID recovery and zero new dispatch",
+  "fresh_corrected_review": "SCOPED_CLEAR",
+  "provenance": "fresh reviewer context, inherited model; not independent-model or human acceptance",
+  "review_scope": "P2/P3/P4 changed code interactions; source only",
+  "focused_tests": "62 passed; /tmp/continuation-final-focused.log",
+  "release_status": "Clean-artifact/full suite and exact installation/readback remain separate pending proofs",
+  "invalidators": "Relevant source/authority/environment/material composition changes; documents-only successor receives affected pair review without invented new code review",
+  "current_code_candidate": "7e07d83a13ada4f77ce967f6577a00618843252c",
+  "score_compatibility_finding": "Initial coherent archive4failed/388pass exposed unavailable review with numeric advisory score; old tests preserved, scoreNone restored when essential assessment incomplete",
+  "score_delta_review": "SCOPED_CLEAR; no further executable issue",
+  "corrected_complete_pair_candidate": "20eb25599bdad0928c40884b514e52e8d95052da",
+  "pair_findings": [
+    "obsolete pending-push header",
+    "obsolete current-gated wording",
+    "historical E0 selector"
+  ],
+  "corrected_pair_review": "SCOPED_CLEAR fresh reviewer; source/test/config unchanged",
+  "clean_archive": "392 passed in20.01seconds",
+  "installed_outcome": "Pending actual installation/readback; P1 original proof reused"
+}
