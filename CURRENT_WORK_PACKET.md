@@ -1,3 +1,11 @@
+# Current continuation — ordinary editorial workflow installed at E20
+
+Use [the current evidence](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for the actual question, answer, saved draft, review and release. Continue with the author’s real topic or requested edit. The four-card exercise is withdrawn. Reuse the installed release and original draft identities before any new consequence.
+
+Revision 1.10 plan SHA-256 `9e758e1e11d6dfb1463757ee403cf329df9ad95c5e38ae72b443d12062e2c293`, prompt SHA-256 `e0a81ee1ba51010c4b8b307c54dbe68d6f64120f7ba30ffd0ec1b0c61ec4c4e8`.
+
+---
+
 # Current continuation — Step B complete offline at E19
 
 Read [the governing evidence](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for the offline request receipts and current scope. Step C in plan §2A is next when authorized. Continue from the [tested source](https://github.com/GrahamArdent/LinkedIn_Generator/commit/bed367d9190b8eedf9933365d47b27e717899151) and frozen development baseline. Production installation and the reserved comparison are later outcomes.
