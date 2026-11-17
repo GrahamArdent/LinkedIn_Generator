@@ -1,3 +1,11 @@
+# Current continuation — Graham’s editorial review of generated version 9
+
+PR56 installed and the requested §7 revision was generated and exported. The E15 [current evidence and exact text](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) records the verified outcome and usage. Await Graham’s disposition under §2A/C8/§11. Version 9 is reviewable. Its two predecessors and the manual revision remain available. F13 remains deferred.
+
+Revision 1.5 plan SHA-256 `53082abb4729d135b5b553f1c5df11183b4600ff5119714f9add88e8433b5aca`, prompt SHA-256 `3dba81a3d02568279e34de18853a615231bd04b96ecf3e0f0ca37db0e71e6f1b`. The earlier repair instructions below are history.
+
+---
+
 # Current continuation — repair preparation for richer author notes
 
 The installed P0–P4 baseline remains qualified for the previously proved cases. The initial draft feedback was received, and two subsequent revision attempts stopped before drafting. A manual revision is preserved. Resume F03/F04 in plan §7 via §2A. Use retained failure evidence to repair complete passage construction, multiline validation and provenance before another live revision. F13 remains deferred pending evidence of stage value.

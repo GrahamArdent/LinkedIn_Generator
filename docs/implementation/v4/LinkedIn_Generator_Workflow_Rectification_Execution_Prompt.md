@@ -1,5 +1,5 @@
 # Execute LinkedIn Generator Workflow Rectification
-Version: 1.4 · Updated: November 17, 2026 (America/Toronto)
+Version: 1.5 · Updated: November 17, 2026 (America/Toronto)
 Mode C · Companion to the scoped workflow rectification amendment
 
 ## 1. Binding and outcome
@@ -23,7 +23,7 @@ Fetch current-default `GrahamArdent/paths/CHATGPT.md` through connected GitHub a
 
 Read the evidence record's current continuation before historical appendices. Read the canonical repository `CURRENT_WORK_PACKET.md`, relevant current completion-plan sections, acceptance definitions and exact pair/source records named in plan §2. Distinguish the new scoped rectification continuation from the preserved old parcel/human-review checkpoint. The old v4.3 executor must not run simultaneously as another first-unmet-step authority.
 
-P0 and the scoped P1–P4 baseline have been delivered. Use plan §2A and the current evidence to resume the reopened F03/F04 preparation repair in §7. Preserve both terminal revision attempts, the original pilot and manual version 6. Read existing proof and reproduce the affected input behavior from retained results before considering another admitted generation. Reconcile any new denial within its actual scope.
+P0–P4 and §7’s affected repair, installation and one linked generation have been delivered for the E15 case. Start from §2A’s current outcome and the governing evidence. Graham can reopen generated version 9. Await his disposition of that text under C8 / §11. Preserve original version 5, manual version 6 and the retained attempts. A newly requested change follows the ordinary version-bound workflow. The E14 reproduction and live run remain completed proof.
 
 Inspect the actual relevant source/worktree/PR and installed identities before their respective consequences. A newer head is not installed proof. Reuse historical evidence until a material invalidator fires; retrieve current rendering records only when the visual boundary matters.
 
