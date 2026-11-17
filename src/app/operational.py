@@ -200,7 +200,7 @@ class Application:
                         'support_checks is one entry per fact: {claim_id,relevant:true,primary_source:true,entails:true,contradicted:false,reason:string}. Reject sources whose actual context negates the claim; include its scope in qualification. '
                         'Do not treat metadata, boilerplate, navigation or a source describing someone else as a personal fact. '
                         'Thesis and consequence are Graham\'s qualified interpretation, not unsupported statistics or expertise. '
-                        'For literal narrative return null; default five-part scaffold is supplied by application. '
+                        'When the caller explicitly selected literal, return null; the application supplies that scaffold. '
                         'For symbolic narrative return form=symbolic, beats (1-8 planning fragments <=240 characters), symbol={image,mapping:[{symbol_part,real_relationship}],boundary}. '
                         'Use ONE sustained comparison, explicitly limited; no finished post, hook or title. If evidence is irrelevant, thin or contradictory, return needs_more_evidence and null meaning/narrative.')
                     writing_brief = 'writing_snapshot' in record['input']
@@ -242,7 +242,8 @@ class Application:
                         if (set(check)!={'claim_id','relevant','primary_source','entails','contradicted','reason'}
                             or any(check[k] is not True for k in ('relevant','primary_source','entails'))
                             or check['contradicted'] is not False or not isinstance(check['reason'],str) or not check['reason'].strip()):raise ValueError('UNSUPPORTED_MEANING')
-                    if form == 'literal':
+                    # A null assessment selects the existing literal fallback after meaning is resolved.
+                    if form == 'literal' or (form == 'auto' and assessment['narrative'] is None):
                         narrative = {'form':'literal','beats':DEFAULT_BEATS,'symbol':None}
                     else:
                         narrative = assessment['narrative']
