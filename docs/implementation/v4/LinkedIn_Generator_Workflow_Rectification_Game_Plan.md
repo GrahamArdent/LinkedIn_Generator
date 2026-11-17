@@ -1,7 +1,7 @@
 # LinkedIn Generator — Workflow Rectification Game Plan
-Version: 1.2 · Updated: November 16, 2026 (America/Toronto)
+Version: 1.3 · Updated: November 17, 2026 (America/Toronto)
 Owner: GrahamArdent/LinkedIn_Generator · Mode C
-Disposition: ACTIVE_SCOPED_AMENDMENT; P0/P1 installed ordinary loop complete; current P2–P4 scope/proof in the governing evidence
+Disposition: ACTIVE_SCOPED_AMENDMENT; Baseline P0–P4 installed for qualified cases; targeted P2 input preparation reopened
 Scope: a bounded amendment to the existing R1–R8 completion plan, retaining Q1–Q6 and the wider product objectives.
 
 ## 1. Outcome, authority and first useful result
@@ -39,7 +39,7 @@ Canonical repository paths:
 - `evidence/prompt-plan-hardening-20261105/RESULTS.json`
 - `evidence/operational-implementation-20261106/RESULTS.json`
 
-On first activation, use `reconcile_authority_then_execute`; that adoption is now present in the reviewed local candidate. On continuation, verify and reuse it rather than repeating P0. The adoption contract remains: incorporate this bounded amendment and its prospective decision reversals into the existing completion plan and affected acceptance definitions before or atomically with dependent code. Update the existing execution protocol/pair binding and derived repository pointer to select the rectification step. Keep the old v4.3/parcel continuation as historical context, not a second executor. The repository pointer and evidence indexes link the same current record/raw receipts; they do not become duplicate progress journals.
+On first activation, use `reconcile_authority_then_execute`; that adoption was completed in PR53. On continuation, verify and reuse it rather than repeating P0. The adoption contract remains: incorporate this bounded amendment and its prospective decision reversals into the existing completion plan and affected acceptance definitions before or atomically with dependent code. Update the existing execution protocol/pair binding and derived repository pointer to select the rectification step. Keep the old v4.3/parcel continuation as historical context, not a second executor. The repository pointer and evidence indexes link the same current record/raw receipts; they do not become duplicate progress journals.
 
 Affected owner mapping:
 - R1/R4/R6: provider-free idea capture, immutable attempts, ordinary request admission and shared interface.
@@ -54,21 +54,14 @@ Retain unrelated roadmap obligations with their owners. Scope a missing human ju
 
 ## 2A. Current continuation and verification reuse
 
-The original P1 next-step sequence below has now been executed: PR53 is merged/installed and the single ordinary loop is proved. The current product step is **finish and qualify the bounded P2–P4 continuation selected in the existing evidence, then stop at its actual completion/owner boundary**. Read current evidence before this historical P1 sequencing; skip completed requirements and never rerun the original pilot merely to certify a later release. A push alone is not the protected outcome. Current work follows the accepted approval and already completed P1 outcome. Preserve any actual new denial on its own scope; do not reopen the resolved push gate, turn it into test repetition, or use a transport workaround to evade a new denial.
-
-The governing current continuation section and E2 in the existing evidence record the selected source commit, documentation successor, full pair hashes, actual approval state, original receipts and one RESUME_AT. At the original P1 qualification the reviewed code was `0d1d63b21a3bc7c4cc6aee0a8bcf320a6fe357aa`, with receipt-only checkpoint `ee3f898c125287d65c780f69c72b8c8194622138`, based on `0f672572719bb142881f2b08ddb835160ff06ac3`. The existing target result is 377 PASS in 19.86 seconds; product fingerprint is `f4d3bd9cce7d8abb0e2b492138414c29c4ddb840ba0cde0e1310fc10781e7c06`. Source, scripts, config and tests comprise 126 retained files with SHA-256 manifest `c52c95d49a52122ef55511de36ad39ed83110c1bc2c608d7f912e2fdff5446c1`; these were compared between local candidate and actual qualification worktree without rerunning tests. These are scoped source/test-target results, not installed/live/human acceptance.
+PR53 delivered the first installed ordinary writing loop. PR54 delivered and qualified the later scoped P2–P4 controls at `2e14ae8b58ea3bd6c6d328f6146bb492dc754dbe`, with 392 passing tests and exact installed readback. PR55 recorded the outcome. Reuse those receipts within their proved scope.
 
 ### Resume and release order
 
-The following remains the original dependency order. Current evidence records which steps are completed (including the accepted public push authorization and P1 pilot); reuse them and execute only the first actual unmet admitted consequence. A later code revision earns its own affected review/coherent qualification, without replacing the original P1 result or repeating its model generation.
-
-1. Read the governing current continuation section and E2 before historical checkpoints. Recover the exact candidate using its recorded local EN ref/bundle if necessary; compare the relevant current default head and candidate composition. Reuse already completed P0/source work. No force reset, source reconstruction from summaries or old parcel restart.
-2. Synchronize the revised plan/prompt copies, completion-plan/protocol pointers, quickstart and existing evidence index in a **documentation-only successor** under the same branch. Retain original raw receipts and reviewed code. Record the successor head and reviewed diff; verify unchanged product and test/config/source manifest. Do not silently push the older v1.0 document bindings after updating the saved pair.
-3. Retain the actual automatic-review rejection of the push to public `GrahamArdent/LinkedIn_Generator`, branch `feat/workflow-rectification-20261116`. The earlier review-only request did not clear it; Graham’s later explicit progress approval did, and PR53 applied that return evidence. Do not reopen this already satisfied permission solely because another engineering phase or chat begins. A genuinely new denial, changed destination/exposure or separately reserved effect must still be reconciled. Accept explicit destination/branch authorization covering the selected candidate and disclosed documentation-only successor; re-reconcile if scope, destination, product bytes or exposure changed. Once that return evidence is accepted, continue the already authorized dependencies without another generic proceed. Never bypass the rejection through another publishing route or repository.
-4. Under actual admitted authority, push and review/merge the selected composed candidate through existing R3/R7 controls, comparing the base and merge result. If the composed product/test/config bytes match, reuse the qualified 377-test run and the seven-finding source Challenge. Material composition changes invalidate their affected scope. A Git commit hash changing solely for documents or merge metadata is not itself a product-behavior invalidator.
-5. Complete only the outstanding coherent-release evidence required by R3/R7, then exact installation/data-aware rollback and target readback. The existing fresh target worktree is not claimed to be a committed clean archive. Perform the still-unproved clean-artifact qualification required by the owner once, keeping its source/environment/result explicit; do not repeat earlier native/local/installed suites merely to fill named slots. Do not waive an independently required owner release check.
-6. Run the single already bounded P1 ordinary-authoring pilot through the actual installed application using the plan §6 brief. Prove saved complete working text, feedback or labeled test edit, and fresh-process exact current reopen/export with zero additional model dispatch. Keep the 12 included executions/900 active and wall seconds/API0 admission and original-effect recovery. No generation is needed to recheck a saved document or test receipt.
-7. Only after that installed outcome is proved, mark P1 satisfied and continue the next admitted P2 dependency. Keep P2's score=None selection issue, remaining supported input/example lifecycle, P3/P4, original experiment and human/render/publication outcomes visible with their owners; do not front-load them as universal P1 prerequisites.
+1. Read the current evidence and its plan/prompt binding. Reuse the fulfilled installation, first pilot and feedback checkpoints. The later linked revision stopped twice before drafting. Preserve both terminal attempts and the manual version 6.
+2. Resume §7 under C2, F03 and F04. Use retained inputs and results to reproduce multiline passage rejection and incomplete fixed-length fragments. Repair passage construction and exact validation together. Preserve source provenance and distinguish editorial directions, attributed testimony and independently verified project records. Exercise supported-input, unsupported-claim and negated-source controls across the affected consumers.
+3. For an actual code change, apply the existing R3/R7 release checks, scoped post-implementation Challenge and installed readback. Verify the repaired path and preserved current work. Reuse unaffected proof.
+4. After the repair is proved, use one deliberately admitted linked generation to assess whether the intended material reaches the writer and the draft develops the argument. Preserve the manual draft and prior results. F13 stage-value assessment, editorial calibration, historical trials, rendering and publication stay with their existing owners and dependencies.
 
 ### Reuse and invalidation matrix
 
@@ -80,9 +73,9 @@ Read each receipt at its actual source/version scope. The original377-test P1 su
 | 377 target tests and 15 writing-loop regressions | Retain exact receipt, source/test/config manifest and target context; time or a new chat does not invalidate | Product, test, dependency/runtime or material composition change: explain risk, run affected checks plus owner-required coherent-release suite; stop repetition after the risk is resolved |
 | Seven-finding fresh source review | Reuse for unchanged reviewed implementation and relevant authority | New behavior-controlling code/authority/release premise: fresh affected Challenge; documentation wording changes receive pair review rather than invented new code-review provenance |
 | Documentation-only successor | Verify diff scope, pair hashes, pointers and unchanged qualified product/test files | Any accidental executable/config/test change exits this lane and needs impact review; never call it documentation-only based just on a commit message |
-| Clean-artifact release qualification | Not yet proved for this release; preserve the owner requirement | Do the outstanding qualification once on the actual artifact; reuse afterward unless artifact/runtime assumptions materially change |
-| Installation, backup, rollback and actual readback | Pending evidence cannot be substituted by the existing test run | On this first install, prove exact installed bytes and retained old/new work with current production state; subsequent repetition needs a material invalidator |
-| P1 ordinary model pilot | Not yet dispatched; historical parcel/trial effects are not this pilot | Admit once at actual dispatch, reconcile UNKNOWN originals before any retry, stop after the planned observation; duplicate reopen/export adds zero calls |
+| Clean-artifact release qualification | Passed for the installed baseline in E10 | Do the outstanding qualification once on the actual artifact; reuse afterward unless artifact/runtime assumptions materially change |
+| Installation, backup, rollback and actual readback | Installed baseline proof in E9/E10 | For changed releases prove exact installed bytes and retained work when affected |
+| P1 ordinary model pilot | Completed and retained in E9/E10 | Use the original result for baseline proof. Bind any later deliberately requested generation to its own current inputs and admission |
 | Historical samples, admissions, raw model/render effects and human gates | Preserve original identities/results and existing scope | Resolve only the actual owner-specific missing evidence; no reset, retroactive enrollment, fabricated rating or paid allowance |
 
 A changed merge/runtime is a reason to inspect impact, not an excuse to either repeat everything or skip required release work. Before any repeated test, identify the specific invalidator or still-unproved owner check, the protected outcome and the smallest sufficient verification. Record actual reuse and new proof separately in the same evidence record.
@@ -187,8 +180,8 @@ Use PROGRAMSTART for material engineering decisions and actual changed risk boun
 |---|---|---|
 | F01: no durable idea before model admission | Add provider-free capture with compatible record semantics | P1 |
 | F02: old trial history gates ordinary create/fresh stores | Scope trial policy to explicit experiments; preserve originals | P0/P1 |
-| F03: public discovery chooses meaning for all inputs | Preserve author intent; support the actual personal-summary route | P1 |
-| F04: one/two facts and 600-character paragraphs are universal validity rules | Retain bounded defaults; reconcile supported personal/mixed/reflective shapes | P1/P2 |
+| F03: public discovery chooses meaning for all inputs | Qualified for bounded inputs. Reopened for provenance and richer notes under §7 | P1/P2 |
+| F04: one/two facts and 600-character paragraphs are universal validity rules | Reopened under §7 for complete bounded passages and exact multiline validation | P1/P2 |
 | F05: opportunity novelty/relevance vetoes a chosen topic | Advice for manual authoring; scoped selection for autonomous callers | P0/P1 |
 | F06: unqualified working text cannot enter ordinary feedback/edit/export | Expose working versions independently of qualified selection | P1 |
 | F07: optional scores can erase essential findings | Separate parsing and truthful statuses | P2 |
@@ -258,6 +251,8 @@ A test edit is machine verification, not invented Graham feedback or approval. H
 ## 7. P2 — Complete continuation, review and input flexibility
 
 Dependencies: P1's compatible writing/attempt and version contracts.
+
+**Current F03/F04 repair.** Preserve complete, bounded source passages and verify exact multiline selections. Keep author testimony, independent project evidence and editorial instructions distinct along the actual preparation-to-writer path. The retained failed cases must reach a valid writer-ready handoff when their material is supported. Unsupported or negated claims must still be rejected. Preserve manual version 6, original attempts and prior receipts. The list below describes the installed baseline and its retained requirements.
 
 1. Add missing-detail continuation and deliberate linked model revision without mutating the original attempt or calling execution recovery “revision.”
 2. Add exact-text recheck distinct from rewriting. Review the saved current bytes and bind findings to both text and relevant brief revision. A changed context may invalidate findings even when text stayed unchanged.
@@ -343,6 +338,10 @@ Continue authorized machine-solvable dependencies. A missing optional label, ela
 Pause an affected consequential action for actual missing authority, unavailable decisive evidence, unresolved original effect, unreconciled material policy conflict, unsafe migration/rollback, exhausted allowance or a controlling release failure. Record original IDs/digests, owner, required evidence, acceptance/invalidation, RESUME_AT and safe work while waiting. Accepted returned evidence resumes already authorized work without a redundant generic proceed.
 
 Never claim background execution after the turn. Preserve the sole evidence record and original raw receipt owners. Update the existing repository current pointer when actual execution is activated; document-only changes do not require reinstallation.
+
+At the end of each substantive execution run, including a partial result, blocker or completion, reconcile actual outcomes against this plan and save the affected milestones, findings, dependencies and acceptance status in the existing plan. Record proof, limits, original attempts, usage and open effects in the same evidence file. Keep plan status concise and link its evidence. Align the execution prompt and repository pointer when routing, scope, requirements or authority change.
+
+Map the proposed next action to its exact plan section and prerequisite. If an authorized action is missing, add it to the owning plan before dispatch. If it needs a separate decision, record it as a proposal and preserve the decision boundary. If scope is complete or blocked, record the exact disposition and remaining condition. Apply the Program Start Cycle Challenge under Challenge Gate §2.2 to the next action or stop. Reconcile material corrections, freshly review the corrected candidate and complete plan/prompt pair as applicable, then verify saved bindings and record the result and one continuation in evidence before handoff.
 
 ## 12. Retention and Challenge contract
 

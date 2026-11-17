@@ -1,3 +1,15 @@
+# Current continuation — repair preparation for richer author notes
+
+The installed P0–P4 baseline remains qualified for the previously proved cases. The initial draft feedback was received, and two subsequent revision attempts stopped before drafting. A manual revision is preserved. Resume F03/F04 in plan §7 via §2A. Use retained failure evidence to repair complete passage construction, multiline validation and provenance before another live revision. F13 remains deferred pending evidence of stage value.
+
+Use the sole [current evidence record](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for actual receipts and the current continuation. The governing revision 1.3 pair is in docs/implementation/v4. Plan SHA-256 `84096da2125f29c394a5a4a4d7d1a36e27b8b1bf6b4b9296677a913cc6177a78`. Prompt SHA-256 `559c3a89148bd097a122ad841f8fb6a062a0b8c7ff56fb4131d1070abc997c0e`.
+
+At substantive run closeout, reconcile the plan and evidence, then apply the Program Start Cycle Challenge to the proposed next action or stop under plan §11.
+
+---
+
+## Prior installed baseline checkpoint
+
 # Current continuation — scoped workflow rectification installed
 
 P0–P4 applicable authoring rectification is implemented, qualified and installed at2e14ae8b58ea3bd6c6d328f6146bb492dc754dbe (PR54), after the first complete installed P1 loop at28e7619 (PR53). Corrected clean archive392testsPASS; exact127-file installed manifest/readback matches; no additional model generation was used for P2–P4.

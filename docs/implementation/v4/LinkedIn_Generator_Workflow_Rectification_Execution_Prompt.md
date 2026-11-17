@@ -1,5 +1,5 @@
 # Execute LinkedIn Generator Workflow Rectification
-Version: 1.2 · Updated: November 16, 2026 (America/Toronto)
+Version: 1.3 · Updated: November 17, 2026 (America/Toronto)
 Mode C · Companion to the scoped workflow rectification amendment
 
 ## 1. Binding and outcome
@@ -21,9 +21,7 @@ Fetch current-default `GrahamArdent/paths/CHATGPT.md` through connected GitHub a
 
 Read the evidence record's current continuation before historical appendices. Read the canonical repository `CURRENT_WORK_PACKET.md`, relevant current completion-plan sections, acceptance definitions and exact pair/source records named in plan §2. Distinguish the new scoped rectification continuation from the preserved old parcel/human-review checkpoint. The old v4.3 executor must not run simultaneously as another first-unmet-step authority.
 
-P0/source implementation is already reconciled in the qualified candidate. Use plan §2A to recover that exact candidate, compare source/test/config manifests and review the documentation-only successor before any push. Synchronize the current saved pair and its hashes with repository pointers/copies; the old v1.0 receipts remain historical. The prior push rejection was resolved by Graham’s subsequent approval and successful PR53. Preserve that history without requiring duplicate approval. For any genuinely new denial, retain its actual scope and required return evidence before the affected consequence. This is a mutation-specific boundary, not a connection failure. Do not retry through another publishing route. Once its actual return evidence is accepted, continue already authorized release/install/pilot dependencies without another generic proceed.
-
-The original first-activation rule remains: use `reconcile_authority_then_execute` to reconcile the plan's prospective policy/acceptance changes into the existing owner documents and select the same P1 step in the repository pointer before dependent code. Thereafter resume the first unmet authorized step recorded in this evidence, using the plan's dependencies. Preserve concurrent work and actual completed proof; do not restart Stage0 or re-run valid tests for freshness.
+P0 and the scoped P1–P4 baseline have been delivered. Use plan §2A and the current evidence to resume the reopened F03/F04 preparation repair in §7. Preserve both terminal revision attempts, the original pilot and manual version 6. Read existing proof and reproduce the affected input behavior from retained results before considering another admitted generation. Reconcile any new denial within its actual scope.
 
 Inspect the actual relevant source/worktree/PR and installed identities before their respective consequences. A newer head is not installed proof. Reuse historical evidence until a material invalidator fires; retrieve current rendering records only when the visual boundary matters.
 
@@ -31,7 +29,7 @@ For PENDING/UNKNOWN, read and reconcile the original request/attempt ID, input d
 
 ## 3. Operating instructions
 
-Work within the existing shared application/store and plan's scoped P0–P4 amendment. Execute the smallest legitimate dependency chain to P1's complete ordinary authoring loop first, then continue the next authorized phase. Keep all later findings visible without making them blanket prerequisites.
+Work within the existing shared application and store. Execute the active dependency chain in plan §2A, starting from the first unmet authorized item. The original execution sequence remains available as baseline history.
 
 For each bounded change: inspect the exact failing path; implement the smallest faithful correction; verify the protected outcome and meaningful failure sequence; reconcile actual progress and proof in the same evidence record. Use plan §10 for affected checks and existing R3/R7 release requirements. Do not add a second task checklist, generic workflow engine, evaluator service or parallel continuation.
 
@@ -45,9 +43,11 @@ On an actual tool/connection failure retain the sanitized error, classify its sc
 
 Apply proportional verification, reuse valid evidence, widen at real changed-risk/release boundaries and stop optional testing once its concrete risk is resolved. Follow the owning project for cost, credential, security and release requirements. Any useful non-current idea stays a reference with its owner, not new scope.
 
-Update only the existing evidence's current state, exact pair bindings, review findings, phase/finding dispositions, raw proof references and one RESUME_AT. Repository indexes/pointers link that same current outcome. Keep rendering progress in its existing evidence owner. Do not overwrite newer concurrent artifact versions; reconcile conflicts and uncertain saves before retrying.
+Update the existing evidence at verified milestones. Keep repository pointers aligned with the same continuation and rendering progress with its existing owner. Use current version guards and reconcile conflicting or uncertain saves before retrying.
 
 ## 4. Verification, stopping and completion
+
+Apply plan §11 closeout after each substantive run, including partial, blocked and completed outcomes. Save the game plan status against the actual work and update the same evidence with proof, limits and remaining work. Cite the next action’s exact plan section, add it to the owning plan when authorized, or record its pending decision or exact stop. Align affected prompt and pointer instructions. Run the Program Start Cycle Challenge on that next action or stop, correct material findings, review the corrected pair when changed, verify saved bindings and record the challenged continuation before handoff.
 
 Use the game plan's acceptance outcomes, §2A verification reuse matrix and release rules. Reuse the qualified P1 377-test run and seven-finding review only for their unchanged baseline scope. Changed P2–P4 code needs its own affected regressions, fresh scoped review and coherent clean-artifact result selected by current evidence. P1’s completed single live pilot is not rerun to certify a later code release. For every proposed repeat, name its material invalidator or outstanding owner-required check. A document-only successor, receipt edit, merge metadata, elapsed time or new chat is not by itself a reason to rerun product suites. The original P1 committed clean-artifact qualification, installation/data-aware rollback/readback and bounded pilot have passed. Later changed releases still require their own actual owner release/install evidence; do not substitute retained tests for those stronger outcomes or waive existing R3/R7 gates. Distinguish fixture/subprocess/browser/live/human/render/publish proof. Inspect actual logs/exits and independently read back the installed user-visible result when required. A hash, green test, merge or successful provider response is insufficient for a stronger outcome.
 
