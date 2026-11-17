@@ -1,7 +1,7 @@
 # LinkedIn Generator — Workflow Rectification Game Plan
-Version: 1.4 · Updated: November 17, 2026 (America/Toronto)
+Version: 1.5 · Updated: November 17, 2026 (America/Toronto)
 Owner: GrahamArdent/LinkedIn_Generator · Mode C
-Disposition: ACTIVE_SCOPED_AMENDMENT; Baseline P0–P4 installed for qualified cases; targeted P2 input preparation reopened
+Disposition: ACTIVE_SCOPED_AMENDMENT; Baseline P0–P4 installed for qualified cases; targeted P2 repair installed and linked editorial revision delivered
 Scope: a bounded amendment to the existing R1–R8 completion plan, retaining Q1–Q6 and the wider product objectives.
 
 ## 1. Outcome, authority and first useful result
@@ -56,7 +56,11 @@ Retain unrelated roadmap obligations with their owners. Scope a missing human ju
 
 PR53 delivered the first installed ordinary writing loop. PR54 delivered and qualified the later scoped P2–P4 controls at `2e14ae8b58ea3bd6c6d328f6146bb492dc754dbe`, with 392 passing tests and exact installed readback. PR55 recorded the outcome. Reuse those receipts within their proved scope.
 
-### Resume and release order
+### E15 outcome and current action
+
+Section 7 passed for the two retained failures and the installed linked case. PR56 installed at `939478d6c03eee337d741e1479830b39d9ecc20d`. The ordinary generator saved version 9 of `graham-workflow-personal-20261116`. Exact export and actual writer input are verified in E15. The draft explains the historical gate, controlled comparison and ordinary writing consequence. Graham’s disposition of this exact text remains open under C8 / §11. Show it and wait for his editorial feedback. One case does not settle F13, historical trial eligibility or whole-product acceptance.
+
+### Resume and release order (E14 sequence fulfilled for this linked case)
 
 At the start of each substantive run, state what Graham can inspect or do if this piece of work succeeds. For a prerequisite, name its observable result and the user outcome still ahead. For the pending editorial revision, Graham should be able to reopen a generator-written draft and see which rule blocked the topic, why it protected the trial, and what that meant for ordinary writing. These are questions about this brief. Sentence count and word count do not establish editorial depth.
 
@@ -256,7 +260,7 @@ A test edit is machine verification, not invented Graham feedback or approval. H
 
 Dependencies: P1's compatible writing/attempt and version contracts.
 
-**Current F03/F04 repair.** Preserve complete, bounded source passages and verify exact multiline selections. Keep author testimony, independent project evidence and editorial instructions distinct along the actual preparation-to-writer path. The retained failed cases must reach a valid writer-ready handoff when their material is supported. Unsupported or negated claims must still be rejected. Preserve manual version 6, original attempts and prior receipts.
+**F03/F04 acceptance criteria (fulfilled at E15 for this case).** Preserve complete, bounded source passages and verify exact multiline selections. Keep author testimony, independent project evidence and editorial instructions distinct along the actual preparation-to-writer path. The retained failed cases must reach a valid writer-ready handoff when their material is supported. Unsupported or negated claims must still be rejected. Preserve manual version 6, original attempts and prior receipts.
 
 Before spending another generation on this failure, inspect the prepared input at the point the writer consumes it. The two earlier attempts ended before drafting. Use their retained inputs in an offline check through the repaired preparation and writer-input construction path. Inspect the result at the point of use and label it reconstructed. Separately inspect the actual input on the one later admitted generation. Record the expected difference from the failed input and what would disprove the fix. If the input still cuts off the argument or misattributes a source, continue the repair using the retained evidence. If the generated text is available, compare the saved wording with the questions in §2A and cite where it develops or misses the point. An omitted point is an editorial finding. Graham decides whether the result is suitable.
 

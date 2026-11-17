@@ -1,6 +1,6 @@
 # Active scoped workflow rectification — November 16, 2026
 
-Graham explicitly instructed execution of the bound Workflow Rectification package. The scoped amendment is `LinkedIn_Generator_Workflow_Rectification_Game_Plan.md` (SHA-256 9078909f05385bb862821902657b61f0a57cedd29028110f7a03a3acb40a9bb9) and its execution prompt (ae2e38748e7ab08b7b7df3a5a07cb2b6524516959cc2839f7111299885112074).
+Graham explicitly instructed execution of the bound Workflow Rectification package. The scoped amendment is `LinkedIn_Generator_Workflow_Rectification_Game_Plan.md` (SHA-256 53082abb4729d135b5b553f1c5df11183b4600ff5119714f9add88e8433b5aca) and its execution prompt (3dba81a3d02568279e34de18853a615231bd04b96ecf3e0f0ca37db0e71e6f1b).
 
 P0 adopts the prospective R1/R2/R3/R4/R5/R6/R7/R8 decisions in amendment §5. Ordinary writing is not membership of the unresolved historical experiment. Trial enrollment is explicit; `origin` and a new budget never bypass original-effect restrictions. Historical trials, old admissions, B/clock/parcel and original test results remain immutable. Author intent and attributed local account support are admitted without a compulsory public URL; external assertions still require appropriate support.
 
