@@ -1,3 +1,11 @@
+# Current continuation — editorial baseline frozen at E18
+
+Read the opening of the [sole evidence and continuation](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal). Graham activated implementation for the first step. Plan §2A A is complete. The offline intake correction in B is next. Tuners use only the development cases. The evidence owns the frozen receipt and scope. Earlier checkpoints below are historical.
+
+Revision 1.8 plan SHA-256 `1cba27d211e9e1118fac831b996468fd0058d2bf06684108c785a799a67c1df3`, prompt SHA-256 `b707cb6b8dc2055b6b8828f6971e6435384dad3f0de89428b7cf8014f3966922`.
+
+---
+
 # Current continuation — editorial handoff and comparison design
 
 Read the opening of the [sole evidence and continuation](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for the current checkpoint, exact saved pair, authority and next assignment. Plan §2A owns the editorial acceptance criteria; the execution prompt governs start/resume and closeout. Earlier checkpoints below are historical.
