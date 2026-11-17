@@ -192,7 +192,7 @@ class Application:
                         'Return JSON with exactly status (ready or needs_more_evidence), reason, meaning, narrative, support_checks. '
                         'If ready, meaning has exactly thesis, reader_consequence, qualification (strings <=600 characters), facts (1-2 items with exactly claim_id, source_id, locator). '
                         'Select a source_id and exact passage locator for each fact. Select ONLY a complete source paragraph of at most600 characters; the application copies its exact text. Do not transcribe or return fact text/source_ids. '
-                        'Do not select long paragraphs, headings or boilerplate. One strong fact is enough. '
+                        'Select the complete bounded code excerpt when a cited repository rule is central. Use its repository as the source for behavior and the author account for personal observations. Editorial directions and prior drafts are intent, never factual support. '
                         'support_checks is one entry per fact: {claim_id,relevant:true,primary_source:true,entails:true,contradicted:false,reason:string}. Reject sources whose actual context negates the claim; include its scope in qualification. '
                         'Do not treat metadata, boilerplate, navigation or a source describing someone else as a personal fact. '
                         'Thesis and consequence are Graham\'s qualified interpretation, not unsupported statistics or expertise. '
@@ -324,7 +324,10 @@ class Application:
             if preparation:break
             ancestor=history.get(ancestor.get('parent'))
         evidence=list(preparation['request']['evidence']) if preparation else []
-        evidence.append({'title':'Graham supplied account; not independently verified','fact':snapshot['brief']['notes'] or snapshot['brief']['topic']})
+        from .operational_evidence import personal_source
+        for source in personal_source(snapshot['brief'], snapshot['brief_hash'])['sources']:
+            evidence.extend({'title': source['title'], 'fact': passage['excerpt']}
+                            for passage in source['passages'])
         profile['editorial_context']={'brief':snapshot['brief'],'source_bundle':preparation['bundle'] if preparation else None,
             'limits':'User testimony/viewpoint only; no independent measured outcomes. Public assertions require their retained exact support; old support cannot substantiate new claims.'}
         review=assess_publish_quality(text=current['body'],audience='business and IT leaders',content_goal='conversation',

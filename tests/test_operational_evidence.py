@@ -188,3 +188,33 @@ def test_oversized_author_feed_cannot_crowd_out_publisher_navigation(monkeypatch
         return url,feed,'application/atom+xml'
     monkeypatch.setattr(m.Evidence,'fetch',fetch)
     assert m.Evidence().discover('trust')==['https://arxiv.org/abs/2103.03610v1','https://arxiv.org/abs/2103.03611v1','https://arxiv.org/abs/2103.03612v1','https://publisher.example/a']
+
+
+def test_labelled_notes_separate_testimony_from_directions_and_unverified_records():
+    account = 'I asked why.\nI wanted to start from a topic.'
+    for separator in (' ', '\n'):
+        notes = separator.join(['AUTHOR STATEMENTS: ' + account,
+                                'VERIFIED PROJECT RECORD, not a quotation: a claimed result.',
+                                'EDITORIAL DIRECTION: explain the rule.'])
+        source, = m.personal_source({'notes': notes}, 'brief')['sources']
+        fact = {'claim_id': 'C1', 'source_id': 'U1', 'locator': 'supplied account 1'}
+        meaning = {'thesis': 'Point', 'reader_consequence': 'Consequence', 'qualification': 'Limit', 'facts': [fact]}
+        resolved = m.resolve_meaning(meaning, [source])
+        assert resolved['facts'][0]['text'] == account
+        assert [p['excerpt'] for p in source['passages']] == [account]
+        resolved['facts'][0]['text'] = 'I asked why.'
+        with pytest.raises(ValueError, match='UNSUPPORTED_MEANING'):
+            m.validate_meaning(resolved, [source])
+
+
+def test_long_unbroken_account_never_becomes_a_partial_fact():
+    assert not m.personal_source({'notes': 'word ' * 160}, 'brief')['sources']
+
+
+def test_pinned_repository_range_retains_exact_multiline_code_and_identity():
+    url = 'https://raw.githubusercontent.com/owner/repo/' + 'a'*40 + '/file.py#L2-L3'
+    raw = b'# source\nif history_missing:\n    raise ValueError("missing")\ncontinue_work()'
+    source = m.source_record(url, url, raw, 'text/plain')
+    assert source['passages'] == [{'locator': 'L2-L3', 'excerpt': 'if history_missing:\n    raise ValueError("missing")'}]
+    assert source['publisher'] == 'owner'
+    assert source['content_sha256'] == m.hashlib.sha256(raw).hexdigest()
