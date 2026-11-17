@@ -1,3 +1,11 @@
+# Current continuation — editorial handoff and comparison design
+
+Read the opening of the [sole evidence and continuation](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for the current checkpoint, exact saved pair, authority and next assignment. Plan §2A owns the editorial acceptance criteria; the execution prompt governs start/resume and closeout. Earlier checkpoints below are historical.
+
+Revision 1.7 plan SHA-256 `36710fadb0f1bba7e3735c2d2a7e1cda93614544f6bec7c31aab43c0699d74cb`, prompt SHA-256 `12cc9d0d2efe812613aafe1297243263601182b12fc3a86e80cb14f94b597450`.
+
+---
+
 # Current continuation — Graham’s editorial decision on version 10
 
 The installed editor saved Graham’s requested cut on brief 4, parent 9. The [E16 evidence and current assignment](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) identify the exact export. Under §2A/C8/§11, ask Graham whether to keep version 10 as written or what he would change. Version 9 remains the generator output. Version 10 is a manual edit with review status `revalidation_required`. F13 remains deferred. Voice-example approval and publication remain pending.
