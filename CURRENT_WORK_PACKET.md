@@ -1,3 +1,11 @@
+# Current continuation — Step B complete offline at E19
+
+Read [the governing evidence](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for the offline request receipts and current scope. Step C in plan §2A is next when authorized. Continue from the [tested source](https://github.com/GrahamArdent/LinkedIn_Generator/commit/bed367d9190b8eedf9933365d47b27e717899151) and frozen development baseline. Production installation and the reserved comparison are later outcomes.
+
+Revision 1.9 plan SHA-256 `fa7cc0e8635f7b9c731662463d3d54723ec86c301e6bf3c824bea7244e51989d`, prompt SHA-256 `778491531557649c00ab66f24cd4bbced17e8bf1ca292d0b6d318e6355339be6`.
+
+---
+
 # Current continuation — editorial baseline frozen at E18
 
 Read the opening of the [sole evidence and continuation](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal). Graham activated implementation for the first step. Plan §2A A is complete. The offline intake correction in B is next. Tuners use only the development cases. The evidence owns the frozen receipt and scope. Earlier checkpoints below are historical.
