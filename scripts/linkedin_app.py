@@ -55,7 +55,7 @@ def main():
     p.add_argument('action',choices=['init','save-idea','draft','recheck','create','status','list','show','resume','feedback','edit','activate-voice','voices','export','backup','import','serve','image-prepare','image-render','image-export'])
     p.add_argument('--expected-brief',type=int);p.add_argument('--expected-text',type=int);p.add_argument('--attempt');p.add_argument('--experiment')
     p.add_argument('--new-budget',action='store_true');p.add_argument('--parent');p.add_argument('--id');p.add_argument('--topic');p.add_argument('--url',action='append',default=[]);p.add_argument('--notes',default='')
-    p.add_argument('--voice',default='concise_challenger');p.add_argument('--narrative',choices=['literal','symbolic'],default='literal')
+    p.add_argument('--voice',default='concise_challenger');p.add_argument('--narrative',choices=['literal','symbolic'])
     p.add_argument('--path',type=Path);p.add_argument('--hash');p.add_argument('--port',type=int,default=8765)
     p.add_argument('--intent',type=Path);p.add_argument('--approval',type=Path);p.add_argument('--model-config',type=Path);p.add_argument('--brief',type=Path)
     args=p.parse_args()
@@ -84,7 +84,7 @@ def main():
         result=getattr(app,'draft_item' if args.action=='draft' else 'recheck_item')(args.id,args.attempt,expected_brief=args.expected_brief,expected_text=args.expected_text)
     elif args.action=='create':
         if not args.topic:p.error('create needs --topic')
-        result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative,parent=args.parent,new_budget=args.new_budget,experiment=args.experiment)
+        result=app.create(args.id,args.topic,urls=args.url,notes=args.notes,voice=args.voice,narrative=args.narrative or 'literal',parent=args.parent,new_budget=args.new_budget,experiment=args.experiment)
     elif args.action=='feedback':result=app.feedback(args.id,json.loads(args.path.read_bytes()))
     elif args.action=='edit':result=app.edit(args.id,args.path.read_text(),expected_brief=args.expected_brief,expected_text=args.expected_text)
     elif args.action=='activate-voice':result=app.activate_voice(args.id,args.hash,expected_brief=args.expected_brief,expected_text=args.expected_text)

@@ -92,7 +92,8 @@ class Application:
         return self.store.read_blob(row['value']) if row else {'version':0,'examples':[]}
 
     def create(self,job,topic,*,urls=(),notes='',voice='concise_challenger',narrative='literal',parent=None,new_budget=False,experiment=None,writing_snapshot=None,operation='draft'):
-        if not topic.strip() or len(topic)>500 or len(notes)>3000 or len(urls)>6 or narrative not in ('literal','symbolic'):raise ValueError('INVALID_CREATE_INPUT')
+        forms = ('literal', 'symbolic', 'auto') if writing_snapshot else ('literal', 'symbolic')
+        if not topic.strip() or len(topic)>500 or len(notes)>3000 or len(urls)>6 or narrative not in forms:raise ValueError('INVALID_CREATE_INPUT')
         normalized={'topic':topic.strip(),'urls':list(urls),'notes':notes,'voice':voice,'narrative':narrative,**({'parent':parent} if parent else {}),**({'new_budget':True} if new_budget else {})}
         if experiment is not None:normalized['experiment']=experiment
         if writing_snapshot is not None:normalized['writing_snapshot']=writing_snapshot
@@ -164,7 +165,10 @@ class Application:
                         source=Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(record['input']['topic'],urls)
                         source['candidate_origin']='caller_urls' if record['input']['urls'] else 'retained_exact_topic_sources' if urls else 'crossref_discovery'
                     commit_pure_stage(self.store,job,'evidence',record['input'],source)
-                if not source['sources']:return self.store.finish(job,'needs_more_evidence',source)
+                if not source['sources']:
+                    if 'writing_snapshot' in record['input']:
+                        source = {**source, 'author_question': 'Which specific observation or source passage should the post build on?'}
+                    return self.store.finish(job,'needs_more_evidence',source)
                 prepared=self.store.stage(job,'preparation')
                 if prepared is None and 'revision_context' in record['binding'] and record['input'].get('parent'):
                     parent=self.store.get(record['input']['parent'])
@@ -199,11 +203,37 @@ class Application:
                         'For literal narrative return null; default five-part scaffold is supplied by application. '
                         'For symbolic narrative return form=symbolic, beats (1-8 planning fragments <=240 characters), symbol={image,mapping:[{symbol_part,real_relationship}],boundary}. '
                         'Use ONE sustained comparison, explicitly limited; no finished post, hook or title. If evidence is irrelevant, thin or contradictory, return needs_more_evidence and null meaning/narrative.')
+                    writing_brief = 'writing_snapshot' in record['input']
+                    if writing_brief:
+                        system += (' When ready, include one additional field, intended_reader, naming the person facing the decision. '
+                                   'First identify that reader and what they can recognize or decide in meaning.reader_consequence. '
+                                   'Only then select narrative beats. Respect any supplied editorial direction. '
+                                   'An editorial_paraphrase only supports what the editor proposes, never Graham’s words or experiences. '
+                                   'Only verbatim passages supply exact author wording. If a general topic leaves the central point or '
+                                   'firsthand incident genuinely ambiguous, use needs_more_evidence and make reason ONE short question '
+                                   'about the specific missing decision, observation or evidence. Use the author’s actual context. '
+                                   'Do not ask for sample preferences, a writing style, or facts already supplied. If a defensible point '
+                                   'is clear, proceed; optional detail and style preferences are never prerequisites.')
+                    form = record['input']['narrative']
+                    if form == 'auto':
+                        system += (' No form was requested. After identifying the reader and takeaway, return a narrative object '
+                                   'with form, 1–8 short beats suited to that decision, and symbol. For a literal form use null '
+                                   'for symbol. Use a symbolic form only when the comparison helps this reader.')
                     raw=client.call(system,json.dumps({'input':record['input'],'sources':source['sources']},ensure_ascii=False),response_json=True)['text']
                     assessment=json.loads(raw)
-                    if set(assessment)!={'status','reason','meaning','narrative','support_checks'}:raise ValueError('INVALID_MEANING_ASSESSMENT')
-                    if assessment['status']=='needs_more_evidence':return self.store.finish(job,'needs_more_evidence',{'assessment':assessment,'evidence':source})
+                    fields = {'status','reason','meaning','narrative','support_checks'}
+                    if writing_brief and assessment.get('status') == 'ready':
+                        fields.add('intended_reader')
+                    if set(assessment) != fields:raise ValueError('INVALID_MEANING_ASSESSMENT')
+                    if assessment['status'] == 'needs_more_evidence':
+                        result = {'assessment': assessment, 'evidence': source}
+                        if writing_brief and isinstance(assessment['reason'], str):
+                            result['author_question'] = assessment['reason'].strip()
+                        return self.store.finish(job, 'needs_more_evidence', result)
                     if assessment['status']!='ready':raise ValueError('INVALID_MEANING_ASSESSMENT')
+                    reader = assessment['intended_reader'] if writing_brief else 'business and IT leaders'
+                    if not isinstance(reader, str) or not reader.strip() or len(reader) > 600:
+                        raise ValueError('INVALID_INTENDED_READER')
                     meaning=resolve_meaning(assessment['meaning'],source['sources'])
                     checks=assessment['support_checks']
                     if not isinstance(checks,list) or len(checks)!=len(meaning['facts']) or {c.get('claim_id') for c in checks}!={f['claim_id'] for f in meaning['facts']}:
@@ -212,13 +242,17 @@ class Application:
                         if (set(check)!={'claim_id','relevant','primary_source','entails','contradicted','reason'}
                             or any(check[k] is not True for k in ('relevant','primary_source','entails'))
                             or check['contradicted'] is not False or not isinstance(check['reason'],str) or not check['reason'].strip()):raise ValueError('UNSUPPORTED_MEANING')
-                    narrative=assessment['narrative'] if record['input']['narrative']=='symbolic' else {'form':'literal','beats':DEFAULT_BEATS,'symbol':None}
-                    if record['input']['narrative']=='symbolic' and (not isinstance(narrative,dict) or narrative.get('form')!='symbolic'):raise ValueError('NARRATIVE_SELECTION_CHANGED')
+                    if form == 'literal':
+                        narrative = {'form':'literal','beats':DEFAULT_BEATS,'symbol':None}
+                    else:
+                        narrative = assessment['narrative']
+                        if form == 'symbolic' and (not isinstance(narrative, dict) or narrative.get('form') != form):
+                            raise ValueError('NARRATIVE_SELECTION_CHANGED')
                     handoff=freeze_handoff(meaning,narrative)
                     claims=[{'claim_id':f['claim_id'],'kind':'observation' if any(s.get('record') for s in source['sources'] if s['source_id'] in f['source_ids']) else 'fact',**{k:f[k] for k in ('text','source_ids')}} for f in meaning['facts']]
                     by_id={s['source_id']:s for s in source['sources']}
                     data={'request_id':job,'origin':'manual','persona_key':'graham','topic':record['input']['topic'],
-                          'audience':'business and IT leaders','objective':meaning['reader_consequence'],'writing_voice_id':record['binding']['voice']['id'],
+                          'audience':reader.strip(),'objective':meaning['reader_consequence'],'writing_voice_id':record['binding']['voice']['id'],
                           'evidence':[{'title':by_id[f['source_ids'][0]]['title'],'fact':f['text'],'url':by_id[f['source_ids'][0]].get('url')} for f in meaning['facts']],
                           'editorial_handoff':handoff,'voice_examples':record['binding']['voice_examples']['examples']}
                     if 'writing_snapshot' in record['input']:data.update(opportunity_gate=False,visual_asset_plan=False)
@@ -250,13 +284,16 @@ class Application:
                 self.store.finish(job,state,{**(partial_result or {}),'error_code':code,'provider_receipts':provider.receipts})
                 raise
 
-    def save_idea(self,item,topic,*,notes='',urls=(),voice='concise_challenger',narrative='literal',expected_brief=None):
+    def save_idea(self,item,topic,*,notes='',urls=(),voice='concise_challenger',narrative=None,expected_brief=None):
         if (not isinstance(topic,str) or not topic.strip() or len(topic)>500 or not isinstance(notes,str)
                 or len(notes)>3000 or not isinstance(urls,(list,tuple)) or len(urls)>6
-                or any(not isinstance(u,str) or len(u)>2048 for u in urls) or narrative not in ('literal','symbolic')):
+                or any(not isinstance(u,str) or len(u)>2048 for u in urls) or narrative not in (None,'literal','symbolic')):
             raise ValueError('INVALID_BRIEF')
         resolve_writing_voice(voice)
-        return self.store.save_brief(item,{'topic':topic.strip(),'notes':notes,'urls':list(urls),'voice':voice,'narrative':narrative},expected_brief)
+        brief = {'topic':topic.strip(),'notes':notes,'urls':list(urls),'voice':voice}
+        if narrative is not None:
+            brief['narrative'] = narrative
+        return self.store.save_brief(item, brief, expected_brief)
 
     def draft_item(self,item,attempt,*,expected_brief,expected_text,operation='draft'):
         with (self.store.root/('.writing-'+text_hash(item)+'.lock')).open('a+') as lock:
@@ -298,7 +335,7 @@ class Application:
         # One deliberate action receives the declared finite ordinary admission;
         # history and cumulative stage usage are never reset or relabeled.
         brief=writing['brief']
-        return self.create(attempt,**brief,writing_snapshot=snapshot,operation=operation)
+        return self.create(attempt, **{'narrative':'auto', **brief}, writing_snapshot=snapshot, operation=operation)
 
     def resume_writing(self,item):
         attempts=[r for r in self.show(item)['attempts'] if r['state'] in ('unknown','prepared')]
@@ -312,13 +349,14 @@ class Application:
     def _recheck(self,record,client,provider):
         from .publish_quality import assess_publish_quality
         snapshot=record['input']['writing_snapshot']
-        current=next(t for t in self.store.writing(snapshot['item'])['text_history'] if t['version']==snapshot['parent_text'])
+        history = {t['version']: t for t in self.store.writing(snapshot['item'])['text_history']}
+        current = history[snapshot['parent_text']]
+        parent = history.get(current['parent'])
         from .api import _persona_profile
         from .utils import load_yaml
         root=Path(__file__).resolve().parents[2]
         profile=_persona_profile(str(root),load_yaml(str(root/'config/personas.yaml')),'graham',author_pov='individual',writing_voice_id=record['input']['voice'])
         preparation=None;ancestor=current
-        history={t['version']:t for t in self.store.writing(snapshot['item'])['text_history']}
         while ancestor:
             if ancestor.get('attempt'):preparation=self.store.stage(ancestor['attempt'],'preparation')
             if preparation:break
@@ -330,7 +368,11 @@ class Application:
                             for passage in source['passages'])
         profile['editorial_context']={'brief':snapshot['brief'],'source_bundle':preparation['bundle'] if preparation else None,
             'limits':'User testimony/viewpoint only; no independent measured outcomes. Public assertions require their retained exact support; old support cannot substantiate new claims.'}
-        review=assess_publish_quality(text=current['body'],audience='business and IT leaders',content_goal='conversation',
+        prepared = preparation['request'] if preparation and ancestor['brief_revision'] == snapshot['brief_revision'] else {}
+        if prepared.get('objective'):
+            profile['editorial_context']['objective'] = prepared['objective']
+        review=assess_publish_quality(text=current['body'],audience=prepared.get('audience','business and IT leaders'),content_goal='conversation',
+            parent_text=parent['body'] if parent else None,
             evidence=evidence,persona_profile=profile,client=client).as_dict()
         if provider.error:raise provider.error
         self.store.writing_review(snapshot['item'],current['version'],snapshot['brief_revision'],review)
@@ -359,8 +401,19 @@ class Application:
     def show(self,job):
         if self.store.writing_exists(job):
             item=self.store.writing(job)
-            item['attempts']=[{'id':r['id'],'state':r['state'],'input_digest':sha(r['input']),'created':r['created']} for r in self.store.list() if r['input'].get('writing_snapshot',{}).get('item')==job]
+            runs = [r for r in self.store.list() if r['input'].get('writing_snapshot', {}).get('item') == job]
+            item['attempts'] = [{'id': r['id'], 'state': r['state'], 'input_digest': sha(r['input']),
+                                 'created': r['created']} for r in runs]
             item['state']=item['attempts'][-1]['state'] if item['attempts'] else 'idea_saved'
+            if runs:
+                latest = runs[-1]
+                snapshot = latest['input']['writing_snapshot']
+                current = item['current_text']
+                if (latest['state'] == 'needs_more_evidence' and snapshot['brief_revision'] == item['brief_revision']
+                        and snapshot['parent_text'] == (current['version'] if current else None)):
+                    question = latest.get('result', {}).get('author_question')
+                    if question:
+                        item['author_question'] = question
             return item
         record=self.store.get(job)
         record['events']=self.store.events(job)

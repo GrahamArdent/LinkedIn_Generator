@@ -10,23 +10,54 @@ PAGE='''<!doctype html><html><head><meta name="viewport" content="width=device-w
 <button id="history">History</button><button id="voices">Voices</button><button id="newrequest">New request (no generation)</button><p id="status" role="status"></p><pre id="output"></pre>
 <details><summary>Request details</summary><label>Request ID<input id="job"></label>
 <label>Parent request ID<input id="parent"></label></details><label>Topic<input id="topic"></label><label>Source URLs (one per line, optional)<textarea id="urls"></textarea></label>
-<label>Notes<textarea id="notes"></textarea></label><label>Voice<input id="voice" value="concise_challenger"></label>
-<label>Narrative<select id="narrative"><option>literal</option><option>symbolic</option></select></label>
+<label>Notes<textarea id="notes" placeholder="Optional. Use AUTHOR WORDS: for an exact passage, EDITORIAL SUMMARY: for a paraphrase, and EDITORIAL DIRECTION: for the reader and takeaway. Start each on a new line."></textarea></label><section id="clarification" hidden><label><span id="question"></span><textarea id="answer" placeholder="Your answer"></textarea></label><button id="saveanswer">Add my answer to the brief</button></section><label>Voice<input id="voice" value="concise_challenger"></label>
+<label>Narrative<select id="narrative"><option value="">Choose for the reader</option><option>literal</option><option>symbolic</option></select></label>
 <button id="saveidea">Save idea</button><button id="create">Draft this / revise</button><button id="recheck">Check current text</button><button id="show">Review / status</button><button id="resume">Reconcile / resume original</button>
 <label>Exact candidate hash<input id="hash"></label>
 <label>Your decision<select id="decision"><option value="">Still reviewing</option><option value="keep">Keep</option><option value="light">Light edit</option><option value="structural">Structural edit</option><option value="reject">Reject</option></select></label><label>Preference (optional)<input id="preference"></label><label>Notes on facts, voice, construction or usefulness<textarea id="note"></textarea></label><label>Actual editing minutes (optional)<input id="minutes" type="number" min="0"></label><label><input id="voiceapproval" type="checkbox" style="width:auto"> Explicitly approve this text as a reusable voice example</label><button id="savefeedback">Record feedback</button>
+<details id="revisiondetail" hidden><summary>Compare this edit with its parent</summary><p>Which passage carries the author’s point? What can the reader do with the new ending?</p><pre id="parentbody"></pre><pre id="childbody"></pre></details>
+<pre id="editorialreview" hidden></pre>
 <label>Human revision<textarea id="edit"></textarea></label><button id="saveedit">Save revision (invalidates reviews and visuals)</button>
 <button id="activate">Activate explicitly approved voice example</button><button id="export">Export current writing</button>
 <div id="items"></div><details><summary>Provenance and history</summary><pre id="details"></pre></details>
 <script>
 let currentItem=null;let attempt=null;const token=TOKEN;const el=id=>document.getElementById(id);
 async function call(path,data){el('status').textContent='Working…';try{let r=await fetch(path,data?{method:'POST',headers:{'Content-Type':'application/json','X-Local-Token':token},body:JSON.stringify(data)}:{});let v=await r.json();render(v);el('status').textContent=r.ok?(v.state||'Saved / read complete'):(v.error||'Action needs attention');return v}catch(e){el('status').textContent=String(e)}}
-function render(v){if(v.kind==='writing_item'){const changed=!currentItem||currentItem.id!==v.id||currentItem.brief_revision!==v.brief_revision||currentItem.current_text?.version!==v.current_text?.version;if(changed){for(const k of ['decision','note','preference','minutes'])el(k).value='';el('voiceapproval').checked=false;}currentItem=v;el('job').value=v.id;localStorage.setItem('graham-job',v.id);for(const k of ['topic','notes','voice','narrative'])el(k).value=v.brief[k]||'';el('urls').value=(v.brief.urls||[]).join('\\n');el('output').textContent=v.current_text?.body||'Idea saved. Ready when you are.';el('hash').value=v.current_text?.content_sha256||'';el('edit').value=v.current_text?.body||'';}else if(v.input&&v.input.writing_snapshot){call('/api/job?id='+encodeURIComponent(v.input.writing_snapshot.item));} if(v.input&&v.id){currentItem=null;el('job').value=v.id;localStorage.setItem('graham-job',v.id);for(const k of ['topic','notes','voice','narrative','parent'])el(k).value=v.input[k]||({voice:'concise_challenger',narrative:'literal'}[k]||'');el('urls').value=(v.input.urls||[]).join('\\n')}el('details').textContent=JSON.stringify(v,null,2);el('items').replaceChildren();const selected=v.current_selected||v.result?.selected_candidate||(v.body&&v.content_sha256?v:null);if(selected||v.text||v.error||v.result?.error_code)el('output').textContent=selected?.body||v.text||v.error||v.result?.error_code;if(selected?.content_sha256){for(const k of ['decision','note','preference','minutes'])el(k).value='';el('voiceapproval').checked=false;el('hash').value=selected.content_sha256;el('edit').value=selected.body}if(Array.isArray(v)){for(const job of v){const b=document.createElement('button');b.textContent=(job.brief?.topic||job.input?.topic||job.id)+' · '+job.state+' · '+job.id;b.onclick=()=>{el('job').value=job.id;call('/api/job?id='+encodeURIComponent(job.id))};el('items').append(b)}}if(v.catalogue){for(const [id,voice]of Object.entries(v.catalogue.voices)){const b=document.createElement('button');b.textContent=voice.label;b.onclick=()=>{el('voice').value=id;el('status').textContent='Voice selected; no generation started'};el('items').append(b)}}}
+function showEditorialReview(item){
+ const question=item?.author_question;
+ el('clarification').hidden=!question;
+ el('question').textContent=question||'';
+ if(!question||item?.id!==currentItem?.id||item?.brief_revision!==currentItem?.brief_revision)el('answer').value='';
+ const current=item?.current_text;
+ const parent=item?.text_history?.find(t=>t.version===current?.parent);
+ el('revisiondetail').hidden=!(parent&&current);
+ el('parentbody').textContent=parent?'Parent v'+parent.version+'\\n'+parent.body:'';
+ el('childbody').textContent=parent?'Current v'+current.version+'\\n'+current.body:'';
+ const report=current?.review;
+ const review=report?.essential_checks?report:report?.[report?.recommendation];
+ const lines=[];
+ for(const [key,check] of Object.entries(review?.essential_checks||{})){
+   lines.push(key.replaceAll('_',' ')+' · '+check.verdict,check.passage||'',check.reason);
+ }
+ const comparison=review?.revision_comparison;
+ if(comparison)lines.push('Revision · '+comparison.change,comparison.parent_passage,comparison.current_passage,comparison.reason);
+ el('editorialreview').hidden=!lines.length;
+ el('editorialreview').textContent=lines.filter(Boolean).join('\\n');
+}
+function render(v){if(v.kind==='writing_item'||v.input?.topic||Array.isArray(v))showEditorialReview(v);if(v.kind==='writing_item'){const changed=!currentItem||currentItem.id!==v.id||currentItem.brief_revision!==v.brief_revision||currentItem.current_text?.version!==v.current_text?.version;if(changed){for(const k of ['decision','note','preference','minutes'])el(k).value='';el('voiceapproval').checked=false;}currentItem=v;el('job').value=v.id;localStorage.setItem('graham-job',v.id);for(const k of ['topic','notes','voice','narrative'])el(k).value=v.brief[k]||'';el('urls').value=(v.brief.urls||[]).join('\\n');el('output').textContent=v.current_text?.body||'Idea saved. Ready when you are.';el('hash').value=v.current_text?.content_sha256||'';el('edit').value=v.current_text?.body||'';}else if(v.input&&v.input.writing_snapshot){call('/api/job?id='+encodeURIComponent(v.input.writing_snapshot.item));} if(v.input&&v.id){currentItem=null;el('job').value=v.id;localStorage.setItem('graham-job',v.id);for(const k of ['topic','notes','voice','narrative','parent'])el(k).value=v.input[k]||({voice:'concise_challenger',narrative:'literal'}[k]||'');el('urls').value=(v.input.urls||[]).join('\\n')}el('details').textContent=JSON.stringify(v,null,2);el('items').replaceChildren();const selected=v.current_selected||v.result?.selected_candidate||(v.body&&v.content_sha256?v:null);if(selected||v.text||v.error||v.result?.error_code)el('output').textContent=selected?.body||v.text||v.error||v.result?.error_code;if(selected?.content_sha256){for(const k of ['decision','note','preference','minutes'])el(k).value='';el('voiceapproval').checked=false;el('hash').value=selected.content_sha256;el('edit').value=selected.body}if(Array.isArray(v)){for(const job of v){const b=document.createElement('button');b.textContent=(job.brief?.topic||job.input?.topic||job.id)+' · '+job.state+' · '+job.id;b.onclick=()=>{el('job').value=job.id;call('/api/job?id='+encodeURIComponent(job.id))};el('items').append(b)}}if(v.catalogue){for(const [id,voice]of Object.entries(v.catalogue.voices)){const b=document.createElement('button');b.textContent=voice.label;b.onclick=()=>{el('voice').value=id;el('status').textContent='Voice selected; no generation started'};el('items').append(b)}}}
 function action(a,extra={}){if(['create','save-idea'].includes(a)&&!el('job').value)el('job').value='graham-'+crypto.randomUUID();if(el('job').value)localStorage.setItem('graham-job',el('job').value);return call('/api/action',{action:a,id:el('job').value,...extra})}
-el('newrequest').onclick=()=>{currentItem=null;attempt=null;for(const k of ['job','parent','topic','urls','notes','hash','edit','note','preference','minutes'])el(k).value='';el('decision').value='';el('voiceapproval').checked=false;localStorage.removeItem('graham-job');el('output').textContent='';el('details').textContent='';el('status').textContent='New request; generation has not started'};
+el('newrequest').onclick=()=>{showEditorialReview(null);currentItem=null;attempt=null;el('narrative').value='';for(const k of ['job','parent','topic','urls','notes','hash','edit','note','preference','minutes'])el(k).value='';el('decision').value='';el('voiceapproval').checked=false;localStorage.removeItem('graham-job');el('output').textContent='';el('details').textContent='';el('status').textContent='New request; generation has not started'};
 el('history').onclick=()=>call('/api/list');el('voices').onclick=()=>call('/api/voices');
 async function saveIdea(){return action('save-idea',{topic:el('topic').value,urls:el('urls').value.split('\\n').filter(Boolean),notes:el('notes').value,voice:el('voice').value,narrative:el('narrative').value,expected_brief:currentItem?.brief_revision});}
 el('saveidea').onclick=saveIdea;
+el('saveanswer').onclick=async()=>{
+ const answer=el('answer').value.trim();
+ if(!currentItem?.author_question||!answer)return;
+ const old=el('notes').value;
+ const notes=[old,'AUTHOR WORDS: '+answer].filter(Boolean).join('\\n');
+ const result=await action('save-idea',{topic:el('topic').value,urls:el('urls').value.split('\\n').filter(Boolean),notes,voice:el('voice').value,narrative:el('narrative').value,expected_brief:currentItem.brief_revision});
+ if(result?.kind==='writing_item')el('status').textContent='Answer saved. Draft when ready.';
+};
 el('create').onclick=async()=>{let v=await saveIdea();if(v?.kind==='writing_item'){attempt='writing-'+crypto.randomUUID();await action('draft',{attempt,expected_brief:v.brief_revision,expected_text:v.current_text?.version??null});await actionRead();}};
 async function actionRead(){return call('/api/job?id='+encodeURIComponent(el('job').value));}
 el('recheck').onclick=async()=>{if(currentItem?.current_text){await action('recheck',{attempt:'check-'+crypto.randomUUID(),expected_brief:currentItem.brief_revision,expected_text:currentItem.current_text.version});await actionRead();}};
@@ -69,7 +100,7 @@ def handler(app,token):
                 length=int(self.headers.get('Content-Length','0'))
                 if self.path!='/api/action' or not 0<length<=32768:raise ValueError('INVALID_ACTION')
                 d=json.loads(self.rfile.read(length));a=d['action'];job=d['id']
-                if a=='save-idea':result=app.save_idea(job,d['topic'],notes=d.get('notes',''),urls=d.get('urls',[]),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative','literal'),expected_brief=d.get('expected_brief'))
+                if a=='save-idea':result=app.save_idea(job,d['topic'],notes=d.get('notes',''),urls=d.get('urls',[]),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative') or None,expected_brief=d.get('expected_brief'))
                 elif a=='draft':result=app.draft_item(job,d['attempt'],expected_brief=d['expected_brief'],expected_text=d['expected_text'])
                 elif a=='recheck':result=app.recheck_item(job,d['attempt'],expected_brief=d['expected_brief'],expected_text=d['expected_text'])
                 elif a=='create':result=app.create(job,d['topic'],urls=d.get('urls',[]),notes=d.get('notes',''),voice=d.get('voice','concise_challenger'),narrative=d.get('narrative','literal'),parent=d.get('parent'),new_budget=d.get('new_budget',False))

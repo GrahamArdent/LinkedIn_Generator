@@ -127,7 +127,7 @@ def test_normal_preparation_preserves_supplied_viewpoint_and_mixed_public_suppor
             facts=[{'claim_id':'C1','source_id':'U1','locator':'supplied account 1'}]
             if mixed:facts.append({'claim_id':'C2','source_id':'S1','locator':'paragraph1'})
             self.receipts.append({'attempt_id':'prep'})
-            return json.dumps({'status':'ready','reason':'A supplied viewpoint, not an invented event.','meaning':{'thesis':'Begin with the intended point.','reader_consequence':'Keep author choice visible.','qualification':'The personal statement is opinion; no measured gain is claimed.','facts':facts},'narrative':None,'support_checks':[{'claim_id':f['claim_id'],'relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Exact supplied statement or limited published sentence.'} for f in facts]})
+            return json.dumps({'status':'ready','intended_reader':'A professional choosing a writing workflow','reason':'A supplied viewpoint, not an invented event.','meaning':{'thesis':'Begin with the intended point.','reader_consequence':'Keep author choice visible.','qualification':'The personal statement is opinion; no measured gain is claimed.','facts':facts},'narrative':{'form':'literal','beats':['Describe the choice.'],'symbol':None},'support_checks':[{'claim_id':f['claim_id'],'relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Exact supplied statement or limited published sentence.'} for f in facts]})
     monkeypatch.setattr(m,'CodexProvider',Provider)
     def engine(request,**kw):
         bundle=kw['generator'].keywords['editorial_brief']

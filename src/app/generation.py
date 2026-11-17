@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any
 
@@ -30,11 +31,15 @@ def sanitize_and_validate(text: str, *, persona: str = "ardent", topic: str | No
 
 
 def build_prompt(template: str, **kwargs) -> str:
-    out = template
-    for k, v in kwargs.items():
-        token = "{" + k + "}"
-        out = out.replace(token, json.dumps(v) if isinstance(v, (dict, list)) else str(v))
-    return out
+    # Replace template fields once. Braces in supplied text remain author data.
+    def substitute(match):
+        name = match.group(1)
+        if name not in kwargs:
+            return match.group()
+        value = kwargs[name]
+        return json.dumps(value) if isinstance(value, (dict, list)) else str(value)
+
+    return re.sub(r'\{(\w+)\}', substitute, template)
 
 
 class Pipeline:
