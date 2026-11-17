@@ -371,6 +371,8 @@ def run_generation(
         quality_client = publish_quality_client or pipe.client
         original_assessment = assess_publish_quality(
             text=primary_body,
+            parent_text=((editorial_brief or {}).get("revision_context") or {}).get("original_text")
+            if "author_intent" in (editorial_brief or {}) else None,
             audience=audience,
             content_goal=resolved_goal,
             evidence=source_items,
@@ -423,6 +425,7 @@ def run_generation(
                 if guard.get("accepted"):
                     rewrite_assessment = assess_publish_quality(
                         text=rewrite,
+                        parent_text=primary_body if "author_intent" in (editorial_brief or {}) else None,
                         audience=audience,
                         content_goal=resolved_goal,
                         evidence=source_items,

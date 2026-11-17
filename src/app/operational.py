@@ -338,13 +338,14 @@ class Application:
     def _recheck(self,record,client,provider):
         from .publish_quality import assess_publish_quality
         snapshot=record['input']['writing_snapshot']
-        current=next(t for t in self.store.writing(snapshot['item'])['text_history'] if t['version']==snapshot['parent_text'])
+        history = {t['version']: t for t in self.store.writing(snapshot['item'])['text_history']}
+        current = history[snapshot['parent_text']]
+        parent = history.get(current['parent'])
         from .api import _persona_profile
         from .utils import load_yaml
         root=Path(__file__).resolve().parents[2]
         profile=_persona_profile(str(root),load_yaml(str(root/'config/personas.yaml')),'graham',author_pov='individual',writing_voice_id=record['input']['voice'])
         preparation=None;ancestor=current
-        history={t['version']:t for t in self.store.writing(snapshot['item'])['text_history']}
         while ancestor:
             if ancestor.get('attempt'):preparation=self.store.stage(ancestor['attempt'],'preparation')
             if preparation:break
@@ -356,7 +357,11 @@ class Application:
                             for passage in source['passages'])
         profile['editorial_context']={'brief':snapshot['brief'],'source_bundle':preparation['bundle'] if preparation else None,
             'limits':'User testimony/viewpoint only; no independent measured outcomes. Public assertions require their retained exact support; old support cannot substantiate new claims.'}
-        review=assess_publish_quality(text=current['body'],audience='business and IT leaders',content_goal='conversation',
+        prepared = preparation['request'] if preparation and ancestor['brief_revision'] == snapshot['brief_revision'] else {}
+        if prepared.get('objective'):
+            profile['editorial_context']['objective'] = prepared['objective']
+        review=assess_publish_quality(text=current['body'],audience=prepared.get('audience','business and IT leaders'),content_goal='conversation',
+            parent_text=parent['body'] if parent else None,
             evidence=evidence,persona_profile=profile,client=client).as_dict()
         if provider.error:raise provider.error
         self.store.writing_review(snapshot['item'],current['version'],snapshot['brief_revision'],review)

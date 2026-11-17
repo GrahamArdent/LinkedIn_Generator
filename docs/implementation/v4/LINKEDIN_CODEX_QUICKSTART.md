@@ -24,6 +24,8 @@ Use the shared loopback UI: enter a topic and notes, then **Save idea** (no mode
 
 When turning a conversation into a brief, copy the relevant words directly from the author. In Notes, start a line with `AUTHOR WORDS:` followed by the exact passage. Put your own account of the point on a separate `EDITORIAL SUMMARY:` line. If only a summary exists, use that line alone. A liked chat draft supplies an editorial reference; its first-person sentences are not author testimony. Use `EDITORIAL DIRECTION:` for the intended reader and what they should recognize or decide. Leave Narrative on “Choose for the reader” (CLI: omit `--narrative`) to have preparation select the form and beats after the reader and takeaway. An explicit literal or symbolic selection is honored. Ordinary freeform notes still work. A factual source passage must be complete and at most 600 characters.
 
+After saving a manual edit, open “Compare this edit with its parent.” Read the two endings and identify which words carry the author’s judgment, what the reader gains, and what the edit cuts or preserves. A manual save makes zero model calls. “Check current text” requests a review of this version against its actual parent. A cited passage and the reviewer’s explanation are shown with each finding. CLI `show` includes the version history and saved review.
+
 CLI uses the same application/store:
 
 ```sh

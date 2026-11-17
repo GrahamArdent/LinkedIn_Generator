@@ -138,7 +138,7 @@ def test_recheck_exact_bytes_does_not_rewrite_and_late_review_is_not_current(tmp
             assert json.loads(kw['user'])['post']=='Exact current text.'
             app.edit('idea','Newer text while checking.',expected_brief=1,expected_text=current['version'])
             self.receipts.append({'attempt_id':'recheck','active_seconds':0})
-            return json.dumps({'essential_checks':{k:{'verdict':'pass','reason':'Supported'} for k in ESSENTIAL_CHECKS}})
+            return json.dumps({'essential_checks':{k:{'verdict':'pass','reason':'Supported','passage':'Exact current text.'} for k in ESSENTIAL_CHECKS}})
     monkeypatch.setattr(m,'CodexProvider',Provider)
     result=app.recheck_item('idea','review-attempt',expected_brief=1,expected_text=current['version'])
     assert result['state']=='completed' and result['result']['review']['review_status']=='reviewable'
@@ -182,6 +182,8 @@ def test_recheck_retains_original_public_support_after_manual_edit(tmp_path,monk
             data=json.loads(kw['user'])
             assert any(e['fact']=='A supported external observation.' for e in data['grounded_evidence'])
             assert data['editorial_brief']['source_bundle']['sources'][0]['url']=='https://example.org/paper'
+            assert data['parent_post'] == original['body'] and data['post'] == edited['body']
+            assert 'revision_comparison' in data['required_output']
             self.receipts.append({'attempt_id':'review'})
             return json.dumps({'essential_checks':{k:{'verdict':'pass','reason':'Supported'} for k in ESSENTIAL_CHECKS}})
     monkeypatch.setattr(m,'CodexProvider',Provider)

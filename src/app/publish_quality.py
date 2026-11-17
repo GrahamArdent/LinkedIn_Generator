@@ -59,6 +59,7 @@ class PublishQualityAssessment:
     warnings: tuple[str, ...] = ()
     essential_checks: dict[str, dict[str, str]] = field(default_factory=dict)
     assessment_complete: bool = True
+    revision_comparison: dict[str, str] | None = None
 
     @property
     def review_status(self) -> str:
@@ -69,6 +70,7 @@ class PublishQualityAssessment:
             "policy_version": REVIEW_POLICY_VERSION,
             "review_status": self.review_status,
             "essential_checks": self.essential_checks,
+            **({"revision_comparison": self.revision_comparison} if self.revision_comparison else {}),
             "assessment_complete": self.assessment_complete,
             "score": self.score,
             "dimensions": dict(self.dimensions),
@@ -111,6 +113,8 @@ def assess_publish_quality(
     evidence: list[dict[str, Any]],
     persona_profile: dict[str, Any],
     client: Any,
+    parent_text: str | None = None,
+    passage_review: bool = False,
 ) -> PublishQualityAssessment:
     """Assess the finished post separately from deterministic compliance quality.
 
@@ -157,8 +161,7 @@ def assess_publish_quality(
         "Identify the largest fixable defect first; "
         "missing factual support is an evidence-brief gap, not permission to invent a better story. Return JSON only."
     )
-    user = json.dumps(
-        {
+    request = {
             "post": text,
             "audience": audience,
             "content_goal": content_goal,
@@ -197,9 +200,33 @@ def assess_publish_quality(
                 "gaps": "array of at most 3 concise weaknesses that most limit publish quality",
                 "rationale": "one concise sentence explaining the overall score",
             },
-        },
-        ensure_ascii=False,
-    )
+        }
+    bundle = brief.get("source_bundle") or {}
+    passage_review = passage_review or "brief" in brief or "author_intent" in bundle or parent_text is not None
+    if passage_review:
+        system += (
+            " Ground each essential verdict in this candidate. Cite its exact words under passage. "
+            "If the relevant material is absent, report the gap with revise or needs_evidence and an empty passage. "
+            "For argument_voice, identify the author's choice, question, comparison or observation and distinguish it "
+            "from rhythm, first person and polish. A clear explainer can earn full credit without a quotation. "
+            "For reader_relevance, identify the reader's recognizable decision or situation. For practical_value, "
+            "explain what the ending gives that reader and whether the reasoning earns it. A readable distinction "
+            "alone does not establish value. Unsupported specifics still fail factual_integrity."
+        )
+        for spec in request["required_output"]["essential_checks"].values():
+            spec["passage"] = "exact substring of post supporting the reason, or empty if absent"
+    if parent_text is not None:
+        system += (
+            " Compare the actual parent with this revision. Cite both texts exactly and explain which contribution "
+            "or reader benefit was gained, lost, reframed or preserved. Check the ending. An absence in the revision "
+            "can be shown by citing what it now says in that location. Judge the current text on its own merits."
+        )
+        request["parent_post"] = parent_text
+        request["required_output"]["revision_comparison"] = {
+            "parent_passage": "exact excerpt from parent_post", "current_passage": "exact excerpt from post",
+            "change": "gain | loss | mixed | equivalent", "reason": "explain the effect using both passages",
+        }
+    user = json.dumps(request, ensure_ascii=False)
 
     try:
         out = client.call(system, user, response_json=True)
@@ -207,6 +234,27 @@ def assess_publish_quality(
         payload = _parse_payload(raw)
         checks = payload.get("essential_checks")
         complete=essential_review_status(checks)!="assessment_unavailable"
+        comparison = None
+        if passage_review and isinstance(checks, dict):
+            def grounded(check):
+                if not isinstance(check, dict):
+                    return False
+                passage = check.get("passage")
+                if isinstance(passage, str) and passage.strip():
+                    return passage in text
+                return passage == "" and check.get("verdict") in ("revise", "needs_evidence")
+
+            checks = {key: check for key, check in checks.items() if grounded(check)}
+            complete = complete and essential_review_status(checks) != "assessment_unavailable"
+        if parent_text is not None:
+            value = payload.get("revision_comparison")
+            if (isinstance(value, dict) and value.get("change") in ("gain", "loss", "mixed", "equivalent")
+                    and all(isinstance(value.get(k), str) and value[k].strip()
+                            for k in ("reason", "parent_passage", "current_passage"))
+                    and value["parent_passage"] in parent_text and value["current_passage"] in text):
+                comparison = {k: value[k] for k in ("change", "reason", "parent_passage", "current_passage")}
+            else:
+                complete = False
         if not complete:
             # Retain individually valid findings while the incomplete review
             # remains unavailable; advisory scores cannot fill missing verdicts.
@@ -224,6 +272,7 @@ def assess_publish_quality(
             score=_weighted_score(dimensions) if valid_dimensions and complete else None,
             warnings=(() if valid_dimensions else ("advisory_dimensions_unavailable",)) + (() if complete else ("essential_assessment_incomplete",)),
             assessment_complete=complete,
+            revision_comparison=comparison,
             dimensions=dimensions,
             essential_checks=checks,
             gaps=gaps,
