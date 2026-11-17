@@ -1,5 +1,5 @@
 # LinkedIn Generator — Workflow Rectification Game Plan
-Version: 1.5 · Updated: November 17, 2026 (America/Toronto)
+Version: 1.6 · Updated: November 17, 2026 (America/Toronto)
 Owner: GrahamArdent/LinkedIn_Generator · Mode C
 Disposition: ACTIVE_SCOPED_AMENDMENT; Baseline P0–P4 installed for qualified cases; targeted P2 repair installed and linked editorial revision delivered
 Scope: a bounded amendment to the existing R1–R8 completion plan, retaining Q1–Q6 and the wider product objectives.
@@ -56,13 +56,13 @@ Retain unrelated roadmap obligations with their owners. Scope a missing human ju
 
 PR53 delivered the first installed ordinary writing loop. PR54 delivered and qualified the later scoped P2–P4 controls at `2e14ae8b58ea3bd6c6d328f6146bb492dc754dbe`, with 392 passing tests and exact installed readback. PR55 recorded the outcome. Reuse those receipts within their proved scope.
 
-### E15 outcome and current action
+### E16 · Graham’s editorial decision on version 10
 
-Section 7 passed for the two retained failures and the installed linked case. PR56 installed at `939478d6c03eee337d741e1479830b39d9ecc20d`. The ordinary generator saved version 9 of `graham-workflow-personal-20261116`. Exact export and actual writer input are verified in E15. The draft explains the historical gate, controlled comparison and ordinary writing consequence. Graham’s disposition of this exact text remains open under C8 / §11. Show it and wait for his editorial feedback. One case does not settle F13, historical trial eligibility or whole-product acceptance.
+Section 7 passed for the two retained failures and the installed linked case. PR56 installed at `939478d6c03eee337d741e1479830b39d9ecc20d`. The ordinary generator saved version 9 of `graham-workflow-personal-20261116`. Exact export and actual writer input are verified in E15. The draft explains the historical gate, controlled comparison and ordinary writing consequence. Graham requested a light cut. The installed editor saved manual version 10 on brief 4, parent 9, with zero generation calls. A fresh reopen and export matched the intended five paragraphs in full. Review status is `revalidation_required`. Under C8 and §11, present version 10 and ask Graham whether to keep it as written or what he would change. Record only the disposition he supplies, bound to the text he reviewed. Check the current item before acting on any later edit. Voice-example approval and publication remain separate decisions. One case does not settle F13, historical trial eligibility or whole-product acceptance.
 
 ### Resume and release order (E14 sequence fulfilled for this linked case)
 
-At the start of each substantive run, state what Graham can inspect or do if this piece of work succeeds. For a prerequisite, name its observable result and the user outcome still ahead. For the pending editorial revision, Graham should be able to reopen a generator-written draft and see which rule blocked the topic, why it protected the trial, and what that meant for ordinary writing. These are questions about this brief. Sentence count and word count do not establish editorial depth.
+At the start of each substantive run, state what Graham can inspect or do if this piece of work succeeds. For a prerequisite, name its observable result and the user outcome still ahead. For the completed E15 generation, Graham could reopen the generator-written draft and see which rule blocked the topic, why it protected the trial, and what that meant for ordinary writing. These are questions about this brief. Sentence count and word count do not establish editorial depth.
 
 1. Read the current evidence and its plan/prompt binding. Reuse the fulfilled installation, first pilot and feedback checkpoints. The later linked revision stopped twice before drafting. Preserve both terminal attempts and the manual version 6.
 2. Resume §7 under C2, F03 and F04. Use retained inputs and results to reproduce multiline passage rejection and incomplete fixed-length fragments. Repair passage construction and exact validation together. Preserve source provenance and distinguish editorial directions, attributed testimony and independently verified project records. Exercise supported-input, unsupported-claim and negated-source controls across the affected consumers.
