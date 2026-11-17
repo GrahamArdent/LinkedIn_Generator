@@ -8,7 +8,7 @@ from src.app.codex_provider import CodexConfig
 from src.app.operational_store import Store
 
 
-def capture_writer(tmp_path, monkeypatch, topic, notes, reader, takeaway, beats=None, form=None):
+def capture_writer(tmp_path, monkeypatch, topic, notes, reader, takeaway, beats=None, form=None, null_narrative=False):
     """Use the application up to its formatted outbound request, in a disposable store."""
     captured = {}
     app = operational.Application(Store.initialize(tmp_path / 'store'),
@@ -36,7 +36,7 @@ def capture_writer(tmp_path, monkeypatch, topic, notes, reader, takeaway, beats=
                             'qualification': source['limitations'],
                             'facts': [{'claim_id': 'C1', 'source_id': source['source_id'],
                                        'locator': source['passages'][0]['locator']}]},
-                'narrative': {'form':'literal','beats':beats or ['Describe the reader’s decision.'],'symbol':None},
+                'narrative': None if null_narrative else {'form':'literal','beats':beats or ['Describe the reader’s decision.'],'symbol':None},
                 'support_checks': [{'claim_id': 'C1', 'relevant': True, 'primary_source': True,
                                     'entails': True, 'contradicted': False,
                                     'reason': 'Only the stated wording or proposed point is supported.'}],
@@ -111,3 +111,11 @@ def test_clarification_survives_reopen_and_answer_retires_question(tmp_path, mon
     assert 'author_question' not in reopened.show('item')
     assert len(reopened.store.list()) == 1
     assert reopened.store.get('held')['result']['author_question'] == question
+
+def test_auto_form_can_resolve_a_native_null_after_the_reader_choice(tmp_path, monkeypatch):
+    from src.app.editorial_structure import DEFAULT_BEATS
+    r = capture_writer(tmp_path, monkeypatch, 'A workflow choice', 'AUTHOR WORDS: Start with the question.',
+                       'A workflow owner', 'Identify the decision first.', null_narrative=True)
+    q = r['prepared']['request']
+    assert q['audience'] == 'A workflow owner' and q['objective'] == 'Identify the decision first.'
+    assert q['editorial_handoff']['narrative']['beats'] == DEFAULT_BEATS
