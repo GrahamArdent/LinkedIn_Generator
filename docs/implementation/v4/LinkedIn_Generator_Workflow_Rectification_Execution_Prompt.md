@@ -1,8 +1,10 @@
 # Execute LinkedIn Generator Workflow Rectification
-Version: 1.3 · Updated: November 17, 2026 (America/Toronto)
+Version: 1.4 · Updated: November 17, 2026 (America/Toronto)
 Mode C · Companion to the scoped workflow rectification amendment
 
 ## 1. Binding and outcome
+
+At the start of a substantive run, name the observable result for this run and how Graham can inspect it. For the linked revision use the editorial questions in plan §2A. When the work is a prerequisite, state what it proves and which author outcome comes later.
 
 Use `LinkedIn_Generator_Workflow_Rectification_Game_Plan.md` for scope, decisions, dependency order, budgets and completion criteria. Use the existing `LinkedIn_Generator_Current_Continuation.md` as the sole evidence/continuation record for this authoring rectification:
 https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal
@@ -29,6 +31,8 @@ For PENDING/UNKNOWN, read and reconcile the original request/attempt ID, input d
 
 ## 3. Operating instructions
 
+If a rule blocks the request, apply it to the decision it protects under plan §3 and continue any independent, authorized writing actions. Before a retry for the §7 failure, use retained material to inspect a reconstruction of the writer’s input through the repaired path. Check complete passages and attribution. During the later admitted generation, distinguish the actual input and saved output from that reconstruction. Record what changed and why a new call would answer the outstanding question.
+
 Work within the existing shared application and store. Execute the active dependency chain in plan §2A, starting from the first unmet authorized item. The original execution sequence remains available as baseline history.
 
 For each bounded change: inspect the exact failing path; implement the smallest faithful correction; verify the protected outcome and meaningful failure sequence; reconcile actual progress and proof in the same evidence record. Use plan §10 for affected checks and existing R3/R7 release requirements. Do not add a second task checklist, generic workflow engine, evaluator service or parallel continuation.
@@ -46,6 +50,8 @@ Apply proportional verification, reuse valid evidence, widen at real changed-ris
 Update the existing evidence at verified milestones. Keep repository pointers aligned with the same continuation and rendering progress with its existing owner. Use current version guards and reconcile conflicting or uncertain saves before retrying.
 
 ## 4. Verification, stopping and completion
+
+Lead with the observed author outcome, its producer, where it can be inspected, and anything still pending. Apply the §2A editorial questions to the saved generated revision when available. Keep technical preparation, manual editing and Graham’s editorial judgment explicit.
 
 Apply plan §11 closeout after each substantive run, including partial, blocked and completed outcomes. Save the game plan status against the actual work and update the same evidence with proof, limits and remaining work. Cite the next action’s exact plan section, add it to the owning plan when authorized, or record its pending decision or exact stop. Align affected prompt and pointer instructions. Run the Program Start Cycle Challenge on that next action or stop, correct material findings, review the corrected pair when changed, verify saved bindings and record the challenged continuation before handoff.
 

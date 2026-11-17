@@ -1,5 +1,5 @@
 # LinkedIn Generator — Workflow Rectification Game Plan
-Version: 1.3 · Updated: November 17, 2026 (America/Toronto)
+Version: 1.4 · Updated: November 17, 2026 (America/Toronto)
 Owner: GrahamArdent/LinkedIn_Generator · Mode C
 Disposition: ACTIVE_SCOPED_AMENDMENT; Baseline P0–P4 installed for qualified cases; targeted P2 input preparation reopened
 Scope: a bounded amendment to the existing R1–R8 completion plan, retaining Q1–Q6 and the wider product objectives.
@@ -58,6 +58,8 @@ PR53 delivered the first installed ordinary writing loop. PR54 delivered and qua
 
 ### Resume and release order
 
+At the start of each substantive run, state what Graham can inspect or do if this piece of work succeeds. For a prerequisite, name its observable result and the user outcome still ahead. For the pending editorial revision, Graham should be able to reopen a generator-written draft and see which rule blocked the topic, why it protected the trial, and what that meant for ordinary writing. These are questions about this brief. Sentence count and word count do not establish editorial depth.
+
 1. Read the current evidence and its plan/prompt binding. Reuse the fulfilled installation, first pilot and feedback checkpoints. The later linked revision stopped twice before drafting. Preserve both terminal attempts and the manual version 6.
 2. Resume §7 under C2, F03 and F04. Use retained inputs and results to reproduce multiline passage rejection and incomplete fixed-length fragments. Repair passage construction and exact validation together. Preserve source provenance and distinguish editorial directions, attributed testimony and independently verified project records. Exercise supported-input, unsupported-claim and negated-source controls across the affected consumers.
 3. For an actual code change, apply the existing R3/R7 release checks, scoped post-implementation Challenge and installed readback. Verify the repaired path and preserved current work. Reuse unaffected proof.
@@ -89,6 +91,8 @@ A topic, summary, question, personal account or existing text can be saved witho
 “Draft this” can save the brief and proceed automatically through applicable operations. “Save this idea” performs no model work. Source classification and technical IDs are managed by the application, with details available on demand. Do not introduce a chain of mandatory intake/approval forms.
 
 ### C2 — Intent governs preparation; support constrains assertions
+
+When a rule blocks progress, identify the decision it protects and which other author actions can still proceed. For example, unresolved trial history restricts enrollment. An unsupported claim restricts how that claim can appear. Preserve the ability to capture and edit the idea, including when indispensable evidence is missing.
 
 Preserve Graham's supplied summary and intended point. Develop only enough direction to make the next useful version. Research addresses claims the intended piece needs; acquired papers must not replace the author's objective.
 
@@ -252,7 +256,11 @@ A test edit is machine verification, not invented Graham feedback or approval. H
 
 Dependencies: P1's compatible writing/attempt and version contracts.
 
-**Current F03/F04 repair.** Preserve complete, bounded source passages and verify exact multiline selections. Keep author testimony, independent project evidence and editorial instructions distinct along the actual preparation-to-writer path. The retained failed cases must reach a valid writer-ready handoff when their material is supported. Unsupported or negated claims must still be rejected. Preserve manual version 6, original attempts and prior receipts. The list below describes the installed baseline and its retained requirements.
+**Current F03/F04 repair.** Preserve complete, bounded source passages and verify exact multiline selections. Keep author testimony, independent project evidence and editorial instructions distinct along the actual preparation-to-writer path. The retained failed cases must reach a valid writer-ready handoff when their material is supported. Unsupported or negated claims must still be rejected. Preserve manual version 6, original attempts and prior receipts.
+
+Before spending another generation on this failure, inspect the prepared input at the point the writer consumes it. The two earlier attempts ended before drafting. Use their retained inputs in an offline check through the repaired preparation and writer-input construction path. Inspect the result at the point of use and label it reconstructed. Separately inspect the actual input on the one later admitted generation. Record the expected difference from the failed input and what would disprove the fix. If the input still cuts off the argument or misattributes a source, continue the repair using the retained evidence. If the generated text is available, compare the saved wording with the questions in §2A and cite where it develops or misses the point. An omitted point is an editorial finding. Graham decides whether the result is suitable.
+
+The list below describes the installed baseline and its retained requirements.
 
 1. Add missing-detail continuation and deliberate linked model revision without mutating the original attempt or calling execution recovery “revision.”
 2. Add exact-text recheck distinct from rewriting. Review the saved current bytes and bind findings to both text and relevant brief revision. A changed context may invalidate findings even when text stayed unchanged.
@@ -327,6 +335,8 @@ Rollback must account for the data format and new work, not merely a saved old l
 Current exact-release resume safeguards stay unless a specifically qualified compatibility change replaces them. Validate affected consumers and source-to-installed provenance before consequences. Routine post use does not repeat release qualification.
 
 ## 11. Completion, stops and continuation
+
+Lead the closeout with what Graham can open or do, who or what produced it, and which requested outcome is still open. For the linked revision, distinguish a saved generator draft, a manual fallback, a preparation-only result and Graham’s editorial decision. Follow with the evidence and the next authorized action.
 
 Separate three claims:
 1. Package prepared/reviewed: these files are coherent and retrievable; no implementation implied.
