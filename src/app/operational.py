@@ -199,11 +199,24 @@ class Application:
                         'For literal narrative return null; default five-part scaffold is supplied by application. '
                         'For symbolic narrative return form=symbolic, beats (1-8 planning fragments <=240 characters), symbol={image,mapping:[{symbol_part,real_relationship}],boundary}. '
                         'Use ONE sustained comparison, explicitly limited; no finished post, hook or title. If evidence is irrelevant, thin or contradictory, return needs_more_evidence and null meaning/narrative.')
+                    writing_brief = 'writing_snapshot' in record['input']
+                    if writing_brief:
+                        system += (' When ready, include one additional field, intended_reader, naming the person facing the decision. '
+                                   'First identify that reader and what they can recognize or decide in meaning.reader_consequence. '
+                                   'Only then select narrative beats. Respect any supplied editorial direction. '
+                                   'An editorial_paraphrase only supports what the editor proposes, never Graham’s words or experiences. '
+                                   'Only verbatim passages supply exact author wording.')
                     raw=client.call(system,json.dumps({'input':record['input'],'sources':source['sources']},ensure_ascii=False),response_json=True)['text']
                     assessment=json.loads(raw)
-                    if set(assessment)!={'status','reason','meaning','narrative','support_checks'}:raise ValueError('INVALID_MEANING_ASSESSMENT')
+                    fields = {'status','reason','meaning','narrative','support_checks'}
+                    if writing_brief and assessment.get('status') == 'ready':
+                        fields.add('intended_reader')
+                    if set(assessment) != fields:raise ValueError('INVALID_MEANING_ASSESSMENT')
                     if assessment['status']=='needs_more_evidence':return self.store.finish(job,'needs_more_evidence',{'assessment':assessment,'evidence':source})
                     if assessment['status']!='ready':raise ValueError('INVALID_MEANING_ASSESSMENT')
+                    reader = assessment['intended_reader'] if writing_brief else 'business and IT leaders'
+                    if not isinstance(reader, str) or not reader.strip() or len(reader) > 600:
+                        raise ValueError('INVALID_INTENDED_READER')
                     meaning=resolve_meaning(assessment['meaning'],source['sources'])
                     checks=assessment['support_checks']
                     if not isinstance(checks,list) or len(checks)!=len(meaning['facts']) or {c.get('claim_id') for c in checks}!={f['claim_id'] for f in meaning['facts']}:
@@ -218,7 +231,7 @@ class Application:
                     claims=[{'claim_id':f['claim_id'],'kind':'observation' if any(s.get('record') for s in source['sources'] if s['source_id'] in f['source_ids']) else 'fact',**{k:f[k] for k in ('text','source_ids')}} for f in meaning['facts']]
                     by_id={s['source_id']:s for s in source['sources']}
                     data={'request_id':job,'origin':'manual','persona_key':'graham','topic':record['input']['topic'],
-                          'audience':'business and IT leaders','objective':meaning['reader_consequence'],'writing_voice_id':record['binding']['voice']['id'],
+                          'audience':reader.strip(),'objective':meaning['reader_consequence'],'writing_voice_id':record['binding']['voice']['id'],
                           'evidence':[{'title':by_id[f['source_ids'][0]]['title'],'fact':f['text'],'url':by_id[f['source_ids'][0]].get('url')} for f in meaning['facts']],
                           'editorial_handoff':handoff,'voice_examples':record['binding']['voice_examples']['examples']}
                     if 'writing_snapshot' in record['input']:data.update(opportunity_gate=False,visual_asset_plan=False)

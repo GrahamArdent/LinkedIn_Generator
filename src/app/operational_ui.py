@@ -10,7 +10,7 @@ PAGE='''<!doctype html><html><head><meta name="viewport" content="width=device-w
 <button id="history">History</button><button id="voices">Voices</button><button id="newrequest">New request (no generation)</button><p id="status" role="status"></p><pre id="output"></pre>
 <details><summary>Request details</summary><label>Request ID<input id="job"></label>
 <label>Parent request ID<input id="parent"></label></details><label>Topic<input id="topic"></label><label>Source URLs (one per line, optional)<textarea id="urls"></textarea></label>
-<label>Notes<textarea id="notes"></textarea></label><label>Voice<input id="voice" value="concise_challenger"></label>
+<label>Notes<textarea id="notes" placeholder="Optional. Use AUTHOR WORDS: for an exact passage, EDITORIAL SUMMARY: for a paraphrase, and EDITORIAL DIRECTION: for the reader and takeaway. Start each on a new line."></textarea></label><label>Voice<input id="voice" value="concise_challenger"></label>
 <label>Narrative<select id="narrative"><option>literal</option><option>symbolic</option></select></label>
 <button id="saveidea">Save idea</button><button id="create">Draft this / revise</button><button id="recheck">Check current text</button><button id="show">Review / status</button><button id="resume">Reconcile / resume original</button>
 <label>Exact candidate hash<input id="hash"></label>

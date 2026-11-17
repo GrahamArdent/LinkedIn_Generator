@@ -44,7 +44,7 @@ def test_personal_draft_survives_later_engine_failure_and_reopen(tmp_path,monkey
         def generate(self,**kw):
             assert 'supplied account' in kw['user']
             self.receipts.append({'attempt_id':'meaning','active_seconds':0})
-            return json.dumps({'status':'ready','reason':'Attributed account only.','meaning':{'thesis':'Start from the intended writing.','reader_consequence':'Separate experiments from drafting.','qualification':'Graham supplied this account; no independent outcome claim.','facts':[{'claim_id':'C1','source_id':'U1','locator':'supplied account 1'}]},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Direct account of the author, not measured results.'}]})
+            return json.dumps({'status':'ready','intended_reader':'A professional choosing a writing workflow','reason':'Attributed account only.','meaning':{'thesis':'Start from the intended writing.','reader_consequence':'Separate experiments from drafting.','qualification':'Graham supplied this account; no independent outcome claim.','facts':[{'claim_id':'C1','source_id':'U1','locator':'supplied account 1'}]},'narrative':None,'support_checks':[{'claim_id':'C1','relevant':True,'primary_source':True,'entails':True,'contradicted':False,'reason':'Direct account of the author, not measured results.'}]})
     monkeypatch.setattr(m,'CodexProvider',Provider)
     def engine(req,**kw):
         assert req.opportunity_gate is False and req.evidence[0].url is None

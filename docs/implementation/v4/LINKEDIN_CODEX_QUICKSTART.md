@@ -22,6 +22,8 @@ Ordinary authoring is separate from the unresolved historical experiment. Its su
 
 Use the shared loopback UI: enter a topic and notes, then **Save idea** (no model) or **Draft this / revise**. IDs and version guards are automatic. Current text stays editable/exportable when assessment is unavailable. A conflict retains the unsaved edit; compare before saving against the new current version. **Check current text** assesses without rewriting. Feedback never activates a voice example implicitly.
 
+When turning a conversation into a brief, copy the relevant words directly from the author. In Notes, start a line with `AUTHOR WORDS:` followed by the exact passage. Put your own account of the point on a separate `EDITORIAL SUMMARY:` line. If only a summary exists, use that line alone. A liked chat draft supplies an editorial reference; its first-person sentences are not author testimony. Use `EDITORIAL DIRECTION:` for the intended reader and what they should recognize or decide. Choose the form after that. Ordinary freeform notes still work. A factual source passage must be complete and at most 600 characters.
+
 CLI uses the same application/store:
 
 ```sh

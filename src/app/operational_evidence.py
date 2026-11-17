@@ -289,25 +289,40 @@ def resolve_meaning(meaning,sources):
 
 
 def personal_source(brief,brief_hash):
-    """Explicit local testimony, never a fetch or independent achievement proof."""
-    text=brief['notes'] or brief['topic']
-    # The original brief remains available as intent. Only the account
-    # section can substantiate a personal observation.
-    sections = re.split(
-        r'(?:^|\s+)(AUTHOR STATEMENTS|(?:VERIFIED )?PROJECT RECORD(?:, [^:\n]+)?|EDITORIAL DIRECTION):\s*',
-        text, flags=re.IGNORECASE,
-    )
-    accounts = [sections[0]] + [body for label, body in zip(sections[1::2], sections[2::2])
-                                if label.upper() == 'AUTHOR STATEMENTS']
-    paragraphs = [paragraph.strip() for account in accounts
-                  for paragraph in re.split(r'\r?\n[ \t]*\r?\n', account) if paragraph.strip()]
-    passages = [{'locator': f'supplied account {index}', 'excerpt': paragraph}
-                for index, paragraph in enumerate(paragraphs, 1) if len(paragraph) <= 600]
-    if not passages:
-        return {'sources': [], 'errors': [{'error': 'NO_BOUNDED_ACCOUNT_PASSAGE'}],
-                'http_activity': [], 'candidate_origin': 'supplied_local_account'}
-    return {'sources':[{'source_id':'U1','status':'usable','title':'Graham Hill — supplied account (not independently verified)',
-        'publisher':'Graham Hill','record':'writing-brief:'+brief_hash,'checked_at':datetime.now(timezone.utc).isoformat(),
-        'content_sha256':hashlib.sha256(text.encode()).hexdigest(),'passages':passages,
-        'limitations':'Attributed user testimony or viewpoint only. Not independent proof of achievements, dates, statistics, causation or business results. Omit unsupported external assertions.'}],
-        'errors':[],'http_activity':[],'candidate_origin':'supplied_local_account'}
+    """Keep exact words, reported accounts and editorial paraphrases distinct."""
+    text = brief['notes'] or brief['topic']
+    legacy_labels = r'AUTHOR STATEMENTS|(?:VERIFIED )?PROJECT RECORD(?:, [^:\n]+)?|EDITORIAL DIRECTION'
+    if re.search(r'(?im)^[ \t]*(AUTHOR WORDS|EDITORIAL SUMMARY):', text):
+        labels = rf'(?im)^[ \t]*(AUTHOR WORDS|EDITORIAL SUMMARY|{legacy_labels}):[ \t]*'
+    else:
+        # Historical briefs also put their section headings inline.
+        labels = rf'(?i)(?:^|\s+)({legacy_labels}):\s*'
+    sections = re.split(labels, text)
+    parts = [('ACCOUNT', sections[0]), *zip((s.upper() for s in sections[1::2]), sections[2::2])]
+    kinds = {'ACCOUNT': 'reported_account', 'AUTHOR STATEMENTS': 'reported_account',
+             'AUTHOR WORDS': 'verbatim', 'EDITORIAL SUMMARY': 'editorial_paraphrase'}
+    sources = []
+    for source_id, summary in [('U1', False), ('B1', True)]:
+        passages = []
+        for label, body in parts:
+            if label not in kinds or (label == 'EDITORIAL SUMMARY') != summary:
+                continue
+            for paragraph in re.split(r'\r?\n[ \t]*\r?\n', body):
+                excerpt = paragraph.strip()
+                if 0 < len(excerpt) <= 600:
+                    passages.append({'locator': f'supplied account {len(passages) + 1}',
+                                     'excerpt': excerpt, 'wording': kinds[label]})
+        if passages:
+            sources.append({
+                'source_id': source_id, 'status': 'usable',
+                'title': 'Editorial summary of the proposed point' if summary else 'Graham Hill — supplied account (not independently verified)',
+                'publisher': 'Brief editor' if summary else 'Graham Hill',
+                'record': 'writing-brief:' + brief_hash,
+                'checked_at': datetime.now(timezone.utc).isoformat(),
+                'content_sha256': hashlib.sha256(text.encode()).hexdigest(), 'passages': passages,
+                'limitations': ('Editorial paraphrase only. Supports what the brief proposes. Never attribute its wording or experiences to Graham.'
+                                if summary else 'Supplied account or viewpoint. Only verbatim passages are identified as the author’s exact words. '
+                                'No independent proof of achievements, dates, statistics, causation or business results.'),
+            })
+    return {'sources': sources, 'errors': [] if sources else [{'error': 'NO_BOUNDED_ACCOUNT_PASSAGE'}],
+            'http_activity': [], 'candidate_origin': 'supplied_local_account'}
