@@ -86,3 +86,28 @@ def test_explicit_literal_retains_selected_structure(tmp_path, monkeypatch):
 def test_missing_reader_stops_before_writer(tmp_path, monkeypatch):
     with pytest.raises(ValueError, match='INVALID_INTENDED_READER'):
         capture_writer(tmp_path, monkeypatch, 'Choosing a form', 'An account.', '', 'Choose an audience.')
+
+
+def test_clarification_survives_reopen_and_answer_retires_question(tmp_path, monkeypatch):
+    app = operational.Application(Store.initialize(tmp_path/'clarification'),
+                                  CodexConfig(tmp_path, Path('/unused'), 'offline', 'fixture'))
+    monkeypatch.setattr(operational, 'qualify_model', lambda cfg: {})
+    question = 'Which part of planning the meeting actually held up the decision?'
+    class Provider:
+        def __init__(self, *args):
+            self.receipts = []
+        def generate(self, **request):
+            assert 'Do not ask for sample preferences' in request['system']
+            self.receipts.append({'attempt_id':'held'})
+            return json.dumps({'status':'needs_more_evidence','reason':question,'meaning':None,
+                               'narrative':None,'support_checks':[]})
+    monkeypatch.setattr(operational, 'CodexProvider', Provider)
+    app.save_idea('item','Planning meetings')
+    result = app.draft_item('item','held',expected_brief=1,expected_text=None)
+    assert result['state'] == 'needs_more_evidence'
+    reopened = operational.Application(Store(app.store.root), None)
+    assert reopened.show('item')['author_question'] == question
+    reopened.save_idea('item','Planning meetings',notes='AUTHOR WORDS: We waited for an agenda.',expected_brief=1)
+    assert 'author_question' not in reopened.show('item')
+    assert len(reopened.store.list()) == 1
+    assert reopened.store.get('held')['result']['author_question'] == question

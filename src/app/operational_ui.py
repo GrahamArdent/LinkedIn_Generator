@@ -10,7 +10,7 @@ PAGE='''<!doctype html><html><head><meta name="viewport" content="width=device-w
 <button id="history">History</button><button id="voices">Voices</button><button id="newrequest">New request (no generation)</button><p id="status" role="status"></p><pre id="output"></pre>
 <details><summary>Request details</summary><label>Request ID<input id="job"></label>
 <label>Parent request ID<input id="parent"></label></details><label>Topic<input id="topic"></label><label>Source URLs (one per line, optional)<textarea id="urls"></textarea></label>
-<label>Notes<textarea id="notes" placeholder="Optional. Use AUTHOR WORDS: for an exact passage, EDITORIAL SUMMARY: for a paraphrase, and EDITORIAL DIRECTION: for the reader and takeaway. Start each on a new line."></textarea></label><label>Voice<input id="voice" value="concise_challenger"></label>
+<label>Notes<textarea id="notes" placeholder="Optional. Use AUTHOR WORDS: for an exact passage, EDITORIAL SUMMARY: for a paraphrase, and EDITORIAL DIRECTION: for the reader and takeaway. Start each on a new line."></textarea></label><section id="clarification" hidden><label><span id="question"></span><textarea id="answer" placeholder="Your answer"></textarea></label><button id="saveanswer">Add my answer to the brief</button></section><label>Voice<input id="voice" value="concise_challenger"></label>
 <label>Narrative<select id="narrative"><option value="">Choose for the reader</option><option>literal</option><option>symbolic</option></select></label>
 <button id="saveidea">Save idea</button><button id="create">Draft this / revise</button><button id="recheck">Check current text</button><button id="show">Review / status</button><button id="resume">Reconcile / resume original</button>
 <label>Exact candidate hash<input id="hash"></label>
@@ -24,6 +24,10 @@ PAGE='''<!doctype html><html><head><meta name="viewport" content="width=device-w
 let currentItem=null;let attempt=null;const token=TOKEN;const el=id=>document.getElementById(id);
 async function call(path,data){el('status').textContent='Working…';try{let r=await fetch(path,data?{method:'POST',headers:{'Content-Type':'application/json','X-Local-Token':token},body:JSON.stringify(data)}:{});let v=await r.json();render(v);el('status').textContent=r.ok?(v.state||'Saved / read complete'):(v.error||'Action needs attention');return v}catch(e){el('status').textContent=String(e)}}
 function showEditorialReview(item){
+ const question=item?.author_question;
+ el('clarification').hidden=!question;
+ el('question').textContent=question||'';
+ if(!question||item?.id!==currentItem?.id||item?.brief_revision!==currentItem?.brief_revision)el('answer').value='';
  const current=item?.current_text;
  const parent=item?.text_history?.find(t=>t.version===current?.parent);
  el('revisiondetail').hidden=!(parent&&current);
@@ -46,6 +50,14 @@ el('newrequest').onclick=()=>{showEditorialReview(null);currentItem=null;attempt
 el('history').onclick=()=>call('/api/list');el('voices').onclick=()=>call('/api/voices');
 async function saveIdea(){return action('save-idea',{topic:el('topic').value,urls:el('urls').value.split('\\n').filter(Boolean),notes:el('notes').value,voice:el('voice').value,narrative:el('narrative').value,expected_brief:currentItem?.brief_revision});}
 el('saveidea').onclick=saveIdea;
+el('saveanswer').onclick=async()=>{
+ const answer=el('answer').value.trim();
+ if(!currentItem?.author_question||!answer)return;
+ const old=el('notes').value;
+ const notes=[old,'AUTHOR WORDS: '+answer].filter(Boolean).join('\\n');
+ const result=await action('save-idea',{topic:el('topic').value,urls:el('urls').value.split('\\n').filter(Boolean),notes,voice:el('voice').value,narrative:el('narrative').value,expected_brief:currentItem.brief_revision});
+ if(result?.kind==='writing_item')el('status').textContent='Answer saved. Draft when ready.';
+};
 el('create').onclick=async()=>{let v=await saveIdea();if(v?.kind==='writing_item'){attempt='writing-'+crypto.randomUUID();await action('draft',{attempt,expected_brief:v.brief_revision,expected_text:v.current_text?.version??null});await actionRead();}};
 async function actionRead(){return call('/api/job?id='+encodeURIComponent(el('job').value));}
 el('recheck').onclick=async()=>{if(currentItem?.current_text){await action('recheck',{attempt:'check-'+crypto.randomUUID(),expected_brief:currentItem.brief_revision,expected_text:currentItem.current_text.version});await actionRead();}};

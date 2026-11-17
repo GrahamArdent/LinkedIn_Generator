@@ -165,7 +165,10 @@ class Application:
                         source=Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(record['input']['topic'],urls)
                         source['candidate_origin']='caller_urls' if record['input']['urls'] else 'retained_exact_topic_sources' if urls else 'crossref_discovery'
                     commit_pure_stage(self.store,job,'evidence',record['input'],source)
-                if not source['sources']:return self.store.finish(job,'needs_more_evidence',source)
+                if not source['sources']:
+                    if 'writing_snapshot' in record['input']:
+                        source = {**source, 'author_question': 'Which specific observation or source passage should the post build on?'}
+                    return self.store.finish(job,'needs_more_evidence',source)
                 prepared=self.store.stage(job,'preparation')
                 if prepared is None and 'revision_context' in record['binding'] and record['input'].get('parent'):
                     parent=self.store.get(record['input']['parent'])
@@ -206,7 +209,11 @@ class Application:
                                    'First identify that reader and what they can recognize or decide in meaning.reader_consequence. '
                                    'Only then select narrative beats. Respect any supplied editorial direction. '
                                    'An editorial_paraphrase only supports what the editor proposes, never Graham’s words or experiences. '
-                                   'Only verbatim passages supply exact author wording.')
+                                   'Only verbatim passages supply exact author wording. If a general topic leaves the central point or '
+                                   'firsthand incident genuinely ambiguous, use needs_more_evidence and make reason ONE short question '
+                                   'about the specific missing decision, observation or evidence. Use the author’s actual context. '
+                                   'Do not ask for sample preferences, a writing style, or facts already supplied. If a defensible point '
+                                   'is clear, proceed; optional detail and style preferences are never prerequisites.')
                     form = record['input']['narrative']
                     if form == 'auto':
                         system += (' No form was requested. After identifying the reader and takeaway, return a narrative object '
@@ -218,7 +225,11 @@ class Application:
                     if writing_brief and assessment.get('status') == 'ready':
                         fields.add('intended_reader')
                     if set(assessment) != fields:raise ValueError('INVALID_MEANING_ASSESSMENT')
-                    if assessment['status']=='needs_more_evidence':return self.store.finish(job,'needs_more_evidence',{'assessment':assessment,'evidence':source})
+                    if assessment['status'] == 'needs_more_evidence':
+                        result = {'assessment': assessment, 'evidence': source}
+                        if writing_brief and isinstance(assessment['reason'], str):
+                            result['author_question'] = assessment['reason'].strip()
+                        return self.store.finish(job, 'needs_more_evidence', result)
                     if assessment['status']!='ready':raise ValueError('INVALID_MEANING_ASSESSMENT')
                     reader = assessment['intended_reader'] if writing_brief else 'business and IT leaders'
                     if not isinstance(reader, str) or not reader.strip() or len(reader) > 600:
@@ -390,8 +401,19 @@ class Application:
     def show(self,job):
         if self.store.writing_exists(job):
             item=self.store.writing(job)
-            item['attempts']=[{'id':r['id'],'state':r['state'],'input_digest':sha(r['input']),'created':r['created']} for r in self.store.list() if r['input'].get('writing_snapshot',{}).get('item')==job]
+            runs = [r for r in self.store.list() if r['input'].get('writing_snapshot', {}).get('item') == job]
+            item['attempts'] = [{'id': r['id'], 'state': r['state'], 'input_digest': sha(r['input']),
+                                 'created': r['created']} for r in runs]
             item['state']=item['attempts'][-1]['state'] if item['attempts'] else 'idea_saved'
+            if runs:
+                latest = runs[-1]
+                snapshot = latest['input']['writing_snapshot']
+                current = item['current_text']
+                if (latest['state'] == 'needs_more_evidence' and snapshot['brief_revision'] == item['brief_revision']
+                        and snapshot['parent_text'] == (current['version'] if current else None)):
+                    question = latest.get('result', {}).get('author_question')
+                    if question:
+                        item['author_question'] = question
             return item
         record=self.store.get(job)
         record['events']=self.store.events(job)
