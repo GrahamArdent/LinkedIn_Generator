@@ -92,7 +92,8 @@ class Application:
         return self.store.read_blob(row['value']) if row else {'version':0,'examples':[]}
 
     def create(self,job,topic,*,urls=(),notes='',voice='concise_challenger',narrative='literal',parent=None,new_budget=False,experiment=None,writing_snapshot=None,operation='draft'):
-        if not topic.strip() or len(topic)>500 or len(notes)>3000 or len(urls)>6 or narrative not in ('literal','symbolic'):raise ValueError('INVALID_CREATE_INPUT')
+        forms = ('literal', 'symbolic', 'auto') if writing_snapshot else ('literal', 'symbolic')
+        if not topic.strip() or len(topic)>500 or len(notes)>3000 or len(urls)>6 or narrative not in forms:raise ValueError('INVALID_CREATE_INPUT')
         normalized={'topic':topic.strip(),'urls':list(urls),'notes':notes,'voice':voice,'narrative':narrative,**({'parent':parent} if parent else {}),**({'new_budget':True} if new_budget else {})}
         if experiment is not None:normalized['experiment']=experiment
         if writing_snapshot is not None:normalized['writing_snapshot']=writing_snapshot
@@ -206,6 +207,11 @@ class Application:
                                    'Only then select narrative beats. Respect any supplied editorial direction. '
                                    'An editorial_paraphrase only supports what the editor proposes, never Graham’s words or experiences. '
                                    'Only verbatim passages supply exact author wording.')
+                    form = record['input']['narrative']
+                    if form == 'auto':
+                        system += (' No form was requested. After identifying the reader and takeaway, return a narrative object '
+                                   'with form, 1–8 short beats suited to that decision, and symbol. For a literal form use null '
+                                   'for symbol. Use a symbolic form only when the comparison helps this reader.')
                     raw=client.call(system,json.dumps({'input':record['input'],'sources':source['sources']},ensure_ascii=False),response_json=True)['text']
                     assessment=json.loads(raw)
                     fields = {'status','reason','meaning','narrative','support_checks'}
@@ -225,8 +231,12 @@ class Application:
                         if (set(check)!={'claim_id','relevant','primary_source','entails','contradicted','reason'}
                             or any(check[k] is not True for k in ('relevant','primary_source','entails'))
                             or check['contradicted'] is not False or not isinstance(check['reason'],str) or not check['reason'].strip()):raise ValueError('UNSUPPORTED_MEANING')
-                    narrative=assessment['narrative'] if record['input']['narrative']=='symbolic' else {'form':'literal','beats':DEFAULT_BEATS,'symbol':None}
-                    if record['input']['narrative']=='symbolic' and (not isinstance(narrative,dict) or narrative.get('form')!='symbolic'):raise ValueError('NARRATIVE_SELECTION_CHANGED')
+                    if form == 'literal':
+                        narrative = {'form':'literal','beats':DEFAULT_BEATS,'symbol':None}
+                    else:
+                        narrative = assessment['narrative']
+                        if form == 'symbolic' and (not isinstance(narrative, dict) or narrative.get('form') != form):
+                            raise ValueError('NARRATIVE_SELECTION_CHANGED')
                     handoff=freeze_handoff(meaning,narrative)
                     claims=[{'claim_id':f['claim_id'],'kind':'observation' if any(s.get('record') for s in source['sources'] if s['source_id'] in f['source_ids']) else 'fact',**{k:f[k] for k in ('text','source_ids')}} for f in meaning['facts']]
                     by_id={s['source_id']:s for s in source['sources']}
@@ -263,13 +273,16 @@ class Application:
                 self.store.finish(job,state,{**(partial_result or {}),'error_code':code,'provider_receipts':provider.receipts})
                 raise
 
-    def save_idea(self,item,topic,*,notes='',urls=(),voice='concise_challenger',narrative='literal',expected_brief=None):
+    def save_idea(self,item,topic,*,notes='',urls=(),voice='concise_challenger',narrative=None,expected_brief=None):
         if (not isinstance(topic,str) or not topic.strip() or len(topic)>500 or not isinstance(notes,str)
                 or len(notes)>3000 or not isinstance(urls,(list,tuple)) or len(urls)>6
-                or any(not isinstance(u,str) or len(u)>2048 for u in urls) or narrative not in ('literal','symbolic')):
+                or any(not isinstance(u,str) or len(u)>2048 for u in urls) or narrative not in (None,'literal','symbolic')):
             raise ValueError('INVALID_BRIEF')
         resolve_writing_voice(voice)
-        return self.store.save_brief(item,{'topic':topic.strip(),'notes':notes,'urls':list(urls),'voice':voice,'narrative':narrative},expected_brief)
+        brief = {'topic':topic.strip(),'notes':notes,'urls':list(urls),'voice':voice}
+        if narrative is not None:
+            brief['narrative'] = narrative
+        return self.store.save_brief(item, brief, expected_brief)
 
     def draft_item(self,item,attempt,*,expected_brief,expected_text,operation='draft'):
         with (self.store.root/('.writing-'+text_hash(item)+'.lock')).open('a+') as lock:
@@ -311,7 +324,7 @@ class Application:
         # One deliberate action receives the declared finite ordinary admission;
         # history and cumulative stage usage are never reset or relabeled.
         brief=writing['brief']
-        return self.create(attempt,**brief,writing_snapshot=snapshot,operation=operation)
+        return self.create(attempt, **{'narrative':'auto', **brief}, writing_snapshot=snapshot, operation=operation)
 
     def resume_writing(self,item):
         attempts=[r for r in self.show(item)['attempts'] if r['state'] in ('unknown','prepared')]

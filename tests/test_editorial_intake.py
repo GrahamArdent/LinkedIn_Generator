@@ -8,7 +8,7 @@ from src.app.codex_provider import CodexConfig
 from src.app.operational_store import Store
 
 
-def capture_writer(tmp_path, monkeypatch, topic, notes, reader, takeaway):
+def capture_writer(tmp_path, monkeypatch, topic, notes, reader, takeaway, beats=None, form=None):
     """Use the application up to its formatted outbound request, in a disposable store."""
     captured = {}
     app = operational.Application(Store.initialize(tmp_path / 'store'),
@@ -36,14 +36,14 @@ def capture_writer(tmp_path, monkeypatch, topic, notes, reader, takeaway):
                             'qualification': source['limitations'],
                             'facts': [{'claim_id': 'C1', 'source_id': source['source_id'],
                                        'locator': source['passages'][0]['locator']}]},
-                'narrative': None,
+                'narrative': {'form':'literal','beats':beats or ['Describe the reader’s decision.'],'symbol':None},
                 'support_checks': [{'claim_id': 'C1', 'relevant': True, 'primary_source': True,
                                     'entails': True, 'contradicted': False,
                                     'reason': 'Only the stated wording or proposed point is supported.'}],
             })
 
     monkeypatch.setattr(operational, 'CodexProvider', OfflineProvider)
-    saved = app.save_idea('idea', topic, notes=notes)
+    saved = app.save_idea('idea', topic, notes=notes, narrative=form)
     assert saved['brief']['notes'] == notes and not app.store.list()
     with pytest.raises(Captured):
         app.draft_item('idea', 'offline-attempt', expected_brief=1, expected_text=None)
@@ -68,7 +68,21 @@ def test_wording_at_writer_boundary(tmp_path, monkeypatch, is_quote):
     passage, = source['passages']
     assert passage['excerpt'] == words
     assert passage['wording'] == ('verbatim' if is_quote else 'editorial_paraphrase')
+    assert 'narrative' not in captured['brief']
+    assert context['handoff']['narrative']['beats'] == ['Describe the reader’s decision.']
     assert source['publisher'] == ('Graham Hill' if is_quote else 'Brief editor')
     assert f'Audience: {reader}\n' in writer['user']
     assert context['handoff']['meaning']['reader_consequence'] == takeaway
     assert 'Express a reported account or editorial_paraphrase indirectly' in writer['system']
+
+
+def test_explicit_literal_retains_selected_structure(tmp_path, monkeypatch):
+    from src.app.editorial_structure import DEFAULT_BEATS
+    result = capture_writer(tmp_path, monkeypatch, 'Choosing a form', 'A reported viewpoint.',
+                            'A business reader', 'Choose a form for this audience.', form='literal')
+    assert result['prepared']['request']['editorial_handoff']['narrative']['beats'] == DEFAULT_BEATS
+
+
+def test_missing_reader_stops_before_writer(tmp_path, monkeypatch):
+    with pytest.raises(ValueError, match='INVALID_INTENDED_READER'):
+        capture_writer(tmp_path, monkeypatch, 'Choosing a form', 'An account.', '', 'Choose an audience.')
