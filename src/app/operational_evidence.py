@@ -46,6 +46,25 @@ class _Text(HTMLParser):
 
 
 def source_record(requested,final,raw,content_type):
+    location = urlsplit(final)
+    line_range = re.fullmatch(r'L([1-9][0-9]{0,6})-L([1-9][0-9]{0,6})', urlsplit(requested).fragment)
+    if (line_range and location.hostname == 'raw.githubusercontent.com'
+            and re.fullmatch(r'/[^/]+/[^/]+/[0-9a-f]{40}/.+', location.path)
+            and 'text/plain' in content_type):
+        lines = raw.decode('utf-8').splitlines()
+        first, last = map(int, line_range.groups())
+        if not 1 <= first <= last <= len(lines):
+            raise ValueError('INVALID_SOURCE_LINES')
+        excerpt = '\n'.join(lines[first - 1:last])
+        if not excerpt.strip() or len(excerpt) > 600:
+            raise ValueError('UNBOUNDED_SOURCE_PASSAGE')
+        return {'status': 'usable', 'requested_url': requested, 'url': final,
+                'title': location.path.lstrip('/') + ' lines ' + str(first) + '–' + str(last),
+                'publisher': location.path.split('/')[1], 'content_type': content_type,
+                'checked_at': datetime.now(timezone.utc).isoformat(),
+                'content_sha256': hashlib.sha256(raw).hexdigest(),
+                'passages': [{'locator': line_range.group(), 'excerpt': excerpt}],
+                'limitations': 'Pinned repository excerpt. Establishes only the behavior shown in this revision, not author experience, intent or measured outcomes.'}
     if 'html' in content_type or 'xml' in content_type:
         parser=_Text();parser.feed(raw.decode('utf-8',errors='replace'))
         text='\n'.join(' '.join(x.split()) for x in ''.join(parser.parts).splitlines() if x.strip())
@@ -253,7 +272,7 @@ def validate_meaning(meaning,sources):
     for f in meaning['facts']:
         if any(ref not in indexed for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
         # Exact quotation is a conservative first-release claim mapping. Interpretation is in thesis/limits.
-        if not all(any(f['text'].strip() in [line.strip() for line in p['excerpt'].splitlines() if line.strip()] for p in indexed[ref]['passages']) for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
+        if not all(any(f['text'] == p['excerpt'] for p in indexed[ref]['passages']) for ref in f['source_ids']):raise ValueError('UNSUPPORTED_MEANING')
     return meaning
 
 
@@ -272,9 +291,21 @@ def resolve_meaning(meaning,sources):
 def personal_source(brief,brief_hash):
     """Explicit local testimony, never a fetch or independent achievement proof."""
     text=brief['notes'] or brief['topic']
-    # Preserve every supplied byte in the source. Bound exact fact locators so
-    # consumers need not invent a public source or truncate a factual passage.
-    passages=[{'locator':'supplied account '+str(i//600+1),'excerpt':text[i:i+600]} for i in range(0,len(text),600)]
+    # The original brief remains available as intent. Only the account
+    # section can substantiate a personal observation.
+    sections = re.split(
+        r'(?:^|\s+)(AUTHOR STATEMENTS|(?:VERIFIED )?PROJECT RECORD(?:, [^:\n]+)?|EDITORIAL DIRECTION):\s*',
+        text, flags=re.IGNORECASE,
+    )
+    accounts = [sections[0]] + [body for label, body in zip(sections[1::2], sections[2::2])
+                                if label.upper() == 'AUTHOR STATEMENTS']
+    paragraphs = [paragraph.strip() for account in accounts
+                  for paragraph in re.split(r'\r?\n[ \t]*\r?\n', account) if paragraph.strip()]
+    passages = [{'locator': f'supplied account {index}', 'excerpt': paragraph}
+                for index, paragraph in enumerate(paragraphs, 1) if len(paragraph) <= 600]
+    if not passages:
+        return {'sources': [], 'errors': [{'error': 'NO_BOUNDED_ACCOUNT_PASSAGE'}],
+                'http_activity': [], 'candidate_origin': 'supplied_local_account'}
     return {'sources':[{'source_id':'U1','status':'usable','title':'Graham Hill — supplied account (not independently verified)',
         'publisher':'Graham Hill','record':'writing-brief:'+brief_hash,'checked_at':datetime.now(timezone.utc).isoformat(),
         'content_sha256':hashlib.sha256(text.encode()).hexdigest(),'passages':passages,
