@@ -1,5 +1,5 @@
 # Execute LinkedIn Generator Workflow Rectification
-Version: 1.5 · Updated: November 17, 2026 (America/Toronto)
+Version: 1.6 · Updated: November 17, 2026 (America/Toronto)
 Mode C · Companion to the scoped workflow rectification amendment
 
 ## 1. Binding and outcome
@@ -23,7 +23,7 @@ Fetch current-default `GrahamArdent/paths/CHATGPT.md` through connected GitHub a
 
 Read the evidence record's current continuation before historical appendices. Read the canonical repository `CURRENT_WORK_PACKET.md`, relevant current completion-plan sections, acceptance definitions and exact pair/source records named in plan §2. Distinguish the new scoped rectification continuation from the preserved old parcel/human-review checkpoint. The old v4.3 executor must not run simultaneously as another first-unmet-step authority.
 
-P0–P4 and §7’s affected repair, installation and one linked generation have been delivered for the E15 case. Start from §2A’s current outcome and the governing evidence. Graham can reopen generated version 9. Await his disposition of that text under C8 / §11. Preserve original version 5, manual version 6 and the retained attempts. A newly requested change follows the ordinary version-bound workflow. The E14 reproduction and live run remain completed proof.
+P0–P4 and §7’s affected repair, installation and one linked generation have been delivered for the E15 case. Start from §2A’s current outcome and the governing evidence. E16 records the requested manual cut from generated version 9 to version 10 on brief 4. Present the verified version 10 export and await Graham’s keep-or-change decision under C8 / §11. Its review status is `revalidation_required`. Use the exact reviewed hash for feedback, reconcile any later edits first and run a model recheck only on a separate admitted request. Keep voice-example approval and publication pending. Preserve original version 5, manual version 6 and the retained attempts. A newly requested change follows the ordinary version-bound workflow. The E14 reproduction and live run remain completed proof.
 
 Inspect the actual relevant source/worktree/PR and installed identities before their respective consequences. A newer head is not installed proof. Reuse historical evidence until a material invalidator fires; retrieve current rendering records only when the visual boundary matters.
 

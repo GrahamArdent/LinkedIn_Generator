@@ -1,3 +1,11 @@
+# Current continuation — Graham’s editorial decision on version 10
+
+The installed editor saved Graham’s requested cut on brief 4, parent 9. The [E16 evidence and current assignment](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) identify the exact export. Under §2A/C8/§11, ask Graham whether to keep version 10 as written or what he would change. Version 9 remains the generator output. Version 10 is a manual edit with review status `revalidation_required`. F13 remains deferred. Voice-example approval and publication remain pending.
+
+Revision 1.6 plan SHA-256 `b1fe1c2f35274b9d5552d41103bc02127797adb68c3c4fc1afa2c56419a0f3a0`, prompt SHA-256 `e92e5453416891399c9104b9b6f773e94e2e6483f381e60b1ce84e7399cf6c95`. Earlier checkpoints below are historical.
+
+---
+
 # Current continuation — Graham’s editorial review of generated version 9
 
 PR56 installed and the requested §7 revision was generated and exported. The E15 [current evidence and exact text](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) records the verified outcome and usage. Await Graham’s disposition under §2A/C8/§11. Version 9 is reviewable. Its two predecessors and the manual revision remain available. F13 remains deferred.
