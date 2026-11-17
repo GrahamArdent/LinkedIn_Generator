@@ -1,17 +1,17 @@
 # Execute LinkedIn Generator Workflow Rectification
-Version: 1.7 · November 17, 2026 (America/Toronto)
+Version: 1.8 · November 17, 2026 (America/Toronto)
 
 ## 1. Binding and outcome
 
 Use the [existing evidence and continuation](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) as the sole progress record. Its opening binding selects the [game plan](https://chatgpt.com/library?file_id=libfile_7214b95937308191836cf96dfa5a72e9&account_id=personal) and this execution prompt, ID `libfile_8b5eb287b270819183b9fd73e627362b`. Retrieve the complete saved pair and verify both SHA-256 values against that opening before acting. If a newer checkpoint exists, reconcile its authority, bytes and owner pointer first.
 
-Plan §2A owns the current editorial outcome, experiment design and acceptance criteria. Graham should be able to recognize his contribution in a saved draft and inspect the passages a reviewer used to judge reader value and revision loss. The present request authorizes planning, package testing and documentation reconciliation. Begin product work when Graham requests implementation of this amendment. Historical releases, budgets, approvals and research have only their recorded scope.
+Plan §2A owns the current editorial outcome, experiment design and acceptance criteria. Graham should be able to recognize his contribution in a saved draft and inspect the passages a reviewer used to judge reader value and revision loss. Graham activated implementation and requested the first authorized step. Resume from the verified evidence, which records completed work and the next assignment within the current instruction’s scope. Historical releases, budgets, approvals and research have only their recorded scope.
 
 ## 2. Start or resume
 
 Retrieve current-default `GrahamArdent/paths/CHATGPT.md` through connected GitHub. Read the current evidence first, the selected pair, and the current repository `CURRENT_WORK_PACKET.md`. Follow its link back to the same evidence. Load the owner contracts and source files named in §§2 and 2A just in time for the effect. On a mixed or partial save, reconcile the affected owners before proceeding.
 
-For the package handoff test, use only the saved package and its referenced sources. State the observable deliverable, the first authorized action and its owner, and the proof you would reuse. Walk through a normal case and one failure. A read-only rehearsal ends with its findings. On an implementation instruction, resume the evidence’s single assignment. Graham’s version 10 disposition is already recorded. Preserve version 5, manual 6, both stopped attempts, generated 9 and manual 10. The §7 repair and historical pilots remain fulfilled within their original proof boundaries.
+For a separately requested package handoff test, use only the saved package and its referenced sources. State the observable deliverable, the first authorized action and its owner, and the proof you would reuse. Walk through a normal case and one failure. A read-only rehearsal ends with its findings. On an implementation instruction, resume the evidence’s single assignment. Graham’s version 10 disposition is already recorded. Preserve version 5, manual 6, both stopped attempts, generated 9 and manual 10. The §7 repair and historical pilots remain fulfilled within their original proof boundaries.
 
 For a pending or uncertain operation, look up the original item/attempt, exact input digest and result through the owner’s read-only route before retry, restart or replacement. On a genuine route failure preserve the exact sanitized error and follow Paths diagnosis and equivalent routes for the same effect. Respect an effect-level denial. Check the current brief, text parent and release before their respective consequences.
 
