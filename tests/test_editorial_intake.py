@@ -275,7 +275,7 @@ def test_public_rules_are_navigation_and_acquired_as_separate_sources(monkeypatc
                 {'publication_date': '2025-01-17', 'document_number': '../../bad'},
             ]}).encode(), 'application/json'
         assert url == document
-        return url, b'<title>A rule</title><p>The published rule explains disclosure responsibility.</p>', 'text/html'
+        return url, b'<title>A rule</title><pre>The published rule explains disclosure responsibility.</pre>', 'text/html'
 
     monkeypatch.setattr(Evidence, 'fetch', fetch)
     monkeypatch.setattr(Evidence, 'discover', lambda self, requested: [])
@@ -289,3 +289,26 @@ def test_public_rules_are_navigation_and_acquired_as_separate_sources(monkeypatc
     passages = [p['excerpt'] for p in source['passages']]
     assert 'Search metadata alone.' not in passages
     assert 'The published rule explains disclosure responsibility.' in passages
+
+
+def test_govinfo_hard_wraps_do_not_break_complete_publication_passages():
+    from src.app.operational_evidence import source_record
+
+    url = 'https://www.govinfo.gov/content/pkg/FR-2025-01-17/html/2025-12345.htm'
+    raw = (
+        '<title>Official rule</title><p>Web navigation.</p><pre>\n'
+        'SUMMARY: Covered operators designate an incident response\n'
+        'coordinator and define reporting responsibilities.\n\n'
+        '    In this section the authority refers to U.S. operators.\n'
+        'This is a separate requirement.\n\n'
+        + ('A separate paragraph provides background relevant to this rule. ' * 16)
+        + '\nThe incident response plan identifies its decision-makers.'
+        + '</pre>'
+    ).encode()
+    source = source_record(url, url, raw, 'text/html')
+    passages = [p['excerpt'] for p in source['passages']]
+    assert passages[0] == 'SUMMARY: Covered operators designate an incident response coordinator and define reporting responsibilities.'
+    assert passages[1] == 'In this section the authority refers to U.S. operators. This is a separate requirement.'
+    assert 'The incident response plan identifies its decision-makers.' in passages
+    assert 'Web navigation.' not in passages
+    assert all(len(p) <= 600 for p in passages)
