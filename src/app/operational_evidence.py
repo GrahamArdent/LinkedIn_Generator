@@ -1,6 +1,7 @@
 """Bounded public evidence acquisition. Network content is never authority."""
 from datetime import datetime, timezone
 import hashlib
+from html import unescape
 from html.parser import HTMLParser
 import http.client
 import ipaddress
@@ -45,6 +46,29 @@ class _Text(HTMLParser):
         if self.in_title:self.title.append(data)
 
 
+def govinfo_publication_paragraphs(html):
+    # GovInfo wraps the official plain-text publication in HTML <pre>.
+    # Join display line wraps before selecting complete, bounded passages.
+    match = re.search(r'<pre\b[^>]*>(.*?)</pre>', html, re.I | re.S)
+    if not match:
+        raise ValueError('SOURCE_TOO_THIN')
+    body = re.sub(r'<bullet>', '\n\n', match.group(1), flags=re.I)
+    body = re.sub(r'<[^>]+>', '', body)
+    paragraphs = re.split(r'\n(?:[ \t]*\n+|(?=[ \t]{4,}\S))', body)
+    for paragraph in paragraphs:
+        text = ' '.join(unescape(paragraph).split())
+        if not text:
+            continue
+        if len(text) <= 600:
+            if text.endswith(('.', '!', '?')):
+                yield text
+            continue
+        sentences = re.split(r'(?<!\b[A-Z]\.)(?<!\bSec\.)(?<!\bNo\.)(?<=[.!?])\s+(?=[A-Z])', text)
+        for sentence in sentences:
+            if len(sentence) <= 600 and sentence.endswith(('.', '!', '?')):
+                yield sentence
+
+
 def source_record(requested,final,raw,content_type):
     location = urlsplit(final)
     line_range = re.fullmatch(r'L([1-9][0-9]{0,6})-L([1-9][0-9]{0,6})', urlsplit(requested).fragment)
@@ -65,7 +89,18 @@ def source_record(requested,final,raw,content_type):
                 'content_sha256': hashlib.sha256(raw).hexdigest(),
                 'passages': [{'locator': line_range.group(), 'excerpt': excerpt}],
                 'limitations': 'Pinned repository excerpt. Establishes only the behavior shown in this revision, not author experience, intent or measured outcomes.'}
-    if 'html' in content_type or 'xml' in content_type:
+    official_publication = (
+        location.hostname == 'www.govinfo.gov'
+        and re.fullmatch(r'/content/pkg/FR-[0-9-]+/html/[0-9-]+\.htm', location.path)
+        and 'html' in content_type
+    )
+    if official_publication:
+        publication_html = raw.decode('utf-8', errors='replace')
+        text = '\n'.join(govinfo_publication_paragraphs(publication_html))
+        parser = _Text()
+        parser.feed(publication_html)
+        title = ''.join(parser.title).strip() or location.hostname
+    elif 'html' in content_type or 'xml' in content_type:
         parser=_Text();parser.feed(raw.decode('utf-8',errors='replace'))
         text='\n'.join(' '.join(x.split()) for x in ''.join(parser.parts).splitlines() if x.strip())
         title=''.join(parser.title).strip() or urlsplit(final).hostname
@@ -78,7 +113,8 @@ def source_record(requested,final,raw,content_type):
     for index,line in enumerate(text.splitlines(),1):
         if not line.strip() or len(line)>8000:continue
         if used+len(line)>24000:break
-        passages.append({'locator':f'complete extracted paragraph {index}','excerpt':line})
+        locator = f'publication text passage {index}' if official_publication else f'complete extracted paragraph {index}'
+        passages.append({'locator': locator, 'excerpt': line})
         used+=len(line)
     if not passages:raise ValueError('SOURCE_TOO_THIN')
     return {'status':'usable','requested_url':requested,'url':final,'title':title,'publisher':urlsplit(final).hostname,
