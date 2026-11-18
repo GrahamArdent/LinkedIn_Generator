@@ -1,3 +1,13 @@
+# Current continuation — E24 installed discovery recovery
+
+The [existing evidence](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) is the sole continuation for revision 1.12. App release PR #67 is installed on the Execution Node at `5b5a398b1a1ddaea91034c60e3dcb2ba4db352cf`. PR #64 and the installed discovery recovery reached their verified exits. The selected calendar item has a reviewable draft at version 25. E23 retains the original cold hold and E24 records the successful staged recovery.
+
+The current assignment is plan §2A.1 step 4. The Controller receiving decision is recorded in #563. The verified owner register still shows the native objective open. A native terminal receipt and admission of the exact LinkedIn read-only profile both precede the single handoff. Normal LinkedIn authoring remains available.
+
+Revision 1.12 plan SHA-256 `3514f87eef1d0774ab62861259d4682f6b4fcaf5e3d1a91505d741a116e8c3db`, prompt SHA-256 `fcb362764ddc6fd4b8511039c049f2b4b7c5258c35fe7d3fe582dfe84b0a0174`. Prior checkpoints below retain their original scope.
+
+---
+
 # Current continuation — ordinary editorial workflow installed at E20
 
 Use [the current evidence](https://chatgpt.com/library?file_id=libfile_097a4d86d13481919f4da713ac1b8723&account_id=personal) for the actual question, answer, saved draft, review and release. Continue with the author’s real topic or requested edit. The four-card exercise is withdrawn. Reuse the installed release and original draft identities before any new consequence.
