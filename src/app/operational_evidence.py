@@ -290,7 +290,7 @@ def resolve_meaning(meaning,sources):
 
 def personal_source(brief,brief_hash):
     """Keep exact words, reported accounts and editorial paraphrases distinct."""
-    text = brief['notes'] or brief['topic']
+    text = brief['notes']
     legacy_labels = r'AUTHOR STATEMENTS|(?:VERIFIED )?PROJECT RECORD(?:, [^:\n]+)?|EDITORIAL DIRECTION'
     if re.search(r'(?im)^[ \t]*(AUTHOR WORDS|EDITORIAL SUMMARY):', text):
         labels = rf'(?im)^[ \t]*(AUTHOR WORDS|EDITORIAL SUMMARY|{legacy_labels}):[ \t]*'

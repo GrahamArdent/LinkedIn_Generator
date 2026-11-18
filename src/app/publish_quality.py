@@ -215,6 +215,17 @@ def assess_publish_quality(
         )
         for spec in request["required_output"]["essential_checks"].values():
             spec["passage"] = "exact substring of post supporting the reason, or empty if absent"
+    if "author_intent" in bundle or "current_author_sources" in brief:
+        system += (
+            " For factual_integrity, check ownership of recommendations as well as facts. "
+            "A first-person recommendation or opinion requires a supplied Graham account that supports "
+            "that specific position. A calendar title, editor's summary or directions, public source, "
+            "style example or previous draft cannot establish endorsement. Use current_author_sources "
+            "when present, otherwise the supplied Graham account in source_bundle.sources. "
+            "If the post presents an editorial proposal as Graham's view without matching support, "
+            "return revise and cite the exact wording that assigns it to him. A reader-directed "
+            "or conditional recommendation can pass without author endorsement."
+        )
     if parent_text is not None:
         system += (
             " Compare the actual parent with this revision. Cite both texts exactly and explain which contribution "
