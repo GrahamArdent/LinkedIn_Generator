@@ -252,8 +252,35 @@ class Evidence:
         # consume the entire source budget before public author pages get a chance.
         return list(dict.fromkeys(arxiv+routes))[:6]
 
-    def acquire(self,topic,urls=()):
-        targets=list(urls) if urls else self.discover(topic)
+    def discover_federal_register(self, topic):
+        if not re.search(r'\b(?:liabilit(?:y|ies)|regulat\w*|disclosure|rulemaking)\b', topic, re.I):
+            return []
+        params = urlencode({'conditions[term]': topic, 'conditions[type][]': 'RULE',
+                            'per_page': 4, 'order': 'relevance'})
+        url = 'https://www.federalregister.gov/api/v1/documents.json?' + params
+        try:
+            _, raw, _ = self.fetch(url, discovery=True)
+            rows = json.loads(raw).get('results', [])
+            if not isinstance(rows, list):
+                raise ValueError('INVALID_FEDERAL_REGISTER_RESULTS')
+        except (ValueError, OSError, http.client.HTTPException, TypeError, AttributeError) as exc:
+            self.activity.append({'discovery_route': 'federal_register', 'error': str(exc)})
+            return []
+        urls = []
+        for row in rows[:4]:
+            if not isinstance(row, dict):
+                continue
+            date, number = row.get('publication_date'), row.get('document_number')
+            if (isinstance(date, str) and re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', date)
+                    and isinstance(number, str) and re.fullmatch(r'[0-9]{4}-[0-9]{5}', number)):
+                urls.append(f'https://www.govinfo.gov/content/pkg/FR-{date}/html/{number}.htm')
+        return urls
+
+    def acquire(self, topic, urls=(), *, include_regulatory=False):
+        targets = list(urls)
+        if not targets:
+            regulatory = self.discover_federal_register(topic) if include_regulatory else []
+            targets = list(dict.fromkeys(regulatory + self.discover(topic)))
         sources=[];errors=[]
         for url in targets[:6]:
             try:

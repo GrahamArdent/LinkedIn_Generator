@@ -154,7 +154,8 @@ def test_direction_only_reuses_cited_public_source(tmp_path, monkeypatch, scenar
     app.store.finish('prior', 'completed', {})
     fetches = []
 
-    def acquire(self, requested_topic, urls):
+    def acquire(self, requested_topic, urls, *, include_regulatory=False):
+        assert include_regulatory == (scenario == 'different_topic')
         fetches.extend(urls)
         assert requested_topic == ('A different topic' if scenario == 'different_topic' else topic)
         assert urls == ([] if scenario == 'different_topic' else [url])
@@ -253,3 +254,38 @@ def test_ed_direction_can_discover_public_sources(tmp_path, monkeypatch, scenari
     assert discovered == [topic]
     assert len(requests) == {'empty': 0, 'unrelated': 1, 'supported': 2}[scenario]
     assert app.store.stage('attempt', 'evidence')['candidate_origin'] == 'public_discovery'
+
+
+def test_public_rules_are_navigation_and_acquired_as_separate_sources(monkeypatch):
+    from src.app.operational_evidence import Evidence
+
+    seen = []
+    document = 'https://www.govinfo.gov/content/pkg/FR-2025-01-17/html/2025-12345.htm'
+    topic = 'Incident disclosure responsibilities'
+
+    def fetch(self, url, *, discovery=False):
+        seen.append((url, discovery))
+        if discovery:
+            assert url.startswith('https://www.federalregister.gov/api/v1/documents.json?')
+            from urllib.parse import parse_qs, urlsplit
+            assert parse_qs(urlsplit(url).query)['conditions[term]'] == [topic]
+            return url, json.dumps({'results': [
+                {'publication_date': '2025-01-17', 'document_number': '2025-12345',
+                 'html_url': 'https://example.org/untrusted', 'abstract': 'Search metadata alone.'},
+                {'publication_date': '2025-01-17', 'document_number': '../../bad'},
+            ]}).encode(), 'application/json'
+        assert url == document
+        return url, b'<title>A rule</title><p>The published rule explains disclosure responsibility.</p>', 'text/html'
+
+    monkeypatch.setattr(Evidence, 'fetch', fetch)
+    monkeypatch.setattr(Evidence, 'discover', lambda self, requested: [])
+    assert Evidence().acquire(topic)['sources'] == []
+    assert Evidence().acquire('A general writing topic', include_regulatory=True)['sources'] == []
+    assert seen == []
+    discovered = Evidence().acquire(topic, include_regulatory=True)
+    source, = discovered['sources']
+    assert seen[1:] == [(document, False)]
+    assert source['url'] == document
+    passages = [p['excerpt'] for p in source['passages']]
+    assert 'Search metadata alone.' not in passages
+    assert 'The published rule explains disclosure responsibility.' in passages
