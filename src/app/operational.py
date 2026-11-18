@@ -165,7 +165,9 @@ class Application:
                         source=Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(record['input']['topic'],urls)
                         source['candidate_origin']='caller_urls' if record['input']['urls'] else 'retained_exact_topic_sources' if urls else 'crossref_discovery'
                     commit_pure_stage(self.store,job,'evidence',record['input'],source)
-                if not source['sources']:
+                writing_brief = 'writing_snapshot' in record['input']
+                topic_only = writing_brief and not record['input']['notes'] and not record['input']['urls']
+                if not source['sources'] and not topic_only:
                     if 'writing_snapshot' in record['input']:
                         source = {**source, 'author_question': 'Which specific observation or source passage should the post build on?'}
                     return self.store.finish(job,'needs_more_evidence',source)
@@ -199,17 +201,18 @@ class Application:
                         'Select the complete bounded code excerpt when a cited repository rule is central. Use its repository as the source for behavior and the author account for personal observations. Editorial directions and prior drafts are intent, never factual support. '
                         'support_checks is one entry per fact: {claim_id,relevant:true,primary_source:true,entails:true,contradicted:false,reason:string}. Reject sources whose actual context negates the claim; include its scope in qualification. '
                         'Do not treat metadata, boilerplate, navigation or a source describing someone else as a personal fact. '
-                        'Thesis and consequence are Graham\'s qualified interpretation, not unsupported statistics or expertise. '
+                        'Thesis and consequence express a qualified interpretation. Attribute a position to Graham only if his supplied account supports it. '
                         'When the caller explicitly selected literal, return null; the application supplies that scaffold. '
                         'For symbolic narrative return form=symbolic, beats (1-8 planning fragments <=240 characters), symbol={image,mapping:[{symbol_part,real_relationship}],boundary}. '
                         'Use ONE sustained comparison, explicitly limited; no finished post, hook or title. If evidence is irrelevant, thin or contradictory, return needs_more_evidence and null meaning/narrative.')
-                    writing_brief = 'writing_snapshot' in record['input']
                     if writing_brief:
                         system += (' When ready, include one additional field, intended_reader, naming the person facing the decision. '
                                    'First identify that reader and what they can recognize or decide in meaning.reader_consequence. '
                                    'Only then select narrative beats. Respect any supplied editorial direction. '
                                    'An editorial_paraphrase only supports what the editor proposes, never Graham’s words or experiences. '
-                                   'Only verbatim passages supply exact author wording. If a general topic leaves the central point or '
+                                   'Only verbatim passages supply exact author wording. The topic is a subject label, never testimony or endorsement. '
+                                   'With a bare topic and no evidence, return needs_more_evidence and ask what the reader should be able to decide. '
+                                   'If a general topic leaves the central point or '
                                    'firsthand incident genuinely ambiguous, use needs_more_evidence and make reason ONE short question '
                                    'about the specific missing decision, observation or evidence. Use the author’s actual context. '
                                    'Do not ask for sample preferences, a writing style, or facts already supplied. If a defensible point '
@@ -364,10 +367,12 @@ class Application:
             ancestor=history.get(ancestor.get('parent'))
         evidence=list(preparation['request']['evidence']) if preparation else []
         from .operational_evidence import personal_source
-        for source in personal_source(snapshot['brief'], snapshot['brief_hash'])['sources']:
+        current_sources = personal_source(snapshot['brief'], snapshot['brief_hash'])['sources']
+        for source in current_sources:
             evidence.extend({'title': source['title'], 'fact': passage['excerpt']}
                             for passage in source['passages'])
         profile['editorial_context']={'brief':snapshot['brief'],'source_bundle':preparation['bundle'] if preparation else None,
+            'current_author_sources':[source for source in current_sources if source['source_id'] == 'U1'],
             'limits':'User testimony/viewpoint only; no independent measured outcomes. Public assertions require their retained exact support; old support cannot substantiate new claims.'}
         prepared = preparation['request'] if preparation and ancestor['brief_revision'] == snapshot['brief_revision'] else {}
         if prepared.get('objective'):

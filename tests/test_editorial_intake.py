@@ -98,6 +98,7 @@ def test_clarification_survives_reopen_and_answer_retires_question(tmp_path, mon
             self.receipts = []
         def generate(self, **request):
             assert 'Do not ask for sample preferences' in request['system']
+            assert json.loads(request['user'])['sources'] == []
             self.receipts.append({'attempt_id':'held'})
             return json.dumps({'status':'needs_more_evidence','reason':question,'meaning':None,
                                'narrative':None,'support_checks':[]})
@@ -119,3 +120,17 @@ def test_auto_form_can_resolve_a_native_null_after_the_reader_choice(tmp_path, m
     q = r['prepared']['request']
     assert q['audience'] == 'A workflow owner' and q['objective'] == 'Identify the decision first.'
     assert q['editorial_handoff']['narrative']['beats'] == DEFAULT_BEATS
+
+
+@pytest.mark.parametrize('label,source_id', [('EDITORIAL SUMMARY', 'B1'), ('AUTHOR WORDS', 'U1')])
+def test_calendar_angle_preserves_ownership_at_writer_boundary(tmp_path, monkeypatch, label, source_id):
+    topic = 'CIO pain: tool sprawl chaos'
+    recommendation = 'Before renewal, ask what decision each tool helps someone make.'
+    captured = capture_writer(tmp_path, monkeypatch, topic, f'{label}: {recommendation}',
+                              'A CIO considering two renewals', 'Identify each tool’s purpose.')
+    writer = captured['writer']
+    profile, _ = json.JSONDecoder().raw_decode(writer['user'].split('Persona Profile: ', 1)[1])
+    source, = profile['editorial_context']['source_bundle']['sources']
+    assert source['source_id'] == source_id
+    assert source['passages'][0]['excerpt'] == recommendation
+    assert "only when Graham's supplied account supports that specific recommendation" in writer['system']
