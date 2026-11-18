@@ -217,7 +217,10 @@ def assess_publish_quality(
             spec["passage"] = "exact substring of post supporting the reason, or empty if absent"
     if "author_intent" in bundle or "current_author_sources" in brief:
         system += (
-            " For factual_integrity, check ownership of recommendations as well as facts. "
+            " In every reason and in the overall rationale, distinguish the editor's proposed "
+            "recommendation from a position Graham has supplied. Do not call the proposal Graham's "
+            "or the author's choice when there is no supporting author account. "
+            "For factual_integrity, check ownership of recommendations as well as facts. "
             "A first-person recommendation or opinion requires a supplied Graham account that supports "
             "that specific position. A calendar title, editor's summary or directions, public source, "
             "style example or previous draft cannot establish endorsement. Use current_author_sources "
