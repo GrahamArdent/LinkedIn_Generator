@@ -170,7 +170,8 @@ class Application:
                         if discover_public:
                             source['candidate_origin'] = 'public_discovery'
                         if urls or discover_public:
-                            public = Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(topic,urls)
+                            evidence = Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission)
+                            public = evidence.acquire(topic, urls, include_regulatory=True) if discover_public else evidence.acquire(topic, urls)
                             source['sources'] += public['sources']
                             source['errors'] += public['errors']
                             source['http_activity'] += public.get('http_activity', [])
