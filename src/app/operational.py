@@ -157,9 +157,17 @@ class Application:
                         from .operational_evidence import personal_source
                         snapshot=record['input']['writing_snapshot']
                         source=personal_source(snapshot['brief'],snapshot['brief_hash'])
-                        if record['input']['urls']:
-                            public=Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(record['input']['topic'],record['input']['urls'])
-                            source['sources']+=public['sources'];source['errors']+=public['errors']
+                        topic = record['input']['topic']
+                        urls = record['input']['urls']
+                        if not urls and snapshot['brief']['notes'].strip() and not source['sources']:
+                            urls = self.retained_writing_source_urls(topic)
+                            if urls:
+                                source['candidate_origin'] = 'retained_exact_topic_writing_sources'
+                        if urls:
+                            public = Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(topic,urls)
+                            source['sources'] += public['sources']
+                            source['errors'] += public['errors']
+                            source['http_activity'] += public.get('http_activity', [])
                     else:
                         urls=record['input']['urls'] or self.retained_source_urls(record['input']['topic'])
                         source=Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(record['input']['topic'],urls)
@@ -393,6 +401,25 @@ class Application:
             if not value['conflict']:parent=value['version']
             return value
         return save
+
+    def retained_writing_source_urls(self, topic):
+        urls = []
+        for old in reversed(self.store.list()):
+            if (old['state'] != 'completed' or old['input'].get('topic') != topic
+                    or 'writing_snapshot' not in old['input']):
+                continue
+            preparation = self.store.stage(old['id'], 'preparation')
+            if not preparation:
+                continue
+            bundle = preparation['bundle']
+            cited = {source_id for claim in bundle['claims'] for source_id in claim['source_ids']}
+            for source in bundle['sources']:
+                url = source.get('requested_url') or source.get('url')
+                if source['source_id'] in cited and url and url not in urls:
+                    urls.append(url)
+                    if len(urls) == 6:
+                        return urls
+        return urls
 
     def retained_source_urls(self,topic):
         urls=[]

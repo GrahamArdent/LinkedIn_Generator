@@ -134,3 +134,52 @@ def test_calendar_angle_preserves_ownership_at_writer_boundary(tmp_path, monkeyp
     assert source['source_id'] == source_id
     assert source['passages'][0]['excerpt'] == recommendation
     assert "only when Graham's supplied account supports that specific recommendation" in writer['system']
+
+
+@pytest.mark.parametrize('scenario', ['reuse', 'different_topic', 'unavailable'])
+def test_direction_only_reuses_cited_public_source(tmp_path, monkeypatch, scenario):
+    app = operational.Application(Store.initialize(tmp_path / 'source-reuse'),
+                                  CodexConfig(tmp_path, Path('/unused'), 'offline', 'fixture'))
+    monkeypatch.setattr(operational, 'qualify_model', lambda cfg: {})
+    topic = 'CIO pain: tool sprawl chaos'
+    url = 'https://example.org/playbook'
+    source = {'source_id': 'S1', 'url': url, 'status': 'usable', 'passages': [
+        {'locator': 'paragraph 1', 'excerpt': 'An official guide describes application rationalization.'},
+    ]}
+    app.store.admit('prior', {'topic': topic, 'writing_snapshot': {}}, {})
+    operational.commit_pure_stage(app.store, 'prior', 'preparation', {}, {'bundle': {
+        'claims': [{'source_ids': ['S1']}],
+        'sources': [source, {**source, 'source_id': 'S2', 'url': 'https://example.org/uncited'}],
+    }})
+    app.store.finish('prior', 'completed', {})
+    fetches = []
+
+    def acquire(self, requested_topic, urls):
+        fetches.extend(urls)
+        assert requested_topic == topic
+        return {'sources': [source] if scenario == 'reuse' else [],
+                'errors': [] if scenario == 'reuse' else [{'error': 'SOURCE_HTTP_404'}],
+                'http_activity': [{'url': url}]}
+
+    monkeypatch.setattr(operational.Evidence, 'acquire', acquire)
+
+    class Provider:
+        def __init__(self, *args):
+            self.receipts = []
+
+        def generate(self, **request):
+            assert scenario == 'reuse'
+            assert json.loads(request['user'])['sources'] == [source]
+            self.receipts.append({'attempt_id': 'preparation'})
+            return json.dumps({'status': 'needs_more_evidence', 'reason': 'Which renewal decision?',
+                               'meaning': None, 'narrative': None, 'support_checks': []})
+
+    monkeypatch.setattr(operational, 'CodexProvider', Provider)
+    app.save_idea('idea', 'A different topic' if scenario == 'different_topic' else topic,
+                  notes='EDITORIAL DIRECTION: Compare two renewals.')
+    result = app.draft_item('idea', 'attempt', expected_brief=1, expected_text=None)
+    assert fetches == ([] if scenario == 'different_topic' else [url])
+    if scenario == 'reuse':
+        assert result['result']['author_question'] == 'Which renewal decision?'
+    else:
+        assert result['result']['author_question'] == 'Which specific observation or source passage should the post build on?'
