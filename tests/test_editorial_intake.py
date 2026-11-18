@@ -156,7 +156,8 @@ def test_direction_only_reuses_cited_public_source(tmp_path, monkeypatch, scenar
 
     def acquire(self, requested_topic, urls):
         fetches.extend(urls)
-        assert requested_topic == topic
+        assert requested_topic == ('A different topic' if scenario == 'different_topic' else topic)
+        assert urls == ([] if scenario == 'different_topic' else [url])
         return {'sources': [source] if scenario == 'reuse' else [],
                 'errors': [] if scenario == 'reuse' else [{'error': 'SOURCE_HTTP_404'}],
                 'http_activity': [{'url': url}]}
@@ -183,3 +184,72 @@ def test_direction_only_reuses_cited_public_source(tmp_path, monkeypatch, scenar
         assert result['result']['author_question'] == 'Which renewal decision?'
     else:
         assert result['result']['author_question'] == 'Which specific observation or source passage should the post build on?'
+
+
+@pytest.mark.parametrize('scenario', ['empty', 'unrelated', 'supported'])
+def test_ed_direction_can_discover_public_sources(tmp_path, monkeypatch, scenario):
+    app = operational.Application(Store.initialize(tmp_path / 'cold-discovery'),
+                                  CodexConfig(tmp_path, Path('/unused'), 'offline', 'fixture'))
+    monkeypatch.setattr(operational, 'qualify_model', lambda cfg: {})
+    topic = 'Choosing a backup schedule'
+    url = 'https://example.org/guide'
+    discovered = []
+    requests = []
+    excerpt = ('A baking guide discusses oven temperature.' if scenario == 'unrelated'
+               else 'Choose a backup schedule based on tolerable data loss.')
+
+    def discover(self, requested_topic):
+        discovered.append(requested_topic)
+        return [] if scenario == 'empty' else [url]
+
+    def fetch(self, requested_url):
+        assert requested_url == url
+        return url, f'<title>Planning guide</title><p>{excerpt}</p>'.encode(), 'text/html'
+
+    monkeypatch.setattr(operational.Evidence, 'discover', discover)
+    monkeypatch.setattr(operational.Evidence, 'fetch', fetch)
+
+    class WriterReached(Exception):
+        pass
+
+    class Provider:
+        def __init__(self, *args):
+            self.receipts = []
+
+        def generate(self, **request):
+            requests.append(request)
+            if len(requests) == 2:
+                assert scenario == 'supported'
+                assert request['system'].startswith('Write a LinkedIn post')
+                assert excerpt in request['user']
+                raise WriterReached()
+            source, = json.loads(request['user'])['sources']
+            assert source['url'] == url and 'record' not in source
+            passage = next(p for p in source['passages'] if p['excerpt'] == excerpt)
+            self.receipts.append({'attempt_id': 'fixture-preparation'})
+            return json.dumps({
+                'status': 'ready', 'reason': 'Fixture', 'intended_reader': 'A team setting recovery goals',
+                'meaning': {'thesis': 'Review recovery goals', 'reader_consequence': 'Define tolerable data loss.',
+                            'qualification': 'This guide provides general planning advice.',
+                            'facts': [{'claim_id': 'C1', 'source_id': 'S1', 'locator': passage['locator']}]},
+                'narrative': None,
+                'support_checks': [{'claim_id': 'C1', 'relevant': scenario == 'supported',
+                                    'primary_source': True, 'entails': scenario == 'supported',
+                                    'contradicted': False, 'reason': 'Fixture support check.'}],
+            })
+
+    monkeypatch.setattr(operational, 'CodexProvider', Provider)
+    app.save_idea('idea', topic, notes='EDITORIAL DIRECTION: Explain the recovery decision.')
+    if scenario == 'unrelated':
+        with pytest.raises(ValueError, match='UNSUPPORTED_MEANING'):
+            app.draft_item('idea', 'attempt', expected_brief=1, expected_text=None)
+    elif scenario == 'supported':
+        with pytest.raises(WriterReached):
+            app.draft_item('idea', 'attempt', expected_brief=1, expected_text=None)
+    else:
+        result = app.draft_item('idea', 'attempt', expected_brief=1, expected_text=None)
+        assert result['state'] == 'needs_more_evidence'
+        assert result['result']['author_question']
+    assert discovered == [topic]
+    assert len(requests) == {'empty': 0, 'unrelated': 1, 'supported': 2}[scenario]
+    assert app.store.stage('attempt', 'evidence')['candidate_origin'] == 'public_discovery'

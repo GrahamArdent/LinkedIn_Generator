@@ -163,7 +163,13 @@ class Application:
                             urls = self.retained_writing_source_urls(topic)
                             if urls:
                                 source['candidate_origin'] = 'retained_exact_topic_writing_sources'
-                        if urls:
+                        discover_public = not urls and not source['sources'] and any(
+                            line.lstrip().upper().startswith('EDITORIAL DIRECTION:')
+                            for line in snapshot['brief']['notes'].splitlines()
+                        )
+                        if discover_public:
+                            source['candidate_origin'] = 'public_discovery'
+                        if urls or discover_public:
                             public = Evidence(self.store.get(admission)['created']+900,store=self.store,job=admission).acquire(topic,urls)
                             source['sources'] += public['sources']
                             source['errors'] += public['errors']
