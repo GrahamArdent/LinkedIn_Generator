@@ -18,6 +18,8 @@ class CodexConfig:
     source_sha: str
     model: str
     reasoning: str = "medium"
+    codex_executable: str = ""
+    codex_cli_version: str = ""
 
 class CodexError(RuntimeError):
     def __init__(self, code, attempt_id=None):
@@ -93,7 +95,13 @@ def bridge(payload):
     from app.services.codex_cli_client import CodexClient, CodexFailure, ExecutionContext, Limits
     schema={"type":"object","properties":{"text":{"type":"string"}},"required":["text"],"additionalProperties":False}
     # One shared invocation budget: each model request uses version/auth/exec.
-    client=CodexClient(model=payload["model"],reasoning=payload["reasoning"],
+    runtime = {}
+    if payload.get("codex_executable"):
+        executable = Path(payload["codex_executable"])
+        if not executable.is_absolute() or payload.get("codex_cli_version") != "0.171.0":
+            return {"ok":False,"code":"CODEX_RUNTIME_INVALID"}
+        runtime = {"executable": executable, "cli_version": payload["codex_cli_version"]}
+    client=CodexClient(model=payload["model"],reasoning=payload["reasoning"], **runtime,
                        limits=Limits(max_launches=36,max_seconds=900,process_timeout=min(300,payload.get("remaining_wall_seconds",300))))
     request={"task":payload["system"],
              "input":payload["user"],
