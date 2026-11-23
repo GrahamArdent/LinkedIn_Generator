@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import sqlite3
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -19,6 +20,14 @@ BINDING_KEYS = {
     "item", "release_fingerprint", "brief_revision", "text_version",
     "draft_sha256", "review_sha256", "export_sha256",
 }
+
+
+class ReadOnlyStore(Store):
+    def connection(self):
+        database = (self.root / "registry.sqlite3").as_uri()
+        connection = sqlite3.connect(database + "?mode=ro", uri=True, timeout=30)
+        connection.row_factory = sqlite3.Row
+        return connection
 
 
 def digest(raw):
@@ -107,7 +116,7 @@ def main():
         request = json.loads(raw, object_pairs_hook=strict_object)
         fingerprint = release_fingerprint()
         verify_request(request, fingerprint)
-        result = readback(request, Application(Store(args.data_root), None), fingerprint)
+        result = readback(request, Application(ReadOnlyStore(args.data_root), None), fingerprint)
     except (ValueError, KeyError, TypeError, OSError):
         print(json.dumps({"status": "rejected"}), file=sys.stderr)
         return 2

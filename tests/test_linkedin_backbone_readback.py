@@ -1,4 +1,5 @@
 import json
+import sqlite3
 from types import SimpleNamespace
 
 import pytest
@@ -69,3 +70,13 @@ def test_refuses_drift(change, message):
 def test_refuses_duplicate_request_keys():
     with pytest.raises(ValueError, match="DUPLICATE_REQUEST_KEY"):
         json.loads('{"schema":"x","schema":"x"}', object_pairs_hook=receiver.strict_object)
+
+
+def test_receiver_store_connection_rejects_writes(tmp_path):
+    root = tmp_path / "store with spaces"
+    receiver.Store.initialize(root)
+    store = receiver.ReadOnlyStore(root)
+    with store.connection() as connection:
+        assert connection.execute("SELECT count(*) FROM metadata").fetchone()[0] > 0
+        with pytest.raises(sqlite3.OperationalError, match="readonly"):
+            connection.execute("DELETE FROM metadata")
